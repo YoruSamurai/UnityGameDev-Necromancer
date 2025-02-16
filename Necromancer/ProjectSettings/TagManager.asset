@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -40,4 +40,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 965306387
+    locked: 0
+  - name: Decoration
+    uniqueID: 705045075
+    locked: 0
+  - name: Tile
+    uniqueID: 2017728985
+    locked: 0
+  - name: Enemy
+    uniqueID: 854423697
+    locked: 0
+  - name: Npc
+    uniqueID: 3189684109
+    locked: 0
+  - name: Player
+    uniqueID: 892242275
+    locked: 0
+  - name: UI
+    uniqueID: 3755678255
     locked: 0
