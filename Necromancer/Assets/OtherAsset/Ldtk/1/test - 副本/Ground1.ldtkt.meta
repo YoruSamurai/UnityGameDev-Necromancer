@@ -1,0 +1,2760 @@
+fileFormatVersion: 2
+guid: 2402672305338434ea385d6aaab73d83
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 16
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Ground1_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 40cdd2c087cdd1e4a8afd9340ef741b1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 76c6b47a36445b3478ad35bb32ddfc0b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 55aac2a5bb216a547b342bbe71d3699a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 208
+      width: 16
+      height: 16
+    spriteID: a0d156970dbdc2f4387893835472ab88
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 8b49590132f50e046b85506378f2f706
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 208
+      width: 16
+      height: 16
+    spriteID: f5dc00a53e8b8574cbaeb5ec44ed052b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 364c62de7f6b1a649b78a8f3aeead2bc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 208
+      width: 16
+      height: 16
+    spriteID: dbe439c19b20d004eafb566ff62f17bc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 7fe6101a9a5108d4781a56b7d55e4fd0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 1799446255a16c6498db7105a40dad71
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 1df8f1919eb522846972306b926b1454
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 5bcba718d9e686b40bd7253cd0d8437e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 6c8437ea609a2a64aa48212c624acd78
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 208
+      width: 16
+      height: 16
+    spriteID: 60304a1d946bc614dbe0c633fcc14faa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 87b6965ddf8eb914d816aea92f067684
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 3cfdf4bb90c6c8a4c89c683b3159e2f7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 326af25ae4e60814ca54f871688d6774
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 77860e6b2325edf4ba654ee887ae9cce
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 192
+      width: 16
+      height: 16
+    spriteID: a2b6954a41602e14ab22c069acc2cf86
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 7af7222a71996854baf8b6aaeb9f6e5e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 192
+      width: 16
+      height: 16
+    spriteID: fb4e905c7f204e74496f93b59ab2176c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 192
+      width: 16
+      height: 16
+    spriteID: f2ab9e76b7c201948875141f9ab8df68
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 0d81e3237f3d326449369ff00482661e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 41c5b8a8926fcca49bf7d16e4e9b004d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 7b377be012db0d442933f42a6df7698d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 192
+      width: 16
+      height: 16
+    spriteID: aabca19a09f6a6b4b8027019ad975576
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 192
+      width: 16
+      height: 16
+    spriteID: b2f0895fcc29b784d8069cb713bc96c0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 192
+      width: 16
+      height: 16
+    spriteID: 2c71bfaac9583ac4682d947a98621ae1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 8ebc40ba5821ada43a771e62ad2c84cf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 2d84def12fe2deb4bbb14b0b4e490c57
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 27c2e99e49f648846a1c07dd51b747b1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 88fb5beba8e14eb48b3ecf0c0abac4a8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 176
+      width: 16
+      height: 16
+    spriteID: b666db83bbf3bec44add6a5087896c4e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 176
+      width: 16
+      height: 16
+    spriteID: dde914fec35d08d4f8364ea3ad96e925
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 176
+      width: 16
+      height: 16
+    spriteID: b631a75594292334dac6e095474585df
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 988bf049fa7e91e4795d060d6fd311a0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 0ff16a460635241419b6ffbe4d695737
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 176
+      width: 16
+      height: 16
+    spriteID: c0a6ac092518fbd40b1f534339547599
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 91ca57eb5d8c46e4882c9533502061fc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 13c1fe994dfc6864195888c7618311cf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 5c96900ac6c14a54db1e996612889357
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 176
+      width: 16
+      height: 16
+    spriteID: 3b2f063c1df2f7645864094202241f51
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 1b3588c69f78e3545b88f7e35dc9ada2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 160
+      width: 16
+      height: 16
+    spriteID: eb0d20898547a224b98152c12e3d9b7d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 45959fc791c483b4abc774659d0f1944
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 160
+      width: 16
+      height: 16
+    spriteID: f3aa5b280087aa242bd036c2598067ee
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 8a1ef2abb47569d44ae5e5684f3cdf7d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 160
+      width: 16
+      height: 16
+    spriteID: b23e4384f51a03c469332556a3b7f0d6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 1b29c0f111dec3445905c1b2d3669920
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 160
+      width: 16
+      height: 16
+    spriteID: c3d21c281fa31e64180a932bba506e14
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_50
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 9c4dad962fc0cbb4a9d7127127f41d6d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_51
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 4771b230346d83d449363a507669323f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_52
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 160
+      width: 16
+      height: 16
+    spriteID: c2e1c5930a49b4c4bb734dbcabee962d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_53
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 7ac26b4d549374545a61c75bf50af475
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_54
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 160
+      width: 16
+      height: 16
+    spriteID: eaa413a6d11ac0845aa4acd7f7caa7be
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_55
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 160
+      width: 16
+      height: 16
+    spriteID: 421e8d1de5d2dd945b3517f95944e784
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_56
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 5bbce03fe54d1bb4b8b378ae45ed6fe9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_57
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 212d42f4dd432044dbeb4d8369502a7a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_58
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 822b53834c2ec1d45a7098f20e41cd65
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_59
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 144
+      width: 16
+      height: 16
+    spriteID: d6599f296bcd49e45a48cc22f1fdb703
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_60
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 144
+      width: 16
+      height: 16
+    spriteID: a2bc883b755b733488e010b37a6513d3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_61
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 27bbe6b92ff7266409aa1c5f8ed6292e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_62
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 6a3b0a63c151e234d91f11ee082eeb19
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_63
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 144
+      width: 16
+      height: 16
+    spriteID: a3e2a528d2702b546b761995ea2d20e7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_64
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 8162e7eb30b459c438dc54da8e1f9651
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_65
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 47ef5dda8eb894542a7c635fdc08a549
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_66
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 144
+      width: 16
+      height: 16
+    spriteID: a0f2e5cc62142fc4798754bd2e609bf5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_67
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 144
+      width: 16
+      height: 16
+    spriteID: baefa6a67371eb042b3d7cdd8f737f1e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_68
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 144
+      width: 16
+      height: 16
+    spriteID: 0b6e55adda1c5bb4bbffa140fd46089a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_69
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 144
+      width: 16
+      height: 16
+    spriteID: a4dc897a19ed3d14883154de2f84d9de
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_70
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 3269aefd9ac538443aa274c914d07200
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_71
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 27f80cd343e953145badc38d83f21830
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_72
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 2a540bf42d29a8440acadb1aea3d419e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_73
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 346685fe40310784991b284b707f3a74
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_74
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 128
+      width: 16
+      height: 16
+    spriteID: f7f11e18039aacc4ea81f518b0a557e8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_75
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 6ea8fbe1db351f04c961bba9da152096
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_76
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 128
+      width: 16
+      height: 16
+    spriteID: f89edea85de986640909ae33c4efde0f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_77
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 0a7d4607726ea224ea7a87a4979daafa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_78
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 9b9af66977fa4ff4584f8c6a73f99b50
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_79
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 235d6596dfcb7d54aac16d9abf168b19
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_80
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 48223e32d3ec0a849882b6970f7349bc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_81
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 128
+      width: 16
+      height: 16
+    spriteID: 8ed6bfeb5e9c7a449941130af55adb74
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_82
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 128
+      width: 16
+      height: 16
+    spriteID: c12a1991eb8afac4ea7f5246e037b3e8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_83
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 128
+      width: 16
+      height: 16
+    spriteID: f6ac40da1efa9a742becec165a20dfcf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_84
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 112
+      width: 16
+      height: 16
+    spriteID: a1602a583dc5c4541a3be5d9f663014c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_85
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 112
+      width: 16
+      height: 16
+    spriteID: e095bf62ab57987448ca36c00cf3f61a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_86
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 828735a19a8dbde4a8a16fdbbb60f883
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_87
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 62426b2705e044a44b4798200ee249b0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_88
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 2b61a7c594d50c84a83f5f9be5ce878d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_89
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 9687c3fa1b967ae4bb369a1b085494e5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_90
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 112
+      width: 16
+      height: 16
+    spriteID: dc0dd1610f91d5e48a2cb1be3eb1ae68
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_91
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 112
+      width: 16
+      height: 16
+    spriteID: fcd57fdf44ec2cb42b449ddd9c50975b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_92
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 4840bb9dd9c4e9947bd5f5db739d76e2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_93
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 259fa7e37f7601142857a1725b38fb6c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_94
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 4d6b74b63b7946c43ad6612f0408c329
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_95
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 112
+      width: 16
+      height: 16
+    spriteID: f64170db8d737f248925a839e87f1b35
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_96
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 112
+      width: 16
+      height: 16
+    spriteID: fa16253c3d306594bbedb0d7a8f15a8f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_97
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 112
+      width: 16
+      height: 16
+    spriteID: 2456b9cc0ee9b5445b34e7555de823f3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_98
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 96
+      width: 16
+      height: 16
+    spriteID: d71dcb7e2cdc6fe4daa50dd4cf395104
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_99
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 9356a8b2e9dc413469e07c739136b7e0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_100
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 35b0c77f77a26e049808a3db1be90362
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_101
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 2da01811e29dacf43ab8d8a33c4d8180
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_102
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 22d545ec94a81474fa668edf1621a8b5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_103
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 96
+      width: 16
+      height: 16
+    spriteID: f1dc646b5c728cb4faf509549c6ed9e4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_104
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 4ea95a6bcc718bb49b1de39cd6355021
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_105
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 96
+      width: 16
+      height: 16
+    spriteID: a68c43580d40d5d4baac75db9dd8efdb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_106
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 96
+      width: 16
+      height: 16
+    spriteID: fbd896fdee695314c85c63a1bad15ad3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_107
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 96
+      width: 16
+      height: 16
+    spriteID: e518aa0e9b2a9624da07a982e2b8b396
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_108
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 96
+      width: 16
+      height: 16
+    spriteID: f37b6311718c51b43967b2d989722662
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_109
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 96
+      width: 16
+      height: 16
+    spriteID: 350937695219db54aae8162152fbc307
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_110
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 96
+      width: 16
+      height: 16
+    spriteID: de4fa3ddf2d81374fb7601d58064a2d5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_111
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 96
+      width: 16
+      height: 16
+    spriteID: a5136192512bdb442a53ddbd3a6f8651
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_112
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 361f87d3addaa104caed2500834a127a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_113
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 80
+      width: 16
+      height: 16
+    spriteID: ae3b24b41cd07904d8cdfc42ce8ac8b5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_114
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 1caa3b2e083045f49a69a3a77ed2025d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_115
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 80
+      width: 16
+      height: 16
+    spriteID: e6cd89012b08443419ff6651553ad542
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_116
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 80
+      width: 16
+      height: 16
+    spriteID: cb3e2d208b4c4344eb89bec496829f09
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_117
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 80
+      width: 16
+      height: 16
+    spriteID: ecb33fdc89835c94f9ac2eef05503887
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_118
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 91d39124f46847b47b499f359063c05d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_119
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 903a08825c659394b962a216c74dd069
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_120
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 4ba3e3774da01914699cf673feb3fbd8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_121
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 264fecb9a04a40c499b5ccc0c3ba0097
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_122
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 634fb5183b23b044db50b8cdd4e74d96
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_123
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 5428ba93b61b1294d8dfbc791800744e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_124
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 80
+      width: 16
+      height: 16
+    spriteID: 28949ed3a49686f47b6f910dc1815b83
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_125
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 80
+      width: 16
+      height: 16
+    spriteID: bdb0533a19286484c98186fd6355424d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_126
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 341d2da487f852f44920cafcdba19efb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_127
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 87ba8862a8becae4aae0feb0625d45cd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_128
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 9294334431d111a4ba8c19a1ec332d7e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_129
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 64
+      width: 16
+      height: 16
+    spriteID: eecf0247e36bbae41ae2bf22705c2670
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_130
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 1d93fa04fdd4412479c38219da58a1d4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_131
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 32476a2c49629b541a66ac5c986314a7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_132
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 64
+      width: 16
+      height: 16
+    spriteID: d9d8d4059919c4c4ea4053c681457d9a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_133
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 64
+      width: 16
+      height: 16
+    spriteID: de050ae382c35e642aff67768c02bc17
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_134
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 0edafc126bbeeb842971420435358bb3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_135
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 64
+      width: 16
+      height: 16
+    spriteID: bbf0fcf97cfc7f84a94d3cf370a57b87
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_136
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 442754843c53c7746882d96f82274486
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_137
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 466350324596fcb4887ac51a0d68fe48
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_138
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 194ba20dae7b37b4d90539cf96fa280b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_139
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 64
+      width: 16
+      height: 16
+    spriteID: 3a91edd0ce1c31d42b7ee78320ce0e7f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_140
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 188b398aa285df64e80a249ddea22b94
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_141
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 48
+      width: 16
+      height: 16
+    spriteID: e3893ba40fc8b20498a4485f1d5257b6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_142
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 48
+      width: 16
+      height: 16
+    spriteID: b17d66c2ae323d84da861ef9067ab935
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_143
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 24ccb63f65b0da340940b6bb2ce0a6cb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_144
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 9de20711c50a84542a364e6192213ae8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_145
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 48
+      width: 16
+      height: 16
+    spriteID: d499adcaf3f888e42ba7d1a909c05d6c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_146
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 59fa2521718f015499d8bc7faa4b60c4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_147
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 401e0b81b304ea34ebd00fae988d50df
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_148
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 48
+      width: 16
+      height: 16
+    spriteID: d16952dc532832741b120da984be2a61
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_149
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 900e12cd0a51f0040b76da71c3e68ab9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_150
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 48
+      width: 16
+      height: 16
+    spriteID: c98e8accfc0561240adcba0cb71f585c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_151
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 6a662b2341add214fa2415c97f5419fa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_152
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 48
+      width: 16
+      height: 16
+    spriteID: 44d67ba43b6208841be641bf0ce51583
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_153
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 48
+      width: 16
+      height: 16
+    spriteID: f5e6c69d6604bd042a344e0b917ae41f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_154
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 38d96d42f43af4046b798b2520209fd6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_155
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 32
+      width: 16
+      height: 16
+    spriteID: d1025d57c92ba74469ff74ab61985d21
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_156
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 84a194987c63e69469ca10c3e76dd80b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_157
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 32
+      width: 16
+      height: 16
+    spriteID: c1f86d910a86f7f45b28c32f9814c1e7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_158
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 16
+      height: 16
+    spriteID: aa60be2f2938df643ba390464ccdc286
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_159
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 32
+      width: 16
+      height: 16
+    spriteID: ce99187904559074c9f20c6d475e343d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_160
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 21c1a96a51cdc0142a72b792928a46b6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_161
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 32
+      width: 16
+      height: 16
+    spriteID: d3f52a414d515bb4b9d5ecf99cb91513
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_162
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 61d867b90819135468ad1a33936a2194
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_163
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 9be9c4d09478f434fac1e01640bc0462
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_164
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 785ae0caf68635145948597b87c84981
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_165
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 66268382d85028747b06f4b305bd4305
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_166
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 32
+      width: 16
+      height: 16
+    spriteID: cb85bea65ee2461429da5abec4a3ab44
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_167
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 32
+      width: 16
+      height: 16
+    spriteID: 01ccac0776f46974db1fb94f5b34b9fc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_168
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 16
+      width: 16
+      height: 16
+    spriteID: e1dd73a40b39960498ec8aeaf61d4660
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_169
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 548de19fda7a4064493db0c547a897cf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_170
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 5bcd48c8ac6b2d7458350d22a23192a2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_171
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 8bd7fdde5fa009c43a0a42a05eb68071
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_172
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 16
+      width: 16
+      height: 16
+    spriteID: c0f00fcb48bb9b249a7745cfbfd8351e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_173
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 8da026a327b4c9d4a87711303cfbccd3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_174
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 81a11210a907f2942a8652fd295b9000
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_175
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 500fac8281500bf46a81f1cc263fa671
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_176
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 97ca25c4b1fd2dc44839b5ae597c9a68
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_177
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 16
+      width: 16
+      height: 16
+    spriteID: f15592d5a69003c4a9ad8c179f0788ff
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_178
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 01435e0124fdc8a4eb84377a097fac97
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_179
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 9d3712703b2b5934887d89b5562ac254
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_180
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 16
+      width: 16
+      height: 16
+    spriteID: 98968a04a4d8e4940bfb38ab578b271c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_181
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 16
+      width: 16
+      height: 16
+    spriteID: de867e666453a5c449f08b003556a3e0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_182
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 9c7c1f7f3dc461a4fad64e461d913a73
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_183
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 16
+      y: 0
+      width: 16
+      height: 16
+    spriteID: d057d9abb62b81446851e93b3a712eec
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_184
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 75a76e22e2a875b43b14594ddc1d14df
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_185
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 0a1aa4d08af0795479354235c3b2f4fe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_186
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 9a00ef4ab841634459e4c871b5f88876
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_187
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 9ce39167317310b4fad2313439fdb795
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_188
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 5bde3645b0a515d448930ab7b086ea19
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_189
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 0
+      width: 16
+      height: 16
+    spriteID: c9579c71f3156c44084be23e5d8b5d66
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_190
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 6420399007cf7f4448fb0594d4297d69
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_191
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 628c4098aa8336f44b911c9964b59150
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_192
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 08e8d98c1a65fe940bdea6e4f9677c15
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_193
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 3f39e7e12b29c5c4a9bb84bd9b491e72
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_194
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 16
+      height: 16
+    spriteID: 3be8acfcce339ea40be4315b38e68739
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Ground1_195
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 0
+      width: 16
+      height: 16
+    spriteID: e60df18f1d4b34c4da0d0c5c383dcd64
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {instanceID: 0}

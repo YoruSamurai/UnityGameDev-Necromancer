@@ -22,7 +22,10 @@ public class PlayerMoveState : PlayerGroundState
     {
         base.Update();
 
+        //给玩家设置X方向速度 y不变
         player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
+
+        //x方向上没有速度的话就切换到静止状态
         if (xInput == 0)
         {
             stateMachine.ChangeState(player.idleState);

@@ -11,6 +11,7 @@ public class PlayerDashState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        //冲刺开始时 给玩家设置冲刺持续时间
         stateTimer = player.dashDuration;
     }
 
@@ -24,8 +25,10 @@ public class PlayerDashState : PlayerState
     public override void Update()
     {
         base.Update();
-        Debug.Log("dash");
+        //设置冲刺速度 开冲
         player.SetVelocity(player.dashSpeed * player.dashDir, 0);
+
+        //在冲刺时间结束后，回到静止状态
         if(stateTimer < 0f)
         {
             //stateMachine.ChangeState(player.moveState);
