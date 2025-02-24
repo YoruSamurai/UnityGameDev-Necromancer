@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
 
         //用于测试碰撞 后续删掉
         {
-            Debug.Log(IsGroundDetected());
+            //Debug.Log(IsGroundDetected());
             // 射线起点为当前物体的位置
             Vector2 origin = transform.position;
             // 射线方向为向下
@@ -95,11 +95,11 @@ public class Player : MonoBehaviour
             // 遍历所有命中的物体
             foreach (RaycastHit2D hit in hits)
             {
-                Debug.Log("Hit object: " + hit.collider.name);
+                //Debug.Log("Hit object: " + hit.collider.name);
             }
 
             // 在 Scene 视图中绘制射线，方便调试
-            Debug.DrawRay(origin, direction * distance, Color.red);
+            //Debug.DrawRay(origin, direction * distance, Color.red);
         }
         
 

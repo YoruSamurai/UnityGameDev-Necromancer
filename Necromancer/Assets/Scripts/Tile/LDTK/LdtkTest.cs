@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using LDtkUnity;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static LdtkTest;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public enum DoorDirection { Left, Right, Top, Bottom, Default }
@@ -36,7 +37,8 @@ public class LdtkTest : MonoBehaviour
     [Serializable]
     public class Door
     {
-        public Vector2 Position;
+        public Vector2 relativePosition;
+        public Vector2 worldPosition;
         public DoorDirection Direction;
         public LDtkComponentLevel ParentLevel;
     }
@@ -66,8 +68,9 @@ public class LdtkTest : MonoBehaviour
         // 生成初始房间
         LDtkComponentLevel initialRoom = InstantiateRandomRoom(Vector3.zero);
         //生成房间对应的门加入unconnectedRoomDoors 然后设置roomdata
-        Door door = FindRoomDoors(initialRoom,DoorDirection.Default,RoomType.BattleRoom);
-        SetRoomData(initialRoom,new Vector2(0,0));
+        //Door door = FindRoomDoors(initialRoom,null,RoomType.BattleRoom);
+        SetUpRoom(initialRoom, null, RoomType.BattleRoom);
+        //SetRoomData(initialRoom,new Vector2(0,0));
         // 开始连接流程
         ProcessUnconnectedDoors();
     }
@@ -80,22 +83,16 @@ public class LdtkTest : MonoBehaviour
         {
             //获取当前门 并丢掉 我们通过这个门找对应的走廊
             Door currentDoor = unconnectedRoomDoors[0];
+            Debug.Log(currentDoor.relativePosition);
             unconnectedRoomDoors.RemoveAt(0);
 
             // 寻找匹配的走廊并生成
             LDtkComponentLevel corridor = FindMatchingRoom(currentDoor.Direction, RoomType.Corridor);
-            LDtkComponentLevel corridorInstance = Instantiate(corridor, Vector3.zero, Quaternion.identity);
 
-            //找到走廊还没有被连接的门 返回刚刚和房间连接的门
-            Door positionDoor = FindRoomDoors(corridorInstance, currentDoor.Direction, RoomType.Corridor);
+            LDtkComponentLevel instance = SetUpRoom(corridor, currentDoor, RoomType.Corridor);
 
-            // 根据房间位置 门位置找到这个走廊的位置并设置
-            Vector3 corridorPosition = CalculateCorridorPosition(currentDoor, positionDoor);
-            corridorInstance.transform.position = corridorPosition;
-            SetRoomData(corridorInstance, corridorPosition);
 
-            //给走廊添加对应的房间
-            ConnectNewRoom(corridorInstance);
+            ConnectNewRoom(instance);
         }
     }
 
@@ -103,37 +100,64 @@ public class LdtkTest : MonoBehaviour
     private void ConnectNewRoom(LDtkComponentLevel corridor)
     {
         //必须给每个走廊连接房间！
-        while (unconnectedCorridorDoors.Count > 0)
+        int counter = 100;
+        while (unconnectedCorridorDoors.Count > 0 && counter >0)
         {
+            counter--;
             //找门
             Door currentDoor = unconnectedCorridorDoors[0];
-            Debug.Log("hadhadhsodaodaod" + currentDoor.Position);
+            Debug.Log("当前门位置" + currentDoor.worldPosition);
             unconnectedCorridorDoors.RemoveAt(0);
-
             // 寻找匹配的房间
-            LDtkComponentLevel room = FindMatchingRoom(currentDoor.Direction,RoomType.Corridor);
-            if (room == null) continue;
+            LDtkComponentLevel room = FindMatchingRoom(currentDoor.Direction,RoomType.BattleRoom);
+            if (room == null)
+            {
+                Debug.LogError("没有找到对应房间");
+            }
+            LDtkComponentLevel instance = SetUpRoom(room, currentDoor, RoomType.BattleRoom);
 
-            // 寻找出口门
-            Door positionDoor = FindRoomDoors(room, currentDoor.Direction, RoomType.Corridor);
-
-            // 计算房间位置 并生成1
-            Vector3 roomPosition = CalculateCorridorPosition(currentDoor, positionDoor);
-            LDtkComponentLevel newRoom = Instantiate(room, roomPosition, Quaternion.identity);
-            SetRoomData(newRoom, roomPosition);
         }
+        Debug.Log(corridor + "已闭合");
+    }
+
+    private RoomData GetRoomData(LDtkComponentLevel room)
+    {
+        RoomData roomData = new RoomData();
+        foreach (var data in roomDatas)
+        {
+            if (data.room.Equals(room))
+            {
+                roomData = data;
+                break;
+            }
+        }
+        return roomData;
     }
 
     //通过level和位置设置roomdata
-    public void SetRoomData(LDtkComponentLevel room,Vector2 startPosition)
+    public void SetRoomData(LDtkComponentLevel room,Door currentDoor,Door positionDoor)
     {
-        roomDatas.Add(new RoomData
+        if(positionDoor == null)
         {
-            room = room,
-            startPosition = startPosition,
-            width = room.BorderRect.width,
-            height = room.BorderRect.height
-        });
+            roomDatas.Add(new RoomData
+            {
+                room = room,
+                startPosition = new Vector2(0,0),
+                width = room.BorderRect.width,
+                height = room.BorderRect.height
+            });
+        }
+        else
+        {
+            roomDatas.Add(new RoomData
+            {
+                room = room,
+                startPosition = currentDoor.worldPosition - positionDoor.relativePosition,
+                width = room.BorderRect.width,
+                height = room.BorderRect.height
+            });
+        }
+        
     }
 
     
@@ -141,11 +165,12 @@ public class LdtkTest : MonoBehaviour
     private LDtkComponentLevel InstantiateRandomRoom(Vector3 position)
     {
         LDtkComponentLevel prefab = rooms[UnityEngine.Random.Range(0, rooms.Count)];
-        return Instantiate(prefab, position, Quaternion.identity);
+        return prefab;
     }
 
-    //
-    private Door FindRoomDoors(LDtkComponentLevel room, DoorDirection doorDir,RoomType roomType)//参数DoorDir是和他连接的room的门的方向
+    
+    //在这里初始化房间 初始化门 设置位置
+    private LDtkComponentLevel SetUpRoom(LDtkComponentLevel room, Door currentDoor, RoomType roomType)
     {
         //找到这个房间对应的tileMap
         Transform doorTransform = room.transform.Find("Door");
@@ -166,12 +191,57 @@ public class LdtkTest : MonoBehaviour
         Rect levelRect = room.BorderRect;
         //和他连接的房间的门的对应门
         Door positionDoor = null;
+        Vector2 worldPos = new Vector2();
+        if (currentDoor != null)
+        {
+            worldPos = currentDoor.worldPosition;
+        }
+        LDtkComponentLevel ldtkInstance = null;
+        //进行第一次遍历 初始化第一个门/找到对应门
+        positionDoor = FindInitialDoor(room, currentDoor, roomType, doorLayer);
+        if(positionDoor == null)
+        {
+            Debug.Log("初始房间一位");
+            //生成实例 并set
+            ldtkInstance = Instantiate(room, Vector3.zero, Quaternion.identity);
+            SetRoomData(ldtkInstance, currentDoor, positionDoor);
+        }
+        else
+        {
+            //生成实例 并set
+            ldtkInstance = Instantiate(room, Vector3.zero, Quaternion.identity);
+            SetRoomData(ldtkInstance, currentDoor, positionDoor);
+            //Vector3 worldPosition = CalculateCorridorPosition(currentDoor, positionDoor);
+            Vector3 worldPosition = currentDoor.worldPosition - positionDoor.relativePosition;
+            Debug.Log("世界坐标" +  worldPosition);
+            ldtkInstance.transform.position = worldPosition;
+            //第二次遍历 找到未被连接的门并加入
+            Debug.Log("大神解答解答" + positionDoor.worldPosition);
+            if(positionDoor != null)
+            {
+                FindOtherDoor(ldtkInstance, positionDoor, roomType, doorLayer);
+            }
+            
+        }
 
+        return ldtkInstance;
+    }
+
+    private Door FindInitialDoor(LDtkComponentLevel room, Door currentDoor, RoomType roomType, Tilemap doorLayer)
+    {
+        Rect levelRect = room.BorderRect;
+        //和他连接的房间的门的对应门
+        Door positionDoor = null;
+        Vector2 worldPos = new Vector2();
+        if (currentDoor != null)
+        {
+            worldPos = currentDoor.worldPosition;
+        }
         //遍历门tilemap的每个tile
         //cellPos是这个level的相对坐标
         foreach (Vector3Int cellPos in doorLayer.cellBounds.allPositionsWithin)
         {
-            if(roomType == RoomType.BattleRoom)
+            if (roomType == RoomType.BattleRoom)
             {
                 if (!doorLayer.HasTile(cellPos)) continue;
 
@@ -188,19 +258,22 @@ public class LdtkTest : MonoBehaviour
                         break;
                     }
                 }
-
                 //可以加门
                 if (canAddDoor)
                 {
-                    //如果这个门不是当前另一个房间的门所对应的连接门，则添加到未连接
-                    if (doorDir != GetOppositeDirection(dir))
+                    if (currentDoor == null)
                     {
                         unconnectedRoomDoors.Add(new Door
                         {
-                            Position = new Vector2(cellPos.x, cellPos.y),
+                            relativePosition = new Vector2(cellPos.x, cellPos.y),
+                            worldPosition = new Vector2(cellPos.x, cellPos.y),
                             Direction = dir,
                             ParentLevel = room
                         });
+                    }
+                    else if (currentDoor.Direction != GetOppositeDirection(dir))
+                    {
+                        continue;
                     }
                     //如果这个门是当前另一个房间的门对应的连接门，则不添加，但此时需要添加到对应门并返回
                     else
@@ -209,7 +282,8 @@ public class LdtkTest : MonoBehaviour
                         {
                             positionDoor = new Door
                             {
-                                Position = new Vector2(cellPos.x, cellPos.y),
+                                relativePosition = new Vector2(cellPos.x, cellPos.y),
+                                worldPosition = worldPos,
                                 Direction = dir,
                                 ParentLevel = room
                             };
@@ -217,7 +291,7 @@ public class LdtkTest : MonoBehaviour
                     }
                 }
             }
-            else if(roomType == RoomType.Corridor)
+            else if (roomType == RoomType.Corridor)
             {
                 if (!doorLayer.HasTile(cellPos)) continue;
                 DoorDirection dir = GetDoorDirection(cellPos, levelRect);
@@ -233,14 +307,9 @@ public class LdtkTest : MonoBehaviour
                 }
                 if (canAddDoor)
                 {
-                    if (doorDir != GetOppositeDirection(dir))
+                    if (currentDoor.Direction != GetOppositeDirection(dir))
                     {
-                        unconnectedCorridorDoors.Add(new Door
-                        {
-                            Position = new Vector2(cellPos.x, cellPos.y),
-                            Direction = dir,
-                            ParentLevel = room
-                        });
+                        continue;
                     }
                     else
                     {
@@ -248,81 +317,125 @@ public class LdtkTest : MonoBehaviour
                         {
                             positionDoor = new Door
                             {
-                                Position = new Vector2(cellPos.x, cellPos.y),
+                                relativePosition = new Vector2(cellPos.x, cellPos.y),
+                                worldPosition = worldPos,
                                 Direction = dir,
                                 ParentLevel = room
                             };
                         }
                     }
                 }
-                //Debug.Log(unconnectedCorridorDoors.Count);
             }
-            //Debug.Log(unconnectedRoomDoors.Count);
         }
+        if (positionDoor != null)
+        {
+            Debug.Log("目标门" + positionDoor.ParentLevel + positionDoor.relativePosition + " " + positionDoor.worldPosition);
+        }
+
         return positionDoor;
     }
-    private Door FindCorridorDoors(LDtkComponentLevel room, DoorDirection doorDir)
+    private void FindOtherDoor(LDtkComponentLevel room, Door currentDoor, RoomType roomType, Tilemap doorLayer)
     {
-        Transform doorTransform = room.transform.Find("Door");
-        if (doorTransform == null)
-        {
-            Debug.LogError($"No Door object found in room: {room.name}");
-            return null;
-        }
-        Tilemap doorLayer = doorTransform.GetComponentInChildren<Tilemap>();
-        if (doorLayer == null)
-        {
-            Debug.LogError($"No Tilemap component found on Door object in room: {room.name}");
-            return null;
-        }
-
         Rect levelRect = room.BorderRect;
-        //此时获取当前对着的门
-        Door positionDoor = null;
-
-
+        Debug.Log("开始找其他门");
+        //和他连接的房间的门的对应门
+        Vector2 worldPos = new Vector2();
+        if (currentDoor != null)
+        {
+            worldPos = currentDoor.worldPosition;
+        }
+        //遍历门tilemap的每个tile
+        //cellPos是这个level的相对坐标
         foreach (Vector3Int cellPos in doorLayer.cellBounds.allPositionsWithin)
         {
-            if (!doorLayer.HasTile(cellPos)) continue;
-            DoorDirection dir = GetDoorDirection(cellPos, levelRect);
-            
-            bool canAddDoor = true;
-            foreach (var door in unconnectedCorridorDoors)
+            if (roomType == RoomType.BattleRoom)
             {
-                if (door.Direction == dir && door.ParentLevel == room)
+                if (!doorLayer.HasTile(cellPos)) continue;
+
+                DoorDirection dir = GetDoorDirection(cellPos, levelRect);//通过tile的位置和这个level的长宽获取门是在上下左右方向。
+                                                                         //能不能加门
+                bool canAddDoor = true;
+
+                //对没有连接的门进行遍历 如果门的方向相同并且这两个门从属于一个房间 则无法往unconnectedRoomDoors加门（一个房间一个方向的门只能有一个）
+                foreach (var door in unconnectedRoomDoors)
                 {
-                    canAddDoor = false;
-                    break;
-                }
-            }
-            if (canAddDoor)
-            {
-                if(doorDir != GetOppositeDirection(dir))
-                {
-                    unconnectedCorridorDoors.Add(new Door
+                    if (door.Direction == dir && door.ParentLevel == room)
                     {
-                        Position = new Vector2(cellPos.x, cellPos.y),
-                        Direction = dir,
-                        ParentLevel = room
-                    });
+                        canAddDoor = false;
+                        break;
+                    }
                 }
-                else
+                
+
+                //可以加门
+                if (canAddDoor)
                 {
-                    if(positionDoor == null)
+                    
+
+                    if (currentDoor == null)
                     {
-                        positionDoor = new Door
+                        continue;
+                    }
+                    else if (currentDoor.Direction != (dir))
+                    {
+                        Debug.Log("储蓄额我是");
+                        unconnectedRoomDoors.Add(new Door
                         {
-                            Position = new Vector2(cellPos.x,cellPos.y),
+                            relativePosition = new Vector2(cellPos.x, cellPos.y),
+                            worldPosition = GetRoomData(room).startPosition + new Vector2(cellPos.x, cellPos.y),
+                            //worldPosition = worldPos + new Vector2(cellPos.x, cellPos.y),
                             Direction = dir,
                             ParentLevel = room
-                        };
+                        });
+                    }
+                    //如果这个门是当前另一个房间的门对应的连接门，则不添加，但此时需要添加到对应门并返回
+                    else
+                    {
+                        continue;
                     }
                 }
             }
-            //Debug.Log(unconnectedCorridorDoors.Count);
+            else if (roomType == RoomType.Corridor)
+            {
+                if (!doorLayer.HasTile(cellPos)) continue;
+                DoorDirection dir = GetDoorDirection(cellPos, levelRect);
+
+                bool canAddDoor = true;
+                foreach (var door in unconnectedCorridorDoors)
+                {
+                    if (door.Direction == dir && door.ParentLevel == room)
+                    {
+                        canAddDoor = false;
+                        break;
+                    }
+                }
+                if (canAddDoor)
+                {
+                    if (currentDoor.Direction != (dir))
+                    {
+                        Debug.Log("储蓄额ads我是");
+                        Debug.Log(GetRoomData(room).startPosition + "  " + cellPos.x + cellPos.y);
+                        unconnectedCorridorDoors.Add(new Door
+                        {
+                            relativePosition = new Vector2(cellPos.x, cellPos.y),
+                            worldPosition = GetRoomData(room).startPosition + new Vector2(cellPos.x, cellPos.y),
+                            Direction = dir,
+                            ParentLevel = room
+                        });
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
         }
-        return positionDoor;
+
+        return;
     }
+
+    
+    
 
     //返回这个房间有多少方向的门及对应方向
     private List<DoorDirection> GetRoomDoorDirList(LDtkComponentLevel room)
@@ -376,21 +489,7 @@ public class LdtkTest : MonoBehaviour
     
 
     //通过对应门方向遍历房间 有就返回（也许后续可以做成那种 找列表 随即返回？）
-    private LDtkComponentLevel FindMatchingCorridor(DoorDirection doorDir)
-    {
-        DoorDirection requiredExit = GetOppositeDirection(doorDir);
-        foreach (LDtkComponentLevel corridor in corridors)
-        {
-            //获取每个房间的方向
-            List<DoorDirection> doorDirections = GetRoomDoorDirList(corridor);
-            if (doorDirections.Contains(requiredExit))
-            {
-                Debug.Log("有这样的走廊");
-                return corridor;
-            }
-        }
-        return null;
-    }
+    
 
     private LDtkComponentLevel FindMatchingRoom(DoorDirection doorDir,RoomType roomType)
     {
@@ -403,7 +502,7 @@ public class LdtkTest : MonoBehaviour
                 List<DoorDirection> doorDirections = GetRoomDoorDirList(room);
                 if (doorDirections.Contains(requiredExit))
                 {
-                    Debug.Log("有这样的房间");
+                    //Debug.Log("有这样的房间");
                     //return room;
                     roomList.Add(room);
                 }
@@ -417,7 +516,7 @@ public class LdtkTest : MonoBehaviour
                 List<DoorDirection> doorDirections = GetRoomDoorDirList(corridor);
                 if (doorDirections.Contains(requiredExit))
                 {
-                    Debug.Log("有这样的走廊");
+                    //Debug.Log("有这样的走廊");
                     //return corridor;
                     roomList.Add(corridor);
                 }
@@ -433,29 +532,40 @@ public class LdtkTest : MonoBehaviour
         //找到door的房间数据
         foreach (var data in roomDatas)
         {
-            //Debug.Log("这是" + data.room);
-            if (data.room.Equals(door.ParentLevel))
+            if (data.room.Equals(offsetDoor.ParentLevel))
             {
-                Debug.Log("找到了" + door.ParentLevel);
                 roomData = data;
                 break;
             }
         }
+
+
         //门的位置是door的房间的起始点+door的相对位置
-        Vector2 doorPosition =  roomData.startPosition + door.Position;
+        Vector2 doorPosition =  roomData.startPosition + door.relativePosition;
         //新房间的位置则是门的位置减去门在新房间的相对位置
-        Vector2 newRoomPosition = doorPosition - offsetDoor.Position;
+        Vector2 newRoomPosition = doorPosition - offsetDoor.relativePosition;
+
+        //Vector2 testPostion = offsetDoor.worldPosition - offsetDoor.relativePosition;   
+        Vector2 testPostion = roomData.startPosition;
         //给一点每个方向的简单偏移
         switch (door.Direction)
         {
             case DoorDirection.Right:
+                return testPostion ;
+            case DoorDirection.Left:
+                return testPostion ;
+            case DoorDirection.Top:
+                return testPostion ;
+            case DoorDirection.Bottom:
+                return testPostion ;
+            /*case DoorDirection.Right:
                 return newRoomPosition + new Vector2(1f, 0f);
             case DoorDirection.Left:
                 return newRoomPosition + new Vector2(-1f, 0f);
             case DoorDirection.Top:
                 return newRoomPosition + new Vector2(0f, 1f);
             case DoorDirection.Bottom:
-                return newRoomPosition + new Vector2(0f, 1f);
+                return newRoomPosition + new Vector2(0f, 1f);*/
             default: return Vector3.zero;
         }
     }
@@ -475,24 +585,7 @@ public class LdtkTest : MonoBehaviour
         };
     }
 
-    /*//没用
-    private Vector3 CalculateRoomPosition(Door corridorExit)
-    {
-        float roomOffset = 5f; // 根据房间尺寸调整
-        return corridorExit.Position + GetDirectionVector(corridorExit.Direction) * roomOffset;
-    }*/
-
-    /*private Vector2 GetDirectionVector(DoorDirection dir)
-    {
-        return dir switch
-        {
-            DoorDirection.Right => Vector2.right,
-            DoorDirection.Left => Vector2.left,
-            DoorDirection.Top => Vector2.up,
-            DoorDirection.Bottom => Vector2.down,
-            _ => Vector2.zero
-        };
-    }*/
+    
 
     // 其他已有方法...
 
