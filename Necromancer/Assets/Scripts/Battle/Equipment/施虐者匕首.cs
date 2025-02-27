@@ -1,0 +1,116 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class 施虐者匕首 : MeleeEquipment
+{
+
+    protected override void Start()
+    {
+        base.Start();
+        Debug.Log("匕首，启动！");
+
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    public override void UseEquipment()
+    {
+        // 检查是否处于攻击CD中
+        if (attackCooldownTimer > 0f)
+        {
+            //Debug.Log("攻击还在冷却中！");
+            return;
+        }
+        base.UseEquipment();
+
+        // 触发攻击特效（蓝色闪烁）
+        TriggerAttackEffect();
+
+        //这里就可以开始写攻击的各种逻辑了
+        Attack();
+        CheckHit();
+
+        // 攻击后重置combo和冷却时间
+        ResetCombo();
+    }
+
+
+
+
+
+    private void CheckHit()
+    {
+        if (currentCombo >= meleeAttacks.Count) return;
+
+        meleeAttackStruct currentAttack = meleeAttacks[currentCombo];
+        bool isFacingRight = transform.lossyScale.x > 0;
+        Vector2 faceDirection = isFacingRight ? Vector2.right : Vector2.left;
+
+        Vector2 attackCenter = currentAttack.attackCenter switch
+        {
+            MeleeAttackCenterEnum.player => transform.position,
+            MeleeAttackCenterEnum.front => currentAttack.attackShape == MeleeAttackShapeEnum.circle ?
+                (Vector2)transform.position + faceDirection * currentAttack.attackRadius : (Vector2)transform.position + faceDirection * currentAttack.attackLength / 2,
+            _ => transform.position
+        };
+
+        Collider2D[] hits;
+        if (currentAttack.attackShape == MeleeAttackShapeEnum.circle)
+        {
+            hits = Physics2D.OverlapCircleAll(attackCenter, currentAttack.attackRadius, PlayerStats.Instance.whatIsEnemy);
+        }
+        else
+        {
+            Vector2 size = new Vector2(currentAttack.attackLength, currentAttack.attackWidth);
+            hits = Physics2D.OverlapBoxAll(
+                attackCenter,
+                size,
+                isFacingRight ? 0 : 180,
+                PlayerStats.Instance.whatIsEnemy
+            );
+        }
+
+        if (hits.Length > 0)
+        {
+            foreach (Collider2D hit in hits)
+            {
+                MonsterStats monsterStats = hit.GetComponent<MonsterStats>();
+                PlayerStats.Instance.OnHit(this, monsterStats);
+            }
+        }
+        else
+        {
+            Debug.Log("未命中敌人");
+        }
+    }
+
+    private void Attack()
+    {
+        PlayerStats.Instance.OnAttack();
+    }
+
+
+    public override void DoDamage(float _cMag, MonsterStats monsterStats)
+    {
+        base.DoDamage(_cMag, monsterStats);
+        canCrit = false;
+        if (UnityEngine.Random.Range(0, 100) < baseCritChance)
+        {
+            canCrit = true;
+
+        }
+        if(monsterStats.isInPoison() || monsterStats.isInBleed())
+        {
+            canCrit = true;
+            Debug.Log("敌人在毒状态/流血状态 造成暴击");
+        }
+
+
+        int dmg = (int)(currentDmg * _cMag * (canCrit ? critMag : 1));
+        Debug.Log($"暴击{canCrit},造成伤害{dmg}");
+    }
+}

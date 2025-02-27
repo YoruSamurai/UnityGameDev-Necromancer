@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ddd6e67cc52504daa2739900c43e2a, type: 3}
+  m_Name: Affix_addDmg40
+  m_EditorClassIdentifier: 
+  affixTag: 5
+  triggerCondition: 1
+  needEquipmentTags: 
+  contrastEquipmentTags: 
+  contrastAffixTags: 04000000
+  affixRarity: 0
+  affixDesc: "\u653B\u51FB\u547D\u4E2D\u65F6\uFF0C+40%\u4F24\u5BB3"
