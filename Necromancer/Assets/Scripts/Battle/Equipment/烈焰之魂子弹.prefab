@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipment: {fileID: 0}
+  explosionParticlePrefab: {fileID: 4903194783037551404, guid: c8e690131529bb5498b54cecc05f5d01, type: 3}
   attackMag: 0
   attackStun: 0
   projectileSpeed: 0
@@ -109,6 +110,7 @@ MonoBehaviour:
   projectileRadius: 0
   startPosition: {x: 0, y: 0}
   hasHit: 0
+  isFacingRight: 0
   destroyDelay: 0.2
   circleCollider: {fileID: 0}
   rb: {fileID: 0}

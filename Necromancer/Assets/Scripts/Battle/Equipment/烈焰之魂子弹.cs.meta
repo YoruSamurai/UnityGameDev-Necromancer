@@ -3,7 +3,11 @@ guid: 2af9ac086ab8b8249aa50033045f58d6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - equipment: {instanceID: 0}
+  - explosionParticlePrefab: {instanceID: 0}
+  - circleCollider: {instanceID: 0}
+  - rb: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

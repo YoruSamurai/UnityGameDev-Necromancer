@@ -25,9 +25,9 @@ MonoBehaviour:
   - attackTime: 1
     attackMag: 1
     attackStun: 4
-    projectileSpeed: 30
+    projectileSpeed: 50
     projectileMaxDistance: 100
     projectileMaxTimer: 10
-    projectileGravity: 0
+    projectileGravity: 0.2
     projectileRadius: 0.3
     comboBreakTime: 3

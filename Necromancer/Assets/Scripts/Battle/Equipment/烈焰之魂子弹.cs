@@ -5,7 +5,7 @@ using UnityEngine;
 public class 烈焰之魂子弹 : MonoBehaviour
 {
     [SerializeField] private 烈焰之魂 equipment;
-
+    [SerializeField] private GameObject explosionParticlePrefab; // 爆炸特效预制体
 
     [SerializeField] private float attackMag;
     [SerializeField] private float attackStun;
@@ -39,9 +39,23 @@ public class 烈焰之魂子弹 : MonoBehaviour
 
         circleCollider = GetComponent<CircleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
         rb.gravityScale = projectileGravity;
         circleCollider.radius = projectileRadius;
+
+        // 初始速度（加上水平速度，重力会由 Rigidbody2D 自动处理）
+        float xDirection = isFacingRight ? 1f : -1f;
+        rb.velocity = new Vector2(xDirection * projectileSpeed, rb.velocity.y);
+
+        // 设置 Sprite 方向
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.flipX = !isFacingRight;
+        }
+
+        // 记录初始位置
+        startPosition = transform.position;
     }
 
 
@@ -49,18 +63,10 @@ public class 烈焰之魂子弹 : MonoBehaviour
     {
         if (hasHit) return;
 
-        // 根据 isFacingRight 设置子弹的速度方向
-        Vector2 velocity = isFacingRight ? Vector2.right : Vector2.left;
-        rb.velocity = velocity * projectileSpeed;
+        // 确保子弹始终有水平速度
+        rb.velocity = new Vector2((isFacingRight ? 1f : -1f) * projectileSpeed, rb.velocity.y);
 
-        // 反转子弹的 sprite 方向
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.flipX = !isFacingRight;
-        }
-
-        // 检查是否达到最大距离
+        // 检查是否达到最大飞行距离
         if (Vector2.Distance(startPosition, transform.position) >= projectileMaxDistance)
         {
             Destroy(gameObject);
@@ -75,6 +81,12 @@ public class 烈焰之魂子弹 : MonoBehaviour
             hasHit = true;
             MonsterStats monsterStats = hit.GetComponent<MonsterStats>();
             equipment.HandleProjectileHit(monsterStats);
+            // 生成爆炸特效
+            if (explosionParticlePrefab != null)
+            {
+                GameObject explosion = Instantiate(explosionParticlePrefab, hit.transform.position, Quaternion.identity);
+                Destroy(explosion, 1f); // 1秒后销毁爆炸特效
+            }
             Destroy(gameObject, .03f);
         }
     }
