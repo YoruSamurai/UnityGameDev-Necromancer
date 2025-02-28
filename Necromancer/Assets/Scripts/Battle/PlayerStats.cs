@@ -54,7 +54,14 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    
+    #region 一些要被重构的方法
+    public bool GetFacingDirection()
+    {
+        return gameObject.transform.localEulerAngles.y < 90;
+    }
+    #endregion
+
+
 
     #region 玩家进行攻击 玩家命中 玩家被命中（无防御） 玩家被命中（防御中） 玩家被命中（格挡） 玩家翻滚中 玩家死亡了
     public void OnAttack()

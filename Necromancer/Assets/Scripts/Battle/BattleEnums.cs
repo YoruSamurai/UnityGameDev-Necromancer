@@ -1,6 +1,7 @@
 
 #region 装备标签
 using System;
+using UnityEngine;
 
 public enum EquipmentTag
 {
@@ -128,7 +129,7 @@ public enum MeleeAttackCenterEnum
 
 #region 近战攻击结构体
 [Serializable]
-public struct meleeAttackStruct
+public struct MeleeAttackStruct
 {
     public float attackTime;//攻击时间 在这个时间内播放攻击动画 
     public float attackMag;
@@ -138,6 +139,24 @@ public struct meleeAttackStruct
     public float attackRadius;
     public float attackLength;
     public float attackWidth;
+    public float comboBreakTime;
+}
+#endregion
+
+#region 远程攻击结构体
+[Serializable]
+public struct StaffAttackStruct
+{
+    public float attackTime;//攻击时间 在这个时间内播放攻击动画 
+    public float attackMag;
+    public float attackStun;//这里预计是一个晕眩值 也就是耐性条
+    [Header("投射预制体")]
+    public float projectileSpeed;   // 弹丸速度
+    public float projectileMaxDistance;//投射物最远距离 最远的时候可能有些什么会发生。。
+    public float projectileMaxTimer;//投射物死亡时间
+    public float projectileGravity;//投射物重力
+    public float projectileRadius;//投射物半径
+
     public float comboBreakTime;
 }
 #endregion

@@ -38,35 +38,7 @@ public class Axe : MeleeEquipment
 
     private void CheckHit()
     {
-        if (currentCombo >= meleeAttacks.Count) return;
-
-        meleeAttackStruct currentAttack = meleeAttacks[currentCombo];
-        bool isFacingRight = transform.lossyScale.x > 0;
-        Vector2 faceDirection = isFacingRight ? Vector2.right : Vector2.left;
-
-        Vector2 attackCenter = currentAttack.attackCenter switch
-        {
-            MeleeAttackCenterEnum.player => transform.position,
-            MeleeAttackCenterEnum.front => currentAttack.attackShape == MeleeAttackShapeEnum.circle ?
-                (Vector2)transform.position + faceDirection * currentAttack.attackRadius : (Vector2)transform.position + faceDirection * currentAttack.attackLength / 2,
-            _ => transform.position
-        };
-
-        Collider2D[] hits;
-        if (currentAttack.attackShape == MeleeAttackShapeEnum.circle)
-        {
-            hits = Physics2D.OverlapCircleAll(attackCenter, currentAttack.attackRadius, PlayerStats.Instance.whatIsEnemy);
-        }
-        else
-        {
-            Vector2 size = new Vector2(currentAttack.attackLength, currentAttack.attackWidth);
-            hits = Physics2D.OverlapBoxAll(
-                attackCenter,
-                size,
-                isFacingRight ? 0 : 180,
-                PlayerStats.Instance.whatIsEnemy
-            );
-        }
+        Collider2D[] hits = GetHitEnemy();
 
         if (hits.Length > 0)
         {

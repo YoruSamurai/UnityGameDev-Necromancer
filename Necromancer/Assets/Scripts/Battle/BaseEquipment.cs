@@ -76,6 +76,11 @@ public class BaseEquipment : MonoBehaviour
         
     }
 
+    public bool GetFacingDirection()
+    {
+        return PlayerStats.Instance.GetFacingDirection();
+    }
+
     #region 连击和冷却时间相关函数
 
     public void SetAttackCooldown(float _timer)

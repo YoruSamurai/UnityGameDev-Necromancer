@@ -8,7 +8,7 @@ public class MeleeEquipment : BaseEquipment
     //近战武器要什么属性？   一次combo的总次数 每次攻击的：时长time 伤害倍率mag 晕值
     //伤害box又是另一个麻烦的故事了 比如说 形状是一个枚举 以玩家为中心还是以玩家面前1/2box为中心又是一个枚举？ 半径？长？宽？
     [SerializeField] public int fullComboAttackTimes;//一次combo的总攻击次数
-    [SerializeField] public List<meleeAttackStruct> meleeAttacks;
+    [SerializeField] public List<MeleeAttackStruct> meleeAttacks;
 
     [SerializeField] public float comboBreakTimer;
     [SerializeField] public int currentCombo;
@@ -49,14 +49,49 @@ public class MeleeEquipment : BaseEquipment
 
     }
 
+    public Collider2D[] GetHitEnemy()
+    {
+        if (currentCombo >= meleeAttacks.Count) return null;
+        Collider2D[] hits;
+        MeleeAttackStruct currentAttack = meleeAttacks[currentCombo];
+
+        bool isFacingRight = GetFacingDirection();
+        Vector2 faceDirection = isFacingRight ? Vector2.right : Vector2.left;
+
+        Vector2 attackCenter = currentAttack.attackCenter switch
+        {
+            MeleeAttackCenterEnum.player => transform.position,
+            MeleeAttackCenterEnum.front => currentAttack.attackShape == MeleeAttackShapeEnum.circle ?
+                (Vector2)transform.position + faceDirection * currentAttack.attackRadius : (Vector2)transform.position + faceDirection * currentAttack.attackLength / 2,
+            _ => transform.position
+        };
+
+        
+        if (currentAttack.attackShape == MeleeAttackShapeEnum.circle)
+        {
+            hits = Physics2D.OverlapCircleAll(attackCenter, currentAttack.attackRadius, PlayerStats.Instance.whatIsEnemy);
+        }
+        else
+        {
+            Vector2 size = new Vector2(currentAttack.attackLength, currentAttack.attackWidth);
+            hits = Physics2D.OverlapBoxAll(
+                attackCenter,
+                size,
+                isFacingRight ? 0 : 180,
+                PlayerStats.Instance.whatIsEnemy
+            );
+        }
+        return hits;
+    }
+
     protected virtual void TriggerAttackEffect()
     {
         if (meleeAttacks == null || currentCombo >= meleeAttacks.Count) return;
 
-        meleeAttackStruct currentAttack = meleeAttacks[currentCombo];
+        MeleeAttackStruct currentAttack = meleeAttacks[currentCombo];
 
         // 获取玩家朝向（假设通过transform.localScale判断）
-        bool isFacingRight = transform.lossyScale.x > 0;
+        bool isFacingRight = GetFacingDirection();
         Vector2 faceDirection = isFacingRight ? Vector2.right : Vector2.left;
 
         // 计算攻击中心位置
@@ -133,6 +168,15 @@ public class MeleeEquipment : BaseEquipment
     {
         Debug.Log("当前combo为" + currentCombo);
         SetAttackCooldown(meleeAttacks[currentCombo].attackTime);
+
+        // 只有一段连击的情况
+        if (meleeAttacks.Count == 1)
+        {
+            Debug.Log("只有一段连击，重置combo");
+            SetCombo(0);
+            SetComboBreakTime(0);
+            return;
+        }
         //重置combo
         if (comboBreakTimer > 0)
         {

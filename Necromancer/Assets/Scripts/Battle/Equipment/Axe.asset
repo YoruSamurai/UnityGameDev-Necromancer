@@ -15,7 +15,7 @@ MonoBehaviour:
   equipmentName: "\u65A7\u5934"
   baseDmg: 200
   equipmentSprite: {fileID: 0}
-  equipmentTags: 01000000
+  equipmentTags: 0100000004000000
   baseCritChance: 25
   critMag: 1.5
   equipmentDesc: "\u6BD2\u65A7\u5934\uFF0C\u6BCF\u6B21\u653B\u51FB\u5BF9\u654C\u4EBA\u65BD\u52A0\u4E00\u5C42\u6BD2

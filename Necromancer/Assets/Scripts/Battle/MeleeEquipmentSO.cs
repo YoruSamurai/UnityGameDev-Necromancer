@@ -7,5 +7,5 @@ public class MeleeEquipmentSO : EquipmentSO
 {
     [Header("近战武器")]
     public int fullComboAttackTimes;
-    public List<meleeAttackStruct> meleeAttacks;
+    public List<MeleeAttackStruct> meleeAttacks;
 }
