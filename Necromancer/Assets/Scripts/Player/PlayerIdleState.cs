@@ -26,7 +26,7 @@ public class PlayerIdleState : PlayerGroundState
 
         
         //有X方向移动了 就进入移动状态
-        if (xInput != 0)
+        if (xInput != 0 && !player.isBusy)
         {
             stateMachine.ChangeState(player.moveState);
         }

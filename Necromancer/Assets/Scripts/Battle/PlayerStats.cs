@@ -19,6 +19,9 @@ public class PlayerStats : MonoBehaviour
     public BaseEquipment baseEquipment1;
     public BaseEquipment baseEquipment2;
 
+    [SerializeField] public Player player;
+
+
 
     private void Awake()
     {
@@ -31,22 +34,35 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         health = 500;
+        player = GetComponent<Player>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             //Debug.Log("左武器开始攻击咯");
-
+            player.ChangeStateByPlayerStats(player.primaryAttack);
             baseEquipment1.UseEquipment();
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        /*if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            //Debug.Log("左武器开始攻击咯");
+            player.ChangeStateByPlayerStats(player.primaryAttack);
+            baseEquipment1.UseEquipment();
+        }*/
+        if (Input.GetKey(KeyCode.Mouse1))
         {
             //Debug.Log("右武器开始攻击咯");
 
             baseEquipment2.UseEquipment();
         }
+        /*if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            //Debug.Log("右武器开始攻击咯");
+
+            baseEquipment2.UseEquipment();
+        }*/
         if (Input.GetKeyDown(KeyCode.Q))
         {
             baseEquipment1 = BattleManagerTest.Instance.GetRandomWeapon(mainWeaponParent);

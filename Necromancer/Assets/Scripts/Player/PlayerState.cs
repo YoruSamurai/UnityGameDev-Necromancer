@@ -24,6 +24,9 @@ public class PlayerState
 
     //冲刺计时器
     protected float stateTimer;
+
+    //调用触发器 改变状态用
+    protected bool triggerCalled;
     
     
     //构造函数 用于在Player中创建状态
@@ -39,6 +42,8 @@ public class PlayerState
     {
         player.anim.SetBool(animBoolName,true);
         rb = player.rb;
+        //进入一个新状态的时候 就可以重新触发trigger了
+        triggerCalled = false;
     }
 
     //减一减计时器 获取wsad输入 把y速度设置给动画器
@@ -55,5 +60,11 @@ public class PlayerState
     public virtual void Exit()
     {
         player.anim.SetBool(animBoolName, false);
+    }
+
+
+    public virtual void AnimationFinishTrigger()
+    {
+        triggerCalled = true;
     }
 }

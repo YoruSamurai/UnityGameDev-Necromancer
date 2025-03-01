@@ -5,6 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    //攻击时候的僵直状态
+    public bool isBusy {  get; private set; }
+
     [Header("Move Info")]//移动参数
     public float moveSpeed = 12f;
     public float jumpForce;
@@ -51,6 +54,7 @@ public class Player : MonoBehaviour
     public PlayerFallState fallState { get; private set; }
     public PlayerDashState dashState { get; private set; }
     public PlayerWallSlideState wallSlideState { get; private set; }
+    public PlayerPrimaryAttack primaryAttack { get; private set; }
 
     #endregion
 
@@ -65,6 +69,7 @@ public class Player : MonoBehaviour
         fallState = new PlayerFallState(this, stateMachine,"Jump");
         dashState = new PlayerDashState(this, stateMachine,"Dash");
         wallSlideState = new PlayerWallSlideState(this, stateMachine,"WallSlide");
+        primaryAttack = new PlayerPrimaryAttack(this, stateMachine,"Attack");
     }
 
     private void Start()
@@ -79,36 +84,35 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.Update();//在每一帧只对当前的状态进行update
 
-        //用于测试碰撞 后续删掉
-        {
-            //Debug.Log(IsGroundDetected());
-            // 射线起点为当前物体的位置
-            Vector2 origin = transform.position;
-            // 射线方向为向下
-            Vector2 direction = Vector2.down;
-            // 射线长度
-            float distance = 10f;
-
-            // 发射射线，获取命中的所有物体
-            RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, distance);
-
-            // 遍历所有命中的物体
-            foreach (RaycastHit2D hit in hits)
-            {
-                //Debug.Log("Hit object: " + hit.collider.name);
-            }
-
-            // 在 Scene 视图中绘制射线，方便调试
-            //Debug.DrawRay(origin, direction * distance, Color.red);
-        }
-        
-
-
-
         CheckForDashInput();
     }
 
+    public IEnumerator BusyFor(float _seconds)
+    {
+        isBusy = true;
+        yield return new WaitForSeconds(_seconds);
 
+        isBusy = false;
+    }
+
+    public void ChangeStateByPlayerStats(PlayerState _playerState)
+    {
+        if (_playerState == stateMachine.currentState || isBusy)
+        {
+            Debug.Log("wasf");
+            return;
+        }
+        else
+        {
+            stateMachine.ChangeState(_playerState);
+        }
+        
+    }
+
+    public void AnimationTrigger()
+    {
+        stateMachine.currentState.AnimationFinishTrigger();
+    }
 
 
     //获取冲刺输入

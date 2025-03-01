@@ -7403,6 +7403,7 @@ MonoBehaviour:
   secondaryWeaponParent: {fileID: 1649729425}
   baseEquipment1: {fileID: 0}
   baseEquipment2: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &381870921
 GameObject:
   m_ObjectHideFlags: 0
@@ -13808,6 +13809,7 @@ GameObject:
   - component: {fileID: 971806721}
   - component: {fileID: 971806723}
   - component: {fileID: 971806722}
+  - component: {fileID: 971806724}
   m_Layer: 7
   m_Name: Animator
   m_TagString: Untagged
@@ -13903,6 +13905,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &971806724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971806720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645f3e697898ebc4297204f89f4db004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985838587
 GameObject:
   m_ObjectHideFlags: 0
