@@ -33,14 +33,15 @@ public class 施虐者匕首 : MeleeEquipment
         //这里就可以开始写攻击的各种逻辑了
         Attack();
 
-        // 攻击后重置combo和冷却时间
-        ResetCombo();
+        
     }
 
 
     public override void TriggerHitCheck()
     {
         CheckHit();
+        // 攻击后重置攻击冷却计时器
+        ResetCombo();
     }
 
 
