@@ -26,4 +26,9 @@ public class EquipmentSO : ScriptableObject
     [Header("装备描述")]
     [SerializeField, TextArea] public string equipmentDesc;
 
+
+    [Header("动画配置")]
+    public AnimatorOverrideController attackAnimator;  // 武器专属动画覆盖控制器
+    public AnimationClip[] comboAnimations;            // 连击动画片段数组
+
 }

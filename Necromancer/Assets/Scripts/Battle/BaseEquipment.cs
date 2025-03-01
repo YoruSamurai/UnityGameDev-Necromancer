@@ -6,7 +6,7 @@ using UnityEngine;
 public class BaseEquipment : MonoBehaviour
 {
 
-    [SerializeField] protected EquipmentSO equipmentSO;
+    [SerializeField] public EquipmentSO equipmentSO;
 
     [SerializeField] public float attackCooldown; // 每次攻击CD时间
     [SerializeField] public float attackCooldownTimer;
@@ -68,7 +68,16 @@ public class BaseEquipment : MonoBehaviour
 
     public virtual void UseEquipment()
     {
-        Debug.Log("要使用武器了");
+        // 检查是否处于攻击CD中
+        if (attackCooldownTimer > 0f)
+        {
+            Debug.Log("BASE攻击还在冷却中！");
+            return;
+        }
+        else
+        {
+            PlayerStats.Instance.ChangeToAttackState();
+        }
     }
 
     public virtual void DoDamage(float _cMag,MonsterStats monsterStats)

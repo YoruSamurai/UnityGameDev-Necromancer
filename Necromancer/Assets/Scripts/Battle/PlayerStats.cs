@@ -42,7 +42,6 @@ public class PlayerStats : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             //Debug.Log("左武器开始攻击咯");
-            player.ChangeStateByPlayerStats(player.primaryAttack);
             baseEquipment1.UseEquipment();
         }
         /*if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -74,6 +73,11 @@ public class PlayerStats : MonoBehaviour
     public bool GetFacingDirection()
     {
         return gameObject.transform.localEulerAngles.y < 90;
+    }
+
+    public void ChangeToAttackState()
+    {
+        player.ChangeStateByPlayerStats(player.primaryAttack);
     }
     #endregion
 

@@ -20,6 +20,11 @@ MonoBehaviour:
   critMag: 2
   equipmentDesc: "\u5747\u8861\u4E4B\u5203\uFF0C\u6BCF\u6B21\u653B\u51FB\u63D0\u53475%\u653B\u51FB\u529B\uFF0C\u6700\u592750%\uFF0C3s\u4E0D\u547D\u4E2D\u91CD\u7F6E
     \u8FDE\u51FB10\u6B21\u540E\u5C31\u4F1A\u5FC5\u5B9A\u66B4\u51FB"
+  attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
+  comboAnimations:
+  - {fileID: 7400000, guid: 2c29f3d254e8de84e80fa13c6e779ece, type: 2}
+  - {fileID: 7400000, guid: 18fab74d1b81c534ea5f902ffdfa1622, type: 2}
+  - {fileID: 7400000, guid: 759e9636287f98644a4f42fb2e23ac5b, type: 2}
   fullComboAttackTimes: 3
   meleeAttacks:
   - attackTime: 0.5

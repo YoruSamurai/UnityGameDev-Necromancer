@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     #region Components
     public Animator anim {  get; private set; }
+    public AnimatorOverrideController defaultAnimator {  get; private set; }
     public Rigidbody2D rb { get; private set; }
 
     #endregion
@@ -75,6 +76,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        defaultAnimator = new AnimatorOverrideController(anim.runtimeAnimatorController);
+
         rb = GetComponent<Rigidbody2D>();
 
         stateMachine.Initialize(idleState);//初始化idle状态
@@ -85,6 +88,16 @@ public class Player : MonoBehaviour
         stateMachine.currentState.Update();//在每一帧只对当前的状态进行update
 
         CheckForDashInput();
+    }
+
+    public void ApplyWeaponAnimator(AnimatorOverrideController weaponAnimator)
+    {
+        anim.runtimeAnimatorController = weaponAnimator;
+    }
+
+    public void ResetToDefaultAnimator()
+    {
+        anim.runtimeAnimatorController = defaultAnimator;
     }
 
     public IEnumerator BusyFor(float _seconds)
@@ -131,6 +144,11 @@ public class Player : MonoBehaviour
 
             stateMachine.ChangeState(dashState);
         }
+    }
+
+    public void SetZeroVelocity()
+    {
+        rb.velocity = new Vector2(0, 0);
     }
 
     //设置人物速度 并根据面向进行sprite的翻转

@@ -6,6 +6,7 @@ public class PlayerPrimaryAttack : PlayerState
 {
 
     private int comboCounter;
+    private EquipmentSO currentWeapon;
 
     private float lastTimeAttacked;
     private float comboWindow = 2; 
@@ -17,24 +18,35 @@ public class PlayerPrimaryAttack : PlayerState
     public override void Enter()
     {
         base.Enter();
-        if(comboCounter > 1 || Time.time >= lastTimeAttacked + comboWindow)
-        {
-            comboCounter = 0;
-        }
-
-        player.anim.SetInteger("ComboCounter" , comboCounter);
+        // 获取当前装备
+        currentWeapon = PlayerStats.Instance.baseEquipment1.equipmentSO;
 
         player.SetVelocity(1 * player.facingDir,rb.velocity.y);
-
+        // 应用武器动画
+        player.ApplyWeaponAnimator(currentWeapon.attackAnimator);
+        SetComboAnimation();
         stateTimer = .1f;
+    }
+
+    private void SetComboAnimation()
+    {
+        if (currentWeapon.comboAnimations.Length > 0)
+        {
+            int clampedCombo = Mathf.Clamp(0, 0, currentWeapon.comboAnimations.Length - 1);
+            
+            AnimationClip clip = currentWeapon.comboAnimations[0];
+            Debug.Log(clip.name);
+            currentWeapon.attackAnimator["playerAttack1"] = clip;
+            //player.anim.Play(clip.name, -1, 0f);
+            
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
-        comboCounter++;
+        player.ResetToDefaultAnimator(); // 恢复默认动画
         player.StartCoroutine("BusyFor", .05f);
-        lastTimeAttacked = Time.time;
     }
 
     public override void Update()
@@ -43,7 +55,7 @@ public class PlayerPrimaryAttack : PlayerState
 
         if(stateTimer < 0 )
         {
-            rb.velocity = new Vector2 ( 0, 0 );
+            player.SetZeroVelocity();
         }
 
         if(triggerCalled)
