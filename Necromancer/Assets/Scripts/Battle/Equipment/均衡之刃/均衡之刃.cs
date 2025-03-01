@@ -44,9 +44,9 @@ public class 均衡之刃 : MeleeEquipment
     public override void UseEquipment()
     {
         // 检查是否处于攻击CD中
-        if (attackCooldownTimer > 0f)
+        if (!GetCanUseEquipment())
         {
-            //Debug.Log("攻击还在冷却中！");
+            Debug.Log("攻击还在冷却中！");
             return;
         }
         base.UseEquipment();

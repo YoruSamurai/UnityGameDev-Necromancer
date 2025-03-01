@@ -20,7 +20,7 @@ public class 施虐者匕首 : MeleeEquipment
     public override void UseEquipment()
     {
         // 检查是否处于攻击CD中
-        if (attackCooldownTimer > 0f)
+        if (!GetCanUseEquipment())
         {
             Debug.Log("攻击还在冷却中！");
             return;
@@ -33,7 +33,7 @@ public class 施虐者匕首 : MeleeEquipment
         //这里就可以开始写攻击的各种逻辑了
         Attack();
 
-        // 攻击后重置combo和冷却时间
+        // 可以攻击的时候 重置combo和冷却时间
         ResetCombo();
     }
 

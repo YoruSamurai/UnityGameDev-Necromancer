@@ -72,7 +72,7 @@ public class BaseEquipment : MonoBehaviour
     public virtual void UseEquipment()
     {
         // 检查是否处于攻击CD中
-        if (attackCooldownTimer > 0f)
+        if (!GetCanUseEquipment())
         {
             Debug.Log("BASE攻击还在冷却1中！");
             return;
@@ -106,7 +106,7 @@ public class BaseEquipment : MonoBehaviour
         attackCooldownTimer = _timer;
     }
 
-    public bool IsCanEquipment()
+    public bool GetCanUseEquipment()
     {
         if (attackCooldownTimer > 0f)
             return false;
