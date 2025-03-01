@@ -30,10 +30,14 @@ public class Axe : MeleeEquipment
 
         //这里就可以开始写攻击的各种逻辑了
         Attack();
-        CheckHit();
 
         // 攻击后重置combo和冷却时间
         ResetCombo();
+    }
+
+    public override void TriggerHitCheck()
+    {
+        CheckHit();
     }
 
     private void CheckHit()

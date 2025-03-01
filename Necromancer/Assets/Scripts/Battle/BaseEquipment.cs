@@ -83,6 +83,11 @@ public class BaseEquipment : MonoBehaviour
         }
     }
 
+    public virtual void TriggerHitCheck()
+    {
+        // 供子类重写
+    }
+
     public virtual void DoDamage(float _cMag,MonsterStats monsterStats)
     {
         

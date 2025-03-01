@@ -2511,14 +2511,14 @@ MonoBehaviour:
   baseCritChance: 0
   critMag: 0
   equipmentDesc: 
+  comboBreakTimer: 0
+  currentCombo: 0
   currentDmg: 0
   canCrit: 0
   equipmentLevel: 0
   equipmentAffixList: []
   fullComboAttackTimes: 0
   meleeAttacks: []
-  comboBreakTimer: 0
-  currentCombo: 0
   rectangleEffectPrefab: {fileID: 2789657824771503155, guid: 2257ddf4d619b9e4ba0a21e31bf12ba1, type: 3}
   circleEffectPrefab: {fileID: 2789657824771503155, guid: dbe4619acbe8a8847ae4bc8522114b0e, type: 3}
 --- !u!1 &106125027
@@ -12208,14 +12208,14 @@ MonoBehaviour:
   baseCritChance: 0
   critMag: 0
   equipmentDesc: 
+  comboBreakTimer: 0
+  currentCombo: 0
   currentDmg: 0
   canCrit: 0
   equipmentLevel: 0
   equipmentAffixList: []
   fullComboAttackTimes: 0
   meleeAttacks: []
-  comboBreakTimer: 0
-  currentCombo: 0
   rectangleEffectPrefab: {fileID: 2789657824771503155, guid: 2257ddf4d619b9e4ba0a21e31bf12ba1, type: 3}
   circleEffectPrefab: {fileID: 2789657824771503155, guid: dbe4619acbe8a8847ae4bc8522114b0e, type: 3}
   dmgComboTimer: 0
@@ -23060,6 +23060,8 @@ MonoBehaviour:
   baseCritChance: 0
   critMag: 0
   equipmentDesc: 
+  comboBreakTimer: 0
+  currentCombo: 0
   currentDmg: 0
   canCrit: 0
   equipmentLevel: 0
@@ -23067,8 +23069,6 @@ MonoBehaviour:
   fullComboAttackTimes: 0
   projectilePrefab: {fileID: 0}
   staffAttacks: []
-  comboBreakTimer: 0
-  currentCombo: 0
 --- !u!1 &1499477226
 GameObject:
   m_ObjectHideFlags: 0
@@ -25588,7 +25588,8 @@ Transform:
   m_LocalPosition: {x: -29.765747, y: -0.3132707, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1775599587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1631326642
@@ -29658,12 +29659,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775599585}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.25, y: 2.82, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40.015747, y: 3.1332707, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1631326641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1775599588
 SpriteRenderer:
@@ -29933,14 +29934,14 @@ MonoBehaviour:
   baseCritChance: 0
   critMag: 0
   equipmentDesc: 
+  comboBreakTimer: 0
+  currentCombo: 0
   currentDmg: 0
   canCrit: 0
   equipmentLevel: 0
   equipmentAffixList: []
   fullComboAttackTimes: 0
   meleeAttacks: []
-  comboBreakTimer: 0
-  currentCombo: 0
   rectangleEffectPrefab: {fileID: 2789657824771503155, guid: 2257ddf4d619b9e4ba0a21e31bf12ba1, type: 3}
   circleEffectPrefab: {fileID: 2789657824771503155, guid: dbe4619acbe8a8847ae4bc8522114b0e, type: 3}
 --- !u!1 &1798036109
@@ -33927,4 +33928,3 @@ SceneRoots:
   - {fileID: 1806646758}
   - {fileID: 1711310860}
   - {fileID: 1631326641}
-  - {fileID: 1775599587}
