@@ -21,7 +21,7 @@ MonoBehaviour:
   equipmentDesc: "\u53D1\u5C04\u4E00\u679A\u5B50\u5F39 \u5BF9\u7B2C\u4E00\u4E2A\u654C\u4EBA\u9020\u6210\u4F24\u5BB3"
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
-  - {fileID: 7400000, guid: 18fab74d1b81c534ea5f902ffdfa1622, type: 2}
+  - {fileID: 7400000, guid: d4af9f751a5c320459c1f743aac9dee6, type: 2}
   fullComboAttackTimes: 1
   projectilePrefab: {fileID: 95243058518851845, guid: 48cb470cffa2b0a4bbfa63475d97ddcf, type: 3}
   staffAttacks:

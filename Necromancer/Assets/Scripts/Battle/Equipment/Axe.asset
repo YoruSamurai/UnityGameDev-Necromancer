@@ -22,10 +22,11 @@ MonoBehaviour:
     \u57284s\u5185\u603B\u5171\u9020\u62101/4dmg\u7684\u989D\u5916\u4F24\u5BB3"
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
-  - {fileID: 7400000, guid: 759e9636287f98644a4f42fb2e23ac5b, type: 2}
+  - {fileID: 7400000, guid: 8d4179d72bedcd54b87618585195c734, type: 2}
+  - {fileID: 7400000, guid: d4af9f751a5c320459c1f743aac9dee6, type: 2}
   fullComboAttackTimes: 2
   meleeAttacks:
-  - attackTime: 2
+  - attackTime: 1
     attackMag: 1
     attackStun: 15
     attackShape: 0
@@ -34,7 +35,7 @@ MonoBehaviour:
     attackLength: 10
     attackWidth: 3
     comboBreakTime: 3
-  - attackTime: 2
+  - attackTime: 1
     attackMag: 1
     attackStun: 15
     attackShape: 0

@@ -19,6 +19,9 @@ public class BaseEquipment : MonoBehaviour
     [SerializeField] public float critMag;
     [SerializeField] public string equipmentDesc;
 
+    [SerializeField] public float comboBreakTimer;
+    [SerializeField] public int currentCombo;
+
 
     [SerializeField] public int currentDmg;
     [SerializeField] public bool canCrit;

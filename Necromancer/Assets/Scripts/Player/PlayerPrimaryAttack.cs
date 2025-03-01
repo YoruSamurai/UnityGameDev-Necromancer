@@ -32,11 +32,12 @@ public class PlayerPrimaryAttack : PlayerState
     {
         if (currentWeapon.comboAnimations.Length > 0)
         {
-            int clampedCombo = Mathf.Clamp(0, 0, currentWeapon.comboAnimations.Length - 1);
+            int currentCombo = PlayerStats.Instance.baseEquipment1.currentCombo;
             
-            AnimationClip clip = currentWeapon.comboAnimations[0];
+            AnimationClip clip = currentWeapon.comboAnimations[currentCombo];
             Debug.Log(clip.name);
             currentWeapon.attackAnimator["playerAttack1"] = clip;
+            Debug.Log(clip.length);
             //player.anim.Play(clip.name, -1, 0f);
             
         }
@@ -46,7 +47,7 @@ public class PlayerPrimaryAttack : PlayerState
     {
         base.Exit();
         player.ResetToDefaultAnimator(); // 恢复默认动画
-        player.StartCoroutine("BusyFor", .05f);
+        player.StartCoroutine("BusyFor", .02f);
     }
 
     public override void Update()

@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
     {
         if (_playerState == stateMachine.currentState || isBusy)
         {
-            Debug.Log("wasf");
+            Debug.Log("进不去啊啊" + isBusy);
             return;
         }
         else

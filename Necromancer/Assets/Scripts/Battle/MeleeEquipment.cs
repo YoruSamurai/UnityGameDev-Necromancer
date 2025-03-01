@@ -10,9 +10,6 @@ public class MeleeEquipment : BaseEquipment
     [SerializeField] public int fullComboAttackTimes;//一次combo的总攻击次数
     [SerializeField] public List<MeleeAttackStruct> meleeAttacks;
 
-    [SerializeField] public float comboBreakTimer;
-    [SerializeField] public int currentCombo;
-
 
     [Header("Attack Effect Settings")]
     [SerializeField] protected GameObject rectangleEffectPrefab; // 蓝色闪烁特效预制件

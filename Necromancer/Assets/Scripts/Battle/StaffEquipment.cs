@@ -11,8 +11,6 @@ public class StaffEquipment : BaseEquipment
     public GameObject projectilePrefab;   // 弹丸预制体
     public List<StaffAttackStruct> staffAttacks;
 
-    [SerializeField] public float comboBreakTimer;
-    [SerializeField] public int currentCombo;
 
     protected override void Start()
     {
