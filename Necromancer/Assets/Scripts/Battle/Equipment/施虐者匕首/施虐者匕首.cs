@@ -22,7 +22,7 @@ public class 施虐者匕首 : MeleeEquipment
         // 检查是否处于攻击CD中
         if (attackCooldownTimer > 0f)
         {
-            //Debug.Log("攻击还在冷却中！");
+            Debug.Log("攻击还在冷却中！");
             return;
         }
         base.UseEquipment();
