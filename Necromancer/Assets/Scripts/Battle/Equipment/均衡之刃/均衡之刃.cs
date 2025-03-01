@@ -58,14 +58,13 @@ public class 均衡之刃 : MeleeEquipment
         //这里就可以开始写攻击的各种逻辑了
         Attack();
 
-        
+        // 攻击后重置攻击冷却计时器
+        ResetCombo();
     }
 
     public override void TriggerHitCheck()
     {
         CheckHit();
-        // 攻击后重置攻击冷却计时器
-        ResetCombo();
     }
 
 
