@@ -41,6 +41,8 @@ public class StaffEquipment : BaseEquipment
         }
         else
         {
+            if (currentCombo == 0)
+                return;
             SetCombo(0);
         }
 

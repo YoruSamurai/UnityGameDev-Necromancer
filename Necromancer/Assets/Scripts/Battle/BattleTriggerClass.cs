@@ -6,13 +6,6 @@ public class BattleTriggerClass : MonoBehaviour
 {
     public static BattleTriggerClass Instance { get; private set; }
 
-    //疑似没有鸟用啊 直接把武器传进来不就好了
-    /*[SerializeField] public List<BaseAffix> playerAttackAffixes;
-    [SerializeField] public List<BaseAffix> playerHitAffixes;
-    [SerializeField] public List<BaseAffix> enemyHitAffixes;
-    [SerializeField] public List<BaseAffix> enemyDeathAffixes;
-    [SerializeField] public List<BaseAffix> playerDefenseAffixes;
-    [SerializeField] public List<BaseAffix> playerBlockAffixes;*/
 
     private void Awake()
     {
@@ -26,8 +19,6 @@ public class BattleTriggerClass : MonoBehaviour
     {
         
     }
-
-    
 
 
     public void TriggerOnAttack()

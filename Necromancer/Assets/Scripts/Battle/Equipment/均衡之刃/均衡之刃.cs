@@ -11,15 +11,10 @@ public class 均衡之刃 : MeleeEquipment
     [SerializeField] private int maxDmgCombo;
     [SerializeField] private int currentDmgCombo;
 
-    
-
-    
-
 
     protected override void Start()
     {
         base.Start();
-        Debug.Log("剑，启动！");
         dmgComboTimer = 3f;
         maxDmgCombo = 10;
         currentDmgCombo = 0;
@@ -54,11 +49,10 @@ public class 均衡之刃 : MeleeEquipment
         // 触发攻击特效（蓝色闪烁）
         TriggerAttackEffect();
 
-
         //这里就可以开始写攻击的各种逻辑了
         Attack();
 
-        // 攻击后重置攻击冷却计时器
+        // 攻击后重置攻击冷却计时器 注意：
         ResetCombo();
     }
 

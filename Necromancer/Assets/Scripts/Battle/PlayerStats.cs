@@ -41,27 +41,12 @@ public class PlayerStats : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            //Debug.Log("左武器开始攻击咯");
             baseEquipment1.UseEquipment();
         }
-        /*if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            //Debug.Log("左武器开始攻击咯");
-            player.ChangeStateByPlayerStats(player.primaryAttack);
-            baseEquipment1.UseEquipment();
-        }*/
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            //Debug.Log("右武器开始攻击咯");
-
             baseEquipment2.UseEquipment();
         }
-        /*if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            //Debug.Log("右武器开始攻击咯");
-
-            baseEquipment2.UseEquipment();
-        }*/
         if (Input.GetKeyDown(KeyCode.Q))
         {
             baseEquipment1 = BattleManagerTest.Instance.GetRandomWeapon(mainWeaponParent);

@@ -18,14 +18,13 @@ public class PlayerPrimaryAttack : PlayerState
     public override void Enter()
     {
         base.Enter();
-        // 获取当前装备
+        // 获取当前装备SO
         currentWeapon = PlayerStats.Instance.baseEquipment1.equipmentSO;
-
-        player.SetVelocity(1 * player.facingDir,rb.velocity.y);
+;
         // 应用武器动画
         player.ApplyWeaponAnimator(currentWeapon.attackAnimator);
         SetComboAnimation();
-        stateTimer = .1f;
+        
     }
 
     private void SetComboAnimation()
@@ -33,14 +32,12 @@ public class PlayerPrimaryAttack : PlayerState
         if (currentWeapon.comboAnimations.Length > 0)
         {
             int currentCombo = PlayerStats.Instance.baseEquipment1.currentCombo;
-            
             AnimationClip clip = currentWeapon.comboAnimations[currentCombo];
-            Debug.Log(clip.name);
             currentWeapon.attackAnimator["playerAttack1"] = clip;
-            Debug.Log(clip.length);
-            //player.anim.Play(clip.name, -1, 0f);
-            
         }
+        //设置速度应该写在下面 通过获取武器的属性来设置
+        player.SetVelocity(1 * player.facingDir, rb.velocity.y);
+        stateTimer = .1f;
     }
 
     public override void Exit()

@@ -77,7 +77,6 @@ public class Player : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         defaultAnimator = new AnimatorOverrideController(anim.runtimeAnimatorController);
-
         rb = GetComponent<Rigidbody2D>();
 
         stateMachine.Initialize(idleState);//初始化idle状态

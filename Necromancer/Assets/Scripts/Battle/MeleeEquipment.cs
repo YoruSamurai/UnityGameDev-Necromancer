@@ -41,6 +41,8 @@ public class MeleeEquipment : BaseEquipment
         }
         else
         {
+            if (currentCombo == 0)
+                return;
             SetCombo(0);
         }
 
@@ -161,6 +163,7 @@ public class MeleeEquipment : BaseEquipment
         currentCombo = _combo;
     }
 
+    //在使用装备攻击的时候 设置combo数和冷却时间
     protected void ResetCombo()
     {
         Debug.Log("当前combo为" + currentCombo);
