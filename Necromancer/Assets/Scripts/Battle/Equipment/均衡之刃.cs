@@ -111,5 +111,7 @@ public class 均衡之刃 : MeleeEquipment
             
         int dmg = (int)(currentDmg * _cMag * (canCrit ? critMag : 1));
         Debug.Log($"暴击{canCrit},造成伤害{dmg}");
+        monsterStats.TakeDirectDamage(dmg);
+
     }
 }

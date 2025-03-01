@@ -5,7 +5,7 @@ using UnityEngine;
 public class 烈焰之魂子弹 : MonoBehaviour
 {
     [SerializeField] private 烈焰之魂 equipment;
-    [SerializeField] private GameObject explosionParticlePrefab; // 爆炸特效预制体
+    [SerializeField] private GameObject explosionPrefab; // 爆炸特效预制体
 
     [SerializeField] private float attackMag;
     [SerializeField] private float attackStun;
@@ -82,9 +82,21 @@ public class 烈焰之魂子弹 : MonoBehaviour
             MonsterStats monsterStats = hit.GetComponent<MonsterStats>();
             equipment.HandleProjectileHit(monsterStats);
             // 生成爆炸特效
-            if (explosionParticlePrefab != null)
+            if (explosionPrefab != null)
             {
-                GameObject explosion = Instantiate(explosionParticlePrefab, hit.transform.position, Quaternion.identity);
+                GameObject explosion = Instantiate(explosionPrefab, hit.transform.position, Quaternion.identity);
+                ParticleSystem ps = explosion.GetComponentInChildren<ParticleSystem>();
+
+                if (ps != null)
+                {
+                    var shape = ps.shape;
+                    shape.shapeType = ParticleSystemShapeType.Rectangle; // 形状改为矩形
+                    //shape.scale = new Vector3(10f, 10f, 1f); // 形状缩放 10x10
+
+                    var emission = ps.emission;
+                    //emission.rateOverTimeMultiplier *= 10f; // 发射率放大 10 倍
+                }
+
                 Destroy(explosion, 1f); // 1秒后销毁爆炸特效
             }
             Destroy(gameObject, .03f);

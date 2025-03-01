@@ -70,6 +70,7 @@ public class Axe : MeleeEquipment
         float poisonDurantion = 10f;
         float poisonInterval = 1f;
         monsterStats.ApplyPoison(poisonTotalDmg/4, poisonDurantion,poisonInterval);
+        monsterStats.TakeDirectDamage(dmg);
 
     }
 }

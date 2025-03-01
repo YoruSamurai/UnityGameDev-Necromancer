@@ -41,6 +41,11 @@ public class MonsterStats : MonoBehaviour
     {
 
     }
+
+    public void TakeDirectDamage(int dmg)
+    {
+        yoruUtils.JumpNumber(dmg, this.gameObject);
+    }
     #endregion
 
     #region 获取怪物各种状态

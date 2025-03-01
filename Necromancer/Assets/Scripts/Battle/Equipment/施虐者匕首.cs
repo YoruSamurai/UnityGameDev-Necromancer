@@ -83,6 +83,7 @@ public class 施虐者匕首 : MeleeEquipment
 
 
         int dmg = (int)(currentDmg * _cMag * (canCrit ? critMag : 1));
+        monsterStats.TakeDirectDamage(dmg);
         Debug.Log($"暴击{canCrit},造成伤害{dmg}");
     }
 }

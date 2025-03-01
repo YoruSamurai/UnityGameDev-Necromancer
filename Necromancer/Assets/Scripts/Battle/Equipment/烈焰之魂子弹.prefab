@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipment: {fileID: 0}
-  explosionParticlePrefab: {fileID: 4903194783037551404, guid: c8e690131529bb5498b54cecc05f5d01, type: 3}
+  explosionPrefab: {fileID: 4903194783037551404, guid: c8e690131529bb5498b54cecc05f5d01, type: 3}
   attackMag: 0
   attackStun: 0
   projectileSpeed: 0

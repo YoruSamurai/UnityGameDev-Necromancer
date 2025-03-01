@@ -104,5 +104,7 @@ public class 烈焰之魂 : StaffEquipment
 
         int dmg = (int)(currentDmg * _cMag * (canCrit ? critMag : 1));
         Debug.Log($"暴击{canCrit},造成伤害{dmg}");
+        monsterStats.TakeDirectDamage(dmg);
+
     }
 }
