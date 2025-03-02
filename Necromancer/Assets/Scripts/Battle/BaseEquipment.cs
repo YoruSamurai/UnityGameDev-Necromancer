@@ -104,6 +104,7 @@ public class BaseEquipment : MonoBehaviour
     {
         attackCooldown = _timer;
         attackCooldownTimer = _timer;
+        PlayerStats.Instance.isAttacking = true;
     }
 
     public bool GetCanUseEquipment()

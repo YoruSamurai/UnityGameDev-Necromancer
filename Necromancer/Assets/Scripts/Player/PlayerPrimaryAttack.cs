@@ -5,11 +5,8 @@ using UnityEngine;
 public class PlayerPrimaryAttack : PlayerState
 {
 
-    private int comboCounter;
     private EquipmentSO currentWeapon;
 
-    private float lastTimeAttacked;
-    private float comboWindow = 2; 
 
     public PlayerPrimaryAttack(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
@@ -20,7 +17,12 @@ public class PlayerPrimaryAttack : PlayerState
         base.Enter();
         // 获取当前装备SO
         currentWeapon = PlayerStats.Instance.baseEquipment1.equipmentSO;
-;
+        if(PlayerStats.Instance.currentEquipmentIndex == 1)
+            currentWeapon = PlayerStats.Instance.baseEquipment1.equipmentSO;
+        else if(PlayerStats.Instance.currentEquipmentIndex == 2)
+            currentWeapon = PlayerStats.Instance.baseEquipment2.equipmentSO;
+
+
         // 应用武器动画
         player.ApplyWeaponAnimator(currentWeapon.attackAnimator);
         SetComboAnimation();
@@ -31,7 +33,16 @@ public class PlayerPrimaryAttack : PlayerState
     {
         if (currentWeapon.comboAnimations.Length > 0)
         {
-            int currentCombo = PlayerStats.Instance.baseEquipment1.currentCombo;
+            int currentCombo = 0;
+            if (PlayerStats.Instance.currentEquipmentIndex == 1)
+            {
+                currentCombo = PlayerStats.Instance.baseEquipment1.currentCombo;
+            }
+            else if (PlayerStats.Instance.currentEquipmentIndex == 2)
+            {
+                currentCombo = PlayerStats.Instance.baseEquipment2.currentCombo;
+            }
+
             AnimationClip clip = currentWeapon.comboAnimations[currentCombo];
             currentWeapon.attackAnimator["playerAttack1"] = clip;
         }

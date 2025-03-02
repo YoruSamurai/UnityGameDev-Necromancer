@@ -52,7 +52,7 @@ public class MeleeEquipment : BaseEquipment
     {
         if (currentCombo >= meleeAttacks.Count) return null;
         Collider2D[] hits;
-        MeleeAttackStruct currentAttack = meleeAttacks[currentCombo];
+        MeleeAttackStruct currentAttack = meleeAttacks[currentCombo == 0 ? meleeAttacks.Count - 1: currentCombo - 1];
 
         bool isFacingRight = GetFacingDirection();
         Vector2 faceDirection = isFacingRight ? Vector2.right : Vector2.left;
@@ -167,6 +167,8 @@ public class MeleeEquipment : BaseEquipment
     protected void ResetCombo()
     {
         Debug.Log("当前combo为" + currentCombo);
+        //在这里不但要给武器设置 还要给PlayerStat（管理人物攻击的单例）设置一个锁
+        
         SetAttackCooldown(meleeAttacks[currentCombo].attackTime);
 
         // 只有一段连击的情况

@@ -9,6 +9,10 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] public int health;
 
+    //是否可以攻击
+    [SerializeField] public bool isAttacking;
+    [SerializeField] public int currentEquipmentIndex;
+
     [SerializeField] public BoxCollider2D attackCheck;
 
     [SerializeField] public LayerMask whatIsEnemy;
@@ -39,12 +43,14 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && !isAttacking && !player.isBusy && baseEquipment1 != null)
         {
+            SetCurrentEquipmentIndex(1);
             baseEquipment1.UseEquipment();
         }
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse1) && !isAttacking && !player.isBusy && baseEquipment2 != null)
         {
+            SetCurrentEquipmentIndex(2);
             baseEquipment2.UseEquipment();
         }
         if (Input.GetKeyDown(KeyCode.Q))
@@ -64,6 +70,17 @@ public class PlayerStats : MonoBehaviour
     {
         player.ChangeStateByPlayerStats(player.primaryAttack);
     }
+
+    public void SetCurrentEquipmentIndex(int _equipmentIndex)
+    {
+        this.currentEquipmentIndex = _equipmentIndex;
+        return;
+    }
+    public int GetCurrentEquipmentIndex(int _equipmentIndex)
+    {
+        return this.currentEquipmentIndex;
+    }
+
     #endregion
 
 
