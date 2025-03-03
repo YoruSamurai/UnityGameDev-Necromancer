@@ -15,35 +15,27 @@ public class EnemyAttackState : EnemyState
     public override void AnimationTriggerEvent(AnimationTriggerType triggerType)
     {
         base.AnimationTriggerEvent(triggerType);
+        enemy.enemyAttackBaseInstance.DoAnimationTriggerEventLogic(triggerType); 
     }
 
     public override void EnterState()
     {
         base.EnterState();
         enemy.anim.SetBool("Attack", true);
+        enemy.enemyAttackBaseInstance.DoEnterLogic();
     }
 
     public override void ExitState()
     {
         base.ExitState();
         enemy.anim.SetBool("Attack", false);
+        enemy.enemyAttackBaseInstance.DoExitLogic();
     }
 
     public override void UpdateState()
     {
         base.UpdateState();
+        enemy.enemyAttackBaseInstance.DoUpdateLogic();
 
-        enemy.MoveEnemy(Vector2.zero);
-        if(_timer > _timeBetweenShots)
-        {
-            _timer = 0f;
-            Debug.Log("我射");
-        }
-        _timer += Time.deltaTime;
-
-        if(enemy.isWithinStrikingDistance == false)
-        {
-            enemy.stateMachine.ChangeState(enemy.chaseState);
-        }
     }
 }

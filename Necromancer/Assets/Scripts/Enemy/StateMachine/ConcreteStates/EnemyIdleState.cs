@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyState
 {
-    private Vector3 _targetPos;
-    private Vector3 _direction;
 
     public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
@@ -14,41 +12,29 @@ public class EnemyIdleState : EnemyState
     public override void AnimationTriggerEvent(AnimationTriggerType triggerType)
     {
         base.AnimationTriggerEvent(triggerType);
+        enemy.enemyIdleBaseInstance.DoAnimationTriggerEventLogic(triggerType);
     }
 
     public override void EnterState()
     {
         base.EnterState();
         enemy.anim.SetBool("Idle", true);
-        _targetPos = GetRandomPointInCircle();
+        enemy.enemyIdleBaseInstance.DoEnterLogic();
     }
 
     public override void ExitState()
     {
         base.ExitState();
         enemy.anim.SetBool("Idle", false);
+        enemy.enemyIdleBaseInstance.DoExitLogic();
     }
 
     public override void UpdateState()
     {
         base.UpdateState();
+        enemy.enemyIdleBaseInstance.DoUpdateLogic();
 
-        if (enemy.isAggroed)
-        {
-            enemy.stateMachine.ChangeState(enemy.chaseState);
-        }
 
-        _direction = (_targetPos - enemy.transform.position).normalized;
-        enemy.MoveEnemy(_direction * enemy.RandomMovementSpeed);
 
-        if((enemy.transform.position - _targetPos).sqrMagnitude < 0.01f)
-        {
-            _targetPos = GetRandomPointInCircle();
-        }
-    }
-
-    private Vector3 GetRandomPointInCircle()
-    {
-        return enemy.transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * enemy.RandomMovementRange;
     }
 }

@@ -13,6 +13,16 @@ public class Enemy : MonoBehaviour, IDamageable,IEnemyMoveable,ITriggerCheckable
     [field: SerializeField] public bool isAggroed { get; set; }
     [field: SerializeField] public bool isWithinStrikingDistance { get; set; }
 
+    #region SO
+    [SerializeField] private EnemyIdleSOBase enemyIdleBase;
+    [SerializeField] private EnemyChaseSOBase enemyChaseBase;
+    [SerializeField] private EnemyAttackSOBase enemyAttackBase;
+
+    public EnemyIdleSOBase enemyIdleBaseInstance {  get; set; }
+    public EnemyChaseSOBase enemyChaseBaseInstance { get; set; }
+    public EnemyAttackSOBase enemyAttackBaseInstance { get; set; }
+    #endregion
+
     #region 状态机变量
     public EnemyStateMachine stateMachine { get; set; }
     public EnemyIdleState idleState { get; set; }
@@ -22,14 +32,14 @@ public class Enemy : MonoBehaviour, IDamageable,IEnemyMoveable,ITriggerCheckable
     #endregion
 
 
-    #region 闲逛变量 待会删
-    public float RandomMovementRange = 5f;
-    public float RandomMovementSpeed = 1f;
-    #endregion
 
 
     protected virtual void Awake()
     {
+        enemyIdleBaseInstance = Instantiate(enemyIdleBase);
+        enemyChaseBaseInstance = Instantiate(enemyChaseBase);
+        enemyAttackBaseInstance = Instantiate(enemyAttackBase);
+
         stateMachine = new EnemyStateMachine();
         idleState = new EnemyIdleState(this,stateMachine);
         chaseState = new EnemyChaseState(this,stateMachine);
@@ -40,7 +50,12 @@ public class Enemy : MonoBehaviour, IDamageable,IEnemyMoveable,ITriggerCheckable
     {
         CurrentHealth = MaxHealth;
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponentInChildren<Animator>();  
+        anim = GetComponentInChildren<Animator>();
+
+        enemyIdleBaseInstance.Initialize(gameObject, this);
+        enemyChaseBaseInstance.Initialize(gameObject, this);
+        enemyAttackBaseInstance.Initialize(gameObject, this);
+
         stateMachine.Initialize(idleState);
     }
 
