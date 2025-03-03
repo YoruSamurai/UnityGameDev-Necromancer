@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Entity
+public class Player : MonoBehaviour
 {
 
     //攻击时候的僵直状态
@@ -26,18 +26,24 @@ public class Player : Entity
     //冲刺方向
     public float dashDir {  get; private set; }
 
-    
 
-    //玩家面向
-    public int facingDir { get; private set; } = 1;
-    private bool facingRight = true;
+    [Header("Collision Info")]//碰撞参数
+    [SerializeField] protected Transform groundCheck;
+    [SerializeField] protected float groundCheckDistance;
+    [SerializeField] protected Transform wallCheck;
+    [SerializeField] protected float wallCheckDistance;
+    [SerializeField] protected LayerMask whatIsGround;
 
     #region Components
-    public Animator anim {  get; private set; }
-    public AnimatorOverrideController defaultAnimator {  get; private set; }
+    public Animator anim { get; private set; }
+    public AnimatorOverrideController defaultAnimator { get; private set; }
     public Rigidbody2D rb { get; private set; }
 
     #endregion
+
+    //面向
+    public int facingDir { get; private set; } = 1;
+    protected bool facingRight = true;
 
 
     #region States
@@ -55,7 +61,7 @@ public class Player : Entity
     #endregion
 
 
-    protected override void Awake()
+    protected void Awake()
     {
         stateMachine = new PlayerStateMachine();
 
@@ -68,16 +74,16 @@ public class Player : Entity
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine,"Attack");
     }
 
-    protected override void Start()
+    protected void Start()
     {
+        
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         defaultAnimator = new AnimatorOverrideController(anim.runtimeAnimatorController);
-        rb = GetComponent<Rigidbody2D>();
-
         stateMachine.Initialize(idleState);//初始化idle状态
     }
 
-    protected override void Update()
+    protected void Update()
     {
         stateMachine.currentState.Update();//在每一帧只对当前的状态进行update
 
@@ -128,7 +134,7 @@ public class Player : Entity
         dashUsageTimer -= Time.deltaTime;
 
         //按下shift 设置timer为设置好的cd 并获取冲刺方向 进入冲刺状态
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUsageTimer < 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUsageTimer < 0 && !PlayerStats.Instance.isAttacking)
         {
             dashUsageTimer = dashCooldown;
             dashDir = Input.GetAxisRaw("Horizontal");
@@ -140,6 +146,16 @@ public class Player : Entity
         }
     }
 
+    
+
+    //设置跳跃计数器
+    public void SetJumpCounter(int _jumpCounter)
+    {
+        jumpCounter = _jumpCounter;
+    }
+
+
+    #region  Velocity
     public void SetZeroVelocity()
     {
         rb.velocity = new Vector2(0, 0);
@@ -151,12 +167,10 @@ public class Player : Entity
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }
+    #endregion
 
-    //设置跳跃计数器
-    public void SetJumpCounter(int _jumpCounter)
-    {
-        jumpCounter = _jumpCounter;
-    }
+
+    #region Collision
 
     //通过射线检测能不能射到地面，
     public bool IsGroundDetected()
@@ -165,20 +179,22 @@ public class Player : Entity
     }
 
     //通过射线检测能不能射到墙上
-    public bool IsWallDetected()
+    public virtual bool IsWallDetected()
     {
         return Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
     }
 
     //通过debug射线绘制一些可视化
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
     }
+    #endregion
 
+    #region Flip
     //翻转
-    public void Flip()
+    public virtual void Flip()
     {
         facingDir = facingDir * -1;
         facingRight = !facingRight;
@@ -186,12 +202,14 @@ public class Player : Entity
     }
 
     //根据X是否翻转
-    public void FlipController(float _x)
+    public virtual void FlipController(float _x)
     {
         if (_x > 0 && !facingRight)
             Flip();
-        else if(_x < 0 && facingRight)
+        else if (_x < 0 && facingRight)
             Flip();
     }
+    #endregion
+
 
 }
