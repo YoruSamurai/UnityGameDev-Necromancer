@@ -21,14 +21,14 @@ public class EnemyAttackState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
-        enemy.anim.SetBool("Attack", true);
+        
         enemy.enemyAttackBaseInstance.DoEnterLogic();
     }
 
     public override void ExitState()
     {
         base.ExitState();
-        enemy.anim.SetBool("Attack", false);
+        
         enemy.enemyAttackBaseInstance.DoExitLogic();
     }
 

@@ -31,14 +31,7 @@ public class EnemyChaseSOBase : ScriptableObject
 
     public virtual void DoUpdateLogic()
     {
-        if (enemy.isWithinStrikingDistance)
-        {
-            enemy.stateMachine.ChangeState(enemy.attackState);
-        }
-        if (!enemy.isAggroed)
-        {
-            enemy.stateMachine.ChangeState(enemy.idleState);
-        }
+        
     }
 
     public virtual void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)

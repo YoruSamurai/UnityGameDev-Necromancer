@@ -135,7 +135,9 @@ public class MeleeEquipment : BaseEquipment
 
                 effect.transform.localScale = effectScale;
             }
-
+            Color color = Color.red;
+            color.a = .3f;
+            effect.GetComponent<SpriteRenderer>().color = color;
             Destroy(effect, 0.2f);
         }
     }

@@ -18,14 +18,14 @@ public class EnemyChaseState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
-        enemy.anim.SetBool("Chase", true);
+        
         enemy.enemyChaseBaseInstance.DoEnterLogic();
     }
 
     public override void ExitState()
     {
         base.ExitState();
-        enemy.anim.SetBool("Chase", false);
+        
         enemy.enemyChaseBaseInstance.DoExitLogic();
     }
 

@@ -18,14 +18,14 @@ public class EnemyIdleState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
-        enemy.anim.SetBool("Idle", true);
+        
         enemy.enemyIdleBaseInstance.DoEnterLogic();
     }
 
     public override void ExitState()
     {
         base.ExitState();
-        enemy.anim.SetBool("Idle", false);
+        
         enemy.enemyIdleBaseInstance.DoExitLogic();
     }
 

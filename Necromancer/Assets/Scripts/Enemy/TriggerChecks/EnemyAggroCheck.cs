@@ -13,7 +13,7 @@ public class EnemyAggroCheck : MonoBehaviour
         _enemy = GetComponentInParent<Enemy>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("213131");
         if(collision.gameObject == playerTarget)
@@ -30,5 +30,5 @@ public class EnemyAggroCheck : MonoBehaviour
         {
             _enemy.SetAggroStatus(false);
         }
-    }
+    }*/
 }

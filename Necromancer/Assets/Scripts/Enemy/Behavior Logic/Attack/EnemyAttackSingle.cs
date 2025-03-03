@@ -19,17 +19,23 @@ public class EnemyAttackSingle : EnemyAttackSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
+        enemy.anim.SetBool("Attack", true);
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
+        enemy.anim.SetBool("Attack", false);
     }
 
     public override void DoUpdateLogic()
     {
         base.DoUpdateLogic();
-        enemy.MoveEnemy(Vector2.zero);
+        if ((playerTransform.position - transform.position).magnitude > 2f)
+        {
+            enemy.stateMachine.ChangeState(enemy.chaseState);
+        }
+        enemy.SetVelocity(0,0);
         if (_timer > _timeBetweenShots)
         {
             _timer = 0f;

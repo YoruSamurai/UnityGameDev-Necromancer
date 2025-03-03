@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable,IEnemyMoveable,ITriggerCheckable
+public class Enemy : MonoBehaviour, IDamageable
 {
     [field: SerializeField] public int MaxHealth { get; set; } = 100;
     public int CurrentHealth { get; set; }
@@ -10,8 +10,6 @@ public class Enemy : MonoBehaviour, IDamageable,IEnemyMoveable,ITriggerCheckable
     public Animator anim { get; private set; }
     public bool IsFacingRight { get; set; } = true;
 
-    [field: SerializeField] public bool isAggroed { get; set; }
-    [field: SerializeField] public bool isWithinStrikingDistance { get; set; }
 
     #region SO
     [SerializeField] private EnemyIdleSOBase enemyIdleBase;
@@ -28,10 +26,19 @@ public class Enemy : MonoBehaviour, IDamageable,IEnemyMoveable,ITriggerCheckable
     public EnemyIdleState idleState { get; set; }
     public EnemyChaseState chaseState { get; set; }
     public EnemyAttackState attackState { get; set; }
-    
+
     #endregion
 
+    [Header("Collision Info")]//碰撞参数
+    [SerializeField] protected Transform groundCheck;
+    [SerializeField] protected float groundCheckDistance;
+    [SerializeField] protected Transform wallCheck;
+    [SerializeField] protected float wallCheckDistance;
+    [SerializeField] protected LayerMask whatIsGround;
 
+    //面向
+    public int facingDir { get; private set; } = 1;
+    public bool facingRight = true;
 
 
     protected virtual void Awake()
@@ -82,26 +89,59 @@ public class Enemy : MonoBehaviour, IDamageable,IEnemyMoveable,ITriggerCheckable
     #endregion
 
     #region 移动
-    public void MoveEnemy(Vector2 velocity)
+
+    public void SetZeroVelocity()
     {
-        rb.velocity = velocity;
-        CheckFacing(velocity);
+        rb.velocity = new Vector2(0, 0);
+    }
+    public void SetVelocity(float _xVelocity, float _yVelocity)
+    {
+        rb.velocity = new Vector2(_xVelocity, _yVelocity);
+        FlipController(_xVelocity);
     }
 
-    public void CheckFacing(Vector2 velocity)
+    #endregion
+
+    #region Flip
+    //翻转
+    public virtual void Flip()
     {
-        if(IsFacingRight && velocity.x < 0f)
-        {
-            Vector3 rotator = new Vector3(transform.rotation.x,180f,transform.rotation.z);
-            transform.rotation = Quaternion.Euler(rotator);
-            IsFacingRight = !IsFacingRight; 
-        }
-        else if (!IsFacingRight && velocity.x > 0f)
-        {
-            Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(rotator);
-            IsFacingRight = !IsFacingRight;
-        }
+        facingDir = facingDir * -1;
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
+    }
+
+    //根据X是否翻转
+    public virtual void FlipController(float _x)
+    {
+        if (_x > 0 && !facingRight)
+            Flip();
+        else if (_x < 0 && facingRight)
+            Flip();
+    }
+    #endregion
+
+
+
+    #region Collision
+
+    //通过射线检测能不能射到地面，
+    public bool IsGroundDetected()
+    {
+        return Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
+    }
+
+    //通过射线检测能不能射到墙上
+    public virtual bool IsWallDetected()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+    }
+
+    //通过debug射线绘制一些可视化
+    protected virtual void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
+        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
     }
     #endregion
 
@@ -111,17 +151,7 @@ public class Enemy : MonoBehaviour, IDamageable,IEnemyMoveable,ITriggerCheckable
         stateMachine.currentEnemyState.AnimationTriggerEvent(triggerType);
     }
 
-    #region 距离
-    public void SetAggroStatus(bool isAggroed)
-    {
-        this.isAggroed = isAggroed;
-    }
-
-    public void SetStrikingDistanceBool(bool isWithinStrikingDistance)
-    {
-        this.isWithinStrikingDistance = isWithinStrikingDistance;
-    }
-    #endregion
+    
 }
 
 #region 敌人枚举（意义还不明确）

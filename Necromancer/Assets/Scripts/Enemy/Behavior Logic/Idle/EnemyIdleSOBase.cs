@@ -31,10 +31,7 @@ public class EnemyIdleSOBase : ScriptableObject
 
     public virtual void DoUpdateLogic()
     {
-        if (enemy.isAggroed)
-        {
-            enemy.stateMachine.ChangeState(enemy.chaseState);
-        }
+        
     }
 
     public virtual void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)

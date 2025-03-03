@@ -6,11 +6,9 @@ using UnityEngine;
 public class EnemyIdleRandomWander : EnemyIdleSOBase
 {
 
-    [SerializeField] private float RandomMovementRange = 5f;
-    [SerializeField] private float RandomMovementSpeed = 1f;
+    [SerializeField] private float MovementSpeed;
 
-    private Vector3 _targetPos;
-    private Vector3 _direction;
+
     public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
     {
         base.DoAnimationTriggerEventLogic(triggerType);
@@ -19,26 +17,28 @@ public class EnemyIdleRandomWander : EnemyIdleSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-
-        _targetPos = GetRandomPointInCircle();
+        enemy.anim.SetBool("Move", true);
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
+        enemy.anim.SetBool("Move", false);
     }
 
     public override void DoUpdateLogic()
     {
         base.DoUpdateLogic();
-
-        _direction = (_targetPos - enemy.transform.position).normalized;
-        enemy.MoveEnemy(_direction * RandomMovementSpeed);
-
-        if ((enemy.transform.position - _targetPos).sqrMagnitude < 0.01f)
+        if ((playerTransform.position - transform.position).magnitude < 12f)
         {
-            _targetPos = GetRandomPointInCircle();
+            enemy.stateMachine.ChangeState(enemy.chaseState);
         }
+        // 检测是否碰到墙或者即将掉落，如果是，则翻转
+        if (!enemy.IsGroundDetected() || enemy.IsWallDetected())
+        {
+            enemy.Flip();
+        }
+        enemy.SetVelocity(enemy.facingDir * MovementSpeed, enemy.rb.velocity.y);
     }
 
     public override void Initialize(GameObject gameObject, Enemy enemy)
@@ -51,8 +51,5 @@ public class EnemyIdleRandomWander : EnemyIdleSOBase
         base.ResetValues();
     }
 
-    private Vector3 GetRandomPointInCircle()
-    {
-        return enemy.transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * RandomMovementRange;
-    }
+
 }

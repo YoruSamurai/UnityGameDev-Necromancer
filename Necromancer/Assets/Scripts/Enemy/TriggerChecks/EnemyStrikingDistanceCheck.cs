@@ -13,7 +13,7 @@ public class EnemyStrikingDistanceCheck : MonoBehaviour
         _enemy = GetComponentInParent<Enemy>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject == playerTarget)
         {
@@ -27,5 +27,5 @@ public class EnemyStrikingDistanceCheck : MonoBehaviour
         {
             _enemy.SetStrikingDistanceBool(false);
         }
-    }
+    }*/
 }
