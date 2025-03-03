@@ -18,9 +18,8 @@ public class LdtkTest : MonoBehaviour
     //房间数据
     [SerializeField] private List<RoomData> roomDatas = new List<RoomData>();
 
-    //没什么用 先放着
-    [SerializeField] private Tilemap tilemap;
-    [SerializeField] private LDtkComponentLevel level;
+    //父节点 放地图
+    [SerializeField] private Transform mapParent;
 
 
     //房间数据 存储了：房间 房间起始点 房间长度和宽度
@@ -203,13 +202,13 @@ public class LdtkTest : MonoBehaviour
         {
             Debug.Log("初始房间一位");
             //生成实例 并set
-            ldtkInstance = Instantiate(room, Vector3.zero, Quaternion.identity);
+            ldtkInstance = Instantiate(room, Vector3.zero, Quaternion.identity,mapParent);
             SetRoomData(ldtkInstance, currentDoor, positionDoor);
         }
         else
         {
             //生成实例 并set
-            ldtkInstance = Instantiate(room, Vector3.zero, Quaternion.identity);
+            ldtkInstance = Instantiate(room, Vector3.zero, Quaternion.identity, mapParent);
             SetRoomData(ldtkInstance, currentDoor, positionDoor);
             //Vector3 worldPosition = CalculateCorridorPosition(currentDoor, positionDoor);
             Vector3 worldPosition = currentDoor.worldPosition - positionDoor.relativePosition;
@@ -592,7 +591,7 @@ public class LdtkTest : MonoBehaviour
     public void OutputSomeMsg()
     {
 
-        Debug.Log(level.BorderBounds);
-        Debug.Log(level.BorderRect);
+        /*Debug.Log(level.BorderBounds);
+        Debug.Log(level.BorderRect);*/
     }
 }

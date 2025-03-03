@@ -22,7 +22,7 @@ public class PlayerState
     //切换状态时设置动画bool值切换动画
     private string animBoolName;
 
-    //冲刺计时器
+    //状态计时器
     protected float stateTimer;
 
     //调用触发器 改变状态用

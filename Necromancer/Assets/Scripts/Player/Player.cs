@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
 
     //攻击时候的僵直状态
@@ -26,12 +26,7 @@ public class Player : MonoBehaviour
     //冲刺方向
     public float dashDir {  get; private set; }
 
-    [Header("Collision Info")]//碰撞参数
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckDistance;
-    [SerializeField] private Transform wallCheck;
-    [SerializeField] private float wallCheckDistance;
-    [SerializeField] private LayerMask whatIsGround;
+    
 
     //玩家面向
     public int facingDir { get; private set; } = 1;
@@ -60,7 +55,7 @@ public class Player : MonoBehaviour
     #endregion
 
 
-    private void Awake()
+    protected override void Awake()
     {
         stateMachine = new PlayerStateMachine();
 
@@ -73,7 +68,7 @@ public class Player : MonoBehaviour
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine,"Attack");
     }
 
-    private void Start()
+    protected override void Start()
     {
         anim = GetComponentInChildren<Animator>();
         defaultAnimator = new AnimatorOverrideController(anim.runtimeAnimatorController);
@@ -82,7 +77,7 @@ public class Player : MonoBehaviour
         stateMachine.Initialize(idleState);//初始化idle状态
     }
 
-    private void Update()
+    protected override void Update()
     {
         stateMachine.currentState.Update();//在每一帧只对当前的状态进行update
 
