@@ -8,7 +8,7 @@ public class EnemyAttackSingle : EnemyAttackSOBase
 
     private Transform _playerTransform;
     private float _timer;
-    private float _timeBetweenShots = 2f;
+    private float _timeBetweenShots = 1f;
 
 
     public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
@@ -20,18 +20,20 @@ public class EnemyAttackSingle : EnemyAttackSOBase
     {
         base.DoEnterLogic();
         enemy.anim.SetBool("Attack", true);
+        enemy.isAttacking = true;
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
         enemy.anim.SetBool("Attack", false);
+        enemy.isAttacking = true;
     }
 
     public override void DoUpdateLogic()
     {
         base.DoUpdateLogic();
-        if ((playerTransform.position - transform.position).magnitude > 2f)
+        if ((playerTransform.position - transform.position).magnitude > 2f && !enemy.isAttacking)
         {
             enemy.stateMachine.ChangeState(enemy.chaseState);
         }
@@ -40,6 +42,7 @@ public class EnemyAttackSingle : EnemyAttackSOBase
         {
             _timer = 0f;
             Debug.Log("我射");
+            enemy.isAttacking = false;
         }
         _timer += Time.deltaTime;
 

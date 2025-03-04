@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable
+public class Enemy : MonoBehaviour
 {
-    [field: SerializeField] public int MaxHealth { get; set; } = 100;
-    public int CurrentHealth { get; set; }
+    #region Components
     public Rigidbody2D rb { get; set; }
     public Animator anim { get; private set; }
-    public bool IsFacingRight { get; set; } = true;
+
+    #endregion
 
 
     #region SO
@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour, IDamageable
     public EnemyAttackState attackState { get; set; }
 
     #endregion
+
+    public bool isAttacking;
 
     [Header("Collision Info")]//碰撞参数
     [SerializeField] protected Transform groundCheck;
@@ -55,7 +57,6 @@ public class Enemy : MonoBehaviour, IDamageable
 
     protected virtual void Start()
     {
-        CurrentHealth = MaxHealth;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
 
@@ -71,22 +72,6 @@ public class Enemy : MonoBehaviour, IDamageable
         //Debug.Log(stateMachine.currentEnemyState);
         stateMachine.currentEnemyState.UpdateState();
     }
-
-    #region 伤害
-    public void Damage(int damageAmount)
-    {
-        CurrentHealth -= damageAmount;
-        if (CurrentHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    public void Die()
-    {
-        Debug.Log("DIE");
-    }
-    #endregion
 
     #region 移动
 
