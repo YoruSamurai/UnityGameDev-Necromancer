@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09fb6c8d68a8f0f47968c2690e4d49a0, type: 3}
+  m_Script: {fileID: 11500000, guid: f6142670609dcaf4b9fa48f87a224f61, type: 3}
   m_Name: "\u673A\u51751Attack"
   m_EditorClassIdentifier: 
   _components:

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b675cb496bd3f97488b46377041828a6, type: 3}
   m_Name: "\u673A\u5175-\u96BE\u5EA61"
   m_EditorClassIdentifier: 
-  IdleBehavior: {fileID: 11400000, guid: 99dba6c68c08d254790cf43b5413053e, type: 2}
-  ChaseBehavior: {fileID: 11400000, guid: 362973a62ed2cae479f36ae95f712b72, type: 2}
-  AttackBehavior: {fileID: 11400000, guid: 8786c4235b3760f42af7d312e1728652, type: 2}
+  IdleBehavior: {fileID: 11400000, guid: b64c81c5d80769a4fb4f5542072e818d, type: 2}
+  ChaseBehavior: {fileID: 11400000, guid: 6a55402f5366f61418d0d0e925aab8c4, type: 2}
+  AttackBehavior: {fileID: 11400000, guid: aa56cf74434e2b14b81e2eb8471e2cae, type: 2}

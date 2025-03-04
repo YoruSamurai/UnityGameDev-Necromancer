@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c14080ece7a636a45b6f4e7812bf856c, type: 3}
+  m_Script: {fileID: 11500000, guid: 622aad00476f3114082edb9db60effea, type: 3}
   m_Name: "\u673A\u51751Chase"
   m_EditorClassIdentifier: 
   _components:

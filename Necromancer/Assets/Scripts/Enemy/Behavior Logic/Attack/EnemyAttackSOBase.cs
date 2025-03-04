@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[CreateAssetMenu(fileName = "攻击", menuName = "Enemy Logic/Attack")]
 public class EnemyAttackSOBase : ScriptableObject
 {
     protected Enemy enemy;
@@ -33,6 +33,7 @@ public class EnemyAttackSOBase : ScriptableObject
 
     public virtual void DoEnterLogic()
     {
+        enemy.anim.SetBool("Attack", true);
         foreach (var comp in _componentInstances)
             comp.OnEnter();
     }
