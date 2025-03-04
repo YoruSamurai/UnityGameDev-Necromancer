@@ -6,9 +6,8 @@ using UnityEngine;
 public class EnemyAttackSingle : EnemyAttackSOBase
 {
 
-    private Transform _playerTransform;
-    private float _timer;
-    private float _timeBetweenShots = 1f;
+
+    
 
 
     public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
@@ -37,14 +36,7 @@ public class EnemyAttackSingle : EnemyAttackSOBase
         {
             enemy.stateMachine.ChangeState(enemy.chaseState);
         }
-        enemy.SetVelocity(0,0);
-        if (_timer > _timeBetweenShots)
-        {
-            _timer = 0f;
-            Debug.Log("我射");
-            enemy.isAttacking = false;
-        }
-        _timer += Time.deltaTime;
+        
 
         
     }

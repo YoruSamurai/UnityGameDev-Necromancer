@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyChaseDirectToPlayer : EnemyChaseSOBase
 {
 
-    [SerializeField] private float _movementSpeed;
     public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
     {
         base.DoAnimationTriggerEventLogic(triggerType);
@@ -38,26 +37,7 @@ public class EnemyChaseDirectToPlayer : EnemyChaseSOBase
             enemy.stateMachine.ChangeState(enemy.idleState);
             return;
         }
-        // 计算方向
-        int moveDirection = playerTransform.position.x > enemy.transform.position.x ? 1 : -1;
-
-        bool canMove = (enemy.IsWallDetected() || !enemy.IsGroundDetected());
-        // 如果前方是墙壁或者没有地面，则停止移动
-        if (canMove && moveDirection == enemy.facingDir)
-        {
-            enemy.SetZeroVelocity();
-            
-        }
-        else if(Mathf.Abs(playerTransform.position.x - enemy.transform.position.x) < .1f)
-        {
-            Debug.Log(21313);
-            Debug.Log(playerTransform.position.x + " " + enemy.transform.position.x);
-            enemy.SetZeroVelocity();
-        }
-        else
-        {
-            enemy.SetVelocity(moveDirection * _movementSpeed, enemy.rb.velocity.y);
-        }
+        
     }
 
     public override void Initialize(GameObject gameObject, Enemy enemy)

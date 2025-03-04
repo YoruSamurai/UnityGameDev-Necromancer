@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09fb6c8d68a8f0f47968c2690e4d49a0, type: 3}
-  m_Name: Attack-Single
+  m_Script: {fileID: 11500000, guid: c97565cc1197df04ca799cdcc1c208c8, type: 3}
+  m_Name: "Component_Attack Single \u5355\u6B21\u653B\u51FB"
   m_EditorClassIdentifier: 
-  _components:
-  - {fileID: 11400000, guid: 5f55ec815ac4e344d9611996ba5cf209, type: 2}
+  componentName: "\u5355\u6B21\u7B80\u7B80\u5355\u5355\u7684\u653B\u51FB"
+  componentDesc: "\u563B\u563B"
+  _timeBetweenShots: 1
