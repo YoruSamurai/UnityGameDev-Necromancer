@@ -5,10 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Idle Random Wander", menuName = "Enemy Logic/Idle/Random Wander")]
 public class EnemyIdleRandomWander : EnemyIdleSOBase
 {
-
-    
-
-
     public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
     {
         base.DoAnimationTriggerEventLogic(triggerType);
@@ -29,10 +25,7 @@ public class EnemyIdleRandomWander : EnemyIdleSOBase
     public override void DoUpdateLogic()
     {
         base.DoUpdateLogic();
-        if ((playerTransform.position - transform.position).magnitude < 12f)
-        {
-            enemy.stateMachine.ChangeState(enemy.chaseState);
-        }
+        
         
     }
 

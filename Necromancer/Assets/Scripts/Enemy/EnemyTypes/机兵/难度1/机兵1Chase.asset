@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c14080ece7a636a45b6f4e7812bf856c, type: 3}
-  m_Name: Chase-Direct Chase
+  m_Name: "\u673A\u51751Chase"
   m_EditorClassIdentifier: 
   _components:
+  - {fileID: 11400000, guid: 4cc5fa203644a284ca3ac476554b76f5, type: 2}
   - {fileID: 11400000, guid: 8df8e4436ba67c6489e049acb387fb9a, type: 2}
-  _movementSpeed: 10

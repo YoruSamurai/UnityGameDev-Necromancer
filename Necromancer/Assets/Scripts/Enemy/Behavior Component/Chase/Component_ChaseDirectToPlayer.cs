@@ -20,8 +20,7 @@ public class Component_ChaseDirectToPlayer : EnemyBehaviorComponent
         }
         else if (Mathf.Abs(playerTransform.position.x - enemy.transform.position.x) < .1f)
         {
-            Debug.Log(21313);
-            Debug.Log(playerTransform.position.x + " " + enemy.transform.position.x);
+
             enemy.SetZeroVelocity();
         }
         else

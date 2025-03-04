@@ -7,9 +7,6 @@ public class EnemyAttackSingle : EnemyAttackSOBase
 {
 
 
-    
-
-
     public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
     {
         base.DoAnimationTriggerEventLogic(triggerType);
@@ -32,13 +29,7 @@ public class EnemyAttackSingle : EnemyAttackSOBase
     public override void DoUpdateLogic()
     {
         base.DoUpdateLogic();
-        if ((playerTransform.position - transform.position).magnitude > 2f && !enemy.isAttacking)
-        {
-            enemy.stateMachine.ChangeState(enemy.chaseState);
-        }
-        
 
-        
     }
 
     public override void Initialize(GameObject gameObject, Enemy enemy)

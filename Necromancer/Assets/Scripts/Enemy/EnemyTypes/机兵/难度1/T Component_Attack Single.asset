@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97565cc1197df04ca799cdcc1c208c8, type: 3}
-  m_Name: "Component_Attack Single \u5355\u6B21\u653B\u51FB"
+  m_Script: {fileID: 11500000, guid: cc17801d7cf76274a96fca3965830038, type: 3}
+  m_Name: T Component_Attack Single
   m_EditorClassIdentifier: 
-  componentName: "\u5355\u6B21\u7B80\u7B80\u5355\u5355\u7684\u653B\u51FB"
-  componentDesc: "\u563B\u563B"
-  _timeBetweenShots: 1
+  componentName: 
+  componentDesc: "\u5982\u679C\u73A9\u5BB6\u79BB\u5F00\u653B\u51FB\u8303\u56F4 \u56DE\u5230\u8FFD\u9010"
+  distanceToAttack: 2

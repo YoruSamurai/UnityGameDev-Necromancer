@@ -12,9 +12,7 @@ public class Enemy : MonoBehaviour
 
 
     #region SO
-    [SerializeField] private EnemyIdleSOBase enemyIdleBase;
-    [SerializeField] private EnemyChaseSOBase enemyChaseBase;
-    [SerializeField] private EnemyAttackSOBase enemyAttackBase;
+    [SerializeField] private EnemyConfigSO configSO;
 
     public EnemyIdleSOBase enemyIdleBaseInstance {  get; set; }
     public EnemyChaseSOBase enemyChaseBaseInstance { get; set; }
@@ -45,10 +43,13 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
-        enemyIdleBaseInstance = Instantiate(enemyIdleBase);
-        enemyChaseBaseInstance = Instantiate(enemyChaseBase);
-        enemyAttackBaseInstance = Instantiate(enemyAttackBase);
-
+/*        enemyIdleBaseInstance = Instantiate(configSO.IdleBehavior);
+        enemyChaseBaseInstance = Instantiate(configSO.ChaseBehavior);
+        enemyAttackBaseInstance = Instantiate(configSO.AttackBehavior);*/
+        var configCopy = configSO.DeepCopy();
+        enemyIdleBaseInstance = configCopy.IdleBehavior;
+        enemyChaseBaseInstance = configCopy.ChaseBehavior;
+        enemyAttackBaseInstance = configCopy.AttackBehavior;
         stateMachine = new EnemyStateMachine();
         idleState = new EnemyIdleState(this,stateMachine);
         chaseState = new EnemyChaseState(this,stateMachine);
@@ -72,6 +73,13 @@ public class Enemy : MonoBehaviour
         //Debug.Log(stateMachine.currentEnemyState);
         stateMachine.currentEnemyState.UpdateState();
     }
+
+    #region 动画触发器
+    public void AnimationTrigger(AnimationTriggerType type)
+    {
+        stateMachine.currentEnemyState.AnimationTriggerEvent(type);
+    }
+    #endregion
 
     #region 移动
 
@@ -142,7 +150,7 @@ public class Enemy : MonoBehaviour
 #region 敌人枚举（意义还不明确）
 public enum AnimationTriggerType
 {
-    EnemyDamaged,
+    EnemyAttackEnd,
     PlayFootstepSound
 }
 #endregion

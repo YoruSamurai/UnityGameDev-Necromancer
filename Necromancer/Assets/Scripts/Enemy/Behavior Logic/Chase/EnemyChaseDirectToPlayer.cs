@@ -26,17 +26,7 @@ public class EnemyChaseDirectToPlayer : EnemyChaseSOBase
     public override void DoUpdateLogic()
     {
         base.DoUpdateLogic();
-        float distance = (playerTransform.position - enemy.transform.position).magnitude;
-        if (distance < 2f)
-        {
-            enemy.stateMachine.ChangeState(enemy.attackState);
-            return;
-        }
-        if (distance > 12f)
-        {
-            enemy.stateMachine.ChangeState(enemy.idleState);
-            return;
-        }
+        
         
     }
 
