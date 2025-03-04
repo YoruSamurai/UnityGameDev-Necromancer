@@ -15,15 +15,13 @@ public class EnemyAttackSingle : EnemyAttackSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        enemy.anim.SetBool("Attack", true);
-        enemy.isAttacking = true;
+        
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
-        enemy.anim.SetBool("Attack", false);
-        enemy.isAttacking = true;
+        
     }
 
     public override void DoUpdateLogic()

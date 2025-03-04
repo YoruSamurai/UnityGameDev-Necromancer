@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: "\u673A\u51751Chase"
   m_EditorClassIdentifier: 
   _components:
-  - {fileID: 11400000, guid: 4cc5fa203644a284ca3ac476554b76f5, type: 2}
   - {fileID: 11400000, guid: 8df8e4436ba67c6489e049acb387fb9a, type: 2}
+  - {fileID: 11400000, guid: 4cc5fa203644a284ca3ac476554b76f5, type: 2}
+  _componentInstances: []

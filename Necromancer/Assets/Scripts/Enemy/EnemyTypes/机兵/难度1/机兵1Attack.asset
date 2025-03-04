@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: "\u673A\u51751Attack"
   m_EditorClassIdentifier: 
   _components:
-  - {fileID: 11400000, guid: 8f66a46cea7742b4fb421eb523114d51, type: 2}
   - {fileID: 11400000, guid: 5f55ec815ac4e344d9611996ba5cf209, type: 2}
+  - {fileID: 11400000, guid: 8f66a46cea7742b4fb421eb523114d51, type: 2}
+  _componentInstances: []

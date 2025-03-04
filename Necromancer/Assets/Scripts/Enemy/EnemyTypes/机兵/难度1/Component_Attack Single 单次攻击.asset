@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   componentName: "\u5355\u6B21\u7B80\u7B80\u5355\u5355\u7684\u653B\u51FB"
   componentDesc: "\u563B\u563B"
-  _timeBetweenShots: 2
+  _timeBetweenShots: 2.1

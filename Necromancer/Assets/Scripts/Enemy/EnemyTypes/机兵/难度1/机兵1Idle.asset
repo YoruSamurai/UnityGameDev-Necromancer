@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: "\u673A\u51751Idle"
   m_EditorClassIdentifier: 
   _components:
-  - {fileID: 11400000, guid: 93e07428a6b29f54fb4232053673be17, type: 2}
   - {fileID: 11400000, guid: ff101cdc6cd849b45b8d7c48ca83dfc0, type: 2}
+  - {fileID: 11400000, guid: 93e07428a6b29f54fb4232053673be17, type: 2}
+  _componentInstances: []

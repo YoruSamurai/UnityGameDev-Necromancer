@@ -52,11 +52,20 @@ public class EnemyAttackSOBase : ScriptableObject
 
     public virtual void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
     {
-
+        foreach (var comp in _componentInstances)
+            comp.OnAnimationTrigger(triggerType);
     }
 
     public virtual void ResetValues()
     {
-
+        
+        foreach (AnimatorControllerParameter parameter in enemy.anim.parameters)
+        {
+            if (parameter.type == AnimatorControllerParameterType.Bool)
+            {
+                Debug.Log(parameter.name);
+                enemy.anim.SetBool(parameter.name, false);
+            }
+        }
     }
 }
