@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb3656d6ad1cfb4495e0b5847241f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configSO: {fileID: 11400000, guid: 7357a04db4942254994b569fb0895aaf, type: 2}
+  configSO: {fileID: 11400000, guid: 0fa68b71b62811b449c70cdfea892b5c, type: 2}
   isAttacking: 0
   groundCheck: {fileID: 4287102957463796491}
   groundCheckDistance: 0.21
@@ -271,8 +271,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 854423697
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1590220544, guid: a0aedd6c22d78a04eb1457b03a9f272c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

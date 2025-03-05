@@ -64,7 +64,6 @@ public class EnemyAttackSOBase : ScriptableObject
         {
             if (parameter.type == AnimatorControllerParameterType.Bool)
             {
-                Debug.Log(parameter.name);
                 enemy.anim.SetBool(parameter.name, false);
             }
         }

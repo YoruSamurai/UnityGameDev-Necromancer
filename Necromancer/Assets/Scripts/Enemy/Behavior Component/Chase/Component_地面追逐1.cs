@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy/Components/Chase/DirectToPlayer")]
-public class Component_ChaseDirectToPlayer : EnemyBehaviorComponent
+[CreateAssetMenu(menuName = "Enemy/Components/Chase/地面追逐1")]
+public class Component_地面追逐1 : EnemyBehaviorComponent
 {
     [SerializeField] private float _movementSpeed;
     public override void OnUpdate()

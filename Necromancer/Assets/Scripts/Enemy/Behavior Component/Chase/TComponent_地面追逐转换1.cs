@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-[CreateAssetMenu(menuName = "Enemy/Components/Chase/TransitionChaseDirectToPlayer")]
-public class TComponent_ChaseDirectToPlayer : EnemyBehaviorComponent
+[CreateAssetMenu(menuName = "Enemy/Components/Chase/地面追逐转换1")]
+public class TComponent_地面追逐转换1 : EnemyBehaviorComponent
 {
     [SerializeField] private float distanceToAttack;
     [SerializeField] private float distanceToIdle;

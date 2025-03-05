@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy/Components/Idle/IdleWander")]
-public class Component_IdleWander : EnemyBehaviorComponent
+[CreateAssetMenu(menuName = "Enemy/Components/Idle/地面闲置1")]
+public class Component_地面闲置1 : EnemyBehaviorComponent
 {
     [SerializeField] private float MovementSpeed;
     public override void OnUpdate()

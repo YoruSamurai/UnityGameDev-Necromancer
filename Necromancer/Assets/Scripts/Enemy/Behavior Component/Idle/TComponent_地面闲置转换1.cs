@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-[CreateAssetMenu(menuName = "Enemy/Components/Idle/TransitionIdleWander")]
-public class TComponent_IdleWander : EnemyBehaviorComponent
+[CreateAssetMenu(menuName = "Enemy/Components/Idle/地面闲置转换1")]
+public class TComponent_地面闲置转换1 : EnemyBehaviorComponent
 {
     [SerializeField] private float distance;
     public override void OnUpdate()

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[CreateAssetMenu(menuName = "Enemy/Components/Attack/AttackSingle")]
-public class Component_AttackSingle : EnemyBehaviorComponent
+[CreateAssetMenu(menuName = "Enemy/Components/Attack/飞行攻击1")]
+public class Component_飞行攻击1 : EnemyBehaviorComponent
 {
     private float _timer;
     [SerializeField] private float _timeBetweenShots = 3f; // 攻击冷却时间

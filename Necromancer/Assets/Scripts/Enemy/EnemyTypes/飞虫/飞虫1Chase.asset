@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a67142e1521c7446aa4497c0c065276, type: 3}
-  m_Name: T Component_Chase Direct To Player
+  m_Script: {fileID: 11500000, guid: 622aad00476f3114082edb9db60effea, type: 3}
+  m_Name: "\u98DE\u866B1Chase"
   m_EditorClassIdentifier: 
-  componentName: "\u76F4\u7EBF\u8FFD\u51FB"
-  componentDesc: "\u76F4\u7EBF\u8FFD\u51FB"
-  distanceToAttack: 2
-  distanceToIdle: 12
+  _components:
+  - {fileID: 11400000, guid: e38567ca6f87c58428c70bf2fcd93863, type: 2}
+  - {fileID: 11400000, guid: fb1369ffc3669154caaa00f4383e8cb1, type: 2}
+  _componentInstances: []

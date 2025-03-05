@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f1b50abb6f200d49bb29530647e2ba0, type: 3}
-  m_Name: T Component_Idle Wander
+  m_Name: "T\u5730\u9762\u95F2\u7F6E\u8F6C\u6362"
   m_EditorClassIdentifier: 
   componentName: "\u6839\u636E\u4E0E\u73A9\u5BB6\u8DDD\u79BB\u8FDB\u5165Chase\u72B6\u6001"
   componentDesc: "\u5F53\u73A9\u5BB6\u8DDD\u79BB\u654C\u4EBAdistance\u7684\u65F6\u5019\uFF0C\u8FDB\u5165Chase"

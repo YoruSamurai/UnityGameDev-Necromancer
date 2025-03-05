@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[CreateAssetMenu(menuName = "Enemy/Components/Attack/AttackSingle")]
-public class Component_AttackSingle : EnemyBehaviorComponent
+[CreateAssetMenu(menuName = "Enemy/Components/Attack/Attack2")]
+public class Component_Attack2 : EnemyBehaviorComponent
 {
     private float _timer;
-    [SerializeField] private float _timeBetweenShots = 3f; // 攻击冷却时间
+    [SerializeField] private float _timeBetweenShots = 4f; // 攻击冷却时间
 
     public override void OnEnter()
     {
-        _timer = _timeBetweenShots - .01f;
+        _timer = _timeBetweenShots -.01f;
     }
 
     public override void OnUpdate()
@@ -26,7 +25,7 @@ public class Component_AttackSingle : EnemyBehaviorComponent
         if (!enemy.isAttacking && _timer >= _timeBetweenShots)
         {
             _timer = 0f;
-            Debug.Log("Component_AttackSingle: 触发攻击");
+            Debug.Log("Component_Attack2: 触发攻击");
             enemy.anim.SetBool("Attack", true);
             enemy.anim.SetBool("Idle", false);
             enemy.isAttacking = true;
@@ -38,14 +37,15 @@ public class Component_AttackSingle : EnemyBehaviorComponent
     {
         if (triggerType == AnimationTriggerType.EnemyAttackEnd)
         {
+            // 攻击动画结束，重置攻击状态和动画参数
             enemy.anim.SetBool("Attack", false);
             enemy.isAttacking = false;
-            Debug.Log("Component_AttackSingle: 攻击结束");
+            Debug.Log("Component_Attack2: 攻击结束");
             // 如果当前的攻击行为在复合攻击状态下，则通知复合攻击模块重置
             EnemyCompositeAttackSO composite = enemy.enemyAttackBaseInstance as EnemyCompositeAttackSO;
             if (composite != null)
             {
-                Debug.Log("进入重置攻击");
+                Debug.Log("重置攻击2？");
                 composite.ResetAttack();
             }
         }

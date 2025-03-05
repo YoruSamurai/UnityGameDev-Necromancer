@@ -60,12 +60,10 @@ public class EnemyIdleSOBase : ScriptableObject
 
     public virtual void ResetValues()
     {
-        Debug.Log("fuck");
         foreach (AnimatorControllerParameter parameter in enemy.anim.parameters)
         {
             if (parameter.type == AnimatorControllerParameterType.Bool)
             {
-                Debug.Log(parameter.name);
                 enemy.anim.SetBool(parameter.name, false);
             }
         }

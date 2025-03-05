@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 542bd7cc7fe95c241bb83422367f6b7e, type: 3}
-  m_Name: "Chase Direct To Player\u76F4\u8FFD\u73A9\u5BB6"
+  m_Script: {fileID: 11500000, guid: 1e18898d63d7b9e40a2fe646e3c0c7c1, type: 3}
+  m_Name: "C_\u98DE\u884C\u95F2\u7F6E1"
   m_EditorClassIdentifier: 
-  componentName: "\u76F4\u63A5\u8FFD\u73A9\u5BB6"
-  componentDesc: "\u5411\u7740\u73A9\u5BB6\u51B2\u523A\u51B2\u523A"
-  _movementSpeed: 15
+  componentName: 
+  componentDesc: 
+  cycleTime: 5
+  speed: 5
