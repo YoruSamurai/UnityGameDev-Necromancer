@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+[CreateAssetMenu(menuName = "Enemy/Components/Attack/哥布林斩击")]
+public class Component_哥布林斩击 : EnemyBehaviorComponent
+{
+    private float _timer;
+    [SerializeField] private float _timeBetweenShots = 2f; // 攻击冷却时间
+
+    public override void OnEnter()
+    {
+        _timer = _timeBetweenShots - .01f;
+    }
+
+    public override void OnUpdate()
+    {
+        // 保证敌人静止
+        enemy.SetVelocity(0, 0);
+
+        if (!enemy.isAttacking)
+        {
+            enemy.anim.SetBool("Idle", true);
+        }
+
+        if (!enemy.isAttacking && _timer >= _timeBetweenShots)
+        {
+            _timer = 0f;
+            Debug.Log("斩击: 触发攻击");
+            enemy.anim.SetBool("Attack", true);
+            enemy.anim.SetBool("Idle", false);
+            enemy.isAttacking = true;
+        }
+        _timer += Time.deltaTime;
+    }
+
+    public override void OnAnimationTrigger(AnimationTriggerType triggerType)
+    {
+        if (triggerType == AnimationTriggerType.EnemyAttackEnd)
+        {
+            // 攻击动画结束，重置攻击状态和动画参数
+            enemy.anim.SetBool("Attack", false);
+            enemy.isAttacking = false;
+            Debug.Log("斩击: 攻击结束");
+            // 设置攻击冷却
+            enemy.currentAttackCooldown = enemy.attackCooldown;
+            enemy.stateMachine.ChangeState(enemy.chaseState);
+        }
+    }
+}

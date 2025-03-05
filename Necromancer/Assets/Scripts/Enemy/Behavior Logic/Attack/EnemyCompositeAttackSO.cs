@@ -4,8 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Enemy/Attack/CompositeAttack")]
 public class EnemyCompositeAttackSO : EnemyAttackSOBase
 {
-    [SerializeField] private List<EnemyAttackSOBase> attackBehaviors; // 预设的攻击行为列表
+    [SerializeField] private List<AttackChoice> attackBehaviors; // 预设的攻击行为列表
     private EnemyAttackSOBase currentAttackComponents;
+     
 
     public override void DoEnterLogic()
     {
@@ -31,7 +32,7 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
 
     public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
     {
-        if (triggerType == AnimationTriggerType.EnemyAttackEnd)
+        /*if (triggerType == AnimationTriggerType.EnemyAttackEnd)
         {
             // 将当前攻击行为的结束事件传递出去（让它自己做一些清理工作）
             currentAttackComponents?.DoAnimationTriggerEventLogic(triggerType);
@@ -45,9 +46,9 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
             }
         }
         else
-        {
+        {*/
             currentAttackComponents?.DoAnimationTriggerEventLogic(triggerType);
-        }
+        //}
     }
 
     /// <summary>
@@ -60,10 +61,28 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
 
     private EnemyAttackSOBase ChooseAttackBehavior()
     {
-        if (attackBehaviors == null || attackBehaviors.Count == 0)
+        Vector2 enemyPos = enemy.transform.position;
+        Vector2 playerPos = playerTransform.position;
+        float distance = Vector2.Distance(enemyPos, playerPos);
+        List<int> indexs = new List<int>();
+        for (int i = 0; i < attackBehaviors.Count; i++)
+        {
+            AttackChoice choice = attackBehaviors[i];
+            if (choice.condition == EnterCondition.DistancePlus && distance > choice.distance)
+            {
+                indexs.Add(i);
+            }
+            else if(choice.condition == EnterCondition.DistanceMinus && distance <= choice.distance)
+            {
+                indexs.Add(i);
+            }
+        }
+        return Instantiate(attackBehaviors[indexs[Random.Range(0, indexs.Count)]].attackBehavior);
+
+        /*if (attackBehaviors == null || attackBehaviors.Count == 0)
             return null;
         int index = Random.Range(0, attackBehaviors.Count);
         // 克隆出新的实例，保证每个敌人使用独立实例
-        return Instantiate(attackBehaviors[index]);
+        return Instantiate(attackBehaviors[index]);*/
     }
 }

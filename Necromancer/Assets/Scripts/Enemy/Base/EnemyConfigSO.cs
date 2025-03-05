@@ -21,3 +21,18 @@ public class EnemyConfigSO : ScriptableObject
         return copy;
     }
 }
+
+
+public enum EnterCondition
+{
+    DistancePlus,//距离大于x
+    DistanceMinus,//距离小于x
+}
+
+[System.Serializable]
+public struct AttackChoice
+{
+    public EnemyAttackSOBase attackBehavior; // 具体的攻击行为
+    public EnterCondition condition; // 此攻击方式适用的最小距离
+    public float distance; // 此攻击方式适用的最大距离
+}

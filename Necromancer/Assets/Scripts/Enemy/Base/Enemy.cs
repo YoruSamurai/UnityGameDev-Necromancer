@@ -27,7 +27,11 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
+    #region 攻击冷却
     public bool isAttacking;
+    [SerializeField] public float attackCooldown; // 每次攻击后的冷却时间
+    public float currentAttackCooldown = 0f;
+    #endregion
 
     [Header("Collision Info")]//碰撞参数
     [SerializeField] protected Transform groundCheck;
@@ -70,7 +74,14 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
-        //Debug.Log(stateMachine.currentEnemyState);
+        // 更新冷却计时器
+        if (currentAttackCooldown > 0f)
+        {
+            currentAttackCooldown -= Time.deltaTime;
+            if (currentAttackCooldown < 0f) currentAttackCooldown = 0f;
+        }
+
+
         stateMachine.currentEnemyState.UpdateState();
     }
 
