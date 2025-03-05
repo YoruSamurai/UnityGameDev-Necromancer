@@ -27,6 +27,16 @@ public enum EnterCondition
 {
     DistancePlus,//距离大于x
     DistanceMinus,//距离小于x
+    FrontRaycast,//对前方释放射线
+    RadiusDetect,//圆形范围感知
+}
+
+public enum EnemyStateType
+{
+    Idle,
+    Chase,
+    Attack
+    // 以后还可以添加其他状态
 }
 
 [System.Serializable]

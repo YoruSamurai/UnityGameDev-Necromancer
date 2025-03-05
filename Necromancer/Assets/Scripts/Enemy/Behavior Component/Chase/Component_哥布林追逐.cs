@@ -7,20 +7,13 @@ public class Component_哥布林追逐 : EnemyBehaviorComponent
 {
     [SerializeField] private float _movementSpeed;
 
-    [SerializeField] private float distanceToAttack;
-    [SerializeField] private float distanceToIdle;
-
-    private float _timer;
-    [SerializeField] private float _timeBetweenShots = 2f; // 几秒追不到就进入攻击
 
     public override void OnEnter()
     {
-        _timer = 0f;
     }
 
     public override void OnUpdate()
     {
-        _timer += Time.deltaTime;
         // 计算方向
         int moveDirection = playerTransform.position.x > enemy.transform.position.x ? 1 : -1;
 
@@ -47,18 +40,6 @@ public class Component_哥布林追逐 : EnemyBehaviorComponent
             enemy.anim.SetBool("Idle", false);
         }
 
-        float xdistance = Mathf.Abs(playerTransform.position.x - enemy.transform.position.x);
-        float ydistance = Mathf.Abs(playerTransform.position.y - enemy.transform.position.y);
-        if ((xdistance < distanceToAttack || _timer > _timeBetweenShots) && enemy.currentAttackCooldown <= 0f)
-        {
-            Debug.Log("找的队");
-            enemy.stateMachine.ChangeState(enemy.attackState);
-            return;
-        }
-        if (xdistance > distanceToIdle || ydistance > 5f)
-        {
-            enemy.stateMachine.ChangeState(enemy.idleState);
-            return;
-        }
+        
     }
 }

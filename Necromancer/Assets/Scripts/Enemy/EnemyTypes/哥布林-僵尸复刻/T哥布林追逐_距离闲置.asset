@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c238084dc89f4c48a709ef5e8ccb7dc, type: 3}
-  m_Name: "TComponent\u54E5\u5E03\u6797\u95F2\u7F6E\u8F6C\u6362"
+  m_Script: {fileID: 11500000, guid: 3e8c1e6386feae74c8f46d7a78d11377, type: 3}
+  m_Name: "T\u54E5\u5E03\u6797\u8FFD\u9010_\u8DDD\u79BB\u95F2\u7F6E"
   m_EditorClassIdentifier: 
   componentName: 
   componentDesc: 
-  distance: 15
-  rayRadius: 16
+  distanceToIdle: 10
+  yDistanceThreshold: 5
+  conditionType: 0
+  targetState: 0
