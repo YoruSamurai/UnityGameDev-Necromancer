@@ -162,6 +162,9 @@ public class Enemy : MonoBehaviour
 public enum AnimationTriggerType
 {
     EnemyAttackEnd,
-    PlayFootstepSound
+    PlayFootstepSound,
+    EnemyRollEnd,
+    EnemyFlashMid,
+    EnemyFlashEnd
 }
 #endregion

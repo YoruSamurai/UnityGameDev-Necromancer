@@ -14,9 +14,14 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
         currentAttackComponents = ChooseAttackBehavior();
         if (currentAttackComponents != null)
         {
-            // 注意：这里重新初始化当前选择的攻击行为
+            // 重新初始化当前选择的攻击行为
             currentAttackComponents.Initialize(gameObject, enemy);
             currentAttackComponents.DoEnterLogic();
+        }
+        else
+        {
+            // 没有找到有效攻击行为时，切换回 idle 状态
+            enemy.stateMachine.ChangeState(enemy.idleState);
         }
     }
 
@@ -32,23 +37,7 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
 
     public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
     {
-        /*if (triggerType == AnimationTriggerType.EnemyAttackEnd)
-        {
-            // 将当前攻击行为的结束事件传递出去（让它自己做一些清理工作）
-            currentAttackComponents?.DoAnimationTriggerEventLogic(triggerType);
-            // 重新选择一个新的攻击行为
-            currentAttackComponents = ChooseAttackBehavior();
-            if (currentAttackComponents != null)
-            {
-                // 重新初始化新的攻击行为
-                currentAttackComponents.Initialize(gameObject, enemy);
-                currentAttackComponents.DoEnterLogic();
-            }
-        }
-        else
-        {*/
-            currentAttackComponents?.DoAnimationTriggerEventLogic(triggerType);
-        //}
+        currentAttackComponents?.DoAnimationTriggerEventLogic(triggerType);
     }
 
     /// <summary>
@@ -68,21 +57,20 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
         for (int i = 0; i < attackBehaviors.Count; i++)
         {
             AttackChoice choice = attackBehaviors[i];
-            if (choice.condition == EnterCondition.DistancePlus && distance > choice.distance)
+            if (choice.condition == EnterCondition.DistancePlus && distance > choice.value)
             {
                 indexs.Add(i);
             }
-            else if(choice.condition == EnterCondition.DistanceMinus && distance <= choice.distance)
+            else if (choice.condition == EnterCondition.DistanceMinus && distance <= choice.value)
             {
                 indexs.Add(i);
             }
         }
+        if (indexs.Count == 0)
+        {
+            return null;
+        }
         return Instantiate(attackBehaviors[indexs[Random.Range(0, indexs.Count)]].attackBehavior);
 
-        /*if (attackBehaviors == null || attackBehaviors.Count == 0)
-            return null;
-        int index = Random.Range(0, attackBehaviors.Count);
-        // 克隆出新的实例，保证每个敌人使用独立实例
-        return Instantiate(attackBehaviors[index]);*/
     }
 }

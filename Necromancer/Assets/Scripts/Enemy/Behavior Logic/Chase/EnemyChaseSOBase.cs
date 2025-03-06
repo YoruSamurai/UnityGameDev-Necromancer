@@ -33,7 +33,6 @@ public class EnemyChaseSOBase : ScriptableObject
 
     public virtual void DoEnterLogic()
     {
-        enemy.anim.SetBool("Chase", true);
         foreach (var comp in _componentInstances)
             comp.OnEnter();
     }
@@ -53,7 +52,8 @@ public class EnemyChaseSOBase : ScriptableObject
 
     public virtual void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
     {
-
+        foreach (var comp in _componentInstances)
+            comp.OnAnimationTrigger(triggerType);
     }
 
     public virtual void ResetValues()

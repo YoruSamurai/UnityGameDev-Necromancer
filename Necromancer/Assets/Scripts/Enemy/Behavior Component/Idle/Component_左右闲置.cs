@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Enemy/Components/Idle/哥布林闲置")]
-public class Component_哥布林闲置 : EnemyBehaviorComponent
+[CreateAssetMenu(menuName = "Enemy/Components/Idle/左右闲置")]
+public class Component_左右闲置 : EnemyBehaviorComponent
 {
     [SerializeField] private float MovementSpeed;
 

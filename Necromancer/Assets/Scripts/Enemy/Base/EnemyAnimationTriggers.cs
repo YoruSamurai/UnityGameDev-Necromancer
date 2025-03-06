@@ -19,6 +19,11 @@ public class EnemyAnimationTriggers : MonoBehaviour
         }
     }*/
 
+    private void AnimationTrigger(AnimationTriggerType triggerType)
+    {
+        enemy.AnimationTrigger(triggerType);
+    }
+
     //Trigger when animation ends.在动画结束的时候触发 让玩家切换回基础状态
     //我草 这个名字不能随便改！
     private void AnimationEndTrigger()

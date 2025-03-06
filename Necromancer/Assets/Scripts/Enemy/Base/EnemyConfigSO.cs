@@ -29,7 +29,10 @@ public enum EnterCondition
     DistanceMinus,//距离小于x
     FrontRaycast,//对前方释放射线
     RadiusDetect,//圆形范围感知
+    BackGroundCheck, // 检测敌人后方是否有地面
 }
+
+
 
 public enum EnemyStateType
 {
@@ -43,6 +46,13 @@ public enum EnemyStateType
 public struct AttackChoice
 {
     public EnemyAttackSOBase attackBehavior; // 具体的攻击行为
-    public EnterCondition condition; // 此攻击方式适用的最小距离
-    public float distance; // 此攻击方式适用的最大距离
+    public EnterCondition condition; // 切换条件
+    public float value; // 此攻击方式适用的最大距离
+}
+[System.Serializable]
+public struct ChaseChoice
+{
+    public EnemyChaseSOBase attackBehavior; // 具体的攻击行为
+    public EnterCondition condition; // 切换条件
+    public float value; // 此攻击方式适用的最大距离
 }

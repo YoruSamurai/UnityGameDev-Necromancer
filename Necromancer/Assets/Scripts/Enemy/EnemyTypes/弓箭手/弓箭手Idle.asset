@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688717826dcb8664bbf396ce4710881a, type: 3}
+  m_Name: "\u5F13\u7BAD\u624BIdle"
+  m_EditorClassIdentifier: 
+  _components:
+  - {fileID: 11400000, guid: dac3bbed26628614485b903b0d69aba6, type: 2}
+  - {fileID: 11400000, guid: 916b969634dd5bd4cb0f52dd495c4cca, type: 2}
+  _componentInstances: []
