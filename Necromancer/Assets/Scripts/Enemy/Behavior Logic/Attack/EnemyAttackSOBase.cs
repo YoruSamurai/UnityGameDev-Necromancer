@@ -33,7 +33,6 @@ public class EnemyAttackSOBase : ScriptableObject
 
     public virtual void DoEnterLogic()
     {
-        enemy.anim.SetBool("Attack", true);
         foreach (var comp in _componentInstances)
             comp.OnEnter();
     }

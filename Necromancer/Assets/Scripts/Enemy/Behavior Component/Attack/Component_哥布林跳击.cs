@@ -5,54 +5,66 @@ using UnityEngine;
 public class Component_哥布林跳击 : EnemyBehaviorComponent
 {
     private float _timer;
-    [SerializeField] private float _timeBetweenShots = 2f; // 攻击冷却时间
-    [SerializeField] private float jumpHeight = 5f; // 向上的速度
-    [SerializeField] private float attackDuration = 0.5f; // 攻击动画持续时间
+    [SerializeField] private float _timeBetweenShots = 2f;  // 攻击冷却时间
+    [SerializeField] private float preAttackDelay = 0.3f;     // 攻击前摇延迟
+    [SerializeField] private float jumpHeight = 5f;           // 向上的速度
+    [SerializeField] private float attackDuration = 0.7f;       // 攻击动画持续时间
+
+    // 用于确保在一次攻击周期内只执行一次跳跃逻辑
+    private bool attackTriggered = false;
 
     public override void OnEnter()
     {
         _timer = _timeBetweenShots - .01f;
+        attackTriggered = false;
     }
 
     public override void OnUpdate()
     {
-        
-
+        // 如果不在攻击状态，保持静止并播放Idle动画
         if (!enemy.isAttacking)
         {
-            // 保证敌人静止
             enemy.SetVelocity(0, 0);
             enemy.anim.SetBool("Idle", true);
         }
 
+        _timer += Time.deltaTime;
+
+        // 当累计时间达到攻击冷却时间时，触发攻击（设置动画参数）
         if (!enemy.isAttacking && _timer >= _timeBetweenShots)
         {
-            _timer = 0f;
             enemy.isAttacking = true;
-
-            // 计算跳跃方向
-            Vector2 playerPos = playerTransform.position;
-            Vector2 enemyPos = enemy.transform.position;
-            float jumpSpeedX = (playerPos.x - enemyPos.x) / attackDuration;
-
-            // 触发跳跃攻击
-            Debug.Log("跳击: 触发攻击");
-            enemy.anim.SetBool("Attack", true);
+            enemy.anim.SetBool("Attack2", true);
             enemy.anim.SetBool("Idle", false);
-
-            // 设置速度，使其向玩家跳跃
-            enemy.SetVelocity(jumpSpeedX * 1.2f, jumpHeight);
+            // 重置计时器，用于测量前摇延迟
+            _timer = 0f;
         }
 
-        _timer += Time.deltaTime;
+        // 如果处于攻击状态，并且前摇延迟结束，则执行跳跃攻击（只执行一次）
+        if (enemy.isAttacking && !attackTriggered && _timer >= preAttackDelay)
+        {
+            ExecuteJumpAttack();
+            attackTriggered = true;
+        }
     }
 
+    private void ExecuteJumpAttack()
+    {
+        // 计算跳跃方向：
+        // 令攻击在 attackDuration 内刚好横向到达玩家位置
+        Vector2 enemyPos = enemy.transform.position;
+        Vector2 playerPos = playerTransform.position;
+        float jumpSpeedX = (playerPos.x - enemyPos.x) / attackDuration;
+        // 适当乘以系数（例如1.2f）来调整效果
+        enemy.SetVelocity(jumpSpeedX * 1.2f, jumpHeight);
+        Debug.Log("跳击: 执行跳跃攻击逻辑");
+    }
     public override void OnAnimationTrigger(AnimationTriggerType triggerType)
     {
         if (triggerType == AnimationTriggerType.EnemyAttackEnd)
         {
             // 攻击动画结束，重置攻击状态和动画参数
-            enemy.anim.SetBool("Attack", false);
+            enemy.anim.SetBool("Attack2", false);
             enemy.isAttacking = false;
             Debug.Log("跳击: 攻击结束");
             // 设置攻击冷却
