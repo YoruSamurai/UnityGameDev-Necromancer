@@ -43,12 +43,12 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && !isAttacking && !player.isBusy && baseEquipment1 != null)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking && !player.isBusy && baseEquipment1 != null)
         {
             SetCurrentEquipmentIndex(1);
             baseEquipment1.UseEquipment();
         }
-        if (Input.GetKey(KeyCode.Mouse1) && !isAttacking && !player.isBusy && baseEquipment2 != null)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !isAttacking && !player.isBusy && baseEquipment2 != null)
         {
             SetCurrentEquipmentIndex(2);
             baseEquipment2.UseEquipment();

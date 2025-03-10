@@ -31,6 +31,7 @@ public class PlayerPrimaryAttack : PlayerState
 
     private void SetComboAnimation()
     {
+        Debug.Log(currentWeapon.comboAnimations.Length);
         if (currentWeapon.comboAnimations.Length > 0)
         {
             int currentCombo = 0;

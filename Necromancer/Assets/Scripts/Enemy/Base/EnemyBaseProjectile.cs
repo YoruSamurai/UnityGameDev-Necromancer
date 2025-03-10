@@ -65,7 +65,7 @@ public abstract class EnemyBaseProjectile : MonoBehaviour
         Debug.Log(hit.tag);
         if (hit.CompareTag("Player"))
         {
-            hasHit = true;
+            
             Player player = hit.GetComponent<Player>();
             if (player != null && !player.isInvincible)
             {

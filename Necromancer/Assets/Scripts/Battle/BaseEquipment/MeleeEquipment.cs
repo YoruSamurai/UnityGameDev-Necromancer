@@ -151,6 +151,16 @@ public class MeleeEquipment : BaseEquipment
     public override void UseEquipment()
     {
         base.UseEquipment();
+        // 检查是否处于攻击CD中
+        if (!GetCanUseEquipment())
+        {
+            Debug.Log("BASE攻击还在冷却1中！");
+            return;
+        }
+        else
+        {
+            PlayerStats.Instance.ChangeToAttackState();
+        }
     }
 
     #region 连击和冷却时间相关函数

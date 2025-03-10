@@ -71,16 +71,7 @@ public class BaseEquipment : MonoBehaviour
 
     public virtual void UseEquipment()
     {
-        // 检查是否处于攻击CD中
-        if (!GetCanUseEquipment())
-        {
-            Debug.Log("BASE攻击还在冷却1中！");
-            return;
-        }
-        else
-        {
-            PlayerStats.Instance.ChangeToAttackState();
-        }
+        
     }
 
     public virtual void TriggerHitCheck()

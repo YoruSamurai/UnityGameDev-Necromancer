@@ -160,3 +160,19 @@ public struct StaffAttackStruct
     public float comboBreakTime;
 }
 #endregion
+
+#region 盾牌攻击结构体
+[Serializable]
+public struct ShieldAttackStruct
+{
+    public float attackTime;//攻击时间 在这个时间内播放攻击动画 
+    public float attackMag;
+    public float attackStun;//这里预计是一个晕眩值 也就是耐性条
+    public MeleeAttackShapeEnum attackShape;
+    public MeleeAttackCenterEnum attackCenter;
+    public float attackRadius;
+    public float attackLength;
+    public float attackWidth;
+    public float comboBreakTime;
+}
+#endregion

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2983a8eaa3b02d148beac7c923c9bb64, type: 3}
+  m_Name: "\u5C0F\u6728\u76FE"
+  m_EditorClassIdentifier: 
+  equipmentName: "\u5C0F\u6728\u76FE"
+  baseDmg: 0
+  equipmentSprite: {fileID: 0}
+  equipmentTags: 00000000
+  baseCritChance: 0
+  critMag: 0
+  equipmentDesc: 
+  attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
+  comboAnimations:
+  - {fileID: 7400000, guid: d4af9f751a5c320459c1f743aac9dee6, type: 2}
+  fullComboAttackTimes: 1
+  shieldAttacks:
+  - attackTime: 0.3
+    attackMag: 1
+    attackStun: 1
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 2
+    attackWidth: 4
+    comboBreakTime: 2
+  holdThreshold: 0.5
