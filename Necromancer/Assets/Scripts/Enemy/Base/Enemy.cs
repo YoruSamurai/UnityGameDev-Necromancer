@@ -8,6 +8,13 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D rb { get; set; }
     public Animator anim { get; private set; }
 
+    public MonsterStats monsterStats { get; private set; }
+
+    #endregion
+
+    #region 属性
+    public float currentDamageMultiplier;
+
     #endregion
 
 
@@ -39,6 +46,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Transform wallCheck;
     [SerializeField] protected float wallCheckDistance;
     [SerializeField] protected LayerMask whatIsGround;
+    [SerializeField] public Transform shootPosition;
 
     //面向
     public int facingDir { get; private set; } = 1;
@@ -47,27 +55,28 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
-/*        enemyIdleBaseInstance = Instantiate(configSO.IdleBehavior);
-        enemyChaseBaseInstance = Instantiate(configSO.ChaseBehavior);
-        enemyAttackBaseInstance = Instantiate(configSO.AttackBehavior);*/
+        monsterStats = GetComponent<MonsterStats>();
         var configCopy = configSO.DeepCopy();
         enemyIdleBaseInstance = configCopy.IdleBehavior;
         enemyChaseBaseInstance = configCopy.ChaseBehavior;
         enemyAttackBaseInstance = configCopy.AttackBehavior;
+
+        monsterStats.SetupMonsterStats(configCopy.EnemyProfile);
+
         stateMachine = new EnemyStateMachine();
-        idleState = new EnemyIdleState(this,stateMachine);
-        chaseState = new EnemyChaseState(this,stateMachine);
-        attackState = new EnemyAttackState(this,stateMachine);
+        idleState = new EnemyIdleState(this,stateMachine, monsterStats);
+        chaseState = new EnemyChaseState(this,stateMachine, monsterStats);
+        attackState = new EnemyAttackState(this,stateMachine, monsterStats);
     }
 
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-
-        enemyIdleBaseInstance.Initialize(gameObject, this);
-        enemyChaseBaseInstance.Initialize(gameObject, this);
-        enemyAttackBaseInstance.Initialize(gameObject, this);
+        
+        enemyIdleBaseInstance.Initialize(gameObject, this,monsterStats);
+        enemyChaseBaseInstance.Initialize(gameObject, this, monsterStats);
+        enemyAttackBaseInstance.Initialize(gameObject, this, monsterStats);
 
         stateMachine.Initialize(idleState);
     }
@@ -84,6 +93,8 @@ public class Enemy : MonoBehaviour
 
         stateMachine.currentEnemyState.UpdateState();
     }
+
+    
 
     #region 动画触发器
     public void AnimationTrigger(AnimationTriggerType type)
@@ -165,6 +176,9 @@ public enum AnimationTriggerType
     PlayFootstepSound,
     EnemyRollEnd,
     EnemyFlashMid,
-    EnemyFlashEnd
+    EnemyFlashEnd,
+    EnemyHitDetermineStart,//伤害判定开始判定
+    EnemyHitDetermineEnd,//伤害判定结束
+    EnemyOnShoot,//敌人射箭
 }
 #endregion

@@ -17,7 +17,7 @@ public class EnemyCompositeChaseSO : EnemyChaseSOBase
         if (currentChaseComponents != null)
         {
             // 注意：这里重新初始化当前选择的攻击行为
-            currentChaseComponents.Initialize(gameObject, enemy);
+            currentChaseComponents.Initialize(gameObject, enemy, monsterStats);
             currentChaseComponents.DoEnterLogic();
         }
         else
@@ -83,7 +83,6 @@ public class EnemyCompositeChaseSO : EnemyChaseSOBase
                 // 如果检测到地面，则条件满足
                 if (hit.collider != null)
                 {
-                    Debug.Log("都发大水");
                     indexs.Add(i);
                 }
             }

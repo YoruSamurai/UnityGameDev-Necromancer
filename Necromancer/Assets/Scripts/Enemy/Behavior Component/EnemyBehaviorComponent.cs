@@ -8,11 +8,13 @@ public abstract class EnemyBehaviorComponent : ScriptableObject, IEnemyBehaviorC
     [SerializeField , TextArea] private string componentDesc;
 
     protected Enemy enemy {  get; private set; }
+    protected MonsterStats monsterStats { get; private set; }
     protected Transform playerTransform {  get; private set; }
-    public virtual void Initialize(Enemy enemy, Transform playerTransform)
+    public virtual void Initialize(Enemy enemy, Transform playerTransform,MonsterStats monsterStats)
     {
         this.enemy = enemy;
         this.playerTransform = playerTransform;
+        this.monsterStats = monsterStats;
     }
 
     public virtual void OnEnter()

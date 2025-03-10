@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c4feff48739ce478ca34e0521aa147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentDamageMultiplier: 0
   configSO: {fileID: 11400000, guid: 39a4e793a595563418b4c68af66b5b47, type: 2}
   isAttacking: 0
   attackCooldown: 2
@@ -348,6 +349,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  shootPosition: {fileID: 789644623}
   facingRight: 1
 --- !u!50 &343679963
 Rigidbody2D:
@@ -388,6 +390,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604a46985f402d544b558a7387f0fd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  baseDamage: 0
+  stunResistance: 0
+  currentStunResistance: 0
+  freezeResistance: 0
+  currentFreezeResistance: 0
+  stunDuration: 0
+  currentStunTimer: 0
+  freezeDuration: 0
+  currentFreezeTimer: 0
   poisonEffects: []
   burnEffects: []
   bleedEffects: []
@@ -400,13 +413,14 @@ Transform:
   m_GameObject: {fileID: 343679960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -58.33, y: -1.7, z: 0}
+  m_LocalPosition: {x: -26.7, y: -1.8, z: 0}
   m_LocalScale: {x: 1.24, y: 1.24, z: 1.24}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1795022133}
   - {fileID: 292604987}
   - {fileID: 1655709948}
+  - {fileID: 789644623}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &347117008
@@ -1030,6 +1044,7 @@ GameObject:
   - component: {fileID: 785896547}
   - component: {fileID: 785896546}
   - component: {fileID: 785896545}
+  - component: {fileID: 785896548}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -1137,6 +1152,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &785896548
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785896543}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.0625, y: 2.25}
+    newSize: {x: 2.9375, y: 3.1875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4375, y: 2.875}
+  m_EdgeRadius: 0
+--- !u!1 &789644622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 789644623}
+  m_Layer: 6
+  m_Name: shootPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &789644623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789644622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1, y: 0.13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 343679965}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &790275798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2712ad89fd15caf4ca2764cd6d05b395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentDamageMultiplier: 0
   configSO: {fileID: 11400000, guid: 07ccda6ce3b57cc47b553f25fd29132f, type: 2}
   isAttacking: 0
   attackCooldown: 3
@@ -1597,6 +1689,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  shootPosition: {fileID: 0}
   facingRight: 1
 --- !u!50 &1104560691
 Rigidbody2D:
@@ -1637,6 +1730,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604a46985f402d544b558a7387f0fd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  baseDamage: 0
+  stunResistance: 0
+  currentStunResistance: 0
+  freezeResistance: 0
+  currentFreezeResistance: 0
+  stunDuration: 0
+  currentStunTimer: 0
+  freezeDuration: 0
+  currentFreezeTimer: 0
   poisonEffects: []
   burnEffects: []
   bleedEffects: []
@@ -1649,7 +1753,7 @@ Transform:
   m_GameObject: {fileID: 1104560688}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.83, y: 5.13, z: 0}
+  m_LocalPosition: {x: -2, y: 5.1, z: 0}
   m_LocalScale: {x: 1.24, y: 1.24, z: 1.24}
   m_ConstrainProportionsScale: 1
   m_Children:

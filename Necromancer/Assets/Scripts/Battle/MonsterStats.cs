@@ -5,16 +5,73 @@ using UnityEngine;
 public class MonsterStats : MonoBehaviour
 {
 
+    #region Components
+    public Enemy enemy { get; private set; }
+
+    #endregion
+
+    [Header("生命值")]
+    public int maxHealth;
+    public int currentHealth;
+    [Header("基础伤害值")]
+    public int baseDamage;
+    [Header("眩晕抵抗值")]
+    public int stunResistance;
+    public int currentStunResistance;
+    [Header("冻结抵抗值")]
+    public int freezeResistance;
+    public int currentFreezeResistance;
+    [Header("眩晕时长")]
+    public float stunDuration;
+    public float currentStunTimer;
+    [Header("冻结时长")]
+    public float freezeDuration;
+    public float currentFreezeTimer;
+
     [SerializeField] private List<PoisonEffect> poisonEffects = new List<PoisonEffect>();
     [SerializeField] private List<BurnEffect> burnEffects = new List<BurnEffect>();
     [SerializeField] private List<BleedEffect> bleedEffects = new List<BleedEffect>();
+
+    private void Start()
+    {
+        enemy = GetComponent<Enemy>();
+    }
 
     private void Update()
     {
         UpdatePoisonEffects();
     }
 
-    
+    public void SetupMonsterStats(EnemyProfileSO profileSO)
+    {
+        maxHealth = profileSO.maxHealth;
+        currentHealth = profileSO.maxHealth;
+        baseDamage = profileSO.baseDamage;
+        stunResistance = profileSO.stunResistance;
+        currentStunResistance = profileSO.stunResistance;
+        freezeResistance = profileSO.freezeResistance;
+        currentFreezeResistance = profileSO.freezeResistance;
+        stunDuration = profileSO.stunDuration;
+        currentStunTimer = 0;
+        freezeDuration = profileSO.freezeDuration;
+        currentFreezeTimer = 0;
+    }
+
+    #region 当box collider被启用 就可以检测碰撞了 这个感觉可以写在敌人的伤害属性那边
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Player player = collision.GetComponent<Player>();
+            if (player != null)
+            {
+                Debug.Log("玩家受到伤害");
+                Debug.Log(enemy.currentDamageMultiplier * baseDamage);
+            }
+        }
+    }
+    #endregion
+
 
     #region 怪物进行攻击 怪物命中 怪物被命中（无防御） 怪物被命中（防御中） 怪物死亡了 此时触发这些函数
     public void OnAttack()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   componentName: 
   componentDesc: 
-  distanceToIdle: 10
-  yDistanceThreshold: 5
+  xDistanceToIdle: 20
+  yDistanceToIdle: 5
   conditionType: 0
   targetState: 0

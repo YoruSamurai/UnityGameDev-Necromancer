@@ -15,3 +15,4 @@ MonoBehaviour:
   IdleBehavior: {fileID: 11400000, guid: 578b0291a07087f45abb48a06ed94edb, type: 2}
   ChaseBehavior: {fileID: 11400000, guid: 4976b1d350370234a983d32bc8eebf40, type: 2}
   AttackBehavior: {fileID: 11400000, guid: 75dd7f54b2003a14e9f93aa3ac085095, type: 2}
+  EnemyProfile: {fileID: 11400000, guid: f028deea25c10b543b0bbaffe6ae0ac9, type: 2}

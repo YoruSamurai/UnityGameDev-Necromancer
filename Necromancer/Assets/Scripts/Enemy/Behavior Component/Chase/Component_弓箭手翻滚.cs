@@ -20,8 +20,6 @@ public class Component_弓箭手翻滚 : EnemyBehaviorComponent
         {
             enemy.Flip();
         }
-
-        enemy.anim.SetBool("Idle", false);
         enemy.anim.SetBool("Chase", true);
 
         // 开始翻滚：设置翻滚速度，Y 方向保持不变（或者你可以调整为符合实际需求）

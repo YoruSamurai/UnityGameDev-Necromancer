@@ -6,6 +6,8 @@ public class Component_哥布林跳击 : EnemyBehaviorComponent
 {
     private float _timer;
     [SerializeField] private float _timeBetweenShots = 2f;  // 攻击冷却时间
+    [SerializeField] private float damageMultiplier;  // 攻击伤害倍率
+
     [SerializeField] private float preAttackDelay = 0.3f;     // 攻击前摇延迟
     [SerializeField] private float jumpHeight = 5f;           // 向上的速度
     [SerializeField] private float attackDuration = 0.7f;       // 攻击动画持续时间
@@ -17,6 +19,7 @@ public class Component_哥布林跳击 : EnemyBehaviorComponent
     {
         _timer = _timeBetweenShots - .01f;
         attackTriggered = false;
+        enemy.currentDamageMultiplier = damageMultiplier;
     }
 
     public override void OnUpdate()
@@ -70,6 +73,14 @@ public class Component_哥布林跳击 : EnemyBehaviorComponent
             // 设置攻击冷却
             enemy.currentAttackCooldown = enemy.attackCooldown;
             enemy.stateMachine.ChangeState(enemy.chaseState);
+        }
+        if (triggerType == AnimationTriggerType.EnemyHitDetermineStart)
+        {
+            Debug.Log("开始伤害判定咯");
+        }
+        if (triggerType == AnimationTriggerType.EnemyHitDetermineEnd)
+        {
+            Debug.Log("结束伤害判定咯");
         }
     }
 }

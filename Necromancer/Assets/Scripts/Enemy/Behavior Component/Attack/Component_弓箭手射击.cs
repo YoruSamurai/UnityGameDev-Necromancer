@@ -1,16 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 [CreateAssetMenu(menuName = "Enemy/Components/Attack/弓箭手射击")]
 public class Component_弓箭手射击 : EnemyBehaviorComponent
 {
     private float _timer;
     [SerializeField] private float _timeBetweenShots = 2f; // 攻击冷却时间
+    [SerializeField] private float damageMultiplier;  // 攻击伤害倍率
+    [SerializeField] private GameObject projectilePrefab;
+
+
+    [SerializeField] private float projectileSpeed;
+    [SerializeField] private float projectileMaxDistance;
+    [SerializeField] private float projectileMaxTimer;
+    [SerializeField] private float projectileGravity;
+    [SerializeField] private float projectileAngle;
 
     public override void OnEnter()
     {
         _timer = _timeBetweenShots - .01f;
+        enemy.currentDamageMultiplier = damageMultiplier;
     }
 
     public override void OnUpdate()
@@ -48,6 +59,21 @@ public class Component_弓箭手射击 : EnemyBehaviorComponent
 
     public override void OnAnimationTrigger(AnimationTriggerType triggerType)
     {
+        if(triggerType == AnimationTriggerType.EnemyOnShoot)
+        {
+            Debug.Log("开始发射projectile");
+            GameObject projectile = Instantiate(
+            projectilePrefab,
+            enemy.shootPosition.position,
+            Quaternion.identity
+            );
+            EnemyBaseProjectile baseProjectile = projectile.GetComponent<EnemyBaseProjectile>();
+            if (baseProjectile != null)
+            {
+                baseProjectile.Initialize(enemy, monsterStats.baseDamage, damageMultiplier, projectileSpeed, 
+                    projectileMaxDistance, projectileMaxTimer, projectileGravity, projectileAngle,enemy.facingRight);
+            }
+        }
         if (triggerType == AnimationTriggerType.EnemyAttackEnd)
         {
             // 攻击动画结束，重置攻击状态和动画参数

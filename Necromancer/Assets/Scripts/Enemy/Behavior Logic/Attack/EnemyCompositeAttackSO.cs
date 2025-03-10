@@ -15,7 +15,7 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
         if (currentAttackComponents != null)
         {
             // 重新初始化当前选择的攻击行为
-            currentAttackComponents.Initialize(gameObject, enemy);
+            currentAttackComponents.Initialize(gameObject, enemy, monsterStats);
             currentAttackComponents.DoEnterLogic();
         }
         else

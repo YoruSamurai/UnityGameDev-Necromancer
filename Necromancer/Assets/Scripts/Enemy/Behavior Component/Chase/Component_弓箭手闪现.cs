@@ -18,8 +18,6 @@ public class Component_弓箭手闪现 : EnemyBehaviorComponent
         {
             enemy.Flip();
         }
-
-        enemy.anim.SetBool("Idle", false);
         enemy.anim.SetBool("Flash", true); // 播放闪现起始动画
 
         teleportStarted = true;

@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyIdleSOBase : ScriptableObject
 {
     protected Enemy enemy;
+    protected MonsterStats monsterStats;
     protected Transform transform;
     protected GameObject gameObject;
 
@@ -14,11 +15,13 @@ public class EnemyIdleSOBase : ScriptableObject
     // 用于存储每个敌人专用的组件克隆实例
     [SerializeField] private List<EnemyBehaviorComponent> _componentInstances;
 
-    public virtual void Initialize(GameObject gameObject, Enemy enemy)
+    public virtual void Initialize(GameObject gameObject, Enemy enemy, MonsterStats monsterStats)
     {
         this.gameObject = gameObject;
         transform = gameObject.transform;
         this.enemy = enemy;
+        this.monsterStats = monsterStats;
+
         Debug.Log(enemy.gameObject.name);
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         // 克隆 _components 中的每个组件，生成独立实例
@@ -27,7 +30,7 @@ public class EnemyIdleSOBase : ScriptableObject
         {
             // 使用 Instantiate 克隆出新的实例
             var clone = Instantiate(comp);
-            clone.Initialize(enemy, playerTransform);
+            clone.Initialize(enemy, playerTransform, monsterStats);
             _componentInstances.Add(clone);
         }
     }

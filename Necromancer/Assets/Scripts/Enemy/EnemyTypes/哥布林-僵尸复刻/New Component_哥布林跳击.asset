@@ -15,6 +15,7 @@ MonoBehaviour:
   componentName: 
   componentDesc: 
   _timeBetweenShots: 2
+  damageMultiplier: 2
   preAttackDelay: 0.3
   jumpHeight: 10
   attackDuration: 0.6

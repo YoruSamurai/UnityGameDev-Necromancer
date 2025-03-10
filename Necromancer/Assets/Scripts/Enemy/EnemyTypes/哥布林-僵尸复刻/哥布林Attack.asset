@@ -17,7 +17,7 @@ MonoBehaviour:
   attackBehaviors:
   - attackBehavior: {fileID: 11400000, guid: 5e08f7d0ba7c2554bbf990f8fd3524ea, type: 2}
     condition: 0
-    distance: 6
+    value: 5
   - attackBehavior: {fileID: 11400000, guid: ea21a3aff287ca3478ffd1edcd0ddc22, type: 2}
     condition: 1
-    distance: 6
+    value: 5

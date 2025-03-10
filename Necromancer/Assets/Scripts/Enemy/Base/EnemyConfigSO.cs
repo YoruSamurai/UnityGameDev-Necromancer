@@ -11,6 +11,10 @@ public class EnemyConfigSO : ScriptableObject
     public EnemyChaseSOBase ChaseBehavior;
     public EnemyAttackSOBase AttackBehavior;
 
+    [Header("属性配置")]
+    public EnemyProfileSO EnemyProfile;
+
+
     // 新增深拷贝方法
     public EnemyConfigSO DeepCopy()
     {
@@ -18,6 +22,7 @@ public class EnemyConfigSO : ScriptableObject
         copy.IdleBehavior = Instantiate(IdleBehavior);
         copy.ChaseBehavior = Instantiate(ChaseBehavior);
         copy.AttackBehavior = Instantiate(AttackBehavior);
+        copy.EnemyProfile = Instantiate(EnemyProfile);
         return copy;
     }
 }

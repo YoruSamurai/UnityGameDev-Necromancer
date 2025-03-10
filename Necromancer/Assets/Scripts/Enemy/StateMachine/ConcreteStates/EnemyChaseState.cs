@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyChaseState : EnemyState
 {
 
-    public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
+    public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine, MonsterStats monsterStats) : base(enemy, enemyStateMachine, monsterStats)
     {
     }
 

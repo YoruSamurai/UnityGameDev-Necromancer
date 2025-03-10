@@ -6,9 +6,7 @@ public class EnemyAttackState : EnemyState
 {
 
     private Transform _playerTransform;
-    private float _timer;
-    private float _timeBetweenShots = 2f;
-    public EnemyAttackState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
+    public EnemyAttackState(Enemy enemy, EnemyStateMachine enemyStateMachine,MonsterStats monsterStats) : base(enemy, enemyStateMachine, monsterStats)
     {
     }
 

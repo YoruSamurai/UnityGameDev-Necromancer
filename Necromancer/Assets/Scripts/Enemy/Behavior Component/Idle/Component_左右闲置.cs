@@ -21,6 +21,7 @@ public class Component_左右闲置 : EnemyBehaviorComponent
             if (delayTimer >= delayDuration)
             {
                 // 延迟结束后执行翻转，并恢复运动
+                //Debug.Log("我转" + delayDuration);
                 enemy.Flip();
                 enemy.anim.SetBool("Idle", false);
                 enemy.anim.SetBool("Move", true);

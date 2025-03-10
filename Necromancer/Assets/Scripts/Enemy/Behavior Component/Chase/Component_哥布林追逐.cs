@@ -28,7 +28,8 @@ public class Component_哥布林追逐 : EnemyBehaviorComponent
         }
         else if (Mathf.Abs(playerTransform.position.x - enemy.transform.position.x) < 2f)
         {
-
+            if(moveDirection != enemy.facingDir) 
+                enemy.Flip();
             enemy.SetZeroVelocity();
             enemy.anim.SetBool("Idle", true);
             enemy.anim.SetBool("Chase", false);
