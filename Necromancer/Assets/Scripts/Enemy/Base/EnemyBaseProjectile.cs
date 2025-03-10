@@ -61,7 +61,41 @@ public abstract class EnemyBaseProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hit)
     {
-        Debug.Log("射中了！！");
+        // 如果碰撞到玩家
+        Debug.Log(hit.tag);
+        if (hit.CompareTag("Player"))
+        {
+            hasHit = true;
+            Player player = hit.GetComponent<Player>();
+            if (player != null && !player.isInvincible)
+            {
+                int finalDamage = Mathf.RoundToInt(baseDamage * damageMultiplier);
+                Debug.Log($"射中了玩家，造成 {finalDamage} 点伤害");
+                // 可根据需求，子弹命中玩家后立即销毁
+                Destroy(gameObject, destroyDelay);
+            }
+        }
+        // 如果碰撞到其他物体
+        else
+        {
+            // 只处理第一次碰撞，避免重复嵌入
+            if (!hasHit)
+            {
+                hasHit = true;
+                Debug.Log("子弹嵌在了目标上");
+                // 停止运动
+                rb.velocity = Vector2.zero;
+                // 禁用碰撞器，防止再次检测（或将其设为非触发模式）
+                if (boxCollider != null)
+                {
+                    boxCollider.enabled = false;
+                }
+                // 可选：将子弹父对象设为碰撞物，使其随目标移动
+                // transform.SetParent(hit.transform);
+                // 延时1秒后销毁子弹
+                Destroy(gameObject, .3f);
+            }
+        }
     }
 
 }

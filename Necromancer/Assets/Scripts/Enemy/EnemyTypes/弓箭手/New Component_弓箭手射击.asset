@@ -15,9 +15,9 @@ MonoBehaviour:
   componentName: 
   componentDesc: 
   _timeBetweenShots: 2
-  damageMultiplier: 0
+  damageMultiplier: 1
   projectilePrefab: {fileID: 4916283813585670424, guid: e20ffa5f65708704d865371de66301ad, type: 3}
-  projectileSpeed: 15
+  projectileSpeed: 30
   projectileMaxDistance: 100
   projectileMaxTimer: 5
   projectileGravity: 0

@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
     //攻击时候的僵直状态
     public bool isBusy {  get; private set; }
 
+    //无敌状态
+    public bool isInvincible { get; private set; } = false;
+
+
+
     [Header("Move Info")]//移动参数
     public float moveSpeed = 12f;
     public float jumpForce;
@@ -106,6 +111,12 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(_seconds);
 
         isBusy = false;
+    }
+
+    public void SetInvincible(bool value)
+    {
+        isInvincible = value;
+        // 你可以在这里触发视觉反馈（例如改变材质、闪烁效果等）
     }
 
     public void ChangeStateByPlayerStats(PlayerState _playerState)

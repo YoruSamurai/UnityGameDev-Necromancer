@@ -12,13 +12,16 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
         //冲刺开始时 给玩家设置冲刺持续时间
+        // Dash 开始时设置无敌
+        player.SetInvincible(true);
         stateTimer = player.dashDuration;
     }
 
     public override void Exit()
     {
         base.Exit();
-
+        // Dash 结束时设置无敌
+        player.SetInvincible(false);
         player.SetVelocity(0,rb.velocity.y);
     }
 
