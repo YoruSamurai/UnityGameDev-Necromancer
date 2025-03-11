@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
 
     //是否可以攻击
     [SerializeField] public bool isAttacking;
+    [SerializeField] public bool isParrying;
+    [SerializeField] public bool isDefensing;
     [SerializeField] public int currentEquipmentIndex;
 
     [SerializeField] public BoxCollider2D attackCheck;
@@ -43,12 +45,12 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking && !player.isBusy && baseEquipment1 != null)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking && !isParrying && !isDefensing && !player.isBusy && baseEquipment1 != null)
         {
             SetCurrentEquipmentIndex(1);
             baseEquipment1.UseEquipment();
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1) && !isAttacking && !player.isBusy && baseEquipment2 != null)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !isAttacking && !isParrying && !isDefensing && !player.isBusy && baseEquipment2 != null)
         {
             SetCurrentEquipmentIndex(2);
             baseEquipment2.UseEquipment();
@@ -61,6 +63,11 @@ public class PlayerStats : MonoBehaviour
     }
 
     #region 一些要被重构的方法
+
+    public void CallPlayerTrigger()
+    {
+        player.AnimationTrigger();
+    }
     public bool GetFacingDirection()
     {
         return gameObject.transform.localEulerAngles.y < 90;
@@ -69,6 +76,16 @@ public class PlayerStats : MonoBehaviour
     public void ChangeToAttackState()
     {
         player.ChangeStateByPlayerStats(player.primaryAttack);
+    }
+
+    public void ChangeToParryState()
+    {
+        player.ChangeStateByPlayerStats(player.parryState);
+    }
+
+    public void ChangeToDefenseState()
+    {
+        player.ChangeStateByPlayerStats(player.defenseState);
     }
 
     public void SetCurrentEquipmentIndex(int _equipmentIndex)

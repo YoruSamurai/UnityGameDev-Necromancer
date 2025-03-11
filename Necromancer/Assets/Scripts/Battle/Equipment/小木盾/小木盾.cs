@@ -28,8 +28,7 @@ public class 小木盾 : ShieldEquipment
 
         
 
-        // 可以攻击的时候 重置combo和冷却时间
-        ResetCombo();
+        
     }
 
 

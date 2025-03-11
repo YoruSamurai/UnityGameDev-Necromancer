@@ -21,7 +21,7 @@ MonoBehaviour:
   equipmentDesc: 
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
-  - {fileID: 7400000, guid: d4af9f751a5c320459c1f743aac9dee6, type: 2}
+  - {fileID: 7400000, guid: 4ceadcba28defab49b5a640369222766, type: 2}
   fullComboAttackTimes: 1
   shieldAttacks:
   - attackTime: 0.3
@@ -34,3 +34,5 @@ MonoBehaviour:
     attackWidth: 4
     comboBreakTime: 2
   holdThreshold: 0.5
+  defenseAnimations:
+  - {fileID: 7400000, guid: 04fb9dcf8b2ca6d4ca7bfdc92d7967c0, type: 2}

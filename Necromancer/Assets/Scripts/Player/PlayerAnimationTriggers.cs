@@ -24,7 +24,10 @@ public class PlayerAnimationTriggers : MonoBehaviour
     private void AnimationEndTrigger()
     {
         Debug.Log("我在哪？" + this.gameObject.name);
-        PlayerStats.Instance.isAttacking = false;
+        if(PlayerStats.Instance.isAttacking)
+            PlayerStats.Instance.isAttacking = false;
+        else if(PlayerStats.Instance.isParrying)
+            PlayerStats.Instance.isParrying = false;
         PlayerStats.Instance.SetCurrentEquipmentIndex(0);
         player.AnimationTrigger();
     }

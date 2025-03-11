@@ -62,6 +62,8 @@ public class Player : MonoBehaviour
     public PlayerDashState dashState { get; private set; }
     public PlayerWallSlideState wallSlideState { get; private set; }
     public PlayerPrimaryAttack primaryAttack { get; private set; }
+    public PlayerParryState parryState { get; private set; }
+    public PlayerDefenseState defenseState { get; private set; }
 
     #endregion
 
@@ -77,6 +79,8 @@ public class Player : MonoBehaviour
         dashState = new PlayerDashState(this, stateMachine,"Dash");
         wallSlideState = new PlayerWallSlideState(this, stateMachine,"WallSlide");
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine,"Attack");
+        parryState = new PlayerParryState(this, stateMachine,"Parry");
+        defenseState = new PlayerDefenseState(this, stateMachine,"Defense");
     }
 
     protected void Start()
@@ -145,7 +149,8 @@ public class Player : MonoBehaviour
         dashUsageTimer -= Time.deltaTime;
 
         //按下shift 设置timer为设置好的cd 并获取冲刺方向 进入冲刺状态
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUsageTimer < 0 && !PlayerStats.Instance.isAttacking)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUsageTimer < 0
+            && !PlayerStats.Instance.isAttacking && !PlayerStats.Instance.isParrying && !PlayerStats.Instance.isDefensing)
         {
             dashUsageTimer = dashCooldown;
             dashDir = Input.GetAxisRaw("Horizontal");

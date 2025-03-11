@@ -89,15 +89,7 @@ public class ShieldEquipment : BaseEquipment
     public override void UseEquipment()
     {
 
-        // 如果已经开始处理输入，就不重复初始化
-        if (!isProcessingInput)
-        {
-            isProcessingInput = true;
-            inputStarted = true;
-            holdTimer = 0f;
-            isHolding = false;
-            currentWeaponIndex = PlayerStats.Instance.currentEquipmentIndex;
-        }
+        
         // 检查是否处于攻击CD中
         if (!GetCanUseEquipment())
         {
@@ -106,14 +98,25 @@ public class ShieldEquipment : BaseEquipment
         }
         else
         {
-            PlayerStats.Instance.ChangeToAttackState();//这个后面要改
+            // 如果已经开始处理输入，就不重复初始化
+            if (!isProcessingInput)
+            {
+                isProcessingInput = true;
+                inputStarted = true;
+                holdTimer = 0f;
+                isHolding = false;
+                currentWeaponIndex = PlayerStats.Instance.currentEquipmentIndex;
+            }
         }
     }
 
     private void ActivateParry()
     {
         Debug.Log("ShieldEquipment: Parry activated");
-        
+        PlayerStats.Instance.ChangeToParryState();
+        PlayerStats.Instance.isParrying = true;
+        // 可以弹反的时候 重置combo和冷却时间
+        ResetCombo();
         // 在这里触发弹反效果，比如播放弹反动画，产生短暂的无敌效果，甚至反击
         // 可以调用 PlayerStats 或 Player 的方法切换状态或播放动画
     }
@@ -121,6 +124,10 @@ public class ShieldEquipment : BaseEquipment
     private void ActivateDefense()
     {
         Debug.Log("ShieldEquipment: Defense activated");
+        PlayerStats.Instance.ChangeToDefenseState();
+        PlayerStats.Instance.isDefensing = true;
+        // 可以防御的时候 重置combo和冷却时间
+        ResetCombo();
         // 进入防御状态：可以让玩家进入防御状态，减少伤害或完全免伤
         // 比如调用 Player.SetInvincible(true) 或 ChangeState 到防御状态
     }
@@ -128,6 +135,9 @@ public class ShieldEquipment : BaseEquipment
     private void DeactivateDefense()
     {
         Debug.Log("ShieldEquipment: Defense deactivated");
+        PlayerStats.Instance.isDefensing = false;
+        PlayerStats.Instance.SetCurrentEquipmentIndex(0);
+        PlayerStats.Instance.CallPlayerTrigger();
         // 退出防御状态：恢复正常状态
         // 比如调用 Player.SetInvincible(false) 或切换回默认状态
     }
@@ -149,41 +159,44 @@ public class ShieldEquipment : BaseEquipment
     {
         Debug.Log("当前combo为" + currentCombo);
         //在这里不但要给武器设置 还要给PlayerStat（管理人物攻击的单例）设置一个锁
-
-        SetAttackCooldown(shieldAttacks[currentCombo].attackTime);
-
-        // 只有一段连击的情况
-        if (shieldAttacks.Count == 1)
+        if (PlayerStats.Instance.isDefensing)
         {
-            Debug.Log("只有一段连击，重置combo");
-            SetCombo(0);
-            SetComboBreakTime(0);
-            return;
-        }
-        //重置combo
-        if (comboBreakTimer > 0)
-        {
+            SetShieldCooldown(shieldAttacks[currentCombo].attackTime);
 
-            Debug.Log(shieldAttacks.Count);
-            if (currentCombo + 1 == shieldAttacks.Count)
+            // 只有一段连击的情况
+            if (shieldAttacks.Count == 1)
             {
-                Debug.Log("连击结束");
+                Debug.Log("只有一段连击，重置combo");
                 SetCombo(0);
                 SetComboBreakTime(0);
+                return;
+            }
+            //重置combo
+            if (comboBreakTimer > 0)
+            {
+
+                Debug.Log(shieldAttacks.Count);
+                if (currentCombo + 1 == shieldAttacks.Count)
+                {
+                    Debug.Log("连击结束");
+                    SetCombo(0);
+                    SetComboBreakTime(0);
+                }
+                else
+                {
+                    Debug.Log("进入下一段连击");
+                    SetCombo(currentCombo + 1);
+                    SetComboBreakTime(shieldAttacks[currentCombo - 1].comboBreakTime);
+                }
             }
             else
             {
-                Debug.Log("进入下一段连击");
+                Debug.Log("开始连击");
                 SetCombo(currentCombo + 1);
                 SetComboBreakTime(shieldAttacks[currentCombo - 1].comboBreakTime);
             }
         }
-        else
-        {
-            Debug.Log("开始连击");
-            SetCombo(currentCombo + 1);
-            SetComboBreakTime(shieldAttacks[currentCombo - 1].comboBreakTime);
-        }
+        
 
     }
     #endregion

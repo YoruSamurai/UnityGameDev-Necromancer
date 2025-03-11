@@ -98,6 +98,12 @@ public class BaseEquipment : MonoBehaviour
         PlayerStats.Instance.isAttacking = true;
     }
 
+    public void SetShieldCooldown(float _timer)
+    {
+        attackCooldown = _timer;
+        attackCooldownTimer = _timer;
+    }
+
     public bool GetCanUseEquipment()
     {
         if (attackCooldownTimer > 0f)

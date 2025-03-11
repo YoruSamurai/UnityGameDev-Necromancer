@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPrimaryAttack : PlayerState
+public class PlayerParryState : PlayerState
 {
-
     private EquipmentSO currentWeapon;
 
 
-    public PlayerPrimaryAttack(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
+    public PlayerParryState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
 
@@ -17,16 +16,16 @@ public class PlayerPrimaryAttack : PlayerState
         base.Enter();
         // 获取当前装备SO
         currentWeapon = PlayerStats.Instance.baseEquipment1.equipmentSO;
-        if(PlayerStats.Instance.currentEquipmentIndex == 1)
+        if (PlayerStats.Instance.currentEquipmentIndex == 1)
             currentWeapon = PlayerStats.Instance.baseEquipment1.equipmentSO;
-        else if(PlayerStats.Instance.currentEquipmentIndex == 2)
+        else if (PlayerStats.Instance.currentEquipmentIndex == 2)
             currentWeapon = PlayerStats.Instance.baseEquipment2.equipmentSO;
 
 
         // 应用武器动画
         player.ApplyWeaponAnimator(currentWeapon.attackAnimator);
         SetComboAnimation();
-        
+
     }
 
     private void SetComboAnimation()
@@ -45,7 +44,7 @@ public class PlayerPrimaryAttack : PlayerState
             }
 
             AnimationClip clip = currentWeapon.comboAnimations[currentCombo];
-            currentWeapon.attackAnimator["playerAttack1"] = clip;
+            currentWeapon.attackAnimator["playerParry"] = clip;
         }
         //设置速度应该写在下面 通过获取武器的属性来设置
         player.SetVelocity(1 * player.facingDir, rb.velocity.y);
@@ -63,12 +62,12 @@ public class PlayerPrimaryAttack : PlayerState
     {
         base.Update();
 
-        if(stateTimer < 0 )
+        if (stateTimer < 0)
         {
             player.SetVelocity(0, rb.velocity.y);
         }
 
-        if(triggerCalled)
+        if (triggerCalled)
         {
             stateMachine.ChangeState(player.idleState);
         }
