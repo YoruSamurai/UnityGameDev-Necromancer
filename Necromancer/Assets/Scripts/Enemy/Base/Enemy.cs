@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
     public EnemyIdleState idleState { get; set; }
     public EnemyChaseState chaseState { get; set; }
     public EnemyAttackState attackState { get; set; }
+    public EnemyStunState stunState { get; set; }
 
     #endregion
 
@@ -67,6 +68,7 @@ public class Enemy : MonoBehaviour
         idleState = new EnemyIdleState(this,stateMachine, monsterStats);
         chaseState = new EnemyChaseState(this,stateMachine, monsterStats);
         attackState = new EnemyAttackState(this,stateMachine, monsterStats);
+        stunState = new EnemyStunState(this,stateMachine, monsterStats);
     }
 
     protected virtual void Start()

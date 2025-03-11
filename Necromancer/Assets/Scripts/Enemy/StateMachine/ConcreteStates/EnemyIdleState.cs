@@ -18,7 +18,7 @@ public class EnemyIdleState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
-        
+        enemy.anim.SetBool("Move", true);
         enemy.enemyIdleBaseInstance.DoEnterLogic();
     }
 

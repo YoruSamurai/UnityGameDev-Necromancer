@@ -14,6 +14,7 @@ public class T追逐_距离攻击 : EnemyBehaviorComponent
         float xdistance = Mathf.Abs(playerTransform.position.x - enemy.transform.position.x);
         if (xdistance < distanceToAttack && enemy.currentAttackCooldown <= 0f)
         {
+            Debug.Log("对吗");
             enemy.stateMachine.ChangeState(enemy.attackState);   
         }
     }

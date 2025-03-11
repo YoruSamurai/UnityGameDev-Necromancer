@@ -18,7 +18,7 @@ public class EnemyChaseState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
-        
+        enemy.anim.SetBool("Chase", true);
         enemy.enemyChaseBaseInstance.DoEnterLogic();
     }
 

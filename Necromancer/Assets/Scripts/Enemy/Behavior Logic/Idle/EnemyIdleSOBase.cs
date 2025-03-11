@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "逛街", menuName = "Enemy Logic/Idle")]
+[CreateAssetMenu(fileName = "闲逛", menuName = "Enemy Logic/Idle")]
 public class EnemyIdleSOBase : ScriptableObject
 {
     protected Enemy enemy;
@@ -38,7 +38,6 @@ public class EnemyIdleSOBase : ScriptableObject
 
     public virtual void DoEnterLogic()
     {
-        enemy.anim.SetBool("Move", true);
         foreach (var comp in _componentInstances)
             comp.OnEnter();
     }

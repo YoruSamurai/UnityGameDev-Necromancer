@@ -40,6 +40,15 @@ public class MonsterStats : MonoBehaviour
     private void Update()
     {
         UpdatePoisonEffects();
+        UpdateStunEffect();
+    }
+
+    private void UpdateStunEffect()
+    {
+        if(currentStunTimer >= 0)
+        {
+            currentStunTimer -= Time.deltaTime;
+        }
     }
 
     public void SetupMonsterStats(EnemyProfileSO profileSO)
@@ -57,7 +66,7 @@ public class MonsterStats : MonoBehaviour
         currentFreezeTimer = 0;
     }
 
-    #region 当box collider被启用 就可以检测碰撞了 这个感觉可以写在敌人的伤害属性那边
+    #region 伤害判定检测 后续慢慢重构和优化
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -65,8 +74,20 @@ public class MonsterStats : MonoBehaviour
             Player player = collision.GetComponent<Player>();
             if (player != null)
             {
-                Debug.Log("玩家受到伤害");
+                Debug.Log("玩家即将受到伤害");
                 Debug.Log(enemy.currentDamageMultiplier * baseDamage);
+                if (PlayerStats.Instance.isParrying)
+                {
+                    Debug.Log("我被招架了");
+                    currentStunTimer = 2f;
+                    enemy.stateMachine.ChangeState(enemy.stunState);
+                }
+                if (PlayerStats.Instance.isDefensing)
+                {
+                    Debug.Log("我被防御了");
+                    currentStunTimer = 1f;
+                    enemy.stateMachine.ChangeState(enemy.stunState);
+                }
             }
         }
     }

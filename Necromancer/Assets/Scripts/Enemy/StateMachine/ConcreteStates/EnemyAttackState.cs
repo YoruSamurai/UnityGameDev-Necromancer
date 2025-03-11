@@ -26,7 +26,7 @@ public class EnemyAttackState : EnemyState
     public override void ExitState()
     {
         base.ExitState();
-        
+        enemy.isAttacking = false;
         enemy.enemyAttackBaseInstance.DoExitLogic();
     }
 
