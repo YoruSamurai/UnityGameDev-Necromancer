@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
+    #region 特效
+    public GameObject dieFX1;
+    #endregion
+
 
     #region SO
     [SerializeField] private EnemyConfigSO configSO;
@@ -32,6 +36,7 @@ public class Enemy : MonoBehaviour
     public EnemyChaseState chaseState { get; set; }
     public EnemyAttackState attackState { get; set; }
     public EnemyStunState stunState { get; set; }
+    public EnemyDieState dieState { get; set; }
 
     #endregion
 
@@ -69,6 +74,7 @@ public class Enemy : MonoBehaviour
         chaseState = new EnemyChaseState(this,stateMachine, monsterStats);
         attackState = new EnemyAttackState(this,stateMachine, monsterStats);
         stunState = new EnemyStunState(this,stateMachine, monsterStats);
+        dieState = new EnemyDieState(this,stateMachine, monsterStats);
     }
 
     protected virtual void Start()
@@ -96,7 +102,17 @@ public class Enemy : MonoBehaviour
         stateMachine.currentEnemyState.UpdateState();
     }
 
-    
+
+    #region 切换状态
+    public void ChangeToState(EnemyState state)
+    {
+        stateMachine.ChangeState(state);
+    }
+
+
+    #endregion
+
+
 
     #region 动画触发器
     public void AnimationTrigger(AnimationTriggerType type)
@@ -138,7 +154,15 @@ public class Enemy : MonoBehaviour
     }
     #endregion
 
-
+    #region 死亡
+    public void Die()
+    {
+        GameObject bloodEffect = Instantiate(dieFX1, this.transform.position, Quaternion.identity);
+        Destroy(bloodEffect,3f);
+        // 将血浆效果设为墙体的子物体（使其跟随墙体）
+        Destroy(gameObject);
+    }
+    #endregion
 
     #region Collision
 
@@ -182,5 +206,6 @@ public enum AnimationTriggerType
     EnemyHitDetermineStart,//伤害判定开始判定
     EnemyHitDetermineEnd,//伤害判定结束
     EnemyOnShoot,//敌人射箭
+    EnemyDied,//敌人死亡
 }
 #endregion

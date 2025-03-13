@@ -28,6 +28,11 @@ public class MonsterStats : MonoBehaviour
     public float freezeDuration;
     public float currentFreezeTimer;
 
+
+    #region 怪物当前状态
+    public bool isDead {  get; private set; }
+    #endregion
+
     [SerializeField] private List<PoisonEffect> poisonEffects = new List<PoisonEffect>();
     [SerializeField] private List<BurnEffect> burnEffects = new List<BurnEffect>();
     [SerializeField] private List<BleedEffect> bleedEffects = new List<BleedEffect>();
@@ -35,6 +40,7 @@ public class MonsterStats : MonoBehaviour
     private void Start()
     {
         enemy = GetComponent<Enemy>();
+        isDead = false;
     }
 
     private void Update()
@@ -80,13 +86,13 @@ public class MonsterStats : MonoBehaviour
                 {
                     Debug.Log("我被招架了");
                     currentStunTimer = 2f;
-                    enemy.stateMachine.ChangeState(enemy.stunState);
+                    enemy.ChangeToState(enemy.stunState);
                 }
                 if (PlayerStats.Instance.isDefensing)
                 {
                     Debug.Log("我被防御了");
                     currentStunTimer = 1f;
-                    enemy.stateMachine.ChangeState(enemy.stunState);
+                    enemy.ChangeToState(enemy.stunState);
                 }
             }
         }
@@ -117,12 +123,24 @@ public class MonsterStats : MonoBehaviour
 
     public void OnDeath()
     {
-
+        isDead = true;
+        gameObject.layer = LayerMask.NameToLayer("Dead");
+        enemy.ChangeToState(enemy.dieState);
     }
 
     public void TakeDirectDamage(int dmg)
     {
-        yoruUtils.JumpNumber(dmg, this.gameObject);
+        if(currentHealth > 0)
+        {
+            yoruUtils.JumpNumber(dmg, this.gameObject);
+            enemy.anim.SetTrigger("Hit");
+            currentHealth -= dmg;
+        }
+        if(currentHealth <=  0 && isDead == false)
+        {
+            OnDeath();
+        }
+
     }
     #endregion
 

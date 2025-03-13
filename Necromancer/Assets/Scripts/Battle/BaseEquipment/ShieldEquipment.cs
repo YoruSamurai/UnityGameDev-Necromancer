@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShieldEquipment : BaseEquipment
 {
-    //近战武器要什么属性？   一次combo的总次数 每次攻击的：时长time 伤害倍率mag 晕值
+    //盾牌武器要什么属性？   一次combo（盾牌也可能连击？哈哈）的总次数 每次攻击的：时长time 伤害倍率mag 晕值
     //伤害box又是另一个麻烦的故事了 比如说 形状是一个枚举 以玩家为中心还是以玩家面前1/2box为中心又是一个枚举？ 半径？长？宽？
     [SerializeField] public int fullComboAttackTimes;//一次combo的总攻击次数
     [SerializeField] public List<ShieldAttackStruct> shieldAttacks;
