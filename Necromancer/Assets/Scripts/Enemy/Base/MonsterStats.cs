@@ -134,6 +134,7 @@ public class MonsterStats : MonoBehaviour
         {
             yoruUtils.JumpNumber(dmg, this.gameObject);
             enemy.anim.SetTrigger("Hit");
+            enemy.OnHitted();
             currentHealth -= dmg;
         }
         if(currentHealth <=  0 && isDead == false)

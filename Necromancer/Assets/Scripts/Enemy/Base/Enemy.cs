@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
 
     #region 特效
     public GameObject dieFX1;
+    public GameObject hitBloodSprite;
+    public GameObject bloodSprite;
     #endregion
 
 
@@ -155,10 +157,15 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region 死亡
+    public void OnHitted()
+    {
+        GameObject bloodEffect = Instantiate(hitBloodSprite, this.transform.position, Quaternion.identity);
+    }
     public void Die()
     {
-        GameObject bloodEffect = Instantiate(dieFX1, this.transform.position, Quaternion.identity);
-        Destroy(bloodEffect,3f);
+        GameObject pixelEffect = Instantiate(dieFX1, this.transform.position, Quaternion.identity);
+        GameObject bloodEffect = Instantiate(bloodSprite, this.transform.position, Quaternion.identity);
+        Destroy(pixelEffect,3f);
         // 将血浆效果设为墙体的子物体（使其跟随墙体）
         Destroy(gameObject);
     }
