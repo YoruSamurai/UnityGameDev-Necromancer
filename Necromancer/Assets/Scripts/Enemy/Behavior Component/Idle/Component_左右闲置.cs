@@ -17,7 +17,7 @@ public class Component_左右闲置 : EnemyBehaviorComponent
         if (isDelaying)
         {
             delayTimer += Time.deltaTime;
-            enemy.SetZeroVelocity();
+            enemy.SetVelocity(0, enemy.rb.velocity.y);
             if (delayTimer >= delayDuration)
             {
                 // 延迟结束后执行翻转，并恢复运动
@@ -36,7 +36,7 @@ public class Component_左右闲置 : EnemyBehaviorComponent
         {
             isDelaying = true;
             delayTimer = 0f;
-            enemy.SetZeroVelocity();
+            enemy.SetVelocity(0,enemy.rb.velocity.y);
             enemy.anim.SetBool("Idle", true);
             enemy.anim.SetBool("Move", false);
             return;

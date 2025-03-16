@@ -21,7 +21,7 @@ public class Component_哥布林追逐 : EnemyBehaviorComponent
         // 如果前方是墙壁或者没有地面，则停止移动
         if (canMove && moveDirection == enemy.facingDir)
         {
-            enemy.SetZeroVelocity();
+            enemy.SetVelocity(0, enemy.rb.velocity.y);
             enemy.anim.SetBool("Idle", true);
             enemy.anim.SetBool("Chase", false);
 
@@ -30,7 +30,7 @@ public class Component_哥布林追逐 : EnemyBehaviorComponent
         {
             if(moveDirection != enemy.facingDir) 
                 enemy.Flip();
-            enemy.SetZeroVelocity();
+            enemy.SetVelocity(0, enemy.rb.velocity.y);
             enemy.anim.SetBool("Idle", true);
             enemy.anim.SetBool("Chase", false);
         }

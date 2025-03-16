@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJumpState : PlayerState
+public class PlayerJumpState : PlayerAirState
 {
     public PlayerJumpState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
@@ -24,12 +24,7 @@ public class PlayerJumpState : PlayerState
     {
         base.Update();
 
-        //按下空格 可以二段跳 就二段跳
-        if (Input.GetKeyDown(KeyCode.Space) && player.jumpCounter < 2)
-        {
-            player.jumpCounter++;
-            stateMachine.ChangeState(player.jumpState);
-        }
+
         //开始下坠了 进入下坠状态
         if (rb.velocity.y < 0)
         {

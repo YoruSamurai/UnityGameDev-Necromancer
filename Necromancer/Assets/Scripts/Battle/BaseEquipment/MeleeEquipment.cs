@@ -85,7 +85,7 @@ public class MeleeEquipment : BaseEquipment
 
     protected virtual void TriggerAttackEffect()
     {
-        if (meleeAttacks == null || currentCombo >= meleeAttacks.Count) return;
+        /*if (meleeAttacks == null || currentCombo >= meleeAttacks.Count) return;
 
         MeleeAttackStruct currentAttack = meleeAttacks[currentCombo];
 
@@ -139,7 +139,7 @@ public class MeleeEquipment : BaseEquipment
             color.a = .3f;
             effect.GetComponent<SpriteRenderer>().color = color;
             Destroy(effect, 0.2f);
-        }
+        }*/
     }
 
 

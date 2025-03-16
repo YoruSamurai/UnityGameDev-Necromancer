@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     public GameObject dieFX1;
     public GameObject hitBloodSprite;
     public GameObject bloodSprite;
+    public GameObject bloodDirSprite;
     #endregion
 
 
@@ -160,13 +161,37 @@ public class Enemy : MonoBehaviour
     public void OnHitted()
     {
         GameObject bloodEffect = Instantiate(hitBloodSprite, this.transform.position, Quaternion.identity);
+        Vector2 hitPoint = transform.position;
+        Vector2 attackerPos = PlayerStats.Instance.transform.position;
+
+        PlayFxManager.Instance.PlayBloodLine(hitPoint, attackerPos);
     }
     public void Die()
     {
+        // 生成基本死亡特效
         GameObject pixelEffect = Instantiate(dieFX1, this.transform.position, Quaternion.identity);
         GameObject bloodEffect = Instantiate(bloodSprite, this.transform.position, Quaternion.identity);
-        Destroy(pixelEffect,3f);
-        // 将血浆效果设为墙体的子物体（使其跟随墙体）
+
+        // 获取玩家位置
+        Vector3 playerPos = PlayerStats.Instance.transform.position;
+
+        // 判断玩家在敌人的左边还是右边
+        float direction = playerPos.x < transform.position.x ? 1f : -1f;
+
+        // 设置血迹生成位置和方向
+        Vector3 bloodDirPosition = transform.position + new Vector3(direction * 4f, 0, 0);
+        GameObject bloodDirEffect = Instantiate(bloodDirSprite, bloodDirPosition, Quaternion.identity);
+
+        // 如果玩家在右边，翻转血迹效果
+        if (direction == -1f)
+        {
+            bloodDirEffect.transform.localScale = new Vector3(-.4f, .4f,1f);
+        }
+
+        // 清理特效
+        Destroy(pixelEffect, 3f);
+
+        // 销毁敌人本体
         Destroy(gameObject);
     }
     #endregion

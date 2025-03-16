@@ -31,4 +31,23 @@ public class PlayerAnimationTriggers : MonoBehaviour
         PlayerStats.Instance.SetCurrentEquipmentIndex(0);
         player.AnimationTrigger();
     }
+
+    private void LedgeUpOffsetTrigger()
+    {
+        // 获取当前玩家位置
+        Vector2 newPosition = player.transform.position;
+        // 计算新的位置
+        newPosition.x += player.facingDir * 2f; // 向面向方向移动 2f
+        newPosition.y += 2f; // 高度增加 2f
+
+        // 应用新位置
+        player.transform.position = newPosition;
+    }
+
+    //只是一个trigger 触发
+    private void AnimationTrigger()
+    {
+        player.AnimationTrigger();
+    }
+
 }

@@ -56,6 +56,11 @@ public class PlayerState
         player.anim.SetFloat("yVelocity",rb.velocity.y);
     }
 
+    public virtual void FixedUpdate()
+    {
+
+    }
+
     //离开状态时停止该状态动画
     public virtual void Exit()
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFallState : PlayerState
+public class PlayerFallState : PlayerAirState
 {
     public PlayerFallState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
@@ -22,15 +22,10 @@ public class PlayerFallState : PlayerState
     {
         base.Update();
 
-        //按下空格 并且玩家还没跳过第二下 就进行二段跳 并设置跳跃计数器
-        if(Input.GetKeyDown(KeyCode.Space) && player.jumpCounter < 2)
-        {
-            player.jumpCounter++;
-            stateMachine.ChangeState(player.jumpState);
-        }
+
 
         //下落过程中 玩家脸上有墙 进入滑墙状态 
-        if (player.IsWallDetected())
+        if (player.IsWallBodyDetected())
         {
             stateMachine.ChangeState(player.wallSlideState);
         }

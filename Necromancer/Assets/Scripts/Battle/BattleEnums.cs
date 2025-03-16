@@ -1,8 +1,8 @@
 
-#region 装备标签
+
 using System;
 using UnityEngine;
-
+#region 装备标签
 public enum EquipmentTag
 {
     //先制作轻重武器和法杖
@@ -174,5 +174,15 @@ public struct ShieldAttackStruct
     public float attackLength;
     public float attackWidth;
     public float comboBreakTime;
+}
+#endregion
+
+
+#region 伤害类型 力敏智
+public enum DamageType
+{
+    Str,
+    Agile,
+    Magic
 }
 #endregion

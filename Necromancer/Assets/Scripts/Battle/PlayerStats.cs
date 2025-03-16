@@ -7,7 +7,17 @@ public class PlayerStats : MonoBehaviour
 
     public static PlayerStats Instance { get; private set; }
 
-    [SerializeField] public int health;
+    [SerializeField] public int currentHealth;
+    [SerializeField] public int maxHealth;
+    [SerializeField] public float healthPercentage;
+
+
+    [SerializeField] public int strLevel;
+    [SerializeField] public float strPercentage;
+    [SerializeField] public int agileLevel;
+    [SerializeField] public float agilePercentage;
+    [SerializeField] public int magicLevel;
+    [SerializeField] public float magicPercentage;
 
     //是否可以攻击
     [SerializeField] public bool isAttacking;
@@ -39,7 +49,15 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        health = 500;
+        currentHealth = 100;
+        maxHealth = 100;
+        healthPercentage = 100;
+        strLevel = 1;
+        strPercentage = 100;
+        agileLevel = 1;
+        agilePercentage = 100;
+        magicLevel = 1;
+        magicPercentage = 100;
         player = GetComponent<Player>();
     }
 
@@ -100,6 +118,73 @@ public class PlayerStats : MonoBehaviour
 
     #endregion
 
+    #region 生命之泉升级
+
+    public void UpgradeStr(float strPercent,float healthPercent)
+    {
+        // 提升力量等级
+        strLevel++;
+
+        // 增加力量百分比
+        strPercentage *= strPercent;
+
+        healthPercentage *= healthPercent;
+
+        maxHealth = (int)(maxHealth * healthPercent);
+        currentHealth = (int)(currentHealth * healthPercent);
+        Debug.Log($"力量等级提升到 {strLevel}%");
+
+    }
+
+    public void UpgradeAgile(float agilePercent, float healthPercent)
+    {
+        // 提升力量等级
+        agileLevel++;
+
+        // 增加力量百分比
+        agilePercentage *= agilePercent;
+
+        healthPercentage *= healthPercent;
+
+        maxHealth = (int)(maxHealth * healthPercent);
+        currentHealth = (int)(currentHealth * healthPercent);
+        Debug.Log($"力量等级提升到 {agileLevel}%");
+
+    }
+
+    public void UpgradeMagic(float magicPercent, float healthPercent)
+    {
+        // 提升力量等级
+        magicLevel++;
+
+        // 增加力量百分比
+        magicPercentage *= magicPercent;
+
+        healthPercentage *= healthPercent;
+
+        maxHealth = (int)(maxHealth * healthPercent);
+        currentHealth = (int)(currentHealth * healthPercent);
+        Debug.Log($"力量等级提升到 {magicLevel}%");
+
+    }
+
+    #endregion
+
+    #region 装备升级雕像
+
+    public void UpgradeWeapon(int index)
+    {
+        if(index == 1)
+        {
+            baseEquipment1.UpgradeLevel();
+        }
+        else if(index == 2)
+        {
+            baseEquipment2.UpgradeLevel();
+        }
+    }
+
+    #endregion
 
 
     #region 玩家进行攻击 玩家命中 玩家被命中（无防御） 玩家被命中（防御中） 玩家被命中（格挡） 玩家翻滚中 玩家死亡了

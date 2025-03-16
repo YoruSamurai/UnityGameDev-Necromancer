@@ -33,11 +33,13 @@ public class Player : MonoBehaviour
 
 
     [Header("Collision Info")]//碰撞参数
-    [SerializeField] protected Transform groundCheck;
-    [SerializeField] protected float groundCheckDistance;
-    [SerializeField] protected Transform wallCheck;
-    [SerializeField] protected float wallCheckDistance;
-    [SerializeField] protected LayerMask whatIsGround;
+    [SerializeField] public Transform groundCheck;
+    [SerializeField] public float groundCheckDistance;
+    [SerializeField] public Transform wallCheckBody;
+    [SerializeField] public Transform wallCheckHead;
+    [SerializeField] public Transform wallCheckFoot;
+    [SerializeField] public float wallCheckDistance;
+    [SerializeField] public LayerMask whatIsGround;
 
     #region Components
     public Animator anim { get; private set; }
@@ -61,6 +63,7 @@ public class Player : MonoBehaviour
     public PlayerFallState fallState { get; private set; }
     public PlayerDashState dashState { get; private set; }
     public PlayerWallSlideState wallSlideState { get; private set; }
+    public PlayerLedgeUpState ledgeUpState { get; private set; }
     public PlayerPrimaryAttack primaryAttack { get; private set; }
     public PlayerParryState parryState { get; private set; }
     public PlayerDefenseState defenseState { get; private set; }
@@ -78,6 +81,7 @@ public class Player : MonoBehaviour
         fallState = new PlayerFallState(this, stateMachine,"Jump");
         dashState = new PlayerDashState(this, stateMachine,"Dash");
         wallSlideState = new PlayerWallSlideState(this, stateMachine,"WallSlide");
+        ledgeUpState = new PlayerLedgeUpState(this, stateMachine, "LedgeUp");
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine,"Attack");
         parryState = new PlayerParryState(this, stateMachine,"Parry");
         defenseState = new PlayerDefenseState(this, stateMachine,"Defense");
@@ -97,6 +101,11 @@ public class Player : MonoBehaviour
         stateMachine.currentState.Update();//在每一帧只对当前的状态进行update
 
         CheckForDashInput();
+    }
+
+    protected void FixedUpdate()
+    {
+        stateMachine.currentState.FixedUpdate();
     }
 
     public void ApplyWeaponAnimator(AnimatorOverrideController weaponAnimator)
@@ -195,16 +204,28 @@ public class Player : MonoBehaviour
     }
 
     //通过射线检测能不能射到墙上
-    public virtual bool IsWallDetected()
+    public virtual bool IsWallBodyDetected()
     {
-        return Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+        return Physics2D.Raycast(wallCheckBody.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+    }
+
+    public virtual bool IsWallHeadDetected()
+    {
+        return Physics2D.Raycast(wallCheckHead.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+    }
+
+    public virtual bool IsWallFootDetected()
+    {
+        return Physics2D.Raycast(wallCheckFoot.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
     }
 
     //通过debug射线绘制一些可视化
     protected virtual void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
-        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
+        Gizmos.DrawLine(wallCheckBody.position, new Vector3(wallCheckBody.position.x + wallCheckDistance, wallCheckBody.position.y));
+        Gizmos.DrawLine(wallCheckHead.position, new Vector3(wallCheckHead.position.x + wallCheckDistance, wallCheckHead.position.y));
+        Gizmos.DrawLine(wallCheckFoot.position, new Vector3(wallCheckFoot.position.x + wallCheckDistance, wallCheckFoot.position.y));
     }
     #endregion
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWallSlideState : PlayerState
+public class PlayerWallSlideState : PlayerAirState
 {
     public PlayerWallSlideState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
@@ -21,12 +21,7 @@ public class PlayerWallSlideState : PlayerState
     public override void Update()
     {
         base.Update();
-        //按下空格 可以二段跳 就二段跳
-        if (Input.GetKeyDown(KeyCode.Space) && player.jumpCounter < 2)
-        {
-            player.jumpCounter++;
-            stateMachine.ChangeState(player.jumpState);
-        }
+
         //往另一个方向的X动了就下墙 Idle-fall
         if (xInput != 0 && player.facingDir != xInput)
         {
@@ -41,7 +36,7 @@ public class PlayerWallSlideState : PlayerState
 
 
         //到地上了或者不在墙上了 就进入idle状态
-        if (player.IsGroundDetected() || !player.IsWallDetected())
+        if (player.IsGroundDetected() || !player.IsWallBodyDetected())
         {
             stateMachine.ChangeState(player.idleState);
         }

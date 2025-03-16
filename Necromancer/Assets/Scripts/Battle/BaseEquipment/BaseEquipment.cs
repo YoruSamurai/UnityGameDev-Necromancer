@@ -8,9 +8,11 @@ public class BaseEquipment : MonoBehaviour
 
     [SerializeField] public EquipmentSO equipmentSO;
 
+    [Header("攻击冷却时间")]
     [SerializeField] public float attackCooldown; // 每次攻击CD时间
     [SerializeField] public float attackCooldownTimer;
 
+    [Header("装备基础信息")]
     [SerializeField] public string equipmentName;
     [SerializeField] public int baseDmg;
     [SerializeField] public Sprite equipmentSprite;
@@ -19,15 +21,17 @@ public class BaseEquipment : MonoBehaviour
     [SerializeField] public float critMag;
     [SerializeField] public string equipmentDesc;
 
+    [Header("连击管理器")]
     [SerializeField] public float comboBreakTimer;
     [SerializeField] public int currentCombo;
 
-
+    [Header("造成伤害时的参数")]
     [SerializeField] public int currentDmg;
     [SerializeField] public bool canCrit;
 
-
+    [Header("装备等级 词缀 基于等级伤害")]
     [SerializeField] public int equipmentLevel;
+    [SerializeField] public float eDamageMag;
     [SerializeField] public List<BaseAffix> equipmentAffixList;
     
 
@@ -36,6 +40,7 @@ public class BaseEquipment : MonoBehaviour
     protected virtual void Start()
     {
         SetupEquipmentBase();
+        SetUpEquipmentLevel();
         attackCooldownTimer = 0f;
     }
 
@@ -48,6 +53,81 @@ public class BaseEquipment : MonoBehaviour
         if (attackCooldownTimer > 0f)
         {
             attackCooldownTimer -= Time.deltaTime;
+        }
+    }
+
+    private void SetUpEquipmentLevel()
+    {
+        //在这里 可能可以去通过一个manager根据地图等级 进行一个随机值的获取 从而设定等级和基于等级的eDamageMag
+        // 随机生成 1-5 级
+        equipmentLevel = UnityEngine.Random.Range(1, 6);
+
+        // 根据等级设置伤害倍率
+        switch (equipmentLevel)
+        {
+            case 1:
+                eDamageMag = 1.0f;
+                break;
+            case 2:
+                eDamageMag = 1.1f;
+                break;
+            case 3:
+                eDamageMag = 1.25f;
+                break;
+            case 4:
+                eDamageMag = 1.4f;
+                break;
+            case 5:
+                eDamageMag = 1.6f;
+                break;
+            default:
+                eDamageMag = 1.0f;
+                break;
+        }
+
+        // 输出调试信息，方便查看
+        Debug.Log($"装备等级: {equipmentLevel}, 伤害倍率: {eDamageMag}");
+
+    }
+
+    public void UpgradeLevel()
+    {
+        equipmentLevel += 1;
+        switch (equipmentLevel)
+        {
+            case 1:
+                eDamageMag = 1.0f;
+                break;
+            case 2:
+                eDamageMag = 1.1f;
+                break;
+            case 3:
+                eDamageMag = 1.25f;
+                break;
+            case 4:
+                eDamageMag = 1.4f;
+                break;
+            case 5:
+                eDamageMag = 1.6f;
+                break;
+            case 6:
+                eDamageMag = 1.8f;
+                break;
+            case 7:
+                eDamageMag = 2.1f;
+                break;
+            case 8:
+                eDamageMag = 2.25f;
+                break;
+            case 9:
+                eDamageMag = 2.4f;
+                break;
+            case 10:
+                eDamageMag = 2.6f;
+                break;
+            default:
+                eDamageMag = 1.0f;
+                break;
         }
     }
 
