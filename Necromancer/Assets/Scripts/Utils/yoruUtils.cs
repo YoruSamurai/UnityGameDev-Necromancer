@@ -15,7 +15,13 @@ public static class yoruUtils
         tmp.text = number.ToString();
         tmp.fontSize = 4;
         tmp.color = Color.red;
+        
         tmp.alignment = TextAlignmentOptions.Center;
+
+        // 设置Sorting Layer & Order
+        MeshRenderer renderer = tmp.GetComponent<MeshRenderer>();
+        renderer.sortingLayerName = "Enemy"; // 2D的Sorting Layer名字
+        renderer.sortingOrder = 5; // 层级数值（越大越靠前）
 
         // 设为 target 的子物体
         textObj.transform.SetParent(target.transform);

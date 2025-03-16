@@ -19,6 +19,10 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] public int magicLevel;
     [SerializeField] public float magicPercentage;
 
+    [Header("灵魂 金币数")]
+    [SerializeField] public int soul;
+    [SerializeField] public int gold;
+
     //是否可以攻击
     [SerializeField] public bool isAttacking;
     [SerializeField] public bool isParrying;
@@ -59,6 +63,8 @@ public class PlayerStats : MonoBehaviour
         magicLevel = 1;
         magicPercentage = 100;
         player = GetComponent<Player>();
+        soul = 100;
+        gold = 500;
     }
 
     private void Update()

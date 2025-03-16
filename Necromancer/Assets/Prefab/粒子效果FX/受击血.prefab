@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06e9d3c084a4704da55cd8404050d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 20
+  duration: 8
   targetAlpha: 0
-  moveDownDistance: 1
+  moveDownDistance: 0.4
   targetColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
