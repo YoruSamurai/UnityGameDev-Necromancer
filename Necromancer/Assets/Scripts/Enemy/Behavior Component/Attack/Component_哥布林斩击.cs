@@ -35,9 +35,9 @@ public class Component_哥布林斩击 : EnemyBehaviorComponent
         _timer += Time.deltaTime;
     }
 
-    public override void OnAnimationTrigger(AnimationTriggerType triggerType)
+    public override void OnAnimationTrigger(EnemyAnimationTriggerType triggerType)
     {
-        if (triggerType == AnimationTriggerType.EnemyAttackEnd)
+        if (triggerType == EnemyAnimationTriggerType.EnemyAttackEnd)
         {
             // 攻击动画结束，重置攻击状态和动画参数
             enemy.anim.SetBool("Attack", false);
@@ -47,11 +47,11 @@ public class Component_哥布林斩击 : EnemyBehaviorComponent
             enemy.currentAttackCooldown = enemy.attackCooldown;
             enemy.stateMachine.ChangeState(enemy.chaseState);
         }
-        if(triggerType == AnimationTriggerType.EnemyHitDetermineStart)
+        if(triggerType == EnemyAnimationTriggerType.EnemyHitDetermineStart)
         {
             Debug.Log("开始伤害判定咯");
         }
-        if(triggerType == AnimationTriggerType.EnemyHitDetermineEnd)
+        if(triggerType == EnemyAnimationTriggerType.EnemyHitDetermineEnd)
         {
             Debug.Log("结束伤害判定咯");
         }

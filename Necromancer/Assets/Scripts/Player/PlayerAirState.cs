@@ -8,11 +8,6 @@ public class PlayerAirState : PlayerState
     {
     }
 
-    public override void AnimationFinishTrigger()
-    {
-        base.AnimationFinishTrigger();
-    }
-
     public override void Enter()
     {
         base.Enter();
@@ -32,6 +27,8 @@ public class PlayerAirState : PlayerState
             player.jumpCounter++;
             stateMachine.ChangeState(player.jumpState);
         }
+
+
 
         if(player.IsWallBodyDetected() && !player.IsWallHeadDetected() )
         {

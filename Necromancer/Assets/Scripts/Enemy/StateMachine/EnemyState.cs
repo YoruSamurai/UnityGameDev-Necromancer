@@ -30,7 +30,7 @@ public class EnemyState
 
     }
 
-    public virtual void AnimationTriggerEvent(AnimationTriggerType triggerType)
+    public virtual void AnimationTriggerEvent(EnemyAnimationTriggerType triggerType)
     {
 
     }

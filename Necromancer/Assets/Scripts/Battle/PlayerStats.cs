@@ -88,10 +88,6 @@ public class PlayerStats : MonoBehaviour
 
     #region 一些要被重构的方法
 
-    public void CallPlayerTrigger()
-    {
-        player.AnimationTrigger();
-    }
     public bool GetFacingDirection()
     {
         return gameObject.transform.localEulerAngles.y < 90;

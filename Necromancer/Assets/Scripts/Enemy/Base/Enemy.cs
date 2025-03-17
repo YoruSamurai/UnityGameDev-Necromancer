@@ -118,7 +118,7 @@ public class Enemy : MonoBehaviour
 
 
     #region 动画触发器
-    public void AnimationTrigger(AnimationTriggerType type)
+    public void AnimationTrigger(EnemyAnimationTriggerType type)
     {
         stateMachine.currentEnemyState.AnimationTriggerEvent(type);
     }
@@ -218,7 +218,7 @@ public class Enemy : MonoBehaviour
     }
     #endregion
 
-    private void AnimationTriggerEvent(AnimationTriggerType triggerType)
+    private void AnimationTriggerEvent(EnemyAnimationTriggerType triggerType)
     {
         //fill in when statemachine was created
         stateMachine.currentEnemyState.AnimationTriggerEvent(triggerType);
@@ -228,7 +228,7 @@ public class Enemy : MonoBehaviour
 }
 
 #region 敌人枚举（意义还不明确）
-public enum AnimationTriggerType
+public enum EnemyAnimationTriggerType
 {
     EnemyAttackEnd,
     PlayFootstepSound,

@@ -38,10 +38,10 @@ public class Component_弓箭手翻滚 : EnemyBehaviorComponent
         }
     }
 
-    public override void OnAnimationTrigger(AnimationTriggerType triggerType)
+    public override void OnAnimationTrigger(EnemyAnimationTriggerType triggerType)
     {
         // 假设在翻滚动画的最后一帧，我们通过动画事件发送了一个 EnemyRollEnd 触发器
-        if (triggerType == AnimationTriggerType.EnemyRollEnd)
+        if (triggerType == EnemyAnimationTriggerType.EnemyRollEnd)
         {
             // 翻滚结束后，重置翻滚动画参数
             enemy.anim.SetBool("Chase", false);

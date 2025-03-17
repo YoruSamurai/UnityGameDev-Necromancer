@@ -8,10 +8,10 @@ public class EnemyDieState : EnemyState
     {
     }
 
-    public override void AnimationTriggerEvent(AnimationTriggerType triggerType)
+    public override void AnimationTriggerEvent(EnemyAnimationTriggerType triggerType)
     {
         base.AnimationTriggerEvent(triggerType);
-        if(triggerType == AnimationTriggerType.EnemyDied)
+        if(triggerType == EnemyAnimationTriggerType.EnemyDied)
         {
             //销毁敌人
             // 销毁敌人对象

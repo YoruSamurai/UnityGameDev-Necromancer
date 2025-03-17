@@ -12,6 +12,32 @@ public class PlayerPrimaryAttack : PlayerState
     {
     }
 
+    public override void AnimationTriggerEvent(PlayerAnimationTriggerType triggerType)
+    {
+        base.AnimationTriggerEvent(triggerType);
+        switch(triggerType)
+        {
+            case PlayerAnimationTriggerType.PlayerAttackEnd:
+                {
+                    if (PlayerStats.Instance.isAttacking)
+                        PlayerStats.Instance.isAttacking = false;
+                    else if (PlayerStats.Instance.isParrying)
+                        PlayerStats.Instance.isParrying = false;
+                    PlayerStats.Instance.SetCurrentEquipmentIndex(0);
+                    stateMachine.ChangeState(player.idleState);
+                    break;
+                }
+            case PlayerAnimationTriggerType.PlayerHitDetermineStart:
+                {
+                    break;
+                }
+            case PlayerAnimationTriggerType.PlayerHitDetermineEnd:
+                {
+                    break;
+                }
+        }
+    }
+
     public override void Enter()
     {
         base.Enter();
@@ -67,10 +93,7 @@ public class PlayerPrimaryAttack : PlayerState
         {
             player.SetVelocity(0, rb.velocity.y);
         }
-
-        if(triggerCalled)
-        {
-            stateMachine.ChangeState(player.idleState);
-        }
     }
+
+    
 }

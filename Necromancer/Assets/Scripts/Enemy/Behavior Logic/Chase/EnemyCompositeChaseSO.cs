@@ -38,7 +38,7 @@ public class EnemyCompositeChaseSO : EnemyChaseSOBase
         currentChaseComponents?.DoExitLogic();
     }
 
-    public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
+    public override void DoAnimationTriggerEventLogic(EnemyAnimationTriggerType triggerType)
     {
         currentChaseComponents?.DoAnimationTriggerEventLogic(triggerType);
     }

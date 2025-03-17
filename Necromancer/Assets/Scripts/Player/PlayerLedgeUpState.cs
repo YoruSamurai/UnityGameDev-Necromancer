@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,34 @@ public class PlayerLedgeUpState : PlayerState
     {
     }
 
-    public override void AnimationFinishTrigger()
+    public override void AnimationTriggerEvent(PlayerAnimationTriggerType triggerType)
     {
-        base.AnimationFinishTrigger();
-       
-        stateMachine.ChangeState(player.idleState);
+        base.AnimationTriggerEvent(triggerType);
+        if(triggerType == PlayerAnimationTriggerType.PlayerAnimationEndTrigger)
+        {
+            player.SetJumpCounter(0);
+            stateMachine.ChangeState(player.idleState);
+        }
+        if(triggerType == PlayerAnimationTriggerType.PlayerLedgeUp)
+        {
+            // 获取当前玩家位置
+            Vector2 startPosition = player.transform.position;
+            Vector2 targetPosition = new Vector2(
+                startPosition.x + player.facingDir * 2f,
+                startPosition.y + 2f
+            );
+
+            // 使用DoTween平滑移动
+            player.transform.DOMove(targetPosition, 0.08f) // 0.5秒完成位移
+                .SetEase(Ease.OutQuad) // 设置缓动效果，OutQuad是先快后慢
+                .OnComplete(() =>
+                {
+                    // 移动结束后的回调，可以处理后续状态
+                    player.AnimationTrigger(PlayerAnimationTriggerType.PlayerAnimationEndTrigger);
+                });
+        }
     }
+
 
     public override void Enter()
     {

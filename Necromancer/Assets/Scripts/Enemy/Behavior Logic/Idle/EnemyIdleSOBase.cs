@@ -55,7 +55,7 @@ public class EnemyIdleSOBase : ScriptableObject
             comp.OnUpdate();
     }
 
-    public virtual void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
+    public virtual void DoAnimationTriggerEventLogic(EnemyAnimationTriggerType triggerType)
     {
 
     }

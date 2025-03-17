@@ -62,9 +62,9 @@ public class Component_哥布林跳击 : EnemyBehaviorComponent
         enemy.SetVelocity(jumpSpeedX * 1.2f, jumpHeight);
         Debug.Log("跳击: 执行跳跃攻击逻辑");
     }
-    public override void OnAnimationTrigger(AnimationTriggerType triggerType)
+    public override void OnAnimationTrigger(EnemyAnimationTriggerType triggerType)
     {
-        if (triggerType == AnimationTriggerType.EnemyAttackEnd)
+        if (triggerType == EnemyAnimationTriggerType.EnemyAttackEnd)
         {
             // 攻击动画结束，重置攻击状态和动画参数
             enemy.anim.SetBool("Attack2", false);
@@ -74,11 +74,11 @@ public class Component_哥布林跳击 : EnemyBehaviorComponent
             enemy.currentAttackCooldown = enemy.attackCooldown;
             enemy.stateMachine.ChangeState(enemy.chaseState);
         }
-        if (triggerType == AnimationTriggerType.EnemyHitDetermineStart)
+        if (triggerType == EnemyAnimationTriggerType.EnemyHitDetermineStart)
         {
             Debug.Log("开始伤害判定咯");
         }
-        if (triggerType == AnimationTriggerType.EnemyHitDetermineEnd)
+        if (triggerType == EnemyAnimationTriggerType.EnemyHitDetermineEnd)
         {
             Debug.Log("结束伤害判定咯");
         }

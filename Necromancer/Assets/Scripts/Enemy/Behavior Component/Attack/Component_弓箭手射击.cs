@@ -57,9 +57,9 @@ public class Component_弓箭手射击 : EnemyBehaviorComponent
         _timer += Time.deltaTime;
     }
 
-    public override void OnAnimationTrigger(AnimationTriggerType triggerType)
+    public override void OnAnimationTrigger(EnemyAnimationTriggerType triggerType)
     {
-        if(triggerType == AnimationTriggerType.EnemyOnShoot)
+        if(triggerType == EnemyAnimationTriggerType.EnemyOnShoot)
         {
             Debug.Log("开始发射projectile");
             GameObject projectile = Instantiate(
@@ -74,7 +74,7 @@ public class Component_弓箭手射击 : EnemyBehaviorComponent
                     projectileMaxDistance, projectileMaxTimer, projectileGravity, projectileAngle,enemy.facingRight);
             }
         }
-        if (triggerType == AnimationTriggerType.EnemyAttackEnd)
+        if (triggerType == EnemyAnimationTriggerType.EnemyAttackEnd)
         {
             // 攻击动画结束，重置攻击状态和动画参数
             enemy.anim.SetBool("Attack", false);

@@ -114,10 +114,9 @@ public class ShieldEquipment : BaseEquipment
     {
         Debug.Log("ShieldEquipment: Parry activated");
         PlayerStats.Instance.ChangeToParryState();
-        PlayerStats.Instance.isParrying = true;
         // 可以弹反的时候 重置combo和冷却时间
         ResetCombo();
-        // 在这里触发弹反效果，比如播放弹反动画，产生短暂的无敌效果，甚至反击
+        // 在这里触发弹反效果，比如播放弹反动画，产生短暂的无敌效果，甚至反击 
         // 可以调用 PlayerStats 或 Player 的方法切换状态或播放动画
     }
 
@@ -125,7 +124,6 @@ public class ShieldEquipment : BaseEquipment
     {
         Debug.Log("ShieldEquipment: Defense activated");
         PlayerStats.Instance.ChangeToDefenseState();
-        PlayerStats.Instance.isDefensing = true;
         // 可以防御的时候 重置combo和冷却时间
         ResetCombo();
         // 进入防御状态：可以让玩家进入防御状态，减少伤害或完全免伤
@@ -135,9 +133,7 @@ public class ShieldEquipment : BaseEquipment
     private void DeactivateDefense()
     {
         Debug.Log("ShieldEquipment: Defense deactivated");
-        PlayerStats.Instance.isDefensing = false;
-        PlayerStats.Instance.SetCurrentEquipmentIndex(0);
-        PlayerStats.Instance.CallPlayerTrigger();
+        player.AnimationTrigger(PlayerAnimationTriggerType.PlayerAnimationEndTrigger);
         // 退出防御状态：恢复正常状态
         // 比如调用 Player.SetInvincible(false) 或切换回默认状态
     }

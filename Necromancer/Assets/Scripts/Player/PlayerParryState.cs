@@ -54,6 +54,7 @@ public class PlayerParryState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        PlayerStats.Instance.isParrying = false;
         player.ResetToDefaultAnimator(); // 恢复默认动画
         player.StartCoroutine("BusyFor", .02f);
     }
@@ -67,9 +68,18 @@ public class PlayerParryState : PlayerState
             player.SetVelocity(0, rb.velocity.y);
         }
 
-        if (triggerCalled)
+    }
+
+    public override void AnimationTriggerEvent(PlayerAnimationTriggerType triggerType)
+    {
+        base.AnimationTriggerEvent(triggerType);
+        if(triggerType == PlayerAnimationTriggerType.PlayerAnimationEndTrigger)
         {
             stateMachine.ChangeState(player.idleState);
+        }
+        if(triggerType == PlayerAnimationTriggerType.PlayerOnParry)
+        {
+            PlayerStats.Instance.isParrying = true;
         }
     }
 }

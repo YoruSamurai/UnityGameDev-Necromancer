@@ -8,6 +8,8 @@ public class BaseEquipment : MonoBehaviour
 
     [SerializeField] public EquipmentSO equipmentSO;
 
+    [SerializeField] protected Player player;
+
     [Header("攻击冷却时间")]
     [SerializeField] public float attackCooldown; // 每次攻击CD时间
     [SerializeField] public float attackCooldownTimer;
@@ -33,6 +35,8 @@ public class BaseEquipment : MonoBehaviour
     [SerializeField] public int equipmentLevel;
     [SerializeField] public float eDamageMag;
     [SerializeField] public List<BaseAffix> equipmentAffixList;
+
+    
     
 
 
@@ -41,6 +45,7 @@ public class BaseEquipment : MonoBehaviour
     {
         SetupEquipmentBase();
         SetUpEquipmentLevel();
+        player = GetComponentInParent<Player>();
         attackCooldownTimer = 0f;
     }
 

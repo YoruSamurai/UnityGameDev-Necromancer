@@ -42,6 +42,8 @@ public class PlayerDefenseState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        PlayerStats.Instance.isDefensing = false;
+        PlayerStats.Instance.SetCurrentEquipmentIndex(0);
         player.ResetToDefaultAnimator(); // 恢复默认动画
         player.StartCoroutine("BusyFor", .02f);
     }
@@ -54,10 +56,18 @@ public class PlayerDefenseState : PlayerState
         {
             player.SetVelocity(0, rb.velocity.y);
         }
+    }
 
-        if (triggerCalled)
+    public override void AnimationTriggerEvent(PlayerAnimationTriggerType triggerType)
+    {
+        base.AnimationTriggerEvent(triggerType);
+        if(triggerType == PlayerAnimationTriggerType.PlayerAnimationEndTrigger)
         {
             stateMachine.ChangeState(player.idleState);
+        }
+        if (triggerType == PlayerAnimationTriggerType.PlayerOnDefense)
+        {
+            PlayerStats.Instance.isDefensing = true;
         }
     }
 }

@@ -32,15 +32,15 @@ public class Component_弓箭手闪现 : EnemyBehaviorComponent
         }
     }
 
-    public override void OnAnimationTrigger(AnimationTriggerType triggerType)
+    public override void OnAnimationTrigger(EnemyAnimationTriggerType triggerType)
     {
         // 在闪现动画播放到一半时触发
-        if (triggerType == AnimationTriggerType.EnemyFlashMid)
+        if (triggerType == EnemyAnimationTriggerType.EnemyFlashMid)
         {
             Teleport();
         }
         // 闪现动画结束后触发
-        else if (triggerType == AnimationTriggerType.EnemyFlashEnd)
+        else if (triggerType == EnemyAnimationTriggerType.EnemyFlashEnd)
         {
             enemy.anim.SetBool("Flash", false);
             teleportStarted = false;

@@ -10,7 +10,7 @@ public class EnemyAttackState : EnemyState
     {
     }
 
-    public override void AnimationTriggerEvent(AnimationTriggerType triggerType)
+    public override void AnimationTriggerEvent(EnemyAnimationTriggerType triggerType)
     {
         base.AnimationTriggerEvent(triggerType);
         enemy.enemyAttackBaseInstance.DoAnimationTriggerEventLogic(triggerType); 

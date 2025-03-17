@@ -146,9 +146,9 @@ public class Player : MonoBehaviour
         
     }
 
-    public void AnimationTrigger()
+    public void AnimationTrigger(PlayerAnimationTriggerType triggerType)
     {
-        stateMachine.currentState.AnimationFinishTrigger();
+        stateMachine.currentState.AnimationTriggerEvent(triggerType);
     }
 
 

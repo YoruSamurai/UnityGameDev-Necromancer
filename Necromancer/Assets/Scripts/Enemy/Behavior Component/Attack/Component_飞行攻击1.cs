@@ -33,9 +33,9 @@ public class Component_飞行攻击1 : EnemyBehaviorComponent
         _timer += Time.deltaTime;
     }
 
-    public override void OnAnimationTrigger(AnimationTriggerType triggerType)
+    public override void OnAnimationTrigger(EnemyAnimationTriggerType triggerType)
     {
-        if (triggerType == AnimationTriggerType.EnemyAttackEnd)
+        if (triggerType == EnemyAnimationTriggerType.EnemyAttackEnd)
         {
             enemy.anim.SetBool("Attack", false);
             enemy.isAttacking = false;

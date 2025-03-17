@@ -35,7 +35,7 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
         currentAttackComponents?.DoExitLogic();
     }
 
-    public override void DoAnimationTriggerEventLogic(AnimationTriggerType triggerType)
+    public override void DoAnimationTriggerEventLogic(EnemyAnimationTriggerType triggerType)
     {
         currentAttackComponents?.DoAnimationTriggerEventLogic(triggerType);
     }
