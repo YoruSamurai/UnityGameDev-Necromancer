@@ -159,9 +159,14 @@ public class BaseEquipment : MonoBehaviour
         
     }
 
-    public virtual void TriggerHitCheck()
+    public virtual void TriggerHitCheckStart()
     {
         // 供子类重写
+    }
+
+    public virtual void TriggerHitCheckEnd()
+    {
+
     }
 
     public virtual void DoDamage(float _cMag,MonsterStats monsterStats)

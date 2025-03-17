@@ -15,6 +15,20 @@ public class Axe : MeleeEquipment
         base.Update();
     }
 
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+        if (collision.gameObject.layer == 6 && !isHitInAttack)
+        {
+            Debug.Log("是敌人！");
+            isHitInAttack = true;
+        }
+
+        MonsterStats monsterStats = collision.GetComponent<MonsterStats>();
+        PlayerStats.Instance.OnHit(this, monsterStats);
+
+    }
+
     public override void UseEquipment()
     {
         // 检查是否处于攻击CD中
@@ -35,28 +49,8 @@ public class Axe : MeleeEquipment
         ResetCombo();
     }
 
-    public override void TriggerHitCheck()
-    {
-        CheckHit();
-    }
 
-    private void CheckHit()
-    {
-        Collider2D[] hits = GetHitEnemy();
 
-        if (hits.Length > 0)
-        {
-            foreach (Collider2D hit in hits)
-            {
-                MonsterStats monsterStats = hit.GetComponent<MonsterStats>();
-                PlayerStats.Instance.OnHit(this, monsterStats);
-            }
-        }
-        else
-        {
-            Debug.Log("未命中敌人");
-        }
-    }
 
     private void Attack()
     {

@@ -10,10 +10,16 @@ public class MeleeEquipment : BaseEquipment
     [SerializeField] public int fullComboAttackTimes;//一次combo的总攻击次数
     [SerializeField] public List<MeleeAttackStruct> meleeAttacks;
 
+    [SerializeField] public bool isHitInAttack;//单次攻击是否有命中
+
 
     [Header("Attack Effect Settings")]
     [SerializeField] protected GameObject rectangleEffectPrefab; // 蓝色闪烁特效预制件
     [SerializeField] protected GameObject circleEffectPrefab; // 蓝色闪烁特效预制件
+
+    [SerializeField] public BoxCollider2D attackCheckBox;
+    [SerializeField] public CircleCollider2D attackCheckCircle;
+    [SerializeField] private LayerMask enemyLayerMask;
 
     protected override void Start()
     {
@@ -29,6 +35,14 @@ public class MeleeEquipment : BaseEquipment
         {
             Debug.LogWarning("The equipmentSO is not a MeleeEquipmentSO");
         }
+
+        attackCheckBox = GetComponent<BoxCollider2D>();
+        attackCheckCircle = GetComponent<CircleCollider2D>();
+        attackCheckBox.excludeLayers = ~enemyLayerMask;  // 只检测敌人
+        attackCheckCircle.excludeLayers = ~enemyLayerMask;
+        attackCheckBox.enabled = false;
+        attackCheckCircle.enabled = false;
+        isHitInAttack = false;
 
     }
 
@@ -46,6 +60,83 @@ public class MeleeEquipment : BaseEquipment
             SetCombo(0);
         }
 
+    }
+    public virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+    }
+
+    public override void TriggerHitCheckStart()
+    {
+        EnableHitDetermine();
+    }
+
+    public override void TriggerHitCheckEnd()
+    {
+        DisableHitDetermine();
+    }
+
+
+    public void EnableHitDetermine()
+    {
+        // 如果连击数据无效，直接返回
+        if (currentCombo >= meleeAttacks.Count)
+            return;
+
+        // 选择当前攻击数据（这里参考你已有的 GetHitEnemy() 逻辑）
+        MeleeAttackStruct currentAttack = meleeAttacks[currentCombo == 0 ? meleeAttacks.Count - 1 : currentCombo - 1];
+
+        // 获取玩家面向方向
+        bool isFacingRight = GetFacingDirection();
+        Vector2 faceDirection = isFacingRight ? Vector2.right : Vector2.left;
+
+        // 计算攻击中心位置
+        Vector2 attackCenter = currentAttack.attackCenter switch
+        {
+            MeleeAttackCenterEnum.player => (Vector2)transform.position,
+            MeleeAttackCenterEnum.front => currentAttack.attackShape == MeleeAttackShapeEnum.circle ?
+                (Vector2)transform.position + faceDirection * currentAttack.attackRadius :
+                (Vector2)transform.position + faceDirection * (currentAttack.attackLength / 2),
+            _ => (Vector2)transform.position
+        };
+
+        // 根据攻击形状设置碰撞器
+        if (currentAttack.attackShape == MeleeAttackShapeEnum.circle)
+        {
+            // 禁用BoxCollider2D
+            if (attackCheckBox != null)
+                attackCheckBox.enabled = false;
+            // 启用CircleCollider2D，并设置其参数
+            if (attackCheckCircle != null)
+            {
+                attackCheckCircle.enabled = true;
+                // 假设碰撞器的父物体就是本对象，
+                // 设定 offset 为攻击中心与本对象位置之差
+                attackCheckCircle.offset = faceDirection * (attackCenter - (Vector2)player.transform.position);
+                attackCheckCircle.radius = currentAttack.attackRadius;
+            }
+        }
+        else // 如果是矩形攻击
+        {
+            // 禁用CircleCollider2D
+            if (attackCheckCircle != null)
+                attackCheckCircle.enabled = false;
+            // 启用BoxCollider2D，并设置其参数
+            if (attackCheckBox != null)
+            {
+                attackCheckBox.enabled = true;
+                // BoxCollider2D 的 offset 为攻击中心与本对象位置之差
+                attackCheckBox.offset = faceDirection * (attackCenter - (Vector2)player.transform.position);
+                // 设置BoxCollider2D的大小
+                attackCheckBox.size = new Vector2(currentAttack.attackLength, currentAttack.attackWidth);
+            }
+        }
+    }
+
+    public void DisableHitDetermine()
+    {
+        attackCheckCircle.enabled = false;
+        attackCheckBox.enabled = false;
+        isHitInAttack = false;
     }
 
     public Collider2D[] GetHitEnemy()

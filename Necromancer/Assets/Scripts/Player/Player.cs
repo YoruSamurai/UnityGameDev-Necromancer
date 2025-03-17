@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
     public float dashDir {  get; private set; }
 
 
+
+
     [Header("Collision Info")]//碰撞参数
     [SerializeField] public Transform groundCheck;
     [SerializeField] public float groundCheckDistance;

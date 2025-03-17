@@ -12,11 +12,11 @@ public class PlayerAnimationTriggers : MonoBehaviour
     {
         if (PlayerStats.Instance.currentEquipmentIndex == 1)
         {
-            PlayerStats.Instance.baseEquipment1.TriggerHitCheck();
+            PlayerStats.Instance.baseEquipment1.TriggerHitCheckStart();
         }
         else if(PlayerStats.Instance.currentEquipmentIndex == 2)
         {
-            PlayerStats.Instance.baseEquipment2.TriggerHitCheck();
+            PlayerStats.Instance.baseEquipment2.TriggerHitCheckStart();
         }
     }
 

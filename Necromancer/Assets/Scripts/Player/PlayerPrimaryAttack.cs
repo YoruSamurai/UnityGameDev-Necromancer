@@ -29,10 +29,26 @@ public class PlayerPrimaryAttack : PlayerState
                 }
             case PlayerAnimationTriggerType.PlayerHitDetermineStart:
                 {
+                    if (PlayerStats.Instance.currentEquipmentIndex == 1)
+                    {
+                        PlayerStats.Instance.baseEquipment1.TriggerHitCheckStart();
+                    }
+                    else if (PlayerStats.Instance.currentEquipmentIndex == 2)
+                    {
+                        PlayerStats.Instance.baseEquipment2.TriggerHitCheckStart();
+                    }
                     break;
                 }
             case PlayerAnimationTriggerType.PlayerHitDetermineEnd:
                 {
+                    if (PlayerStats.Instance.currentEquipmentIndex == 1)
+                    {
+                        PlayerStats.Instance.baseEquipment1.TriggerHitCheckEnd();
+                    }
+                    else if (PlayerStats.Instance.currentEquipmentIndex == 2)
+                    {
+                        PlayerStats.Instance.baseEquipment2.TriggerHitCheckEnd();
+                    }
                     break;
                 }
         }

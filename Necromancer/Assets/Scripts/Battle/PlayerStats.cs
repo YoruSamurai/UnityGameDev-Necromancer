@@ -29,7 +29,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] public bool isDefensing;
     [SerializeField] public int currentEquipmentIndex;
 
-    [SerializeField] public BoxCollider2D attackCheck;
+    
 
     [SerializeField] public LayerMask whatIsEnemy;
 
