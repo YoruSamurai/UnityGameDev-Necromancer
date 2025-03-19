@@ -23,10 +23,19 @@ public class ParallaxBackground : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float distanceToMove = cineCamera.transform.position.x * parallaxEffect;
+        /*float distanceToMove = cineCamera.transform.position.x * parallaxEffect;
         if(index ==1)
             transform.position = new Vector3(xPosition + distanceToMove, cineCamera.transform.position.y);
         if(index == 2)
+            transform.position = new Vector3(xPosition + distanceToMove, transform.position.y);*/
+    }
+
+    private void LateUpdate()
+    {
+        float distanceToMove = cineCamera.transform.position.x * parallaxEffect;
+        if (index == 1)
+            transform.position = new Vector3(xPosition + distanceToMove, cineCamera.transform.position.y);
+        if (index == 2)
             transform.position = new Vector3(xPosition + distanceToMove, transform.position.y);
     }
 }

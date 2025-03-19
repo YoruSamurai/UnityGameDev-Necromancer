@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, ISaveable
 {
 
     public static PlayerStats Instance { get; private set; }
@@ -41,7 +41,34 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] public Player player;
 
+    public string SaveID => "PlayerStats"; // 唯一标识符
 
+    public void SaveData(GameData data)
+    {
+        data.playerData = new PlayerData
+        {
+            currentHealth = this.currentHealth,
+            maxHealth = this.maxHealth,
+            soul = this.soul,
+            gold = this.gold,
+            position = new SerializableVector2(transform.position) // 保存位置
+            // 其他需要保存的字段
+        };
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data.playerData != null)
+        {
+            currentHealth = data.playerData.currentHealth;
+            maxHealth = data.playerData.maxHealth;
+            soul = data.playerData.soul;
+            gold = data.playerData.gold;
+            Vector2 loadedPosition = data.playerData.position.ToVector2(); // 加载位置
+            transform.position = new Vector3(loadedPosition.x, loadedPosition.y, transform.position.z); // 保持 z 坐标不变
+            // 其他字段加载
+        }
+    }
 
     private void Awake()
     {
@@ -49,6 +76,8 @@ public class PlayerStats : MonoBehaviour
             Instance = this;
         else
             Destroy(this.gameObject);
+
+        SaveManager.Instance.Register(this);
     }
 
     private void Start()
