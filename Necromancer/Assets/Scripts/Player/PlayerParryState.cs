@@ -62,12 +62,15 @@ public class PlayerParryState : PlayerState
     public override void Update()
     {
         base.Update();
+    }
 
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
         if (stateTimer < 0)
         {
             player.SetVelocity(0, rb.velocity.y);
         }
-
     }
 
     public override void AnimationTriggerEvent(PlayerAnimationTriggerType triggerType)

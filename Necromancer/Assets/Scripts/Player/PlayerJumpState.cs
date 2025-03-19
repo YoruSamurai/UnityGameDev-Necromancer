@@ -30,6 +30,12 @@ public class PlayerJumpState : PlayerAirState
         {
             stateMachine.ChangeState(player.fallState);
         }
+        
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
         //天上动的比较慢
         if (xInput != 0)
         {

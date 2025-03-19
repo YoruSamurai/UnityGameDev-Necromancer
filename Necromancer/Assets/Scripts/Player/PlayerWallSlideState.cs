@@ -27,11 +27,6 @@ public class PlayerWallSlideState : PlayerAirState
         {
             stateMachine.ChangeState(player.idleState);
         }
-        //如果按了S 就下坠的快一些
-        if (yInput < 0)
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        else
-            rb.velocity = new Vector2(0, rb.velocity.y * 0.98f);
 
 
 
@@ -40,5 +35,15 @@ public class PlayerWallSlideState : PlayerAirState
         {
             stateMachine.ChangeState(player.idleState);
         }
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        //如果按了S 就下坠的快一些
+        if (yInput < 0)
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        else
+            rb.velocity = new Vector2(0, rb.velocity.y * 0.98f);
     }
 }

@@ -37,8 +37,14 @@ public class PlayerFallState : PlayerAirState
             stateMachine.ChangeState(player.idleState);
         }
 
+        
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
         //天上跳的没那么快
-        if(xInput != 0)
+        if (xInput != 0)
         {
             player.SetVelocity(player.moveSpeed * .8f * xInput, rb.velocity.y);
         }

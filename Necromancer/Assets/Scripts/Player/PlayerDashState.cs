@@ -28,8 +28,7 @@ public class PlayerDashState : PlayerState
     public override void Update()
     {
         base.Update();
-        //设置冲刺速度 开冲
-        player.SetVelocity(player.dashSpeed * player.dashDir, 0);
+        
 
         //在冲刺时间结束后，回到静止状态
         if(stateTimer < 0f)
@@ -37,5 +36,12 @@ public class PlayerDashState : PlayerState
             //stateMachine.ChangeState(player.moveState);
             stateMachine.ChangeState(player.idleState);
         }
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        //设置冲刺速度 开冲
+        player.SetVelocity(player.dashSpeed * player.dashDir, 0);
     }
 }

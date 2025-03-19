@@ -88,8 +88,13 @@ public class PlayerLedgeUpState : PlayerState
     public override void Update()
     {
         base.Update();
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
         player.SetZeroVelocity();
     }
 
-    
+
 }

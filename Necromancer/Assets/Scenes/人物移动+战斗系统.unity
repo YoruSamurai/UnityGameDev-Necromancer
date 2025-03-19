@@ -360,6 +360,7 @@ MonoBehaviour:
   equipmentAffixList: []
   fullComboAttackTimes: 0
   meleeAttacks: []
+  isHitInAttack: 0
   rectangleEffectPrefab: {fileID: 2789657824771503155, guid: 2257ddf4d619b9e4ba0a21e31bf12ba1, type: 3}
   circleEffectPrefab: {fileID: 2789657824771503155, guid: dbe4619acbe8a8847ae4bc8522114b0e, type: 3}
   attackCheckBox: {fileID: 0}
@@ -1486,6 +1487,7 @@ MonoBehaviour:
   equipmentAffixList: []
   fullComboAttackTimes: 0
   meleeAttacks: []
+  isHitInAttack: 0
   rectangleEffectPrefab: {fileID: 2789657824771503155, guid: 2257ddf4d619b9e4ba0a21e31bf12ba1, type: 3}
   circleEffectPrefab: {fileID: 2789657824771503155, guid: dbe4619acbe8a8847ae4bc8522114b0e, type: 3}
   attackCheckBox: {fileID: 0}
@@ -3083,7 +3085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cineCamera: {fileID: 2132501443}
-  parallaxEffect: 0.9
+  parallaxEffect: 0.8
   index: 1
 --- !u!1 &1357884055
 GameObject:
@@ -4606,6 +4608,7 @@ MonoBehaviour:
   equipmentAffixList: []
   fullComboAttackTimes: 0
   meleeAttacks: []
+  isHitInAttack: 0
   rectangleEffectPrefab: {fileID: 2789657824771503155, guid: 2257ddf4d619b9e4ba0a21e31bf12ba1, type: 3}
   circleEffectPrefab: {fileID: 2789657824771503155, guid: dbe4619acbe8a8847ae4bc8522114b0e, type: 3}
   attackCheckBox: {fileID: 0}

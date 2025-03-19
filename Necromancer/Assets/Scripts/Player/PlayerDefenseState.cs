@@ -36,7 +36,6 @@ public class PlayerDefenseState : PlayerState
         }
         //设置速度应该写在下面 通过获取武器的属性来设置
         player.SetVelocity(1 * player.facingDir, rb.velocity.y);
-        stateTimer = .1f;
     }
 
     public override void Exit()
@@ -51,11 +50,12 @@ public class PlayerDefenseState : PlayerState
     public override void Update()
     {
         base.Update();
+    }
 
-        if (stateTimer < 0)
-        {
-            player.SetVelocity(0, rb.velocity.y);
-        }
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        player.SetVelocity(0, rb.velocity.y);
     }
 
     public override void AnimationTriggerEvent(PlayerAnimationTriggerType triggerType)

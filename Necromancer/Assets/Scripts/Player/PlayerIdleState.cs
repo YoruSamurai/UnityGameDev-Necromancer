@@ -31,6 +31,12 @@ public class PlayerIdleState : PlayerGroundState
             stateMachine.ChangeState(player.moveState);
         }
 
+        
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
         //停止X移动 避免玩家跳完之后滑动
         player.SetVelocity(0, rb.velocity.y);
     }
