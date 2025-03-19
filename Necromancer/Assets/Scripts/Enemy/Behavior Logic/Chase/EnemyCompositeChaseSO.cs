@@ -33,6 +33,11 @@ public class EnemyCompositeChaseSO : EnemyChaseSOBase
         currentChaseComponents?.DoUpdateLogic();
     }
 
+    public override void DoFixedUpdateLogic()
+    {
+        currentChaseComponents?.DoFixedUpdateLogic();
+    }
+
     public override void DoExitLogic()
     {
         currentChaseComponents?.DoExitLogic();

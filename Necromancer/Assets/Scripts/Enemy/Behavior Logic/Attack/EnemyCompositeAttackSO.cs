@@ -30,6 +30,11 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
         currentAttackComponents?.DoUpdateLogic();
     }
 
+    public override void DoFixedUpdateLogic()
+    {
+        currentAttackComponents?.DoFixedUpdateLogic();
+    }
+
     public override void DoExitLogic()
     {
         currentAttackComponents?.DoExitLogic();

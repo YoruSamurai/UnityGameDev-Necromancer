@@ -10,10 +10,10 @@ public class Component_哥布林跳击 : EnemyBehaviorComponent
 
     [SerializeField] private float preAttackDelay = 0.3f;     // 攻击前摇延迟
     [SerializeField] private float jumpHeight = 5f;           // 向上的速度
-    [SerializeField] private float attackDuration = 0.7f;       // 攻击动画持续时间
+    [SerializeField] private float attackDuration = 0.7f;     // 攻击动画持续时间
 
-    // 用于确保在一次攻击周期内只执行一次跳跃逻辑
-    private bool attackTriggered = false;
+    private bool attackTriggered = false; // 用于确保在一次攻击周期内只执行一次跳跃逻辑
+    private Vector2 jumpVelocity;        // 跳跃速度
 
     public override void OnEnter()
     {
@@ -22,12 +22,26 @@ public class Component_哥布林跳击 : EnemyBehaviorComponent
         enemy.currentDamageMultiplier = damageMultiplier;
     }
 
+    public override void OnFixedUpdate()
+    {
+        base.OnFixedUpdate();
+        // 如果不在攻击状态，保持静止并播放Idle动画
+        if (!enemy.isAttacking)
+        {
+            enemy.SetVelocity(0, 0);
+        }
+        // 如果处于攻击状态且跳跃逻辑已触发，则设置速度
+        if (enemy.isAttacking && attackTriggered)
+        {
+            enemy.SetVelocity(jumpVelocity.x, enemy.rb.velocity.y);
+        }
+    }
+
     public override void OnUpdate()
     {
         // 如果不在攻击状态，保持静止并播放Idle动画
         if (!enemy.isAttacking)
         {
-            enemy.SetVelocity(0, 0);
             enemy.anim.SetBool("Idle", true);
         }
 
@@ -43,15 +57,15 @@ public class Component_哥布林跳击 : EnemyBehaviorComponent
             _timer = 0f;
         }
 
-        // 如果处于攻击状态，并且前摇延迟结束，则执行跳跃攻击（只执行一次）
+        // 如果处于攻击状态，并且前摇延迟结束，则计算跳跃速度（只执行一次）
         if (enemy.isAttacking && !attackTriggered && _timer >= preAttackDelay)
         {
-            ExecuteJumpAttack();
+            CalculateJumpVelocity();
             attackTriggered = true;
         }
     }
 
-    private void ExecuteJumpAttack()
+    private void CalculateJumpVelocity()
     {
         // 计算跳跃方向：
         // 令攻击在 attackDuration 内刚好横向到达玩家位置
@@ -59,9 +73,11 @@ public class Component_哥布林跳击 : EnemyBehaviorComponent
         Vector2 playerPos = playerTransform.position;
         float jumpSpeedX = (playerPos.x - enemyPos.x) / attackDuration;
         // 适当乘以系数（例如1.2f）来调整效果
-        enemy.SetVelocity(jumpSpeedX * 1.2f, jumpHeight);
-        Debug.Log("跳击: 执行跳跃攻击逻辑");
+        jumpVelocity = new Vector2(jumpSpeedX * 1.2f, jumpHeight);
+        enemy.SetVelocity(jumpVelocity.x, jumpVelocity.y);
+        Debug.Log("跳击: 计算跳跃速度");
     }
+
     public override void OnAnimationTrigger(EnemyAnimationTriggerType triggerType)
     {
         if (triggerType == EnemyAnimationTriggerType.EnemyAttackEnd)

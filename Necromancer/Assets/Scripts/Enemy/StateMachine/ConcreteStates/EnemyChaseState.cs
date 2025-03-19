@@ -33,7 +33,11 @@ public class EnemyChaseState : EnemyState
     {
         base.UpdateState();
         enemy.enemyChaseBaseInstance.DoUpdateLogic();
+    }
 
-
+    public override void FixedUpdateState()
+    {
+        base.FixedUpdateState();
+        enemy.enemyChaseBaseInstance.DoFixedUpdateLogic();
     }
 }

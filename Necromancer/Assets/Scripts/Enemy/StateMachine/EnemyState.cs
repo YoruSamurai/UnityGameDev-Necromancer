@@ -17,7 +17,7 @@ public class EnemyState
 
     public virtual void EnterState()
     {
-
+        Debug.Log("我现在在" +  this.enemy + enemy.stateMachine.currentEnemyState);
     }
 
     public virtual void ExitState()
@@ -26,6 +26,11 @@ public class EnemyState
     }
 
     public virtual void UpdateState()
+    {
+
+    }
+
+    public virtual void FixedUpdateState()
     {
 
     }

@@ -33,8 +33,11 @@ public class EnemyIdleState : EnemyState
     {
         base.UpdateState();
         enemy.enemyIdleBaseInstance.DoUpdateLogic();
+    }
 
-
-
+    public override void FixedUpdateState()
+    {
+        base.FixedUpdateState();
+        enemy.enemyIdleBaseInstance.DoFixedUpdateLogic();
     }
 }

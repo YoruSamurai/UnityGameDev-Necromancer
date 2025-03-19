@@ -52,6 +52,12 @@ public class EnemyAttackSOBase : ScriptableObject
             comp.OnUpdate();
     }
 
+    public virtual void DoFixedUpdateLogic()
+    {
+        foreach (var comp in _componentInstances)
+            comp.OnFixedUpdate();
+    }
+
     public virtual void DoAnimationTriggerEventLogic(EnemyAnimationTriggerType triggerType)
     {
         foreach (var comp in _componentInstances)

@@ -14,10 +14,15 @@ public class Component_哥布林斩击 : EnemyBehaviorComponent
         enemy.currentDamageMultiplier = damageMultiplier;
     }
 
-    public override void OnUpdate()
+    public override void OnFixedUpdate()
     {
+        base.OnFixedUpdate();
         // 保证敌人静止
         enemy.SetVelocity(0, 0);
+    }
+
+    public override void OnUpdate()
+    {
 
         if (!enemy.isAttacking)
         {

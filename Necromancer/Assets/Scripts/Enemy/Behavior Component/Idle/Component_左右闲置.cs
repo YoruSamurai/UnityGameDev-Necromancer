@@ -11,13 +11,32 @@ public class Component_左右闲置 : EnemyBehaviorComponent
     private float delayTimer = 0f;
     [SerializeField] private float delayDuration; // 延迟半秒
 
+    public override void OnEnter()
+    {
+        isDelaying = false;
+    }
+
+    public override void OnFixedUpdate()
+    {
+        if(isDelaying || (!enemy.IsGroundDetected() || enemy.IsWallDetected()))
+        {
+            enemy.SetVelocity(0, enemy.rb.velocity.y);
+        }
+        else
+        {
+            // 正常情况下按照左右移动
+            enemy.SetVelocity(enemy.facingDir * MovementSpeed, enemy.rb.velocity.y);
+        }
+
+    }
+
     public override void OnUpdate()
     {
         // 如果处于延迟状态，则更新计时器，保持静止，并设置动画参数
         if (isDelaying)
         {
             delayTimer += Time.deltaTime;
-            enemy.SetVelocity(0, enemy.rb.velocity.y);
+            //enemy.SetVelocity(0, enemy.rb.velocity.y);
             if (delayTimer >= delayDuration)
             {
                 // 延迟结束后执行翻转，并恢复运动
@@ -36,13 +55,11 @@ public class Component_左右闲置 : EnemyBehaviorComponent
         {
             isDelaying = true;
             delayTimer = 0f;
-            enemy.SetVelocity(0,enemy.rb.velocity.y);
+            //enemy.SetVelocity(0,enemy.rb.velocity.y);
             enemy.anim.SetBool("Idle", true);
             enemy.anim.SetBool("Move", false);
             return;
         }
 
-        // 正常情况下按照左右移动
-        enemy.SetVelocity(enemy.facingDir * MovementSpeed, enemy.rb.velocity.y);
     }
 }

@@ -36,4 +36,10 @@ public class EnemyAttackState : EnemyState
         enemy.enemyAttackBaseInstance.DoUpdateLogic();
 
     }
+
+    public override void FixedUpdateState()
+    {
+        base.FixedUpdateState();
+        enemy.enemyAttackBaseInstance.DoFixedUpdateLogic();
+    }
 }

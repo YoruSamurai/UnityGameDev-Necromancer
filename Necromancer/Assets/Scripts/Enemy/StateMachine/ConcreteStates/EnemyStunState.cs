@@ -34,4 +34,9 @@ public class EnemyStunState : EnemyState
             enemy.stateMachine.ChangeState(enemy.chaseState);
         }
     }
+
+    public override void FixedUpdateState()
+    {
+        base.FixedUpdateState();
+    }
 }

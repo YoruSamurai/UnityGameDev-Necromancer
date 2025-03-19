@@ -8,39 +8,56 @@ public class Component_哥布林追逐 : EnemyBehaviorComponent
     [SerializeField] private float _movementSpeed;
 
 
+    private int _moveDirection;
+    private bool _canMove;
+
     public override void OnEnter()
     {
     }
 
-    public override void OnUpdate()
+    public override void OnFixedUpdate()
     {
-        // 计算方向
-        int moveDirection = playerTransform.position.x > enemy.transform.position.x ? 1 : -1;
+        base.OnFixedUpdate();
 
-        bool canMove = (enemy.IsWallDetected() || !enemy.IsGroundDetected());
+        // 计算方向
+        _moveDirection = playerTransform.position.x > enemy.transform.position.x ? 1 : -1;
+
+        _canMove = (enemy.IsWallDetected() || !enemy.IsGroundDetected());
+
         // 如果前方是墙壁或者没有地面，则停止移动
-        if (canMove && moveDirection == enemy.facingDir)
+        if (_canMove && _moveDirection == enemy.facingDir)
         {
             enemy.SetVelocity(0, enemy.rb.velocity.y);
-            enemy.anim.SetBool("Idle", true);
-            enemy.anim.SetBool("Chase", false);
-
         }
         else if (Mathf.Abs(playerTransform.position.x - enemy.transform.position.x) < 2f)
         {
-            if(moveDirection != enemy.facingDir) 
+            if (_moveDirection != enemy.facingDir)
                 enemy.Flip();
             enemy.SetVelocity(0, enemy.rb.velocity.y);
+        }
+        else
+        {
+            enemy.SetVelocity(_moveDirection * _movementSpeed, enemy.rb.velocity.y);
+        }
+    }
+
+    public override void OnUpdate()
+    {
+        // 更新动画状态
+        if (_canMove && _moveDirection == enemy.facingDir)
+        {
+            enemy.anim.SetBool("Idle", true);
+            enemy.anim.SetBool("Chase", false);
+        }
+        else if (Mathf.Abs(playerTransform.position.x - enemy.transform.position.x) < 2f)
+        {
             enemy.anim.SetBool("Idle", true);
             enemy.anim.SetBool("Chase", false);
         }
         else
         {
-            enemy.SetVelocity(moveDirection * _movementSpeed, enemy.rb.velocity.y);
             enemy.anim.SetBool("Chase", true);
             enemy.anim.SetBool("Idle", false);
         }
-
-        
     }
 }

@@ -27,6 +27,12 @@ public abstract class EnemyBehaviorComponent : ScriptableObject, IEnemyBehaviorC
 
     public abstract void OnUpdate();
 
+    public virtual void OnFixedUpdate()
+    {
+
+    }
+
+
     public virtual void OnAnimationTrigger(EnemyAnimationTriggerType type)
     {
 

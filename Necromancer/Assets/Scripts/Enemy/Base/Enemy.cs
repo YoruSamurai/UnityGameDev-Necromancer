@@ -105,6 +105,11 @@ public class Enemy : MonoBehaviour
         stateMachine.currentEnemyState.UpdateState();
     }
 
+    protected virtual void FixedUpdate()
+    {
+        stateMachine.currentEnemyState.FixedUpdateState();
+    }
+
 
     #region 切换状态
     public void ChangeToState(EnemyState state)

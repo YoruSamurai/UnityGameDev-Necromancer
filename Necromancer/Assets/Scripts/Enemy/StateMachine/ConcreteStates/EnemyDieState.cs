@@ -39,4 +39,9 @@ public class EnemyDieState : EnemyState
         enemy.SetVelocity(0, enemy.rb.velocity.y);
         
     }
+
+    public override void FixedUpdateState()
+    {
+        base.FixedUpdateState();
+    }
 }
