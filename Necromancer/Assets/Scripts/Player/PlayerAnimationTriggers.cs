@@ -7,18 +7,6 @@ public class PlayerAnimationTriggers : MonoBehaviour
 {
     private Player player => GetComponentInParent<Player>();
 
-    // 新增武器伤害检测事件
-    private void AnimationHitTrigger()
-    {
-        if (PlayerStats.Instance.currentEquipmentIndex == 1)
-        {
-            PlayerStats.Instance.baseEquipment1.TriggerHitCheckStart();
-        }
-        else if(PlayerStats.Instance.currentEquipmentIndex == 2)
-        {
-            PlayerStats.Instance.baseEquipment2.TriggerHitCheckStart();
-        }
-    }
 
     private void AnimationTrigger(PlayerAnimationTriggerType triggerType)
     {

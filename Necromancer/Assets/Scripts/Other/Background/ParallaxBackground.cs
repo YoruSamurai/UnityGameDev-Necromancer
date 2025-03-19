@@ -16,6 +16,11 @@ public class ParallaxBackground : MonoBehaviour
         xPosition = transform.position.x;
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void FixedUpdate()
     {
         float distanceToMove = cineCamera.transform.position.x * parallaxEffect;
