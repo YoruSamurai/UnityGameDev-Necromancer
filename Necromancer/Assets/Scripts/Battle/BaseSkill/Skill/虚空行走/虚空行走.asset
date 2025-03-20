@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e9c6645c30fb0e4f938ba1a2dcbcf01, type: 3}
-  m_Name: "\u5B9A\u5411\u96F7\u8F68"
+  m_Name: "\u865A\u7A7A\u884C\u8D70"
   m_EditorClassIdentifier: 
-  skillName: "\u5B9A\u5411\u96F7\u8F68"
-  description: "\u5B9A\u5411\u96F7\u8F68"
+  skillName: 
+  description: 
   icon: {fileID: 0}
-  cooldown: 5
-  projectilePrefab: {fileID: 5519838571514124857, guid: 4468f800f24af5344afc48bdebc75749, type: 3}
-  projectileSpeed: 35
-  projectileMaxDistance: 30
+  cooldown: 0
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10
+  projectileMaxDistance: 5
   projectileMaxTimer: 3
-  projectileGravity: 0.2
+  projectileGravity: 0
   projectileAngle: 0

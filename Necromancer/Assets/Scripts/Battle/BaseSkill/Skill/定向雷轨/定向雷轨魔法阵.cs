@@ -16,22 +16,22 @@ public class 定向雷轨魔法阵 : MonoBehaviour
     private float projectileGravity;
     private float projectileAngle;
     private int facingDir;  // 根据玩家当时的朝向
-
+    private SkillSO skillData;
     private float timer;
 
     /// <summary>
     /// 初始化魔法阵组件（由定向雷轨技能调用）
     /// </summary>
-    public void Initialize(SkillSO skillData, int playerFacingDir)
+    public void Initialize(SkillSO _skillData, int playerFacingDir)
     {
         // 从SkillSO中读取投射物相关参数
-        projectileSpeed = skillData.projectileSpeed;
-        projectileMaxDistance = skillData.projectileMaxDistance;
-        projectileMaxTimer = skillData.projectileMaxTimer;
-        projectileGravity = skillData.projectileGravity;
-        projectileAngle = skillData.projectileAngle;
+        projectileSpeed = _skillData.projectileSpeed;
+        projectileMaxDistance = _skillData.projectileMaxDistance;
+        projectileMaxTimer = _skillData.projectileMaxTimer;
+        projectileGravity = _skillData.projectileGravity;
+        projectileAngle = _skillData.projectileAngle;
         facingDir = playerFacingDir;  // 保存玩家当时的面向
-
+        skillData = _skillData;
         // 开始协程发射闪雷
         StartCoroutine(FireThunderBolts());
     }
@@ -55,7 +55,7 @@ public class 定向雷轨魔法阵 : MonoBehaviour
             // 闪雷从魔法阵的位置发射
             Vector2 spawnPos = transform.position;
             // 使用魔法阵当前的旋转，也可以自行调整旋转
-            Quaternion spawnRotation = transform.rotation;
+            Quaternion spawnRotation = skillData.projectilePrefab.transform.rotation;
 
             GameObject bolt = Instantiate(thunderBoltPrefab, spawnPos, spawnRotation);
             // 获取 BaseSkillProjectile 组件，并传递参数

@@ -21,14 +21,32 @@ public class SkillController : MonoBehaviour
     /// </summary>
     public void CastSkill(Player player, PlayerStats playerStats)
     {
-        foreach (BaseSkillComponent comp in skillComponents)
+        if (AllComponentsCanExecute(player, playerStats))
         {
-            // 这里可以根据需求判断是否需要检查CanExecute
-            if (comp.CanExecute(player, playerStats, skillData))
+            foreach (BaseSkillComponent comp in skillComponents)
             {
                 comp.Execute(player, playerStats, skillData);
             }
         }
+        else
+        {
+            Debug.Log("⚠️ 技能条件不满足，无法施放");
+        }
         // 也可以统一在这里做技能结束的处理，比如启动冷却计时
+    }
+
+    /// <summary>
+    /// 判断所有组件是否都能执行
+    /// </summary>
+    private bool AllComponentsCanExecute(Player player, PlayerStats playerStats)
+    {
+        foreach (BaseSkillComponent comp in skillComponents)
+        {
+            if (!comp.CanExecute(player, playerStats, skillData))
+            {
+                return false; // 只要有一个不满足，就不执行
+            }
+        }
+        return true;
     }
 }
