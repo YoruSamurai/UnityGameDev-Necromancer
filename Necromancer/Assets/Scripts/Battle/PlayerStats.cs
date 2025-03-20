@@ -77,11 +77,11 @@ public class PlayerStats : MonoBehaviour, ISaveable
         else
             Destroy(this.gameObject);
 
-        SaveManager.Instance.Register(this);
     }
 
     private void Start()
     {
+        SaveManager.Instance.Register(this);
         currentHealth = 100;
         maxHealth = 100;
         healthPercentage = 100;
