@@ -11,6 +11,9 @@ public class BattleManagerTest : MonoBehaviour
     [SerializeField] public List<BaseEquipment> equipmentList;
     [SerializeField] public List<BaseAffix> affixList;
 
+    //新增技能列表
+    [SerializeField] public List<SkillController> skillList;
+
 
 
     private void Awake()
@@ -27,6 +30,7 @@ public class BattleManagerTest : MonoBehaviour
         // 获取所有子对象中的 BaseEquipment 组件
         equipmentList = new List<BaseEquipment>(GetComponentsInChildren<BaseEquipment>(true));
         affixList = new List<BaseAffix>(GetComponentsInChildren<BaseAffix>(true));
+        skillList = new List<SkillController>(GetComponentsInChildren<SkillController>(true));
 
     }
 
@@ -37,6 +41,19 @@ public class BattleManagerTest : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+    }
+
+    public SkillController GetRandomSkill(Transform parentTransform)
+    {
+        if (skillList.Count == 0) return null;
+        ClearEquipmentInTransform(parentTransform);
+
+        //生成一个随机武器
+        SkillController originalSkill = skillList[Random.Range(0, skillList.Count)];
+        SkillController newSkill = Instantiate(originalSkill, parentTransform);
+
+        //可能这里需要初始化等级？什么的
+        return newSkill;
     }
 
     public BaseEquipment GetRandomWeapon(Transform parentTransform)

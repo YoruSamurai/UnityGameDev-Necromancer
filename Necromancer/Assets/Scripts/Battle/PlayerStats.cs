@@ -39,6 +39,13 @@ public class PlayerStats : MonoBehaviour, ISaveable
     public BaseEquipment baseEquipment1;
     public BaseEquipment baseEquipment2;
 
+
+    [Header("技能挂载点")]
+    public Transform primarySkillParent;
+    public Transform secondarySkillParent;
+    public SkillController primarySkill;
+    public SkillController secondarySkill;
+
     [SerializeField] public Player player;
 
     public string SaveID => "PlayerStats"; // 唯一标识符
@@ -108,10 +115,25 @@ public class PlayerStats : MonoBehaviour, ISaveable
             SetCurrentEquipmentIndex(2);
             baseEquipment2.UseEquipment();
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             baseEquipment1 = BattleManagerTest.Instance.GetRandomWeapon(mainWeaponParent);
             baseEquipment2 = BattleManagerTest.Instance.GetRandomWeapon(secondaryWeaponParent);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            primarySkill = BattleManagerTest.Instance.GetRandomSkill(primarySkillParent);
+            secondarySkill = BattleManagerTest.Instance.GetRandomSkill(secondarySkillParent);
+        }
+
+        // 按下 Q 释放主技能，E 释放副技能
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            primarySkill.CastSkill(player, this);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            secondarySkill.CastSkill(player, this);
         }
     }
 
