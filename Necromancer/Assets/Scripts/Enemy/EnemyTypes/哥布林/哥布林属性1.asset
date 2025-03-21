@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76d5fc2842e4ddf4785422e310836e37, type: 3}
-  m_Name: "\u54E5\u5E03\u6797\u5C5E\u6027"
+  m_Name: "\u54E5\u5E03\u6797\u5C5E\u60271"
   m_EditorClassIdentifier: 
   maxHealth: 1000
   baseDamage: 15
+  movementSpeed: 10
   stunResistance: 50
   freezeResistance: 50
-  stunDuration: 1
-  freezeDuration: 1
+  stunDuration: 2
+  freezeDuration: 2

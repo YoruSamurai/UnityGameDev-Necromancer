@@ -31,7 +31,14 @@ public class MonsterStats : MonoBehaviour
 
     #region 怪物当前状态
     public bool isDead {  get; private set; }
+    [SerializeField] public bool isStunned;// { get; private set; }
     #endregion
+
+    #region 怪物计时器
+
+    private float stunTickInterval = 1f;
+    #endregion
+
 
     [SerializeField] private List<PoisonEffect> poisonEffects = new List<PoisonEffect>();
     [SerializeField] private List<BurnEffect> burnEffects = new List<BurnEffect>();
@@ -41,20 +48,14 @@ public class MonsterStats : MonoBehaviour
     {
         enemy = GetComponent<Enemy>();
         isDead = false;
+        isStunned = false;
+        StartStunResistanceDecay();
     }
 
     private void Update()
     {
         UpdatePoisonEffects();
-        UpdateStunEffect();
-    }
-
-    private void UpdateStunEffect()
-    {
-        if(currentStunTimer >= 0)
-        {
-            currentStunTimer -= Time.deltaTime;
-        }
+        CheckStun();
     }
 
     public void SetupMonsterStats(EnemyProfileSO profileSO)
@@ -63,9 +64,9 @@ public class MonsterStats : MonoBehaviour
         currentHealth = profileSO.maxHealth;
         baseDamage = profileSO.baseDamage;
         stunResistance = profileSO.stunResistance;
-        currentStunResistance = profileSO.stunResistance;
+        currentStunResistance = 0;
         freezeResistance = profileSO.freezeResistance;
-        currentFreezeResistance = profileSO.freezeResistance;
+        currentFreezeResistance = 0;
         stunDuration = profileSO.stunDuration;
         currentStunTimer = 0;
         freezeDuration = profileSO.freezeDuration;
@@ -125,6 +126,7 @@ public class MonsterStats : MonoBehaviour
     {
         isDead = true;
         gameObject.layer = LayerMask.NameToLayer("Dead");
+        StopStunResistanceDecay();
         enemy.ChangeToState(enemy.dieState);
     }
 
@@ -136,6 +138,9 @@ public class MonsterStats : MonoBehaviour
             enemy.anim.SetTrigger("Hit");
             enemy.OnHitted();
             currentHealth -= dmg;
+
+            // 每次受到伤害调用 ProcessStunOnHit 来增加眩晕值
+            ProcessStunOnHit();
         }
         if(currentHealth <=  0 && isDead == false)
         {
@@ -172,6 +177,86 @@ public class MonsterStats : MonoBehaviour
     }
 
 
+    #endregion
+
+
+    #region 眩晕属性
+    private void CheckStun()
+    {
+        // 检查是否进入晕眩
+        if (currentStunResistance > stunResistance && !isStunned)
+        {
+            EnterStun();
+        }
+
+        if (isStunned && currentStunTimer > 0)
+        {
+            currentStunTimer -= Time.deltaTime;
+        }
+        if (isStunned && currentStunTimer <= 0)
+        {
+            ExitStun();
+        }
+
+    }
+
+    // 开启每秒减少3点耐性
+    private void StartStunResistanceDecay()
+    {
+        if (!IsInvoking(nameof(DecreaseStunResistance)))
+        {
+            InvokeRepeating(nameof(DecreaseStunResistance), 0f, stunTickInterval);
+        }
+    }
+
+    // 停止耐性衰减
+    private void StopStunResistanceDecay()
+    {
+        if (IsInvoking(nameof(DecreaseStunResistance)))
+        {
+            CancelInvoke(nameof(DecreaseStunResistance));
+        }
+    }
+
+    // 每秒减少3点耐性
+    private void DecreaseStunResistance()
+    {
+        if (!isStunned && currentStunResistance > 0)
+        {
+            currentStunResistance -= 3;
+            if (currentStunResistance < 0)
+                currentStunResistance = 0;
+        }
+    }
+
+    public void ProcessStunOnHit()
+    {
+        // 如果敌人已经处于眩晕状态，则不再叠加眩晕
+        if (isStunned)
+            return;
+
+        // 每次受到伤害时增加5点眩晕值
+        currentStunResistance += 10;
+        Debug.Log("当前眩晕值增加到：" + currentStunResistance);
+    }
+
+    private void EnterStun()
+    {
+        isStunned = true;
+        StopStunResistanceDecay(); // 眩晕时停止耐性衰减
+        currentStunTimer = (currentStunResistance / (float)stunResistance) * stunDuration;
+        // 进入眩晕状态时，可以调用 Enemy 的状态切换，例如：
+        enemy.ChangeToState(enemy.stunState);
+    }
+
+    private void ExitStun()
+    {
+        isStunned = false;
+        currentStunResistance = 0;
+        currentStunTimer = 0;
+        StartStunResistanceDecay(); // 恢复耐性衰减
+        Debug.Log("眩晕结束");
+    }
     #endregion
 
     #region 毒属性
@@ -285,5 +370,6 @@ public class MonsterStats : MonoBehaviour
         Debug.Log($"新流血添加：伤害 {dmg}, 持续 {duration} 秒");
     }
     #endregion
+
 
 }

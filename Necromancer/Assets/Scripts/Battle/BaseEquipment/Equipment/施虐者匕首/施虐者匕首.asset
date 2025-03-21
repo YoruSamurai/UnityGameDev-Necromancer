@@ -46,7 +46,7 @@ MonoBehaviour:
     comboBreakTime: 3
   - attackTime: 0.3
     attackMag: 1
-    attackStun: 5
+    attackStun: 10
     attackShape: 0
     attackCenter: 1
     attackRadius: 0
