@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
     //无敌状态
     public bool isInvincible { get; private set; } = false;
 
-
+    //梯子
+    public bool isOnLadder { get; set; } = false;
 
     [Header("Move Info")]//移动参数
     public float moveSpeed = 12f;
@@ -65,6 +66,7 @@ public class Player : MonoBehaviour
     public PlayerFallState fallState { get; private set; }
     public PlayerDashState dashState { get; private set; }
     public PlayerWallSlideState wallSlideState { get; private set; }
+    public PlayerClimbState climbState { get; private set; }
     public PlayerLedgeUpState ledgeUpState { get; private set; }
     public PlayerPrimaryAttack primaryAttack { get; private set; }
     public PlayerParryState parryState { get; private set; }
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
         fallState = new PlayerFallState(this, stateMachine,"Jump");
         dashState = new PlayerDashState(this, stateMachine,"Dash");
         wallSlideState = new PlayerWallSlideState(this, stateMachine,"WallSlide");
+        climbState = new PlayerClimbState(this, stateMachine, "Climb");
         ledgeUpState = new PlayerLedgeUpState(this, stateMachine, "LedgeUp");
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine,"Attack");
         parryState = new PlayerParryState(this, stateMachine,"Parry");
@@ -103,12 +106,48 @@ public class Player : MonoBehaviour
         stateMachine.currentState.Update();//在每一帧只对当前的状态进行update
 
         CheckForDashInput();
+        CheckForClimbInput();
     }
 
     protected void FixedUpdate()
     {
         stateMachine.currentState.FixedUpdate();
     }
+
+    private void CheckForClimbInput()
+    {
+        if (!isOnLadder)
+            return;
+        // 如果玩家有意按下垂直方向键，可以切换状态
+        if (Input.GetAxisRaw("Vertical") != 0)
+        {
+            stateMachine.ChangeState(climbState); // 或者专门的攀爬状态
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("可以啪啪");
+        if (collision.CompareTag("Ladder"))
+        {
+            Debug.Log("可以啪啪");
+            isOnLadder = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            isOnLadder = false;
+            // 如果玩家正处于攀爬状态，则退出
+            if (stateMachine.currentState is PlayerClimbState)
+            {
+                stateMachine.ChangeState(idleState);
+            }
+        }
+    }
+
 
     public void ApplyWeaponAnimator(AnimatorOverrideController weaponAnimator)
     {

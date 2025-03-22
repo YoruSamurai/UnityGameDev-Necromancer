@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 
@@ -40,6 +41,7 @@ public class PlayerState
     {
         player.anim.SetBool(animBoolName,true);
         rb = player.rb;
+        Debug.Log("我在" + stateMachine.currentState);
     }
 
     //减一减计时器 获取wsad输入 把y速度设置给动画器
@@ -68,5 +70,6 @@ public class PlayerState
 
     }
 
+    
 
 }
