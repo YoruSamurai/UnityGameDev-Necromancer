@@ -153,7 +153,7 @@ public class MeleeEquipment : BaseEquipment
         isHitInAttack = false;
     }
 
-    public Collider2D[] GetHitEnemy()
+    /*public Collider2D[] GetHitEnemy()
     {
         if (currentCombo >= meleeAttacks.Count) return null;
         Collider2D[] hits;
@@ -186,7 +186,7 @@ public class MeleeEquipment : BaseEquipment
             );
         }
         return hits;
-    }
+    }*/
 
     protected virtual void TriggerAttackEffect()
     {
@@ -251,6 +251,19 @@ public class MeleeEquipment : BaseEquipment
     public override void DoDamage(float _cMag, MonsterStats monsterStats)
     {
         base.DoDamage(_cMag, monsterStats);
+
+        //在这里进行击退
+        // 获取当前攻击数据，用于计算击退力度
+        MeleeAttackStruct currentAttack = meleeAttacks[currentCombo == 0 ? meleeAttacks.Count - 1 : currentCombo - 1];
+
+        // 计算击退方向
+        Vector2 direction = monsterStats.enemy.transform.position - player.transform.position;
+        direction = new Vector2(direction.x > 0 ? 1 : -1, 0.1f); // 控制X和Y方向
+
+        // 直接调用重构后的 KnockbackLock
+        monsterStats.enemy.StartCoroutine(
+            monsterStats.enemy.KnockbackLock(direction, currentAttack.knockbackForce, 0.04f)
+        );
     }
 
 

@@ -28,7 +28,6 @@ public class EnemyStunState : EnemyState
     public override void UpdateState()
     {
         base.UpdateState();
-        enemy.SetVelocity(0,enemy.rb.velocity.y);
         if(monsterStats.currentStunTimer <= 0)
         {
             enemy.stateMachine.ChangeState(enemy.chaseState);
@@ -38,5 +37,11 @@ public class EnemyStunState : EnemyState
     public override void FixedUpdateState()
     {
         base.FixedUpdateState();
+        // 如果正在被击退，则跳过正常移动逻辑
+        if (enemy.isKnockBack)
+        {
+            return;
+        }
+        enemy.SetVelocity(0,enemy.rb.velocity.y);
     }
 }

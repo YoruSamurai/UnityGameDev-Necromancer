@@ -49,6 +49,30 @@ public class Enemy : MonoBehaviour
     public float currentAttackCooldown = 0f;
     #endregion
 
+    #region 击退状态
+    public bool isKnockBack { get; private set; } = false;
+
+    public IEnumerator KnockbackLock(Vector2 direction, float force, float duration)
+    {
+        if (rb != null)
+        {
+            // 添加击退力
+            rb.AddForce(direction * force, ForceMode2D.Impulse);
+        }
+
+        // 进入击退锁定状态
+        isKnockBack = true;
+
+        // 等待指定时间
+        yield return new WaitForSeconds(duration);
+
+        // 恢复行动
+        isKnockBack = false;
+    }
+
+
+    #endregion
+
     [Header("Collision Info")]//碰撞参数
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance;

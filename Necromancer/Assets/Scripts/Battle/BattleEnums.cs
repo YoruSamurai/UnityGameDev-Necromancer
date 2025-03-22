@@ -140,6 +140,8 @@ public struct MeleeAttackStruct
     public float attackLength;
     public float attackWidth;
     public float comboBreakTime;
+    // 新增：击退力度
+    public float knockbackForce;
 }
 #endregion
 

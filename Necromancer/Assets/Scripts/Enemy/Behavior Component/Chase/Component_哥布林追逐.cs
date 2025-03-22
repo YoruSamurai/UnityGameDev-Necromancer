@@ -19,6 +19,12 @@ public class Component_哥布林追逐 : EnemyBehaviorComponent
     {
         base.OnFixedUpdate();
 
+        // 如果正在被击退，则跳过正常移动逻辑1
+        if (enemy.isKnockBack)
+        {
+            return;
+        }
+
         // 计算方向
         _moveDirection = playerTransform.position.x > enemy.transform.position.x ? 1 : -1;
 

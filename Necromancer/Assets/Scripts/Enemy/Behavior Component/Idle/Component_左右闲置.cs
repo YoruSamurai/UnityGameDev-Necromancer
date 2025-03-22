@@ -18,7 +18,12 @@ public class Component_左右闲置 : EnemyBehaviorComponent
 
     public override void OnFixedUpdate()
     {
-        if(isDelaying || (!enemy.IsGroundDetected() || enemy.IsWallDetected()))
+        // 如果正在被击退，则跳过正常移动逻辑
+        if (enemy.isKnockBack)
+        {
+            return;
+        }
+        if (isDelaying || (!enemy.IsGroundDetected() || enemy.IsWallDetected()))
         {
             enemy.SetVelocity(0, enemy.rb.velocity.y);
         }
