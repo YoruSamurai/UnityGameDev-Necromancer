@@ -17,8 +17,8 @@ public class PlayerState
     protected Rigidbody2D rb;
 
     //wsad输入
-    protected float xInput;
-    protected float yInput;
+    public float xInput;
+    public float yInput;
 
     //切换状态时设置动画bool值切换动画
     private string animBoolName;

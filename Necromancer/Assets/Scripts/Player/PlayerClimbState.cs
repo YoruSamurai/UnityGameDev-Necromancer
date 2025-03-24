@@ -21,16 +21,31 @@ public class PlayerClimbState : PlayerState
     }
     public override void Exit()
     {
-        base.Exit();    
+        base.Exit();
         // 恢复重力，并关闭攀爬动画
+        Debug.Log("离开攀爬");
         player.rb.gravityScale = 3.5f;
         player.anim.SetBool("Climb", false);
     }
 
+
+
     public override void Update()
     {
         base.Update();
+        RaycastHit2D hit = Physics2D.Raycast(
+            player.transform.position,
+            Vector2.up,
+            1f,
+            LayerMask.GetMask("Ground")
+        );
 
+        if (hit.collider != null && hit.collider.CompareTag("OneWayPlatform") && yInput > 0)
+        {
+            Debug.Log("检测到一键平台：" + hit.collider.name);
+            Debug.Log("通过攀爬上墙");
+            player.stateMachine.ChangeState(player.oneWayState);
+        }
         // 离开攀爬的条件：如果玩家不再处于梯子区域，或者按下跳跃键
         if (!player.isOnLadder)
         {

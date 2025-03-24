@@ -11,8 +11,9 @@ public class Player : MonoBehaviour
     //无敌状态
     public bool isInvincible { get; private set; } = false;
 
-    //梯子
+    //可以爬梯子 和正在爬梯子 不一样
     public bool isOnLadder { get; set; } = false;
+    public bool isClimbing { get; set; } = false;
 
     [Header("Move Info")]//移动参数
     public float moveSpeed = 12f;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
     [SerializeField] public Transform wallCheckFoot;
     [SerializeField] public float wallCheckDistance;
     [SerializeField] public LayerMask whatIsGround;
+    [SerializeField] public LayerMask whatIsOneWayPlatform;
 
     #region Components
     public Animator anim { get; private set; }
@@ -68,6 +70,7 @@ public class Player : MonoBehaviour
     public PlayerWallSlideState wallSlideState { get; private set; }
     public PlayerClimbState climbState { get; private set; }
     public PlayerLedgeUpState ledgeUpState { get; private set; }
+    public PlayerOneWayState oneWayState { get; private set; }
     public PlayerPrimaryAttack primaryAttack { get; private set; }
     public PlayerParryState parryState { get; private set; }
     public PlayerDefenseState defenseState { get; private set; }
@@ -87,6 +90,7 @@ public class Player : MonoBehaviour
         wallSlideState = new PlayerWallSlideState(this, stateMachine,"WallSlide");
         climbState = new PlayerClimbState(this, stateMachine, "Climb");
         ledgeUpState = new PlayerLedgeUpState(this, stateMachine, "LedgeUp");
+        oneWayState = new PlayerOneWayState(this, stateMachine, "OneWay");
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine,"Attack");
         parryState = new PlayerParryState(this, stateMachine,"Parry");
         defenseState = new PlayerDefenseState(this, stateMachine,"Defense");
@@ -119,18 +123,17 @@ public class Player : MonoBehaviour
         if (!isOnLadder)
             return;
         // 如果玩家有意按下垂直方向键，可以切换状态
-        if (Input.GetAxisRaw("Vertical") != 0)
+        if (Input.GetAxisRaw("Vertical") != 0 && !isClimbing)
         {
+            isClimbing = true;
             stateMachine.ChangeState(climbState); // 或者专门的攀爬状态
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("可以啪啪");
         if (collision.CompareTag("Ladder"))
         {
-            Debug.Log("可以啪啪");
             isOnLadder = true;
         }
     }
@@ -140,6 +143,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             isOnLadder = false;
+            isClimbing = false;
             // 如果玩家正处于攀爬状态，则退出
             if (stateMachine.currentState is PlayerClimbState)
             {
@@ -241,7 +245,8 @@ public class Player : MonoBehaviour
     //通过射线检测能不能射到地面，
     public bool IsGroundDetected()
     {
-        return Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
+        return Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround) 
+            || Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsOneWayPlatform);
     }
 
     //通过射线检测能不能射到墙上

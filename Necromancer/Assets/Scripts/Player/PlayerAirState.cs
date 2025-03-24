@@ -30,7 +30,7 @@ public class PlayerAirState : PlayerState
 
 
 
-        if(player.IsWallBodyDetected() && !player.IsWallHeadDetected() )
+        if (player.IsWallBodyDetected() && !player.IsWallHeadDetected())
         {
             Debug.Log("该进入上墙状态");
             stateMachine.ChangeState(player.ledgeUpState);
