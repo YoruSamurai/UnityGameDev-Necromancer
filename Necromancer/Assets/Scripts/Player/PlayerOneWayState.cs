@@ -23,7 +23,7 @@ public class PlayerOneWayState : PlayerState
             Vector2 startPosition = player.transform.position;
             Vector2 targetPosition = new Vector2(
                 startPosition.x + player.facingDir * 1f,
-                startPosition.y + 2f
+                startPosition.y + 1f
             );
 
             // 使用DoTween平滑移动
@@ -44,21 +44,47 @@ public class PlayerOneWayState : PlayerState
         player.rb.isKinematic = true;
         AdjustLedgePosition();
     }
-
     private void AdjustLedgePosition()
+    {
+        // 获取玩家当前位置
+        Vector2 currentPosition = player.transform.position;
+
+        // 定义射线的起始位置（玩家位置）和方向（向上）
+        Vector2 rayOrigin = currentPosition;
+        Vector2 rayDirection = Vector2.up;
+
+        // 定义射线的长度
+        float rayLength = 3f; // 你可以根据需要调整这个值
+
+        // 发射射线
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, rayLength, LayerMask.GetMask("Ground"));
+
+        if (hit.collider != null)
+        {
+            // 获取射线检测到的地面的Y坐标，然后加上1f
+            float groundYPosition = hit.point.y + 1f;
+
+            // 更新玩家位置
+            Vector2 newPosition = new Vector2(currentPosition.x, groundYPosition);
+            player.transform.position = newPosition;
+
+            Debug.Log("调整上墙位置到：" + newPosition);
+        }
+        else
+        {
+            // 如果没有检测到地面，可以选择保持原位置或进行其他处理
+            Debug.LogWarning("未检测到地面，保持原位置：" + currentPosition);
+        }
+    }
+    /*private void AdjustLedgePosition()
     {
         Vector2 newPosition = player.transform.position;
 
-        
-
-
         newPosition = new Vector2(newPosition.x, newPosition.y + .5f);
-        
-        
 
         player.transform.position = newPosition;
         Debug.Log("调整上墙位置到：" + newPosition);
-    }
+    }*/
 
     public override void Exit()
     {
