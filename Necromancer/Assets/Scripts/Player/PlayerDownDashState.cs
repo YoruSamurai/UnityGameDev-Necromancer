@@ -42,7 +42,9 @@ public class PlayerDownDashState : PlayerState
 
         // 退出状态恢复动画播放
         player.anim.speed = 1;
+        player.ClearIgnoredPlatforms();
     }
+
 
     public override void Update()
     {

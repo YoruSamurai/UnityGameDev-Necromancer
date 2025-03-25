@@ -11,8 +11,6 @@ public class PlayerClimbState : PlayerState
     private float currentYInput;
 
 
-    Collider2D[] platformsToIgnore;
-
     // 创建一个包含多个Layer的LayerMask
     public int combinedGroundLayers = LayerMask.GetMask("Ground", "OneWayPlatform");
 
@@ -41,16 +39,18 @@ public class PlayerClimbState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.climbTimer = .1f;
         player.rb.gravityScale = 0f; // 禁用重力
         player.anim.SetBool("Climb", true); // 确保攀爬动画初始为 true
         player.anim.speed = 1f; // 设置动画速度为正常
 
-        platformsToIgnore = Physics2D.OverlapCircleAll(player.transform.position, 3f, combinedGroundLayers);
-        foreach (var platform in platformsToIgnore)
+        // 禁用周围平台
+        var platforms = Physics2D.OverlapCircleAll(player.transform.position, 3f, player.combinedGroundLayers);
+        foreach (var platform in platforms)
         {
             if (platform.CompareTag("OneWayPlatform"))
             {
-                player.GetComponent<OneWayPlatformController>().DisablePlatformCollision(platform);
+                player.AddIgnoredPlatform(platform);
             }
         }
     }
@@ -64,12 +64,9 @@ public class PlayerClimbState : PlayerState
         isClimbing = false;
         player.isClimbing = false;
         player.anim.speed = 1f; // 恢复动画速度
-        foreach (var platform in platformsToIgnore)
+        if (!(stateMachine.nextState is PlayerDownDashState))
         {
-            if (platform.CompareTag("OneWayPlatform"))
-            {
-                player.GetComponent<OneWayPlatformController>().EnablePlatformCollision(platform);
-            }
+            player.ClearIgnoredPlatforms();
         }
     }
 
@@ -101,7 +98,7 @@ public class PlayerClimbState : PlayerState
         }
 
         // 按下跳跃键
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && player.climbTimer <= 0)
         {
             stateMachine.ChangeState(player.jumpState);
         }

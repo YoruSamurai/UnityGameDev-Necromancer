@@ -51,21 +51,23 @@ public class OneWayPlatformController : MonoBehaviour
 
     private IEnumerator TemporarilyDisableCollision(Collider2D platformCollider, float duration)
     {
-        // 忽略碰撞
-        Physics2D.IgnoreCollision(playerCollider, platformCollider, true);
-        platformCollider.gameObject.layer = LayerMask.NameToLayer("OneWayPlatform");
-
-        yield return new WaitForSeconds(duration);
-
-        // **如果玩家在攀爬状态，不恢复碰撞**
-        if (!player.isClimbing)
+        player.AddIgnoredPlatform(platformCollider);
+        
+        float timer = duration;
+        while (timer > 0 && !player.isClimbing)
         {
-            Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
-            platformCollider.gameObject.layer = LayerMask.NameToLayer("Ground");
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        
+        // 仅当不在特殊状态时恢复
+        if (!player.isClimbing && !(player.stateMachine.currentState is PlayerDownDashState))
+        {
+            player.RemoveIgnoredPlatform(platformCollider);
         }
     }
 
-    // **新增方法，进入攀爬状态时禁用碰撞**
+    /*// **新增方法，进入攀爬状态时禁用碰撞**
     public void DisablePlatformCollision(Collider2D platformCollider)
     {
         Physics2D.IgnoreCollision(playerCollider, platformCollider, true);
@@ -77,5 +79,5 @@ public class OneWayPlatformController : MonoBehaviour
     {
         Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
         platformCollider.gameObject.layer = LayerMask.NameToLayer("Ground");
-    }
+    }*/
 }

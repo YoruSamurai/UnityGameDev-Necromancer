@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     //检测S+空格的计时器
     public float dropTimer;
 
+    //检测攀爬的计时器 为0才能进入下冲
+    public float climbTimer;
+
     //当前梯子是顶部还是顶部
     [SerializeField]public int currentLadderPosition;
 
@@ -151,14 +154,18 @@ public class Player : MonoBehaviour
 
     protected void Update()
     {
+        CheckForDashInput();
+        CheckForDownDash();
+        CheckForClimbInput();
         stateMachine.currentState.Update();//在每一帧只对当前的状态进行update
 
-        CheckForDashInput();
-        CheckForClimbInput();
-        CheckForDownDash();
         if(dropTimer > 0)
         {
             dropTimer -= Time.deltaTime;
+        }
+        if (climbTimer > 0)
+        {
+            climbTimer -= Time.deltaTime;
         }
     }
 
@@ -308,7 +315,7 @@ public class Player : MonoBehaviour
     private void CheckForDownDash()
     {
         // 确保玩家在空中且按下S+空格
-        if (!IsGroundDetected() && Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space))
+        if (!IsGroundDetected() && Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && climbTimer <= 0 )
         {
             Debug.Log("你为何不下冲");
             // 发射一条5f长的向下射线
