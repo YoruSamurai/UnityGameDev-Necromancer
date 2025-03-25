@@ -31,7 +31,7 @@ public class PlayerWallSlideState : PlayerAirState
 
 
         //到地上了或者不在墙上了 就进入idle状态
-        if (player.IsGroundDetected() || !player.IsWallBodyDetected())
+        if (player.IsCollisionDetected() || !player.IsWallBodyDetected())
         {
             stateMachine.ChangeState(player.idleState);
         }

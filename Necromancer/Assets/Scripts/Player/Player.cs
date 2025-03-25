@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -11,8 +12,16 @@ public class Player : MonoBehaviour
     //无敌状态
     public bool isInvincible { get; private set; } = false;
 
+    //检测S+空格的计时器
+    public float dropTimer;
+
+    //当前梯子是顶部还是顶部
+    [SerializeField]public int currentLadderPosition;
+
+
     //可以爬梯子 和正在爬梯子 不一样
-    public bool isOnLadder { get; set; } = false;
+    [SerializeField] public bool isOnLadder;
+    //public bool isOnLadder { get; set; } = false;
     public bool isClimbing { get; set; } = false;
 
     [Header("Move Info")]//移动参数
@@ -30,10 +39,42 @@ public class Player : MonoBehaviour
     [SerializeField] private int jumpTimes;
     [SerializeField] public int jumpCounter;
 
+    [Header("Platform Management")]
+    public List<Collider2D> ignoredPlatforms = new List<Collider2D>();
+
+    public void AddIgnoredPlatform(Collider2D platform)
+    {
+        if (!ignoredPlatforms.Contains(platform))
+        {
+            ignoredPlatforms.Add(platform);
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), platform, true);
+            platform.gameObject.layer = LayerMask.NameToLayer("OneWayPlatform");
+        }
+    }
+
+    public void RemoveIgnoredPlatform(Collider2D platform)
+    {
+        if (ignoredPlatforms.Contains(platform))
+        {
+            ignoredPlatforms.Remove(platform);
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), platform, false);
+            platform.gameObject.layer = LayerMask.NameToLayer("Ground");
+        }
+    }
+
+    public void ClearIgnoredPlatforms()
+    {
+        foreach (var platform in ignoredPlatforms.ToArray()) // 使用ToArray避免修改集合
+        {
+            RemoveIgnoredPlatform(platform);
+        }
+    }
+
     //冲刺方向
     public float dashDir {  get; private set; }
 
-
+    // 创建一个包含多个Layer的LayerMask
+    public int combinedGroundLayers;
 
 
     [Header("Collision Info")]//碰撞参数
@@ -66,6 +107,7 @@ public class Player : MonoBehaviour
     public PlayerMoveState moveState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
     public PlayerFallState fallState { get; private set; }
+    public PlayerDownDashState downDashState { get; private set; }
     public PlayerDashState dashState { get; private set; }
     public PlayerWallSlideState wallSlideState { get; private set; }
     public PlayerClimbState climbState { get; private set; }
@@ -81,11 +123,12 @@ public class Player : MonoBehaviour
     protected void Awake()
     {
         stateMachine = new PlayerStateMachine();
-
+        combinedGroundLayers = LayerMask.GetMask("Ground", "OneWayPlatform");
         idleState = new PlayerIdleState(this, stateMachine,"Idle");
         moveState = new PlayerMoveState(this, stateMachine,"Move");
         jumpState = new PlayerJumpState(this, stateMachine,"Jump");
         fallState = new PlayerFallState(this, stateMachine,"Jump");
+        downDashState = new PlayerDownDashState(this, stateMachine,"DownDash");
         dashState = new PlayerDashState(this, stateMachine,"Dash");
         wallSlideState = new PlayerWallSlideState(this, stateMachine,"WallSlide");
         climbState = new PlayerClimbState(this, stateMachine, "Climb");
@@ -94,6 +137,7 @@ public class Player : MonoBehaviour
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine,"Attack");
         parryState = new PlayerParryState(this, stateMachine,"Parry");
         defenseState = new PlayerDefenseState(this, stateMachine,"Defense");
+        currentLadderPosition = 0;
     }
 
     protected void Start()
@@ -111,6 +155,11 @@ public class Player : MonoBehaviour
 
         CheckForDashInput();
         CheckForClimbInput();
+        CheckForDownDash();
+        if(dropTimer > 0)
+        {
+            dropTimer -= Time.deltaTime;
+        }
     }
 
     protected void FixedUpdate()
@@ -118,17 +167,7 @@ public class Player : MonoBehaviour
         stateMachine.currentState.FixedUpdate();
     }
 
-    private void CheckForClimbInput()
-    {
-        if (!isOnLadder)
-            return;
-        // 如果玩家有意按下垂直方向键，可以切换状态
-        if (Input.GetAxisRaw("Vertical") != 0 && !isClimbing)
-        {
-            isClimbing = true;
-            stateMachine.ChangeState(climbState); // 或者专门的攀爬状态
-        }
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -138,12 +177,34 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            float ladderBottomY;
+            float ladderTopY;
+            // 获取梯子的底部和顶部 y 坐标
+            ladderBottomY = collision.bounds.min.y; // 底部 y 坐标
+            ladderTopY = collision.bounds.max.y;    // 顶部 y 坐标
+            // 判断玩家相对于梯子的位置
+            if (transform.position.y > ladderTopY)
+                currentLadderPosition = 1;
+            else if(transform.position.y - 3f < ladderBottomY)
+                currentLadderPosition = -1;
+            else
+                currentLadderPosition = 0;
+            
+            //Debug.Log($"Ladder Bottom Y: {ladderBottomY}, Ladder Top Y: {ladderTopY}");
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladder"))
         {
             isOnLadder = false;
-            isClimbing = false;
+            currentLadderPosition = 0;
+            //isClimbing = false;
             // 如果玩家正处于攀爬状态，则退出
             if (stateMachine.currentState is PlayerClimbState)
             {
@@ -196,6 +257,33 @@ public class Player : MonoBehaviour
         stateMachine.currentState.AnimationTriggerEvent(triggerType);
     }
 
+    private void CheckForClimbInput()
+    {
+        if (!isOnLadder || stateMachine.currentState is PlayerDownDashState || stateMachine.currentState is PlayerDashState)
+            return;
+        // 如果玩家有意按下垂直方向键，可以切换状态
+        if (Input.GetAxisRaw("Vertical") != 0 && !isClimbing && !(stateMachine.currentState is PlayerOneWayState))
+        {
+            if(Input.GetAxisRaw("Vertical") > 0)//上爬
+            {
+                if(currentLadderPosition != 1)
+                {
+                    isClimbing = true;
+                    stateMachine.ChangeState(climbState); // 或者专门的攀爬状态1
+                }
+            }
+            else//往下爬
+            {
+                dropTimer = .05f;
+                if (!IsGroundDetected() && currentLadderPosition != -1)
+                {
+                    isClimbing = true;
+                    stateMachine.ChangeState(climbState); // 或者专门的攀爬状态
+                }
+            }
+        }
+    }
+
 
     //获取冲刺输入
     private void CheckForDashInput()
@@ -206,6 +294,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashUsageTimer < 0
             && !PlayerStats.Instance.isAttacking && !PlayerStats.Instance.isParrying && !PlayerStats.Instance.isDefensing)
         {
+            Debug.Log("冲刺冲刺");
             dashUsageTimer = dashCooldown;
             dashDir = Input.GetAxisRaw("Horizontal");
 
@@ -216,12 +305,75 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    private void CheckForDownDash()
+    {
+        // 确保玩家在空中且按下S+空格
+        if (!IsGroundDetected() && Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("你为何不下冲");
+            // 发射一条5f长的向下射线
+            float checkDistance = 5f;
+            Vector2 origin = transform.position;
+            Vector2 direction = Vector2.down;
+            RaycastHit2D hit = Physics2D.Raycast(origin, direction, checkDistance, whatIsGround);
+
+            // 可视化射线
+            Debug.DrawRay(origin, direction * checkDistance, Color.red);
+
+            // 如果没有检测到地面，就切换到下冲状态
+            if (hit.collider == null)
+            {
+                stateMachine.ChangeState(downDashState);
+            }
+        }
+    }
 
     //设置跳跃计数器
     public void SetJumpCounter(int _jumpCounter)
     {
         jumpCounter = _jumpCounter;
+    }
+
+    public void CreateAfterImage()
+    {
+        StartCoroutine(CreateAfterImage(this));
+    }
+
+    private IEnumerator CreateAfterImage(Player player)
+    {
+        Debug.Log("生成残影吗");
+        SpriteRenderer sprite = player.GetComponentInChildren<SpriteRenderer>();
+        float afterImageDuration = 0.5f; // 残影存活时间
+        float interval = 0.03f; // 残影生成间隔
+
+        Color afterImageColor = new Color(1f, 1f, 1f, 0.5f); // 白色半透明残影
+        List<GameObject> afterImages = new List<GameObject>();
+
+        float timer = 0f;
+        while (!player.IsGroundDetected())
+        {
+            // 创建残影对象
+            GameObject afterImage = new GameObject("AfterImage");
+            SpriteRenderer afterImageRenderer = afterImage.AddComponent<SpriteRenderer>();
+
+            // 复制玩家的Sprite
+            afterImageRenderer.sprite = sprite.sprite;
+            afterImageRenderer.sortingLayerID = sprite.sortingLayerID;
+            afterImageRenderer.sortingOrder = sprite.sortingOrder - 1; // 残影在玩家身后
+            afterImageRenderer.color = afterImageColor;
+
+            // 设置残影位置
+            afterImage.transform.position = player.transform.position;
+            afterImage.transform.rotation = player.transform.rotation;
+
+            // 残影淡出效果
+            afterImageRenderer.DOFade(0, afterImageDuration).OnComplete(() => GameObject.Destroy(afterImage));
+
+            afterImages.Add(afterImage);
+
+            yield return new WaitForSeconds(interval);
+            timer += interval;
+        }
     }
 
 
@@ -243,11 +395,21 @@ public class Player : MonoBehaviour
     #region Collision
 
     //通过射线检测能不能射到地面，
-    public bool IsGroundDetected()
+    public bool IsCollisionDetected()
     {
         return Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround) 
             || Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsOneWayPlatform);
     }
+
+    public bool IsGroundDetected()
+    {
+        return Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
+    }
+    public bool IsOneWayDetected()
+    {
+        return Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsOneWayPlatform);
+    }
+
 
     //通过射线检测能不能射到墙上
     public virtual bool IsWallBodyDetected()

@@ -1055,6 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0649d2ba057be4381f8c92677c21d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnLadder: 0
   moveSpeed: 12
   jumpForce: 15
   dashCooldown: 1
@@ -4779,8 +4780,8 @@ Transform:
   m_GameObject: {fileID: 1657368925}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.55, y: 1.0421, z: 0.40759486}
-  m_LocalScale: {x: 1.4035579, y: 8.140306, z: 1}
+  m_LocalPosition: {x: -28.55, y: 1.1855, z: 0.40759486}
+  m_LocalScale: {x: 1.4035579, y: 8.427179, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1188373724}

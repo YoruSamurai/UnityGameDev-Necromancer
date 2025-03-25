@@ -23,8 +23,9 @@ public class OneWayPlatformController : MonoBehaviour
         {
             // 获取平台的 Collider2D
             Collider2D platformCollider = collision.collider;
-
-            if (platformCollider.transform.position.y > transform.position.y && !player.isClimbing)
+            //在不爬的时候，我们攀登上去
+            Debug.Log(player.rb.velocity.y);
+            if (platformCollider.transform.position.y > transform.position.y && !player.isClimbing && player.rb.velocity.y >= 0)
             {
                 Debug.Log("上墙");
                 player.stateMachine.ChangeState(player.oneWayState);
@@ -36,9 +37,11 @@ public class OneWayPlatformController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
+            //Debug.Log("再见ELI" + player.stateMachine.currentState.yInput);
             // 如果玩家按下 S+空格，则下落——暂时忽略与该平台的碰撞
-            if (player.stateMachine.currentState.yInput < 0)
+            if (player.dropTimer > 0)
             {
+                //Debug.Log("1再见ELI");
                 StartCoroutine(TemporarilyDisableCollision(collision.collider, dropDuration));
             }
             
@@ -51,10 +54,28 @@ public class OneWayPlatformController : MonoBehaviour
         // 忽略碰撞
         Physics2D.IgnoreCollision(playerCollider, platformCollider, true);
         platformCollider.gameObject.layer = LayerMask.NameToLayer("OneWayPlatform");
+
         yield return new WaitForSeconds(duration);
-        // 恢复碰撞
+
+        // **如果玩家在攀爬状态，不恢复碰撞**
+        if (!player.isClimbing)
+        {
+            Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+            platformCollider.gameObject.layer = LayerMask.NameToLayer("Ground");
+        }
+    }
+
+    // **新增方法，进入攀爬状态时禁用碰撞**
+    public void DisablePlatformCollision(Collider2D platformCollider)
+    {
+        Physics2D.IgnoreCollision(playerCollider, platformCollider, true);
+        platformCollider.gameObject.layer = LayerMask.NameToLayer("OneWayPlatform");
+    }
+
+    // **新增方法，退出攀爬状态时恢复碰撞**
+    public void EnablePlatformCollision(Collider2D platformCollider)
+    {
         Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
         platformCollider.gameObject.layer = LayerMask.NameToLayer("Ground");
-
     }
 }
