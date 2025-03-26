@@ -42,7 +42,7 @@ public class PlayerGroundState : PlayerState
             {
                 Debug.Log("优先触发下落逻辑");
                 player.dropTimer = .05f;
-                return;  // 阻止进入跳跃状态
+                return;  // 阻止进入其他状态
             }
         }
         //判断下蹲

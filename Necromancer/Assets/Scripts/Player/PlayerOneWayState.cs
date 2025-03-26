@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+//在这个状态，玩家的rb会被设置成kinematic，也就是不受物理碰撞影响
 public class PlayerOneWayState : PlayerState
 {
 
@@ -10,6 +11,33 @@ public class PlayerOneWayState : PlayerState
     public int combinedGroundLayers = LayerMask.GetMask("Ground", "OneWayPlatform");
     public PlayerOneWayState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
+    }
+
+    
+
+
+    public override void Enter()
+    {
+        base.Enter();
+        player.rb.isKinematic = true;
+        AdjustLedgePosition();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        player.rb.isKinematic = false;
+    }
+
+    public override void Update()
+    {
+        base.Update();
+    }
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        player.SetZeroVelocity();
     }
 
     public override void AnimationTriggerEvent(PlayerAnimationTriggerType triggerType)
@@ -38,14 +66,6 @@ public class PlayerOneWayState : PlayerState
                     player.AnimationTrigger(PlayerAnimationTriggerType.PlayerAnimationEndTrigger);
                 });
         }
-    }
-
-
-    public override void Enter()
-    {
-        base.Enter();
-        player.rb.isKinematic = true;
-        AdjustLedgePosition();
     }
     private void AdjustLedgePosition()
     {
@@ -97,21 +117,6 @@ public class PlayerOneWayState : PlayerState
         }
     }
 
-    public override void Exit()
-    {
-        base.Exit();
-        player.rb.isKinematic = false;
-    }
-
-    public override void Update()
-    {
-        base.Update();
-    }
-
-    public override void FixedUpdate()
-    {
-        base.FixedUpdate();
-        player.SetZeroVelocity();
-    }
+    
 
 }

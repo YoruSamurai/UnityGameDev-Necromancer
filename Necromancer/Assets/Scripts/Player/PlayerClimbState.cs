@@ -91,7 +91,7 @@ public class PlayerClimbState : PlayerState
         player.rb.gravityScale = 3.5f; // 恢复重力
         player.anim.SetBool("Climb", false); // 退出时关闭攀爬动画
         isClimbing = false;
-        player.climbLeaveTimer = .2f;
+        player.climbCooldownTimer = .2f;
         player.isClimbing = false;
         player.anim.speed = 1f; // 恢复动画速度
         //player.ClearIgnoredPlatforms();
