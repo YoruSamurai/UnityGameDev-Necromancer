@@ -27,7 +27,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 8d4179d72bedcd54b87618585195c734, type: 2}
   fullComboAttackTimes: 3
   meleeAttacks:
-  - attackTime: 0.3
+  - attackTime: 0.25
     attackMag: 1
     attackStun: 10
     attackShape: 1
@@ -37,7 +37,7 @@ MonoBehaviour:
     attackWidth: 0
     comboBreakTime: 3
     knockbackForce: 2
-  - attackTime: 0.3
+  - attackTime: 0.25
     attackMag: 1
     attackStun: 10
     attackShape: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
     attackWidth: 0
     comboBreakTime: 3
     knockbackForce: 30
-  - attackTime: 0.3
+  - attackTime: 0.25
     attackMag: 1
     attackStun: 15
     attackShape: 1

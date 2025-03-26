@@ -14,6 +14,7 @@ public class PlayerClimbState : PlayerState
     private float ladderCenterX;     // 梯子的水平中心坐标
     private float horizontalOffset = 0.3f; // 水平偏移量
 
+    private float timer;
 
     // 创建一个包含多个Layer的LayerMask
     public int combinedGroundLayers = LayerMask.GetMask("Ground", "OneWayPlatform");
@@ -47,7 +48,7 @@ public class PlayerClimbState : PlayerState
         player.rb.gravityScale = 0f; // 禁用重力
         player.anim.SetBool("Climb", true); // 确保攀爬动画初始为 true
         player.anim.speed = 1f; // 设置动画速度为正常
-
+        timer = 0f;
         // 禁用周围平台
         var platforms = Physics2D.OverlapCircleAll(player.transform.position, 3f, player.combinedGroundLayers);
         foreach (var platform in platforms)
@@ -86,6 +87,7 @@ public class PlayerClimbState : PlayerState
     {
         base.Exit();
         Debug.Log("离开攀爬");
+        Debug.Log("我们的时光" + timer);
         player.rb.gravityScale = 3.5f; // 恢复重力
         player.anim.SetBool("Climb", false); // 退出时关闭攀爬动画
         isClimbing = false;
@@ -102,7 +104,7 @@ public class PlayerClimbState : PlayerState
     public override void Update()
     {
         base.Update();
-
+        timer += Time.deltaTime;
 
         // 检测到一键平台并且向上输入
         RaycastHit2D hit = Physics2D.Raycast(
