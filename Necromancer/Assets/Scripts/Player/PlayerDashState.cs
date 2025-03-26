@@ -42,6 +42,6 @@ public class PlayerDashState : PlayerState
     {
         base.FixedUpdate();
         //设置冲刺速度 开冲
-        player.SetVelocity(player.dashSpeed * player.dashDir, 0);
+        player.SetVelocity(player.dashSpeed * player.dashDir, rb.velocity.y);
     }
 }
