@@ -8,6 +8,8 @@ public class PlayerDownDashState : PlayerState
     private float shadowInterval = 0.1f;  // 残影生成间隔
     private float shadowTimer;
     private bool hasLanded; // 标记是否已经落地
+    private float clearOneWayTimer;
+    private bool hasCleared;
 
     public PlayerDownDashState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
@@ -34,6 +36,8 @@ public class PlayerDownDashState : PlayerState
         // 重置标记
         hasLanded = false;
         shadowTimer = 0f;
+        clearOneWayTimer = .1f;
+        hasCleared = false;
     }
 
     public override void Exit()
@@ -49,7 +53,12 @@ public class PlayerDownDashState : PlayerState
     public override void Update()
     {
         base.Update();
-
+        clearOneWayTimer -= Time.deltaTime;
+        if(clearOneWayTimer < 0f && !hasCleared)
+        {
+            hasCleared = true;
+            player.ClearIgnoredPlatforms();
+        }
         if (!hasLanded)
         {
             // 检测是否触地

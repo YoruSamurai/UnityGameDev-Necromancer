@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     //检测攀爬的计时器 为0才能进入下冲
     public float climbTimer;
 
+    //检测离开攀爬的计时器 为0才能重新进入
+    public float climbLeaveTimer;
+
     //当前梯子是顶部还是顶部
     [SerializeField]public int currentLadderPosition;
 
@@ -119,6 +122,7 @@ public class Player : MonoBehaviour
     public PlayerPrimaryAttack primaryAttack { get; private set; }
     public PlayerParryState parryState { get; private set; }
     public PlayerDefenseState defenseState { get; private set; }
+    public PlayerCrouchingState crouchingState { get; private set; }
 
     #endregion
 
@@ -140,6 +144,7 @@ public class Player : MonoBehaviour
         primaryAttack = new PlayerPrimaryAttack(this, stateMachine,"Attack");
         parryState = new PlayerParryState(this, stateMachine,"Parry");
         defenseState = new PlayerDefenseState(this, stateMachine,"Defense");
+        crouchingState = new PlayerCrouchingState(this, stateMachine, "Crouching");
         currentLadderPosition = 0;
     }
 
@@ -266,8 +271,14 @@ public class Player : MonoBehaviour
 
     private void CheckForClimbInput()
     {
-        if (!isOnLadder || stateMachine.currentState is PlayerDownDashState || stateMachine.currentState is PlayerDashState)
+        if (climbLeaveTimer > 0)
+        {
+            climbLeaveTimer -= Time.deltaTime;
+        }
+        if (!isOnLadder || stateMachine.currentState is PlayerDownDashState || stateMachine.currentState is PlayerDashState || climbLeaveTimer > 0
+            || PlayerStats.Instance.isAttacking || PlayerStats.Instance.isParrying || PlayerStats.Instance.isDefensing)
             return;
+
         // 如果玩家有意按下垂直方向键，可以切换状态
         if (Input.GetAxisRaw("Vertical") != 0 && !isClimbing && !(stateMachine.currentState is PlayerOneWayState))
         {
@@ -315,7 +326,8 @@ public class Player : MonoBehaviour
     private void CheckForDownDash()
     {
         // 确保玩家在空中且按下S+空格
-        if (!IsGroundDetected() && Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && climbTimer <= 0 )
+        if (!IsGroundDetected() && Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && climbTimer <= 0
+            && !PlayerStats.Instance.isAttacking && !PlayerStats.Instance.isParrying && !PlayerStats.Instance.isDefensing)
         {
             Debug.Log("你为何不下冲");
             // 发射一条5f长的向下射线

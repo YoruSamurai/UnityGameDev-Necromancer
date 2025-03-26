@@ -10,6 +10,10 @@ public class PlayerClimbState : PlayerState
     private bool isClimbing = false;
     private float currentYInput;
 
+    private Transform currentLadder; // 当前攀爬的梯子
+    private float ladderCenterX;     // 梯子的水平中心坐标
+    private float horizontalOffset = 0.3f; // 水平偏移量
+
 
     // 创建一个包含多个Layer的LayerMask
     public int combinedGroundLayers = LayerMask.GetMask("Ground", "OneWayPlatform");
@@ -53,6 +57,29 @@ public class PlayerClimbState : PlayerState
                 player.AddIgnoredPlatform(platform);
             }
         }
+        // 获取最近的梯子（假设梯子都有Ladder标签）
+        Collider2D ladder = Physics2D.OverlapCircle(
+            player.transform.position,
+            1f,
+            LayerMask.GetMask("Ladder")
+        );
+
+        if (ladder!=null)
+        {
+            currentLadder = ladder.transform;
+            ladderCenterX = currentLadder.position.x;
+            AdjustPositionToLadder();
+        }
+    }
+
+    void AdjustPositionToLadder()
+    {
+        // 根据面向方向计算目标X坐标
+        float targetX = ladderCenterX - (player.facingDir * horizontalOffset);
+
+        // 平滑移动位置
+        player.transform.DOMoveX(targetX, 0.01f)
+            .SetEase(Ease.OutQuad);
     }
 
     public override void Exit()
@@ -62,8 +89,10 @@ public class PlayerClimbState : PlayerState
         player.rb.gravityScale = 3.5f; // 恢复重力
         player.anim.SetBool("Climb", false); // 退出时关闭攀爬动画
         isClimbing = false;
+        player.climbLeaveTimer = .2f;
         player.isClimbing = false;
         player.anim.speed = 1f; // 恢复动画速度
+        //player.ClearIgnoredPlatforms();
         if (!(stateMachine.nextState is PlayerDownDashState))
         {
             player.ClearIgnoredPlatforms();
@@ -129,6 +158,25 @@ public class PlayerClimbState : PlayerState
             Debug.Log("检测到地面，退出攀爬状态");
             stateMachine.ChangeState(player.idleState);
             return;
+        }
+
+        if (xInput != 0)
+        {
+            // 确定新方向
+            int newFacingDir = (int)Mathf.Sign(xInput);
+
+            // 如果方向改变
+            if (newFacingDir != player.facingDir)
+            {
+                player.Flip(); // 翻转角色Sprite
+
+                // 计算新位置
+                float targetX = ladderCenterX - (newFacingDir * horizontalOffset);
+
+                // 平滑移动
+                player.transform.DOMoveX(targetX, 0.01f)
+                    .SetEase(Ease.OutQuad);
+            }
         }
     }
 

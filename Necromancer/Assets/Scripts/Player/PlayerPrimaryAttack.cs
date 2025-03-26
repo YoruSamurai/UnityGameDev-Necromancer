@@ -97,6 +97,19 @@ public class PlayerPrimaryAttack : PlayerState
     public override void Exit()
     {
         base.Exit();
+        if (PlayerStats.Instance.isAttacking)
+            PlayerStats.Instance.isAttacking = false;
+        else if (PlayerStats.Instance.isParrying)
+            PlayerStats.Instance.isParrying = false;
+        if (PlayerStats.Instance.currentEquipmentIndex == 1)
+        {
+            PlayerStats.Instance.baseEquipment1.TriggerHitCheckEnd();
+        }
+        else if (PlayerStats.Instance.currentEquipmentIndex == 2)
+        {
+            PlayerStats.Instance.baseEquipment2.TriggerHitCheckEnd();
+        }
+        PlayerStats.Instance.SetCurrentEquipmentIndex(0);
         player.ResetToDefaultAnimator(); // 恢复默认动画
         player.StartCoroutine("BusyFor", .02f);
     }

@@ -31,7 +31,7 @@ public class PlayerFallState : PlayerAirState
         }
 
         //玩家到地上了 重置跳跃计数器 并回到静止状态
-        if(player.IsCollisionDetected())
+        if(player.IsGroundDetected())
         {
             player.SetJumpCounter(0);
             stateMachine.ChangeState(player.idleState);

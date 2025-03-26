@@ -21,7 +21,7 @@ public class PlayerGroundState : PlayerState
     public override void Update()
     {
         base.Update();
-
+        
         // 优先判断 S+空格，跳过跳跃判断
         if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space))
         {
@@ -45,16 +45,21 @@ public class PlayerGroundState : PlayerState
                 return;  // 阻止进入跳跃状态
             }
         }
+        //判断下蹲
+        if (Input.GetKey(KeyCode.S) && player.IsGroundDetected() && !(stateMachine.currentState is PlayerCrouchingState))
+        {
+            stateMachine.ChangeState(player.crouchingState);
+        }
 
         //如果玩家不在地上了 进入下坠状态 用于跳下平台的情况
-        if (!player.IsCollisionDetected())
+        if (!player.IsGroundDetected())
         {
             //player.SetJumpCounter(1);
             stateMachine.ChangeState(player.fallState);
         }
             
         //按下空格键 并且玩家在地上的话 就进入跳跃状态 并设置跳跃计数器为1
-        if(Input.GetKeyDown(KeyCode.Space) && player.IsCollisionDetected())
+        if(Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())
         {
             player.SetJumpCounter(1);
             stateMachine.ChangeState(player.jumpState);
