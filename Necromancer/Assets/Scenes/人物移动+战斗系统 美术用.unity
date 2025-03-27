@@ -1055,18 +1055,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0649d2ba057be4381f8c92677c21d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isInvincible: 0
   dropTimer: 0
   climbTimer: 0
+  climbCooldownTimer: 0
   currentLadderPosition: 0
-  isOnLadder: 0
+  _isOnLadder: 0
+  _isClimbing: 0
   moveSpeed: 12
   jumpForce: 15
   dashCooldown: 1
-  dashSpeed: 35
-  dashDuration: 0.2
+  dashSpeed: 15
+  dashDuration: 0.66
   jumpTimes: 0
   jumpCounter: 0
-  ignoredPlatforms: []
   combinedGroundLayers: 0
   groundCheck: {fileID: 347117009}
   groundCheckDistance: 0.4
@@ -1080,6 +1082,7 @@ MonoBehaviour:
   whatIsOneWayPlatform:
     serializedVersion: 2
     m_Bits: 8192
+  ignoredPlatforms: []
 --- !u!50 &379420939
 Rigidbody2D:
   serializedVersion: 4
