@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: RoomGraphData
+  m_EditorClassIdentifier: Assembly-CSharp::RoomGraph
+  allRooms:
+  - roomID: 1
+    roomType: 0
+    connectionRoom:
+    - 2
+  - roomID: 2
+    roomType: 5
+    connectionRoom:
+    - 3
+  - roomID: 3
+    roomType: 1
+    connectionRoom:
+    - 4
+  - roomID: 4
+    roomType: 1
+    connectionRoom:
+    - 5
+    - 6
+  - roomID: 5
+    roomType: 3
+    connectionRoom: []
+  - roomID: 6
+    roomType: 2
+    connectionRoom: []

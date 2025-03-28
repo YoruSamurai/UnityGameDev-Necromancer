@@ -593,8 +593,12 @@ public class LdtkTest : MonoBehaviour
 
     public void OutputSomeMsg()
     {
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            Debug.Log(rooms[i].tag);
+            Debug.Log(rooms[i].FieldInstances.GetEnum<GameRoomType>("GameRoomType"));
 
-        /*Debug.Log(level.BorderBounds);
-        Debug.Log(level.BorderRect);*/
+
+        }
     }
 }

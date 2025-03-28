@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2088188911048074462}
   - component: {fileID: 1316487892402832513}
   - component: {fileID: 6700296601836260}
-  - component: {fileID: 4460355142960727857}
   m_Layer: 12
   m_Name: "\u68AF\u5B50"
   m_TagString: Ladder
@@ -106,15 +105,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!210 &4460355142960727857
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460910792465228819}
-  m_Enabled: 1
-  m_SortingLayerID: 2017728985
-  m_SortingLayer: 3
-  m_SortingOrder: 2
-  m_SortAtRoot: 0

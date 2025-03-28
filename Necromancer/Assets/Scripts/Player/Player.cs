@@ -219,9 +219,13 @@ public class Player : MonoBehaviour
         {
             float ladderBottomY;
             float ladderTopY;
+            float ladderTopX;
+            float ladderBottomX;
             // 获取梯子的底部和顶部 y 坐标
             ladderBottomY = collision.bounds.min.y; // 底部 y 坐标
             ladderTopY = collision.bounds.max.y;    // 顶部 y 坐标
+            ladderTopX = collision.bounds.max.x;    // 顶部 y 坐标
+            ladderBottomX = collision.bounds.min.x;    // 顶部 y 坐标
             // 判断玩家相对于梯子的位置
             if (transform.position.y > ladderTopY)
                 currentLadderPosition = 1;
@@ -230,7 +234,7 @@ public class Player : MonoBehaviour
             else
                 currentLadderPosition = 0;
             
-            //Debug.Log($"Ladder Bottom Y: {ladderBottomY}, Ladder Top Y: {ladderTopY}");
+            Debug.Log($"Ladder Bottom Y: {ladderBottomY}, Ladder Top Y: {ladderTopY} Ladder Top x {ladderTopX}: Ladder BottomX:{ladderBottomX}");
         }
     }
 

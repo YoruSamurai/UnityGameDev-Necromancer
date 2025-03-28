@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerClimbState : PlayerState
 {
@@ -12,7 +13,7 @@ public class PlayerClimbState : PlayerState
 
     private Transform currentLadder; // 当前攀爬的梯子
     private float ladderCenterX;     // 梯子的水平中心坐标
-    private float horizontalOffset = 0.3f; // 水平偏移量
+    private float horizontalOffset = 0.2f; // 水平偏移量
 
     private float timer;
 
@@ -64,13 +65,28 @@ public class PlayerClimbState : PlayerState
             1f,
             LayerMask.GetMask("Ladder")
         );
-
-        if (ladder!=null)
+        if (ladder != null)
         {
-            currentLadder = ladder.transform;
-            ladderCenterX = currentLadder.position.x;
-            AdjustPositionToLadder();
+            // 获取梯子的范围
+            Bounds ladderBounds = ladder.bounds;
+            Debug.Log("FUCK" + ladder.bounds.min.x + " " + ladder.bounds.max.x);
+            Tilemap tilemap = ladder.GetComponent<Tilemap>();
+            if (tilemap != null)
+            {
+                float x = (ladder.bounds.min.x + ladder.bounds.max.x)/2 ;
+                currentLadder = ladder.transform; // 或者你直接存储 ladderCenterPos
+                ladderCenterX = x;
+                AdjustPositionToLadder();
+            }
+            else
+            {
+                currentLadder = ladder.transform;
+                Debug.Log($"Ladder {ladder.transform.position}");
+                ladderCenterX = currentLadder.position.x;
+                AdjustPositionToLadder();
+            }
         }
+        
     }
 
     void AdjustPositionToLadder()
