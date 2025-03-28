@@ -53,7 +53,7 @@ public class PlayerOneWayState : PlayerState
             // 获取当前玩家位置
             Vector2 startPosition = player.transform.position;
             Vector2 targetPosition = new Vector2(
-                startPosition.x + player.facingDir * 1f,
+                startPosition.x + player.facingDir * .1f,
                 startPosition.y + 1f
             );
 
@@ -70,10 +70,10 @@ public class PlayerOneWayState : PlayerState
     private void AdjustLedgePosition()
     {
         // 获取玩家当前位置
-        Vector2 currentPosition = player.groundCheck.transform.position;
+        Vector2 currentPosition = player.transform.position;
 
         // 定义射线的起始位置（玩家位置）和方向（向上）
-        Vector2 rayOrigin = currentPosition;
+        Vector2 rayOrigin = currentPosition - new Vector2(0,1f);
         Vector2 rayDirection = Vector2.up;
 
         // 定义射线的长度

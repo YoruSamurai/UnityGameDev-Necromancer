@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class OneWayPlatformController : MonoBehaviour
 {
@@ -21,13 +22,42 @@ public class OneWayPlatformController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
-            // 获取平台的 Collider2D
             Collider2D platformCollider = collision.collider;
-            if (platformCollider.transform.position.y > transform.position.y && !player.isClimbing)
+            Debug.Log("撞到了ll" + collision.gameObject.name + platformCollider.transform.position.x + platformCollider.transform.position.y + " " + transform.position.y);
+            if (platformCollider != null)
             {
-                Debug.Log("上墙");
-                player.stateMachine.ChangeState(player.oneWayState);
+                Tilemap tilemap = platformCollider.GetComponentInParent<Tilemap>();
+                if (tilemap != null)
+                {
+                    // 1. 获取第一个碰撞接触点（世界坐标）
+                    ContactPoint2D contact = collision.contacts[0];
+                    Vector2 hitPoint = contact.point; // 碰撞点的世界坐标
+                    Debug.Log($"碰撞发生位置（世界坐标）: {hitPoint }");
+                    Vector3Int cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, 0.5f));
+                    Debug.Log("cellpos" + cellPos);
+                    TileBase tile = tilemap.GetTile(cellPos);
+                    
+                    if (tile != null)
+                    {
+                        Debug.Log($"12313射中 Tile: {tile.name}，坐标: {cellPos}");
+                        player.stateMachine.ChangeState(player.oneWayState);
+                    }
+                    else
+                    {
+                        Debug.Log("12313该位置没有 Tile");
+                    }
+                }
+                else
+                {
+                    if (platformCollider.transform.position.y > transform.position.y && !player.isClimbing)
+                    {
+                        Debug.Log("上墙");
+                        player.stateMachine.ChangeState(player.oneWayState);
+                    }
+                }
             }
+
+            
         }
     }
 

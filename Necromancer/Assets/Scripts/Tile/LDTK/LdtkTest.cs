@@ -451,12 +451,15 @@ public class LdtkTest : MonoBehaviour
 
         // 获取 Door 物体的 Tilemap 组件
         Tilemap doorLayer = doorTransform.GetComponentInChildren<Tilemap>();
+        TilemapRenderer doorRenderer = doorTransform.GetComponentInChildren<TilemapRenderer>();
         if (doorLayer == null)
         {
             Debug.LogError($"No Tilemap component found on Door object in room: {room.name}");
             return null;
         }
-
+        Debug.Log(doorLayer);
+        doorRenderer.sortingOrder = 5;
+        doorRenderer.sortingLayerName = "Tile";
         Rect levelRect = room.BorderRect;
 
         //对每个tile都看他的方向并添加到方向list 返回

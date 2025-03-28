@@ -208,6 +208,7 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Ladder"))
         {
+            Debug.Log("梯子！！");
             isOnLadder = true;
         }
     }
