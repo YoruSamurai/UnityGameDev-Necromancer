@@ -9,30 +9,67 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 0c445c628e2f4c547bf3d71b5c437b01, type: 3}
   m_Name: RoomGraphData
-  m_EditorClassIdentifier: Assembly-CSharp::RoomGraph
+  m_EditorClassIdentifier: 
   allRooms:
   - roomID: 1
     roomType: 0
-    connectionRoom:
-    - 2
+    connectionRoom: 02000000
   - roomID: 2
-    roomType: 5
-    connectionRoom:
-    - 3
+    roomType: 1
+    connectionRoom: 03000000
   - roomID: 3
     roomType: 1
-    connectionRoom:
-    - 4
+    connectionRoom: 0400000008000000
   - roomID: 4
     roomType: 1
-    connectionRoom:
-    - 5
-    - 6
+    connectionRoom: 05000000
   - roomID: 5
-    roomType: 3
-    connectionRoom: []
+    roomType: 1
+    connectionRoom: 06000000
   - roomID: 6
+    roomType: 1
+    connectionRoom: 07000000
+  - roomID: 7
+    roomType: 1
+    connectionRoom: 
+  - roomID: 8
+    roomType: 1
+    connectionRoom: 09000000
+  - roomID: 9
+    roomType: 1
+    connectionRoom: 0a000000
+  - roomID: 10
+    roomType: 1
+    connectionRoom: 0b0000000e000000
+  - roomID: 11
+    roomType: 1
+    connectionRoom: 0c000000
+  - roomID: 12
+    roomType: 1
+    connectionRoom: 0d000000
+  - roomID: 13
+    roomType: 1
+    connectionRoom: 
+  - roomID: 14
+    roomType: 1
+    connectionRoom: 0f000000
+  - roomID: 15
+    roomType: 1
+    connectionRoom: 1000000012000000
+  - roomID: 16
+    roomType: 1
+    connectionRoom: 11000000
+  - roomID: 17
+    roomType: 1
+    connectionRoom: 
+  - roomID: 18
+    roomType: 1
+    connectionRoom: 13000000
+  - roomID: 19
+    roomType: 1
+    connectionRoom: 14000000
+  - roomID: 20
     roomType: 2
-    connectionRoom: []
+    connectionRoom: 

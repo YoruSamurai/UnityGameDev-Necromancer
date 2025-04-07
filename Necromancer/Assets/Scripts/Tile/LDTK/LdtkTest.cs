@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using LDtkUnity;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static LdtkTest;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 public enum DoorDirection { Left, Right, Top, Bottom, Default }
 public enum RoomType { BattleRoom, Corridor}

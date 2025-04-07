@@ -1,7 +1,10 @@
 using LDtkUnity;
 using LDtkUnity.Editor;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static Cinemachine.DocumentationSortingAttribute;
 namespace LDtkUnity
 {
 
@@ -10,57 +13,64 @@ namespace LDtkUnity
     {
         protected override void OnPostprocessProject(GameObject root)
         {
-            if (root == null)
-            {
-                Debug.LogError("LDtk Postprocess: root is null!");
-                return;
-            }
+            // 获取所有.ldtkl文件路径
+            string folderPath = $"Assets/OtherAsset/Ldtk/1/{root.name}";
+            string[] ldtklPaths = System.IO.Directory.GetFiles(folderPath, "*.ldtkl");
+            List<LDtkComponentLevel> ldtkLevels = GetAllLdtkLevels(ldtklPaths);
+            
+                
+        }
 
-            LDtkComponentProject project = root.GetComponent<LDtkComponentProject>();
-            if (project == null)
+        private List<LDtkComponentLevel> GetAllLdtkLevels(string[] paths)
+        {
+            List<LDtkComponentLevel> ldtkLevels = new List<LDtkComponentLevel>();
+            foreach (string path in paths)
             {
-                Debug.LogError("LDtk Postprocess: LDtkComponentProject is missing on root GameObject!");
-                return;
-            }
-
-            Debug.Log($"Post process LDtk project: {root.name}");
-
-            foreach (LDtkComponentWorld world in project.Worlds)
-            {
-                foreach (LDtkComponentLevel level in world.Levels)
+                // 加载LDtk Level文件
+                GameObject levelFile = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+                if (levelFile == null)
                 {
-                    foreach (LDtkComponentLayer layer in level.LayerInstances)
-                    {
-                        LDtkComponentLayerTilesetTiles tiles = layer.GridTiles;
-                        LDtkComponentLayerIntGridValues intGrid = layer.IntGrid;
-                        Debug.Log(layer);
-                        /*foreach (LDtkComponentEntity entity in layer.EntityInstances)
-                        {
-                            // Process entities
-                            
-                        }*/
-                    }
+                    Debug.LogWarning($"无法加载LDtk文件: {path}");
+                }
+                LDtkComponentLevel level = levelFile.GetComponent<LDtkComponentLevel>();
+                if(level != null)
+                {
+                    Debug.Log("把"  + level.name + "加入直播间");
+                    ldtkLevels.Add(level);
                 }
             }
+            return ldtkLevels;
         }
+        
+
+        //1:获取所有LDtkComponentLevel
+        //2：对所有Level进行后处理 修改他们的sortingLayer 和那个
+        //3：我们创建一个新SO 存储LDTKLEVEL 还有JSON里面的信息 各种吧
 
         protected override void OnPostprocessLevel(GameObject root, LdtkJson projectJson)
         {
-            Debug.Log($"Post process LDtk level: {root.name}");
             LDtkComponentLevel level = root.GetComponent<LDtkComponentLevel>();
+            
+            ProcessSortingLayer(level);
+            
+        }
+
+        private void ProcessSortingLayer(LDtkComponentLevel level)
+        {
             foreach (LDtkComponentLayer layer in level.LayerInstances)
             {
-                Debug.Log(layer.name);
+                if (layer == null)
+                {
+                    continue;
+                }
+                Debug.Log(layer);
                 if (layer.name == "Climb")
                 {
                     TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
-                    if (map.name.Contains("AutoLayer"))
-                    {
-                        map.sortingLayerID = SortingLayer.NameToID("Tile");
-                        map.sortingOrder = 2;
-                    }
+                    map.sortingLayerID = SortingLayer.NameToID("Tile");
+                    map.sortingOrder = 4;
                     CompositeCollider2D[] collider2D = layer.GetComponentsInChildren<CompositeCollider2D>();
-                    foreach(var collider in collider2D)
+                    foreach (var collider in collider2D)
                     {
                         if (collider.name.Contains("IntGrid"))
                         {
@@ -69,21 +79,25 @@ namespace LDtkUnity
                     }
 
                 }
+                if (layer.name == "TransGround")
+                {
+                    TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
+                    map.sortingLayerID = SortingLayer.NameToID("Tile");
+                    map.sortingOrder = 3;
+                }
                 if (layer.name == "Ground1")
                 {
-                    Debug.Log("fukd");
                     TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
-                    if (map.name.Contains("AutoLayer"))
-                    {
-                        map.sortingLayerID = SortingLayer.NameToID("Tile");
-                        map.sortingOrder = 3;
-                    }
-                    
+                    map.sortingLayerID = SortingLayer.NameToID("Tile");
+                    map.sortingOrder = 5;
+
+
                 }
-                
-                //iterate upon layers
             }
+
         }
+
+
     }
 
  

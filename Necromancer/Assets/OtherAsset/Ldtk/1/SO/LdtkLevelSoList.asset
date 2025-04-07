@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f422966635e73343a660b4c5f424fcb, type: 3}
+  m_Name: LdtkLevelSoList
+  m_EditorClassIdentifier: 
+  ldtkLevelSoList:
+  - {fileID: 11400000, guid: ae9d73eeb9d28f348a9ffcb39fc94be7, type: 2}
+  - {fileID: 11400000, guid: 06f648eb74efa6249be6be6e7aa4acb6, type: 2}
+  - {fileID: 11400000, guid: f455e570a09d2d04d9f83d4358e9b3ae, type: 2}
+  - {fileID: 11400000, guid: 88c1585ef01995b41aa82607f711357c, type: 2}
+  - {fileID: 11400000, guid: 1fd217ce6d1464042825f1824068b339, type: 2}
+  - {fileID: 11400000, guid: dec1750242fed9a4c8d23f165aab6b7b, type: 2}
+  - {fileID: 11400000, guid: be8ee233b3fc85348a582cb74f6cd4c6, type: 2}
+  - {fileID: 11400000, guid: c52b782913cec21448c2d5b3f18e510e, type: 2}
+  - {fileID: 11400000, guid: 39fd373da7734ec419e7c6a4e8af6454, type: 2}
+  - {fileID: 11400000, guid: 77b7c01dddf448c449343321d4a9a032, type: 2}
+  - {fileID: 11400000, guid: 5aec3fee25351aa49a25527312256d5b, type: 2}
+  - {fileID: 11400000, guid: 65213bf0e8ebd4b4b92c046b79e26cdd, type: 2}
+  - {fileID: 11400000, guid: 22d5a415bef0c1c4d8265288cfaa6e2f, type: 2}
+  - {fileID: 11400000, guid: 9f7911493d327a748b4811b289d8a961, type: 2}
+  - {fileID: 11400000, guid: 8e8983af8bd2f6546b8b8d64ea31023e, type: 2}
+  - {fileID: 11400000, guid: 36248d7fd5ded8b4c8793b2a0668778d, type: 2}
+  - {fileID: 11400000, guid: afa52d0e0db8f4c43a494f02038edf9c, type: 2}
+  - {fileID: 11400000, guid: 190b10db1d8d72644ac2d6eb0d5ac768, type: 2}
+  - {fileID: 11400000, guid: e32b7f1d4ccde6b4baae60df123e6d10, type: 2}
+  - {fileID: 11400000, guid: 9c4e83c52e5053142b9e671da42881ee, type: 2}
+  - {fileID: 11400000, guid: 8b3ccba5823bb3f488c49a7d4a07fb7e, type: 2}
+  - {fileID: 11400000, guid: d0ee16af0861b264180596c7f7ea3ce0, type: 2}

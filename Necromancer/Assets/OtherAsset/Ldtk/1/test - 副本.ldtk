@@ -1368,7 +1368,7 @@
 		{ "id": "Treasure", "tileRect": null, "color": 14984818 },
 		{ "id": "Shop", "tileRect": null, "color": 7552569 },
 		{ "id": "Teleport", "tileRect": null, "color": 4073265 },
-		{ "id": "Cccc", "tileRect": null, "color": 16690740 }
+		{ "id": "Cccg", "tileRect": null, "color": 16690740 }
 	], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }], "externalEnums": [], "levelFields": [
 		{
 			"identifier": "GameRoomType",
@@ -1431,7 +1431,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/Adsd.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Teleport", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Teleport"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1454,9 +1457,9 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/R_L1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Shop", "__tile": null, "defUid": 93, "realEditorValues": [{
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [{
 				"id": "V_String",
-				"params": ["Shop"]
+				"params": ["Entrance"]
 			}] }],
 			"layerInstances": null,
 			"__neighbours": [{ "levelIid": "290c9620-e920-11ef-8eac-d92dba28352f", "dir": "e" }]
@@ -1480,7 +1483,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": [ { "levelIid": "26b49c60-e920-11ef-8eac-f504ea9fb8ad", "dir": "w" }, { "levelIid": "2aef11c0-e920-11ef-8eac-d72cc6e0725b", "dir": "e" } ]
 		},
@@ -1503,7 +1509,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/R_R1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Exit", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Exit"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": [{ "levelIid": "290c9620-e920-11ef-8eac-d92dba28352f", "dir": "w" }]
 		},
@@ -1526,7 +1535,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/R_LR1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": [{ "levelIid": "6f2ccef0-e920-11ef-b80e-c360ff785296", "dir": "e" }]
 		},
@@ -1549,7 +1561,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/R_LR2.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": [{ "levelIid": "31b7edc0-e920-11ef-b80e-fdd600da3474", "dir": "w" }]
 		},
@@ -1572,7 +1587,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_LR1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1595,7 +1613,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_LR2.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1618,7 +1639,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/R_T1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1641,7 +1665,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/R_B1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1664,7 +1691,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/R_LB1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1687,7 +1717,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/R_RB1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1710,7 +1743,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_TB1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1733,7 +1769,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_LT1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1756,7 +1795,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_LB1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1779,7 +1821,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_RB1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1802,7 +1847,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_LRB1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1825,7 +1873,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_LRTB1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Treasure", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Treasure"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1848,7 +1899,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_LRT1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1871,7 +1925,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_LTB1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1894,7 +1951,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_RTB1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		},
@@ -1917,7 +1977,10 @@
 			"__smartColor": "#ADADB5",
 			"__bgPos": null,
 			"externalRelPath": "test - 副本/C_RT1.ldtkl",
-			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+			"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Normal", "__tile": null, "defUid": 93, "realEditorValues": [{
+				"id": "V_String",
+				"params": ["Normal"]
+			}] }],
 			"layerInstances": null,
 			"__neighbours": []
 		}

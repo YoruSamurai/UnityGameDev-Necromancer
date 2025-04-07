@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c445c628e2f4c547bf3d71b5c437b01, type: 3}
+  m_Name: RoomGraphData 1
+  m_EditorClassIdentifier: 
+  allRooms:
+  - roomID: 1
+    roomType: 0
+    connectionRoom: 02000000
+  - roomID: 2
+    roomType: 1
+    connectionRoom: 03000000
+  - roomID: 3
+    roomType: 1
+    connectionRoom: 0400000008000000
+  - roomID: 4
+    roomType: 1
+    connectionRoom: 05000000
+  - roomID: 5
+    roomType: 1
+    connectionRoom: 06000000
+  - roomID: 6
+    roomType: 1
+    connectionRoom: 07000000
+  - roomID: 7
+    roomType: 1
+    connectionRoom: 
+  - roomID: 8
+    roomType: 2
+    connectionRoom: 

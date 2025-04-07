@@ -26,7 +26,10 @@
 	"__smartColor": "#ADADB5",
 	"__bgPos": null,
 	"externalRelPath": null,
-	"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Entrance", "__tile": null, "defUid": 93, "realEditorValues": [] }],
+	"fieldInstances": [{ "__identifier": "GameRoomType", "__type": "LocalEnum.GameRoomType", "__value": "Treasure", "__tile": null, "defUid": 93, "realEditorValues": [{
+		"id": "V_String",
+		"params": ["Treasure"]
+	}] }],
 	"layerInstances": [
 		{
 			"__identifier": "TransGround",
