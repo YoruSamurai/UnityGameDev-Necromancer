@@ -10,6 +10,7 @@ using UnityEngine;
 using static Cinemachine.DocumentationSortingAttribute;
 using static LdtkTest;
 
+//一个结果 返回各种生成成功/错误信息
 [Serializable]
 public struct RoomGenerationResult
 {
@@ -30,17 +31,22 @@ public class RoomGraphGenerator : MonoBehaviour
     //父节点 放地图
     [SerializeField] private Transform mapParent;
 
+    //关卡的所有图块
     [SerializeField] private LdtkLevelSoList levelList;
 
+    //地图的节点图
     [SerializeField] private RoomGraph roomGraph;
 
+    //实际的房间数据
     [SerializeField] private List<ActualRoomData> roomDatas;
 
 
-
+    //已经生成的节点
     [SerializeField] private Dictionary<int, bool> isVisited = new Dictionary<int, bool>();
+    //节点上有的门方向不可生成
     [SerializeField] private Dictionary<int, List<DoorDir>> isDoorClosed = new Dictionary<int, List<DoorDir>>();
 
+    //在方向门被关闭后，需要尝试子节点其他门 此时保存父门以保证子节点开口相同
     [SerializeField] private DoorInfo lastDoor = new DoorInfo();
 
     // 新增种子变量
@@ -73,7 +79,7 @@ public class RoomGraphGenerator : MonoBehaviour
         }
         roomDatas.Clear();
         isVisited.Clear();
-        lastDoor.node = -1;
+        lastDoor.node = -1;//我们基于node去确定lastDoor是否有东西
         isDoorClosed.Clear();
         foreach (var roomNode in roomGraph.allRooms)
         {
@@ -97,40 +103,26 @@ public class RoomGraphGenerator : MonoBehaviour
         //UnityEngine.Random.InitState(seed);
 
         bool successSet = false;
+        int tryNum = 0;
         while (!successSet)
         {
             // 清理旧关卡
             ClearExistingLevels();
 
-            //对于第一个房间 我们搞搞特殊 生成于0.0位置
-            //这样的话应该就不能用foreach了吧 需要支持回滚
-            //我们做一个while？每次进入下一个循环之前 我们设置下一个要Try的节点及它的父亲
-            int tryNum = 0;
             int currentNode = 1; //当前要处理的房间
             int currentParentNode = 0; //当前要处理的房间的父亲房间 
-            while (successSet == false && tryNum < 10000)
+            while (successSet == false)
             {
-                // 清理旧房间
-                for (int i = mapParent.childCount - 1; i >= 0; i--)
-                {
-                    DestroyImmediate(mapParent.GetChild(i).gameObject);
-                }
-
-                // 实例化新房间
-                foreach (var room in roomDatas)
-                {
-                    LDtkComponentLevel ldtkInstance = Instantiate(room.room.levelData, room.startPosition, Quaternion.identity, mapParent);
-                }
+                
                 // 添加延迟
                 //yield return new WaitForSeconds(.05f);
                 tryNum++;
                 if (currentNode == 0 && currentParentNode == 0)
                 {
-                    Debug.Log("生成完成 欧耶");
+                    Debug.Log("生成完成 欧耶！" + "经过了" + tryNum + "次");
                     successSet = true;
                     break;
                 }
-                tryNum++;
                 RoomGenerationResult result;
                 if (currentNode == 1)
                 {
@@ -139,7 +131,6 @@ public class RoomGraphGenerator : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log(currentNode + " " + currentParentNode);
                     result = TryGenerateRoom(currentNode, currentParentNode,
                         roomGraph.allRooms[currentNode - 1], roomDatas[currentParentNode - 1]);
                 }
@@ -170,14 +161,17 @@ public class RoomGraphGenerator : MonoBehaviour
                 }
             }
         }
-        
-        /*//想看看效果了 我们暂且生成一下
-        foreach(var room in roomDatas)
+        // 清理旧房间
+        for (int i = mapParent.childCount - 1; i >= 0; i--)
+        {
+            DestroyImmediate(mapParent.GetChild(i).gameObject);
+        }
+
+        // 实例化新房间
+        foreach (var room in roomDatas)
         {
             LDtkComponentLevel ldtkInstance = Instantiate(room.room.levelData, room.startPosition, Quaternion.identity, mapParent);
-        }*/
-        //基于ActualRoomData生成房间nanana
-
+        }
         // 记录结束时间
         DateTime endTime = DateTime.Now;
         TimeSpan duration = endTime - startTime;
@@ -185,6 +179,7 @@ public class RoomGraphGenerator : MonoBehaviour
         yield break;
     }
 
+    //解锁门 删除父节点和他所有子节点
     private void DeleteParentNodeAndChild(int currentParentNode)
     {
         //将parentNode的parent的对应的门也解锁 
@@ -215,6 +210,8 @@ public class RoomGraphGenerator : MonoBehaviour
         }
     }
 
+
+    //尝试生成房间
     private RoomGenerationResult TryGenerateRoom(int _currentNode,int _currentParentNode , 
         RoomNode _roomNode ,ActualRoomData parentRoomData)
     {
@@ -232,12 +229,9 @@ public class RoomGraphGenerator : MonoBehaviour
         }
         else if(currentNode > 1)
         {
-            //Debug.Log($"Generate {_roomNode.roomType}");
-            //我们需要先随机一个DoorInfo 也就是他父亲的哪个门要连它 决定了方向 位置
 
             RoomGenerationResult result;
             LdtkLevelSO level = new LdtkLevelSO();
-
             result = GetCanGenerateRoom(currentNode, _roomNode);
 
             if (result.success == false)
@@ -248,22 +242,14 @@ public class RoomGraphGenerator : MonoBehaviour
 
             DoorInfo nodeDoor = new DoorInfo();
             if (lastDoor.node != -1)
-            {
-                Debug.Log("wsm");
                 randomDoor = lastDoor;
-            }
             else
-            {
                 randomDoor = GetRandomDoor(parentRoomData);
-            }
 
             //首先我们对房间进行初筛
             List<LdtkLevelSO> properRooms = FindProperRooms(_roomNode, randomDoor, out float avgHeight, out float avgWidth);
-            //获取长宽的均值
-            //对房间进行二次筛选 
+            //对房间进行二次筛选  暂时不做 不太需要
             //基于提前验证的筛选方法FindHighPriorityRooms() 
-
-
 
 
             // 生成一个存储所有索引的列表，并打乱顺序
@@ -294,7 +280,6 @@ public class RoomGraphGenerator : MonoBehaviour
                 (startPos, nodeDoor) = PresetRoom(parentRoomData, randomDoor, level);
 
                 //对它所要放的位置进行检验 每一个可用房间都试试
-                //3次以上 应该怎么办呢 删除节点（此时可以先不生成实际gameObject）
                 result = IsAreaFree(startPos, level);
                 Debug.Log(result.message);
                 if (result.success == true)
@@ -323,6 +308,7 @@ public class RoomGraphGenerator : MonoBehaviour
         return new RoomGenerationResult(false, "未满足生成条件", 2);
     }
 
+    //看看还有没有能生成门的方向 
     private RoomGenerationResult GetCanGenerateRoom(int currentNode, RoomNode roomNode)
     {
 
@@ -334,6 +320,7 @@ public class RoomGraphGenerator : MonoBehaviour
         return new RoomGenerationResult(false, "在锁定规则下不可以生成房间", 600);
     }
 
+    //当子节点X方向放不了房间 我们锁住这个方向
     private void LockDir(int currentNode, int currentParentNode, DoorInfo randomDoor)
     {
         lastDoor = randomDoor;
@@ -348,6 +335,7 @@ public class RoomGraphGenerator : MonoBehaviour
         }
     }
 
+    //成功生成房间的时候，需要锁住父子节点的这个门
     private void LockDoor(ActualRoomData roomData, ActualRoomData parentRoomData, DoorInfo randomDoor, DoorInfo nodeDoor)
     {
         // 锁定子房间的门
@@ -386,6 +374,7 @@ public class RoomGraphGenerator : MonoBehaviour
         return;
     }
 
+    //基于RECT确定能不能放上去
     private RoomGenerationResult IsAreaFree(Vector2 startPos, LdtkLevelSO level)
     {
         Rect newRoomRect = new Rect(startPos, new Vector2(level.levelWidth, level.levelHeight));
@@ -405,6 +394,7 @@ public class RoomGraphGenerator : MonoBehaviour
         return new RoomGenerationResult(true, "区域空闲", 0);
     }
 
+    //基于房间和门位置确定新房间的位置
     private (Vector2 startPos, DoorInfo nodeDoor) PresetRoom(ActualRoomData parentRoomData, DoorInfo randomDoor, LdtkLevelSO level)
     {
         DoorInfo nodeDoor = new DoorInfo();
@@ -441,6 +431,7 @@ public class RoomGraphGenerator : MonoBehaviour
 
     }
 
+    //获取随机门
     private DoorInfo GetRandomDoor(ActualRoomData parentRoomData)
     {
         List<DoorInfo> doors = new List<DoorInfo>();
@@ -506,6 +497,7 @@ public class RoomGraphGenerator : MonoBehaviour
         return roomData;
     }
 
+    //基于房间类型 门的数量 门的方向 不添加被封锁方向门 找到合适的房间~
     private List<LdtkLevelSO> FindProperRooms(RoomNode _roomNode, DoorInfo randomDoor , out float avgHeight, out float avgWidth)
     {
         List<LdtkLevelSO> list = new List<LdtkLevelSO>();
