@@ -21,10 +21,10 @@ MonoBehaviour:
     connectionRoom: 03000000
   - roomID: 3
     roomType: 1
-    connectionRoom: 0400000008000000
+    connectionRoom: 0400000005000000
   - roomID: 4
     roomType: 1
-    connectionRoom: 05000000
+    connectionRoom: 
   - roomID: 5
     roomType: 1
     connectionRoom: 06000000
@@ -33,7 +33,7 @@ MonoBehaviour:
     connectionRoom: 07000000
   - roomID: 7
     roomType: 1
-    connectionRoom: 
+    connectionRoom: 08000000
   - roomID: 8
-    roomType: 2
+    roomType: 1
     connectionRoom: 

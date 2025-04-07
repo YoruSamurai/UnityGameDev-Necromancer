@@ -15,6 +15,8 @@ MonoBehaviour:
   ldtkLevelSoList:
   - {fileID: 11400000, guid: ae9d73eeb9d28f348a9ffcb39fc94be7, type: 2}
   - {fileID: 11400000, guid: 06f648eb74efa6249be6be6e7aa4acb6, type: 2}
+  - {fileID: 11400000, guid: e276a34baeb238f4483c2b3bcbe5f462, type: 2}
+  - {fileID: 11400000, guid: e21f5d7f7e419ed4a88398cad60c2de8, type: 2}
   - {fileID: 11400000, guid: f455e570a09d2d04d9f83d4358e9b3ae, type: 2}
   - {fileID: 11400000, guid: 88c1585ef01995b41aa82607f711357c, type: 2}
   - {fileID: 11400000, guid: 1fd217ce6d1464042825f1824068b339, type: 2}
@@ -23,9 +25,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c52b782913cec21448c2d5b3f18e510e, type: 2}
   - {fileID: 11400000, guid: 39fd373da7734ec419e7c6a4e8af6454, type: 2}
   - {fileID: 11400000, guid: 77b7c01dddf448c449343321d4a9a032, type: 2}
+  - {fileID: 11400000, guid: df2f9adba23f6624e9d126c5a688b8ad, type: 2}
   - {fileID: 11400000, guid: 5aec3fee25351aa49a25527312256d5b, type: 2}
   - {fileID: 11400000, guid: 65213bf0e8ebd4b4b92c046b79e26cdd, type: 2}
   - {fileID: 11400000, guid: 22d5a415bef0c1c4d8265288cfaa6e2f, type: 2}
+  - {fileID: 11400000, guid: 30cbfaf7bd2deae40b9b221758cf1cef, type: 2}
   - {fileID: 11400000, guid: 9f7911493d327a748b4811b289d8a961, type: 2}
   - {fileID: 11400000, guid: 8e8983af8bd2f6546b8b8d64ea31023e, type: 2}
   - {fileID: 11400000, guid: 36248d7fd5ded8b4c8793b2a0668778d, type: 2}

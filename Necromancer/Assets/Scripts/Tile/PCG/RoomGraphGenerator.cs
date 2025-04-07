@@ -1,6 +1,7 @@
 using DG.Tweening;
 using LDtkUnity;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
@@ -60,6 +61,8 @@ public class RoomGraphGenerator : MonoBehaviour
 
     }
 
+
+
     //每次生成前先清空
     private void ClearExistingLevels()
     {
@@ -70,7 +73,7 @@ public class RoomGraphGenerator : MonoBehaviour
         }
         roomDatas.Clear();
         isVisited.Clear();
-        lastDoor = default;
+        lastDoor.node = -1;
         isDoorClosed.Clear();
         foreach (var roomNode in roomGraph.allRooms)
         {
@@ -78,13 +81,14 @@ public class RoomGraphGenerator : MonoBehaviour
             if (!isDoorClosed.ContainsKey(roomNode.roomID))
             {
                 isDoorClosed[roomNode.roomID] = new List<DoorDir>(); // 初始化空列表
+                //Debug.Log(isDoorClosed[roomNode.roomID].Count + " " + roomNode.roomID);
             }
             isVisited[roomNode.roomID] = false; // 假设 roomID 从 1 开始
             isDoorClosed[roomNode.roomID].Clear();
         }
     }
 
-    public void GenerateLevelTest()
+    public IEnumerator GenerateLevelTest()
     {
         // 记录开始时间
         DateTime startTime = DateTime.Now;
@@ -92,69 +96,93 @@ public class RoomGraphGenerator : MonoBehaviour
         // 固定随机种子
         //UnityEngine.Random.InitState(seed);
 
-
-        // 清理旧关卡
-        ClearExistingLevels();
-
-        //对于第一个房间 我们搞搞特殊 生成于0.0位置
-        //这样的话应该就不能用foreach了吧 需要支持回滚
-        //我们做一个while？每次进入下一个循环之前 我们设置下一个要Try的节点及它的父亲
         bool successSet = false;
-        int tryNum = 0;
-        int currentNode = 1; //当前要处理的房间
-        int currentParentNode = 0; //当前要处理的房间的父亲房间 
-        while(successSet == false && tryNum < 10000)
+        while (!successSet)
         {
-            tryNum++;
-            if(currentNode == 0 && currentParentNode == 0)
+            // 清理旧关卡
+            ClearExistingLevels();
+
+            //对于第一个房间 我们搞搞特殊 生成于0.0位置
+            //这样的话应该就不能用foreach了吧 需要支持回滚
+            //我们做一个while？每次进入下一个循环之前 我们设置下一个要Try的节点及它的父亲
+            int tryNum = 0;
+            int currentNode = 1; //当前要处理的房间
+            int currentParentNode = 0; //当前要处理的房间的父亲房间 
+            while (successSet == false && tryNum < 10000)
             {
-                Debug.Log("生成完成 欧耶");
-                successSet = true;
-                break;
-            }
-            tryNum++;
-            RoomGenerationResult result;
-            if (currentNode == 1)
-            {
-                result = TryGenerateRoom(currentNode, currentParentNode,
-                roomGraph.allRooms[currentNode - 1], null);
-            }
-            else
-            {
-                result = TryGenerateRoom(currentNode, currentParentNode ,
-                    roomGraph.allRooms[currentNode - 1], roomDatas[currentParentNode - 1]);
-            }
-            Debug.Log(result.message);
-            //如果成功 设置已经有的节点列表 基于一些算法选择下一个要生成的房间编号
-            if(result.success == true)
-            {
-                isVisited[currentNode] = true; // 标记当前房间已生成
-                int node = currentNode;
-                //基于一些算法选择下一个要生成的房间编号
-                (currentNode, currentParentNode) = SelectNextNode(node);
-            }
-            else if(result.success == false)
-            {
-                if(result.errorCode == 500)
+                // 清理旧房间
+                for (int i = mapParent.childCount - 1; i >= 0; i--)
                 {
-                    //我们需要删除它和他的父节点和父节点的其他子节点 那就是找到父节点 把它和它后面的全删掉
-                    DeleteParentNodeAndChild(currentParentNode);
-                    currentNode = currentParentNode;
-                    currentParentNode = GetParentNodeByNode(currentNode);
+                    DestroyImmediate(mapParent.GetChild(i).gameObject);
+                }
+
+                // 实例化新房间
+                foreach (var room in roomDatas)
+                {
+                    LDtkComponentLevel ldtkInstance = Instantiate(room.room.levelData, room.startPosition, Quaternion.identity, mapParent);
+                }
+                // 添加延迟
+                //yield return new WaitForSeconds(.05f);
+                tryNum++;
+                if (currentNode == 0 && currentParentNode == 0)
+                {
+                    Debug.Log("生成完成 欧耶");
+                    successSet = true;
+                    break;
+                }
+                tryNum++;
+                RoomGenerationResult result;
+                if (currentNode == 1)
+                {
+                    result = TryGenerateRoom(currentNode, currentParentNode,
+                    roomGraph.allRooms[currentNode - 1], null);
+                }
+                else
+                {
+                    Debug.Log(currentNode + " " + currentParentNode);
+                    result = TryGenerateRoom(currentNode, currentParentNode,
+                        roomGraph.allRooms[currentNode - 1], roomDatas[currentParentNode - 1]);
+                }
+                Debug.Log(result.message);
+                //如果成功 设置已经有的节点列表 基于一些算法选择下一个要生成的房间编号
+                if (result.success == true)
+                {
+                    isVisited[currentNode] = true; // 标记当前房间已生成
+                    int node = currentNode;
+                    //基于一些算法选择下一个要生成的房间编号
+                    (currentNode, currentParentNode) = SelectNextNode(node);
+                }
+                else if (result.success == false)
+                {
+                    if (result.errorCode == 500)
+                    {
+                        //我们需要删除它和他的父节点和父节点的其他子节点 那就是找到父节点 把它和它后面的全删掉
+                        DeleteParentNodeAndChild(currentParentNode);
+                        currentNode = currentParentNode;
+                        currentParentNode = GetParentNodeByNode(currentNode);
+                    }
+                    if (result.errorCode == 600)
+                    {
+                        //该节点所有方向都不能继续生成了 重启试试看吧
+                        Debug.Log("再见");
+                        break;
+                    }
                 }
             }
         }
-        //想看看效果了 我们暂且生成一下
+        
+        /*//想看看效果了 我们暂且生成一下
         foreach(var room in roomDatas)
         {
             LDtkComponentLevel ldtkInstance = Instantiate(room.room.levelData, room.startPosition, Quaternion.identity, mapParent);
-        }
+        }*/
         //基于ActualRoomData生成房间nanana
 
         // 记录结束时间
         DateTime endTime = DateTime.Now;
         TimeSpan duration = endTime - startTime;
         Debug.Log($"GenerateLevelTest 执行时间: {duration.TotalMilliseconds} 毫秒");
+        yield break;
     }
 
     private void DeleteParentNodeAndChild(int currentParentNode)
@@ -210,24 +238,25 @@ public class RoomGraphGenerator : MonoBehaviour
             RoomGenerationResult result;
             LdtkLevelSO level = new LdtkLevelSO();
 
-            /*result = GetCanGenerateRoom(currentNode, _roomNode, isDoorClosed[currentNode]);
+            result = GetCanGenerateRoom(currentNode, _roomNode);
 
             if (result.success == false)
             {
-                return new RoomGenerationResult(false, "这个子节点已经完蛋了 我们需要另寻出路", 400);
-            }*/
+                return result;
+            }
             DoorInfo randomDoor = new DoorInfo();
 
             DoorInfo nodeDoor = new DoorInfo();
-            /*if (!lastDoor.Equals(default))
+            if (lastDoor.node != -1)
             {
+                Debug.Log("wsm");
                 randomDoor = lastDoor;
             }
             else
             {
                 randomDoor = GetRandomDoor(parentRoomData);
-            }*/
-            randomDoor = GetRandomDoor(parentRoomData);
+            }
+
             //首先我们对房间进行初筛
             List<LdtkLevelSO> properRooms = FindProperRooms(_roomNode, randomDoor, out float avgHeight, out float avgWidth);
             //获取长宽的均值
@@ -280,12 +309,12 @@ public class RoomGraphGenerator : MonoBehaviour
                 roomDatas.Add(roomData);
                 //生成成功的时候 我们对门进行上锁
                 LockDoor(roomData, parentRoomData, randomDoor, nodeDoor);
-                lastDoor = default;
+                lastDoor.node = -1;
                 return new RoomGenerationResult(true, $"成功生成{_roomNode.roomType}房间", 200);
             }
             else
             {
-                //LockDir(_currentNode, _currentParentNode, randomDoor);
+                LockDir(_currentNode, _currentParentNode, randomDoor);
                 return new RoomGenerationResult(false, "已经没有可以生成的对应房间了,删除父亲节点", 500);
             }
 
@@ -294,13 +323,15 @@ public class RoomGraphGenerator : MonoBehaviour
         return new RoomGenerationResult(false, "未满足生成条件", 2);
     }
 
-    private RoomGenerationResult GetCanGenerateRoom(int currentNode, RoomNode roomNode, List<DoorDir> lockedDoorDirs)
+    private RoomGenerationResult GetCanGenerateRoom(int currentNode, RoomNode roomNode)
     {
-        if(roomNode.connectionRoom.Count <= 3 - lockedDoorDirs.Count)
+
+        Debug.Log(currentNode + "当前房间connectionRoom " + roomNode.connectionRoom.Count + "  " + isDoorClosed[currentNode].Count);
+        if(roomNode.connectionRoom.Count <= 3 - isDoorClosed[currentNode].Count)
         {
             return new RoomGenerationResult(true, "在锁定规则下可以生成房间", 200);
         }
-        return new RoomGenerationResult(false, "在锁定规则下不可以生成房间", 400);
+        return new RoomGenerationResult(false, "在锁定规则下不可以生成房间", 600);
     }
 
     private void LockDir(int currentNode, int currentParentNode, DoorInfo randomDoor)
@@ -521,6 +552,7 @@ public class RoomGraphGenerator : MonoBehaviour
                 {
                     if(door.direction == GetOppositeDoorDir(randomDoor.direction))
                     {
+                        //Debug.Log("可以加");
                         canAdd = true;
                     }
                     if (isDoorClosed[_roomNode.roomID].Contains(door.direction))
@@ -577,7 +609,9 @@ public class RoomGraphEditorGenerator : Editor
         GUILayout.Space(10);
         if (GUILayout.Button("1", GUILayout.Height(40)))
         {
-            generator.GenerateLevelTest();
+            // 停止所有协程
+            generator.StopAllCoroutines();
+            generator.StartCoroutine(generator.GenerateLevelTest());
         }
 
         if (GUILayout.Button("2", GUILayout.Height(40)))
