@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -65,6 +66,8 @@ public class Player : MonoBehaviour
     [Header("Jump Info")]//跳跃参数
     [SerializeField] private int jumpTimes;
     [SerializeField] public int jumpCounter;
+
+    
 
     //冲刺方向
     public float dashDir { get; private set; }
@@ -211,6 +214,7 @@ public class Player : MonoBehaviour
             Debug.Log("梯子！！");
             isOnLadder = true;
         }
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -251,7 +255,10 @@ public class Player : MonoBehaviour
                 stateMachine.ChangeState(idleState);
             }
         }
+        
     }
+
+    
 
     #endregion
 

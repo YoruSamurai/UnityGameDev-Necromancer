@@ -47,6 +47,7 @@ public class PlayerStats : MonoBehaviour, ISaveable
     public SkillController secondarySkill;
 
     [SerializeField] public Player player;
+    [SerializeField] public PlayerDetection playerDetection;
 
     public string SaveID => "PlayerStats"; // 唯一标识符
 
@@ -99,12 +100,17 @@ public class PlayerStats : MonoBehaviour, ISaveable
         magicLevel = 1;
         magicPercentage = 100;
         player = GetComponent<Player>();
+        playerDetection = GetComponent<PlayerDetection>();
         soul = 100;
         gold = 500;
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            playerDetection.PickUp();
+        }
         if (Input.GetKeyDown(KeyCode.Mouse0) && !player.IsUsingEquipment() && !player.isBusy && baseEquipment1 != null)
         {
             SetCurrentEquipmentIndex(1);

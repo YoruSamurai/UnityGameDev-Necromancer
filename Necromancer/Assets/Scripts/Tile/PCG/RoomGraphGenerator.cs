@@ -40,6 +40,8 @@ public class RoomGraphGenerator : MonoBehaviour
     //实际的房间数据
     [SerializeField] private List<ActualRoomData> roomDatas;
 
+    [SerializeField] private float stepTime;
+
 
     //已经生成的节点
     [SerializeField] private Dictionary<int, bool> isVisited = new Dictionary<int, bool>();
@@ -116,6 +118,10 @@ public class RoomGraphGenerator : MonoBehaviour
                 
                 // 添加延迟
                 //yield return new WaitForSeconds(.05f);
+                if(stepTime > 0)
+                {
+                    yield return new WaitForSecondsRealtime(stepTime);
+                }
                 tryNum++;
                 if (currentNode == 0 && currentParentNode == 0)
                 {

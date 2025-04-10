@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Enemy/Components/Attack/哥布林斩击")]
-public class Component_哥布林斩击 : EnemyBehaviorComponent
+[CreateAssetMenu(menuName = "Enemy/Components/Attack/近战攻击")]
+public class Component_近战攻击 : EnemyBehaviorComponent
 {
     private float _timer;
     [SerializeField] private float _timeBetweenShots = 2f; // 攻击冷却时间
@@ -12,6 +12,15 @@ public class Component_哥布林斩击 : EnemyBehaviorComponent
     {
         _timer = _timeBetweenShots - .01f;
         enemy.currentDamageMultiplier = damageMultiplier;
+        float xdistance = playerTransform.position.x - enemy.transform.position.x;
+        if (xdistance > 0 && !enemy.facingRight)
+        {
+            enemy.Flip();
+        }
+        else if(xdistance < 0 && enemy.facingRight)
+        {
+            enemy.Flip();
+        }
     }
 
     public override void OnFixedUpdate()

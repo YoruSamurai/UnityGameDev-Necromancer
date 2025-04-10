@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseEquipment : MonoBehaviour
+public class BaseEquipment : MonoBehaviour, IPickableItem
 {
 
     [SerializeField] public EquipmentSO equipmentSO;
@@ -36,17 +36,20 @@ public class BaseEquipment : MonoBehaviour
     [SerializeField] public float eDamageMag;
     [SerializeField] public List<BaseAffix> equipmentAffixList;
 
-    
-    
+
+    public void Initialize()
+    {
+        SetupEquipmentBase();
+        SetUpEquipmentLevel();
+        attackCooldownTimer = 0f;
+        player = PlayerStats.Instance.gameObject.GetComponent<Player>();
+    }
 
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        SetupEquipmentBase();
-        SetUpEquipmentLevel();
-        player = GetComponentInParent<Player>();
-        attackCooldownTimer = 0f;
+
     }
 
     
@@ -200,7 +203,35 @@ public class BaseEquipment : MonoBehaviour
             return false;
         return true;
     }
+
+
     #endregion
 
+    #region IPickableItem
+    public string GetItemName()
+    {
+        return equipmentName + "LV" + equipmentLevel;
+    }
 
+    public string GetItemMessage()
+    {
+        return equipmentDesc;
+    }
+
+    public Sprite GetSprite()
+    {
+        return equipmentSprite;
+    }
+
+    public void OnPickup()
+    {
+        Debug.Log("装备被拾取");
+        //在捡起装备的时候 调用BattleBattleManagerTest的DropCurrentEquipment
+        BattleManagerTest.Instance.DropCurrentEquipment();
+        BaseEquipment instance = Instantiate(this, PlayerStats.Instance.mainWeaponParent);
+        PlayerStats.Instance.baseEquipment1 = instance;
+
+    }
+
+    #endregion
 }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45343648a77c4504f8bb4f8277012a0c, type: 3}
+  m_Name: "Component_\u9AB7\u9AC5\u95F2\u7F6E"
+  m_EditorClassIdentifier: 
+  componentName: 
+  componentDesc: 
+  MovementSpeed: 8
+  delayDuration: 2
+  isShowedExclamation: 0
+  exclamationPrefab: {fileID: 4991230142638127165, guid: 8dae48968f2f42b49bcce64168e172a7, type: 3}

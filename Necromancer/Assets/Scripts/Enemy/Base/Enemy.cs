@@ -49,6 +49,10 @@ public class Enemy : MonoBehaviour
     public float currentAttackCooldown = 0f;
     #endregion
 
+    #region 移动属性
+    public bool canMove;
+    #endregion
+
     #region 击退状态
     public bool isKnockBack { get; private set; } = false;
 
@@ -79,6 +83,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Transform wallCheck;
     [SerializeField] protected float wallCheckDistance;
     [SerializeField] protected LayerMask whatIsGround;
+    [SerializeField] protected LayerMask whatIsOneWayPlatform;
     [SerializeField] public Transform shootPosition;
 
     //面向
@@ -112,7 +117,7 @@ public class Enemy : MonoBehaviour
         enemyIdleBaseInstance.Initialize(gameObject, this,monsterStats);
         enemyChaseBaseInstance.Initialize(gameObject, this, monsterStats);
         enemyAttackBaseInstance.Initialize(gameObject, this, monsterStats);
-
+        canMove = true;
         stateMachine.Initialize(idleState);
     }
 
@@ -230,7 +235,8 @@ public class Enemy : MonoBehaviour
     //通过射线检测能不能射到地面，
     public bool IsGroundDetected()
     {
-        return Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
+        return Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround)
+            || Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsOneWayPlatform);
     }
 
     //通过射线检测能不能射到墙上

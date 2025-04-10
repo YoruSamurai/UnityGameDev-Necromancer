@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipmentName: "\u70C8\u7130\u4E4B\u9B42"
   baseDmg: 300
-  equipmentSprite: {fileID: 0}
+  equipmentSprite: {fileID: 1217000521, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
   equipmentTags: 0200000005000000
   baseCritChance: 20
   critMag: 2

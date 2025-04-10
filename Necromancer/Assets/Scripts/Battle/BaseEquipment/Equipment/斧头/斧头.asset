@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipmentName: "\u65A7\u5934"
   baseDmg: 200
-  equipmentSprite: {fileID: 0}
+  equipmentSprite: {fileID: -1412592051, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
   equipmentTags: 0100000004000000
   baseCritChance: 25
   critMag: 1.5
@@ -35,6 +35,7 @@ MonoBehaviour:
     attackLength: 10
     attackWidth: 3
     comboBreakTime: 3
+    knockbackForce: 0
   - attackTime: 1
     attackMag: 1
     attackStun: 15
@@ -44,3 +45,4 @@ MonoBehaviour:
     attackLength: 10
     attackWidth: 3
     comboBreakTime: 3
+    knockbackForce: 0

@@ -8,9 +8,41 @@ public class T闲置_射线感知 : EnemyBehaviorComponent
     [SerializeField] private EnterCondition conditionType; // 之前的条件类型
     [SerializeField] private EnemyStateType targetState;     // 新增字段，指定满足条件时要进入哪个状态
 
+    private float timer;
+    [SerializeField] private float noticeTimer;
+    private bool isNoticed;
+
+    public override void OnEnter()
+    {
+        base.OnEnter();
+        timer = 0f;
+        isNoticed = false;
+    }
+
     public override void OnUpdate()
     {
-        if (conditionType == EnterCondition.FrontRaycast)
+        if(isNoticed)
+        {
+            timer += Time.deltaTime;
+            if(timer >= noticeTimer )
+            {
+                // 根据 targetState 切换状态
+                switch (targetState)
+                {
+                    case EnemyStateType.Attack:
+                        if (enemy.currentAttackCooldown <= 0f)
+                            enemy.stateMachine.ChangeState(enemy.attackState);
+                        break;
+                    case EnemyStateType.Chase:
+                        enemy.stateMachine.ChangeState(enemy.chaseState);
+                        break;
+                    case EnemyStateType.Idle:
+                        enemy.stateMachine.ChangeState(enemy.idleState);
+                        break;
+                }
+            }
+        }
+        if (conditionType == EnterCondition.FrontRaycast && isNoticed == false)
         {
             // 射线起点为敌人当前位置
             Vector2 origin = enemy.transform.position;
@@ -25,20 +57,8 @@ public class T闲置_射线感知 : EnemyBehaviorComponent
             {
                 if (hit.collider != null && hit.collider.CompareTag("Player"))
                 {
-                    // 根据 targetState 切换状态
-                    switch (targetState)
-                    {
-                        case EnemyStateType.Attack:
-                            if(enemy.currentAttackCooldown <= 0f)
-                                enemy.stateMachine.ChangeState(enemy.attackState);
-                            break;
-                        case EnemyStateType.Chase:
-                            enemy.stateMachine.ChangeState(enemy.chaseState);
-                            break;
-                        case EnemyStateType.Idle:
-                            enemy.stateMachine.ChangeState(enemy.idleState);
-                            break;
-                    }
+                    isNoticed = true;
+                    enemy.canMove = false;
                     break;
                 }
             }
