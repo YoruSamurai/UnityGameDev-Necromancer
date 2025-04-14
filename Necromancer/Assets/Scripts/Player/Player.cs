@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UIElements;
+using DG.Tweening.Core.Easing;
 
 public class Player : MonoBehaviour
 {
@@ -67,7 +68,8 @@ public class Player : MonoBehaviour
     [SerializeField] private int jumpTimes;
     [SerializeField] public int jumpCounter;
 
-    
+    [Header("FX预制体")]
+    [SerializeField] private GameObject fxPrefab;
 
     //冲刺方向
     public float dashDir { get; private set; }
@@ -262,6 +264,24 @@ public class Player : MonoBehaviour
 
     #endregion
 
+    public void InitialFxPrefab(AnimationClip slashClip, Vector3 offset)
+    {
+        // 实例化 fxPrefab，假设 fxPrefab 定义在 Player 中并在 Inspector 设置
+        GameObject fxInstance = Instantiate(fxPrefab, transform.position, Quaternion.identity,transform);
+
+        // 获取 fxInstance 上的 FXSlash 组件并调用 Initialize
+        FxController fxSlash = fxInstance.GetComponent<FxController>();
+        if (fxSlash != null)
+        {
+            fxSlash.Initialize(slashClip, offset,facingRight);
+        }
+        else
+        {
+            Debug.LogError("FXSlash 脚本未挂载在 fxPrefab 上！");
+            Destroy(fxInstance);
+        }
+    }
+
     #region 使用武器时候的动画器设置
 
     public void ApplyWeaponAnimator(AnimatorOverrideController weaponAnimator)
@@ -313,6 +333,13 @@ public class Player : MonoBehaviour
         if(PlayerStats.Instance.isAttacking || PlayerStats.Instance.isParrying || PlayerStats.Instance.isDefensing)
             return true;
         return false;
+    }
+
+    public bool IsCanInterrupt()
+    {
+        if (!PlayerStats.Instance.canInterrupt || PlayerStats.Instance.isParrying || PlayerStats.Instance.isDefensing)
+            return false;
+        return true;
     }
 
     #endregion
@@ -403,7 +430,7 @@ public class Player : MonoBehaviour
     private void CheckForDashInput()
     {
         dashUsageTimer -= Time.deltaTime;
-        if (IsUsingEquipment())
+        if (!IsCanInterrupt())
         {
             return ;
         }

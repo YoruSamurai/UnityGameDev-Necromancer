@@ -41,5 +41,14 @@
             }
         }
     ],
-    "Entities": []
+    "Entities": [
+        {
+            "_key": "Fire",
+            "_asset": {
+                "fileID": 3742168472811224327,
+                "guid": "a6518357b50d74d4dbd185dd69d64fff",
+                "type": 3
+            }
+        }
+    ]
 }

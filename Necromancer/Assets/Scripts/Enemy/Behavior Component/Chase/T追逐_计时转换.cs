@@ -8,6 +8,7 @@ public class T追逐_计时转换 : EnemyBehaviorComponent
 {
     [SerializeField] private float timeThreshold = 2f; // 追逐状态持续时间阈值
     private float _timer;
+    [Header("这个condition暂时没用")]
     [SerializeField] private EnterCondition conditionType; // 之前的条件类型
     [SerializeField] private EnemyStateType targetState;  // 条件满足时要切换的目标状态
 

@@ -12,6 +12,13 @@ public class MeleeEquipment : BaseEquipment
 
     [SerializeField] public bool isHitInAttack;//单次攻击是否有命中
 
+    [SerializeField] public bool canCharge;//武器是否可以蓄力
+    [SerializeField] private float holdThreshold; // 长按阈值
+    [SerializeField] private float holdTimer = 0f;
+    public bool isCharged = false;
+    public bool isProcessingInput = false; // 标记是否正在处理盾牌输入
+    private int currentWeaponIndex;
+
 
     [Header("Attack Effect Settings")]
     [SerializeField] protected GameObject rectangleEffectPrefab; // 蓝色闪烁特效预制件
@@ -30,6 +37,10 @@ public class MeleeEquipment : BaseEquipment
         {
             fullComboAttackTimes = meleeEquipmentSO.fullComboAttackTimes;
             meleeAttacks = meleeEquipmentSO.meleeAttacks;
+            if(equipmentType == EquipmentType.heavyMelee)
+                canCharge = true;
+            else if(equipmentType == EquipmentType.lightMelee)
+                canCharge = false;
         }
         else
         {
@@ -49,7 +60,25 @@ public class MeleeEquipment : BaseEquipment
     protected override void Update()
     {
         base.Update();
-        if(comboBreakTimer > 0)
+        if (isProcessingInput)
+        {
+            // 持续按住时累加计时 松开不再累计
+            if (currentWeaponIndex == 1 ?
+                Input.GetKey(KeyCode.Mouse0) : Input.GetKey(KeyCode.Mouse1))
+            {
+                holdTimer += Time.deltaTime;
+                if (holdTimer >= holdThreshold && !isCharged)
+                {
+                    isCharged = true;
+                }
+            }
+            if (currentWeaponIndex == 1 ?
+                Input.GetKeyUp(KeyCode.Mouse0) : Input.GetKeyUp(KeyCode.Mouse1))
+            {
+                isProcessingInput = false;
+            }
+        }
+        if (comboBreakTimer > 0)
         {
             comboBreakTimer -= Time.deltaTime;
         }
@@ -73,6 +102,15 @@ public class MeleeEquipment : BaseEquipment
         else
         {
             PlayerStats.Instance.ChangeToAttackState();
+            // 如果已经开始处理输入，就不重复初始化
+            if (equipmentType == EquipmentType.heavyMelee && !isProcessingInput)
+            {
+                isProcessingInput = true;
+                holdThreshold = meleeAttacks[currentCombo].chargeThreshold;
+                holdTimer = 0f;
+                isCharged = false;
+                currentWeaponIndex = PlayerStats.Instance.currentEquipmentIndex;
+            }
         }
     }
     public virtual void OnTriggerEnter2D(Collider2D collision)

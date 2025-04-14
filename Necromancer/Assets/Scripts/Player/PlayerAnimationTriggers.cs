@@ -28,6 +28,9 @@ public enum PlayerAnimationTriggerType
     PlayerLedgeUp,//玩家上墙最后一下起来
     PlayerAnimationEndTrigger,//结束当前状态
     PlayerIsClimb,//当前玩家有没有在爬 
+    PlayerChargeCheckLeft, 
+    PlayerChargeCheckRight,
+    PlayerCanNotInterrupt,
     
 }
 #endregion

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43252e5db3000974fa166abfe723c6bf, type: 3}
+  m_Name: "Component_\u96D5\u50CFFire Projectiles"
+  m_EditorClassIdentifier: 
+  componentName: 
+  componentDesc: 
+  _timeBetweenShots: 2
+  projectileGenerator: {fileID: 716041429840216894, guid: d0b9973654f92f940a4a7542d991be3e, type: 3}
+  projectileSO: {fileID: 11400000, guid: 10ab5113e276b314eaa937848eec1a71, type: 2}

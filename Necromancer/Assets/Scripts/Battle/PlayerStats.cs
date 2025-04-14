@@ -27,6 +27,7 @@ public class PlayerStats : MonoBehaviour, ISaveable
     [SerializeField] public bool isAttacking;
     [SerializeField] public bool isParrying;
     [SerializeField] public bool isDefensing;
+    [SerializeField] public bool canInterrupt;
     [SerializeField] public int currentEquipmentIndex;
 
     
@@ -103,6 +104,8 @@ public class PlayerStats : MonoBehaviour, ISaveable
         playerDetection = GetComponent<PlayerDetection>();
         soul = 100;
         gold = 500;
+
+        canInterrupt = true;
     }
 
     private void Update()

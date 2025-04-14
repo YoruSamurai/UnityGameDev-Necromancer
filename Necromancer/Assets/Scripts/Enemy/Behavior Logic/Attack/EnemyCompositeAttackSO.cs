@@ -70,6 +70,10 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
             {
                 indexs.Add(i);
             }
+            else if(choice.condition == EnterCondition.None)
+            {
+                indexs.Add(i);
+            }
         }
         if (indexs.Count == 0)
         {

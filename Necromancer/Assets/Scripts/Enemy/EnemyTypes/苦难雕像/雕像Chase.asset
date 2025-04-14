@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622aad00476f3114082edb9db60effea, type: 3}
+  m_Name: "\u96D5\u50CFChase"
+  m_EditorClassIdentifier: 
+  _components:
+  - {fileID: 11400000, guid: ee4819b3c037a584a949879c2c7eb973, type: 2}
+  - {fileID: 11400000, guid: 5eafb09ffcace744697a093af2ddda75, type: 2}
+  - {fileID: 11400000, guid: c5bffa1b1bf2c5a43931f8e1ee3b3c9a, type: 2}
+  _componentInstances: []

@@ -15,6 +15,7 @@ MonoBehaviour:
   equipmentName: "\u65BD\u8650\u8005\u5315\u9996"
   baseDmg: 50
   equipmentSprite: {fileID: -51520807, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
+  equipmentType: 0
   equipmentTags: 00000000
   baseCritChance: 15
   critMag: 4
@@ -24,6 +25,14 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 2c29f3d254e8de84e80fa13c6e779ece, type: 2}
   - {fileID: 7400000, guid: d4af9f751a5c320459c1f743aac9dee6, type: 2}
   - {fileID: 7400000, guid: 8d4179d72bedcd54b87618585195c734, type: 2}
+  slashAnimations:
+  - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}
+  - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}
+  - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}
+  slashOffsets:
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
   fullComboAttackTimes: 3
   meleeAttacks:
   - attackTime: 0.3
@@ -35,7 +44,8 @@ MonoBehaviour:
     attackLength: 2
     attackWidth: 1
     comboBreakTime: 3
-    knockbackForce: 0
+    knockbackForce: 1
+    chargeThreshold: 0
   - attackTime: 0.3
     attackMag: 1
     attackStun: 5
@@ -45,7 +55,8 @@ MonoBehaviour:
     attackLength: 4
     attackWidth: 1
     comboBreakTime: 3
-    knockbackForce: 0
+    knockbackForce: 1
+    chargeThreshold: 0
   - attackTime: 0.3
     attackMag: 1
     attackStun: 10
@@ -55,4 +66,5 @@ MonoBehaviour:
     attackLength: 7
     attackWidth: 2
     comboBreakTime: 3
-    knockbackForce: 0
+    knockbackForce: 1
+    chargeThreshold: 0

@@ -1,3 +1,4 @@
+using LDtkUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,6 +51,13 @@ public class MonsterStats : MonoBehaviour
         isDead = false;
         isStunned = false;
         StartStunResistanceDecay();
+        /*LDtkComponentEntity entity = GetComponent<LDtkComponentEntity>();
+        if (entity != null)
+        {
+            Debug.Log(entity.FieldInstances.GetInt("Unnamed"));
+
+        }*/
+
     }
 
     private void Update()

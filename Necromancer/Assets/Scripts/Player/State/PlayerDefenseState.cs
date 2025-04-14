@@ -32,7 +32,7 @@ public class PlayerDefenseState : PlayerState
         if (currentWeapon.comboAnimations.Length > 0)
         {
             AnimationClip clip = currentWeapon.defenseAnimations[0];
-            currentWeapon.attackAnimator["playerDefense"] = clip;
+            currentWeapon.attackAnimator["DplayerDefense"] = clip;
         }
         //设置速度应该写在下面 通过获取武器的属性来设置
         player.SetVelocity(1 * player.facingDir, rb.velocity.y);

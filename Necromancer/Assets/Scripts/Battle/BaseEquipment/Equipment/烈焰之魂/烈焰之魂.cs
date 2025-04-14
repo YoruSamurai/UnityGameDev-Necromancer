@@ -30,9 +30,9 @@ public class 烈焰之魂 : StaffEquipment
 
         //这里就可以开始写攻击的各种逻辑了
         Attack();
-
+/*
         FireProjectile();
-        //CheckHit();
+        //CheckHit();*/
 
         // 攻击后重置combo和冷却时间
         ResetCombo();
@@ -41,32 +41,14 @@ public class 烈焰之魂 : StaffEquipment
 
 
 
-
-    /*protected void CheckHit()
-    {
-        Collider2D[] hits = GetHitEnemy();
-
-        if (hits.Length > 0)
-        {
-            foreach (Collider2D hit in hits)
-            {
-                MonsterStats monsterStats = hit.GetComponent<MonsterStats>();
-                PlayerStats.Instance.OnHit(this, monsterStats);
-            }
-        }
-        else
-        {
-            Debug.Log("未命中敌人");
-        }
-    }*/
-
     public void HandleProjectileHit(MonsterStats monsterStats)
     {
         PlayerStats.Instance.OnHit(this, monsterStats);
     }
 
-    public void FireProjectile()
+    public override void FireProjectile()
     {
+        base.FireProjectile();
         GameObject projectile = Instantiate(
             projectilePrefab,
             transform.position,

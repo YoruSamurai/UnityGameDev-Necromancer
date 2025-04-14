@@ -15,6 +15,7 @@ MonoBehaviour:
   equipmentName: "\u5C0F\u6728\u76FE"
   baseDmg: 0
   equipmentSprite: {fileID: -681768602, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
+  equipmentType: 4
   equipmentTags: 00000000
   baseCritChance: 0
   critMag: 0

@@ -39,6 +39,8 @@ public class BattleManagerTest : MonoBehaviour
     public void DropCurrentEquipment()
     {
         BaseEquipment baseEquipment1 = PlayerStats.Instance.baseEquipment1;
+        if (baseEquipment1 == null)
+            return;
         DropItem(baseEquipment1, PlayerStats.Instance.gameObject.transform.position);
         ClearEquipmentInTransform(PlayerStats.Instance.mainWeaponParent);
     }

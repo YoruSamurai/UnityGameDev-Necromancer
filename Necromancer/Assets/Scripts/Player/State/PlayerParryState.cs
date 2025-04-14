@@ -44,7 +44,7 @@ public class PlayerParryState : PlayerState
             }
 
             AnimationClip clip = currentWeapon.comboAnimations[currentCombo];
-            currentWeapon.attackAnimator["playerParry"] = clip;
+            currentWeapon.attackAnimator["DplayerParry"] = clip;
         }
         //设置速度应该写在下面 通过获取武器的属性来设置
         player.SetVelocity(1 * player.facingDir, rb.velocity.y);

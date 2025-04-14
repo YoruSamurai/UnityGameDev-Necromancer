@@ -48,6 +48,11 @@ public class StaffEquipment : BaseEquipment
 
     }
 
+    public virtual void FireProjectile()
+    {
+
+    }
+
     public override void DoDamage(float _cMag, MonsterStats monsterStats)
     {
         base.DoDamage(_cMag, monsterStats);

@@ -18,6 +18,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem
     [SerializeField] public string equipmentName;
     [SerializeField] public int baseDmg;
     [SerializeField] public Sprite equipmentSprite;
+    [SerializeField] public EquipmentType equipmentType;
     [SerializeField] public List<EquipmentTag> equipmentTags = new List<EquipmentTag>();
     [SerializeField] public int baseCritChance;
     [SerializeField] public float critMag;
@@ -145,6 +146,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem
         baseDmg = equipmentSO.baseDmg;
         currentDmg = equipmentSO.baseDmg;
         equipmentSprite = equipmentSO.equipmentSprite;
+        equipmentType = equipmentSO.equipmentType;
         equipmentTags = equipmentSO.equipmentTags;
 
         baseCritChance = equipmentSO.baseCritChance;

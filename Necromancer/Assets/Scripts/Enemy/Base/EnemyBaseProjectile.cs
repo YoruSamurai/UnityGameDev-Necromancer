@@ -5,6 +5,9 @@ using UnityEngine;
 public abstract class EnemyBaseProjectile : MonoBehaviour
 {
     private Enemy enemy;
+    private EnemyProjectileSO projectileSO;
+    private int projectileIndex;
+
     [SerializeField] protected float baseDamage;  // 攻击伤害
     [SerializeField] protected float damageMultiplier;  // 攻击伤害倍率
     [SerializeField] protected float projectileSpeed;
@@ -12,6 +15,7 @@ public abstract class EnemyBaseProjectile : MonoBehaviour
     [SerializeField] protected float projectileMaxTimer;
     [SerializeField] protected float projectileGravity;
     [SerializeField] protected float projectileAngle;
+    [SerializeField] protected ProjectileMovingType movingType;
 
 
     [SerializeField] protected Vector2 startPosition;
@@ -21,18 +25,21 @@ public abstract class EnemyBaseProjectile : MonoBehaviour
     [SerializeField] protected BoxCollider2D boxCollider;
     [SerializeField] protected Rigidbody2D rb;
 
-    public void Initialize(Enemy enemy,float _baseDamage, float _damageMultiplier, float _projectileSpeed,
-        float _projectileMaxDistance, float _projectileMaxTimer, float _projectileGravity,
-        float _projectileAngle,bool _isFacingRight)
+    public void Initialize(Enemy _enemy,int _baseDamage,int _projectileIndex,EnemyProjectileSO _projectileSO)
     {
+        enemy = _enemy;
         baseDamage = _baseDamage;
-        damageMultiplier = _damageMultiplier;
-        projectileSpeed = _projectileSpeed;
-        projectileMaxDistance = _projectileMaxDistance;
-        projectileGravity = _projectileGravity;
-        projectileAngle = _projectileAngle;
-        projectileMaxTimer = _projectileMaxTimer;
-        isFacingRight = _isFacingRight;
+        projectileIndex = _projectileIndex;
+        projectileSO = _projectileSO;
+
+        damageMultiplier = projectileSO.damageMultiplier;
+        projectileSpeed = projectileSO.projectileSpeed;
+        projectileMaxDistance = projectileSO.projectileMaxDistance;
+        projectileGravity = projectileSO.projectileGravity;
+        projectileAngle = projectileSO.projectileAngle;
+
+        movingType = projectileSO.movingType;
+        isFacingRight = enemy.facingRight;
 
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
@@ -57,6 +64,11 @@ public abstract class EnemyBaseProjectile : MonoBehaviour
     public virtual void Update()
     {
         
+    }
+
+    public virtual void FixedUpdate()
+    {
+
     }
 
     private void OnTriggerEnter2D(Collider2D hit)

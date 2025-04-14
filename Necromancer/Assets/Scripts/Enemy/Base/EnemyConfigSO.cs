@@ -35,6 +35,7 @@ public enum EnterCondition
     FrontRaycast,//对前方释放射线
     RadiusDetect,//圆形范围感知
     BackGroundCheck, // 检测敌人后方是否有地面
+    None,//无条件
 }
 
 

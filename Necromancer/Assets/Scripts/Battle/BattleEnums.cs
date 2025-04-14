@@ -15,6 +15,19 @@ public enum EquipmentTag
     frozen,//冻结
 }
 #endregion
+
+#region 装备类型
+public enum EquipmentType
+{
+    lightMelee,
+    heavyMelee,
+    staff,
+    heavyStaff,
+    shield,
+}
+
+#endregion
+
 #region 效果触发条件
 public enum BattleTriggerCondition
 {
@@ -142,6 +155,8 @@ public struct MeleeAttackStruct
     public float comboBreakTime;
     // 新增：击退力度
     public float knockbackForce;
+    //新增：重武器蓄力时间
+    public float chargeThreshold;
 }
 #endregion
 

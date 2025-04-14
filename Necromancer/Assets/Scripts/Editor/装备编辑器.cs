@@ -138,6 +138,8 @@ public class 装备编辑器 : EditorWindow
         string[] lengthArr = row[17].Split('\\');  // 攻击长度
         string[] widthArr = row[18].Split('\\');  // 攻击宽度
         string[] breakArr = row[19].Split('\\');  // 连击中断时间
+        string[] knockArr = row[20].Split('\\');  // 击退力度
+        string[] chargeArr = row[21].Split('\\');  // 重武器蓄力时间
 
         // 3. 解析攻击形状与攻击中心
         MeleeAttackShapeEnum attackShape = (MeleeAttackShapeEnum)Enum.Parse(typeof(MeleeAttackShapeEnum), shapeStr, true);
@@ -166,6 +168,10 @@ public class 装备编辑器 : EditorWindow
 
             // 连击中断时间
             attack.comboBreakTime = float.Parse(breakArr[i]);
+
+
+            attack.knockbackForce = float.Parse(knockArr[i]);
+            attack.chargeThreshold = float.Parse(chargeArr[i]);
 
             // 其他字段如果有的话继续赋值
             // attack.xxx = ...

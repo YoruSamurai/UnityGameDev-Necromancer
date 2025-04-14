@@ -12,7 +12,6 @@ public class ShieldEquipment : BaseEquipment
     [SerializeField] private float holdThreshold; // 长按阈值
     [SerializeField] private float holdTimer = 0f;
     private bool isHolding = false;
-    private bool inputStarted = false;
     private bool isProcessingInput = false; // 标记是否正在处理盾牌输入
     private int currentWeaponIndex;
 
@@ -65,7 +64,6 @@ public class ShieldEquipment : BaseEquipment
                 }
                 // 重置输入处理状态
                 isProcessingInput = false;
-                inputStarted = false;
                 holdTimer = 0f;
                 isHolding = false;
             }
@@ -102,7 +100,6 @@ public class ShieldEquipment : BaseEquipment
             if (!isProcessingInput)
             {
                 isProcessingInput = true;
-                inputStarted = true;
                 holdTimer = 0f;
                 isHolding = false;
                 currentWeaponIndex = PlayerStats.Instance.currentEquipmentIndex;
