@@ -30,7 +30,7 @@ public class PlayerGroundState : PlayerState
             RaycastHit2D groundHit = Physics2D.Raycast(
                 player.transform.position,
                 Vector2.down,
-                2f, // 射线长度，可以根据需要调整
+                3f, // 射线长度，可以根据需要调整
                 player.combinedGroundLayers
             );
 

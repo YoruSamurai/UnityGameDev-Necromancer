@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a2c846e2042ab4a8024126bf9500ce, type: 3}
+  m_Name: "Component_\u5C0F\u7FBDSummon\u5C0F\u65ED"
+  m_EditorClassIdentifier: 
+  componentName: 
+  componentDesc: 
+  _timeBetweenShots: 2
+  summonGenerator: {fileID: 716041429840216894, guid: 071e3e7f556199540bec2f017aaad087, type: 3}
+  summonSO: {fileID: 11400000, guid: accb4962fd3a22a488f0aafb03c95c4e, type: 2}

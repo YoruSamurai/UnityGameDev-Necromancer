@@ -1,11 +1,19 @@
 using UnityEngine;
 // 新建ISaveable接口
 
-public interface ISaveable
+public interface ISaveableGameData
 {
     string SaveID { get; } // 每个可保存对象的唯一标识
     void SaveData(GameData data); // 保存数据到GameData结构
     void LoadData(GameData data); // 从GameData结构加载数据
+}
+
+public interface ISaveableSettingData
+{
+    string SaveID { get; }
+    void SaveData(SettingData data);
+    void LoadData(SettingData data);
+
 }
 
 // 新建GameData数据容器类
@@ -14,6 +22,28 @@ public class GameData
 {
     public PlayerData playerData;
     // 可以添加其他需要保存的数据类（如InventoryData、SettingsData等）
+}
+
+//
+[System.Serializable]
+public class SettingData
+{
+    public VolumeSettingData volumeSettingData;
+    public GraphicsSettingData graphicsSettingData;
+}
+
+[System.Serializable]
+public class VolumeSettingData
+{
+    public float volume;
+}
+
+public class GraphicsSettingData
+{
+    public bool isFullScreen;
+    public int resolutionX;
+    public int resolutionY;
+    public float brightnessLevel;
 }
 
 [System.Serializable]

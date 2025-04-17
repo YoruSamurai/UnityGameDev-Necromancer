@@ -19,6 +19,7 @@ public class Component_左右闲置 : EnemyBehaviorComponent
     {
         isDelaying = false;
         isShowedExclamation = false;
+        enemy.anim.SetBool("Move", true);
     }
 
     public override void OnExit()

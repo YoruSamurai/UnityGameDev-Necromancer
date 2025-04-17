@@ -274,5 +274,6 @@ public enum EnemyAnimationTriggerType
     EnemyHitDetermineEnd,//伤害判定结束
     EnemyOnShoot,//敌人射箭
     EnemyDied,//敌人死亡
+    EnemyOnSummon,
 }
 #endregion

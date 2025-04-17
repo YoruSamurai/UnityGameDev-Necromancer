@@ -31,10 +31,9 @@ public class 苦难雕像子弹 : EnemyBaseProjectile
         {
             playerTransform = player.transform;
         }
-
-        // 随机初始方向：水平+随机垂直
-        float randomYOffset = Random.Range(-randomYVariance, randomYVariance);
-        initialRandomVelocity = new Vector2(0, 15f);
+        float randomAngle = Random.Range(30f, 150f); // 偏向上方的随机角度
+        float radians = randomAngle * Mathf.Deg2Rad;
+        initialRandomVelocity = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians)) * projectileSpeed * .7f;
         rb.velocity = initialRandomVelocity;
     }
 
@@ -50,7 +49,7 @@ public class 苦难雕像子弹 : EnemyBaseProjectile
             // 第一阶段：随机方向飞行
             if (elapsed < randomPhaseDuration)
             {
-                rb.velocity = initialRandomVelocity;
+                rb.velocity = initialRandomVelocity * .7f;
             }
             // 第二阶段：锁定玩家方向后飞行
             else
@@ -63,17 +62,13 @@ public class 苦难雕像子弹 : EnemyBaseProjectile
                         lockedDirection = toPlayer;
                         isTurning = true;
                     }
-                    else
-                    {
-                        lockedDirection = rb.velocity.normalized;
-                        isTurning = false;
-                    }
-
                     hasLockedDirection = true;
                 }
 
-                if (isTurning)
+                if (isTurning && elapsed < 1f)
                 {
+                    Vector2 toPlayer = (playerTransform.position - transform.position).normalized;
+                    lockedDirection = toPlayer;
                     Vector2 currentDir = rb.velocity.normalized;
                     float currentAngle = Mathf.Atan2(currentDir.y, currentDir.x) * Mathf.Rad2Deg;
                     float targetAngle = Mathf.Atan2(lockedDirection.y, lockedDirection.x) * Mathf.Rad2Deg;
@@ -91,7 +86,7 @@ public class 苦难雕像子弹 : EnemyBaseProjectile
                 }
                 else
                 {
-                    rb.velocity = lockedDirection * projectileSpeed;
+                    rb.velocity = lockedDirection * projectileSpeed * 1.5f;
                 }
             }
 

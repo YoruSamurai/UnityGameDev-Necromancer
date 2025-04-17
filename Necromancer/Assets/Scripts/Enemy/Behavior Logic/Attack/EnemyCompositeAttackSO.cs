@@ -21,7 +21,7 @@ public class EnemyCompositeAttackSO : EnemyAttackSOBase
         else
         {
             // 没有找到有效攻击行为时，切换回 idle 状态
-            enemy.stateMachine.ChangeState(enemy.idleState);
+            enemy.stateMachine.ChangeState(enemy.chaseState);
         }
     }
 

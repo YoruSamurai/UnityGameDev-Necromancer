@@ -13,7 +13,7 @@ public class EnemyCompositeChaseSO : EnemyChaseSOBase
     public override void DoEnterLogic()
     {
         // 选择一种攻击方式（例如随机选择）
-        currentChaseComponents = ChooseAttackBehavior();
+        currentChaseComponents = ChooseChaseBehavior();
         if (currentChaseComponents != null)
         {
             // 注意：这里重新初始化当前选择的攻击行为
@@ -30,12 +30,36 @@ public class EnemyCompositeChaseSO : EnemyChaseSOBase
 
     public override void DoUpdateLogic()
     {
-        currentChaseComponents?.DoUpdateLogic();
+        //currentChaseComponents?.DoUpdateLogic();
+        if (currentChaseComponents != null)
+        {
+            if (currentChaseComponents.canNotInterrupt)
+            {
+                //Debug.Log("可以可以");
+                currentChaseComponents?.DoUpdateLogic();
+
+            }
+            else
+            {
+                EnemyChaseSOBase chaseComponent = ChooseChaseBehavior();
+                if (chaseComponent.canNotInterrupt == currentChaseComponents.canNotInterrupt)
+                {
+                    currentChaseComponents?.DoUpdateLogic();
+                }
+                else
+                {
+                    Debug.Log("不可以吗");
+                    enemy.stateMachine.ChangeState(enemy.chaseState);
+                }
+
+            }
+        }
     }
 
     public override void DoFixedUpdateLogic()
     {
         currentChaseComponents?.DoFixedUpdateLogic();
+
     }
 
     public override void DoExitLogic()
@@ -56,7 +80,7 @@ public class EnemyCompositeChaseSO : EnemyChaseSOBase
         currentChaseComponents = null;
     }
 
-    private EnemyChaseSOBase ChooseAttackBehavior()
+    private EnemyChaseSOBase ChooseChaseBehavior()
     {
         Vector2 enemyPos = enemy.transform.position;
         Vector2 playerPos = playerTransform.position;
@@ -65,7 +89,22 @@ public class EnemyCompositeChaseSO : EnemyChaseSOBase
         for (int i = 0; i < chaseBehaviors.Count; i++)
         {
             ChaseChoice choice = chaseBehaviors[i];
-            if (choice.condition == EnterCondition.DistancePlus && distance > choice.value)
+            if(choice.condition == EnterCondition.None)
+            {
+                indexs.Add(i);
+            }
+            else if(choice.condition == EnterCondition.Flash)
+            {
+                if (player.IsGroundDetected())
+                {
+                    if (Mathf.Abs(enemyPos.y - playerPos.y) > choice.value)
+                    {
+                        indexs.Add(i);
+                        Debug.Log("该闪现了");
+                    }
+                }
+            }
+            else if (choice.condition == EnterCondition.DistancePlus && distance > choice.value)
             {
                 indexs.Add(i);
             }
@@ -96,7 +135,9 @@ public class EnemyCompositeChaseSO : EnemyChaseSOBase
         {
             return null;
         }
-        return Instantiate(chaseBehaviors[indexs[Random.Range(0, indexs.Count)]].attackBehavior);
+        //选择优先级最高的那个
+        //return Instantiate(chaseBehaviors[indexs[Random.Range(0, indexs.Count)]].attackBehavior);
+        return Instantiate(chaseBehaviors[indexs[0]].attackBehavior);
 
 
     }

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy/Components/Chase/哥布林追逐")]
-public class Component_哥布林追逐 : EnemyBehaviorComponent
+[CreateAssetMenu(menuName = "Enemy/Components/Chase/左右平台追逐")]
+public class Component_左右平台追逐 : EnemyBehaviorComponent
 {
     [SerializeField] private float _movementSpeed;
 

@@ -36,6 +36,7 @@ public enum EnterCondition
     RadiusDetect,//圆形范围感知
     BackGroundCheck, // 检测敌人后方是否有地面
     None,//无条件
+    Flash,//不在同一个平台的话 我们就闪现
 }
 
 

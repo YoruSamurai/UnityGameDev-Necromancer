@@ -10,9 +10,12 @@ public class EnemyChaseSOBase : ScriptableObject
     protected GameObject gameObject;
 
     protected Transform playerTransform;
+    protected Player player;
     [SerializeField] private List<EnemyBehaviorComponent> _components;
     // 用于存储每个敌人专用的组件克隆实例
     [SerializeField] private List<EnemyBehaviorComponent> _componentInstances;
+
+    [SerializeField] public bool canNotInterrupt;
 
     public virtual void Initialize(GameObject gameObject, Enemy enemy, MonsterStats monsterStats)
     {
@@ -22,13 +25,14 @@ public class EnemyChaseSOBase : ScriptableObject
         this.monsterStats = monsterStats;
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         // 克隆 _components 中的每个组件，生成独立实例
         _componentInstances = new List<EnemyBehaviorComponent>();
         foreach (var comp in _components)
         {
             // 使用 Instantiate 克隆出新的实例
             var clone = Instantiate(comp);
-            clone.Initialize(enemy, playerTransform, monsterStats);
+            clone.Initialize(enemy,player, playerTransform, monsterStats);
             _componentInstances.Add(clone);
         }
     }

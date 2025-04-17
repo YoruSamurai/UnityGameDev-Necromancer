@@ -44,7 +44,6 @@ public class Component_攻击_FireProjectiles : EnemyBehaviorComponent
             }
 
             _timer = 0f;
-            Debug.Log("弓箭手射击: 触发攻击");
             enemy.anim.SetBool("Attack", true);
             enemy.anim.SetBool("Idle", false);
             enemy.isAttacking = true;

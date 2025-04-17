@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour, ISaveable
+public class PlayerStats : MonoBehaviour, ISaveableGameData
 {
 
     public static PlayerStats Instance { get; private set; }
@@ -90,7 +90,7 @@ public class PlayerStats : MonoBehaviour, ISaveable
 
     private void Start()
     {
-        SaveManager.Instance.Register(this);
+        SaveManager.Instance.RegisterGameData(this);
         currentHealth = 100;
         maxHealth = 100;
         healthPercentage = 100;

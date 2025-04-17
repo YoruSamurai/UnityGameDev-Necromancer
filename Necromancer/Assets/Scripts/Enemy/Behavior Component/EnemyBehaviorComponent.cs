@@ -10,11 +10,13 @@ public abstract class EnemyBehaviorComponent : ScriptableObject, IEnemyBehaviorC
     protected Enemy enemy {  get; private set; }
     protected MonsterStats monsterStats { get; private set; }
     protected Transform playerTransform {  get; private set; }
-    public virtual void Initialize(Enemy enemy, Transform playerTransform,MonsterStats monsterStats)
+    protected Player player {  get; private set; }
+    public virtual void Initialize(Enemy enemy,Player _player, Transform playerTransform,MonsterStats monsterStats)
     {
         this.enemy = enemy;
         this.playerTransform = playerTransform;
         this.monsterStats = monsterStats;
+        this.player = _player;
     }
 
     public virtual void OnEnter()

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u82E6\u96BE\u96D5\u50CF\u5B50\u5F39"
   m_EditorClassIdentifier: 
   damageMultiplier: 1
-  projectileSpeed: 15
+  projectileSpeed: 10
   projectileMaxDistance: 100
   projectileMaxTimer: 5
   projectileGravity: 0
