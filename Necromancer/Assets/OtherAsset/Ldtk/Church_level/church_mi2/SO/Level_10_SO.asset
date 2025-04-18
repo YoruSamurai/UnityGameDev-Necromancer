@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59272ed3aa17de947aad98b99ecbe741, type: 3}
+  m_Name: Level_10_SO
+  m_EditorClassIdentifier: 
+  levelData: {fileID: 6993293779124984225, guid: 22d1fa51a0b970e4aae68049051811e0, type: 3}
+  gameRoomType: 2
+  levelHeight: 17
+  levelWidth: 32
+  doorInfos:
+  - startCell: {x: 3, y: 0, z: 0}
+    length: 5
+    direction: 3
+    isLocked: 0
+    node: -1

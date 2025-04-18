@@ -1,0 +1,1416 @@
+fileFormatVersion: 2
+guid: 676209de7cfb4fd4483a92d497a2c82e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 32
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Rope_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 288
+      width: 32
+      height: 32
+    spriteID: d626b157fe976ab46a2935c04a8a100a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 288
+      width: 32
+      height: 32
+    spriteID: aa7543b7d8575774f94b96397e3294f9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 0bcd56bba82912540b0b4f402b24a734
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 50c4ec73d6533d74ab3bb309d8b677ed
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 288
+      width: 32
+      height: 32
+    spriteID: feff961bee1a8414881a4cf7eaca138b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 4260efd1f654c724a9faa3d8d116e5f2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 92526487c71e8ae4d8aaef53d25337bf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 288
+      width: 32
+      height: 32
+    spriteID: f1e0c4ee8123c174189295352b9e113c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 288
+      width: 32
+      height: 32
+    spriteID: b927598437fde0345a8a0bf3670594b0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 405e9cae31b88a849bd5da357cf6ca6d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 2b83091ec83c4f349ba6f3f23296ffae
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 256
+      width: 32
+      height: 32
+    spriteID: e0dcb2741f63cd048adb3c98d14539e8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 19cb7b6352ecba945aad32523e739b48
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 7e5b353e8cef5ac4182f687d091d9bb2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 80de34cf0ee180d44a99e5b7c3251efc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 256
+      width: 32
+      height: 32
+    spriteID: a2a4475279ae97e4bb4b477f73f9d57c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 256
+      width: 32
+      height: 32
+    spriteID: a5847bcd46ada704d8aede9ee541fbbf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 6d467de1e777c264186bdc29705579c6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 256
+      width: 32
+      height: 32
+    spriteID: c8711fd4cb0501043b5d18cc99bf8885
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 256
+      width: 32
+      height: 32
+    spriteID: ac4736b1f3060e74393a05a3a0ecf5aa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 224
+      width: 32
+      height: 32
+    spriteID: d809340f8393d3d43bbe504b51f59998
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 224
+      width: 32
+      height: 32
+    spriteID: cee4b9f15df1db045861689455aca2f0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 224
+      width: 32
+      height: 32
+    spriteID: b19b7d367948f3b42a1c4ff7f05c7c82
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 408866969e1b7e144babe78c49fa9def
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 8f2c85e614c6b9241b9a6c07e9f0b07e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 224
+      width: 32
+      height: 32
+    spriteID: b7979d14af7180740a8e497cb178f3ea
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 4b87c67e54d1b9c40b24bd030335ae49
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 224
+      width: 32
+      height: 32
+    spriteID: caf02a418dd76634faf01f404333191d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 8ce859dc8323c58449d737b3874402dc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 224
+      width: 32
+      height: 32
+    spriteID: c8df755604e2c2a4a825843243576576
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 4acb9158aae4d614e89f32736e264aba
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 192
+      width: 32
+      height: 32
+    spriteID: c0743cebff846ea409a7b314c6404d0c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 203dbb36f9545c54fb06352e589e7fac
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 74afe58602b73244a8168ba3a281140a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 192
+      width: 32
+      height: 32
+    spriteID: bfe24cc6689cc9440bc89736d148fee4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 192
+      width: 32
+      height: 32
+    spriteID: c982b01c0cc4d834a9a9cec6b933d529
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 192
+      width: 32
+      height: 32
+    spriteID: b400271d6a1370e4790b2faf971c3b9a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 1f4d30e6fda1b52428e3897cdf73c706
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 836bb2affac87634b80f624560d01860
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 192
+      width: 32
+      height: 32
+    spriteID: eeaf95f22566ae348a5511ce7f37585e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 160
+      width: 32
+      height: 32
+    spriteID: f4adeb1269f05f74ca8c589f3518eac6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 160
+      width: 32
+      height: 32
+    spriteID: e80cfcc96f0ffc04bb34d4f103c21899
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 893b5dd21b5d45341abe1e46e5d4853a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 12442f7392c604f4c840c217f0d71e85
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 26844c15936b8934cbccbb67cfcc4395
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 160
+      width: 32
+      height: 32
+    spriteID: bfcb3b59596b17e40a343e8f8e6de3ed
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 160
+      width: 32
+      height: 32
+    spriteID: f724072dea81520468f0477505583d17
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 1a7ba468bbc946f46a26bab0543eb70b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 160
+      width: 32
+      height: 32
+    spriteID: fd4a499663ad9a749bd38ccd4de822c8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 0541d0bf12a415b44834c4f7c96c2365
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_50
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 9c9d9e3f74bbd794599853ae2b294ba9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_51
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 128
+      width: 32
+      height: 32
+    spriteID: f43ae3e35b69a6348a6aef17d3b65eca
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_52
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 4e6f8d4ebadca574382309b9c6a02fd7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_53
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 128
+      width: 32
+      height: 32
+    spriteID: f6f3a375d180a25418a245e3a2f44363
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_54
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 128
+      width: 32
+      height: 32
+    spriteID: c8e880a5bdfcaed42aaa5d975329a5e9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_55
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 128
+      width: 32
+      height: 32
+    spriteID: a745ca3277faa4b40a8a8035f9c99d7d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_56
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 5f280e5b3a3c7f14eadb54d674a09b01
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_57
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 5f32b69bb93369c4d8458ebaa045a49d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_58
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 128
+      width: 32
+      height: 32
+    spriteID: e02d25f28c64c7449acd25a5147b4324
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_59
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 8a6f90d5b0b4a5a4f9802438ea9b3ecd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_60
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 34b0472762c073e4a8ea5ca104c9187e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_61
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 3cfebca7ebfebdd4d81987b11fef1029
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_62
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 79d54908a67cdb84a9f71f997617b7fa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_63
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 4466ffd83ae5551448b9aea582aa1374
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_64
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 96
+      width: 32
+      height: 32
+    spriteID: a08db24b1a9660d40a8890b6a8fc3fb0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_65
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 54f7c9aa60e353949a91317a13412a62
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_66
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 96
+      width: 32
+      height: 32
+    spriteID: da4d64f5302fd1c45888ab19f4772d69
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_67
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 1ffe0ca25555f4c4487b3bbc38cdeb03
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_68
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 96
+      width: 32
+      height: 32
+    spriteID: d6dd577ed02e89a41b2188217221a3f7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_69
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 96
+      width: 32
+      height: 32
+    spriteID: dc7b6309ee0cc284c96f7740df7878e6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_70
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 1884cfee519e63c4181e1eb8ebae0a71
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_71
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 64
+      width: 32
+      height: 32
+    spriteID: ea9ff1ef982753c468bb6538988150e8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_72
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 32
+      height: 32
+    spriteID: dc48de9e1f76f7d49926dc295f5f2ab7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_73
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 677b807a21e444f4c978ac46f1a4174d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_74
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 64
+      width: 32
+      height: 32
+    spriteID: d1fc6c581cdb9ae458754f6dee467878
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_75
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 500608c6177be284f96b22c88615aed8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_76
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 64
+      width: 32
+      height: 32
+    spriteID: b9eb01dd6ce55144191c0fa035120933
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_77
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 7023549bb9a604f40bccc57157b3543e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_78
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 64
+      width: 32
+      height: 32
+    spriteID: cae03ac2cc726ca45bb459b10778177b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_79
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 64
+      width: 32
+      height: 32
+    spriteID: c439cc3b4719a9c40910cb90ad7d0cc6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_80
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 931e08267d8a96340ae57abbc3e9af38
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_81
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 2db0bb6a61b0fb84fa081b3b5fe9ff49
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_82
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 6cbbdb796e6f622408e29ce01decd88b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_83
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 9f73d304d6cedc74ba936578e5aa01e8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_84
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 32
+      width: 32
+      height: 32
+    spriteID: d76f74c0875d3734182a38c74eaeede4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_85
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 558306f1184f09d45820f19c2d0b0d3d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_86
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 32
+      width: 32
+      height: 32
+    spriteID: b948c1f6e54be044dbb9129bf647e7b9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_87
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 32
+      width: 32
+      height: 32
+    spriteID: b628468d091cddc4a97298fb9ad60afd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_88
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 5191a19815c0f644d89be3b6541c0583
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_89
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 32
+      width: 32
+      height: 32
+    spriteID: a19084202ab9dce4e898a4388f15f87c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_90
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 6a34078e5bdddae42916cd32b770cd40
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_91
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 293a11b7c55fb66479dcce9239f0b959
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_92
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 3c44e745623b9704e8dc07bb56861942
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_93
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 32
+      height: 32
+    spriteID: b1b8c63d685a7e145b66a4ede3fd4dbc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_94
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 4403db25fd84a4a4d992368d7b1643ef
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_95
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 32
+      height: 32
+    spriteID: d8f3f9fc168080d438b1e7e64834a8e4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_96
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 32
+      height: 32
+    spriteID: f19113927310d054289b80390051b9cb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_97
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 0
+      width: 32
+      height: 32
+    spriteID: a8b5d476f76f78146b357d05a2b77166
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_98
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 0
+      width: 32
+      height: 32
+    spriteID: e801fce709113ca4897564ef08b936c3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Rope_99
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 0
+      width: 32
+      height: 32
+    spriteID: d3f4b7fc6c0233f4aafad3d6c1ad2e72
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: 676209de7cfb4fd4483a92d497a2c82e, type: 3}

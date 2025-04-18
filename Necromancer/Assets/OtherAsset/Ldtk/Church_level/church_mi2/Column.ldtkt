@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 6,
+    "__cWid": 6,
+    "cachedPixelData": {
+      "opaqueTiles": "000000000000000000000000000000000000",
+      "averageColors": "e222e2220000000000000000a22292220000000000000000922382220000000000000000922292220000000000000000e222d2220000000000000000000000000000000000000000"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Column",
+    "padding": 0,
+    "pxHei": 192,
+    "pxWid": 192,
+    "relPath": "23334.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 64
+  }
+}

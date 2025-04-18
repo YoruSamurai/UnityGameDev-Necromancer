@@ -71,5 +71,5 @@ MonoBehaviour:
     roomType: 1
     connectionRoom: 14000000
   - roomID: 20
-    roomType: 1
+    roomType: 2
     connectionRoom: 

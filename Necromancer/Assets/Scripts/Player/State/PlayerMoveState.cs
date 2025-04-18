@@ -16,6 +16,7 @@ public class PlayerMoveState : PlayerGroundState
     public override void Exit()
     {
         base.Exit();
+        //player.SetZeroVelocity();
     }
 
     public override void Update()
@@ -33,8 +34,9 @@ public class PlayerMoveState : PlayerGroundState
     {
         base.FixedUpdate();
         //给玩家设置X方向速度 y不变
+        //player.SetVelocity(xInput * player.moveSpeed, 0);
         player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
 
-        
+
     }
 }

@@ -16,7 +16,7 @@ namespace LDtkUnity
         protected override void OnPostprocessProject(GameObject root)
         {
             // 获取所有.ldtkl文件路径
-            string folderPath = $"Assets/OtherAsset/Ldtk/1/{root.name}";
+            string folderPath = $"Assets/OtherAsset/Ldtk/Church_level/{root.name}";
             string[] ldtklPaths = System.IO.Directory.GetFiles(folderPath, "*.ldtkl");
             List<LDtkComponentLevel> ldtkLevels = GetAllLdtkLevels(ldtklPaths);
             
@@ -66,11 +66,15 @@ namespace LDtkUnity
                     continue;
                 }
                 Debug.Log(layer);
-                if (layer.name == "Climb")
+                if (layer.name == "AutoLadderTile")
                 {
                     TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
                     map.sortingLayerID = SortingLayer.NameToID("Tile");
                     map.sortingOrder = 4;
+
+                }
+                if(layer.name == "Ladder")
+                {
                     CompositeCollider2D[] collider2D = layer.GetComponentsInChildren<CompositeCollider2D>();
                     foreach (var collider in collider2D)
                     {
@@ -81,13 +85,13 @@ namespace LDtkUnity
                     }
 
                 }
-                if (layer.name == "TransGround")
+                if (layer.name == "AutoOneWayTile")
                 {
                     TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
                     map.sortingLayerID = SortingLayer.NameToID("Tile");
                     map.sortingOrder = 3;
                 }
-                if (layer.name == "Ground1")
+                if (layer.name == "AutoGroundTile")
                 {
                     TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
                     map.sortingLayerID = SortingLayer.NameToID("Tile");

@@ -30,6 +30,7 @@ public class SettingData
 {
     public VolumeSettingData volumeSettingData;
     public GraphicsSettingData graphicsSettingData;
+    public LanguageSettingData languageSettingData;
 }
 
 [System.Serializable]
@@ -44,6 +45,11 @@ public class GraphicsSettingData
     public int resolutionX;
     public int resolutionY;
     public float brightnessLevel;
+}
+
+public class LanguageSettingData
+{
+    public LanguageEnum language;
 }
 
 [System.Serializable]

@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 5,
+    "__cWid": 15,
+    "cachedPixelData": {
+      "opaqueTiles": "000000000000001000000000000001000000000000001000000000000011000100000001001",
+      "averageColors": "83337223e2238333422303340000000000004333a3336333b223a2230000e111a112d111e111e222b222122300000578d112d1119222b111c11200008222322261225112311111110000000000001222a2224222811292230000d222a2226222b222733402235334333412225222f222c223c222f1120000f234f223e223f223f334c334e334e334a335f233f233f334f335f2330000"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Forest_bg",
+    "padding": 0,
+    "pxHei": 160,
+    "pxWid": 476,
+    "relPath": "44-2_pixe232l.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 69
+  }
+}

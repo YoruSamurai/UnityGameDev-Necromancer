@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 7,
+    "__cWid": 5,
+    "cachedPixelData": {
+      "opaqueTiles": "11111100011000110001100011000111111",
+      "averageColors": "f334f334f334f334f334f334f334b333f334f334f334d3339333d333f334f334a4456555a445f334f334a5556555a555f334f334d445b445d445f334f334f334f334f334f334"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Wall",
+    "padding": 0,
+    "pxHei": 224,
+    "pxWid": 160,
+    "relPath": "window_ty.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 56
+  }
+}

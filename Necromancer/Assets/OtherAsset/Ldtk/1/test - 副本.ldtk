@@ -1310,12 +1310,12 @@
 						{
 							"uid": 47,
 							"active": true,
-							"size": 1,
+							"size": 3,
 							"tileRectsIds": [[35]],
 							"alpha": 1,
 							"chance": 1,
 							"breakOnMatch": true,
-							"pattern": [1],
+							"pattern": [0,0,0,-1,1,0,0,0,0],
 							"flipX": false,
 							"flipY": false,
 							"xModulo": 1,
@@ -1332,7 +1332,7 @@
 							"tileMode": "Single",
 							"pivotX": 0,
 							"pivotY": 0,
-							"outOfBoundsValue": null,
+							"outOfBoundsValue": 0,
 							"invalidated": false,
 							"perlinActive": false,
 							"perlinSeed": 5901868,
@@ -1471,8 +1471,8 @@
 			}
 		}
 	], "enums": [{ "identifier": "GameRoomType", "uid": 92, "values": [
-		{ "id": "Entrance", "tileRect": null, "color": 12470831 },
 		{ "id": "Normal", "tileRect": null, "color": 14120515 },
+		{ "id": "Entrance", "tileRect": null, "color": 12470831 },
 		{ "id": "Exit", "tileRect": null, "color": 15389866 },
 		{ "id": "Treasure", "tileRect": null, "color": 14984818 },
 		{ "id": "Shop", "tileRect": null, "color": 7552569 },
@@ -1508,7 +1508,7 @@
 			"acceptFileTypes": null,
 			"defaultOverride": {
 				"id": "V_String",
-				"params": ["Entrance"]
+				"params": ["Normal"]
 			},
 			"textLanguageMode": null,
 			"symmetricalRef": false,

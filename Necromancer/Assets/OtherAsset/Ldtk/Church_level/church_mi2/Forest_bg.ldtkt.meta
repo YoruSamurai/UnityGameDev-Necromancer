@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: 78cf3221cc7f6ac4a9935a253531a662
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 32
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Forest_bg_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 128
+      width: 32
+      height: 32
+    spriteID: b5f3369198dc3b94697bbb4d126ec9b0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 134bc5f343f8e2646953b8ad343b8e94
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 128
+      width: 32
+      height: 32
+    spriteID: e5481c5e99e99f043b94c3892444e573
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 6ac0fb4e8b8624b409fef324a33b071b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 4608c4fffcb481840bc9f437a3b2c06e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 128
+      width: 32
+      height: 32
+    spriteID: b4b578fb692f74c45a74de3e8ebdc413
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 128
+      width: 32
+      height: 32
+    spriteID: e74727a6556fe0e418683a9e9d11559c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 1cb289143be7a4b4597ab408c37ef759
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 51e5847bdf60b9a47ad14cde072542ef
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 541cd2e7a337e9e4daf63223e0aa0893
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 10ff5292a531e294f81f72a23e88bb10
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 64b46b65c65cc4e4d9fb67f83aab1d1d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 8d6e5404a03c0674ba81f8d0507a753c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 798af3bf0fe228d48b1ca2bbca5da93f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 128
+      width: 28
+      height: 32
+    spriteID: 345f2e0e368948e4e94b6f70b20deee3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 74fbd99420becb94b949a0654c2b32ee
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 12e04417af6a82e49b5e5f1743ccf39f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 5a31924b8fe872b4481a429d26fcb02e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 8ba79d95a346bd140852c0a3c3b8c4a6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 96
+      width: 32
+      height: 32
+    spriteID: bba31701526b8614a9501687db697a90
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 96
+      width: 32
+      height: 32
+    spriteID: b5cc1809bd06442479a50a72c1e79703
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 79f95ef1c49fa51489100e43ac4ea107
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 7212a3b618f859c45a7995b731bc8daf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 18f290f9ef1313940a5a5db62009086c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 96
+      width: 32
+      height: 32
+    spriteID: d0790f30188d8134a9648fcc376779f5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 96
+      width: 32
+      height: 32
+    spriteID: caf04b12ccf77754b857d31feeabd879
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 96
+      width: 32
+      height: 32
+    spriteID: f89e62102d9621649bbb74f9bc1db72d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 8af5943141804944ca0c1ff257f56803
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 96
+      width: 32
+      height: 32
+    spriteID: cb6db00cd1a141f41a38d7617a9c7981
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 96
+      width: 28
+      height: 32
+    spriteID: f619cac87f8343a4894a801112f1a1b7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 076981a4b9df1474a98b5fd9a9a5e5ae
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 64
+      width: 32
+      height: 32
+    spriteID: f5984a5dece02c54fb02f7d3d2da7b97
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 9576d2c60f2231b4ea611bff2460640f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 4b35077b7328d374aa9b51045da2fc43
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 463d6ad7ccbad8b46aeb3867b3a104d4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 64
+      width: 32
+      height: 32
+    spriteID: cd38b65712e095f4aba8498894f0235e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 10a3cf9a96e9a3a4a8410a38e5084f4f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 64
+      width: 32
+      height: 32
+    spriteID: f88c22a13f056f24bb4a2beb1bc65785
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 5781ad3d9cb434c4ca2786a1e730f621
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 03d6f31ef2f8ecc4fb29575f14ccf316
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 913de8a23298a1f48a158182ae5d764e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 634e554ce7b7d8c4ab85ffdd9354b574
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 18a85d7ef3e35494bba5430f14065a7e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 64
+      width: 32
+      height: 32
+    spriteID: cbdcde9f280d9eb45b918d3485eed281
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 64
+      width: 28
+      height: 32
+    spriteID: b964d0ac49b41b94a88030d6fd995c04
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 0f8d604238e9bc1408b8c6b7cfd5adb1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 32
+      height: 32
+    spriteID: f96b434ad29ac7c4884560a07f1ae115
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 0dec71234b969054d9abf509129f86b1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 04340a312a7aaba4c85d46336b354edd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 84c19e3e8c7fda144a925a30707e3eba
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_50
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 32
+      width: 32
+      height: 32
+    spriteID: bae6ed13397062d43bf28435e1088639
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_51
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 32
+      width: 32
+      height: 32
+    spriteID: cb40753f801ae9640bea89179aed191b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_52
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 32
+      width: 32
+      height: 32
+    spriteID: f8df76b75d07a04428ead9799a2bfbab
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_53
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 32
+      width: 32
+      height: 32
+    spriteID: d67a9b442628705478eb4f99ad190eea
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_54
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 7e0bfd27488065349afa70d0e16ce846
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_55
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 32
+      width: 32
+      height: 32
+    spriteID: bc296986442f9174db9c1f84f5ddaa2d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_56
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 32
+      width: 32
+      height: 32
+    spriteID: d665d1cee26f3c04e94f9b0ff770902d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_57
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 8db12bd8220658446b528b75e7a89f37
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_58
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 32
+      width: 32
+      height: 32
+    spriteID: b6afa950d46794541a53134637b30751
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_59
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 32
+      width: 28
+      height: 32
+    spriteID: ec6e2768a3321be44bb4e3c630148478
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_60
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 32
+      height: 32
+    spriteID: b9fb9c1e0689dc5438785b7cea865767
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_61
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 570782cbbc148e340b6479dc38b0364d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_62
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 58964e406e08b2c409849dca5e09c80f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_63
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 28c7248d4d30f5a46ba487da0a639000
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_64
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 64452a416dfab0341aa468ee1d1cdc75
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_65
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 696c3a45402785a4d8523a869884a14b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_66
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 151bed64229dfab45867d6bce78283f2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_67
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 0
+      width: 32
+      height: 32
+    spriteID: a3bc491b176d470468e7bdf6ead58dc6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_68
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 0
+      width: 32
+      height: 32
+    spriteID: de81df877f95de240adee49e56913e3c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_69
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 6b195a3beeb8a094a95d5bac0ca4cc9b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_70
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 0
+      width: 32
+      height: 32
+    spriteID: e9a0f827601bed24291977fe9a6b4cad
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_71
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 74e88eaf7ebf0734093a2c3682174ca0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_72
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 9ff19af7a7c65894dbdad2346fa58d46
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_73
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 992efa0d5ef05be4ea54fbfc0bf719a9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Forest_bg_74
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 0
+      width: 28
+      height: 32
+    spriteID: f055506f450f31c4ca20e7d733cfdf2f
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: 78cf3221cc7f6ac4a9935a253531a662, type: 3}

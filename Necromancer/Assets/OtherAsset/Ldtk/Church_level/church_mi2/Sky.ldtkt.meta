@@ -1,0 +1,4552 @@
+fileFormatVersion: 2
+guid: 051c627b139219842b615ec72addad9e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 32
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Sky_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 328
+      width: 32
+      height: 32
+    spriteID: b62addbf257a9e245aa230dcd346394e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 93038aed9c4278041b0bc096758e1916
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 577a85cc1c803fb4ba50aecc2ebb0450
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 1cb2eaadf0c3c3b428d97cb7097973de
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 328
+      width: 32
+      height: 32
+    spriteID: c5dc08b43379aad48b6933af34485f3d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 54c8f83fbb9c9194587e5fe1c5fc5694
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 328
+      width: 32
+      height: 32
+    spriteID: f857e85774a60a246bb4153116ba7343
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 328
+      width: 32
+      height: 32
+    spriteID: e95e9612935206144bb29ef5e847b182
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 4bbfd3a2358144e42aeb6c6e081c64ba
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 284f77885a4c3604a92366bdea29cd15
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 328
+      width: 32
+      height: 32
+    spriteID: d79fe52b9dd1605408c13d628cc66da3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 328
+      width: 32
+      height: 32
+    spriteID: b233ff78be795be43b32198ff7e53635
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 328
+      width: 32
+      height: 32
+    spriteID: e9fa53bbc1f967a4182f4abb103902d4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 966d39e8e1457024e9b4fb480e8fa1d6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 14aba515f9942594db1e80ce1209609e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 328
+      width: 32
+      height: 32
+    spriteID: a45346e8ff72f414b94171ee657b182c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 9f2b7525ca800af42902572ab68a3542
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 328
+      width: 32
+      height: 32
+    spriteID: e6c2e7571345bf64586994bf91db7a66
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 328
+      width: 32
+      height: 32
+    spriteID: f79b1f8f098f05845ac169ff560288cb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 328
+      width: 32
+      height: 32
+    spriteID: b2842d337f590e14d8973e6ed22b0302
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 328
+      width: 32
+      height: 32
+    spriteID: bf107ac6c8f83404f88f69536b4419ec
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 328
+      width: 32
+      height: 32
+    spriteID: cf1ea634fe6385e42b8d070996016f2c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 77d755e8b7f499045a3c1278fd75a418
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 98802d0ecf5f2b84a952c45060af3ebd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 328
+      width: 32
+      height: 32
+    spriteID: cc5b6bbeb47c358468591ceee96c523b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 328
+      width: 32
+      height: 32
+    spriteID: 429345e8c6cfadc4b83e7a197f316439
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 328
+      width: 8
+      height: 32
+    spriteID: b5868094366dec54e84ae9015922aeab
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 9dc784f2fa81228499c241ec1d458fc0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 296
+      width: 32
+      height: 32
+    spriteID: f990649598270014a989b35a0a874118
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 63404433cbdeabe42aff3a84cfff273b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 07b3c4bdd2ee7674688d450a05f7de28
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 1a7b172b5d7b8e842b52516eda51f03a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 296
+      width: 32
+      height: 32
+    spriteID: ba8e4e84841424344b4752e058bf9785
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 296
+      width: 32
+      height: 32
+    spriteID: a3f5c59f0cabe9b408627c6c7981e3c6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 5c6a995f158f45149983388b1a2d1fab
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 296
+      width: 32
+      height: 32
+    spriteID: a23c82a4d3cdfae4f94cad5d4ef02971
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 17568b6842ea8da4e8f4a6d9cbf803c9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 1e21c63566df71f479ae79263803c3c1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 4c959cd4b2a89cb41a32d47b210d49a0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 296
+      width: 32
+      height: 32
+    spriteID: a6434c742b9079744a1099704cd04944
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 96c5ed969207a2d40b557697379691bc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 7be456e106a326148bc49256a0fbf8a0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 7ad05c3772a4a5d41aa3862453bc0a25
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 296
+      width: 32
+      height: 32
+    spriteID: f8f444f4958d49f4e984c0680c3f708d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 68dd7a289d4de2042aa93fe8095039c2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 2250994343abecc408eb6be2576c8edd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 16cea542e93fbee4dacb1db1b03f15ba
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 3e1ea8952e21f9c4d9f74333e056f3cc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 49439813491782a4ba25b2d464450c87
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 98430edffa8a8d64e83db569adb5ed17
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_50
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 9be4faffb6851504ab1fb541bd794f0f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_51
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 17071ea15f9bc544687f701db739cb96
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_52
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 296
+      width: 32
+      height: 32
+    spriteID: 2533b07ae1b550a478f401a873f5db5a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_53
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 296
+      width: 8
+      height: 32
+    spriteID: ef1eed87df665f44b8c2e912fbb8ca70
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_54
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 547513a3a61da7242a0ee1c188446d0f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_55
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 264
+      width: 32
+      height: 32
+    spriteID: c7e70dc7f0a58a14c8169209b741439f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_56
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 39d5c0f5ea1cc5148b22f28d7ac184eb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_57
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 264
+      width: 32
+      height: 32
+    spriteID: a7bcad50eda4e3947b3cba4aa6d8c72c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_58
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 2be0f1af838a5454fa76c61414d88352
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_59
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 2cc51db07830dc046ba30e6572001357
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_60
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 3d69aaee484850249b35644fe4a897ac
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_61
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 2e83c9e130eb5f04aa8c9266a65d0094
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_62
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 264
+      width: 32
+      height: 32
+    spriteID: d9d3cc97b71516245953e7d9c6ee3333
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_63
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 264
+      width: 32
+      height: 32
+    spriteID: b2e85365f4f5c794189f3effec6a6cc6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_64
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 1160931a5972aee4cb3728b07f9a983b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_65
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 2204db1d3f380d04ba256779fde1e77d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_66
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 13a6f15c1453de54ba9cb62ab1d4aef9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_67
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 80018c9f6f8929b4a80889453f33b492
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_68
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 9e985c1a913c3514ebc632bcc24fa3c7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_69
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 1fcc9000a9a106a42843dc30d5a71a8f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_70
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 264
+      width: 32
+      height: 32
+    spriteID: bd212767828c52f46b43b7d7f05af6e2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_71
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 2d6e4b23da3b2e045866b18a7587114a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_72
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 3b8dba5ac419251428297e254b62ae7a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_73
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 264
+      width: 32
+      height: 32
+    spriteID: eed2cc54870bc354ba224a8a6e123fc6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_74
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 0f781150ec3fc044ca62cfe3e1fc1f0d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_75
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 264
+      width: 32
+      height: 32
+    spriteID: bda547bd9d9ec6340a1f2ed88c2d53ee
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_76
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 264
+      width: 32
+      height: 32
+    spriteID: aea8f2627cd4cae499ec719eb2bdc596
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_77
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 264
+      width: 32
+      height: 32
+    spriteID: bfa59721f1e975d45b2d59f2d26cd66e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_78
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 3c40461dbb75f544b8d73d4e9a659b51
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_79
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 264
+      width: 32
+      height: 32
+    spriteID: 7f53a0f3e64474148b63c9b6f7daedf7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_80
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 264
+      width: 8
+      height: 32
+    spriteID: 2cee4d787c27eb644b545ad714ce0cd1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_81
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 232
+      width: 32
+      height: 32
+    spriteID: d8c12b43f410963429eb0b7b489eee72
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_82
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 232
+      width: 32
+      height: 32
+    spriteID: e494e42de605ad04fb403983e110678e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_83
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 374fed0ee1d98df40a5f790221a18e66
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_84
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 7ab4afff4b1e86345982ed4d28060f08
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_85
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 232
+      width: 32
+      height: 32
+    spriteID: a776ed4eaae99424ab49d7e8550885f3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_86
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 232
+      width: 32
+      height: 32
+    spriteID: f58036f328714c543b0faf7ecd1e81ef
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_87
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 1cc335d172db2f241ae93095d1381cce
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_88
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 232
+      width: 32
+      height: 32
+    spriteID: d6fae66b195780b45b8df2aab38e53f4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_89
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 24e7e8446e96a534ab0c40af6ee3ec46
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_90
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 56c0a593b73db57479ce8a85b4af5c41
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_91
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 232
+      width: 32
+      height: 32
+    spriteID: cced25160dc328b4d824ef43ca3dfc47
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_92
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 84c622967e09c7043a9f3980b76545cd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_93
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 232
+      width: 32
+      height: 32
+    spriteID: b0030c80f538a8049ac7dbbbc3d234b6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_94
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 130f585b2e4250240b64707370db0ccd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_95
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 232
+      width: 32
+      height: 32
+    spriteID: b55916e5f44ed9742abda5a418588b38
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_96
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 232
+      width: 32
+      height: 32
+    spriteID: a8352abd25454c841922b85a35cf963c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_97
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 0e43dbb4286113043b57699aa41b53a8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_98
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 232
+      width: 32
+      height: 32
+    spriteID: c7c4890cf4ce4fc4ea04963aeb0f0a1c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_99
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 232
+      width: 32
+      height: 32
+    spriteID: df2840207566f9a41a2fa51786bebc13
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_100
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 6ca78e72ecf6dc84eb9dd50b2b3ced81
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_101
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 232
+      width: 32
+      height: 32
+    spriteID: ee421dc05023b5249baa0b2d31458e50
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_102
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 232
+      width: 32
+      height: 32
+    spriteID: e8ac75a515a3f2d4385bd2b4a3f52700
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_103
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 7d86a9688f664204693e49f7d170961a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_104
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 584c53747e71f7841a4b0e43508df6d3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_105
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 5f48a25e1801dc44c8a5af09b38b51e4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_106
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 232
+      width: 32
+      height: 32
+    spriteID: 28401126699b2df4c81030f8dd7d1e7e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_107
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 232
+      width: 8
+      height: 32
+    spriteID: 34cbb9a6f8cccb3478c02f99de7a884b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_108
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 200
+      width: 32
+      height: 32
+    spriteID: d0bb87d9739a6724eac8632179fa48ae
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_109
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 200
+      width: 32
+      height: 32
+    spriteID: b5f63764d23b791479c9b8c3656da5fa
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_110
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 3d4a4fd02f385cb47b8a377641727c00
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_111
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 5b6def764bd97c244aa96f0028183820
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_112
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 200
+      width: 32
+      height: 32
+    spriteID: c5462a7f8586be040870e3c608bb233e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_113
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 200
+      width: 32
+      height: 32
+    spriteID: cb660c892f342404787cdb25996323b9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_114
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 200
+      width: 32
+      height: 32
+    spriteID: ee55f621ed6b48d4499f080349dcc411
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_115
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 56f3fa5738b17844aa5a6981ffe943fd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_116
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 3a0045d61d74f3b4d88b2fb9ad088cb3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_117
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 15aefcba6a92f624399cdc058e0503d9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_118
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 383852c0eea49e649a3c5c4178256fd2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_119
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 200
+      width: 32
+      height: 32
+    spriteID: b6dd8ed759715da47968b5887eec7039
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_120
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 200
+      width: 32
+      height: 32
+    spriteID: a113ae7668e1f6b4f937f73c44ecbb9c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_121
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 200
+      width: 32
+      height: 32
+    spriteID: b5e354f887a840c4785c97e05e77847e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_122
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 0753ee3c1a8f9c149849a85a54a85e34
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_123
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 41b9a7f66b614f04285675a909a5d5c5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_124
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 0e19204802ab18f4baf764158f40a7d9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_125
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 200
+      width: 32
+      height: 32
+    spriteID: aba6b94eed6a52e47bc26dd79476a80b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_126
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 200
+      width: 32
+      height: 32
+    spriteID: b8872d713dc2b2945808c9c5e0317291
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_127
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 200
+      width: 32
+      height: 32
+    spriteID: a6a5ee12e4ca5d54988eca202bc651bd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_128
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 200
+      width: 32
+      height: 32
+    spriteID: d5cf135094b0e5045a90bbfca38ce7e8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_129
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 92bcc58244999a540bd699e60f0b076a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_130
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 470f377b4166b5f408ca66f933695082
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_131
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 200
+      width: 32
+      height: 32
+    spriteID: d9a3490cfd3d0ef43a5875c03ef5c1c1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_132
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 918dbfd6f53aa4547ab393cfb2a69af3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_133
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 200
+      width: 32
+      height: 32
+    spriteID: 8a53cb953a5d5ad4e8364d86fa666066
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_134
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 200
+      width: 8
+      height: 32
+    spriteID: 142cb7f184d8ac1429d847da6d15f608
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_135
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 9a4545c777537fb48bee62fb692289a4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_136
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 499e70d9f6e8426409d75a1ccf6a667b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_137
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 34b71154279b9504a90e0186e1f5d6dc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_138
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 119c738651edcaa4d8456be7045b661f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_139
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 168
+      width: 32
+      height: 32
+    spriteID: a23581b82f7b4384baaa8c5e7b5dda0c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_140
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 168
+      width: 32
+      height: 32
+    spriteID: d959cb00ad01bff4ea8e60708ab72d96
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_141
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 3b779de392779184fbc66956163422b9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_142
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 8060817b58e95ff4fab67606bb207d90
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_143
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 71907f2dd7384e740b4f6c2878754a2a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_144
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 54847fafa2addb5408dde0ceb694b63d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_145
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 168
+      width: 32
+      height: 32
+    spriteID: e523f02509a85f645bdebd48166fd9d1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_146
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 0fbcfeed550811c478df0084a82ffbd9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_147
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 02b5afbc996c4fc489b4f6193734c012
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_148
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 168
+      width: 32
+      height: 32
+    spriteID: e606dd6953d86f74c9e8593c1bd82724
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_149
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 168
+      width: 32
+      height: 32
+    spriteID: d28784418575ebf4482babf17514eae4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_150
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 168
+      width: 32
+      height: 32
+    spriteID: c05077f3055fc084eb49721b8d43ac2c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_151
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 168
+      width: 32
+      height: 32
+    spriteID: a92a6f91ecd6fa74294240fbc6052f61
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_152
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 168
+      width: 32
+      height: 32
+    spriteID: ff699f5c482064f499942674b41176a6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_153
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 168
+      width: 32
+      height: 32
+    spriteID: b7e3ea8cc3b4a0d489196981d52c323f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_154
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 686b2198a9209684c85d5e06597e26f7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_155
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 9552b17fc1049724a8200935093c82a1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_156
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 22e8c7a24493da5488420a7c4fe627f7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_157
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 7b518289946339143b5edc8eb14cc2cc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_158
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 168
+      width: 32
+      height: 32
+    spriteID: de486fc5ce9f9df40bf7ca8a4a2df180
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_159
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 30cb18f8a01bbe347851083c6556ff60
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_160
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 168
+      width: 32
+      height: 32
+    spriteID: 8de841c0e76b20549aec7f9caef17524
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_161
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 168
+      width: 8
+      height: 32
+    spriteID: 7e601e2f3103d9a499700152cbed183f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_162
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 136
+      width: 32
+      height: 32
+    spriteID: c86fd618f458dc44c96c8f039076220a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_163
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 136
+      width: 32
+      height: 32
+    spriteID: bf5934b284967094f93d46b01bde3624
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_164
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 86cb90339292d9f4b9b784b82165d823
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_165
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 136
+      width: 32
+      height: 32
+    spriteID: c7677382c21b71847b95666e88a8b915
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_166
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 136
+      width: 32
+      height: 32
+    spriteID: d70dee25a109b7b4c990da1fed3c7bd0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_167
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 04f0f8e6a9fb890418f2d578773f28c6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_168
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 94c01f7249fe8c041a9f82c30b70e912
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_169
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 5eab96cc140e2fc46bf62e2f7b227994
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_170
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 5d9e6c8d748fdba4ea243a6ba80b07f7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_171
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 8224902e75034ab408acffa22ed483cd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_172
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 0e555a2efcd4d6c4f9f7df97fb4a1398
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_173
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 136
+      width: 32
+      height: 32
+    spriteID: a864870ac580eba4f9c08ca2dd18d498
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_174
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 136
+      width: 32
+      height: 32
+    spriteID: beb05c73d3bdbb84893f0520bb7e6007
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_175
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 4b419676d28e2064893898561a78c789
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_176
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 136
+      width: 32
+      height: 32
+    spriteID: a6fe8284a3c97134692c090ec13fec58
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_177
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 27e11a55a1b41404e82b6b74b55281bb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_178
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 136
+      width: 32
+      height: 32
+    spriteID: cb291f730bce012448a7d4594023987f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_179
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 3f210e71032bb8242860028ddf2c6934
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_180
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 5e64f0ec5fa5b9841be779974e2ad334
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_181
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 136
+      width: 32
+      height: 32
+    spriteID: f33dbdc1a8c52254c85f00b30499aa7e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_182
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 60ae44c562fb79940803c53de12b1c62
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_183
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 1e23c63d472ed7e47807415809698b0c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_184
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 136
+      width: 32
+      height: 32
+    spriteID: cff2d2902fd1b504abdff002770aad60
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_185
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 7327fab8c66186e4aa522590ffcc185c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_186
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 460f1fad80db9b74f9d7f98cae84add4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_187
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 136
+      width: 32
+      height: 32
+    spriteID: 5a5c513661968564589d223758f77d8d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_188
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 136
+      width: 8
+      height: 32
+    spriteID: ebffc4f9a7309524cbabf71a5a9cba20
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_189
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 2071a4a7118cf5844b7d06224186474e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_190
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 974e90912693d6549b4610d6a90395ef
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_191
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 5d5b44a595d3e804c98000bbd51a61a4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_192
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 43a28974cabc8ed4bbe4d3c345964be3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_193
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 16fcacc9f039dae44b21e8f730e710de
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_194
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 104
+      width: 32
+      height: 32
+    spriteID: ae13d02ae8555c54e83141af87b9db08
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_195
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 104
+      width: 32
+      height: 32
+    spriteID: c92102586914f4f4593913a8ae42fa8e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_196
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 104
+      width: 32
+      height: 32
+    spriteID: ccc7a7878be00474785ee7b4531f5583
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_197
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 104
+      width: 32
+      height: 32
+    spriteID: f543576ff28847a4e8a3d271f525f1e2
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_198
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 384fad8e2454c9b499d32d903736e154
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_199
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 18829e5a13d26d74882f3b8b417c047d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_200
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 1454691a098c9a74c905f6d26d9a5924
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_201
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 08f85ceb4899da94f87bea95fd9e894d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_202
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 0e381737855432446b214f8f9ece7a73
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_203
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 383ef34dbcdce914a8de32978bad7b7b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_204
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 104
+      width: 32
+      height: 32
+    spriteID: e7dfca1f6c5c20744a0e3eea9aa98b9b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_205
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 104
+      width: 32
+      height: 32
+    spriteID: d8314048a11739e478f45d5a50db8f69
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_206
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 104
+      width: 32
+      height: 32
+    spriteID: c9b8f9c148c37b14f9d19daeec1419e1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_207
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 104
+      width: 32
+      height: 32
+    spriteID: fa77825602f92a8448da6177c7d6ccce
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_208
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 74650ba256142e646aee63b749c7bd07
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_209
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 104
+      width: 32
+      height: 32
+    spriteID: d99e5c4805350204f94554b2beaa3235
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_210
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 0a27af43b89a8b34bab3b4d61aed011a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_211
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 104
+      width: 32
+      height: 32
+    spriteID: dd88b0e132528fa4f96cb47956f6a2a0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_212
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 104
+      width: 32
+      height: 32
+    spriteID: b36c102abd6cb824a82bba80686f0ba6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_213
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 104
+      width: 32
+      height: 32
+    spriteID: ad4832a8b8f9c0c48a3ece3d6234c902
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_214
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 104
+      width: 32
+      height: 32
+    spriteID: 4ce6013ae4f9ec24ebd727ed357c96c1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_215
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 104
+      width: 8
+      height: 32
+    spriteID: d8ea3551b27e1d24189441ba023fc3f7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_216
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 86a0b33f4bc3dca48be65f87aa840f20
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_217
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 4bce881b74188da4c92564651279c8d5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_218
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 739310602e50dfc43917a5c0fc7da291
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_219
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 72
+      width: 32
+      height: 32
+    spriteID: c0d73117632b11643b272c780048739b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_220
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 2d42086b87167c34d9648187ab3e37af
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_221
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 8294a0051a5becc47a75489b707cc9e4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_222
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 23c50925d63d04743aa1770ef3140ddf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_223
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 72
+      width: 32
+      height: 32
+    spriteID: ebb8df84c33873c41834b89ef1098532
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_224
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 2ed1a8dcfaf9f1440a869d81b11c28ac
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_225
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 338823444a3e4cf498fe23fbf23dfd88
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_226
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 72
+      width: 32
+      height: 32
+    spriteID: dc28b563a141ec146acce2cc64c0ec9f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_227
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 710f2ad87e473c344b891a3d7a6fe0f9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_228
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 44eabe89ff26cac45b6d8464cd4b0371
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_229
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 444d51e6919acb548be69fa762b4f83e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_230
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 72
+      width: 32
+      height: 32
+    spriteID: a551fb90aaeff5a439f9acf09e79ccca
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_231
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 5be8a9d7df812c740ad9245ddc52fdca
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_232
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 72
+      width: 32
+      height: 32
+    spriteID: c93ce3d0a568ab841923dc39bfb2d676
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_233
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 72
+      width: 32
+      height: 32
+    spriteID: f3e8e9d2a84a7f142a508d264ecb0681
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_234
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 72
+      width: 32
+      height: 32
+    spriteID: e42c20f2e097edf43b13b1a46173e184
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_235
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 1ff52057f1c7b3d43a0ae83460ee7518
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_236
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 72
+      width: 32
+      height: 32
+    spriteID: bfc33dfe3a7860d4abf33d6fb6f70f2c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_237
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 2592277f3fe5b134eaf7bd3fbd849911
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_238
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 89d55d51ae736ab4da5c1872d358bf2f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_239
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 72
+      width: 32
+      height: 32
+    spriteID: ee66c57a9f2543342a2cc1b77bfacf3e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_240
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 549a911c23a78c84f9416f535380692e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_241
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 72
+      width: 32
+      height: 32
+    spriteID: 13fe3b51548409a4c8b276d3953b4b0c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_242
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 72
+      width: 8
+      height: 32
+    spriteID: e54ad00f82712db49aac5cbdf46491ba
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_243
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 40
+      width: 32
+      height: 32
+    spriteID: fffea7111eb772f4a9b758e32b963ec7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_244
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 4856700a88653d94fbc92c4a8ae50e67
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_245
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 40
+      width: 32
+      height: 32
+    spriteID: c4fb24f6af3bfd04c810f00186888f66
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_246
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 9fb4abf4aa7b98b4bb501bda1e1cd41c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_247
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 40
+      width: 32
+      height: 32
+    spriteID: c07fcd9c84c37bf4cadcd5d3daf98868
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_248
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 40
+      width: 32
+      height: 32
+    spriteID: ee898f971d0b21f4ea215df01daa949b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_249
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 59f81b33c34571b4b806a30767520b71
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_250
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 40
+      width: 32
+      height: 32
+    spriteID: f29fb2761c056994aacd45f215f4837f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_251
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 2ce28d72ef100da42ab48076788a4c94
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_252
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 3fdfe8cd9e567f64fb30c708bd66d7f5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_253
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 5bb21c6a159eb9847b9dde94c3d63390
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_254
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 40
+      width: 32
+      height: 32
+    spriteID: dfad17facc7ec9f409fdde4696bee4b9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_255
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 64218c966d2a3d04b978c181cf2fb9b3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_256
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 875a6856642dabb4a9efc1102e18c8ce
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_257
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 27c3a3b3b4d6a804b8e65c503e6a95c7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_258
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 5ac97575b4ee36847afe185384a05f65
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_259
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 01f8e13b6f8d91f4b9bcf60884fc4423
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_260
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 40
+      width: 32
+      height: 32
+    spriteID: f29cb82fbd3164049b5358189ffbb611
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_261
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 6b2452731bd2ede4a8a837219e3733f4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_262
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 40
+      width: 32
+      height: 32
+    spriteID: d9d43711d0729e948aa6ec9f7f19f896
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_263
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 3c2c7354dd8ffee4a85f3e53e4c9f833
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_264
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 59bbe0bf4498d4142996c8a35bfa4f1c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_265
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 6cacabefb1d76094f8a3dbd745577722
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_266
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 40
+      width: 32
+      height: 32
+    spriteID: cd307a7988588384b85a258861b728d8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_267
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 40
+      width: 32
+      height: 32
+    spriteID: a6ac1bc5510348249b1c8d9ce525debe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_268
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 40
+      width: 32
+      height: 32
+    spriteID: 9d0a901b55ad9304ea005c4dec077813
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_269
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 40
+      width: 8
+      height: 32
+    spriteID: 5d3e96e5c161b024eb4fdb76fd8a63c3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_270
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 59e715c7504f01f49a476f768be8faf9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_271
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 720de9afe91c5074ab5e803826f8645d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_272
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 96f6f39083b7f0440a9e4cf120ee2a83
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_273
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 824f095286008974a9e22ea15ff24b7c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_274
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 8
+      width: 32
+      height: 32
+    spriteID: f67c48a0b0a2541448d0738bbde6063a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_275
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 42195d213a004d44d950ce69f172154b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_276
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 8
+      width: 32
+      height: 32
+    spriteID: c1020eda152f8ca4fbaf7af1d9918e50
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_277
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 01a7b4642064b6342934ba1b9ecd85d1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_278
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 7d7e9141abcf33948a62698481c151cf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_279
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 8
+      width: 32
+      height: 32
+    spriteID: ca28f165c0acefd45bb20cae65f77dce
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_280
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 8
+      width: 32
+      height: 32
+    spriteID: b2d0cc8e16123b34ca8a8cfddd82da5e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_281
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 7e2efea6a28fac74da8c7a3bb8b41f7e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_282
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 8
+      width: 32
+      height: 32
+    spriteID: bc77e313deb517d4a8d12208e177c1ec
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_283
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 8
+      width: 32
+      height: 32
+    spriteID: e5ebeecf4e9ce324bbff0edd86306ee4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_284
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 98437decdcc9994438d78067f18c9da7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_285
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 36a42c30a799b4948a0fade3b053cf9d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_286
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 14bcce4da02dac14482b04fbb41c152a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_287
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 884a5718becd1824d8761ebafcf10405
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_288
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 1b1888d4b6de3cf4c9349e477db3ae0c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_289
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 10edc3e55b21bdf43846531a570d3c8a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_290
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 8
+      width: 32
+      height: 32
+    spriteID: d4d9c62766993004fab3d81922c69dd0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_291
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 8
+      width: 32
+      height: 32
+    spriteID: cff4d1b18bebbeb44b1535ca86a83409
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_292
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 8
+      width: 32
+      height: 32
+    spriteID: a25902fc947a0634e938ffe43f47fcd6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_293
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 39c6783a4c66f42439566f7c1cdf9e2a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_294
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 8
+      width: 32
+      height: 32
+    spriteID: ac63cb477ba8c5946adfdcb267c055fd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_295
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 8
+      width: 32
+      height: 32
+    spriteID: 07b4bec2c2f60cf45a3482b51b47c4fe
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_296
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 8
+      width: 8
+      height: 32
+    spriteID: 8a2045826e9fc994d89dfcb53d57b1bf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_297
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 32
+      height: 8
+    spriteID: a153e448b3490ae40af8623c36d167f1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_298
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 4c4a6bac3533dbe4e8378eb8ee221dbc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_299
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 38cbfbffa9e97574997e4bc1d803d733
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_300
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 3343e2251061d3740a3845b4cd4a0d41
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_301
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 0a4c9a611e125bd4490d994053f9b364
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_302
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 9e51f389f2f7ea04f9c831a5a4bcae3e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_303
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 32
+      height: 8
+    spriteID: dfcef30380b3a7f4082304340bfeeb0d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_304
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 0
+      width: 32
+      height: 8
+    spriteID: a57c186e94234d642903772a52796a00
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_305
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 2d91452ab16392045ad7ad8d6b3c5bdc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_306
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 3649115be9dd225499d7a11ebeef11ab
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_307
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 0
+      width: 32
+      height: 8
+    spriteID: f42e5c80953612c4ab69d7fe248a78de
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_308
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 0
+      width: 32
+      height: 8
+    spriteID: dd5ff1822dbc0344381314d60d32bada
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_309
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 07bbc2cad13fc1943bdb11ade04785b1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_310
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 0
+      width: 32
+      height: 8
+    spriteID: ef065b35473611c41b99513e04523d53
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_311
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 0
+      width: 32
+      height: 8
+    spriteID: b98e315d7bea4e04bb7a632b34241c59
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_312
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 22bfbae631406744f9e3207c95ee1f8f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_313
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 6279d82ac1f06b243b893567c4f68e45
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_314
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 0
+      width: 32
+      height: 8
+    spriteID: a9e3454f5fc7eca4ba0a6a6789798a55
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_315
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 576
+      y: 0
+      width: 32
+      height: 8
+    spriteID: c1c915ef2772b44418bc6a401f581e3d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_316
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 608
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 0e8d6e1755b851e4086748c6daaf83ef
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_317
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 489a556d86afdd547919d2694ff2ae8a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_318
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 1b43c1508786d4e4a87b8f16b3a5d7d4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_319
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 704
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 51b72a21f3b00684ca529cca4454a270
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_320
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 0
+      width: 32
+      height: 8
+    spriteID: b6038a342718d604e8ea01f0fbe345f9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_321
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 768
+      y: 0
+      width: 32
+      height: 8
+    spriteID: c7d3dff152900e84d85ee223e9ded3da
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_322
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 0
+      width: 32
+      height: 8
+    spriteID: 63d6c10009df42c4ea451acd2ba7a7d7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Sky_323
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 832
+      y: 0
+      width: 8
+      height: 8
+    spriteID: 51f512c7158b38d479648962a8c24ad9
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: 051c627b139219842b615ec72addad9e, type: 3}

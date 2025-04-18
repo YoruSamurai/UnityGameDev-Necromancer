@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 6,
+    "__cWid": 6,
+    "cachedPixelData": {
+      "opaqueTiles": "000000000000000000000000000000000000",
+      "averageColors": "6a44c644c5432222000000000000e754e754731100000000000000000000a51100000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "ITEMS",
+    "padding": 0,
+    "pxHei": 192,
+    "pxWid": 192,
+    "relPath": "组件大全.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 66
+  }
+}

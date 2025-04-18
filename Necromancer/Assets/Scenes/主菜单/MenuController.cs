@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using UnityEngine.Localization.Settings;
 
 public class MenuController : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class MenuController : MonoBehaviour
     [Header("设置面板")]
     [SerializeField] private GameObject graphicsSetting;
     [SerializeField] private GameObject volumeSetting;
-    [SerializeField] private GameObject gameplaySetting;
+    [SerializeField] private GameObject languageSetting;
 
     [Header("图形面板")]
     [SerializeField] private Slider brightnessSlider = null;
@@ -41,6 +42,9 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TMP_Text volumeValue;
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private float defaultVolume = .5f;
+
+    [Header("语言设置")]
+    [SerializeField] private LanguageEnum language;
 
     public void Start()
     {
@@ -111,6 +115,13 @@ public class MenuController : MonoBehaviour
         volumeSetting.SetActive(true);
     }
 
+    public void OnclickLanguageSettingBtn()
+    {
+        optionMenuPanel.SetActive(false);
+        languageSetting.SetActive(true);
+        language = GlobalSettingManager.Instance.globalLanguage;
+    }
+
     #region 按钮开关 没什么用
 
     public void GraphicsSettingBackBtn()
@@ -121,6 +132,12 @@ public class MenuController : MonoBehaviour
     public void VolumeSettingBackBtn()
     {
         volumeSetting.SetActive(false);
+        optionMenuPanel.SetActive(true);
+    }
+
+    public void LanguageSettingBackBtn()
+    {
+        languageSetting.SetActive(false);
         optionMenuPanel.SetActive(true);
     }
 
@@ -228,6 +245,38 @@ public class MenuController : MonoBehaviour
     }
 
     #endregion
+
+
+
+    #region 语言设置
+    public void SetLanguage(int languageIndex)
+    {
+        GlobalSettingManager.Instance.SetLanguage(languageIndex);
+        switch (languageIndex)
+        {
+            case 0:
+                language = LanguageEnum.SimplifiedChinese;
+                break;
+            case 1:
+                language = LanguageEnum.TraditionalChinese;
+                break;
+            case 2:
+                language = LanguageEnum.English;
+                break;
+            case 3:
+                language = LanguageEnum.Japanese;
+                break;
+        }
+    }
+
+    public void LanguageApply()
+    {
+        GlobalSettingManager.Instance.globalLanguage = language;
+        SaveManager.Instance.SaveSettingData();
+    }
+
+    #endregion
+
 
     public void ResetButton(string MenuType)
     {

@@ -35,5 +35,5 @@ MonoBehaviour:
     roomType: 1
     connectionRoom: 08000000
   - roomID: 8
-    roomType: 1
+    roomType: 2
     connectionRoom: 

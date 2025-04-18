@@ -1,0 +1,51 @@
+{
+    "PixelsPerUnit": 32,
+    "CustomLevelPrefab": {
+        "instanceID": 0
+    },
+    "IntGridValueColorsVisible": false,
+    "UseCompositeCollider": true,
+    "GeometryType": 0,
+    "CreateBackgroundColor": false,
+    "CreateLevelBoundsTrigger": false,
+    "UseParallax": true,
+    "IntGridValues": [
+        {
+            "_key": "Door_1",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "Wall_1",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "OneWayPlatform_1",
+            "_asset": {
+                "fileID": 11400000,
+                "guid": "c2ab11a5637afda48b596b8ef943d365",
+                "type": 2
+            }
+        },
+        {
+            "_key": "Ladder_1",
+            "_asset": {
+                "fileID": 11400000,
+                "guid": "7ca9f7d47281884488e100d5c8cc099b",
+                "type": 2
+            }
+        },
+        {
+            "_key": "Ground_1",
+            "_asset": {
+                "fileID": 11400000,
+                "guid": "254d34b40fc9c004f991f4ea9a6b3186",
+                "type": 2
+            }
+        }
+    ],
+    "Entities": []
+}

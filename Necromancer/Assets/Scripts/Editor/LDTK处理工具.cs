@@ -28,7 +28,7 @@ public class LDTK处理工具 : EditorWindow
 
     private void ReimportLevels()
     {
-        string levelsFolder = $"Assets/OtherAsset/Ldtk/{i}/test - 副本/";
+        string levelsFolder = $"Assets/OtherAsset/Ldtk/Church_level/church_mi2/";
         if (!Directory.Exists(levelsFolder))
         {
             Debug.LogError($"文件夹不存在: {levelsFolder}");
@@ -84,12 +84,12 @@ public class LDTK处理工具 : EditorWindow
             }
 
             // 在相同目录创建 LdtkLevelSoList
-            CreateLdtkLevelSoList(allLevelSOs, $"Assets/OtherAsset/Ldtk/{i}/SO/");
+            CreateLdtkLevelSoList(allLevelSOs, $"Assets/OtherAsset/Ldtk/Church_level/church_mi2/SO/");
         };
     }
     private LdtkLevelSO CreateOrUpdateLevelSO(LDtkComponentLevel level, string levelName)
     {
-        string soFolder = $"Assets/OtherAsset/Ldtk/{i}/SO";
+        string soFolder = $"Assets/OtherAsset/Ldtk/Church_level/church_mi2/SO";
         if (!Directory.Exists(soFolder))
         {
             Directory.CreateDirectory(soFolder);

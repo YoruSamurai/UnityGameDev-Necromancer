@@ -29,7 +29,7 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
-        LoadSettingData();
+        //LoadSettingData();
     }
 
     private void Update()
@@ -107,7 +107,6 @@ public class SaveManager : MonoBehaviour
         try
         {
             settingData = dataService.LoadData<SettingData>("/GlobalSetting.json", false);
-
             foreach (var saveable in saveableSettingData)
             {
                 saveable.LoadData(settingData);
