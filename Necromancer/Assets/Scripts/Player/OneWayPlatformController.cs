@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static UnityEngine.Rendering.DebugUI;
 
 public class OneWayPlatformController : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class OneWayPlatformController : MonoBehaviour
                 {
 
                     Vector2 hitPoint = player.transform.position; // 碰撞点的世界坐标
+                    //hitPoint.x = Mathf.Round(hitPoint.x - 0.5f) + 0.5f;
                     Debug.Log($"碰撞发生位置（世界坐标）: {hitPoint }");
                     Vector3Int cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, 1f));
                     Debug.Log("cellpos" + cellPos);
@@ -41,7 +43,7 @@ public class OneWayPlatformController : MonoBehaviour
                     if (tile != null)
                     {
                         centerX = hitPoint.x;
-                        Debug.Log($"12313射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+                        Debug.Log($"1射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
                         player.stateMachine.ChangeState(player.oneWayState);
                         return;
                     }
@@ -57,7 +59,7 @@ public class OneWayPlatformController : MonoBehaviour
                     if (tile != null)
                     {
                         centerX = hitPoint.x+ 1f;
-                        Debug.Log($"12313射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+                        Debug.Log($"2射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
 
                         player.stateMachine.ChangeState(player.oneWayState);
                         return;
@@ -74,7 +76,57 @@ public class OneWayPlatformController : MonoBehaviour
                     if (tile != null)
                     {
                         centerX = hitPoint.x - 1f;
-                        Debug.Log($"12313射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+                        Debug.Log($"3射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+
+                        player.stateMachine.ChangeState(player.oneWayState);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("12313该位置没有 Tile");
+                    }
+
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, .5f));
+                    Debug.Log("cellpos" + cellPos);
+                    tile = tilemap.GetTile(cellPos);
+
+                    if (tile != null)
+                    {
+                        centerX = hitPoint.x;
+                        Debug.Log($"4射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+                        player.stateMachine.ChangeState(player.oneWayState);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("12313该位置没有 Tile");
+                    }
+
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(1, .5f));
+                    Debug.Log("cellpos" + cellPos);
+                    tile = tilemap.GetTile(cellPos);
+
+                    if (tile != null)
+                    {
+                        centerX = hitPoint.x + 1f;
+                        Debug.Log($"5射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+
+                        player.stateMachine.ChangeState(player.oneWayState);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("6该位置没有 Tile");
+                    }
+
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(-1, .5f));
+                    Debug.Log("cellpos" + cellPos);
+                    tile = tilemap.GetTile(cellPos);
+
+                    if (tile != null)
+                    {
+                        centerX = hitPoint.x - 1f;
+                        Debug.Log($"6射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
 
                         player.stateMachine.ChangeState(player.oneWayState);
                         return;
