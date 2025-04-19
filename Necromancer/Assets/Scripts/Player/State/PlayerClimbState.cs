@@ -59,32 +59,11 @@ public class PlayerClimbState : PlayerState
                 player.AddIgnoredPlatform(platform);
             }
         }
-        // 获取最近的梯子（假设梯子都有Ladder标签）
-        Collider2D ladder = Physics2D.OverlapCircle(
-            player.transform.position,
-            1f,
-            LayerMask.GetMask("Ladder")
-        );
-        if (ladder != null)
+
+        if (player.currentLadder.ladderBottomX != 0 && player.currentLadder.ladderTopX != 0 )
         {
-            // 获取梯子的范围
-            Bounds ladderBounds = ladder.bounds;
-            Debug.Log("FUCK" + ladder.bounds.min.x + " " + ladder.bounds.max.x);
-            Tilemap tilemap = ladder.GetComponent<Tilemap>();
-            if (tilemap != null)
-            {
-                float x = (ladder.bounds.min.x + ladder.bounds.max.x)/2 ;
-                currentLadder = ladder.transform; // 或者你直接存储 ladderCenterPos
-                ladderCenterX = x;
-                AdjustPositionToLadder();
-            }
-            else
-            {
-                currentLadder = ladder.transform;
-                Debug.Log($"Ladder {ladder.transform.position}");
-                ladderCenterX = currentLadder.position.x;
-                AdjustPositionToLadder();
-            }
+            ladderCenterX = (player.currentLadder.ladderBottomX + player.currentLadder.ladderTopX) / 2;
+            AdjustPositionToLadder();
         }
         
     }
@@ -163,7 +142,7 @@ public class PlayerClimbState : PlayerState
         RaycastHit2D groundHit = Physics2D.Raycast(
             player.groundCheck.transform.position - new Vector3(0, 1.5f),
             Vector2.down,
-            0.1f, // 射线长度，可以根据需要调整
+            0.5f, // 射线长度，可以根据需要调整
             combinedGroundLayers
         );
 

@@ -22,8 +22,8 @@ public class PlayerLedgeUpState : PlayerState
             // 获取当前玩家位置
             Vector2 startPosition = player.transform.position;
             Vector2 targetPosition = new Vector2(
-                startPosition.x + player.facingDir * 2f,
-                startPosition.y + 2f
+                startPosition.x + player.facingDir * 1.5f,
+                startPosition.y + 3f
             );
 
             // 使用DoTween平滑移动

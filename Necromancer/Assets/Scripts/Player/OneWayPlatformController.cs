@@ -6,6 +6,8 @@ public class OneWayPlatformController : MonoBehaviour
 {
     private Collider2D playerCollider;
 
+    public float centerX ;
+
     // 用于控制下落时忽略碰撞的持续时间
     public float dropDuration = 0.5f;
 
@@ -29,18 +31,53 @@ public class OneWayPlatformController : MonoBehaviour
                 Tilemap tilemap = platformCollider.GetComponentInParent<Tilemap>();
                 if (tilemap != null)
                 {
-                    // 1. 获取第一个碰撞接触点（世界坐标）
-                    ContactPoint2D contact = collision.contacts[0];
-                    Vector2 hitPoint = contact.point; // 碰撞点的世界坐标
+
+                    Vector2 hitPoint = player.transform.position; // 碰撞点的世界坐标
                     Debug.Log($"碰撞发生位置（世界坐标）: {hitPoint }");
-                    Vector3Int cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, 0.5f));
+                    Vector3Int cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, 1f));
                     Debug.Log("cellpos" + cellPos);
                     TileBase tile = tilemap.GetTile(cellPos);
                     
                     if (tile != null)
                     {
-                        Debug.Log($"12313射中 Tile: {tile.name}，坐标: {cellPos}");
+                        centerX = hitPoint.x;
+                        Debug.Log($"12313射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
                         player.stateMachine.ChangeState(player.oneWayState);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("12313该位置没有 Tile");
+                    }
+
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(1, 1f));
+                    Debug.Log("cellpos" + cellPos);
+                    tile = tilemap.GetTile(cellPos);
+
+                    if (tile != null)
+                    {
+                        centerX = hitPoint.x+ 1f;
+                        Debug.Log($"12313射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+
+                        player.stateMachine.ChangeState(player.oneWayState);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("12313该位置没有 Tile");
+                    }
+
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(-1, 1f));
+                    Debug.Log("cellpos" + cellPos);
+                    tile = tilemap.GetTile(cellPos);
+
+                    if (tile != null)
+                    {
+                        centerX = hitPoint.x - 1f;
+                        Debug.Log($"12313射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+
+                        player.stateMachine.ChangeState(player.oneWayState);
+                        return;
                     }
                     else
                     {

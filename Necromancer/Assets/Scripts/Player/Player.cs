@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     //攻击时候的僵直状态
     public bool isBusy {  get; private set; }
 
+    [Header("当前接触梯子")]
+    [SerializeField] public Ladder currentLadder = new Ladder();
+
     [Header("无敌，真是一个好东西")]
     [SerializeField] private bool _isInvincible = false;  // 改用字段
     public bool isInvincible { get => _isInvincible; set => _isInvincible = value; }
@@ -215,6 +218,9 @@ public class Player : MonoBehaviour
         {
             Debug.Log("梯子！！");
             isOnLadder = true;
+            // 1. 获取第一个碰撞接触点（世界坐标）
+            Vector2 contactPoint = collision.ClosestPoint(transform.position);
+            currentLadder = currentLadder.GetLadderInWorld(contactPoint, collision);
         }
         
     }
@@ -223,7 +229,16 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Ladder"))
         {
-            float ladderBottomY;
+            if(currentLadder.ladderTopX != 0 && currentLadder.ladderBottomX != 0)
+            {
+                if (transform.position.y > currentLadder.ladderTopY)
+                    currentLadderPosition = 1;
+                else if (transform.position.y - 3f < currentLadder.ladderBottomY)
+                    currentLadderPosition = -1;
+                else
+                    currentLadderPosition = 0;
+            }
+            /*float ladderBottomY;
             float ladderTopY;
             float ladderTopX;
             float ladderBottomX;
@@ -240,7 +255,7 @@ public class Player : MonoBehaviour
             else
                 currentLadderPosition = 0;
             
-            Debug.Log($"Ladder Bottom Y: {ladderBottomY}, Ladder Top Y: {ladderTopY} Ladder Top x {ladderTopX}: Ladder BottomX:{ladderBottomX}");
+            Debug.Log($"Ladder Bottom Y: {ladderBottomY}, Ladder Top Y: {ladderTopY} Ladder Top x {ladderTopX}: Ladder BottomX:{ladderBottomX}");*/
         }
     }
 
@@ -250,6 +265,7 @@ public class Player : MonoBehaviour
         {
             isOnLadder = false;
             currentLadderPosition = 0;
+            currentLadder.ClearLadder();
             //isClimbing = false;
             // 如果玩家正处于攀爬状态，则退出
             if (stateMachine.currentState is PlayerClimbState)
@@ -618,3 +634,6 @@ public class Player : MonoBehaviour
 
 
 }
+
+
+

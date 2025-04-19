@@ -52,9 +52,11 @@ public class PlayerOneWayState : PlayerState
         {
             // 获取当前玩家位置
             Vector2 startPosition = player.transform.position;
+            OneWayPlatformController oneWayPlatformController = player.gameObject.GetComponent<OneWayPlatformController>();
+            Debug.Log(oneWayPlatformController.centerX +"a jsfoiajosaf");
             Vector2 targetPosition = new Vector2(
-                startPosition.x + player.facingDir * .1f,
-                startPosition.y + 1f
+                oneWayPlatformController.centerX,
+                startPosition.y + 2f
             );
 
             // 使用DoTween平滑移动
