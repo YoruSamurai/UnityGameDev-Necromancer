@@ -9,6 +9,7 @@ using System.Linq;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using static Cinemachine.DocumentationSortingAttribute;
 using static LdtkTest;
 
@@ -28,6 +29,11 @@ public struct RoomGenerationResult
     }
 }
 
+public enum TilePostProcessType
+{
+    Church
+}
+
 public class RoomGraphGenerator : MonoBehaviour
 {
     //父节点 放地图
@@ -35,6 +41,9 @@ public class RoomGraphGenerator : MonoBehaviour
 
     //关卡的所有图块
     [SerializeField] private LdtkLevelSoList levelList;
+
+    //关卡后处理类型
+    [SerializeField] private TilePostProcessType postProcessType;
 
     //地图的节点图
     [SerializeField] private RoomGraph roomGraph;
@@ -184,7 +193,24 @@ public class RoomGraphGenerator : MonoBehaviour
         DateTime endTime = DateTime.Now;
         TimeSpan duration = endTime - startTime;
         Debug.Log($"GenerateLevelTest 执行时间: {duration.TotalMilliseconds} 毫秒");
+
+        PostProcessTile(TilePostProcessType.Church);
         yield break;
+    }
+
+    private IEnumerator PostProcessTile(TilePostProcessType postProcessType)
+    {
+        Debug.Log("开始后处理");
+        yield return null;
+        switch (postProcessType)
+        {
+            case TilePostProcessType.Church:
+                {
+
+                    break;
+                }
+        }
+
     }
 
     //解锁门 删除父节点和他所有子节点
