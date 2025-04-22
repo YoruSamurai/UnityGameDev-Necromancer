@@ -16,6 +16,9 @@ namespace LDtkUnity
         protected override void OnPostprocessProject(GameObject root)
         {
             // 获取所有.ldtkl文件路径
+            // 获取 root 对象的 asset 路径
+            string rootPath = AssetDatabase.GetAssetPath(root);
+            Debug.Log(root);
             string folderPath = $"Assets/OtherAsset/Ldtk/Church_level/{root.name}";
             string[] ldtklPaths = System.IO.Directory.GetFiles(folderPath, "*.ldtkl");
             List<LDtkComponentLevel> ldtkLevels = GetAllLdtkLevels(ldtklPaths);
@@ -52,7 +55,8 @@ namespace LDtkUnity
         protected override void OnPostprocessLevel(GameObject root, LdtkJson projectJson)
         {
             LDtkComponentLevel level = root.GetComponent<LDtkComponentLevel>();
-            
+            string rootPath = AssetDatabase.GetAssetPath(root);
+            Debug.Log(root);
             ProcessSortingLayer(level);
             
         }

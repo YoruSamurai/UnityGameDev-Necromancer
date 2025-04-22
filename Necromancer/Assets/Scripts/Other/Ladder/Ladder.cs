@@ -71,6 +71,15 @@ public class Ladder
         return ladder;
     }
 
+    public bool IsLadderExist()
+    {
+        if(ladderBottomX == 0 && ladderTopX == 0 && ladderBottomY == 0 && ladderTopY == 0)
+        {
+            return false;
+        }
+        return true;
+    }
+
     public void ClearLadder()
     {
         ladderTopY = 0;

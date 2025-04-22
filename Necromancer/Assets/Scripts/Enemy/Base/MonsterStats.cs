@@ -142,7 +142,7 @@ public class MonsterStats : MonoBehaviour
     {
         if(currentHealth > 0)
         {
-            yoruUtils.JumpNumber(dmg, this.gameObject);
+            Yoru.yoruUtils.JumpNumber(dmg, this.gameObject);
             enemy.anim.SetTrigger("Hit");
             enemy.OnHitted();
             currentHealth -= dmg;

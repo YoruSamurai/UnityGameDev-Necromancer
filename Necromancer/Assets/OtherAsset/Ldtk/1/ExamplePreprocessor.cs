@@ -18,7 +18,7 @@ namespace LDtkUnity
         protected override void OnPreprocessProject(LdtkJson projectJson, string projectName)
         {
             Debug.Log($"Pre process LDtk project: {projectName}");
-
+            
         }
     }
 }

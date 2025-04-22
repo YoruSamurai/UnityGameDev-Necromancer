@@ -60,7 +60,7 @@ public class PlayerClimbState : PlayerState
             }
         }
 
-        if (player.currentLadder.ladderBottomX != 0 && player.currentLadder.ladderTopX != 0 )
+        if (player.currentLadder.IsLadderExist())
         {
             ladderCenterX = (player.currentLadder.ladderBottomX + player.currentLadder.ladderTopX) / 2;
             AdjustPositionToLadder();

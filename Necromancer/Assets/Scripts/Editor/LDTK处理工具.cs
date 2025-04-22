@@ -22,13 +22,18 @@ public class LDTK处理工具 : EditorWindow
 
         if (GUILayout.Button("重新导入所有 LDtk Levels"))
         {
-            ReimportLevels();
+            ReimportLevels(i);
         }
     }
 
-    private void ReimportLevels()
+    private void ReimportLevels(int levelIndex)
     {
+
         string levelsFolder = $"Assets/OtherAsset/Ldtk/Church_level/church_mi2/";
+        if (i == 1)
+        {
+            levelsFolder = $"Assets/OtherAsset/Ldtk/Church_level/church_mi2/";
+        }
         if (!Directory.Exists(levelsFolder))
         {
             Debug.LogError($"文件夹不存在: {levelsFolder}");
@@ -75,7 +80,7 @@ public class LDTK处理工具 : EditorWindow
 
                 // 使用关卡 GameObject 的名字作为SO名称
                 string levelName = level.name;
-                LdtkLevelSO levelSO = CreateOrUpdateLevelSO(level, levelName);
+                LdtkLevelSO levelSO = CreateOrUpdateLevelSO(level, levelName,levelsFolder);
 
                 if (levelSO != null)
                 {
@@ -84,12 +89,12 @@ public class LDTK处理工具 : EditorWindow
             }
 
             // 在相同目录创建 LdtkLevelSoList
-            CreateLdtkLevelSoList(allLevelSOs, $"Assets/OtherAsset/Ldtk/Church_level/church_mi2/SO/");
+            CreateLdtkLevelSoList(allLevelSOs, $"{levelsFolder}SO/");
         };
     }
-    private LdtkLevelSO CreateOrUpdateLevelSO(LDtkComponentLevel level, string levelName)
+    private LdtkLevelSO CreateOrUpdateLevelSO(LDtkComponentLevel level, string levelName, string levelsFolder)
     {
-        string soFolder = $"Assets/OtherAsset/Ldtk/Church_level/church_mi2/SO";
+        string soFolder = $"{levelsFolder}SO";
         if (!Directory.Exists(soFolder))
         {
             Directory.CreateDirectory(soFolder);

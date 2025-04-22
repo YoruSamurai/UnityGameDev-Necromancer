@@ -8,6 +8,10 @@ using UnityEngine.Localization.Settings;
 
 public class MenuController : MonoBehaviour
 {
+    [Header("点击音效")]
+    [SerializeField] private SoundData soundFX;
+
+
     [Header("主菜单")]
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject optionMenuPanel;
@@ -79,7 +83,19 @@ public class MenuController : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.X))
+        {
+            SoundManager.Instance.CreateSound()
+            .WithSoundData(soundFX)
+            .WithPosition(gameObject.transform.position)
+            .WithRandomPitch()
+            .Play();
+        }
+    }
+
+
 
     public void OnclickGraphicsSettingBtn()
     {
@@ -101,6 +117,8 @@ public class MenuController : MonoBehaviour
                 break;
             }
         }
+
+        
 
         optionMenuPanel.SetActive(false);
         graphicsSetting.SetActive(true);

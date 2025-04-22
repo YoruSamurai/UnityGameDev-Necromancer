@@ -34,7 +34,7 @@ public class OneWayPlatformController : MonoBehaviour
                 {
 
                     Vector2 hitPoint = player.transform.position; // 碰撞点的世界坐标
-                    //hitPoint.x = Mathf.Round(hitPoint.x - 0.5f) + 0.5f;
+                    hitPoint.x = Mathf.Round(hitPoint.x - 0.5f) + 0.5f;
                     Debug.Log($"碰撞发生位置（世界坐标）: {hitPoint }");
                     Vector3Int cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, 1f));
                     Debug.Log("cellpos" + cellPos);

@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     [Header("当前接触梯子")]
     [SerializeField] public Ladder currentLadder = new Ladder();
 
+    [Header("玩家拖尾效果")]
+    [SerializeField] public GameObject dashTrail;
+
     [Header("无敌，真是一个好东西")]
     [SerializeField] private bool _isInvincible = false;  // 改用字段
     public bool isInvincible { get => _isInvincible; set => _isInvincible = value; }
@@ -229,7 +232,7 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Ladder"))
         {
-            if(currentLadder.ladderTopX != 0 && currentLadder.ladderBottomX != 0)
+            if(currentLadder.IsLadderExist())
             {
                 if (transform.position.y > currentLadder.ladderTopY)
                     currentLadderPosition = 1;
@@ -238,24 +241,6 @@ public class Player : MonoBehaviour
                 else
                     currentLadderPosition = 0;
             }
-            /*float ladderBottomY;
-            float ladderTopY;
-            float ladderTopX;
-            float ladderBottomX;
-            // 获取梯子的底部和顶部 y 坐标
-            ladderBottomY = collision.bounds.min.y; // 底部 y 坐标
-            ladderTopY = collision.bounds.max.y;    // 顶部 y 坐标
-            ladderTopX = collision.bounds.max.x;    // 顶部 y 坐标
-            ladderBottomX = collision.bounds.min.x;    // 顶部 y 坐标
-            // 判断玩家相对于梯子的位置
-            if (transform.position.y > ladderTopY)
-                currentLadderPosition = 1;
-            else if(transform.position.y - 3f < ladderBottomY)
-                currentLadderPosition = -1;
-            else
-                currentLadderPosition = 0;
-            
-            Debug.Log($"Ladder Bottom Y: {ladderBottomY}, Ladder Top Y: {ladderTopY} Ladder Top x {ladderTopX}: Ladder BottomX:{ladderBottomX}");*/
         }
     }
 
@@ -548,6 +533,35 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(interval);
             timer += interval;
         }
+    }
+
+    #endregion
+
+    #region 拖尾效果
+
+    public void StopTrail(GameObject trailObj, float duration)
+    {
+        StartCoroutine(FadeTrailRenderer(trailObj, duration));
+    }
+
+    private IEnumerator FadeTrailRenderer(GameObject trail, float duration)
+    {
+        float timer = 0f;
+        ParticleSystem trailRenderer = trail.GetComponent<ParticleSystem>();
+        // 停止发射新粒子
+        trailRenderer.Stop();
+
+        while (timer < duration)
+        {
+            float t = timer / duration;
+            float alpha = Mathf.Lerp(1f, 0f, t);
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        // 完全隐藏
+        Destroy(trail);
     }
 
     #endregion
