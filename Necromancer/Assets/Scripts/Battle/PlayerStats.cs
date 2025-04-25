@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -85,8 +86,24 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
             Instance = this;
         else
             Destroy(this.gameObject);
-
+        EventManager.Instance.AddListener(EventName.PlayerAttack, Test);
     }
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.RemoveListener(EventName.PlayerAttack, Test);
+    }
+
+    private void Test(object sender, EventArgs e)
+    {
+        Debug.Log("攻击中");
+        var data = e as PlayerDeadEventArgs;
+        if (data != null)
+        {
+            Debug.Log(data.playerName);
+        }
+    }
+
 
     private void Start()
     {
@@ -117,6 +134,10 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
         if (Input.GetKeyDown(KeyCode.Mouse0) && !player.IsUsingEquipment() && !player.isBusy && baseEquipment1 != null)
         {
             SetCurrentEquipmentIndex(1);
+            this.TriggerEvent(EventName.PlayerAttack, new PlayerDeadEventArgs
+            {
+                playerName = "asfaf"
+            });
             baseEquipment1.UseEquipment();
         }
         if (Input.GetKeyDown(KeyCode.Mouse1) && !player.IsUsingEquipment() && !player.isBusy && baseEquipment2 != null)

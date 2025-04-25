@@ -10,6 +10,7 @@ using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Tilemaps;
 using static Cinemachine.DocumentationSortingAttribute;
 using static LdtkTest;
 
@@ -49,7 +50,7 @@ public class RoomGraphGenerator : MonoBehaviour
     [SerializeField] private RoomGraph roomGraph;
 
     //实际的房间数据
-    [SerializeField] private List<ActualRoomData> roomDatas;
+    [SerializeField] public List<ActualRoomData> roomDatas;
 
     [SerializeField] private float stepTime;
 
@@ -94,6 +95,7 @@ public class RoomGraphGenerator : MonoBehaviour
         isVisited.Clear();
         lastDoor.node = -1;//我们基于node去确定lastDoor是否有东西
         isDoorClosed.Clear();
+        blackTilemap.ClearAllTiles();
         foreach (var roomNode in roomGraph.allRooms)
         {
             // 确保字典中存在该键
@@ -194,24 +196,83 @@ public class RoomGraphGenerator : MonoBehaviour
         TimeSpan duration = endTime - startTime;
         Debug.Log($"GenerateLevelTest 执行时间: {duration.TotalMilliseconds} 毫秒");
 
-        PostProcessTile(TilePostProcessType.Church);
+        StartCoroutine( PostProcessTile(TilePostProcessType.Church));
         yield break;
     }
 
+    [SerializeField] private TileBase blackTile;
+    [SerializeField] private Tilemap blackTilemap;
+
     private IEnumerator PostProcessTile(TilePostProcessType postProcessType)
     {
-        Debug.Log("开始后处理");
+        // 记录开始时间
+        DateTime startTime = DateTime.Now;
         yield return null;
+
+        // 找出最小和最大坐标范围
+        int minX = int.MaxValue, maxX = int.MinValue;
+        int minY = int.MaxValue, maxY = int.MinValue;
+
         switch (postProcessType)
         {
             case TilePostProcessType.Church:
                 {
+                    // 用于记录所有已被房间覆盖的 Tile 坐标
+                    HashSet<Vector3Int> occupiedTiles = new HashSet<Vector3Int>();
 
+                    
+
+                    foreach (var room in roomDatas)
+                    {
+                        LDtkComponentLevel level = room.room.levelData;
+
+                        Vector2Int roomSize = new Vector2Int((int)room.levelWidth, (int)room.levelHeight);
+                        Vector3Int roomOrigin = Vector3Int.FloorToInt(room.startPosition);
+
+                        // 扫描每个房间内的格子
+                        for (int x = 0; x < roomSize.x; x++)
+                        {
+                            for (int y = 0; y < roomSize.y; y++)
+                            {
+                                Vector3Int tilePos = new Vector3Int(roomOrigin.x + x, roomOrigin.y + y, 0);
+                                occupiedTiles.Add(tilePos);
+
+                                minX = Mathf.Min(minX, tilePos.x);
+                                maxX = Mathf.Max(maxX, tilePos.x);
+                                minY = Mathf.Min(minY, tilePos.y);
+                                maxY = Mathf.Max(maxY, tilePos.y);
+                            }
+                        }
+                    }
+
+                    // 在整个地图范围内，填充未被占用的格子为黑色
+                    for (int x = minX - 50; x <= maxX + 50; x++)
+                    {
+                        for (int y = minY - 50; y <= maxY + 50; y++)
+                        {
+                            Vector3Int pos = new Vector3Int(x, y, 0);
+                            if (!occupiedTiles.Contains(pos))
+                            {
+                                blackTilemap.SetTile(pos, blackTile);
+                            }
+                        }
+                    }
+
+                    Debug.Log("黑色 tile 后处理完成");
                     break;
                 }
         }
 
+        
+        
+
+        // 记录结束时间
+        DateTime endTime = DateTime.Now;
+        TimeSpan duration = endTime - startTime;
+        Debug.Log($"GenerateLevelTest 执行时间: {duration.TotalMilliseconds} 毫秒");
     }
+
+    
 
     //解锁门 删除父节点和他所有子节点
     private void DeleteParentNodeAndChild(int currentParentNode)
