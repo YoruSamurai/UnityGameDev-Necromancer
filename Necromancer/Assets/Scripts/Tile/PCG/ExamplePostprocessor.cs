@@ -77,7 +77,14 @@ namespace LDtkUnity
                     map.sortingOrder = 4;
 
                 }
-                if(layer.name == "Ladder")
+                if (layer.name == "AutoChurchBack")
+                {
+                    TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
+                    map.sortingLayerID = SortingLayer.NameToID("Tile");
+                    map.sortingOrder = -3;
+
+                }
+                if (layer.name == "Ladder")
                 {
                     CompositeCollider2D[] collider2D = layer.GetComponentsInChildren<CompositeCollider2D>();
                     foreach (var collider in collider2D)
