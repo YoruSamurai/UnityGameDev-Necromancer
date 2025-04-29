@@ -29,7 +29,9 @@ ScriptedImporter:
     _asset: {fileID: 11400000, guid: 7ca9f7d47281884488e100d5c8cc099b, type: 2}
   - _key: Ground_1
     _asset: {fileID: 11400000, guid: 254d34b40fc9c004f991f4ea9a6b3186, type: 2}
-  _entities: []
+  _entities:
+  - _key: Chandelier
+    _asset: {fileID: 3688019706637377597, guid: a6518357b50d74d4dbd185dd69d64fff, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 

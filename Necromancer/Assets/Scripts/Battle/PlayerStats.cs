@@ -86,12 +86,12 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
             Instance = this;
         else
             Destroy(this.gameObject);
-        EventManager.Instance.AddListener(EventName.PlayerAttack, Test);
+        //EventManager.Instance.AddListener(EventName.PlayerAttack, Test);
     }
 
     private void OnDestroy()
     {
-        EventManager.Instance.RemoveListener(EventName.PlayerAttack, Test);
+        //EventManager.Instance.RemoveListener(EventName.PlayerAttack, Test);
     }
 
     private void Test(object sender, EventArgs e)

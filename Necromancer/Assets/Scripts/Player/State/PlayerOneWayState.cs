@@ -58,7 +58,7 @@ public class PlayerOneWayState : PlayerState
                 Debug.Log(oneWayPlatformController.centerX + "a jsfoiajosaf");
                 Vector2 targetPosition = new Vector2(
                     player.transform.position.x,
-                    startPosition.y + 2f
+                    startPosition.y + 1f
                 );
 
                 // 使用DoTween平滑移动
@@ -78,7 +78,7 @@ public class PlayerOneWayState : PlayerState
                 Debug.Log(oneWayPlatformController.centerX +"a jsfoiajosaf");
                 Vector2 targetPosition = new Vector2(
                     oneWayPlatformController.centerX,
-                    startPosition.y + 2f
+                    startPosition.y + 1f
                 );
 
                 // 使用DoTween平滑移动
@@ -115,7 +115,7 @@ public class PlayerOneWayState : PlayerState
         if (hit.collider != null)
         {
             // 获取射线检测到的地面的Y坐标，然后加上1f
-            float groundYPosition = hit.point.y + 1f;
+            float groundYPosition = hit.point.y + 2f;
 
             // 更新玩家位置
             Vector2 newPosition = new Vector2(currentPosition.x, groundYPosition);
@@ -131,7 +131,7 @@ public class PlayerOneWayState : PlayerState
             if (hit.collider != null)
             {
                 // 获取射线检测到的地面的Y坐标，然后加上1f
-                float groundYPosition = hit.point.y + 1f;
+                float groundYPosition = hit.point.y + 2f;
 
                 // 更新玩家位置
                 Vector2 newPosition = new Vector2(currentPosition.x, groundYPosition);

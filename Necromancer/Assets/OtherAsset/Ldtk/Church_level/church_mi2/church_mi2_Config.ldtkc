@@ -47,5 +47,14 @@
             }
         }
     ],
-    "Entities": []
+    "Entities": [
+        {
+            "_key": "Chandelier",
+            "_asset": {
+                "fileID": 3688019706637377597,
+                "guid": "a6518357b50d74d4dbd185dd69d64fff",
+                "type": 3
+            }
+        }
+    ]
 }

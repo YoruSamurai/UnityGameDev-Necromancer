@@ -19,12 +19,12 @@ MonoBehaviour:
   equipmentTags: 00000000
   baseCritChance: 15
   critMag: 4
-  equipmentDesc: "\u5BF9\u6D41\u8840\u6216\u4E2D\u6BD2\u7684\u654C\u4EBA\u66B4\u51FB\u3002"
+  equipmentDesc: "\u5927\u9E21\u5DF4\u55EF\u55EF\u55EF"
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
-  - {fileID: 7400000, guid: 2c29f3d254e8de84e80fa13c6e779ece, type: 2}
-  - {fileID: 7400000, guid: d4af9f751a5c320459c1f743aac9dee6, type: 2}
-  - {fileID: 7400000, guid: 8d4179d72bedcd54b87618585195c734, type: 2}
+  - {fileID: 7400000, guid: 6f6dfeb33717be64da641a9b4b08b3a7, type: 2}
+  - {fileID: 7400000, guid: a618b700db1d5184389fa87c0680a39d, type: 2}
+  - {fileID: 7400000, guid: 4106d712c7c01474faf7773b425f9cc8, type: 2}
   slashAnimations:
   - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}
   - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}

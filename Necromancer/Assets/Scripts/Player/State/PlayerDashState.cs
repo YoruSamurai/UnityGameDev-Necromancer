@@ -7,6 +7,9 @@ public class PlayerDashState : PlayerState
 
     private GameObject currentTrailObj;
     private ParticleSystem trail;
+
+    public bool isCornerDetected;
+    public float lastVelocityY;
     public PlayerDashState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
@@ -23,6 +26,9 @@ public class PlayerDashState : PlayerState
         currentTrailObj = GameObject.Instantiate(player.dashTrail, player.transform.position - new Vector3(0,1f,0), Quaternion.identity, player.transform);
         trail = currentTrailObj.GetComponent<ParticleSystem>();
         trail.Clear();
+
+        lastVelocityY = rb.velocity.y;
+        isCornerDetected = false;
     }
 
     public override void Exit()
@@ -30,8 +36,17 @@ public class PlayerDashState : PlayerState
         base.Exit();
         // Dash 结束时设置无敌
         player.SetInvincible(false);
-        player.SetVelocity(0,rb.velocity.y);
+        float xVelocity = rb.velocity.x;
+        if(!isCornerDetected)
+        {
+            player.SetVelocity(0, lastVelocityY, xVelocity);
+        }
+        else
+        {
+            player.SetVelocity(0,0, xVelocity);
+        }
 
+        player.rb.gravityScale = 3.5f;
 
         // 开始一个协程，在一段时间后关闭TrailRenderer
         player.StopTrail(currentTrailObj, .3f);
@@ -53,7 +68,28 @@ public class PlayerDashState : PlayerState
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+        //Debug.Log("TY速度" + rb.velocity.y);
+        
         //设置冲刺速度 开冲
-        player.SetVelocity(player.dashSpeed * player.dashDir, rb.velocity.y);
+        if (lastVelocityY < 0f && rb.velocity.y - lastVelocityY > 10f)
+        {
+            player.SetVelocity(player.dashSpeed * player.dashDir, lastVelocityY);
+            isCornerDetected=true;
+
+        }
+        else
+        {
+            player.SetVelocity(player.dashSpeed * player.dashDir, rb.velocity.y);
+            lastVelocityY = rb.velocity.y;
+        }
+
+        // 检测墙角情况
+        if (player.IsWallFootDetected() && !player.IsWallBodyDetected())
+        {
+            // 如果满足条件，给一个向上的速度
+            player.SetVelocity(player.dashSpeed * player.dashDir * .5f, 10f);
+            player.rb.gravityScale = 10f;
+        }
+        
     }
 }

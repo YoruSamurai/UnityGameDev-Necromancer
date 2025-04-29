@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
+using Unity.VisualScripting;
+using Unity.VisualScripting.FullSerializer;
 
 public class 装备编辑器 : EditorWindow
 {
@@ -51,7 +53,120 @@ public class 装备编辑器 : EditorWindow
         }
 
         AssetDatabase.SaveAssets();
+
+        UpdateEquipmentPrefab(csvData);
+
+        kk();
+
         Debug.Log("装备 SO 更新完成。");
+    }
+
+    private void kk()
+    {
+        // 1. 加载 EquipmentList.asset
+        EquipmentListSO equipmentList = AssetDatabase.LoadAssetAtPath<EquipmentListSO>("Assets/Prefab/Equipment/EquipmentList.asset");
+
+        // 2. 清空原本列表
+        equipmentList.equipmentList.Clear();
+
+        // 3. 遍历文件夹
+        string[] guids = AssetDatabase.FindAssets("t:Prefab", new[] { "Assets/Prefab/Equipment" });
+
+        foreach (string guid in guids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+
+            if (prefab != null)
+            {
+                // 判断是否挂着 BaseEquip 开头的组件
+                var baseEquipComponent = prefab.GetComponent<BaseEquipment>();
+                if (baseEquipComponent != null)
+                {
+                    equipmentList.equipmentList.Add(baseEquipComponent);
+                }
+            }
+        }
+
+        // 4. 保存
+        EditorUtility.SetDirty(equipmentList);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
+
+    private void UpdateEquipmentPrefab(List<string[]> csvData)
+    {
+        // ----------------------------------
+        // 遍历Prefab文件夹
+        string prefabFolderPath = "Assets/Prefab/Equipment/";
+        foreach (string[] row in csvData.Skip(1))
+        {
+            string weaponName = row[1];
+            string prefabPath = prefabFolderPath + weaponName + ".prefab";
+
+            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+
+            if (prefab == null)
+            {
+                // 如果 prefab 不存在，创建新的
+                GameObject newGO = new GameObject(weaponName);
+
+                // 动态找到对应脚本并添加
+                System.Type scriptType = FindTypeByName(weaponName);
+
+                // 检查脚本类型是否找到
+                if (scriptType != null)
+                {
+                    newGO.AddComponent(scriptType);
+                    BaseEquipment equipment = newGO.GetComponent<BaseEquipment>();
+                    if (equipment != null)
+                    {
+                        string assetPath = $"Assets/Scripts/Battle/BaseEquipment/Equipment/{row[1]}/{row[1]}.asset";
+                        EquipmentSO equipmentSO = AssetDatabase.LoadAssetAtPath<EquipmentSO>(assetPath);
+                        equipment.equipmentSO = equipmentSO;
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"找不到名为 {weaponName} 的组件脚本，请检查脚本名称是否正确！");
+                }
+
+                // 加上 BoxCollider2D 和 CircleCollider2D
+                BoxCollider2D box = newGO.AddComponent<BoxCollider2D>();
+                CircleCollider2D circle = newGO.AddComponent<CircleCollider2D>();
+
+                box.isTrigger = true;
+                circle.isTrigger = true;
+
+                // 保存为 prefab
+                string newPrefabPath = prefabPath;
+                PrefabUtility.SaveAsPrefabAsset(newGO, newPrefabPath);
+
+                // 创建完记得销毁临时GameObject
+                GameObject.DestroyImmediate(newGO);
+
+                Debug.Log($"创建了新的武器Prefab: {weaponName}");
+            }
+            else
+            {
+                Debug.Log($"Prefab已存在: {weaponName}");
+            }
+        }
+    }
+
+    private System.Type FindTypeByName(string className)
+    {
+        foreach (var assembly in System.AppDomain.CurrentDomain.GetAssemblies())
+        {
+            foreach (var type in assembly.GetTypes())
+            {
+                if (type.IsSubclassOf(typeof(MonoBehaviour)) && type.Name == className)
+                {
+                    return type;
+                }
+            }
+        }
+        return null;
     }
 
     private List<string[]> ReadCSV(string filePath)
@@ -75,23 +190,49 @@ public class 装备编辑器 : EditorWindow
     private void UpdateMeleeEquipmentSO(string[] row)
     {
         // 通过装备名称找到对应的 SO
+        if (row[1] == "")
+        {
+            Debug.Log("读完了 返回");
+            return;
+        }
         string assetPath = $"Assets/Scripts/Battle/BaseEquipment/Equipment/{row[1]}/{row[1]}.asset";
         EquipmentSO equipment = AssetDatabase.LoadAssetAtPath<EquipmentSO>(assetPath);
+        if (equipment == null)
+        {
+            // 如果不存在，创建一个新的 MeleeEquipmentSO
+            MeleeEquipmentSO newEquipment = ScriptableObject.CreateInstance<MeleeEquipmentSO>();
 
+            // 确保目录存在
+            string directoryPath = System.IO.Path.GetDirectoryName(assetPath);
+            if (!AssetDatabase.IsValidFolder(directoryPath))
+            {
+                System.IO.Directory.CreateDirectory(directoryPath);
+                AssetDatabase.Refresh(); // 刷新，让Unity知道新建了文件夹
+            }
+
+            // 创建新的 Asset
+            AssetDatabase.CreateAsset(newEquipment, assetPath);
+            AssetDatabase.SaveAssets();
+
+            equipment = newEquipment; // 把它赋值回来
+        }
         if (equipment != null)
         {
             // 更新装备 SO 的属性
+            equipment.equipmentName = row[1];
             equipment.baseDmg = int.Parse(row[2]);
             equipment.baseCritChance = int.Parse(row[5]);
             equipment.critMag = float.Parse(row[6]);
-            //equipment.equipmentDesc = row[6];
+            equipment.equipmentDesc = row[7];
 
-            /*// 处理动画和图片路径
-            equipment.attackAnimator = Resources.Load<AnimatorOverrideController>(row[7]);
-            equipment.comboAnimations = LoadComboAnimations(row[8]);
+            // 处理动画和图片路径
+            // 加载 AnimatorOverrideController
+            string aocPath = $"Assets/Scripts/Battle/BaseEquipment/Equipment/D武器攻击覆盖Animator.overrideController";
+            equipment.attackAnimator = AssetDatabase.LoadAssetAtPath<AnimatorOverrideController>(aocPath);
+            equipment.comboAnimations = LoadComboAnimations(row[1] , int.Parse(row[10]));
 
             // 如果是近战武器，填充近战武器的额外属性
-            }*/
+        
             MeleeEquipmentSO meleeEquipment = equipment as MeleeEquipmentSO;
             if (meleeEquipment != null)
             {
@@ -108,14 +249,25 @@ public class 装备编辑器 : EditorWindow
         }
     }
 
-    private AnimationClip[] LoadComboAnimations(string path)
+    private AnimationClip[] LoadComboAnimations(string weaponName , int clipNum)
     {
-        string[] animationPaths = path.Split(';');
-        AnimationClip[] animations = new AnimationClip[animationPaths.Length];
-
-        for (int i = 0; i < animationPaths.Length; i++)
+        if (string.IsNullOrEmpty(weaponName))
         {
-            animations[i] = Resources.Load<AnimationClip>(animationPaths[i]);
+            Debug.LogWarning("武器生成对应的地方没有动画！");
+            return null;
+        }
+
+        AnimationClip[] animations = new AnimationClip[clipNum];
+
+        for (int i = 1; i < clipNum + 1; i++)
+        {
+            string fullPath = $"Assets/OtherAsset/Animation/WeaponClip/DefaultPlayer/{weaponName}/{weaponName}{i}.anim";
+            animations[i-1] = AssetDatabase.LoadAssetAtPath<AnimationClip>(fullPath);
+
+            if (animations[i-1] == null)
+            {
+                Debug.LogWarning($"找不到动画Clip: {fullPath}");
+            }
         }
 
         return animations;

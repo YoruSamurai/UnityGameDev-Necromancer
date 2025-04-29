@@ -22,8 +22,8 @@ public class PlayerLedgeUpState : PlayerState
             // 获取当前玩家位置
             Vector2 startPosition = player.transform.position;
             Vector2 targetPosition = new Vector2(
-                startPosition.x + player.facingDir * 1.5f,
-                startPosition.y + 3f
+                startPosition.x + player.facingDir * 1f,
+                startPosition.y + 1.8f
             );
 
             // 使用DoTween平滑移动
@@ -64,9 +64,9 @@ public class PlayerLedgeUpState : PlayerState
 
         if (hitBody.collider != null && hitGround.collider != null)
         {
-            float targetX = hitBody.point.x - (player.facingDir * 1.5f); // 让角色稍微离墙
+            float targetX = hitBody.point.x - (player.facingDir * 0.5f); // 让角色稍微离墙
             float groundY = hitGround.point.y; // 获取地面高度
-            float targetY = groundY - 0.75f; // 计算手部攀爬高度
+            float targetY = groundY + .5f; // 计算手部攀爬高度
 
             newPosition = new Vector2(targetX, targetY);
         }

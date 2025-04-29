@@ -18,6 +18,16 @@ public class PlayerAirState : PlayerState
         base.Exit();
     }
 
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        /*if (player.IsWallFootDetected() && !player.IsGroundDetected())
+        {
+            player.SetVelocity(player.moveSpeed * .8f * xInput, 0f);
+            return;
+        }*/
+    }
+
     public override void Update()
     {
         base.Update();
@@ -30,8 +40,9 @@ public class PlayerAirState : PlayerState
 
 
 
-        if (player.IsWallBodyDetected() && !player.IsWallHeadDetected())
-        {
+        //if ((player.IsWallBodyDetected() || player.IsWallFootDetected()) && !player.IsWallHeadDetected())
+        if ((player.IsWallBodyDetected()) && !player.IsWallHeadDetected())
+            {
             Vector2 origin = player.wallCheckHead.position;
             Vector2 direction = Vector2.right * player.facingDir;
             float distance = player.wallCheckDistance;

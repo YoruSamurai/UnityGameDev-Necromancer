@@ -19,8 +19,7 @@ MonoBehaviour:
   equipmentTags: 0100000004000000
   baseCritChance: 25
   critMag: 1.5
-  equipmentDesc: "\u6BD2\u65A7\u5934\uFF0C\u6BCF\u6B21\u653B\u51FB\u5BF9\u654C\u4EBA\u65BD\u52A0\u4E00\u5C42\u6BD2
-    \u57284s\u5185\u603B\u5171\u9020\u62101/4dmg\u7684\u989D\u5916\u4F24\u5BB3"
+  equipmentDesc: "\u6211\u6345"
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
   - {fileID: 7400000, guid: 2cfba06c46b871149bd7032d305fa394, type: 2}
@@ -30,7 +29,7 @@ MonoBehaviour:
   - {x: 1, y: 0}
   fullComboAttackTimes: 1
   meleeAttacks:
-  - attackTime: 2
+  - attackTime: 1
     attackMag: 1
     attackStun: 15
     attackShape: 0
@@ -40,4 +39,4 @@ MonoBehaviour:
     attackWidth: 3
     comboBreakTime: 3
     knockbackForce: 1
-    chargeThreshold: 0.21
+    chargeThreshold: 0.2

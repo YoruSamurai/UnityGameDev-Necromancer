@@ -14,26 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipmentName: "\u5747\u8861\u4E4B\u5203"
   baseDmg: 100
-  equipmentSprite: {fileID: 2053402292, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
+  equipmentSprite: {fileID: 0}
   equipmentType: 0
-  equipmentTags: 00000000
+  equipmentTags: 
   baseCritChance: 25
   critMag: 2
-  equipmentDesc: "\u5747\u8861\u4E4B\u5203\uFF0C\u6BCF\u6B21\u653B\u51FB\u63D0\u53475%\u653B\u51FB\u529B\uFF0C\u6700\u592750%\uFF0C3s\u4E0D\u547D\u4E2D\u91CD\u7F6E
-    \u8FDE\u51FB10\u6B21\u540E\u5C31\u4F1A\u5FC5\u5B9A\u66B4\u51FB"
+  equipmentDesc: "\u6211\u63D2\u6B7B\u4F60"
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
   - {fileID: 7400000, guid: 2c29f3d254e8de84e80fa13c6e779ece, type: 2}
   - {fileID: 7400000, guid: d4af9f751a5c320459c1f743aac9dee6, type: 2}
   - {fileID: 7400000, guid: 8d4179d72bedcd54b87618585195c734, type: 2}
-  slashAnimations:
-  - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}
-  - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}
-  - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}
-  slashOffsets:
-  - {x: 1, y: 1}
-  - {x: 2, y: 2}
-  - {x: 3, y: 3}
+  slashAnimations: []
+  slashOffsets: []
   fullComboAttackTimes: 3
   meleeAttacks:
   - attackTime: 0.3

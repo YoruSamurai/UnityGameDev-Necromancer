@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8929064366469550222
+--- !u!1 &4736732226414228625
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1974968462040578781}
-  - component: {fileID: 2197795127144796216}
-  - component: {fileID: 5352228661629576667}
-  - component: {fileID: 6494162546443345926}
+  - component: {fileID: 5187724258415246366}
+  - component: {fileID: 872972218906927797}
+  - component: {fileID: 3030040153128448164}
+  - component: {fileID: 4738567738344716807}
   m_Layer: 0
   m_Name: "\u5747\u8861\u4E4B\u5203"
   m_TagString: Untagged
@@ -19,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1974968462040578781
+--- !u!4 &5187724258415246366
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8929064366469550222}
+  m_GameObject: {fileID: 4736732226414228625}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,13 +34,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2197795127144796216
+--- !u!114 &872972218906927797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8929064366469550222}
+  m_GameObject: {fileID: 4736732226414228625}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 708537d2a860b4744b47f61b742917a3, type: 3}
@@ -48,11 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipmentSO: {fileID: 11400000, guid: 16106f8c1d643d34d9eb24ecd3ca70d8, type: 2}
   player: {fileID: 0}
-  attackCooldown: 1
+  attackCooldown: 0
   attackCooldownTimer: 0
   equipmentName: 
   baseDmg: 0
   equipmentSprite: {fileID: 0}
+  equipmentType: 0
   equipmentTags: 
   baseCritChance: 0
   critMag: 0
@@ -67,30 +68,35 @@ MonoBehaviour:
   fullComboAttackTimes: 0
   meleeAttacks: []
   isHitInAttack: 0
-  rectangleEffectPrefab: {fileID: 2789657824771503155, guid: 2257ddf4d619b9e4ba0a21e31bf12ba1, type: 3}
-  circleEffectPrefab: {fileID: 2789657824771503155, guid: dbe4619acbe8a8847ae4bc8522114b0e, type: 3}
+  canCharge: 0
+  holdThreshold: 0
+  holdTimer: 0
+  isCharged: 0
+  isProcessingInput: 0
+  rectangleEffectPrefab: {fileID: 0}
+  circleEffectPrefab: {fileID: 0}
   attackCheckBox: {fileID: 0}
   attackCheckCircle: {fileID: 0}
   enemyLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   dmgComboTimer: 0
   currentDmgComboTimer: 0
   maxDmgCombo: 0
   currentDmgCombo: 0
---- !u!61 &5352228661629576667
+--- !u!61 &3030040153128448164
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8929064366469550222}
+  m_GameObject: {fileID: 4736732226414228625}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -123,19 +129,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!58 &6494162546443345926
+--- !u!58 &4738567738344716807
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8929064366469550222}
+  m_GameObject: {fileID: 4736732226414228625}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
