@@ -25,8 +25,14 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 2c29f3d254e8de84e80fa13c6e779ece, type: 2}
   - {fileID: 7400000, guid: d4af9f751a5c320459c1f743aac9dee6, type: 2}
   - {fileID: 7400000, guid: 8d4179d72bedcd54b87618585195c734, type: 2}
-  slashAnimations: []
-  slashOffsets: []
+  slashAnimations:
+  - {fileID: 7400000, guid: da1b82f56dda21c4bb4b4262240c0c44, type: 2}
+  - {fileID: 7400000, guid: eca80d5cc9ecd81479a86edd28094010, type: 2}
+  - {fileID: 7400000, guid: d9739e1930edd0441873b2f4b6dd15d4, type: 2}
+  slashOffsets:
+  - {x: 1, y: 0}
+  - {x: 1, y: -1.29}
+  - {x: 1, y: -0.5}
   fullComboAttackTimes: 3
   meleeAttacks:
   - attackTime: 0.3

@@ -24,9 +24,9 @@ MonoBehaviour:
   comboAnimations:
   - {fileID: 7400000, guid: 2cfba06c46b871149bd7032d305fa394, type: 2}
   slashAnimations:
-  - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}
+  - {fileID: 7400000, guid: b22f95f759c8eb54badaf469a059d4d3, type: 2}
   slashOffsets:
-  - {x: 1, y: 0}
+  - {x: 1.3, y: -0.3}
   fullComboAttackTimes: 1
   meleeAttacks:
   - attackTime: 1

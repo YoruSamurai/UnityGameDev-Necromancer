@@ -6,6 +6,7 @@ public class FxController : MonoBehaviour
 {
     // 参考 Animator，可以在 Inspector 中绑定
     [SerializeField] private Animator anim;
+    [SerializeField] private AnimationClip clip;
 
     // 存储播放的动画片段长度
     [SerializeField] private float animLength = 0f;
@@ -14,6 +15,7 @@ public class FxController : MonoBehaviour
     public void Initialize(AnimationClip slashClip, Vector3 offset, bool facingRight)
     {
         // 将位置偏移叠加到当前位置上
+        clip = slashClip;
         if (facingRight)
             transform.position += new Vector3(offset.x, offset.y);
         else
@@ -34,9 +36,9 @@ public class FxController : MonoBehaviour
         // 创建一个新的 AnimatorOverrideController，替换 "Slash" 状态对应的动画片段
         AnimatorOverrideController aoc = new AnimatorOverrideController(anim.runtimeAnimatorController);
         // 假设原始状态名为 "Slash"
-        aoc["FX"] = slashClip;
+        aoc["均衡1"] = slashClip;
         anim.runtimeAnimatorController = aoc;
-
+        Debug.Log(aoc["均衡1"] + "slash");
         // 播放动画，确保从头开始
         anim.Play("FX", 0, 0f);
 

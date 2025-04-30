@@ -22,6 +22,9 @@ public class PlayerPrimaryAttack : PlayerState
         {
             case PlayerAnimationTriggerType.PlayerCanNotInterrupt:
                 {
+                    //设置速度应该写在下面 通过获取武器的属性来设置
+                    player.SetVelocity(3 * player.facingDir, rb.velocity.y);
+                    stateTimer = .15f;
                     PlayerStats.Instance.canInterrupt = false;
                     // 生成刀光效果
                     if (currentWeapon != null &&
@@ -31,6 +34,7 @@ public class PlayerPrimaryAttack : PlayerState
                         int combo = baseEquipment.currentCombo > 0 ? baseEquipment.currentCombo - 1 : currentWeapon.comboAnimations.Length - 1;
                         AnimationClip slashClip = currentWeapon.slashAnimations[combo];
                         Vector2 offset = currentWeapon.slashOffsets[combo];
+                        Debug.Log(slashClip.name + "slashshh");
                         player.InitialFxPrefab(slashClip, offset);
                         
                     }
@@ -75,6 +79,8 @@ public class PlayerPrimaryAttack : PlayerState
                     else if (PlayerStats.Instance.isParrying)
                         PlayerStats.Instance.isParrying = false;
                     PlayerStats.Instance.SetCurrentEquipmentIndex(0);
+                    player.SetVelocity(0, rb.velocity.y);
+                    
                     stateMachine.ChangeState(player.idleState);
                     break;
                 }
@@ -119,9 +125,7 @@ public class PlayerPrimaryAttack : PlayerState
             currentWeapon.attackAnimator["DplayerAttack1"] = clip;
             player.ApplyWeaponAnimator(currentWeapon.attackAnimator);
         }
-        //设置速度应该写在下面 通过获取武器的属性来设置
-        player.SetVelocity(1 * player.facingDir, rb.velocity.y);
-        stateTimer = .1f;
+        
     }
 
     public override void Exit()
@@ -129,7 +133,7 @@ public class PlayerPrimaryAttack : PlayerState
         base.Exit();
         PlayerStats.Instance.isAttacking = false;
         PlayerStats.Instance.canInterrupt = true;
-
+        //player.BusyFor(.025f);
         MeleeEquipment meleeEquipment = baseEquipment as MeleeEquipment;
         if (meleeEquipment != null)
         {

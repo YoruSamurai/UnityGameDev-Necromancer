@@ -9,7 +9,7 @@ public class PlayerLight : MonoBehaviour
     [SerializeField] private float yOffset;
     void Start()
     {
-        playerTransform = PlayerStats.Instance.player.transform;
+        //playerTransform = PlayerStats.Instance.player.transform;
     }
 
     // Update is called once per frame
