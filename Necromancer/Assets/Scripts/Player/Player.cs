@@ -570,6 +570,7 @@ public class Player : MonoBehaviour
     #region  Velocity
     public void SetZeroVelocity()
     {
+        float currentX = rb.velocity.x;
         rb.velocity = new Vector2(0, 0);
     }
 

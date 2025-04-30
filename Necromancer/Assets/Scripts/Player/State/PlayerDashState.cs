@@ -10,6 +10,10 @@ public class PlayerDashState : PlayerState
 
     public bool isCornerDetected;
     public float lastVelocityY;
+
+    public Vector2 originalCapsuleSize;
+    public Vector2 originalCapsuleOffset;
+
     public PlayerDashState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
@@ -27,6 +31,22 @@ public class PlayerDashState : PlayerState
         trail = currentTrailObj.GetComponent<ParticleSystem>();
         trail.Clear();
 
+        // 获取 CapsuleCollider2D
+        CapsuleCollider2D capsule = player.GetComponent<CapsuleCollider2D>();
+
+        // 保存原始值（可选：如果你想恢复）
+        originalCapsuleSize = capsule.size;
+        originalCapsuleOffset = capsule.offset;
+
+        // 把 y 设置为 x（压扁）
+        float newY = capsule.size.x;
+        float originalY = capsule.size.y;
+        float deltaY = originalY - newY;
+
+        capsule.size = new Vector2(capsule.size.x, newY);
+        // 为了让底部不变，offset 往下调一半差值
+        capsule.offset = new Vector2(capsule.offset.x, capsule.offset.y - deltaY * 0.5f);
+        Debug.Log("进入冲刺状态" + rb.velocity.y);
         lastVelocityY = rb.velocity.y;
         isCornerDetected = false;
     }
@@ -36,6 +56,13 @@ public class PlayerDashState : PlayerState
         base.Exit();
         // Dash 结束时设置无敌
         player.SetInvincible(false);
+
+
+        CapsuleCollider2D capsule = player.GetComponent<CapsuleCollider2D>();
+        capsule.size = originalCapsuleSize;
+        capsule.offset = originalCapsuleOffset;
+
+
         float xVelocity = rb.velocity.x;
         if(!isCornerDetected)
         {

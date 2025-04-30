@@ -103,13 +103,16 @@ public class PlayerClimbState : PlayerState
 
         // 检测到一键平台并且向上输入
         RaycastHit2D hit = Physics2D.Raycast(
-            player.transform.position,
+            player.transform.position - new Vector3(0, 1f),
             Vector2.up,
             1f,
             combinedGroundLayers
         );
         // 绘制射线
-        Debug.DrawLine(player.transform.position, player.transform.position + Vector3.up * 1f, Color.yellow);
+        Vector3 rayOrigin = player.transform.position - new Vector3(0, 1f);
+        Vector3 rayDir = Vector3.up * 1f;
+
+        Debug.DrawRay(rayOrigin, rayDir, Color.red); // 画出 Ray
         if (hit.collider != null && hit.collider.CompareTag("OneWayPlatform") && currentYInput > 0)
         {
             Debug.Log("检测到一键平台：" + hit.collider.name);
@@ -120,6 +123,7 @@ public class PlayerClimbState : PlayerState
         // 离开攀爬的条件
         if (!player.isOnLadder)
         {
+            Debug.Log("我走了哈");
             stateMachine.ChangeState(player.idleState);
         }
 
@@ -169,10 +173,10 @@ public class PlayerClimbState : PlayerState
 
                 // 计算新位置
                 float targetX = ladderCenterX - (newFacingDir * horizontalOffset);
-
-                // 平滑移动
+                player.transform.position = new Vector3(targetX, player.transform.position.y, player.transform.position.z);
+                /*// 平滑移动
                 player.transform.DOMoveX(targetX, 0.01f)
-                    .SetEase(Ease.OutQuad);
+                    .SetEase(Ease.OutQuad);*/
             }
         }
     }

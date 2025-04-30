@@ -34,6 +34,7 @@ public class OneWayPlatformController : MonoBehaviour
                 {
 
                     Vector2 hitPoint = player.transform.position; // 碰撞点的世界坐标
+                    //Vector2 hitPoint = collision.GetContact(0).point; // 碰撞点的世界坐标
                     hitPoint.x = Mathf.Round(hitPoint.x - 0.5f) + 0.5f;
                     Debug.Log($"碰撞发生位置（世界坐标）: {hitPoint }");
                     Vector3Int cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, 1f));
@@ -86,7 +87,7 @@ public class OneWayPlatformController : MonoBehaviour
                         Debug.Log("12313该位置没有 Tile");
                     }
 
-                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, .5f));
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, 0f));
                     Debug.Log("cellpos" + cellPos);
                     tile = tilemap.GetTile(cellPos);
 
@@ -102,7 +103,7 @@ public class OneWayPlatformController : MonoBehaviour
                         Debug.Log("12313该位置没有 Tile");
                     }
 
-                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(1, .5f));
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(1, 0f));
                     Debug.Log("cellpos" + cellPos);
                     tile = tilemap.GetTile(cellPos);
 
@@ -119,7 +120,7 @@ public class OneWayPlatformController : MonoBehaviour
                         Debug.Log("6该位置没有 Tile");
                     }
 
-                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(-1, .5f));
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(-1, 0f));
                     Debug.Log("cellpos" + cellPos);
                     tile = tilemap.GetTile(cellPos);
 

@@ -13,13 +13,15 @@ public class PlayerOneWayState : PlayerState
     {
     }
 
-    
+    //是否在攀上去结束前退出？
+    public bool isMotionEnd;
 
 
     public override void Enter()
     {
         base.Enter();
         player.rb.isKinematic = true;
+        isMotionEnd = false;
         AdjustLedgePosition();
     }
 
@@ -27,6 +29,38 @@ public class PlayerOneWayState : PlayerState
     {
         base.Exit();
         player.rb.isKinematic = false;
+        /*if(!isMotionEnd)
+        {
+            if (stateMachine.lastState == player.climbState)
+            {
+                // 获取当前玩家位置
+                Vector2 startPosition = player.transform.position;
+                OneWayPlatformController oneWayPlatformController = player.gameObject.GetComponent<OneWayPlatformController>();
+                Debug.Log(oneWayPlatformController.centerX + "a jsfoiajosaf");
+                Vector2 targetPosition = new Vector2(
+                    player.transform.position.x,
+                    startPosition.y + 1f
+                );
+                player.transform.position = targetPosition;
+                player.SetVelocity(rb.velocity.x, 0);
+            }
+            else
+            {
+                // 获取当前玩家位置
+                Vector2 startPosition = player.transform.position;
+                OneWayPlatformController oneWayPlatformController = player.gameObject.GetComponent<OneWayPlatformController>();
+                Debug.Log(oneWayPlatformController.centerX + "a jsfoiajosaf");
+                Vector2 targetPosition = new Vector2(
+                    oneWayPlatformController.centerX,
+                    startPosition.y + 1f
+                );
+
+                player.transform.position = targetPosition;
+                player.SetVelocity(rb.velocity.x, 0);
+            }
+
+        }*/
+
     }
 
     public override void Update()
@@ -67,6 +101,7 @@ public class PlayerOneWayState : PlayerState
                     .OnComplete(() =>
                     {
                         // 移动结束后的回调，可以处理后续状态
+                        isMotionEnd = true;
                         player.AnimationTrigger(PlayerAnimationTriggerType.PlayerAnimationEndTrigger);
                     });
             }
@@ -103,7 +138,7 @@ public class PlayerOneWayState : PlayerState
             currentPosition.x = oneWayPlatformController.centerX;
         }
         // 定义射线的起始位置（玩家位置）和方向（向上）
-        Vector2 rayOrigin = currentPosition - new Vector2(0,1f);
+        Vector2 rayOrigin = currentPosition - new Vector2(0,2f);
         Vector2 rayDirection = Vector2.up;
 
         // 定义射线的长度
@@ -115,7 +150,8 @@ public class PlayerOneWayState : PlayerState
         if (hit.collider != null)
         {
             // 获取射线检测到的地面的Y坐标，然后加上1f
-            float groundYPosition = hit.point.y + 2f;
+            Debug.Log("hitpo" + hit.point.y);
+            float groundYPosition = Mathf.Round(hit.point.y) + 2f;
 
             // 更新玩家位置
             Vector2 newPosition = new Vector2(currentPosition.x, groundYPosition);
@@ -131,7 +167,7 @@ public class PlayerOneWayState : PlayerState
             if (hit.collider != null)
             {
                 // 获取射线检测到的地面的Y坐标，然后加上1f
-                float groundYPosition = hit.point.y + 2f;
+                float groundYPosition = Mathf.Round(hit.point.y) + 2f;
 
                 // 更新玩家位置
                 Vector2 newPosition = new Vector2(currentPosition.x, groundYPosition);

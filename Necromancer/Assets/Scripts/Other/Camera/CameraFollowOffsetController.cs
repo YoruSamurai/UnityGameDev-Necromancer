@@ -48,7 +48,7 @@ public class CameraFollowOffsetController : MonoBehaviour
             lastTimeDir = 1;
             if (player.stateMachine.currentState == player.climbState)
             {
-                StartCoroutine(SmoothOffsetTo(5f, 2f,2));
+                StartCoroutine(SmoothOffsetTo(3f, 2f,2));
                 isCoroutineRunning = true;
                 return;
             }
@@ -67,7 +67,7 @@ public class CameraFollowOffsetController : MonoBehaviour
             lastTimeDir = -1;
             if (player.stateMachine.currentState == player.climbState)
             {
-                StartCoroutine(SmoothOffsetTo(5f, 2f,2));
+                StartCoroutine(SmoothOffsetTo(3f, 2f,2));
                 isCoroutineRunning = true;
                 return;
             }
@@ -84,7 +84,7 @@ public class CameraFollowOffsetController : MonoBehaviour
             bool isWallDetected = player.IsWallBodyDetected();
             if (isWallDetected && isCoroutineRunning == false)
             {
-                StartCoroutine(SmoothOffsetTo(5f, 2f, 1));
+                StartCoroutine(SmoothOffsetTo(3f, 2f, 1));
                 isCoroutineRunning=true;
             }
             else
@@ -109,7 +109,7 @@ public class CameraFollowOffsetController : MonoBehaviour
             bool isWallDetected = player.IsWallBodyDetected();
             if (isWallDetected && isCoroutineRunning == false)
             {
-                StartCoroutine(SmoothOffsetTo(5f, 2f,1));
+                StartCoroutine(SmoothOffsetTo(3f, 2f,1));
                 isCoroutineRunning = true;
             }
             else
@@ -133,7 +133,7 @@ public class CameraFollowOffsetController : MonoBehaviour
         if (isHolding && Input.GetKeyUp(KeyCode.D) && holdingDir == 1)
         {
             StopAllCoroutines();
-            StartCoroutine(SmoothOffsetTo(5f, holdTime,1));
+            StartCoroutine(SmoothOffsetTo(3f, holdTime,1));
             isCoroutineRunning = true;
             holdTime = 0;
             holdingDir = 0;
@@ -142,7 +142,7 @@ public class CameraFollowOffsetController : MonoBehaviour
         else if (isHolding && Input.GetKeyUp(KeyCode.A) && holdingDir == -1)
         {
             StopAllCoroutines();
-            StartCoroutine(SmoothOffsetTo(5f, holdTime, 1));
+            StartCoroutine(SmoothOffsetTo(3f, holdTime, 1));
             isCoroutineRunning = true;
             holdingDir = 0;
             holdTime = 0;
