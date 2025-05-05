@@ -72,6 +72,8 @@ public class RoomGraphGenerator : MonoBehaviour
         public List<DoorInfo> doorInfos;
         public List<int> connectionRoom;
 
+
+
     }
 
 

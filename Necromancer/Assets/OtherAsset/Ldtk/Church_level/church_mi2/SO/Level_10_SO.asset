@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelData: {fileID: 6993293779124984225, guid: 22d1fa51a0b970e4aae68049051811e0, type: 3}
   gameRoomType: 2
-  levelHeight: 17
-  levelWidth: 32
+  levelHeight: 13
+  levelWidth: 34
   doorInfos:
-  - startCell: {x: 3, y: 0, z: 0}
+  - startCell: {x: 0, y: 1, z: 0}
     length: 5
-    direction: 3
+    direction: 0
     isLocked: 0
     node: -1
+  monsterSpawnPoints:
+  - {x: 10, y: 1}
+  - {x: 20, y: 5}
+  - {x: 25, y: 1}

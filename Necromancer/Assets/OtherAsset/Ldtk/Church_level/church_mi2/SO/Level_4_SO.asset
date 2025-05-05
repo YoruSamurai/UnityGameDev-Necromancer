@@ -27,3 +27,6 @@ MonoBehaviour:
     direction: 0
     isLocked: 0
     node: -1
+  monsterSpawnPoints:
+  - {x: 6, y: 1}
+  - {x: 8, y: 9}

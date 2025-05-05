@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
+    
+
     #region 属性
     public float currentDamageMultiplier;
 

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 806404977698317745}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.51, y: -0.87, z: 0}
+  m_LocalPosition: {x: 0.51, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1293358696502950523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.26, y: -1.03, z: 0}
+  m_LocalPosition: {x: 0.54, y: -0.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -218,7 +218,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.0625, y: 2.25}
+    oldSize: {x: 1.03125, y: 1.125}
     newSize: {x: 2.9375, y: 3.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -342,9 +342,9 @@ MonoBehaviour:
   currentAttackCooldown: 0
   canMove: 0
   groundCheck: {fileID: 1142245326379524015}
-  groundCheckDistance: 0.28
+  groundCheckDistance: 0.3
   wallCheck: {fileID: 6865013310632910747}
-  wallCheckDistance: 1.11
+  wallCheckDistance: 0.58
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -385,6 +385,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09855961, y: -0.00000094112596}
-  m_Size: {x: 1.3104085, y: 2.2265577}
+  m_Offset: {x: -0.013451423, y: 0.11687971}
+  m_Size: {x: 0.85262483, y: 1.4278704}
   m_Direction: 0

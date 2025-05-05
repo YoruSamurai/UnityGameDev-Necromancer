@@ -29,6 +29,20 @@ public class MonsterStats : MonoBehaviour
     public float freezeDuration;
     public float currentFreezeTimer;
 
+    #region 房间属性
+    private int monsterIndex;
+    private int roomIndex;
+    private int roomSpawnPointIndex;
+
+    public void SetRoomMonsterInfo(int _monsterIndex, int _roomIndex, int _roomSpawnPointIndex)
+    {
+        monsterIndex = _monsterIndex;
+        roomIndex = _roomIndex;
+        roomSpawnPointIndex = _roomSpawnPointIndex;
+    }
+
+    #endregion
+
 
     #region 怪物当前状态
     public bool isDead {  get; private set; }

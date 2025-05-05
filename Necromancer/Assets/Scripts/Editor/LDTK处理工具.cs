@@ -4,6 +4,7 @@ using System.IO;
 using LDtkUnity;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
+using static LdtkTest;
 
 public class LDTK处理工具 : EditorWindow
 {
@@ -109,12 +110,40 @@ public class LDTK处理工具 : EditorWindow
             AssetDatabase.CreateAsset(levelSO, soPath);
         }
 
+        
         // 更新数据
         levelSO.levelData = level;
         levelSO.gameRoomType = level.FieldInstances.GetEnum<GameRoomType>("GameRoomType");
         levelSO.levelHeight = level.BorderRect.height;
         levelSO.levelWidth = level.BorderRect.width;
         levelSO.doorInfos = GetAllDoors(level); // 获取所有门信息
+
+        List<Vector2Int> monsterSpawnPoints = new List<Vector2Int>();
+        foreach (LDtkComponentLayer layer in level.LayerInstances)
+        {
+            if (layer == null) continue;
+            if (layer.name == "MonsterSpawnPoint")
+            {
+                Tilemap map = layer.GetComponentInChildren<Tilemap>();
+                if (map == null) continue;
+
+                // 获取tilemap的边界
+                BoundsInt bounds = map.cellBounds;
+
+                for (int x = bounds.xMin; x < bounds.xMax; x++)
+                {
+                    for (int y = bounds.yMin; y < bounds.yMax; y++)
+                    {
+                        Vector3Int tilePos = new Vector3Int(x, y, 0);
+                        if (map.HasTile(tilePos))
+                        {
+                            monsterSpawnPoints.Add(new Vector2Int(x, y));
+                        }
+                    }
+                }
+            }
+        }
+        levelSO.monsterSpawnPoints = monsterSpawnPoints;
 
         // 标记为脏并保存
         EditorUtility.SetDirty(levelSO);

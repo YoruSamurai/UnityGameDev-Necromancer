@@ -14,6 +14,8 @@ public class LdtkLevelSO : ScriptableObject
     public float levelWidth;
     public List<DoorInfo> doorInfos;
 
+    public List<Vector2Int> monsterSpawnPoints;
+
 }
 
 

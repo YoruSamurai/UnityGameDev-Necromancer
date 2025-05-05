@@ -17,3 +17,4 @@ MonoBehaviour:
   levelHeight: 32
   levelWidth: 32
   doorInfos: []
+  monsterSpawnPoints: []
