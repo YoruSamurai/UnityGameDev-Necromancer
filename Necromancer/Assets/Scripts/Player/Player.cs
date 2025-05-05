@@ -213,6 +213,14 @@ public class Player : MonoBehaviour
         stateMachine.currentState.FixedUpdate();
     }
 
+    public Vector2 GetCurrentPosition()
+    {
+        Vector2 playerPos = new Vector2();
+        playerPos.x = this.transform.position.x;
+        playerPos.y = this.transform.position.y;    
+        return playerPos;
+    }
+
     #region Trigger处理
 
     private void OnTriggerEnter2D(Collider2D collision)

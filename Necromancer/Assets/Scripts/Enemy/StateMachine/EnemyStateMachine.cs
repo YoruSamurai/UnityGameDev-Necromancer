@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyStateMachine
 {
     public EnemyState currentEnemyState {  get; set; }
+    public bool isLocked = false;
     public void Initialize(EnemyState _enemyState)
     {
         currentEnemyState = _enemyState;
@@ -13,8 +14,15 @@ public class EnemyStateMachine
 
     public void ChangeState(EnemyState _enemyState)
     {
+        if (isLocked)
+            return;
         currentEnemyState.ExitState();
         currentEnemyState = _enemyState;
         currentEnemyState.EnterState();
+    }
+
+    public void LockStateMachine()
+    {
+        isLocked = true;
     }
 }

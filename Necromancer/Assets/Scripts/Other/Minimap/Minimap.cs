@@ -78,7 +78,7 @@ public class Minimap : MonoBehaviour
                             if (map.HasTile(tilePos))
                             {
                                 // 这是该Tilemap下的本地tile位置
-                                Debug.Log($"Tile at local position:{roomData.room.levelData.name} {tilePos}");
+                                //Debug.Log($"Tile at local position:{roomData.room.levelData.name} {tilePos}");
                                 //设置和取值不需要动 要动的只有最后的SetPixel。
                                 RegisterTile(new Vector2Int(tilePos.x + (int)roomData.startPosition.x, tilePos.y + (int)roomData.startPosition.y), Color.white);
                             }
@@ -101,7 +101,7 @@ public class Minimap : MonoBehaviour
                             if (map.HasTile(tilePos))
                             {
                                 // 这是该Tilemap下的本地tile位置
-                                Debug.Log($"Tile at local position:{roomData.room.levelData.name} {tilePos}");
+                                //Debug.Log($"Tile at local position:{roomData.room.levelData.name} {tilePos}");
                                 //设置和取值不需要动 要动的只有最后的SetPixel。
                                 RegisterTile(new Vector2Int(tilePos.x + (int)roomData.startPosition.x, tilePos.y + (int)roomData.startPosition.y), Color.blue);
                             }

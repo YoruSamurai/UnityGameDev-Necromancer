@@ -40,7 +40,7 @@ public class FxController : MonoBehaviour
         anim.runtimeAnimatorController = aoc;
         Debug.Log(aoc["均衡1"] + "slash");
         // 播放动画，确保从头开始
-        anim.Play("FX", 0, 0f);
+        anim.Play("均衡1", 0, 0f);
 
         // 获取动画片段时长（clip.length）
         animLength = slashClip.length;

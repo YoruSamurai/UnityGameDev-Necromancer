@@ -23,6 +23,8 @@ public class EnemyDieState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
+        // 锁死状态机，防止切换
+        enemy.stateMachine.LockStateMachine();
         enemy.anim.SetBool("Die", true);
 
     }

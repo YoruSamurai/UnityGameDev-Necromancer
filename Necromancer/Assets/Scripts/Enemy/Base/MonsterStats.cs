@@ -135,6 +135,11 @@ public class MonsterStats : MonoBehaviour
         isDead = true;
         gameObject.layer = LayerMask.NameToLayer("Dead");
         StopStunResistanceDecay();
+        this.TriggerEvent(EventName.NormalEnemyDead, new NormalEnemyDeadEventArgs
+        {
+            enemyName = gameObject.name,
+        });
+
         enemy.ChangeToState(enemy.dieState);
     }
 
