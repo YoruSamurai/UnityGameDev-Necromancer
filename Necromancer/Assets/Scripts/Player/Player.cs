@@ -275,7 +275,7 @@ public class Player : MonoBehaviour
 
     public void InitialFxPrefab(AnimationClip slashClip, Vector3 offset)
     {
-        // 实例化 fxPrefab，假设 fxPrefab 定义在 Player 中并在 Inspector 设置
+        // 实例化 fxPrefab，假设 fxPrefab 定义在 Player 中并在 Inspector 设置1
         GameObject fxInstance = Instantiate(fxPrefab, transform.position, Quaternion.identity,transform);
 
         // 获取 fxInstance 上的 FXSlash 组件并调用 Initialize
