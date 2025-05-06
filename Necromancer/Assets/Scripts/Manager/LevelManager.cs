@@ -66,39 +66,111 @@ public class LevelManager : MonoBehaviour
     /// <param name="difficulty"></param>
     private void InitialEnemy(LevelMonsterListSO levelMonsterListSO,int difficulty)
     {
+        float startTime = Time.realtimeSinceStartup;
+
+        
         levelMonsterDatas.Clear();
         int enemyIndex = 0;
         //遍历所有房间 给每个房间随机生成两个怪，
-        if (roomDatas.Count > 0)
-        {
-            foreach(var roomData in roomDatas)
-            {
-                List<Vector2Int> spawnPoints = new List<Vector2Int>();
-                spawnPoints = roomData.room.monsterSpawnPoints;
-                System.Random rng = new System.Random(); 
 
+        int monsterNum = 15;
+        int spawnNormalRoom = roomDatas.Count(roomData => roomData.gameRoomType == GameRoomType.Normal);
+
+        if (roomDatas.Count > 0 && spawnNormalRoom > 0)
+        {
+            int baseMonstersPerRoom = monsterNum / spawnNormalRoom;
+            int extraMonsters = monsterNum % spawnNormalRoom;
+
+            System.Random rng = new System.Random();
+            int normalRoomCounter = 0;
+
+            foreach (var roomData in roomDatas)
+            {
+                if (roomData.gameRoomType != GameRoomType.Normal)
+                    continue;
+
+                List<MonsterSpawnPoint> spawnPoints = roomData.room.monsterSpawnPoints;
+
+                // 打乱 spawnPoints（Fisher–Yates）
                 for (int i = spawnPoints.Count - 1; i > 0; i--)
                 {
                     int swapIndex = rng.Next(i + 1);
-                    Vector2Int temp = spawnPoints[i];
+                    var temp = spawnPoints[i];
                     spawnPoints[i] = spawnPoints[swapIndex];
                     spawnPoints[swapIndex] = temp;
                 }
 
-                for(int i = 0; i < 2; i++)
+                int monstersToSpawn = baseMonstersPerRoom;
+                if (extraMonsters > 0 && UnityEngine.Random.Range(0,10) < 5)
+                {
+                    monstersToSpawn += 1;
+                    extraMonsters--;
+                }
+
+                for (int i = 0; i < monstersToSpawn && i < spawnPoints.Count; i++)
                 {
                     enemyIndex++;
-                    GameObject monster = Instantiate(levelMonsterListSO.levelMonsterList[0],
-                        roomData.startPosition + spawnPoints[i], Quaternion.identity, monsterParentTransform);
-                    levelMonsterDatas.Add(new LevelMonsterData(enemyIndex, monster, roomData.roomID, i,false, 0,0));
+                    Vector3 spawnPos = roomData.startPosition + spawnPoints[i].monsterSpawnPosition;
+                    List<GameObject> canGenerateMonsterList = new List<GameObject>();
+                    if (spawnPoints[i].isGroundMonster)
+                    {
+                        bool meleeMonster = UnityEngine.Random.Range(0, 100) < spawnPoints[i].meleePossibility;
+                        foreach (var singleMonster in levelMonsterListSO.levelMonsterList)
+                        {
+                            Enemy enemy = singleMonster.GetComponent<Enemy>();
+                            if (enemy != null)
+                            {
+                                EnemyType enemyType = enemy.GetEnemyType();
+                                if(meleeMonster && enemyType == EnemyType.Melee)
+                                {
+                                    canGenerateMonsterList.Add(singleMonster);
+                                }
+                                else if(!meleeMonster && enemyType == EnemyType.Archer)
+                                {
+                                    canGenerateMonsterList.Add(singleMonster);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var singleMonster in levelMonsterListSO.levelMonsterList)
+                        {
+                            Enemy enemy = singleMonster.GetComponent<Enemy>();
+                            if (enemy != null)
+                            {
+                                EnemyType enemyType = enemy.GetEnemyType();
+                                if (enemyType == EnemyType.Air)
+                                {
+                                    canGenerateMonsterList.Add(singleMonster);
+                                }
+                                else
+                                    continue;
+                            }
+                        }
+                    }
+
+                    GameObject monster = Instantiate(
+                        canGenerateMonsterList[UnityEngine.Random.Range(0,canGenerateMonsterList.Count)],
+                        spawnPos,
+                        Quaternion.identity,
+                        monsterParentTransform);
+
+                    levelMonsterDatas.Add(new LevelMonsterData(enemyIndex, monster, roomData.roomID, i, false, 0, 0));
+
                     MonsterStats monsterStats = monster.GetComponent<MonsterStats>();
                     if (monsterStats != null)
                     {
                         monsterStats.SetRoomMonsterInfo(enemyIndex, roomData.roomID, i);
                     }
                 }
+
+                normalRoomCounter++;
             }
         }
+
+        float elapsedTime = Time.realtimeSinceStartup - startTime;
+        Debug.Log($"花费时间 {elapsedTime}s来生成敌人");
     }
 
 

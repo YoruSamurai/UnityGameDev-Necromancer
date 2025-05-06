@@ -5,6 +5,7 @@ using LDtkUnity;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using static LdtkTest;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class LDTK处理工具 : EditorWindow
 {
@@ -118,7 +119,21 @@ public class LDTK处理工具 : EditorWindow
         levelSO.levelWidth = level.BorderRect.width;
         levelSO.doorInfos = GetAllDoors(level); // 获取所有门信息
 
-        List<Vector2Int> monsterSpawnPoints = new List<Vector2Int>();
+        Tilemap groundMap = null;
+        Tilemap oneWayMap = null;
+        foreach (LDtkComponentLayer layer in level.LayerInstances)
+        {
+            if (layer == null) continue;
+            if (layer.name == "Ground")
+            {
+                groundMap = layer.GetComponentInChildren<Tilemap>();
+            }
+            if (layer.name == "OneWayPlatform")
+            {
+                oneWayMap = layer.GetComponentInChildren<Tilemap>();
+            }
+        }
+        List<MonsterSpawnPoint> spawnPoints = new List<MonsterSpawnPoint>();
         foreach (LDtkComponentLayer layer in level.LayerInstances)
         {
             if (layer == null) continue;
@@ -126,24 +141,12 @@ public class LDTK处理工具 : EditorWindow
             {
                 Tilemap map = layer.GetComponentInChildren<Tilemap>();
                 if (map == null) continue;
-
-                // 获取tilemap的边界
-                BoundsInt bounds = map.cellBounds;
-
-                for (int x = bounds.xMin; x < bounds.xMax; x++)
-                {
-                    for (int y = bounds.yMin; y < bounds.yMax; y++)
-                    {
-                        Vector3Int tilePos = new Vector3Int(x, y, 0);
-                        if (map.HasTile(tilePos))
-                        {
-                            monsterSpawnPoints.Add(new Vector2Int(x, y));
-                        }
-                    }
-                }
+                spawnPoints = GetMonsterSpawnPoint(groundMap, oneWayMap, map);
             }
         }
-        levelSO.monsterSpawnPoints = monsterSpawnPoints;
+
+
+        levelSO.monsterSpawnPoints = spawnPoints;
 
         // 标记为脏并保存
         EditorUtility.SetDirty(levelSO);
@@ -151,6 +154,95 @@ public class LDTK处理工具 : EditorWindow
 
         Debug.Log($"生成 Level SO: {soPath}");
         return levelSO;
+    }
+
+    private List<MonsterSpawnPoint> GetMonsterSpawnPoint(Tilemap groundMap, Tilemap oneWayMap, Tilemap map)
+    {
+        List<MonsterSpawnPoint> spawnPoints = new List<MonsterSpawnPoint>();
+        BoundsInt bounds = map.cellBounds;
+
+        for (int x = bounds.xMin; x < bounds.xMax; x++)
+        {
+            for (int y = bounds.yMin; y < bounds.yMax; y++)
+            {
+                Vector3Int pos = new Vector3Int(x, y, 0);
+                if (!map.HasTile(pos)) continue;
+
+                Vector3Int up = pos + Vector3Int.up;
+                Vector3Int down = pos + Vector3Int.down;
+
+                bool upHasTile = HasAnyTile(groundMap, up) || HasAnyTile(oneWayMap, up);
+                bool centerHasTile = HasAnyTile(groundMap, pos) || HasAnyTile(oneWayMap, pos);
+                bool downHasTile = HasAnyTile(groundMap, down) || HasAnyTile(oneWayMap, down);
+
+                MonsterSpawnPoint spawnPoint = new MonsterSpawnPoint
+                {
+                    monsterSpawnPosition = new Vector2Int(x, y)
+                };
+
+                if (upHasTile)
+                {
+                    // 飞行怪
+                    spawnPoint.isGroundMonster = false;
+                    spawnPoint.meleePossibility = -1;
+                }
+                else
+                {
+                    // 地面怪，计算地面宽度
+                    int horizonCount = CountHorizontalWalkableTiles(pos, groundMap, oneWayMap);
+                    spawnPoint.isGroundMonster = true;
+                    spawnPoint.meleePossibility = GetMeleePossibility(horizonCount);
+                }
+
+                spawnPoints.Add(spawnPoint);
+            }
+        }
+
+        return spawnPoints;
+    }
+
+    private bool HasAnyTile(Tilemap map, Vector3Int pos)
+    {
+        return map != null && map.HasTile(pos);
+    }
+
+    private int CountHorizontalWalkableTiles(Vector3Int startPos, Tilemap groundMap, Tilemap oneWayMap)
+    {
+        int count = 0;
+        Vector3Int pos = startPos;
+        Vector3Int down = pos + Vector3Int.down;
+
+        // 向左
+        while (!HasAnyTile(groundMap, pos) && !HasAnyTile(oneWayMap, pos) &&
+               (HasAnyTile(groundMap, down) || HasAnyTile(oneWayMap, down)))
+        {
+            count++;
+            pos += Vector3Int.left;
+            down += Vector3Int.left;
+        }
+
+        pos = startPos;
+        down = pos + Vector3Int.down;
+
+        // 向右
+        while (!HasAnyTile(groundMap, pos) && !HasAnyTile(oneWayMap, pos) &&
+               (HasAnyTile(groundMap, down) || HasAnyTile(oneWayMap, down)))
+        {
+            count++;
+            pos += Vector3Int.right;
+            down += Vector3Int.right;
+        }
+
+        return count;
+    }
+
+    private int GetMeleePossibility(int horizonCount)
+    {
+        if (horizonCount <= 7) return 10;
+        if (horizonCount <= 10) return 30;
+        if (horizonCount <= 13) return 50;
+        if (horizonCount <= 17) return 70;
+        return 90;
     }
 
     private void CreateLdtkLevelSoList(List<LdtkLevelSO> levelSOs, string saveFolder)

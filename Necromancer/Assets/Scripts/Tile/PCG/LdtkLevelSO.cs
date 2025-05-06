@@ -14,11 +14,24 @@ public class LdtkLevelSO : ScriptableObject
     public float levelWidth;
     public List<DoorInfo> doorInfos;
 
-    public List<Vector2Int> monsterSpawnPoints;
+    public List<MonsterSpawnPoint> monsterSpawnPoints;
 
 }
 
+[Serializable]
+public struct MonsterSpawnPoint
+{
+    public Vector2Int monsterSpawnPosition;
+    public bool isGroundMonster;
+    public int meleePossibility;//总共100 除了近战就是远程
 
+    public MonsterSpawnPoint(Vector2Int spawnPosition,bool isGround,int meleePos)
+    {
+        monsterSpawnPosition = spawnPosition;
+        isGroundMonster = isGround;
+        meleePossibility = meleePos;
+    }
+}
 
 [Serializable]
 public struct DoorInfo
@@ -28,8 +41,6 @@ public struct DoorInfo
     public DoorDir direction;    // 门的方向
     public bool isLocked;        //门已经被上锁了
     public int node;             //表示对应门的Node
-
-    
 }
 
 public enum DoorDir 

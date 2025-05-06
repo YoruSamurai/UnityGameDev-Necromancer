@@ -28,5 +28,9 @@ MonoBehaviour:
     isLocked: 0
     node: -1
   monsterSpawnPoints:
-  - {x: 6, y: 1}
-  - {x: 8, y: 9}
+  - monsterSpawnPosition: {x: 6, y: 1}
+    isGroundMonster: 1
+    meleePossibility: 70
+  - monsterSpawnPosition: {x: 8, y: 9}
+    isGroundMonster: 1
+    meleePossibility: 70

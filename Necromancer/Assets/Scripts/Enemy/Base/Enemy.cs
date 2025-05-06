@@ -30,6 +30,11 @@ public class Enemy : MonoBehaviour
     #region SO
     [SerializeField] private EnemyConfigSO configSO;
 
+    public EnemyType GetEnemyType()
+    {
+        return configSO.EnemyProfile.enemyType;
+    }
+
     public EnemyIdleSOBase enemyIdleBaseInstance {  get; set; }
     public EnemyChaseSOBase enemyChaseBaseInstance { get; set; }
     public EnemyAttackSOBase enemyAttackBaseInstance { get; set; }

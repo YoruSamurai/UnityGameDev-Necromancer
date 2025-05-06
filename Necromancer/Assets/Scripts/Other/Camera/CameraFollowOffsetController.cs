@@ -39,6 +39,7 @@ public class CameraFollowOffsetController : MonoBehaviour
     private void Update()
     {
         if (transposer == null) return;
+        if (player.stateMachine.currentState == player.primaryAttack) return;
         if (Input.GetKeyDown(KeyCode.D))
         {
             StopAllCoroutines();

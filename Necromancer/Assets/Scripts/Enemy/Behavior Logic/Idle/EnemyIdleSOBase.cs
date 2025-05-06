@@ -22,8 +22,6 @@ public class EnemyIdleSOBase : ScriptableObject
         transform = gameObject.transform;
         this.enemy = enemy;
         this.monsterStats = monsterStats;
-
-        Debug.Log(enemy.gameObject.name);
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         // 克隆 _components 中的每个组件，生成独立实例

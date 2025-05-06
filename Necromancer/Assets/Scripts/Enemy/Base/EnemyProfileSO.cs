@@ -19,7 +19,15 @@ public class EnemyProfileSO : ScriptableObject
     public float stunDuration;
     [Header("冻结时长")]
     public float freezeDuration;
+    [Header("怪物类型")]
+    public EnemyType enemyType;
 
 
+}
 
+public enum EnemyType
+{
+    Melee,//近战怪物
+    Archer,//远程怪物
+    Air,//飞行怪物
 }

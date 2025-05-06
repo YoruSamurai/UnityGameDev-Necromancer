@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1000
   baseDamage: 15
-  movementSpeed: 10
   stunResistance: 50
   freezeResistance: 50
   stunDuration: 2
   freezeDuration: 2
+  enemyType: 1
