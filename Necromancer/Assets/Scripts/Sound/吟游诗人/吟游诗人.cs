@@ -6,7 +6,7 @@ public class 吟游诗人 : MonoBehaviour
 {
     [Header("音效设置")]
     [SerializeField] private SoundData musicSoundFX;
-    [SerializeField] private float triggerDistance = 5f;
+    [SerializeField] private float triggerDistance = 15f;
 
     [Header("背景音乐")]
     [SerializeField] private 背景音乐 bgMusic;
@@ -41,11 +41,13 @@ public class 吟游诗人 : MonoBehaviour
 
             if (isPlayerNear)
             {
-
-
+                soundBuilder.JustPlay();
+                bgMusic.StopBgMusic();
             }
             else
             {
+                soundBuilder.JustStop();
+                bgMusic.StartBgMusic();
 
             }
         }
@@ -53,7 +55,7 @@ public class 吟游诗人 : MonoBehaviour
 
     private void OnDestroy()
     {
-
+        soundBuilder.Stop();
     }
 
     // 可选：在编辑器中显示触发范围

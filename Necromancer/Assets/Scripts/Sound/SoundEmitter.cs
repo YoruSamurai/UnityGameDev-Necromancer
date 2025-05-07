@@ -11,9 +11,16 @@ public class SoundEmitter : MonoBehaviour
     private AudioSource audioSource;
     Coroutine playingCoroutine;
 
+    private bool isPaused = false;
+
+    private Coroutine fadeCoroutine;
+    private float originalVolume;
+    [SerializeField] private float fadeDuration = 1.0f; // 淡入淡出时长
+
     private void Awake()
     {
         audioSource = gameObject.GetOrAdd<AudioSource>();
+        originalVolume = audioSource.volume;
     }
 
     public void Play()
@@ -28,12 +35,58 @@ public class SoundEmitter : MonoBehaviour
 
     public void JustPlay()
     {
-        audioSource.Play();
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+
+        // 如果音频没有在播放，先设置音量为0再开始播放
+        if (!audioSource.isPlaying)
+        {
+            audioSource.volume = 0;
+            if (isPaused)
+            {
+                audioSource.UnPause();
+                isPaused = false;
+            }
+            else
+            {
+                audioSource.Play();
+            }
+        }
+
+        fadeCoroutine = StartCoroutine(FadeAudio(originalVolume));
     }
 
     public void JustStop()
     {
-        audioSource.Stop();
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+
+        fadeCoroutine = StartCoroutine(FadeAudio(0, true));
+    }
+
+    private IEnumerator FadeAudio(float targetVolume, bool stopAfterFade = false)
+    {
+        float startVolume = audioSource.volume;
+        float timer = 0;
+
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, targetVolume, timer / fadeDuration);
+            yield return null;
+        }
+
+        audioSource.volume = targetVolume;
+
+        if (stopAfterFade)
+        {
+            audioSource.Pause();
+            isPaused = true;
+        }
     }
 
     public void Stop()
@@ -45,6 +98,14 @@ public class SoundEmitter : MonoBehaviour
         }
         audioSource.Stop();
         SoundManager.Instance.ReturnToPool(this);
+    }
+
+    public void Preload()
+    {
+        if (audioSource.clip != null && audioSource.clip.loadState == AudioDataLoadState.Unloaded)
+        {
+            audioSource.clip.LoadAudioData(); // 强制预加载音频数据
+        }
     }
 
     private IEnumerator WaitForSoundToEnd()

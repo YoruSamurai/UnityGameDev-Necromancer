@@ -9,17 +9,20 @@ public class 背景音乐 : MonoBehaviour
     [SerializeField] private float triggerDistance = 5f;
 
 
-    private SoundEmitter currentEmitter;
+    private SoundBuilder soundBuilder;
     private Transform playerTransform;
     private bool isPlayerNear;
 
     private void Start()
     {
-        SoundManager.Instance.CreateSound()
+        soundBuilder = SoundManager.Instance.CreateSound()
             .WithSoundData(bgMusic)
             .WithPosition(gameObject.transform.position)
-            .WithRandomPitch()
-            .Play();
+            .WithRandomPitch();
+
+        // 然后可以继续操作或存储这个 builder
+        soundBuilder.PrewarmPlay(); // 或者 PrewarmPlay() 如果你有这个方法
+        soundBuilder.JustPlay();
 
     }
 
@@ -28,11 +31,22 @@ public class 背景音乐 : MonoBehaviour
         
     }
 
+    public void StartBgMusic()
+    {
+        soundBuilder.JustPlay();
+    }
+
+    public void StopBgMusic()
+    {
+        soundBuilder.JustStop();
+
+    }
+
     private void OnDestroy()
     {
-        if (currentEmitter != null)
+        if (soundBuilder != null)
         {
-            SoundManager.Instance.ReturnToPool(currentEmitter);
+            soundBuilder.Stop();
         }
     }
 

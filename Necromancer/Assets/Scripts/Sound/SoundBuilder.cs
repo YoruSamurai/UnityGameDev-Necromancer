@@ -64,8 +64,18 @@ public class SoundBuilder
         {
             soundEmitter.WithRandomPitch();
         }
-
+        soundEmitter.Preload(); // 预加载音频数据
         soundManager.counts[soundData] = soundManager.counts.TryGetValue(soundData, out var count) ? count + 1 : 1;
+    }
+
+    public void JustPlay()
+    {
+        soundEmitter.JustPlay();
+    }
+
+    public void JustStop()
+    {
+        soundEmitter.JustStop();
     }
 
     public void Stop()
