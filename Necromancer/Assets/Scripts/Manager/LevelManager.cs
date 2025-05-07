@@ -16,6 +16,9 @@ public class LevelManager : MonoBehaviour
 
     public List<ActualRoomData> roomDatas;
 
+    //关卡中有多少怪物
+    [SerializeField] private int levelMonsterNum;
+
     [SerializeField] private Transform monsterParentTransform;
 
     [SerializeField] private LevelMonsterListSO levelMonsterListSO;
@@ -73,7 +76,7 @@ public class LevelManager : MonoBehaviour
         int enemyIndex = 0;
         //遍历所有房间 给每个房间随机生成两个怪，
 
-        int monsterNum = 15;
+        int monsterNum = levelMonsterNum;
         int spawnNormalRoom = roomDatas.Count(roomData => roomData.gameRoomType == GameRoomType.Normal);
 
         if (roomDatas.Count > 0 && spawnNormalRoom > 0)

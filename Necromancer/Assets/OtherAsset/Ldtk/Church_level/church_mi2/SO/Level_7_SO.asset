@@ -25,7 +25,7 @@ MonoBehaviour:
   monsterSpawnPoints:
   - monsterSpawnPosition: {x: 7, y: 2}
     isGroundMonster: 1
-    meleePossibility: 90
+    meleePossibility: 100
   - monsterSpawnPosition: {x: 20, y: 2}
     isGroundMonster: 1
-    meleePossibility: 90
+    meleePossibility: 100

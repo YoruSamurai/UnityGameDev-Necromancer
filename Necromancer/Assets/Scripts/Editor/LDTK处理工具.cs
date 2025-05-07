@@ -10,6 +10,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class LDTK处理工具 : EditorWindow
 {
     private int i = 0;
+    public MeleeMonsterConfig meleeConfig;
 
     [MenuItem("Tools/LDTK 处理工具")]
     public static void ShowWindow()
@@ -236,13 +237,23 @@ public class LDTK处理工具 : EditorWindow
         return count;
     }
 
-    private int GetMeleePossibility(int horizonCount)
+    /*private int GetMeleePossibility(int horizonCount)
     {
         if (horizonCount <= 7) return 10;
         if (horizonCount <= 10) return 30;
         if (horizonCount <= 13) return 50;
         if (horizonCount <= 17) return 70;
         return 90;
+    }*/
+
+    private int GetMeleePossibility(int horizonCount)
+    {
+        for (int i = 0; i < meleeConfig.thresholds.Length; i++)
+        {
+            if (horizonCount <= meleeConfig.thresholds[i])
+                return meleeConfig.possibilities[i];
+        }
+        return meleeConfig.possibilities[meleeConfig.possibilities.Length - 1]; // 默认值
     }
 
     private void CreateLdtkLevelSoList(List<LdtkLevelSO> levelSOs, string saveFolder)

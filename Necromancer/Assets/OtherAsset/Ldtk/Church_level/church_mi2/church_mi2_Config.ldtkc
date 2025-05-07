@@ -11,13 +11,73 @@
     "UseParallax": true,
     "IntGridValues": [
         {
+            "_key": "MonsterSpawnPoint_1",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
             "_key": "Door_1",
             "_asset": {
                 "instanceID": 0
             }
         },
         {
-            "_key": "Wall_1",
+            "_key": "ChurchBack_1",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "ChurchBack_9",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "ChurchBack_10",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "ChurchBack_2",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "ChurchBack_3",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "ChurchBack_4",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "ChurchBack_5",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "ChurchBack_6",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "ChurchBack_7",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "ChurchBack_8",
             "_asset": {
                 "instanceID": 0
             }
@@ -52,7 +112,21 @@
             "_key": "Chandelier",
             "_asset": {
                 "fileID": 3688019706637377597,
-                "guid": "a6518357b50d74d4dbd185dd69d64fff",
+                "guid": "34cce2bb4defce141830d8e745e74529",
+                "type": 3
+            }
+        },
+        {
+            "_key": "Candle",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
+            "_key": "Torch",
+            "_asset": {
+                "fileID": 3688019706637377597,
+                "guid": "c6efc0580462d684786c330134f4f35a",
                 "type": 3
             }
         }

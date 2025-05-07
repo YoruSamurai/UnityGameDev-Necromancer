@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u5747\u8861\u4E4B\u5203"
   m_EditorClassIdentifier: 
   equipmentName: "\u5747\u8861\u4E4B\u5203"
-  baseDmg: 100
+  baseDmg: 5000
   equipmentSprite: {fileID: 0}
   equipmentType: 0
   equipmentTags: 

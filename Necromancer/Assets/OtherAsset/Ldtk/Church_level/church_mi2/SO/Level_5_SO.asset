@@ -33,10 +33,10 @@ MonoBehaviour:
     meleePossibility: 70
   - monsterSpawnPosition: {x: 15, y: 1}
     isGroundMonster: 1
-    meleePossibility: 90
+    meleePossibility: 100
   - monsterSpawnPosition: {x: 28, y: 8}
     isGroundMonster: 1
-    meleePossibility: 90
+    meleePossibility: 100
   - monsterSpawnPosition: {x: 34, y: 14}
     isGroundMonster: 1
     meleePossibility: 30
