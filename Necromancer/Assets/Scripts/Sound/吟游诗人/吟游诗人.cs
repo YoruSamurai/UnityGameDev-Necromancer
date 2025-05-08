@@ -5,7 +5,7 @@ using UnityEngine;
 public class 吟游诗人 : MonoBehaviour
 {
     [Header("音效设置")]
-    [SerializeField] private SoundData musicSoundFX;
+    [SerializeField] private SoundDataSO poetMusic;
     [SerializeField] private float triggerDistance = 15f;
 
     [Header("背景音乐")]
@@ -19,8 +19,9 @@ public class 吟游诗人 : MonoBehaviour
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
+        SoundData soundData = poetMusic.GetSoundData();
         soundBuilder = SoundManager.Instance.CreateSound()
-            .WithSoundData(musicSoundFX)
+            .WithSoundData(soundData)
             .WithPosition(gameObject.transform.position)
             .WithRandomPitch();
 

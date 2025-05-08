@@ -23,6 +23,10 @@ public class SoundEmitter : MonoBehaviour
         originalVolume = audioSource.volume;
     }
 
+    /// <summary>
+    /// 这个方法适用于单次播放 播放完销毁的音效
+    /// 如果要循环播放并且不销毁 请调用JustPlay
+    /// </summary>
     public void Play()
     {
         if (playingCoroutine != null)
@@ -33,6 +37,10 @@ public class SoundEmitter : MonoBehaviour
         playingCoroutine = StartCoroutine(WaitForSoundToEnd());
     }
 
+
+    /// <summary>
+    /// 循环播放且只是暂停不销毁 有渐进效果
+    /// </summary>
     public void JustPlay()
     {
         if (fadeCoroutine != null)
@@ -58,6 +66,9 @@ public class SoundEmitter : MonoBehaviour
         fadeCoroutine = StartCoroutine(FadeAudio(originalVolume));
     }
 
+    /// <summary>
+    /// 循环播放且只是暂停不销毁 有一个渐出效果
+    /// </summary>
     public void JustStop()
     {
         if (fadeCoroutine != null)
@@ -68,6 +79,12 @@ public class SoundEmitter : MonoBehaviour
         fadeCoroutine = StartCoroutine(FadeAudio(0, true));
     }
 
+    /// <summary>
+    /// 淡入淡出音频效果
+    /// </summary>
+    /// <param name="targetVolume"></param>
+    /// <param name="stopAfterFade"></param>
+    /// <returns></returns>
     private IEnumerator FadeAudio(float targetVolume, bool stopAfterFade = false)
     {
         float startVolume = audioSource.volume;
@@ -89,6 +106,9 @@ public class SoundEmitter : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 销毁音频对象返回到对象池
+    /// </summary>
     public void Stop()
     {
         if(playingCoroutine != null)
@@ -100,6 +120,9 @@ public class SoundEmitter : MonoBehaviour
         SoundManager.Instance.ReturnToPool(this);
     }
 
+    /// <summary>
+    /// 为了避免卡顿 预加载一些音频
+    /// </summary>
     public void Preload()
     {
         if (audioSource.clip != null && audioSource.clip.loadState == AudioDataLoadState.Unloaded)
@@ -108,6 +131,10 @@ public class SoundEmitter : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 在音频播放完之后返回对象池
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator WaitForSoundToEnd()
     {
         yield return new WaitWhile(() => audioSource.isPlaying);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class 背景音乐 : MonoBehaviour
 {
     [Header("音效设置")]
-    [SerializeField] private SoundData bgMusic;
+    [SerializeField] private SoundDataSO bgMusic;
     [SerializeField] private float triggerDistance = 5f;
 
 
@@ -15,8 +15,9 @@ public class 背景音乐 : MonoBehaviour
 
     private void Start()
     {
+        SoundData soundData = bgMusic.GetSoundData();
         soundBuilder = SoundManager.Instance.CreateSound()
-            .WithSoundData(bgMusic)
+            .WithSoundData(soundData)
             .WithPosition(gameObject.transform.position)
             .WithRandomPitch();
 
