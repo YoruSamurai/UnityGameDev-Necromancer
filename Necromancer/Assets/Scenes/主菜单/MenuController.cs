@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Audio;
 
 public class MenuController : MonoBehaviour
 {
@@ -44,7 +45,13 @@ public class MenuController : MonoBehaviour
     [Header("音量设置")]
     [SerializeField] private GameObject volumePanel;
     [SerializeField] private TMP_Text volumeValue;
+    [SerializeField] private TMP_Text soundFxVolumeValue;
+    [SerializeField] private TMP_Text musicVolumeValue;
+    [SerializeField] private TMP_Text environmentVolumeValue;
     [SerializeField] private Slider volumeSlider;
+    [SerializeField] private Slider soundFxVolumeSlider;
+    [SerializeField] private Slider musicVolumeSlider;
+    [SerializeField] private Slider environmentVolumeSlider;
     [SerializeField] private float defaultVolume = .5f;
 
     [Header("语言设置")]
@@ -127,8 +134,14 @@ public class MenuController : MonoBehaviour
 
     public void OnclickVolumeSettingBtn()
     {
-        volumeSlider.value = GlobalSettingManager.Instance.globalVolume;
-        volumeValue.text = (GlobalSettingManager.Instance.globalVolume * 100).ToString("0");
+        volumeSlider.value = GlobalSettingManager.Instance.globalVolume/100f;
+        volumeValue.text = (GlobalSettingManager.Instance.globalVolume).ToString("0");
+        musicVolumeSlider.value = GlobalSettingManager.Instance.musicVolume / 100f;
+        musicVolumeValue.text = (GlobalSettingManager.Instance.musicVolume).ToString("0");
+        environmentVolumeSlider.value = GlobalSettingManager.Instance.environmentVolume / 100f;
+        environmentVolumeValue.text = (GlobalSettingManager.Instance.environmentVolume).ToString("0");
+        soundFxVolumeSlider.value = GlobalSettingManager.Instance.soundFxVolume / 100f;
+        soundFxVolumeValue.text = (GlobalSettingManager.Instance.soundFxVolume).ToString("0");
         optionMenuPanel.SetActive(false);
         volumeSetting.SetActive(true);
     }
@@ -245,20 +258,84 @@ public class MenuController : MonoBehaviour
     #endregion
 
     #region 音量设置
+
+    [SerializeField] private AudioMixer audioMixer;
+
     public void SetVolume(float volume)
     {
         // 四舍五入到最近的 0.01
-        volume = Mathf.Round(volume * 100) / 100;
-        AudioListener.volume = volume;
+        //volume = Mathf.Round(volume * 100) / 100;
+        if(volume < 0.01)
+        {
+            audioMixer.SetFloat("MasterVolume", -80f);
+        }
+        else
+        {
+            audioMixer.SetFloat("MasterVolume",Mathf.Log10(volume) * 20f);
+        }
         volumeValue.text = (volume*100).ToString("0");
+        
+    }
+
+    public void SetSoundFxVolume(float volume)
+    {
+        // 四舍五入到最近的 0.01
+        //volume = Mathf.Round(volume * 100) / 100;
+        if (volume < 0.01)
+        {
+            audioMixer.SetFloat("SoundFxVolume", -80f);
+        }
+        else
+        {
+            audioMixer.SetFloat("SoundFxVolume", Mathf.Log10(volume) * 20f);
+        }
+        soundFxVolumeValue.text = (volume * 100).ToString("0");
+
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        // 四舍五入到最近的 0.01
+        //volume = Mathf.Round(volume * 100) / 100;
+        if (volume < 0.01)
+        {
+            audioMixer.SetFloat("MusicVolume", -80f);
+        }
+        else
+        {
+            audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20f);
+        }
+        musicVolumeValue.text = (volume * 100).ToString("0");
+
+    }
+
+    public void SetEnvironmentVolume(float volume)
+    {
+        // 四舍五入到最近的 0.01
+        volume = Mathf.Round(volume * 100) / 100;
+        if (volume < 0.01)
+        {
+            audioMixer.SetFloat("EnvironmentVolume", -80f);
+        }
+        else
+        {
+            audioMixer.SetFloat("EnvironmentVolume", Mathf.Log10(volume) * 20f);
+        }
+        environmentVolumeValue.text = (volume * 100).ToString("0");
 
     }
 
 
     public void VolumeApply()
     {
-        Debug.Log("我将保存音量为" + AudioListener.volume);
-        GlobalSettingManager.Instance.globalVolume = AudioListener.volume;
+        Debug.Log($"我将保存主音量为{int.Parse(volumeValue.text)}");
+        Debug.Log($"我将保存背景音量为{int.Parse(musicVolumeValue.text)}");
+        Debug.Log($"我将保存环境音量为{int.Parse(environmentVolumeValue.text)}");
+        Debug.Log($"我将保存音效音量为{int.Parse(soundFxVolumeValue.text)}");
+        GlobalSettingManager.Instance.globalVolume = int.Parse(volumeValue.text);
+        GlobalSettingManager.Instance.musicVolume = int.Parse(musicVolumeValue.text);
+        GlobalSettingManager.Instance.environmentVolume = int.Parse(environmentVolumeValue.text);
+        GlobalSettingManager.Instance.soundFxVolume = int.Parse(soundFxVolumeValue.text);
         SaveManager.Instance.SaveSettingData();
     }
 
@@ -300,9 +377,10 @@ public class MenuController : MonoBehaviour
     {
         if(MenuType == "Audio")
         {
-            AudioListener.volume = defaultVolume;
-            volumeSlider.value = defaultVolume;
-            volumeValue.text = (defaultVolume * 100).ToString("0");
+            SetVolume(defaultVolume);
+            SetMusicVolume(defaultVolume);
+            SetEnvironmentVolume(defaultVolume);
+            SetSoundFxVolume(defaultVolume);
         }
         else if(MenuType == "Graphics")
         {

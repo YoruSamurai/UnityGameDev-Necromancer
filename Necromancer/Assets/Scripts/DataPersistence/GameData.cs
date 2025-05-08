@@ -36,7 +36,11 @@ public class SettingData
 [System.Serializable]
 public class VolumeSettingData
 {
-    public float volume;
+    public float masterVolume;
+    public float musicVolume;
+    public float environmentVolume;
+    public float soundFxVolume;
+
 }
 
 public class GraphicsSettingData

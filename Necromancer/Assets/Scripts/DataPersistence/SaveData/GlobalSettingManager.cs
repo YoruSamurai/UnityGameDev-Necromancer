@@ -28,13 +28,19 @@ public class GlobalSettingManager : MonoBehaviour,ISaveableSettingData
     /// 音量相关设置
     /// </summary>
     public float globalVolume { get; set; }
+    public float musicVolume { get; set; }
+    public float environmentVolume { get; set; }
+    public float soundFxVolume { get; set; }
 
     public string SaveID => "GlobalSetting";
     public void SaveData(SettingData data)
     {
         data.volumeSettingData = new VolumeSettingData
         {
-            volume = globalVolume
+            masterVolume = globalVolume,
+            musicVolume = musicVolume,
+            environmentVolume = environmentVolume,
+            soundFxVolume = soundFxVolume,
         };
         data.graphicsSettingData = new GraphicsSettingData
         {
@@ -53,7 +59,10 @@ public class GlobalSettingManager : MonoBehaviour,ISaveableSettingData
     {
         if(data.volumeSettingData != null)
         {
-            globalVolume = data.volumeSettingData.volume;
+            globalVolume = data.volumeSettingData.masterVolume;
+            musicVolume = data.volumeSettingData.musicVolume;
+            environmentVolume = data.volumeSettingData.environmentVolume;
+            soundFxVolume = data.volumeSettingData.soundFxVolume;
         }
         if(data.graphicsSettingData != null)
         {
