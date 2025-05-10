@@ -46,7 +46,7 @@ public class Pickable : MonoBehaviour
         {
             isPlayerInRange = true;
             // 获取玩家离开触发器的位置
-            Vector2 enterPos = other.transform.position;
+            Vector2 enterPos = new Vector2(transform.position.x, other.transform.position.y);
 
             itemMessage = MessageShowUtil.Instance.ShowPickableMessage(true,pickableItem.GetItemName(),pickableItem.GetItemMessage(), enterPos,null);
         }

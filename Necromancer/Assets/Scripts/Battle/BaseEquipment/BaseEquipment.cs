@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseEquipment : MonoBehaviour, IPickableItem
+public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
 {
 
     [SerializeField] public EquipmentSO equipmentSO;
@@ -232,8 +232,44 @@ public class BaseEquipment : MonoBehaviour, IPickableItem
         BattleManagerTest.Instance.DropCurrentEquipment();
         BaseEquipment instance = Instantiate(this, PlayerStats.Instance.mainWeaponParent);
         PlayerStats.Instance.baseEquipment1 = instance;
+        InventoryManager.Instance.AddToInventory(instance);
+    }
+
+
+    #endregion
+
+    #region IEquipableItem
+    public string GetEquipableItemMessage()
+    {
+        return "EquipableItemMessage";
+    }
+
+    public void AddToInventory()
+    {
 
     }
+
+    public void RemoveFromInventory()
+    {
+
+    }
+
+    public void OnEquip()
+    {
+
+    }
+
+    public void OnUnequip()
+    {
+
+    }
+
+    public string GetEquipableItemName()
+    {
+        return equipmentName;
+    }
+
+
 
     #endregion
 }

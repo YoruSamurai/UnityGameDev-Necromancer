@@ -7,7 +7,7 @@ public class PlayerDetection : MonoBehaviour
 {
 
     [Header("检测范围")]
-    public float detectionRadius = 1.5f; // 检测半径
+    public float detectionRadius = 3f; // 检测半径
     public LayerMask detectionLayer; // 用于指定需要检测的物体层
 
     [SerializeField] private Pickable closestPickable; // 存储离玩家最近的可拾取物品

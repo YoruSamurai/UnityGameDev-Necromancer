@@ -49,7 +49,7 @@ public class MessageShowUtil : MonoBehaviour
                 item.DestroyPrefab();
             }
             messageList.Clear();
-            GameObject obj = Instantiate(pickableItemMessagePrefab,pos + new Vector2(0,5f),Quaternion.identity, pickableMessageParent);
+            GameObject obj = Instantiate(pickableItemMessagePrefab,pos + new Vector2(0,3f),Quaternion.identity, pickableMessageParent);
             PickableItemPrefab messageShow = obj.GetComponent<PickableItemPrefab>();
             messageShow.Initialize(name,message);
             messageList.Add(messageShow);
