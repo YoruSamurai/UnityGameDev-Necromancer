@@ -239,9 +239,15 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     #endregion
 
     #region IEquipableItem
-    public string GetEquipableItemMessage()
+    public InventoryMessage GetEquipableItemMessage()
     {
-        return "EquipableItemMessage";
+        InventoryMessage inventoryMessage = new InventoryMessage();
+        inventoryMessage.sprite = equipmentSprite;
+        inventoryMessage.itemLevel = equipmentLevel;
+        inventoryMessage.itemName = equipmentName;
+        inventoryMessage.itemDesc = equipmentDesc;
+        inventoryMessage.itemAffix = "先占位";
+        return inventoryMessage;
     }
 
     public void AddToInventory()
@@ -268,6 +274,8 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     {
         return equipmentName;
     }
+
+
 
 
 

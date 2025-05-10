@@ -6,7 +6,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
-    [SerializeField] private 简易教学UI panelTutorial;
+    [SerializeField] private 简易教学UI tutorialPanel;
+    [SerializeField] private InventoryUI inventoryPanel;
 
     public bool isPaused {  get; private set; }
     
@@ -36,11 +37,20 @@ public class UIManager : MonoBehaviour
         {
             ToggleTutorialPanel();
         }
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            ToggleInventoryPanel();
+        }
     }
 
     public void ToggleTutorialPanel()
     {
-        panelTutorial.TogglePanel();
+        tutorialPanel.TogglePanel();
+    }
+
+    public void ToggleInventoryPanel()
+    {
+        inventoryPanel.TogglePanel();
     }
 
 }
