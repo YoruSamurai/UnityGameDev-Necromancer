@@ -35,7 +35,9 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
 
     [SerializeField] public LayerMask whatIsEnemy;
 
-
+    /// <summary>
+    /// 一个新的节点 在库存里但不在装备栏的BaseEquipment都存在这里
+    /// </summary>
     public Transform inventoryEquipmentParent;
 
     public Transform mainWeaponParent; // 在Inspector中指定主武器父对象
@@ -129,6 +131,10 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
 
     private void Update()
     {
+        if(Time.timeScale < .3f)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.F))
         {
             playerDetection.PickUp();

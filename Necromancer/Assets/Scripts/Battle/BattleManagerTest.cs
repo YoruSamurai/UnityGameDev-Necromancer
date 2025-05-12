@@ -53,8 +53,9 @@ public class BattleManagerTest : MonoBehaviour
             return 4;
         }
         Debug.Log("我丢");
-        //DropItem(sameEquipment, PlayerStats.Instance.gameObject.transform.position);
         sameEquipment.DropFromInventory();
+
+
         if(PlayerStats.Instance.baseEquipment1 != null && PlayerStats.Instance.baseEquipment1.GetEquipableItemName() == sameEquipment.GetEquipableItemName())
         {
             ClearEquipmentInTransform(PlayerStats.Instance.mainWeaponParent);
@@ -75,6 +76,12 @@ public class BattleManagerTest : MonoBehaviour
         DropItem(baseEquipment1, pos);
     }
 
+    /// <summary>
+    /// 把物品从XX里面丢出来，
+    /// 注意在GameObject itemGO = itemBehaviour.gameObject;中，我们会获取装备然后把它设置到新的obj也就是可拾取物体那里
+    /// </summary>
+    /// <param name="item"></param>
+    /// <param name="position"></param>
     public void DropItem(IPickableItem item, Vector2 position)
     {
         GameObject obj = Instantiate(pickablePrefab,position, Quaternion.identity,pickableParent);
@@ -90,7 +97,10 @@ public class BattleManagerTest : MonoBehaviour
         pickable.SetPickable(item);
     }
 
-    //生成装备给玩家的这些部分 以后都需要进行重写 现在追求实用性
+    /// <summary>
+    /// 在把新的武器生成到Transform前，我们需要把之前在的gameObject移到背包的Transform。
+    /// </summary>
+    /// <param name="targetTransform"></param>
     public void ClearEquipmentInTransform(Transform targetTransform)
     {
         foreach (Transform child in targetTransform)

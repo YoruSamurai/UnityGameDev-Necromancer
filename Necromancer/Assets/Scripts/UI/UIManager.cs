@@ -53,4 +53,31 @@ public class UIManager : MonoBehaviour
         inventoryPanel.TogglePanel();
     }
 
+    /// <summary>
+    /// 无参数刷新 只刷新
+    /// </summary>
+    public void RefreshInventoryPanel()
+    {
+        inventoryPanel.RefreshPanel();
+    }
+
+    /// <summary>
+    /// 2参数刷新，交换两个在仓库的位置
+    /// </summary>
+    /// <param name="item1"></param>
+    /// <param name="item2"></param>
+    public void RefreshInventoryPanel(string item1,string item2)
+    {
+        inventoryPanel.RefreshPanel(item1,item2);
+    }
+
+    /// <summary>
+    /// 1参数刷新，把这个index放到最后
+    /// </summary>
+    /// <param name="item1"></param>
+    public void RefreshInventoryPanel(string item1)
+    {
+        inventoryPanel.RefreshPanel(item1);
+    }
+
 }

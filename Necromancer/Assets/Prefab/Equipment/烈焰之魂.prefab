@@ -48,19 +48,20 @@ MonoBehaviour:
   player: {fileID: 0}
   attackCooldown: 0
   attackCooldownTimer: 0
-  equipmentName: 
-  baseDmg: 0
-  equipmentSprite: {fileID: 0}
-  equipmentTags: 
-  baseCritChance: 0
-  critMag: 0
-  equipmentDesc: 
+  equipmentName: "\u70C8\u7130\u4E4B\u9B42"
+  baseDmg: 300
+  equipmentSprite: {fileID: 1217000521, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
+  equipmentType: 2
+  equipmentTags: 0200000005000000
+  baseCritChance: 20
+  critMag: 2
+  equipmentDesc: "\u53D1\u5C04\u4E00\u679A\u5B50\u5F39 \u5BF9\u7B2C\u4E00\u4E2A\u654C\u4EBA\u9020\u6210\u4F24\u5BB3"
   comboBreakTimer: 0
   currentCombo: 0
-  currentDmg: 0
+  currentDmg: 300
   canCrit: 0
-  equipmentLevel: 0
-  eDamageMag: 0
+  equipmentLevel: 5
+  eDamageMag: 1.6
   equipmentAffixList: []
   fullComboAttackTimes: 0
   projectilePrefab: {fileID: 0}

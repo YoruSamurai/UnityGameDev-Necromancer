@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
@@ -17,6 +18,61 @@ public class InventoryUI : MonoBehaviour
 
     [SerializeField] private InventorySlot mainEquipmentSlot;
     [SerializeField] private InventorySlot subEquipmentSlot;
+
+    [SerializeField] private GameObject rightClickMenu;
+    [SerializeField] private InventoryRightClickMenuUI rightClickMenuUI;
+
+
+    private void Update()
+    {
+        // 如果右键菜单没激活，就不用管
+        if (!rightClickMenu.activeSelf) return;
+
+        // 检测左键或右键点击
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        {
+            // 判断点击的是否是 UI（特别是右键菜单）
+            if (!IsPointerOverUI(rightClickMenu))
+            {
+                HideRightClickMenu();
+            }
+        }
+    }
+
+    // 判断是否点击在某个特定UI对象及其子对象上
+    private bool IsPointerOverUI(GameObject target)
+    {
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, raycastResults);
+
+        foreach (RaycastResult result in raycastResults)
+        {
+            if (result.gameObject == target || result.gameObject.transform.IsChildOf(target.transform))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void ShowRightClickMenu(IEquipableItem item, Vector2 position,bool isEquipmentSlot)
+    {
+        rightClickMenu.SetActive(true);
+        rightClickMenu.transform.position = position;
+
+        rightClickMenuUI.Setup(item, isEquipmentSlot);
+    }
+
+    public void HideRightClickMenu()
+    {
+        rightClickMenu.SetActive(false);
+    }
 
 
     public void TogglePanel()
@@ -42,6 +98,50 @@ public class InventoryUI : MonoBehaviour
         UIManager.Instance.PauseGame();
     }
 
+    public void RefreshPanel()
+    {
+        SetUpEquipment();
+        SetUpInventory();
+    }
+
+    public void RefreshPanel(string item1)
+    {
+        List<IEquipableItem> items = InventoryManager.Instance.allItems;
+
+        int index1 = items.FindIndex(i => i.GetEquipableItemName() == item1);
+
+        if (index1 >= 0)
+        {
+            IEquipableItem target = items[index1];
+            items.RemoveAt(index1);           // 出队
+            items.Add(target);                // 入队到最后
+        }
+
+        SetUpEquipment();
+        SetUpInventory();
+    }
+
+    public void RefreshPanel(string item1,string item2)
+    {
+        List<IEquipableItem> items = InventoryManager.Instance.allItems;
+
+        int index1 = items.FindIndex(i => i.GetEquipableItemName() == item1);
+        int index2 = items.FindIndex(i => i.GetEquipableItemName() == item2);
+
+        if (index1 >= 0 && index2 >= 0)
+        {
+            // 交换两个物品的位置
+            IEquipableItem temp = items[index1];
+            items[index1] = items[index2];
+            items[index2] = temp;
+        }
+        SetUpEquipment();
+        SetUpInventory();
+    }
+
+    /// <summary>
+    /// 在打开背包的时候显示装备栏
+    /// </summary>
     private void SetUpEquipment()
     {
         if(PlayerStats.Instance.baseEquipment1 != null)
@@ -62,6 +162,9 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 在打开背包的时候显示背包物品
+    /// </summary>
     private void SetUpInventory()
     {
 
@@ -103,7 +206,13 @@ public class InventoryUI : MonoBehaviour
         UIManager.Instance.UnpauseGame();
     }
 
-    // 3. 显示右侧面板信息（被 InventorySlot 调用）
+
+
+    /// <summary>
+    /// 显示右侧面板信息（被 InventorySlot 调用）
+    /// </summary>
+    /// <param name="item"></param>
+    /// <param name="inventoryMessage"></param>
     public void ShowItemDetail(IEquipableItem item,InventoryMessage inventoryMessage)
     {
         slotNameText.text = inventoryMessage.itemName;

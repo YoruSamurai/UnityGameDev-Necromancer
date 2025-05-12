@@ -1,7 +1,7 @@
-using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
@@ -43,7 +43,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     {
         SetupEquipmentBase();
         SetUpEquipmentLevel();
-        gameObject.name = equipmentName;
+        gameObject.name = equipmentName;//实例化的时候需要记住他的名字啊啊啊
         attackCooldownTimer = 0f;
         player = PlayerStats.Instance.gameObject.GetComponent<Player>();
     }
@@ -227,6 +227,10 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         return equipmentSprite;
     }
 
+
+    /// <summary>
+    /// 捡起武器到背包的方法，首先去把背包里同样的东西丢出来，然后看看生成新物品到主手/副手/背包。
+    /// </summary>
     public void OnPickup()
     {   
         Debug.Log("装备被拾取");
@@ -266,6 +270,11 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     #endregion
 
     #region IEquipableItem
+
+    /// <summary>
+    /// 获取物品信息 InventoryMessage是一个结构 储存信息呃呃呃
+    /// </summary>
+    /// <returns></returns>
     public InventoryMessage GetEquipableItemMessage()
     {
         InventoryMessage inventoryMessage = new InventoryMessage();
@@ -273,7 +282,11 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         inventoryMessage.itemLevel = equipmentLevel;
         inventoryMessage.itemName = equipmentName;
         inventoryMessage.itemDesc = equipmentDesc;
-        inventoryMessage.itemAffix = "先占位";
+
+        inventoryMessage.itemAffix = string.Join("\n",
+            equipmentAffixList
+            .Where(a => a != null && !string.IsNullOrEmpty(a.affixDesc))
+            .Select(a => a.affixDesc));
         return inventoryMessage;
     }
 
@@ -281,16 +294,12 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     {
 
     }
-
+    /// <summary>
+    /// 把Item从背包里面丢出来
+    /// </summary>
     public void DropFromInventory()
     {
-        // 检查 equipmentSO 是否有效
-        if (equipmentSO == null)
-        {
-            Debug.LogWarning("尝试丢弃时，equipmentSO 已被销毁。");
-            return;
-        }
-        Debug.Log("尝试丢弃" + equipmentSO);
+        Debug.Log("尝试丢弃" + equipmentName);
         BattleManagerTest.Instance.DropItem(this, PlayerStats.Instance.gameObject.transform.position);
     }
 
