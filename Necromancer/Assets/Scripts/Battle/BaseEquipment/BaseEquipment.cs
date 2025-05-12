@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,6 +43,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     {
         SetupEquipmentBase();
         SetUpEquipmentLevel();
+        gameObject.name = equipmentName;
         attackCooldownTimer = 0f;
         player = PlayerStats.Instance.gameObject.GetComponent<Player>();
     }
@@ -226,13 +228,38 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     }
 
     public void OnPickup()
-    {
+    {   
         Debug.Log("装备被拾取");
+
+        //又要重构方法了，好累哦
+        //捡起东西的时候不是丢下当前主武器的东西 而是丢下同名物品，那么我们在DropCurrentEquipment中 那是不是返回一个enum或者int比较好？
+        //应该是去Inventory找到同名的物品，把它丢出来 然后如果这个东西在主副手 我们就 鹅 把它生成过去 然后是丢出inventory 和加入inventory。
         //在捡起装备的时候 调用BattleBattleManagerTest的DropCurrentEquipment
-        BattleManagerTest.Instance.DropCurrentEquipment();
-        BaseEquipment instance = Instantiate(this, PlayerStats.Instance.mainWeaponParent);
-        PlayerStats.Instance.baseEquipment1 = instance;
-        InventoryManager.Instance.AddToInventory(instance);
+        int index = BattleManagerTest.Instance.DropSameEquipment(this);
+        
+        if(index == 1)
+        {
+            BaseEquipment instance = Instantiate(this, PlayerStats.Instance.mainWeaponParent);
+            instance.gameObject.name = equipmentName;
+            PlayerStats.Instance.baseEquipment1 = instance;
+            InventoryManager.Instance.AddToInventory(instance); 
+        }
+        else if(index == 2)
+        {
+            BaseEquipment instance = Instantiate(this, PlayerStats.Instance.secondaryWeaponParent);
+            instance.gameObject.name = equipmentName;
+
+            PlayerStats.Instance.baseEquipment2 = instance;
+            InventoryManager.Instance.AddToInventory(instance);
+        }
+        else
+        {
+            BaseEquipment instance = Instantiate(this, PlayerStats.Instance.inventoryEquipmentParent);
+            instance.gameObject.name = equipmentName;
+
+            InventoryManager.Instance.AddToInventory(instance);
+
+        }
     }
 
 
@@ -255,9 +282,16 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
 
     }
 
-    public void RemoveFromInventory()
+    public void DropFromInventory()
     {
-
+        // 检查 equipmentSO 是否有效
+        if (equipmentSO == null)
+        {
+            Debug.LogWarning("尝试丢弃时，equipmentSO 已被销毁。");
+            return;
+        }
+        Debug.Log("尝试丢弃" + equipmentSO);
+        BattleManagerTest.Instance.DropItem(this, PlayerStats.Instance.gameObject.transform.position);
     }
 
     public void OnEquip()

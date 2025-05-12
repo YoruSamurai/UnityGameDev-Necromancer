@@ -36,6 +36,8 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
     [SerializeField] public LayerMask whatIsEnemy;
 
 
+    public Transform inventoryEquipmentParent;
+
     public Transform mainWeaponParent; // 在Inspector中指定主武器父对象
     public Transform secondaryWeaponParent; // 在Inspector中指定副武器父对象
     public BaseEquipment baseEquipment1;
@@ -147,8 +149,18 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            baseEquipment1 = BattleManagerTest.Instance.GetRandomWeapon(mainWeaponParent);
-            baseEquipment2 = BattleManagerTest.Instance.GetRandomWeapon(secondaryWeaponParent);
+            BaseEquipment baseEquipment = BattleManagerTest.Instance.GetRandomWeapon(mainWeaponParent);
+            if (baseEquipment != null)
+            {
+                baseEquipment1 = baseEquipment;
+                InventoryManager.Instance.AddToInventory(baseEquipment1);
+            }
+            BaseEquipment equipment = BattleManagerTest.Instance.GetRandomWeapon(secondaryWeaponParent);
+            if (equipment != null)
+            {
+                baseEquipment2 = equipment;
+                InventoryManager.Instance.AddToInventory(baseEquipment2);
+            }
         }
         if (Input.GetKeyDown(KeyCode.T))
         {

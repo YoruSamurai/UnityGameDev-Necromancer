@@ -15,8 +15,39 @@ public class InventoryManager : MonoBehaviour
         else Instance = this;
     }
 
+    public bool IsInventoryExistItem(IEquipableItem item)
+    {
+        for(int i = 0; i < allItems.Count;i++)
+        {
+            if(allItems[i].GetEquipableItemName() == item.GetEquipableItemName())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public IEquipableItem GetInventoryExistItem(IEquipableItem item)
+    {
+        for (int i = 0; i < allItems.Count; i++)
+        {
+            Debug.Log($"{allItems[i].GetEquipableItemName()} + {item.GetEquipableItemName()}");
+            if (allItems[i].GetEquipableItemName() == item.GetEquipableItemName())
+            {
+                Debug.Log("返回！");
+                return allItems[i];
+            }
+        }
+        return null;
+    }
+
     public void AddToInventory(IEquipableItem item)
     {
+        if (item == null)
+        {
+            Debug.LogWarning("尝试添加一个 null 的物品到背包");
+            return;
+        }
         // 如果已有同名，替换并移除旧的
         IEquipableItem existing = allItems.Find(x => x.GetEquipableItemName() == item.GetEquipableItemName());
         if (existing != null) allItems.Remove(existing);

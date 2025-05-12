@@ -15,6 +15,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Text slotDescText;
     [SerializeField] private Text slotAffixText;
 
+    [SerializeField] private InventorySlot mainEquipmentSlot;
+    [SerializeField] private InventorySlot subEquipmentSlot;
+
 
     public void TogglePanel()
     {
@@ -30,6 +33,49 @@ public class InventoryUI : MonoBehaviour
 
     private void OpenPanel()
     {
+        SetUpEquipment();
+        SetUpInventory();
+
+
+
+        gameObject.SetActive(true);
+        UIManager.Instance.PauseGame();
+    }
+
+    private void SetUpEquipment()
+    {
+        if(PlayerStats.Instance.baseEquipment1 != null)
+        {
+            mainEquipmentSlot.Initialize(PlayerStats.Instance.baseEquipment1, this);
+        }
+        else
+        {
+            mainEquipmentSlot.SetDefault();
+        }
+        if (PlayerStats.Instance.baseEquipment2 != null)
+        {
+            subEquipmentSlot.Initialize(PlayerStats.Instance.baseEquipment2, this);
+        }
+        else
+        {
+            subEquipmentSlot.SetDefault();
+        }
+    }
+
+    private void SetUpInventory()
+    {
+
+        //获取主武器和副武器的name
+        string mainWeaponName = null;
+        string subWeaponName = null;
+        if(PlayerStats.Instance.baseEquipment1 != null)
+        {
+            mainWeaponName = PlayerStats.Instance.baseEquipment1.GetEquipableItemName();
+        }
+        if (PlayerStats.Instance.baseEquipment2 != null)
+        {
+            subWeaponName = PlayerStats.Instance.baseEquipment2.GetEquipableItemName();
+        }
 
         //这里我们先清空 InventoryPrefabParent的子物体
         foreach (Transform child in InventoryPrefabParent)
@@ -43,16 +89,14 @@ public class InventoryUI : MonoBehaviour
         //然后遍历allItems 生成InventoryPrefab，这时候获取InventoryPrefab的脚本InventorySlot 这时候对它进行Initialize
         foreach (var item in allItems)
         {
+            if (item.GetEquipableItemName() == mainWeaponName || item.GetEquipableItemName() == subWeaponName)
+                continue;
             GameObject slotObj = Instantiate(InventoryPrefab, InventoryPrefabParent);
             InventorySlot slot = slotObj.GetComponent<InventorySlot>();
             slot.Initialize(item, this);
         }
-
-
-
-        gameObject.SetActive(true);
-        UIManager.Instance.PauseGame();
     }
+
     private void ClosePanel()
     {
         gameObject.SetActive(false);

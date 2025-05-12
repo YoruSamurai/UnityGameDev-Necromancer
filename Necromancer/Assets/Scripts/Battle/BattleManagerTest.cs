@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BattleManagerTest : MonoBehaviour
@@ -19,6 +20,9 @@ public class BattleManagerTest : MonoBehaviour
     [SerializeField] private GameObject pickablePrefab;
     [SerializeField] private Transform pickableParent;
 
+
+    
+
     private void Awake()
     {
         if (Instance == null)
@@ -35,13 +39,33 @@ public class BattleManagerTest : MonoBehaviour
 
     }
 
-    public void DropCurrentEquipment()
+    /// <summary>
+    /// 丢弃同名的装备，返回值为丢弃的装备的位置 1主武器 2副武器 3背包 4不在背包里
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
+    public int DropSameEquipment(IEquipableItem item)
     {
-        BaseEquipment baseEquipment1 = PlayerStats.Instance.baseEquipment1;
-        if (baseEquipment1 == null)
-            return;
-        DropItem(baseEquipment1, PlayerStats.Instance.gameObject.transform.position);
-        ClearEquipmentInTransform(PlayerStats.Instance.mainWeaponParent);
+        IEquipableItem sameEquipment = InventoryManager.Instance.GetInventoryExistItem(item);
+        if (sameEquipment == null)
+        {
+            Debug.Log("背包里没有捏");
+            return 4;
+        }
+        Debug.Log("我丢");
+        //DropItem(sameEquipment, PlayerStats.Instance.gameObject.transform.position);
+        sameEquipment.DropFromInventory();
+        if(PlayerStats.Instance.baseEquipment1 != null && PlayerStats.Instance.baseEquipment1.GetEquipableItemName() == sameEquipment.GetEquipableItemName())
+        {
+            ClearEquipmentInTransform(PlayerStats.Instance.mainWeaponParent);
+            return 1;
+        }
+        if (PlayerStats.Instance.baseEquipment2 != null && PlayerStats.Instance.baseEquipment2.GetEquipableItemName() == sameEquipment.GetEquipableItemName())
+        {
+            ClearEquipmentInTransform(PlayerStats.Instance.secondaryWeaponParent);
+            return 2;
+        }
+        return 3;
     }
 
 
@@ -71,7 +95,8 @@ public class BattleManagerTest : MonoBehaviour
     {
         foreach (Transform child in targetTransform)
         {
-            Destroy(child.gameObject);
+            child.gameObject.transform.SetParent(PlayerStats.Instance.inventoryEquipmentParent);
+            //Destroy(child.gameObject);
         }
     }
 
@@ -108,12 +133,20 @@ public class BattleManagerTest : MonoBehaviour
     public BaseEquipment GetRandomWeapon(Transform parentTransform)
     {
         
+        BaseEquipment originalEquipment = equipmentPrefabList.equipmentList[Random.Range(0, equipmentPrefabList.equipmentList.Count)];
+        BaseEquipment tempInstance = Instantiate(originalEquipment);
+        tempInstance.Initialize();
+
+        //这里判断随机武器是不是已经有了
+        //怎么判断？我们去InventoryManager检查一下？
+        bool haveSame = InventoryManager.Instance.IsInventoryExistItem(tempInstance);
+        Destroy(tempInstance.gameObject); // 只用于比对，不是真正用的物体
+        if (haveSame) return null;
+
+
+        originalEquipment.Initialize();
         ClearEquipmentInTransform(parentTransform);
 
-        //生成一个随机武器
-        //BaseEquipment originalEquipment = equipmentList[Random.Range(0, equipmentList.Count)];
-
-        BaseEquipment originalEquipment = equipmentPrefabList.equipmentList[Random.Range(0, equipmentPrefabList.equipmentList.Count)];
         BaseEquipment newEquipment = Instantiate(originalEquipment, parentTransform);
         newEquipment.Initialize();
         //可能这里需要初始化等级？什么的

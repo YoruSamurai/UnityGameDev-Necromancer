@@ -24,6 +24,12 @@ public class InventorySlot : MonoBehaviour
         slotSprite.sprite = inventoryMessage.sprite;
     }
 
+    public void SetDefault()
+    {
+        slotSprite.sprite = null;
+        slotLevelText.text = null;
+    }
+
     public void OnclickSlot()
     {
         ui.ShowItemDetail(item, inventoryMessage);
