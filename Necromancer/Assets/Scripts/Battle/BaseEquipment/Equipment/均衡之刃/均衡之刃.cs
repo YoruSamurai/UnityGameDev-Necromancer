@@ -52,7 +52,7 @@ public class 均衡之刃 : MeleeEquipment
         }
         
         MonsterStats monsterStats = collision.GetComponent<MonsterStats>();
-        PlayerStats.Instance.OnHit(this, monsterStats);
+        PlayerStats.Instance.OnPlayerHit(this, monsterStats);
         
     }
 

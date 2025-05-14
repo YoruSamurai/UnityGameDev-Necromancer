@@ -21,10 +21,9 @@ namespace Yoru
         
         
 
-        public static void JumpNumber(int number, GameObject target)
+        public static void JumpNumber(int number, Vector3 worldPosition)
         {
-            if (target == null) return;
-
+            Debug.Log("创建了文本诶");
             // 创建文本对象
             GameObject textObj = new GameObject("FloatingNumber");
             TextMeshPro tmp = textObj.AddComponent<TextMeshPro>();
@@ -39,11 +38,8 @@ namespace Yoru
             renderer.sortingLayerName = "Enemy"; // 2D的Sorting Layer名字
             renderer.sortingOrder = 5; // 层级数值（越大越靠前）
 
-            // 设为 target 的子物体
-            textObj.transform.SetParent(target.transform);
-
-            // 设置初始位置（相对 target）
-            textObj.transform.localPosition = new Vector3(-0.3f, 1f, 0); // 目标物体上方
+            // 设置世界位置
+            textObj.transform.position = worldPosition;
 
             // 抛物线动画（向上跳跃）
             float jumpPower = 1.5f;
@@ -54,7 +50,7 @@ namespace Yoru
                 .SetEase(Ease.OutQuad);
 
             // 淡出效果并销毁
-            tmp.DOFade(0, 0.3f).SetDelay(0.3f).OnComplete(() => GameObject.Destroy(textObj));
+            tmp.DOFade(0, 1f).SetDelay(0.3f).OnComplete(() => GameObject.Destroy(textObj));
         }
     }
 

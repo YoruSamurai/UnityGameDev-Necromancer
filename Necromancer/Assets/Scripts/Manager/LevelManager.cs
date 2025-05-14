@@ -58,7 +58,7 @@ public class LevelManager : MonoBehaviour
             Debug.Log("成功获取 RoomGraphGenerator：" + roomGraph.name);
             roomDatas = roomGraph.roomDatas;
         }
-        EventManager.Instance.AddListener(EventName.NormalEnemyDead, KillEnemy);
+        EventManager.Instance.AddListener(EventName.OnEnemyDead, KillEnemy);
         InitialEnemy(levelMonsterListSO, 1);
     }
 
@@ -213,14 +213,33 @@ public class LevelManager : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.Instance.RemoveListener(EventName.NormalEnemyDead, KillEnemy);
+        EventManager.Instance.RemoveListener(EventName.OnEnemyDead, KillEnemy);
 
     }
+
+
+
+    #region 铁匠相关
+    /// <summary>
+    /// 查看等级够不够进行接下来的操作。
+    /// </summary>
+    /// <param name="level"></param>
+    /// <returns></returns>
+    public bool IsLevelLimit(int level)
+    {
+        if(level >= 6)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    #endregion
 
     private void KillEnemy(object sender, EventArgs e)
     {
         Debug.Log("敌人死亡！");
-        var data = e as NormalEnemyDeadEventArgs;
+        var data = e as OnEnemyDeadEventArgs;
         if (data != null)
         {
             Debug.Log(data.enemyName);

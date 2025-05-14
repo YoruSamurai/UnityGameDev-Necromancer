@@ -43,7 +43,7 @@ public class 烈焰之魂 : StaffEquipment
 
     public void HandleProjectileHit(MonsterStats monsterStats)
     {
-        PlayerStats.Instance.OnHit(this, monsterStats);
+        PlayerStats.Instance.OnPlayerHit(this, monsterStats);
     }
 
     public override void FireProjectile()

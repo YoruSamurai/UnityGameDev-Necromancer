@@ -117,6 +117,7 @@ public class MonsterStats : MonoBehaviour
                     currentStunTimer = 1f;
                     enemy.ChangeToState(enemy.stunState);
                 }
+                PlayerStats.Instance.OnHitted(this, enemy.currentDamageMultiplier * baseDamage);
             }
         }
     }
@@ -149,19 +150,22 @@ public class MonsterStats : MonoBehaviour
         isDead = true;
         gameObject.layer = LayerMask.NameToLayer("Dead");
         StopStunResistanceDecay();
-        this.TriggerEvent(EventName.NormalEnemyDead, new NormalEnemyDeadEventArgs
+
+        PlayerStats.Instance.OnKillMonster(this);
+        /*this.TriggerEvent(EventName.OnEnemyDead, new NormalEnemyDeadEventArgs
         {
             enemyName = gameObject.name,
-        });
+        });*/
 
         enemy.ChangeToState(enemy.dieState);
     }
 
     public void TakeDirectDamage(int dmg)
     {
+        Vector3 damagePosition = transform.position + new Vector3(-0.3f, 1f, 0); // 提前记录位置
+        Yoru.yoruUtils.JumpNumber(dmg, damagePosition);
         if(currentHealth > 0)
         {
-            Yoru.yoruUtils.JumpNumber(dmg, this.gameObject);
             enemy.anim.SetTrigger("Hit");
             enemy.OnHitted();
             currentHealth -= dmg;

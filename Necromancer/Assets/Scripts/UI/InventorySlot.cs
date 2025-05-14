@@ -31,7 +31,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     }
 
     /// <summary>
-    /// 用于装备栏 在没有东西的时候清空。
+    /// 用于装备栏 在没有东西的时候清空。1
     /// </summary>
     public void SetDefault()
     {

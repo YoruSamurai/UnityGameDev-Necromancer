@@ -25,7 +25,7 @@ public class 斧头 : MeleeEquipment
         }
 
         MonsterStats monsterStats = collision.GetComponent<MonsterStats>();
-        PlayerStats.Instance.OnHit(this, monsterStats);
+        PlayerStats.Instance.OnPlayerHit(this, monsterStats);
 
     }
 

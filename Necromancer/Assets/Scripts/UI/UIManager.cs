@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private 简易教学UI tutorialPanel;
     [SerializeField] private InventoryUI inventoryPanel;
+    [SerializeField] private ForgeUI forgePanel;
 
     public bool isPaused {  get; private set; }
     
@@ -41,8 +42,12 @@ public class UIManager : MonoBehaviour
         {
             ToggleInventoryPanel();
         }
+        else if (Input.GetKeyDown(KeyCode.N))
+        {
+            ToggleForgePanel();
+        }
     }
-
+    #region 打开/关闭面板
     public void ToggleTutorialPanel()
     {
         tutorialPanel.TogglePanel();
@@ -52,6 +57,15 @@ public class UIManager : MonoBehaviour
     {
         inventoryPanel.TogglePanel();
     }
+
+    public void ToggleForgePanel()
+    {
+        forgePanel.TogglePanel();
+    }
+
+    #endregion
+
+    #region 刷新仓库面板
 
     /// <summary>
     /// 无参数刷新 只刷新
@@ -79,5 +93,5 @@ public class UIManager : MonoBehaviour
     {
         inventoryPanel.RefreshPanel(item1);
     }
-
+    #endregion
 }

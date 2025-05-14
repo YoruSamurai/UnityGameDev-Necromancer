@@ -241,6 +241,17 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         //在捡起装备的时候 调用BattleBattleManagerTest的DropCurrentEquipment
         int index = BattleManagerTest.Instance.DropSameEquipment(this);
         
+        if(index == 4)
+        {
+            if(PlayerStats.Instance.baseEquipment1 == null)
+            {
+                index = 1;
+            }
+            else if(PlayerStats.Instance.baseEquipment2 == null)
+            {
+                index = 2;
+            }
+        }
         if(index == 1)
         {
             BaseEquipment instance = Instantiate(this, PlayerStats.Instance.mainWeaponParent);
@@ -280,7 +291,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         InventoryMessage inventoryMessage = new InventoryMessage();
         inventoryMessage.sprite = equipmentSprite;
         inventoryMessage.itemLevel = equipmentLevel;
-        inventoryMessage.itemName = equipmentName;
+        inventoryMessage.itemName = $"{equipmentName} LV{equipmentLevel}";
         inventoryMessage.itemDesc = equipmentDesc;
 
         inventoryMessage.itemAffix = string.Join("\n",
@@ -303,19 +314,26 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         BattleManagerTest.Instance.DropItem(this, PlayerStats.Instance.gameObject.transform.position);
     }
 
-    public void OnEquip()
-    {
 
+    public void EquipableItemLevelUp()
+    {
+        equipmentLevel += 1;
     }
 
-    public void OnUnequip()
+    public void EquipableItemRecast()
     {
-
+        equipmentAffixList.Clear();
+        equipmentAffixList.Add(BattleManagerTest.Instance.RecastEquipmentAffix(this));
     }
 
     public string GetEquipableItemName()
     {
         return equipmentName;
+    }
+
+    public int GetEquipableItemLevel()
+    {
+        return equipmentLevel;
     }
 
 

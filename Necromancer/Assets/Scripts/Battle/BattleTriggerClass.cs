@@ -34,7 +34,7 @@ public class BattleTriggerClass : MonoBehaviour
         }*/
     }
 
-    public void TriggerOnHit(BaseEquipment _baseEquipment,MonsterStats _monsterStats)
+    public float TriggerOnHit(BaseEquipment _baseEquipment,MonsterStats _monsterStats)
     {
 
         float cMag = 1;//伤害倍率c
@@ -69,7 +69,7 @@ public class BattleTriggerClass : MonoBehaviour
             }
         }
 
-        _baseEquipment.DoDamage(cMag, _monsterStats);
+        return cMag;
 
     }
 

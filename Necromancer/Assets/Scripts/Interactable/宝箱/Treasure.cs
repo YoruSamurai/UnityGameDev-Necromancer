@@ -61,7 +61,7 @@ public class Treasure : MonoBehaviour
 
     private void GenerateRandomWeapon()
     {
-        BattleManagerTest.Instance.DropPickableEquipment(this.gameObject.transform.position);
+        BattleManagerTest.Instance.TreasureDropPickableEquipment(this.gameObject.transform.position);
         //MarkAsUsed();
 
     }

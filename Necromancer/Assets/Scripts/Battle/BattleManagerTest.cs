@@ -70,7 +70,7 @@ public class BattleManagerTest : MonoBehaviour
     }
 
 
-    public void DropPickableEquipment(Vector2 pos)
+    public void TreasureDropPickableEquipment(Vector2 pos)
     {
         BaseEquipment baseEquipment1 = GetRandomSpriteWeapon();
         DropItem(baseEquipment1, pos);
@@ -123,6 +123,10 @@ public class BattleManagerTest : MonoBehaviour
         return newSkill;
     }
 
+    /// <summary>
+    /// 生成那种丢出来的武器 给玩家去捡起来
+    /// </summary>
+    /// <returns></returns>
     public BaseEquipment GetRandomSpriteWeapon()
     {
 
@@ -140,6 +144,11 @@ public class BattleManagerTest : MonoBehaviour
         return instance;
     }
 
+    /// <summary>
+    /// 生成随机武器给玩家
+    /// </summary>
+    /// <param name="parentTransform"></param>
+    /// <returns></returns>
     public BaseEquipment GetRandomWeapon(Transform parentTransform)
     {
         
@@ -215,6 +224,64 @@ public class BattleManagerTest : MonoBehaviour
             }
         }
         if(possibleAffixList.Count > 0)
+        {
+            return possibleAffixList[Random.Range(0, possibleAffixList.Count)];
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// 重铸装备的词条。后续进一步扩展。
+    /// </summary>
+    /// <param name="_equipment"></param>
+    /// <returns></returns>
+    public BaseAffix RecastEquipmentAffix(BaseEquipment _equipment)
+    {
+        List<BaseAffix> possibleAffixList = new List<BaseAffix>();
+        foreach (BaseAffix affix in affixList)
+        {
+            bool canAddAffix = true;
+            if (affix.needEquipmentTags.Count > 0 && canAddAffix)
+            {
+                //装备标签必须满足词缀的全部需求标签
+                foreach (EquipmentTag tag in affix.needEquipmentTags)
+                {
+                    if (!_equipment.equipmentTags.Contains(tag))
+                    {
+                        canAddAffix = false;
+                        break;
+                    }
+                }
+            }
+            if (affix.contrastEquipmentTags.Count > 0 && canAddAffix)
+            {
+                //装备标签必须满足词缀的全部需求标签
+                foreach (EquipmentTag tag in affix.contrastEquipmentTags)
+                {
+                    if (_equipment.equipmentTags.Contains(tag))
+                    {
+                        canAddAffix = false;
+                        break;
+                    }
+                }
+            }
+            if (_equipment.equipmentAffixList.Count > 0 && canAddAffix)
+            {
+                foreach (BaseAffix equipmentAffix in _equipment.equipmentAffixList)
+                {
+                    if (equipmentAffix.contrastAffixTags.Count > 0 && equipmentAffix.contrastAffixTags.Contains(affix.affixTag))
+                    {
+                        canAddAffix = false;
+                        break;
+                    }
+                }
+            }
+            if (canAddAffix)
+            {
+                possibleAffixList.Add(affix);
+            }
+        }
+        if (possibleAffixList.Count > 0)
         {
             return possibleAffixList[Random.Range(0, possibleAffixList.Count)];
         }

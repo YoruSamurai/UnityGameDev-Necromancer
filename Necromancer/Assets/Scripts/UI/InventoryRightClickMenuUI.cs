@@ -185,7 +185,7 @@ public class InventoryRightClickMenuUI : MonoBehaviour
                 setNull = 1;
             }
         }
-        else if(PlayerStats.Instance.baseEquipment2 != null)
+        if(PlayerStats.Instance.baseEquipment2 != null)
         {
             if(PlayerStats.Instance.baseEquipment2.GetEquipableItemName() == currentItem.GetEquipableItemName())
             {

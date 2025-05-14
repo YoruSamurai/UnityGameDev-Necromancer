@@ -84,10 +84,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 180993131474554927}
-  - component: {fileID: 2960954307488246117}
   - component: {fileID: 8054770184821154933}
   - component: {fileID: -3150969746652354501}
   - component: {fileID: -1223455576804646066}
+  - component: {fileID: 8599671143682361251}
   m_Layer: 0
   m_Name: InventorySlot
   m_TagString: Untagged
@@ -116,20 +116,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2960954307488246117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4829218554062290154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7256533c21ab7244a9d62870fcefa0e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotLevelText: {fileID: 8072535670629884778}
-  slotSprite: {fileID: 772658243215991903}
 --- !u!114 &8054770184821154933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +190,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2960954307488246117}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
         m_MethodName: OnclickSlot
         m_Mode: 1
@@ -224,6 +210,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4829218554062290154}
   m_CullTransparentMesh: 1
+--- !u!114 &8599671143682361251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4829218554062290154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c288da60b13874589dbc5491ccd722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEquipSlot: 0
+  slotLevelText: {fileID: 8072535670629884778}
+  slotSprite: {fileID: 772658243215991903}
 --- !u!1 &7250840682678302480
 GameObject:
   m_ObjectHideFlags: 0

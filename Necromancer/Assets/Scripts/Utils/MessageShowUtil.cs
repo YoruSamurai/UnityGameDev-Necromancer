@@ -31,9 +31,17 @@ public class MessageShowUtil : MonoBehaviour
         {
             leftWeapon.text = $"{PlayerStats.Instance.baseEquipment1.equipmentName} + {PlayerStats.Instance.baseEquipment1.equipmentLevel}级";
         }
+        else
+        {
+            leftWeapon.text = $"暂无主手";
+        }
         if (PlayerStats.Instance.baseEquipment2 != null)
         {
             rightWeapon.text = $"{PlayerStats.Instance.baseEquipment2.equipmentName} + {PlayerStats.Instance.baseEquipment2.equipmentLevel}级";
+        }
+        else
+        {
+            rightWeapon.text = $"暂无副手";
         }
         soulText.text = $"灵魂数:{PlayerStats.Instance.soul}";
         goldText.text = $"金币数:{PlayerStats.Instance.gold}";

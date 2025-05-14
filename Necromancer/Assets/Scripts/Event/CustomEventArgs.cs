@@ -12,8 +12,35 @@ public class PlayerDeadEventArgs : EventArgs
     public string playerName;
 }
 
-
-public class NormalEnemyDeadEventArgs : EventArgs
+public class OnPlayerHitEventArgs : EventArgs
 {
-    public string enemyName;//后续可能需要修改为获取enemy的csv的对应id以获取对应解锁。
+    public BaseEquipment baseEquipment;
+    public MonsterStats monsterStats;
+}
+
+public class OnPlayerHittedEventArgs : EventArgs
+{
+    public MonsterStats monsterStats;
+}
+
+
+public class OnEnemyDeadEventArgs : EventArgs
+{
+    public MonsterStats monsterStats;
+}
+
+public class OnPlayerCritEventArgs : EventArgs
+{
+    public BaseEquipment baseEquipment;
+    public MonsterStats monsterStats;
+}
+public class OnPlayerParryEventArgs : EventArgs
+{
+    public BaseEquipment baseEquipment;
+    public MonsterStats monsterStats;
+}
+public class OnPlayerComboEventArgs : EventArgs
+{
+    public BaseEquipment baseEquipment;
+    public MonsterStats monsterStats;
 }

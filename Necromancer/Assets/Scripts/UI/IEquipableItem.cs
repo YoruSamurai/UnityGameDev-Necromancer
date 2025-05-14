@@ -10,15 +10,23 @@ public interface IEquipableItem
     public string GetEquipableItemName();
     public InventoryMessage GetEquipableItemMessage();
 
+    public int GetEquipableItemLevel();
+
     public void AddToInventory();
     /// <summary>
     /// 从背包里丢出物品
     /// </summary>
     public void DropFromInventory();
 
-    public void OnEquip();
+    /// <summary>
+    /// 升级装备
+    /// </summary>
+    public void EquipableItemLevelUp();
 
-    public void OnUnequip();
+    /// <summary>
+    /// 重铸装备
+    /// </summary>
+    public void EquipableItemRecast();
 
 }
 

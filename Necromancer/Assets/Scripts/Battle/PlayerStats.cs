@@ -13,6 +13,9 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
     [SerializeField] public float healthPercentage;
 
 
+    [SerializeField] private AbilityInvoker abilityInvoker;
+
+
     [SerializeField] public int strLevel;
     [SerializeField] public float strPercentage;
     [SerializeField] public int agileLevel;
@@ -23,6 +26,15 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
     [Header("灵魂 金币数")]
     [SerializeField] public int soul;
     [SerializeField] public int gold;
+
+    /// <summary>
+    /// 查看够不够钱做接下来的操作
+    /// </summary>
+    /// <returns></returns>
+    public bool IsGoldLimit()
+    {
+        return false;
+    }
 
     //是否可以攻击
     [SerializeField] public bool isAttacking;
@@ -124,7 +136,9 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
         player = GetComponent<Player>();
         playerDetection = GetComponent<PlayerDetection>();
         soul = 100;
-        gold = 500;
+        gold = 50000;
+
+        abilityInvoker = GetComponentInChildren<AbilityInvoker>();
 
         canInterrupt = true;
     }
@@ -295,18 +309,36 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
         BattleTriggerClass.Instance.TriggerOnAttack();
 
     }
-
-    public void OnHit(BaseEquipment _baseEquipment, MonsterStats _monsterStats)
+    /// <summary>
+    /// 在玩家命中敌人的时候会调用这个逻辑！进行词条的判定 能力的判定 最后判定伤害
+    /// </summary>
+    /// <param name="_baseEquipment"></param>
+    /// <param name="_monsterStats"></param>
+    public void OnPlayerHit(BaseEquipment _baseEquipment, MonsterStats _monsterStats)
     {
         //Debug.Log("进入命中词条");
-        BattleTriggerClass.Instance.TriggerOnHit(_baseEquipment , _monsterStats);
+        float mag = BattleTriggerClass.Instance.TriggerOnHit(_baseEquipment , _monsterStats);
 
+        float abilityDamageMag = abilityInvoker.InvokeOnPlayerHit(_baseEquipment, _monsterStats);
+
+        _baseEquipment.DoDamage(mag * abilityDamageMag, _monsterStats);
 
     }
 
-    public void OnHitted()
+    /// <summary>
+    /// 在玩家被敌人命中的时候会调用这个逻辑
+    /// </summary>
+    /// <param name="_monsterStats"></param>
+    /// <param name="damageToPlayer"></param>
+    public void OnHitted(MonsterStats _monsterStats,float damageToPlayer)
     {
-
+        //伤害降低的倍率
+        float abilityReduceMag = abilityInvoker.InvokeOnPlayerHitted(_monsterStats);
+        Debug.Log(damageToPlayer + " " + abilityReduceMag);
+    }
+    public void OnKillMonster(MonsterStats _monsterStats)
+    {
+        abilityInvoker.InvokeOnKillMonster(_monsterStats);
     }
 
     public void OnDefense()
@@ -314,9 +346,9 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
 
     }
 
-    public void OnBlock()
+    public void OnPlayerParry(BaseEquipment _baseEquipment, MonsterStats _monsterStats)
     {
-
+        abilityInvoker.InvokeOnPlayerParry(_baseEquipment, _monsterStats);
     }
 
     public void OnRoll()
@@ -328,6 +360,8 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
     {
 
     }
+
+
     #endregion
 
 

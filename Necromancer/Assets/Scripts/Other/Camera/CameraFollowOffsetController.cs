@@ -53,7 +53,7 @@ public class CameraFollowOffsetController : MonoBehaviour
                 isCoroutineRunning = true;
                 return;
             }
-            Debug.Log("协程被停职");
+            //Debug.Log("协程被停职");
             isHolding = true;
             holdingDir = 1;
             holdTime = 0;
@@ -72,7 +72,7 @@ public class CameraFollowOffsetController : MonoBehaviour
                 isCoroutineRunning = true;
                 return;
             }
-            Debug.Log("协程被停职");
+            //Debug.Log("协程被停职");
 
             isHolding = true;
             holdingDir = -1;
@@ -154,7 +154,7 @@ public class CameraFollowOffsetController : MonoBehaviour
 
     private IEnumerator SmoothOffsetTo(float target, float duration,int speed)
     {
-        Debug.Log("开始协程" + "目标" + target + "时间" + duration);
+        //Debug.Log("开始协程" + "目标" + target + "时间" + duration);
         float start = transposer.m_TrackedObjectOffset.x;
         float timer = 0f;
         if(duration < .3f)
