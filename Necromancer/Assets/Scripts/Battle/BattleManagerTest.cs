@@ -9,10 +9,10 @@ public class BattleManagerTest : MonoBehaviour
     public static BattleManagerTest Instance { get; private set; }
 
     //在这里我们存储所有装备和词条
-    [SerializeField] public List<BaseEquipment> equipmentList;
-    [SerializeField] public List<BaseAffix> affixList;
+    //[SerializeField] public List<BaseAffix> affixList;
 
     [SerializeField] public EquipmentListSO equipmentPrefabList;
+    [SerializeField] public AffixListSO affixPrefabList;
 
     //新增技能列表
     [SerializeField] public List<SkillController> skillList;
@@ -34,7 +34,6 @@ public class BattleManagerTest : MonoBehaviour
 
     private void Start()
     {
-        affixList = new List<BaseAffix>(GetComponentsInChildren<BaseAffix>(true));
         skillList = new List<SkillController>(GetComponentsInChildren<SkillController>(true));
 
     }
@@ -180,7 +179,7 @@ public class BattleManagerTest : MonoBehaviour
     public BaseAffix GetEquipmentAffix(BaseEquipment _equipment)
     {
         List<BaseAffix> possibleAffixList = new List<BaseAffix>();
-        foreach(BaseAffix affix in affixList)
+        foreach(BaseAffix affix in affixPrefabList.affixList)
         {
             bool canAddAffix = true;
             if (affix.needEquipmentTags.Count > 0 && canAddAffix)
@@ -225,7 +224,11 @@ public class BattleManagerTest : MonoBehaviour
         }
         if(possibleAffixList.Count > 0)
         {
-            return possibleAffixList[Random.Range(0, possibleAffixList.Count)];
+            // 从可选列表中随机一个 affixPrefab 并实例化它
+            BaseAffix selectedPrefab = possibleAffixList[Random.Range(0, possibleAffixList.Count)];
+            BaseAffix newAffix = Instantiate(selectedPrefab, _equipment.transform);
+            newAffix.Initialize(_equipment);
+            return newAffix;
         }
         return null;
     }
@@ -238,7 +241,7 @@ public class BattleManagerTest : MonoBehaviour
     public BaseAffix RecastEquipmentAffix(BaseEquipment _equipment)
     {
         List<BaseAffix> possibleAffixList = new List<BaseAffix>();
-        foreach (BaseAffix affix in affixList)
+        foreach (BaseAffix affix in affixPrefabList.affixList)
         {
             bool canAddAffix = true;
             if (affix.needEquipmentTags.Count > 0 && canAddAffix)
@@ -283,7 +286,11 @@ public class BattleManagerTest : MonoBehaviour
         }
         if (possibleAffixList.Count > 0)
         {
-            return possibleAffixList[Random.Range(0, possibleAffixList.Count)];
+            // 从可选列表中随机一个 affixPrefab 并实例化它
+            BaseAffix selectedPrefab = possibleAffixList[Random.Range(0, possibleAffixList.Count)];
+            BaseAffix newAffix = Instantiate(selectedPrefab, _equipment.transform);
+            newAffix.Initialize(_equipment);
+            return newAffix;
         }
         return null;
     }

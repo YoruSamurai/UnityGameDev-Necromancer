@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3c410933e3e934c8d73571914e32ab, type: 3}
+  m_Name: AffixListSO
+  m_EditorClassIdentifier: 
+  affixList:
+  - {fileID: 920987413036185101, guid: 1f0ac9f8d33eef94ab21e77a46235785, type: 3}
+  - {fileID: 2769043738332395607, guid: 8983893ed55c2f14e82be25084511cb6, type: 3}

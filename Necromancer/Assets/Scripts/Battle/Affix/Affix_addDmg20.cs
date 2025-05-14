@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,24 +8,81 @@ using UnityEngine;
 public class Affix_addDmg20 : BaseAffix
 {
 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     protected override void Start()
     {
         base.Start();
-        //Debug.Log("词条+20%伤害，启动！");
+
     }
 
-    protected override void Update()
+    public override void Initialize(BaseEquipment _baseEquipment)
     {
-        base.Update();
+        base.Initialize(_baseEquipment);
+        EventManager.Instance.AddListener(EventName.OnPlayerHit, InvokeOnPlayerHit);
+
     }
 
-    public override void InvokeAffixPre(PlayerStats playerStats, MonsterStats monsterStats)
+    protected override void OnEnable()
     {
-        base.InvokeAffixPre(playerStats, monsterStats);
-        Debug.Log("触发了" + this.affixDesc);
-
-        // 触发伤害倍率增加
-        OnModifyDamageMultiplier?.Invoke(1.2f); // 伤害倍率提高 20%
+        base.OnEnable();
     }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        EventManager.Instance.RemoveListener(EventName.OnPlayerHit, InvokeOnPlayerHit);
+
+    }
+
+    public override void InvokeOnPlayerHit(object sender, EventArgs e)
+    {
+        base.InvokeOnPlayerHit(sender, e);
+        OnPlayerHitEventArgs data = e as OnPlayerHitEventArgs;
+
+        if (baseEquipment == data.baseEquipment)
+        {
+            Debug.Log("我是 baseEquipment 的子物体！");
+        }
+        else
+        {
+            Debug.Log("我不是 baseEquipment 的子物体！");
+        }
+    }
+
+    public override void InvokeOnPlayerHitted(object sender, EventArgs e)
+    {
+        base.InvokeOnPlayerHitted(sender, e);
+    }
+
+    public override void InvokeOnKillMonster(object sender, EventArgs e)
+    {
+        base.InvokeOnKillMonster(sender, e);
+    }
+
+    public override void InvokeOnPlayerCrit(object sender, EventArgs e)
+    {
+        base.InvokeOnPlayerCrit(sender, e);
+    }
+
+    public override void InvokeOnPlayerParry(object sender, EventArgs e)
+    {
+        base.InvokeOnPlayerParry(sender, e);
+    }
+
+    public override void InvokeOnPlayerCombo(object sender, EventArgs e)
+    {
+        base.InvokeOnPlayerCombo(sender, e);
+    }
+
+
 }

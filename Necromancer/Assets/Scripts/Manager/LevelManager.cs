@@ -242,7 +242,7 @@ public class LevelManager : MonoBehaviour
         var data = e as OnEnemyDeadEventArgs;
         if (data != null)
         {
-            Debug.Log(data.enemyName);
+            //
         }
         killStreak += 1;
     }

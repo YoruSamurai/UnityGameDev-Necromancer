@@ -9,9 +9,6 @@ public class AffixSO : ScriptableObject
     [Header("词缀标签")]
     public AffixTag affixTag;
 
-    [Header("触发条件")]
-    public BattleTriggerCondition triggerCondition;
-
     [Header("需求装备标签")]
     public List<EquipmentTag> needEquipmentTags;
 

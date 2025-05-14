@@ -62,8 +62,8 @@ MonoBehaviour:
   currentCombo: 0
   currentDmg: 5000
   canCrit: 0
-  equipmentLevel: 1
-  eDamageMag: 1
+  equipmentLevel: 3
+  eDamageMag: 1.25
   equipmentAffixList: []
   fullComboAttackTimes: 0
   meleeAttacks: []

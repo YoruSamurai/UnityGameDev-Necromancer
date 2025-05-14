@@ -306,7 +306,6 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
     public void OnAttack()
     {
         //Debug.Log("进入攻击词条");
-        BattleTriggerClass.Instance.TriggerOnAttack();
 
     }
     /// <summary>
@@ -317,11 +316,13 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
     public void OnPlayerHit(BaseEquipment _baseEquipment, MonsterStats _monsterStats)
     {
         //Debug.Log("进入命中词条");
-        float mag = BattleTriggerClass.Instance.TriggerOnHit(_baseEquipment , _monsterStats);
-
+        //float mag = BattleTriggerClass.Instance.TriggerOnHit(_baseEquipment , _monsterStats);
+        float start = Time.realtimeSinceStartup;
         float abilityDamageMag = abilityInvoker.InvokeOnPlayerHit(_baseEquipment, _monsterStats);
 
-        _baseEquipment.DoDamage(mag * abilityDamageMag, _monsterStats);
+        float duration = Time.realtimeSinceStartup - start;
+        UnityEngine.Debug.Log($"OnPlayerHit 耗时: {duration} s");
+        _baseEquipment.DoDamage(abilityDamageMag, _monsterStats);
 
     }
 

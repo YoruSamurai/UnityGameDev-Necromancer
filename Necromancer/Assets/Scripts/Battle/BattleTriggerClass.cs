@@ -38,7 +38,7 @@ public class BattleTriggerClass : MonoBehaviour
     {
 
         float cMag = 1;//伤害倍率c
-        if(_baseEquipment.equipmentAffixList.Count > 0)
+        /*if(_baseEquipment.equipmentAffixList.Count > 0)
         {
             foreach(BaseAffix affix in _baseEquipment.equipmentAffixList)
             {
@@ -67,7 +67,7 @@ public class BattleTriggerClass : MonoBehaviour
                 }
 
             }
-        }
+        }*/
 
         return cMag;
 
