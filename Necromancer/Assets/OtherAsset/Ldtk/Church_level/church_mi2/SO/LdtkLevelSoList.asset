@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: LdtkLevelSoList
   m_EditorClassIdentifier: 
   ldtkLevelSoList:
+  - {fileID: 11400000, guid: f527c04f4dcf1d246bffa500fb60aa47, type: 2}
+  - {fileID: 11400000, guid: 12665eb10368d76468f26caf43ba5010, type: 2}
   - {fileID: 11400000, guid: 4e7677035aa352447a83d68a515ffe24, type: 2}
   - {fileID: 11400000, guid: 8b91389001bfa4a4e8b3127b1226ff97, type: 2}
   - {fileID: 11400000, guid: 80e31b5149cd3834d91bdd916276021c, type: 2}
@@ -24,3 +26,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17950762a044e91439f7c6017dcb5ef3, type: 2}
   - {fileID: 11400000, guid: 39c3e70d8e098024699c40d4bf595d74, type: 2}
   - {fileID: 11400000, guid: 922199272a604484c8e0a4f6d83e7c8b, type: 2}
+  - {fileID: 11400000, guid: a0a17176480302e4b9926de5e92a90aa, type: 2}
+  - {fileID: 11400000, guid: 637f2a2257c4a554fbb70b5c345ffe56, type: 2}
+  - {fileID: 11400000, guid: 2cf78086bcccf8f4fb252c344473379d, type: 2}
+  - {fileID: 11400000, guid: 6a75bf364352bd044932c1e9863eda01, type: 2}
+  - {fileID: 11400000, guid: ca390c0cd22a3414eb2bcc781b390a9c, type: 2}
+  - {fileID: 11400000, guid: 9eb885d5851c80840b0962ff872f2322, type: 2}
+  - {fileID: 11400000, guid: 7c163943d1df09045bae4effdac2f416, type: 2}
+  - {fileID: 11400000, guid: 27ea62070c7fabf4f8ac46ccbc00b7dc, type: 2}
+  - {fileID: 11400000, guid: 4725dd1c8a8b4f54ea0d968bc3035bf8, type: 2}
+  - {fileID: 11400000, guid: 5c2aa50820d68454e9b97e5d93eed7b2, type: 2}
+  - {fileID: 11400000, guid: fac70797e8015ec4b98782aac952ff75, type: 2}
+  - {fileID: 11400000, guid: 17950762a044e91439f7c6017dcb5ef3, type: 2}
+  - {fileID: 11400000, guid: 39c3e70d8e098024699c40d4bf595d74, type: 2}
+  - {fileID: 11400000, guid: 922199272a604484c8e0a4f6d83e7c8b, type: 2}
+  - {fileID: 11400000, guid: 80e31b5149cd3834d91bdd916276021c, type: 2}
