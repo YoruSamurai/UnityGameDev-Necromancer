@@ -143,6 +143,8 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
         canInterrupt = true;
     }
 
+    
+
     private void Update()
     {
         if(Time.timeScale < .3f)
@@ -172,13 +174,18 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
             BaseEquipment baseEquipment = BattleManagerTest.Instance.GetRandomWeapon(mainWeaponParent);
             if (baseEquipment != null)
             {
+                if(baseEquipment1 != null) { baseEquipment1.OnUnequip(); }
+                    
                 baseEquipment1 = baseEquipment;
+                baseEquipment1.OnEquip();
                 InventoryManager.Instance.AddToInventory(baseEquipment1);
             }
             BaseEquipment equipment = BattleManagerTest.Instance.GetRandomWeapon(secondaryWeaponParent);
             if (equipment != null)
             {
+                if (baseEquipment2 != null) { baseEquipment2.OnUnequip(); }
                 baseEquipment2 = equipment;
+                baseEquipment2.OnEquip();
                 InventoryManager.Instance.AddToInventory(baseEquipment2);
             }
         }

@@ -22,25 +22,27 @@ public class Affix_addDmg20 : BaseAffix
     public override void Initialize(BaseEquipment _baseEquipment)
     {
         base.Initialize(_baseEquipment);
+
+    }
+
+    public override void OnEquip()
+    {
+        base.OnEquip();
         EventManager.Instance.AddListener(EventName.OnPlayerHit, InvokeOnPlayerHit);
-
+        Debug.Log("我被绑定");
     }
 
-    protected override void OnEnable()
+    public override void OnUnequip()
     {
-        base.OnEnable();
-    }
-
-    protected override void OnDisable()
-    {
-        base.OnDisable();
+        base.OnUnequip();
+        EventManager.Instance.RemoveListener(EventName.OnPlayerHit, InvokeOnPlayerHit);
+        Debug.Log("我被取消绑定");
 
     }
 
     protected override void OnDestroy()
     {
         base.OnDestroy();
-        EventManager.Instance.RemoveListener(EventName.OnPlayerHit, InvokeOnPlayerHit);
 
     }
 

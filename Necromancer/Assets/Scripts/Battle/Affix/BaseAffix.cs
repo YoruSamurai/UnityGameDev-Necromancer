@@ -40,12 +40,12 @@ public class BaseAffix : MonoBehaviour
 
     }
 
-    protected virtual void OnEnable()
+    public virtual void OnEquip()
     {
 
     }
 
-    protected virtual void OnDisable()
+    public virtual void OnUnequip()
     {
 
     }

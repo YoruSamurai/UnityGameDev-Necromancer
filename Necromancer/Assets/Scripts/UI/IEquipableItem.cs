@@ -12,6 +12,10 @@ public interface IEquipableItem
 
     public int GetEquipableItemLevel();
 
+    public void OnEquip();
+
+    public void OnUnequip();
+
     public void AddToInventory();
     /// <summary>
     /// 从背包里丢出物品

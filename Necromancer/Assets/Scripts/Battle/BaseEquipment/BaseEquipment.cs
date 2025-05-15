@@ -39,6 +39,16 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     [SerializeField] public List<BaseAffix> equipmentAffixList;
 
 
+    public void ClearEquipmentAffixList()
+    {
+        equipmentAffixList.Clear();
+        foreach (Transform affix in transform)
+        {
+            Destroy(affix.gameObject);
+        }
+    }
+
+
     public void Initialize()
     {
         SetupEquipmentBase();
@@ -256,6 +266,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         {
             BaseEquipment instance = Instantiate(this, PlayerStats.Instance.mainWeaponParent);
             instance.gameObject.name = equipmentName;
+            instance.OnEquip();
             PlayerStats.Instance.baseEquipment1 = instance;
             InventoryManager.Instance.AddToInventory(instance); 
         }
@@ -263,7 +274,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         {
             BaseEquipment instance = Instantiate(this, PlayerStats.Instance.secondaryWeaponParent);
             instance.gameObject.name = equipmentName;
-
+            instance.OnEquip();
             PlayerStats.Instance.baseEquipment2 = instance;
             InventoryManager.Instance.AddToInventory(instance);
         }
@@ -271,7 +282,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         {
             BaseEquipment instance = Instantiate(this, PlayerStats.Instance.inventoryEquipmentParent);
             instance.gameObject.name = equipmentName;
-
+            instance.OnUnequip();
             InventoryManager.Instance.AddToInventory(instance);
 
         }
@@ -311,6 +322,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     public void DropFromInventory()
     {
         Debug.Log("尝试丢弃" + equipmentName);
+        this.OnUnequip();
         BattleManagerTest.Instance.DropItem(this, PlayerStats.Instance.gameObject.transform.position);
     }
 
@@ -322,7 +334,8 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
 
     public void EquipableItemRecast()
     {
-        equipmentAffixList.Clear();
+        /*equipmentAffixList.Clear();*/
+        ClearEquipmentAffixList();
         equipmentAffixList.Add(BattleManagerTest.Instance.RecastEquipmentAffix(this));
     }
 
@@ -334,6 +347,22 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     public int GetEquipableItemLevel()
     {
         return equipmentLevel;
+    }
+
+    public void OnEquip()
+    {
+        foreach(BaseAffix affix in equipmentAffixList)
+        {
+            affix.OnEquip();
+        }
+    }
+
+    public void OnUnequip()
+    {
+        foreach (BaseAffix affix in equipmentAffixList)
+        {
+            affix.OnUnequip();
+        }
     }
 
 

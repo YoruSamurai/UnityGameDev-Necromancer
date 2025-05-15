@@ -40,6 +40,7 @@ public class InventoryRightClickMenuUI : MonoBehaviour
                 {
                     Debug.Log("交换这个");
                     item.transform.SetParent(PlayerStats.Instance.mainWeaponParent);
+                    item.OnEquip();
                     PlayerStats.Instance.baseEquipment1 = item;
                 }
             }
@@ -57,8 +58,10 @@ public class InventoryRightClickMenuUI : MonoBehaviour
                 if (item.GetEquipableItemName() == currentItem.GetEquipableItemName())
                 {
                     Debug.Log("交换这个");
+                    PlayerStats.Instance.baseEquipment1.OnUnequip();
                     PlayerStats.Instance.baseEquipment1.transform.SetParent(PlayerStats.Instance.inventoryEquipmentParent);
                     item.transform.SetParent(PlayerStats.Instance.mainWeaponParent);
+                    item.OnEquip();
                     PlayerStats.Instance.baseEquipment1 = item;
                 }
             }
@@ -82,6 +85,7 @@ public class InventoryRightClickMenuUI : MonoBehaviour
                 {
                     Debug.Log("交换这个");
                     item.transform.SetParent(PlayerStats.Instance.secondaryWeaponParent);
+                    item.OnEquip();
                     PlayerStats.Instance.baseEquipment2 = item;
                 }
             }
@@ -99,8 +103,10 @@ public class InventoryRightClickMenuUI : MonoBehaviour
                 if (item.GetEquipableItemName() == currentItem.GetEquipableItemName())
                 {
                     Debug.Log("交换这个");
+                    PlayerStats.Instance.baseEquipment2.OnUnequip();
                     PlayerStats.Instance.baseEquipment2.transform.SetParent(PlayerStats.Instance.inventoryEquipmentParent);
                     item.transform.SetParent(PlayerStats.Instance.secondaryWeaponParent);
+                    item.OnEquip();
                     PlayerStats.Instance.baseEquipment2 = item;
                 }
             }
@@ -161,11 +167,13 @@ public class InventoryRightClickMenuUI : MonoBehaviour
 
         if (setUnmount == 1)
         {
+            PlayerStats.Instance.baseEquipment1.OnUnequip();
             PlayerStats.Instance.baseEquipment1.transform.SetParent(PlayerStats.Instance.inventoryEquipmentParent);
             PlayerStats.Instance.baseEquipment1 = null;
         }
         else if (setUnmount == 2)
         {
+            PlayerStats.Instance.baseEquipment2.OnUnequip();
             PlayerStats.Instance.baseEquipment2.transform.SetParent(PlayerStats.Instance.inventoryEquipmentParent);
             PlayerStats.Instance.baseEquipment2 = null;
         }
