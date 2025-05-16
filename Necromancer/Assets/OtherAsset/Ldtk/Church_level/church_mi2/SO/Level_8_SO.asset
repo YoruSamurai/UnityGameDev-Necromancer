@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level_8_SO
   m_EditorClassIdentifier: 
   levelData: {fileID: -8652132331966285000, guid: 741c443368111774e888635c1b90ccd5, type: 3}
-  gameRoomType: 2
+  gameRoomType: 1
   levelHeight: 24
   levelWidth: 32
   doorInfos:
