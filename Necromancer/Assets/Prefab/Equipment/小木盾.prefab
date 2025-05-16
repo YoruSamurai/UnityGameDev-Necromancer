@@ -61,8 +61,13 @@ MonoBehaviour:
   currentDmg: 0
   canCrit: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   equipmentLevel: 5
   eDamageMag: 1.6
+=======
+  equipmentLevel: 3
+  eDamageMag: 1.25
+>>>>>>> Stashed changes
 =======
   equipmentLevel: 3
   eDamageMag: 1.25
