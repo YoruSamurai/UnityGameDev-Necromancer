@@ -319,7 +319,10 @@ public class Minimap : MonoBehaviour
 
 
         // ✅ 设置 RectTransform 的位置为 playerTilePos
-        minimapRectTransform.anchoredPosition = new Vector2(scale*playerTilePos.x + w -50, scale * playerTilePos.y * .8f -40);
+        minimapRectTransform.anchoredPosition = new Vector2(scale*playerTilePos.x + w, scale * playerTilePos.y + h);
+
+        Debug.Log(minimapRectTransform.anchoredPosition);
+
     }
 
     // 外部用来初始化 tile 数据（如房间颜色）
