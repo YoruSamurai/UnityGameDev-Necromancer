@@ -84,6 +84,20 @@ namespace LDtkUnity
                     map.sortingOrder = -3;
 
                 }
+                if (layer.name == "AutoGroundDeco")
+                {
+                    TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
+                    map.sortingLayerID = SortingLayer.NameToID("Tile");
+                    map.sortingOrder = 5;
+
+                }
+                if (layer.name == "AutoWallDeco")
+                {
+                    TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
+                    map.sortingLayerID = SortingLayer.NameToID("Tile");
+                    map.sortingOrder = 5;
+
+                }
                 if (layer.name == "Ladder")
                 {
                     CompositeCollider2D[] collider2D = layer.GetComponentsInChildren<CompositeCollider2D>();
@@ -106,7 +120,7 @@ namespace LDtkUnity
                 {
                     TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
                     map.sortingLayerID = SortingLayer.NameToID("Tile");
-                    map.sortingOrder = 5;
+                    map.sortingOrder = 10;
 
 
                 }

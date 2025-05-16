@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59272ed3aa17de947aad98b99ecbe741, type: 3}
+  m_Name: Entrance_R_1_SO
+  m_EditorClassIdentifier: 
+  levelData: {fileID: -2482691654293457075, guid: 33e77df16a54ba242ba549d9eb465151, type: 3}
+  gameRoomType: 0
+  levelHeight: 17
+  levelWidth: 50
+  doorInfos:
+  - startCell: {x: 49, y: 3, z: 0}
+    length: 5
+    direction: 1
+    isLocked: 0
+    node: -1
+  monsterSpawnPoints: []
