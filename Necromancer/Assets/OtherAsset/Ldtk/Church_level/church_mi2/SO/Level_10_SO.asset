@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelData: {fileID: 6993293779124984225, guid: 22d1fa51a0b970e4aae68049051811e0, type: 3}
   gameRoomType: 2
-  levelHeight: 13
+  levelHeight: 17
   levelWidth: 34
   doorInfos:
   - startCell: {x: 0, y: 1, z: 0}

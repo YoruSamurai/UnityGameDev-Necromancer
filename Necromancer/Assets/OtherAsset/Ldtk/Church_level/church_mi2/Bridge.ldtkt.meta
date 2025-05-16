@@ -20,7 +20,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 0
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: b9226d32e1d68c24b9618d16935acd68
@@ -34,7 +34,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 32
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: b8b9f23263befb549a3dd7b3ca0cba70
@@ -48,7 +48,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 64
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: d29f46643998ed24abdcf4784326a358
@@ -62,7 +62,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 96
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: ca70c3809aae5984fbd143caa379e8a0
@@ -76,7 +76,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 128
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: 997334e8d0507cd4b9bf8b4316711e0c
@@ -90,7 +90,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 160
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: a5c02c5d61f8395418a1d4f58da2053e
@@ -104,7 +104,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 192
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: d97257a210e2d4a4d8c0b488dd6ee073
@@ -118,7 +118,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 224
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: 72a4a89c976799c4196bbdb900261886
@@ -132,7 +132,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 256
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: 9134ac70c3760e34ab0ede95ed369f19
@@ -146,7 +146,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 288
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: a750e16af2784bb40b210f1ffca7d26e
@@ -160,7 +160,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 320
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: 38e5ad3e6dd7a544e90d39332194983c
@@ -174,7 +174,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 352
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: e5144f14ee5c56a4d8474d9c506758eb
@@ -188,7 +188,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 384
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: c00c8509b09da3d418da5ec53d67fe48
@@ -202,7 +202,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 416
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: 736698bee1534354f9e74ddbf4dddf92
@@ -216,7 +216,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 448
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: 0947e886e61af4241a0938ffbd5eb8c4
@@ -230,7 +230,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 480
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: 15052b7a61f9b5640b28c86e89638681
@@ -244,7 +244,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 512
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: e65e07ac242df034083d142f3cf1d41f
@@ -258,7 +258,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 544
-      y: 608
+      y: 96
       width: 32
       height: 32
     spriteID: a5892fcf54ea162408dc202c61572c39
@@ -271,8 +271,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 576
-      y: 608
+      x: 0
+      y: 64
       width: 32
       height: 32
     spriteID: db451aa9c0040ea4b91babf50b9af0f4
@@ -285,8 +285,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 608
-      y: 608
+      x: 32
+      y: 64
       width: 32
       height: 32
     spriteID: 8c07fc2cf938a724390446cb533cfcb4
@@ -299,8 +299,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 0
-      y: 576
+      x: 64
+      y: 64
       width: 32
       height: 32
     spriteID: 09bcd7832b8d2ac439c580493c6a266c
@@ -313,8 +313,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 32
-      y: 576
+      x: 96
+      y: 64
       width: 32
       height: 32
     spriteID: 52a846f9aa9dbe744900052af6622ea7
@@ -327,8 +327,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 576
+      x: 128
+      y: 64
       width: 32
       height: 32
     spriteID: 0921e4ea00ad3b54d8d7ae82ab21ae91
@@ -341,8 +341,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 96
-      y: 576
+      x: 160
+      y: 64
       width: 32
       height: 32
     spriteID: 573aa9870c6d2bf4ca172cf0390e13b9
@@ -355,8 +355,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 128
-      y: 576
+      x: 192
+      y: 64
       width: 32
       height: 32
     spriteID: 48f3233c3e923f64e82f5f38eee0fa32
@@ -369,8 +369,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 160
-      y: 576
+      x: 224
+      y: 64
       width: 32
       height: 32
     spriteID: 9926b9ee81582764692097c0dabb6643
@@ -383,8 +383,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 192
-      y: 576
+      x: 256
+      y: 64
       width: 32
       height: 32
     spriteID: 03cc7c9cfca3a94498e1eadbaaa6deb0
@@ -397,8 +397,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 224
-      y: 576
+      x: 288
+      y: 64
       width: 32
       height: 32
     spriteID: 9ef818b88fde24c4684d44584a770069
@@ -411,8 +411,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 256
-      y: 576
+      x: 320
+      y: 64
       width: 32
       height: 32
     spriteID: 4fd45724531351e4caf085687c9f43a9
@@ -425,8 +425,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 288
-      y: 576
+      x: 352
+      y: 64
       width: 32
       height: 32
     spriteID: 4e27e604b628de94c89f49c87b28cf27
@@ -439,8 +439,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 320
-      y: 576
+      x: 384
+      y: 64
       width: 32
       height: 32
     spriteID: c6b31ad24d3c082428801202d4fed2db
@@ -453,8 +453,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 352
-      y: 576
+      x: 416
+      y: 64
       width: 32
       height: 32
     spriteID: ab84363207bad8f478c1bf6fa3d0e76a
@@ -467,8 +467,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 384
-      y: 576
+      x: 448
+      y: 64
       width: 32
       height: 32
     spriteID: 2cd3804110438024a92dab35e6627794
@@ -481,8 +481,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 416
-      y: 576
+      x: 480
+      y: 64
       width: 32
       height: 32
     spriteID: 20e3fcdb36a87cb468d8b521f4ebe7ba
@@ -495,8 +495,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 448
-      y: 576
+      x: 512
+      y: 64
       width: 32
       height: 32
     spriteID: fd8ef850c92143d4cb8844aa217c8144
@@ -509,8 +509,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 480
-      y: 576
+      x: 544
+      y: 64
       width: 32
       height: 32
     spriteID: 2f72ea95ae4378d459a37a64b168e811
@@ -523,8 +523,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 512
-      y: 576
+      x: 0
+      y: 32
       width: 32
       height: 32
     spriteID: ac7d2ee5e86f68a4f9378edaf61473b0
@@ -537,8 +537,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 544
-      y: 576
+      x: 32
+      y: 32
       width: 32
       height: 32
     spriteID: 873bd44456eaf664ca2d2cf090c5a575
@@ -551,8 +551,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 576
-      y: 576
+      x: 64
+      y: 32
       width: 32
       height: 32
     spriteID: d9440e0a23e79de419b730624cc39d77
@@ -565,8 +565,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 608
-      y: 576
+      x: 96
+      y: 32
       width: 32
       height: 32
     spriteID: bab5585ffe5501e4c9dd22eb16da4d1d
@@ -579,8 +579,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 0
-      y: 544
+      x: 128
+      y: 32
       width: 32
       height: 32
     spriteID: c349504777e61ff4da2a6694e7c7610f
@@ -593,8 +593,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 32
-      y: 544
+      x: 160
+      y: 32
       width: 32
       height: 32
     spriteID: 1b7cec4e72eda004fb073438abbacd65
@@ -607,8 +607,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 544
+      x: 192
+      y: 32
       width: 32
       height: 32
     spriteID: f13566f98dbe7844796e08d4cf599a21
@@ -621,8 +621,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 96
-      y: 544
+      x: 224
+      y: 32
       width: 32
       height: 32
     spriteID: 895cbbc672c2c2048a7d20d1e7b6f1f9
@@ -635,8 +635,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 128
-      y: 544
+      x: 256
+      y: 32
       width: 32
       height: 32
     spriteID: 8d3b1c2c50591e74ca463d6e52e1c134
@@ -649,8 +649,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 160
-      y: 544
+      x: 288
+      y: 32
       width: 32
       height: 32
     spriteID: 087eb5872a181d846b2b675cca3d71eb
@@ -663,8 +663,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 192
-      y: 544
+      x: 320
+      y: 32
       width: 32
       height: 32
     spriteID: b63255ad99c138d4db5e64fc16f409c8
@@ -677,8 +677,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 224
-      y: 544
+      x: 352
+      y: 32
       width: 32
       height: 32
     spriteID: 7673f937aa5ed404e87a4955fe206f0f
@@ -691,8 +691,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 256
-      y: 544
+      x: 384
+      y: 32
       width: 32
       height: 32
     spriteID: 0ea7aeeeb4d233b418fc0e54595a913c
@@ -705,8 +705,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 288
-      y: 544
+      x: 416
+      y: 32
       width: 32
       height: 32
     spriteID: 3c52e09562eef074c9582deafaa96f6e
@@ -719,8 +719,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 320
-      y: 544
+      x: 448
+      y: 32
       width: 32
       height: 32
     spriteID: 2f9b6f681bdc42e478de07106a206d53
@@ -733,8 +733,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 352
-      y: 544
+      x: 480
+      y: 32
       width: 32
       height: 32
     spriteID: 72befbaed9b292f46a5b3471d4634bf3
@@ -747,8 +747,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 384
-      y: 544
+      x: 512
+      y: 32
       width: 32
       height: 32
     spriteID: 438c39beb4eb5a246826d0c4de622287
@@ -761,8 +761,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 416
-      y: 544
+      x: 544
+      y: 32
       width: 32
       height: 32
     spriteID: 7e1e775f890f39946b2f4d1ffe5021a2
@@ -775,8 +775,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 448
-      y: 544
+      x: 0
+      y: 0
       width: 32
       height: 32
     spriteID: 9084301296e521d49a7a9861f2c1d3a7
@@ -789,8 +789,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 480
-      y: 544
+      x: 32
+      y: 0
       width: 32
       height: 32
     spriteID: 233b21f5ae2dfad459eae79edc702017
@@ -803,8 +803,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 512
-      y: 544
+      x: 64
+      y: 0
       width: 32
       height: 32
     spriteID: 75d8a9b2135ddb44ea6bbec5b0be6b3b
@@ -817,8 +817,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 544
-      y: 544
+      x: 96
+      y: 0
       width: 32
       height: 32
     spriteID: 96aa5a5e1c1a0fe4b8b5ed0e06a6b2d5
@@ -831,8 +831,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 576
-      y: 544
+      x: 128
+      y: 0
       width: 32
       height: 32
     spriteID: 3e17304527c4c574b9e7cc58d87c60f0
@@ -845,8 +845,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 608
-      y: 544
+      x: 160
+      y: 0
       width: 32
       height: 32
     spriteID: 615df5ef9539ea84abccafa816c21612
@@ -859,8 +859,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 0
-      y: 512
+      x: 192
+      y: 0
       width: 32
       height: 32
     spriteID: 69f4996abb152d14e8060b07cb1f3840
@@ -873,8 +873,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 32
-      y: 512
+      x: 224
+      y: 0
       width: 32
       height: 32
     spriteID: dd8da6244d77aea40a5531d1472a3dc7
@@ -887,8 +887,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 64
-      y: 512
+      x: 256
+      y: 0
       width: 32
       height: 32
     spriteID: 186a9329d575e4942b20b9a43abac60a
@@ -901,8 +901,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 96
-      y: 512
+      x: 288
+      y: 0
       width: 32
       height: 32
     spriteID: d9ee2c83310b4f349b158dd8782d6078
@@ -915,8 +915,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 128
-      y: 512
+      x: 320
+      y: 0
       width: 32
       height: 32
     spriteID: 75a60ab89f182b84eb378a04cc35b6ed
@@ -929,8 +929,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 160
-      y: 512
+      x: 352
+      y: 0
       width: 32
       height: 32
     spriteID: f28ef7aef6e95d54a8e18be9c9743fd2
@@ -943,8 +943,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 192
-      y: 512
+      x: 384
+      y: 0
       width: 32
       height: 32
     spriteID: 9b054b1ea8fcf594f8465d656d13897c
@@ -957,8 +957,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 224
-      y: 512
+      x: 416
+      y: 0
       width: 32
       height: 32
     spriteID: 455e2225bede97148884bc49dd375b62
@@ -971,8 +971,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 256
-      y: 512
+      x: 448
+      y: 0
       width: 32
       height: 32
     spriteID: c38be354046b52342b0c716bef88bf7a
@@ -985,8 +985,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 288
-      y: 512
+      x: 480
+      y: 0
       width: 32
       height: 32
     spriteID: ed0bf9e38758dcd4cada6d4c0e82736c
@@ -999,8 +999,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 320
-      y: 512
+      x: 512
+      y: 0
       width: 32
       height: 32
     spriteID: 196344c46ef54934687e4272a7be011d
@@ -1013,4604 +1013,12 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 352
-      y: 512
+      x: 544
+      y: 0
       width: 32
       height: 32
     spriteID: 6a230c956a7c08d47b2926fca3b46440
     spriteOutline: []
     tessellationDetail: 0
-  - name: Bridge_72
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 512
-      width: 32
-      height: 32
-    spriteID: 501220994b8e02f49901824c2bbdaf14
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_73
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 512
-      width: 32
-      height: 32
-    spriteID: 232ed4e30afd89b4ea4e660bb9060e72
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_74
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 512
-      width: 32
-      height: 32
-    spriteID: 8bd80130d5e14574080ba772e0cd3f13
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_75
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 512
-      width: 32
-      height: 32
-    spriteID: f258582fea143014d803b18d3bd6add1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_76
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 512
-      width: 32
-      height: 32
-    spriteID: c5691c3b169fea94b8efc6c59f27f2da
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_77
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 512
-      width: 32
-      height: 32
-    spriteID: 1a96d4d1f1f598d44b298a143678432f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_78
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 512
-      width: 32
-      height: 32
-    spriteID: 45427ce33c3f3c84a9e7691fceca441d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_79
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 512
-      width: 32
-      height: 32
-    spriteID: e4a183d534f853e4ba57910a1b516744
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_80
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 480
-      width: 32
-      height: 32
-    spriteID: c5ad14cabdf8b6445a37791624de8558
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_81
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 480
-      width: 32
-      height: 32
-    spriteID: ba8a5901574a2a54cab0015387643a94
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_82
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 52790209a5fab014ba4bbcceebae31d4
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_83
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 480
-      width: 32
-      height: 32
-    spriteID: f2b949c35b3fe6a4b853c46861d360cd
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_84
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 7c1ffda4720f4be4db3ac620d47a4b2c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_85
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 0d07b13c49182264c88f89240abad8ee
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_86
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 480
-      width: 32
-      height: 32
-    spriteID: a66103fa88629fb4a83e2da488455366
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_87
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 08ed5f7ece8056d4a892e2348a303c7c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_88
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 18b887ba25f7ef642b61b6f460e082b2
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_89
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 480
-      width: 32
-      height: 32
-    spriteID: b414e8eb3f4ef8d48a5ce76f2fb18b43
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_90
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 1a2e430810eaee2498d9770a94af31d6
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_91
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 480
-      width: 32
-      height: 32
-    spriteID: e9b61d88ab586c34d96017ae40b9582f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_92
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 32097acb4672e1c4a9bd1d6d04c0486a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_93
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 133f8e86cbc34cf4ba7803d8b2aca1c9
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_94
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 2318514c01d47544192f2db2418d5c05
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_95
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 480
-      width: 32
-      height: 32
-    spriteID: f00b543217530b54faec896538948ded
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_96
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 5f904ad750cabae449680b6a75729bd3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_97
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 5ddf869bf0125554a94905a99945efb1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_98
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 37cc320a19ad2bf4f9dd2ab9b4060870
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_99
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 480
-      width: 32
-      height: 32
-    spriteID: 132d1d12481080a44b4ef46dcc25417a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_100
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 448
-      width: 32
-      height: 32
-    spriteID: f92dfc1cb903eda4b906038a52464a33
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_101
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 0f03bcf24d1b4bf468c4a0e1824785ab
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_102
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 448
-      width: 32
-      height: 32
-    spriteID: bcac4d187eb0c69489620a0c0393f7d0
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_103
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 448
-      width: 32
-      height: 32
-    spriteID: cfc50a4de21ac244b8ff55ed3fe120b9
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_104
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 938a33c5b4af8d14bb53c1b24bd2f4ff
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_105
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 725079c77b12f454283a82d2a7a30acf
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_106
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 505cd51fad8112f47bf22958d71e35c5
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_107
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 448
-      width: 32
-      height: 32
-    spriteID: f7ab69caf4ca10a4cad8e73a4714ffed
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_108
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 723b35cbea482674fbc2fc83b723764f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_109
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 796d8716b43497948be50b25c526a895
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_110
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 1ab8f8cc8564b2641a2ebfe33551f406
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_111
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 74bc4bf8417048a4fbe13ff798beab6d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_112
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 22ed18af86e9e494a816b6ff68753153
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_113
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 448
-      width: 32
-      height: 32
-    spriteID: a747f0e783eb0b54aba9c45321d3d5c1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_114
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 448
-      width: 32
-      height: 32
-    spriteID: e02c8493da25aa94bbf1cc06321eca12
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_115
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 7be2ba88f31f22a44b3b773c6fd445df
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_116
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 4ec837899f00f944ab563cae2362415b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_117
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 448
-      width: 32
-      height: 32
-    spriteID: e10e847dcc7e04945ad74c6c26853fe7
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_118
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 448
-      width: 32
-      height: 32
-    spriteID: e098992998cb2714893cff03f0931c32
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_119
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 448
-      width: 32
-      height: 32
-    spriteID: 89b1a76d88c52c642878e075df775eb2
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_120
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 416
-      width: 32
-      height: 32
-    spriteID: 23d5a4f17f0ce1d4dbf21fb98a174777
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_121
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 416
-      width: 32
-      height: 32
-    spriteID: b792bbbc5376c9142bf42fd1e89c24a7
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_122
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 416
-      width: 32
-      height: 32
-    spriteID: 8fd3150b61814d24facafad463a62ffc
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_123
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 416
-      width: 32
-      height: 32
-    spriteID: d10d49a8c0c31da469ea72eb2549a2aa
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_124
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 416
-      width: 32
-      height: 32
-    spriteID: d433c85922eaa44428bb3d0193a38f49
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_125
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 416
-      width: 32
-      height: 32
-    spriteID: b5254b41b39b3cf4b834858eed235b4c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_126
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 416
-      width: 32
-      height: 32
-    spriteID: 47aca59338197954eb598e2c1629297d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_127
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 416
-      width: 32
-      height: 32
-    spriteID: c83d0b3e4970d144a84e3e3f8951518b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_128
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 416
-      width: 32
-      height: 32
-    spriteID: a61907f1708b06f4f94ab192cc95d49b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_129
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 416
-      width: 32
-      height: 32
-    spriteID: e80bfeea0ec3a094ea70bd05ac0e8a17
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_130
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 416
-      width: 32
-      height: 32
-    spriteID: ade86eff53905e14ea035078da9cade0
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_131
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 416
-      width: 32
-      height: 32
-    spriteID: 50ecd32d9bd157544859a7cfecbd7571
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_132
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 416
-      width: 32
-      height: 32
-    spriteID: aaf021d1f7367524998b0d34f0e12656
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_133
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 416
-      width: 32
-      height: 32
-    spriteID: ee013494252593147b2990d3fd577080
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_134
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 416
-      width: 32
-      height: 32
-    spriteID: 5ca33cbcb1f08b642a653c21b74b6c48
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_135
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 416
-      width: 32
-      height: 32
-    spriteID: 2eef7a362fa3a31428f7644ec5879e03
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_136
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 416
-      width: 32
-      height: 32
-    spriteID: ead3b7b6b4b2f404c8270ff913930b17
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_137
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 416
-      width: 32
-      height: 32
-    spriteID: 96a8e49a87254814892a35e685336a59
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_138
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 416
-      width: 32
-      height: 32
-    spriteID: 8205ea8a763be9d4586d7ba7363d8261
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_139
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 416
-      width: 32
-      height: 32
-    spriteID: 83f6be282242de443858d24b45a43bcf
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_140
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 384
-      width: 32
-      height: 32
-    spriteID: d0aff78b36ab1de4bb6150315f0df91d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_141
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 384
-      width: 32
-      height: 32
-    spriteID: bb30082efe8c9f74aa347beb18ccd7f9
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_142
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 384
-      width: 32
-      height: 32
-    spriteID: fce2e54c010fc4e43ae294fa0bb64600
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_143
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 91e7eeaedc08d9044a259c9445bae8c9
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_144
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 384
-      width: 32
-      height: 32
-    spriteID: ea063aaf58bd4354daf4b0e1daa53820
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_145
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 4c3c0a1541c179e4db92907fbbde454f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_146
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 384
-      width: 32
-      height: 32
-    spriteID: e940375dcb2749d4a853946ed7b23351
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_147
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 709fc87b17dfb5243af76996045c1c67
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_148
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 47736140f6148944c9600c59936b2452
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_149
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 384
-      width: 32
-      height: 32
-    spriteID: a8c4ff030c2f97742af7293d34103b15
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_150
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 384
-      width: 32
-      height: 32
-    spriteID: d8abba3d913227049a1381b293f37308
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_151
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 384
-      width: 32
-      height: 32
-    spriteID: c584e757ef8548c4ab8193cdb0dff1ed
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_152
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 91a9517572f40954db15fedf23c1ba3b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_153
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 705a467dc58b57346830dbdaafb2af02
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_154
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 384
-      width: 32
-      height: 32
-    spriteID: bddfbc60134778843b51dad0431d5c19
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_155
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 5cf87ca483d52c54a942935dfd7dd1be
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_156
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 6187ec588b8feb04daede0028a03aabd
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_157
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 06d731e114e9a554eb545489414472d2
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_158
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 60b784b7c7e155d4f8dcdbf02b124933
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_159
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 384
-      width: 32
-      height: 32
-    spriteID: 65d7327a1b9ee434dab0e42a911ae1f0
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_160
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 63ee67c0c6220874cbee6d19dd718bab
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_161
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 532ce2e573090dd4e9892e85e34f0716
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_162
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 352
-      width: 32
-      height: 32
-    spriteID: e6d82dd7fd79a65489e9edcecc488ece
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_163
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 352
-      width: 32
-      height: 32
-    spriteID: bcb204f0448e59b4d8c340cc02c4fd63
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_164
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 352
-      width: 32
-      height: 32
-    spriteID: dcc86385af550f14581ed163252a00a1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_165
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 2816f92196b5fe046b5caff814e06916
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_166
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 352
-      width: 32
-      height: 32
-    spriteID: e5bdeac46a2b60640b2aa65e2a951d81
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_167
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 3a65248d4f5b39a479c3ee7ae4625252
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_168
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 352
-      width: 32
-      height: 32
-    spriteID: fed0eaa993ad2894d8dba65a8f45ac7c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_169
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 6caec6b9739ef4043a024554f098230b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_170
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 901bb9aa2199108479e95b202a3f700c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_171
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 1ffa51c946bdbbc4692f59ecd2fab017
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_172
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 4688eff47536d1247a9346ba4861f66e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_173
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 68ba34204ce017f4cbfdcdec8c27c99c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_174
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 68040b79f98e9dd438ae08028e25f81e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_175
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 99a9fd07e0a92d64d9e36c7599b74710
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_176
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 80dcf780f8dfe3745828f0957cac4554
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_177
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 352
-      width: 32
-      height: 32
-    spriteID: 898f22ea472afa541bdbc2f52eb762f9
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_178
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 352
-      width: 32
-      height: 32
-    spriteID: a23bc3181afb2dd4a841bb8f50a47ab5
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_179
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 352
-      width: 32
-      height: 32
-    spriteID: be5a37124ea35a040b1d448c6b359f61
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_180
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 320
-      width: 32
-      height: 32
-    spriteID: bdcaee18cdab0e24aa2eaafa8e751018
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_181
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 320
-      width: 32
-      height: 32
-    spriteID: d18dbe91b99f68e4f8e25d16b10213d9
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_182
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 0d8aee284763f6d4f8ed947ba0e3c22b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_183
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 0d8c561b5d894ec408c6685fd134ad92
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_184
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 320
-      width: 32
-      height: 32
-    spriteID: d8f3226e9e3b5b7439274ad412a542ae
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_185
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 320
-      width: 32
-      height: 32
-    spriteID: c6ba8bbcbf2cfad46b40c8249a233ed4
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_186
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 12d327aa09a4b3d4bb2bffa233c01eae
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_187
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 40c8e9a9a63759f45b07e7cfea5a40e5
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_188
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 320
-      width: 32
-      height: 32
-    spriteID: ca4763be0661a26429b716156c8b7bd3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_189
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 168779577a2106b4389521d09780fd22
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_190
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 320
-      width: 32
-      height: 32
-    spriteID: cefa534b49a06144cabe1857fac412e3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_191
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 08b23a386cb780d4d93ee28bc70255a2
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_192
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 0657ca15a00870a4bbef5180ed500c93
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_193
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 4e87aca1354b6334ba920a3678ac7f4a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_194
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 320
-      width: 32
-      height: 32
-    spriteID: a90bb861ca9396643a90ad1589b3d44f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_195
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 56bc951d281dae84799bdcd671ae0005
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_196
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 9563683a78894a64885871663c35be31
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_197
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 8ea40fca672dc85479f1afa37cc83788
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_198
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 320
-      width: 32
-      height: 32
-    spriteID: a1e896103411f5645a533b0203a619c5
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_199
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 320
-      width: 32
-      height: 32
-    spriteID: 1c2c0d28a22978940b713ffb2311a0b7
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_200
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 288
-      width: 32
-      height: 32
-    spriteID: f378ff8632580d94f81c79d2e6c8a11e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_201
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 288
-      width: 32
-      height: 32
-    spriteID: c755326164d6e7f418bfb82c7248b561
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_202
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 288
-      width: 32
-      height: 32
-    spriteID: e9fd0c92353370942b07e2c63d03fe24
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_203
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 04a83f3aa04cb914ab300e63e7102da6
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_204
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 1786d65e65696554f9df9344210e94e8
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_205
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 288
-      width: 32
-      height: 32
-    spriteID: f021be2a0902b8a43966e4a0422a72dd
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_206
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 928e5274a5461354b98e021883100e8a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_207
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 3e1fbf49f0c0f394587daf5e7b847706
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_208
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 756bda3ee247fdf4bada499f16ae110f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_209
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 6c68d46f8e6ab754fb0eeca4c8fc1e4d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_210
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 6ec86af4e5074b3458dec12e757ce67e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_211
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 60e371c68aa163a438817867e1ddddc3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_212
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 4facd4dd3e53f684b82f28217038087c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_213
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 9abcfa9fbf4d56040b00f8e3cedfa6cd
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_214
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 73d16f4a84ad7264baae08ce7fb333cc
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_215
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 3d99c0aa572a3324f9bfda3a836c8847
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_216
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 449bde2f66dbefb4c988109f25562916
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_217
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 288
-      width: 32
-      height: 32
-    spriteID: ac10503f513ff5c4baa3803597be3c71
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_218
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 288
-      width: 32
-      height: 32
-    spriteID: 844df0b16e9866f40a973d6f62590dd7
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_219
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 288
-      width: 32
-      height: 32
-    spriteID: e59708e552ecd0d40b4514606bfdb50b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_220
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 4d16a53f1ab3d3948a47d9113b454350
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_221
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 940208fcb25d533489dd5d6b03a8de7e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_222
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 29cb4fe30ca653a4ebbe3526fc59762a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_223
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 49ed0272854d23142acc107d0cce0fe3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_224
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 0c46b849b1c46ad4b860c9b5cfeff57f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_225
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 3049500b7bedfe8499074bebe50c80cc
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_226
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 256
-      width: 32
-      height: 32
-    spriteID: dae8698f8fbafda47b6ea9b00e4224fb
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_227
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 256
-      width: 32
-      height: 32
-    spriteID: a515e9576101711449138a20c3220ba1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_228
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 09a7a274635df374185e766ea5c49972
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_229
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 86bfd2f647da4704281e2d5666b1c12e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_230
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 51a74f6d7993c514a81229d11a17625d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_231
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 256
-      width: 32
-      height: 32
-    spriteID: f113e130c2a0f9e40af28c402911456c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_232
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 33c5efe11339587409d5c283dfe14c49
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_233
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 79f73446f81da0444985204e44402cfa
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_234
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 256
-      width: 32
-      height: 32
-    spriteID: c0f0f11c8baf14e468bc1b4733b67d94
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_235
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 88e4075ac842e6c478a1c150abf437bb
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_236
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 53bbd64463021ae47a235749a41d3522
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_237
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 0f4df2e4243e8b0499749fe794185a1a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_238
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 256
-      width: 32
-      height: 32
-    spriteID: 1576b7ff9e38e954188c5a6fdbdcdea3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_239
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 256
-      width: 32
-      height: 32
-    spriteID: d1d1196c97b239f439ae5e9f68adcd3b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_240
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 224
-      width: 32
-      height: 32
-    spriteID: c54e923ec44df2f4c9eda71315080881
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_241
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 224
-      width: 32
-      height: 32
-    spriteID: ecd2c107d8f0e974b9f4da6e293b449b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_242
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 224
-      width: 32
-      height: 32
-    spriteID: af15e9713b0eb8348beb2c77a720af00
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_243
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 32b1b3423e3b58e46a4ccb82edf402a1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_244
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 890be813858c07342a6ce088f304fa0d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_245
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 224
-      width: 32
-      height: 32
-    spriteID: fb429f9880501634a85485f3c048398a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_246
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 60646e841fa0e2f4d924fcd16110ae89
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_247
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 224
-      width: 32
-      height: 32
-    spriteID: e009355184956f3418b97eaa35b53709
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_248
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 9facdfcf07c517b4bb2779b07246cf23
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_249
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 224
-      width: 32
-      height: 32
-    spriteID: f87b54eda6fc04f46a2ccae346f3137a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_250
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 174cb907d7835e04e996df8af467f6de
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_251
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 1c8432580028fd446ae3a34572783cd2
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_252
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 224
-      width: 32
-      height: 32
-    spriteID: b7a8d3f96bb10c14a850d18c65a69b16
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_253
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 6c70e8a92f4bae14f935549973a96205
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_254
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 5d9f8749faffaaf4087edf8c745baa3a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_255
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 00f679fe77e26dd438301554b213da77
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_256
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 224
-      width: 32
-      height: 32
-    spriteID: b99d3a25a03086147ac892d95ef5f7ae
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_257
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 224
-      width: 32
-      height: 32
-    spriteID: 9eca32831c7258245ae8066ef875499a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_258
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 224
-      width: 32
-      height: 32
-    spriteID: d6ce6fe6ae077254fa93e14b6d856a9c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_259
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 224
-      width: 32
-      height: 32
-    spriteID: e0d3234eb9412d54bbc156e157fb8b90
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_260
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 192
-      width: 32
-      height: 32
-    spriteID: c70117338cf556247997ae783483c74c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_261
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 192
-      width: 32
-      height: 32
-    spriteID: ac908d8b23411d444ac2f64031ee8d22
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_262
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 62d6971a7bc67014eb657602119c3712
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_263
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 192
-      width: 32
-      height: 32
-    spriteID: b630162ee7f463542bccf5bb1d59457a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_264
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 81a9d1cb97bc18c49b3d52acc9ff0eb7
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_265
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 61ec5607c1575ea4ca044375e70e7769
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_266
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 3a98c4e1fc46cb64b910bb5e72fbc09e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_267
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 766bec72dd0a083478bcb1b0c76c465a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_268
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 37619952efbcbd643a6fd7df766dcec1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_269
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 81d2ac2a6908dd54dba60cb2bdd99f86
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_270
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 192
-      width: 32
-      height: 32
-    spriteID: c52fab59158620749a92a38f770dee81
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_271
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 192
-      width: 32
-      height: 32
-    spriteID: ec0fda624d4a7534193a9e267878c7d9
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_272
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 93231f001ed4e174685fc3f6ed23b92c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_273
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 5ef8f109f3294bd4982d7743ec2a0db3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_274
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 0ffea9befd12d44489092a74a00363b0
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_275
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 192
-      width: 32
-      height: 32
-    spriteID: d4764ad028648b24da8dd4f874dbb774
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_276
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 192
-      width: 32
-      height: 32
-    spriteID: abd4739d7e0d0ec4d994f73bcbb163a6
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_277
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 192
-      width: 32
-      height: 32
-    spriteID: 02384f1c473e3da438908ef8394f3e3f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_278
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 192
-      width: 32
-      height: 32
-    spriteID: d3fb94b4f2ff5934e8a2cc718e669813
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_279
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 192
-      width: 32
-      height: 32
-    spriteID: ef76814b2c5df5242abe3baaa3c5fba6
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_280
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 08624be37c43d894aac39ad2260debfe
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_281
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 160
-      width: 32
-      height: 32
-    spriteID: c813432c9b320f0468fb6ac18211fed1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_282
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 160
-      width: 32
-      height: 32
-    spriteID: c496a807b0d8a904dad6c3b885fa5d73
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_283
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 160
-      width: 32
-      height: 32
-    spriteID: e0d045e6cb4589741936c682400d51af
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_284
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 160
-      width: 32
-      height: 32
-    spriteID: d13f8e735bb35d546a97325e7db3a876
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_285
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 51ade02d90bfd1f429603c64cbeeb237
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_286
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 160
-      width: 32
-      height: 32
-    spriteID: a726bad9c7457924b9eb34d550f313a0
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_287
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 8cf8035f9b2de6a40b155f739da412d7
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_288
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 160
-      width: 32
-      height: 32
-    spriteID: dcd5afc45f15a404d9d8d40a0ac06eaf
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_289
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 4a97fa8b32484d14ab07506a2f16d86e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_290
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 771892807c33df2428b046bac8481fd4
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_291
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 2b287bb9c674f7b4790fe50c5d531c08
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_292
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 6035f0438e5b6f74b9252684687c438f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_293
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 160
-      width: 32
-      height: 32
-    spriteID: b93ccac9f65990e43931f915cb15661a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_294
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 160
-      width: 32
-      height: 32
-    spriteID: b1ff5228a37209440b18c678da5d085e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_295
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 160
-      width: 32
-      height: 32
-    spriteID: fb0eda1469e53a744ab7d34e91dbd62e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_296
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 160
-      width: 32
-      height: 32
-    spriteID: f9e1f58c64839184e806954a39c0f33a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_297
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 4ce3d8723d78aab419da61404886f42b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_298
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 84e6c92223680504c9861ca1aa09e345
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_299
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 160
-      width: 32
-      height: 32
-    spriteID: 9e5cfa2f40af6a347951f7ba0a6df60c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_300
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 1676b1f1d0212bb46b1868c521fef367
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_301
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 7d27e85fa366b9941b0509ee228a3981
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_302
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 128
-      width: 32
-      height: 32
-    spriteID: f595831d8ab2d474f9b4983801b9c0fb
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_303
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 0661974ed44b19e4a988e3405412a81b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_304
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 9e46add59830fee4cb947b6ead415c03
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_305
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 934835c74bbe37845b67174eed3d6a1b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_306
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 949adb54ae7d8e1418ac0aaec09a419c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_307
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 128
-      width: 32
-      height: 32
-    spriteID: d481775a872348341a3bc611940f8b1f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_308
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 36f3e258928c95841bfb8a08805ce686
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_309
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 193278dcc8e3c5c46a64b8e58da26164
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_310
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 68cbfd2643b8d414fbff3ee84a6e80c6
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_311
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 128
-      width: 32
-      height: 32
-    spriteID: b124bed98075a364991181eff7b2e4d5
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_312
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 9203f56af911ad04bb42715ca42b679d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_313
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 128
-      width: 32
-      height: 32
-    spriteID: b9b37cb57915b4742830db4b645ac369
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_314
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 128
-      width: 32
-      height: 32
-    spriteID: abdcd5bdc9a1d384585a719b842c0f4b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_315
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 7332b6441cc84604cae367a52fd9473e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_316
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 128
-      width: 32
-      height: 32
-    spriteID: 6b99f51bb7a075d469aa9fae6b5a66a6
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_317
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 128
-      width: 32
-      height: 32
-    spriteID: ac0e95f339276e6408f0c19da3236ce2
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_318
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 128
-      width: 32
-      height: 32
-    spriteID: ad3e1be3f564aeb4db3b3e3f1e5ff746
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_319
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 128
-      width: 32
-      height: 32
-    spriteID: df37c9ba88cef4246af5813b602f9688
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_320
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 1bd69cccbbca6a44da1d479db0612f46
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_321
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 514f285d335c463479fbfaffaa3ff3f1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_322
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 96
-      width: 32
-      height: 32
-    spriteID: a99d2ee7d45962246aeb748e8657ae35
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_323
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 5c06c8a6121188e44a77c9d67b075406
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_324
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 96
-      width: 32
-      height: 32
-    spriteID: a79cb2e2b9472a14c8b0d9ae83acbb8c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_325
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 96
-      width: 32
-      height: 32
-    spriteID: a793296aecbb6b440a8fc1314b85c2df
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_326
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 966ff7185a924444fb7dbb277c7f8509
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_327
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 96
-      width: 32
-      height: 32
-    spriteID: f93858f42d15761419185d63e85e4ac7
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_328
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 0e8174e905315754f9a708cd760c9f50
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_329
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 96
-      width: 32
-      height: 32
-    spriteID: c3226f6b252dbbe4ba392d5faf053121
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_330
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 415e7be183672934dad1fa1ded2b8ea3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_331
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 96
-      width: 32
-      height: 32
-    spriteID: baeee65281850ce46bfd3a96749b4557
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_332
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 8c7d44e9f51b3fb4dbb72f7ff29a9fce
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_333
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 8eb063f4a06b9b448abf1b2175e8cb06
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_334
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 17f4382cbb774444f9b5eaf292a59abb
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_335
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 198aedc332a727a4ab703e3b3538e1fb
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_336
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 9613f909c6f2a6c498dc5e44da426de0
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_337
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 96
-      width: 32
-      height: 32
-    spriteID: a61e843753db3734ca1000f02998dd77
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_338
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 1c9412b73a14ee441bf2121e9a8404c1
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_339
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 96
-      width: 32
-      height: 32
-    spriteID: 47bdef924ab397243b43d5ded7d302ed
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_340
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 4a655ee53dd67744c9c562b6e15848b8
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_341
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 4e1187dcc5b93f2488e72ff46e7984fb
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_342
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 64
-      width: 32
-      height: 32
-    spriteID: f9c5f739fdb85dd49896cecebbfd6813
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_343
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 64
-      width: 32
-      height: 32
-    spriteID: ff71ef63fbb4f5f42a84fa772200bf68
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_344
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 74e2dd15734bcd3469e97e7ddc2e46e3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_345
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 7c45323de8e083f4889ca6881597bf82
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_346
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 64
-      width: 32
-      height: 32
-    spriteID: d2f518c0cd9e0844aacd578c9391519d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_347
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 6108a97d3287f6a4695a2673a7ba9573
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_348
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 64
-      width: 32
-      height: 32
-    spriteID: b6cfb0b90a8fda9458e8d37bc8480402
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_349
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 284c4cda0059cc140ab83e7feac7231e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_350
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 66956d4af28bf8c4cbeffe62e70624ef
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_351
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 094931aca7d45564ea3cc26e712e188b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_352
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 64
-      width: 32
-      height: 32
-    spriteID: cd34541b4cb85e4429398cbc89bcd5d2
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_353
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 64
-      width: 32
-      height: 32
-    spriteID: bf44627feffa9dd4abcadc82072664e0
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_354
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 6b87604215eee634d8cf0f87c86eebcb
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_355
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 641fa4ce357bcd24cb46c7fde15e636a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_356
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 64
-      width: 32
-      height: 32
-    spriteID: f8b03c5bce373b044987a51cb4fa311f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_357
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 56b2b13b93ef863478678b4c20b16948
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_358
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 4ec8db268f7cb81489b89681c9455441
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_359
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 64
-      width: 32
-      height: 32
-    spriteID: 0cc25dca57d29084d8593d15a4674304
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_360
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 81246ccf8c9a0244a8e61cd0ed85855e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_361
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 32
-      width: 32
-      height: 32
-    spriteID: b60b14aa14ea7d445a1127f2bf64b40d
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_362
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 861f2a069b5a7d64b8d82c0d6521ef91
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_363
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 5e4a15965ff6c8b4483f25b2d5f95017
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_364
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 425b8c7888e7f1a4b99f76c61689451e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_365
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 60e5e7848c245944ebf61d67ae597100
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_366
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 242021d1d2c76424b902fcb124909732
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_367
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 435a7a0642b4f984cbd589e243aa2a40
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_368
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 8e11ff3c1651dd047a5b0f70cc6dee17
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_369
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 32
-      width: 32
-      height: 32
-    spriteID: f36b6d5989c724c408e8d77f2501cb0b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_370
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 32
-      width: 32
-      height: 32
-    spriteID: ec596c4369def8247b9019a9d164915f
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_371
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 72d312c06ade6454e947347344718491
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_372
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 473e72fa83a7a6f41865502a6204d7f4
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_373
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 301667e0c8b372848a526f0f1dd705e9
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_374
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 8dbe91a1270ee3a4d9265cb20d594f0c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_375
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 2112482b24ea9f848afa2670b61e68c0
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_376
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 7267d9b8694144e4bb078e972d41bf9e
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_377
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 32
-      width: 32
-      height: 32
-    spriteID: a5cf815fbfcd65e458d1b1061cdf123a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_378
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 9120233e606ccb840b38fa496a885ab6
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_379
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 32
-      width: 32
-      height: 32
-    spriteID: 8a1482a0cef1d074b908113d021ed013
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_380
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 2a03a85ae04cf7841a155a676b6e7170
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_381
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 32
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 6566dc5086c1ce44bac6122ac64867ac
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_382
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 64
-      y: 0
-      width: 32
-      height: 32
-    spriteID: d04471604122ff44ea0b4e785d3369d2
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_383
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 96
-      y: 0
-      width: 32
-      height: 32
-    spriteID: ef59c0f39193b51408b3726bcad29451
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_384
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 128
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 7bf14af3fd816b74698368b29e8e0963
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_385
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 160
-      y: 0
-      width: 32
-      height: 32
-    spriteID: d8ef7c8fa463baa468e055c748f92c2a
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_386
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 192
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 9077b2902d2875f4e8c101c92a6addd3
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_387
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 224
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 6d9228315e9a4524297f7ad4a76500c2
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_388
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 256
-      y: 0
-      width: 32
-      height: 32
-    spriteID: ad4bcda77603729489153c6ac3a01425
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_389
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 288
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 337e64a94bb2e654e8c1a160a98ac900
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_390
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 320
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 8827bef507d787b4d96b772529d4d8c5
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_391
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 352
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 519eb08dab9582d41849718dc7f4ae90
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_392
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 384
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 909e024130ebb9847810a3449295d02b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_393
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 416
-      y: 0
-      width: 32
-      height: 32
-    spriteID: caa84da1a16bd244dbebd05d83df03c0
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_394
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 448
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 55ee3af1b5ecfbc4f8c43b6e83c4bdff
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_395
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 480
-      y: 0
-      width: 32
-      height: 32
-    spriteID: a3fb65f559884fb4e9ef9f7e80766010
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_396
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 512
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 777691ecf9bd27a4eb027256ebbfdc5c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_397
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 544
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 6b5e8a47aab725844a42332e263f503b
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_398
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 576
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 9bfd24bc2e3cd9b4d80b2c7ca71c101c
-    spriteOutline: []
-    tessellationDetail: 0
-  - name: Bridge_399
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 608
-      y: 0
-      width: 32
-      height: 32
-    spriteID: 12f348b44425f164daec71e9b3c53f5e
-    spriteOutline: []
-    tessellationDetail: 0
   _secondaryTextures: []
-  _artifacts: {fileID: -2988177865379244337, guid: dd88d7ffe18507c40abad5354f599ac4, type: 3}
+  _artifacts: {instanceID: 0}

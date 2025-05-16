@@ -124,6 +124,14 @@ namespace LDtkUnity
 
 
                 }
+                if (layer.name == "AutoRoofDeco")
+                {
+                    TilemapRenderer map = layer.GetComponentInChildren<TilemapRenderer>();
+                    map.sortingLayerID = SortingLayer.NameToID("Tile");
+                    map.sortingOrder = 11;
+
+
+                }
             }
 
         }
