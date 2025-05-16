@@ -60,8 +60,13 @@ MonoBehaviour:
   currentCombo: 0
   currentDmg: 0
   canCrit: 0
+<<<<<<< Updated upstream
   equipmentLevel: 5
   eDamageMag: 1.6
+=======
+  equipmentLevel: 3
+  eDamageMag: 1.25
+>>>>>>> Stashed changes
   equipmentAffixList: []
   fullComboAttackTimes: 0
   shieldAttacks: []
