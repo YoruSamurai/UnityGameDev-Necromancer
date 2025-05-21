@@ -19,7 +19,7 @@ MonoBehaviour:
   equipmentTags: 0100000004000000
   baseCritChance: 25
   critMag: 1.5
-  equipmentDesc: "\u6211\u6345"
+  equipmentDesc: "\u6211\u780D\uFF0C\u6211\u518D\u780D\uFF01"
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
   - {fileID: 7400000, guid: 2cfba06c46b871149bd7032d305fa394, type: 2}

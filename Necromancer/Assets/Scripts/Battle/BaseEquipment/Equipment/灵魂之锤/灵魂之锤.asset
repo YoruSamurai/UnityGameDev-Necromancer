@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3d74c8111e9004090d9a52a8ac8378, type: 3}
+  m_Name: "\u7075\u9B42\u4E4B\u9524"
+  m_EditorClassIdentifier: 
+  equipmentName: "\u7075\u9B42\u4E4B\u9524"
+  baseDmg: 300
+  equipmentSprite: {fileID: -569212648, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
+  equipmentType: 1
+  equipmentTags: 
+  baseCritChance: 25
+  critMag: 2
+  equipmentDesc: "\u84C4\u529B\u540E\u7838\u51FA\u4E00\u4E2A\u7075\u9B42\u533A\u57DF"
+  attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
+  comboAnimations:
+  - {fileID: 7400000, guid: d6983e1b2dbad3844a9e37dd8fa8633e, type: 2}
+  - {fileID: 7400000, guid: 1f33002bfb89068439c924b59c6fb220, type: 2}
+  slashAnimations: []
+  slashOffsets: []
+  fullComboAttackTimes: 2
+  meleeAttacks:
+  - attackTime: 1
+    attackMag: 1
+    attackStun: 20
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 4
+    attackWidth: 2
+    comboBreakTime: 3
+    knockbackForce: 2
+    chargeThreshold: 0.5
+  - attackTime: 1
+    attackMag: 1
+    attackStun: 20
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 4
+    attackWidth: 2
+    comboBreakTime: 3
+    knockbackForce: 2
+    chargeThreshold: 0.5

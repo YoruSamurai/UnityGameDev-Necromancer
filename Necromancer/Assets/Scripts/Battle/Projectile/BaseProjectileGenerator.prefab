@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7679229544336494704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8581932317048798855}
+  - component: {fileID: 6205836196861889159}
+  - component: {fileID: -299787226929791865}
+  m_Layer: 0
+  m_Name: BaseProjectileGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8581932317048798855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679229544336494704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6205836196861889159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679229544336494704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3231c69bd74bc47aabbb9744274b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSO: {fileID: 0}
+  damageMultiplier: 0
+  hasHittedTargetList: []
+  maxHitNum: 0
+  currentHitNum: 0
+  projectileTargetType: 0
+  projectileParentType: 0
+  projectileDestroyType: 0
+  projectileRecoverType: 0
+  projectileEffectGenerateType: 0
+  canStickInGround: 0
+  stickTime: 0
+  Prefab: {fileID: 95243058518851845, guid: 52db44152f57f264dbf8773cf9062a9d, type: 3}
+  TrailPrefab: {fileID: 95243058518851845, guid: 52db44152f57f264dbf8773cf9062a9d, type: 3}
+  HitEffectPrefab: {fileID: 4903194783037551404, guid: a4fae442e6c3670449dabfd36d3d4fc2, type: 3}
+  projectilePrefab: {fileID: 0}
+  projectileTrailPrefab: {fileID: 0}
+--- !u!114 &-299787226929791865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679229544336494704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f1d74d074acfc4f890ede81d85353d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -13,8 +13,4 @@ MonoBehaviour:
   m_Name: EquipmentList
   m_EditorClassIdentifier: 
   equipmentList:
-  - {fileID: 872972218906927797, guid: 8e6a2e26f02512d4790b00cf07070677, type: 3}
-  - {fileID: 3429398541278471954, guid: 7f71593435b8d7844b23c356d0cd41a8, type: 3}
-  - {fileID: 248654440390883407, guid: 93e34adb31cbf8043be4f63093a7c199, type: 3}
-  - {fileID: 5948438943400807792, guid: 4075352e9ebb4804a98215c406545bf0, type: 3}
   - {fileID: 6681660949541182554, guid: f326922532aeca042ab3e581386b1916, type: 3}

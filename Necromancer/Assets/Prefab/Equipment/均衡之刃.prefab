@@ -51,16 +51,16 @@ MonoBehaviour:
   attackCooldown: 0
   attackCooldownTimer: 0
   equipmentName: "\u5747\u8861\u4E4B\u5203"
-  baseDmg: 5000
+  baseDmg: 100
   equipmentSprite: {fileID: -484885178, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
   equipmentType: 0
   equipmentTags: 
   baseCritChance: 25
   critMag: 2
-  equipmentDesc: "\u6211\u63D2\u6B7B\u4F60"
+  equipmentDesc: "\u8FDE\u7EED\u547D\u4E2D\u7684\u65F6\u5019\u4E0D\u65AD\u589E\u52A0\u4F24\u5BB3\uFF0C\u6BCF\u6B2110%\uFF0C\u6700\u591A100%"
   comboBreakTimer: 0
   currentCombo: 0
-  currentDmg: 5000
+  currentDmg: 100
   canCrit: 0
   equipmentLevel: 5
   eDamageMag: 1.6

@@ -1,4 +1,7 @@
+#if UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.Animations;
+#endif
 using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
@@ -56,12 +59,15 @@ public class 装备编辑器 : EditorWindow
 
         UpdateEquipmentPrefab(csvData);
 
-        kk();
+        LoadEquipmentPrefab();
 
         Debug.Log("装备 SO 更新完成。");
     }
 
-    private void kk()
+    /// <summary>
+    /// 把装备prefab加载到装备List
+    /// </summary>
+    private void LoadEquipmentPrefab()
     {
         // 1. 加载 EquipmentList.asset
         EquipmentListSO equipmentList = AssetDatabase.LoadAssetAtPath<EquipmentListSO>("Assets/Prefab/Equipment/EquipmentList.asset");
@@ -94,65 +100,8 @@ public class 装备编辑器 : EditorWindow
         AssetDatabase.Refresh();
     }
 
-    private void UpdateEquipmentPrefab(List<string[]> csvData)
-    {
-        // ----------------------------------
-        // 遍历Prefab文件夹
-        string prefabFolderPath = "Assets/Prefab/Equipment/";
-        foreach (string[] row in csvData.Skip(1))
-        {
-            string weaponName = row[1];
-            string prefabPath = prefabFolderPath + weaponName + ".prefab";
 
-            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
-
-            if (prefab == null)
-            {
-                // 如果 prefab 不存在，创建新的
-                GameObject newGO = new GameObject(weaponName);
-
-                // 动态找到对应脚本并添加
-                System.Type scriptType = FindTypeByName(weaponName);
-
-                // 检查脚本类型是否找到
-                if (scriptType != null)
-                {
-                    newGO.AddComponent(scriptType);
-                    BaseEquipment equipment = newGO.GetComponent<BaseEquipment>();
-                    if (equipment != null)
-                    {
-                        string assetPath = $"Assets/Scripts/Battle/BaseEquipment/Equipment/{row[1]}/{row[1]}.asset";
-                        EquipmentSO equipmentSO = AssetDatabase.LoadAssetAtPath<EquipmentSO>(assetPath);
-                        equipment.equipmentSO = equipmentSO;
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning($"找不到名为 {weaponName} 的组件脚本，请检查脚本名称是否正确！");
-                }
-
-                // 加上 BoxCollider2D 和 CircleCollider2D
-                BoxCollider2D box = newGO.AddComponent<BoxCollider2D>();
-                CircleCollider2D circle = newGO.AddComponent<CircleCollider2D>();
-
-                box.isTrigger = true;
-                circle.isTrigger = true;
-
-                // 保存为 prefab
-                string newPrefabPath = prefabPath;
-                PrefabUtility.SaveAsPrefabAsset(newGO, newPrefabPath);
-
-                // 创建完记得销毁临时GameObject
-                GameObject.DestroyImmediate(newGO);
-
-                Debug.Log($"创建了新的武器Prefab: {weaponName}");
-            }
-            else
-            {
-                Debug.Log($"Prefab已存在: {weaponName}");
-            }
-        }
-    }
+    
 
     private System.Type FindTypeByName(string className)
     {
@@ -225,10 +174,21 @@ public class 装备编辑器 : EditorWindow
             equipment.critMag = float.Parse(row[6]);
             equipment.equipmentDesc = row[7];
 
+            if (Enum.TryParse(row[4].Trim(), true, out EquipmentType type))
+            {
+                equipment.equipmentType = type;
+            }
+            else
+            {
+                Debug.LogWarning($"未知的装备类型: {row[4]}");
+            }
+
             // 处理动画和图片路径
             // 加载 AnimatorOverrideController
             string aocPath = $"Assets/Scripts/Battle/BaseEquipment/Equipment/D武器攻击覆盖Animator.overrideController";
             equipment.attackAnimator = AssetDatabase.LoadAssetAtPath<AnimatorOverrideController>(aocPath);
+            Debug.Log(row[1]  + row[10]);
+            Debug.Log(row[1] + int.Parse(row[10]) + row[10]);
             equipment.comboAnimations = LoadComboAnimations(row[1] , int.Parse(row[10]));
 
             // 如果是近战武器，填充近战武器的额外属性
@@ -251,27 +211,82 @@ public class 装备编辑器 : EditorWindow
 
     private AnimationClip[] LoadComboAnimations(string weaponName , int clipNum)
     {
+#if UNITY_EDITOR
         if (string.IsNullOrEmpty(weaponName))
         {
-            Debug.LogWarning("武器生成对应的地方没有动画！");
+            Debug.LogWarning("武器名称为空，无法加载动画");
             return null;
         }
 
         AnimationClip[] animations = new AnimationClip[clipNum];
 
-        for (int i = 1; i < clipNum + 1; i++)
+        for (int i = 1; i <= clipNum; i++)
         {
-            string fullPath = $"Assets/OtherAsset/Animation/WeaponClip/DefaultPlayer/{weaponName}/{weaponName}{i}.anim";
-            animations[i-1] = AssetDatabase.LoadAssetAtPath<AnimationClip>(fullPath);
+            string folderPath = $"Assets/OtherAsset/Animation/WeaponClip/DefaultPlayer/{weaponName}";
+            string clipName = $"{weaponName}{i}.anim";
+            string fullPath = $"{folderPath}/{clipName}";
 
-            if (animations[i-1] == null)
+            AnimationClip clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(fullPath);
+
+            if (clip == null)
             {
-                Debug.LogWarning($"找不到动画Clip: {fullPath}");
+                Debug.LogWarning($"找不到动画Clip: {fullPath}，正在自动创建一个空的动画");
+
+                // 自动创建空动画
+                if (!AssetDatabase.IsValidFolder(folderPath))
+                {
+                    System.IO.Directory.CreateDirectory(folderPath);
+                    AssetDatabase.Refresh();
+                }
+
+                clip = new AnimationClip();
+                AssetDatabase.CreateAsset(clip, fullPath);
+                AssetDatabase.SaveAssets();
+            }
+
+            animations[i - 1] = clip;
+        }
+
+        AddClipsToAnimatorController(weaponName, animations);
+
+        return animations;
+#else
+    Debug.LogError("该功能只能在编辑器中使用！");
+    return null;
+#endif
+    }
+
+
+#if UNITY_EDITOR
+    private void AddClipsToAnimatorController(string weaponName, AnimationClip[] clips)
+    {
+        string controllerPath = "Assets/Scripts/Battle/BaseEquipment/Equipment/武器攻击动画.controller";
+        AnimatorController controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(controllerPath);
+
+        if (controller == null)
+        {
+            Debug.LogError("无法加载 AnimatorController: " + controllerPath);
+            return;
+        }
+
+        AnimatorControllerLayer layer = controller.layers[0]; // 只处理默认层
+
+        foreach (AnimationClip clip in clips)
+        {
+            if (clip == null) continue;
+
+            bool alreadyExists = layer.stateMachine.states.Any(state => state.state.motion == clip);
+            if (!alreadyExists)
+            {
+                AnimatorState newState = layer.stateMachine.AddState(clip.name);
+                newState.motion = clip;
             }
         }
 
-        return animations;
+        AssetDatabase.SaveAssets();
+        Debug.Log($"已将 {clips.Length} 个动画添加到 AnimatorController。");
     }
+#endif
 
     private List<MeleeAttackStruct> LoadMeleeAttacks(string[] row)
     {
@@ -332,5 +347,141 @@ public class 装备编辑器 : EditorWindow
         }
 
         return meleeAttacks;
+    }
+
+    /// <summary>
+    /// 更新SO和Prefab 如果没有会自动创建
+    /// </summary>
+    /// <param name="csvData"></param>
+    private void UpdateEquipmentPrefab(List<string[]> csvData)
+    {
+        // ----------------------------------
+        // 遍历Prefab文件夹
+        string prefabFolderPath = "Assets/Prefab/Equipment/";
+        foreach (string[] row in csvData.Skip(1))
+        {
+            string weaponName = row[1];
+            string prefabPath = prefabFolderPath + weaponName + ".prefab";
+
+            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+
+            if (prefab == null)
+            {
+                // 如果 prefab 不存在，创建新的
+                GameObject newGO = new GameObject(weaponName);
+
+                // 动态找到对应脚本并添加
+                System.Type scriptType = FindTypeByName(weaponName);
+
+                // 检查脚本类型是否找到
+                if (scriptType != null)
+                {
+                    newGO.AddComponent(scriptType);
+                    BaseEquipment equipment = newGO.GetComponent<BaseEquipment>();
+                    if (equipment != null)
+                    {
+                        string assetPath = $"Assets/Scripts/Battle/BaseEquipment/Equipment/{row[1]}/{row[1]}.asset";
+                        EquipmentSO equipmentSO = AssetDatabase.LoadAssetAtPath<EquipmentSO>(assetPath);
+                        equipment.equipmentSO = equipmentSO;
+                        equipment.enemyLayerMask = LayerMask.GetMask("Enemy"); 
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"找不到名为 {weaponName} 的组件脚本，尝试自动创建一个继承自 MeleeEquipment 的脚本。");
+
+                    // 创建脚本
+                    string scriptDir = $"Assets/Scripts/Battle/BaseEquipment/Equipment/{weaponName}";
+                    string scriptPath = $"{scriptDir}/{weaponName}.cs";
+
+                    // 确保目录存在
+                    if (!Directory.Exists(scriptDir))
+                    {
+                        Directory.CreateDirectory(scriptDir);
+                    }
+
+                    // 脚本内容
+                    string scriptContent = $@"using UnityEngine;
+
+public class {weaponName} : MeleeEquipment
+{{
+    //
+    protected override void Start()
+    {{
+        base.Start();
+        Debug.Log(""{weaponName}，启动！"");
+    }}
+
+    protected override void Update()
+    {{
+        base.Update();
+    }}
+
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {{
+        base.OnTriggerEnter2D(collision);
+        if (collision.gameObject.layer == 6 && !isHitInAttack)
+        {{
+            Debug.Log(""是敌人！"");
+            isHitInAttack = true;
+        }}
+
+        MonsterStats monsterStats = collision.GetComponent<MonsterStats>();
+        PlayerStats.Instance.OnPlayerHit(this, monsterStats);
+
+    }}
+
+    public override void UseEquipment()
+    {{
+        if (!GetCanUseEquipment())
+        {{
+            Debug.Log(""攻击还在冷却中！"");
+            return;
+        }}
+        base.UseEquipment();
+    }}
+
+
+
+    public override void DoDamage(float _cMag, MonsterStats monsterStats)
+    {{
+        base.DoDamage(_cMag, monsterStats);
+        int dmg = (int)(currentDmg * _cMag);
+        Debug.Log(dmg);
+        monsterStats.TakeDirectDamage(dmg);
+
+    }}
+}}";
+
+                    // 写入脚本文件
+                    File.WriteAllText(scriptPath, scriptContent);
+                    AssetDatabase.Refresh();  // 刷新以让 Unity 识别脚本
+
+                    Debug.Log($"已自动创建脚本: {scriptPath}，请手动重新运行一次以加载新脚本。");
+                    continue;
+
+                }
+
+                // 加上 BoxCollider2D 和 CircleCollider2D
+                BoxCollider2D box = newGO.AddComponent<BoxCollider2D>();
+                CircleCollider2D circle = newGO.AddComponent<CircleCollider2D>();
+
+                box.isTrigger = true;
+                circle.isTrigger = true;
+
+                // 保存为 prefab
+                string newPrefabPath = prefabPath;
+                PrefabUtility.SaveAsPrefabAsset(newGO, newPrefabPath);
+
+                // 创建完记得销毁临时GameObject
+                GameObject.DestroyImmediate(newGO);
+
+                Debug.Log($"创建了新的武器Prefab: {weaponName}");
+            }
+            else
+            {
+                Debug.Log($"Prefab已存在: {weaponName}");
+            }
+        }
     }
 }

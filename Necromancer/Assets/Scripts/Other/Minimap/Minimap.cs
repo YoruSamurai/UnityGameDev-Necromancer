@@ -223,7 +223,10 @@ public class Minimap : MonoBehaviour
         minimapImage.color = Color.white;
 
         RectTransform rectTransform = minimapImage.gameObject.GetComponent<RectTransform>();
+        RectTransform rectParentTransform = minimapImage.transform.parent.GetComponent<RectTransform>();
+        Debug.Log(rectParentTransform.gameObject);
         rectTransform.sizeDelta = new Vector2(mapWidth + mapOffset, mapHeight + mapOffset);
+        rectParentTransform.sizeDelta = new Vector2(mapWidth + mapOffset, mapHeight + mapOffset);
         rectTransform.localScale = new Vector2(5, 5);
         //rectTransform.localScale = new Vector2(1, 1);
 
@@ -319,9 +322,10 @@ public class Minimap : MonoBehaviour
 
 
         // ✅ 设置 RectTransform 的位置为 playerTilePos
-        minimapRectTransform.anchoredPosition = new Vector2(scale*playerTilePos.x + w, scale * playerTilePos.y + h);
+        minimapRectTransform.anchoredPosition = new Vector2(scale*playerTilePos.x + w + 5 * (startPos.x - mapOffset / 2) ,
+            scale * playerTilePos.y + h + 5 * (startPos.y - mapOffset / 2));
 
-        Debug.Log(minimapRectTransform.anchoredPosition);
+        //Debug.Log(minimapRectTransform.anchoredPosition);
 
     }
 

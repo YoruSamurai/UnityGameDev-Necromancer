@@ -28,7 +28,7 @@ MonoBehaviour:
   slashOffsets:
   - {x: 1, y: 0}
   fullComboAttackTimes: 1
-  projectilePrefab: {fileID: 95243058518851845, guid: 48cb470cffa2b0a4bbfa63475d97ddcf, type: 3}
+  projectileSO: {fileID: 11400000, guid: 63f53da9d76588b4292203234c4f7d40, type: 2}
   staffAttacks:
   - attackTime: 1
     attackMag: 1

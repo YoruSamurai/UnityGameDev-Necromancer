@@ -10,7 +10,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     [SerializeField] public EquipmentSO equipmentSO;
 
     [SerializeField] protected Player player;
-
+    [SerializeField] public LayerMask enemyLayerMask;
     [Header("攻击冷却时间")]
     [SerializeField] public float attackCooldown; // 每次攻击CD时间
     [SerializeField] public float attackCooldownTimer;

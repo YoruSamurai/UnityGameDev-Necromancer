@@ -86,6 +86,7 @@ public class PlayerPrimaryAttack : PlayerState
                 }
             case PlayerAnimationTriggerType.PlayerHitDetermineStart:
                 {
+                    Debug.Log("你要努力！");
                     baseEquipment.TriggerHitCheckStart();
                     break;
                 }

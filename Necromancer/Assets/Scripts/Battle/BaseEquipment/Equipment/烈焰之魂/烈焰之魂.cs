@@ -49,17 +49,9 @@ public class 烈焰之魂 : StaffEquipment
     public override void FireProjectile()
     {
         base.FireProjectile();
-        GameObject projectile = Instantiate(
-            projectilePrefab,
-            transform.position,
-            Quaternion.identity
-        );
 
-        烈焰之魂子弹 projectileScript = projectile.GetComponent<烈焰之魂子弹>();
-        if (projectileScript != null)
-        {
-            projectileScript.Initialize(this, staffAttacks[currentCombo],GetFacingDirection());
-        }
+        ProjectileManager.Instance.GenerateProjectile(projectileSO, this, GetFacingDirection(), null, 1);
+        
     }
 
     protected void Attack()
