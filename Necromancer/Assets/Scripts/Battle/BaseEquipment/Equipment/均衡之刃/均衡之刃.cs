@@ -85,7 +85,7 @@ public class 均衡之刃 : MeleeEquipment
             canCrit = true;
             Debug.Log("10次攻击必定暴击");
         }
-            
+        PlayHitSound(canCrit, monsterStats);
             
         int dmg = (int)(currentDmg * _cMag * (canCrit ? critMag : 1));
         Debug.Log($"暴击{canCrit},造成伤害{dmg}");

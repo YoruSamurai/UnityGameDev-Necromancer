@@ -1,3 +1,4 @@
+using LDtkUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -60,6 +61,38 @@ public class LevelManager : MonoBehaviour
         }
         EventManager.Instance.AddListener(EventName.OnEnemyDead, KillEnemy);
         InitialEnemy(levelMonsterListSO, 1);
+    }
+
+    public void EnableLightInRoom(int roomIndex)
+    {
+        foreach (LightPrefab light in roomDatas[roomIndex].lightPrefabs)
+        {
+            light.EnableLight();
+        }
+    }
+    public void DisableLightInRoom(int roomIndex)
+    {
+        foreach (LightPrefab light in roomDatas[roomIndex].lightPrefabs)
+        {
+            light.DisableLight();
+        }
+    }
+
+    public void AddLightPrefab(LightPrefab lightPrefab, LDtkComponentLevel level)
+    {
+        Debug.Log("我加");
+        foreach(var room in roomDatas)
+        {
+            Debug.Log(level.Iid);
+            Debug.Log(room.levelData.Iid);
+            Debug.Log(6324);
+            if (room.levelData == level)
+            {
+                Debug.Log("我加加");
+
+                room.lightPrefabs.Add(lightPrefab);
+            }
+        }
     }
 
     /// <summary>
@@ -176,12 +209,32 @@ public class LevelManager : MonoBehaviour
         Debug.Log($"花费时间 {elapsedTime}s来生成敌人");
     }
 
+    public List<int> GetAdjacentRooms()
+    {
+        List<int> adjacentRooms = new List<int>();
+        int i = playerCurrentRoom.roomID;
+        adjacentRooms.Add(i);
+        foreach(int roomID in playerCurrentRoom.connectionRoom)
+        {
+            adjacentRooms.Add(roomID);
+        }
 
+        foreach(var room in roomDatas)
+        {
+            if (room.connectionRoom.Contains(i))
+            {
+                adjacentRooms.Add(room.roomID);
+            }
+        }
+        
+        return adjacentRooms;
+    }
 
     private void FixedUpdate()
     {
         int roomIndex = GetCurrentRoomMessage(PlayerStats.Instance.player.GetCurrentPosition(), roomDatas);
-        playerCurrentRoom = roomDatas[roomIndex];
+        if(roomIndex != -1)
+            playerCurrentRoom = roomDatas[roomIndex];
 
     }
 

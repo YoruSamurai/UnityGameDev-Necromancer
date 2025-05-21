@@ -19,7 +19,6 @@ public class ObjectPoolManager : MonoBehaviour
     public enum PoolType
     {
         Projectiles,
-        ShadowCasters,
         GameObjects
     }
     public static PoolType PoolingType;
@@ -96,8 +95,6 @@ public class ObjectPoolManager : MonoBehaviour
         {
             case PoolType.Projectiles:
                 return _projectileEmpty;
-            case PoolType.ShadowCasters:
-                return _shadowCasterEmpty;
             default:
                 return null;
         }

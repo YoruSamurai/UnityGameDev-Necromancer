@@ -53,20 +53,20 @@ MonoBehaviour:
     m_Bits: 64
   attackCooldown: 0
   attackCooldownTimer: 0
-  equipmentName: 
-  baseDmg: 0
-  equipmentSprite: {fileID: 0}
-  equipmentType: 0
+  equipmentName: "\u5723\u706B\u5203"
+  baseDmg: 300
+  equipmentSprite: {fileID: 1548793952, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
+  equipmentType: 1
   equipmentTags: 
-  baseCritChance: 0
-  critMag: 0
-  equipmentDesc: 
+  baseCritChance: 25
+  critMag: 2
+  equipmentDesc: "\u84C4\u529B\u540E\u53EF\u4EE5\u5BF9\u654C\u4EBA\u9020\u6210\u71C3\u70E7\u4F24\u5BB3"
   comboBreakTimer: 0
   currentCombo: 0
-  currentDmg: 0
+  currentDmg: 300
   canCrit: 0
-  equipmentLevel: 0
-  eDamageMag: 0
+  equipmentLevel: 1
+  eDamageMag: 1
   equipmentAffixList: []
   fullComboAttackTimes: 0
   meleeAttacks: []

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
@@ -188,6 +189,24 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
 
     public virtual void DoDamage(float _cMag,MonsterStats monsterStats)
     {
+        
+    }
+
+    public void PlayHitSound(bool crit, MonsterStats monsterStats)
+    {
+        if(equipmentSO.critHitSfx != null && equipmentSO.normalHitSfx != null)
+        {
+            SoundData soundData = crit?equipmentSO.critHitSfx.GetSoundData():equipmentSO.normalHitSfx.GetSoundData();
+            SoundManager.Instance.CreateSound()
+            .WithSoundData(soundData)
+            .WithPosition(player.transform.position)
+            .Play();
+
+        }
+        else
+        {
+            Debug.LogWarning(equipmentName + "缺少命中音效！");
+        }
         
     }
 

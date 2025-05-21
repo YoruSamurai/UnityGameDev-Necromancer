@@ -63,8 +63,8 @@ MonoBehaviour:
   currentCombo: 0
   currentDmg: 300
   canCrit: 0
-  equipmentLevel: 5
-  eDamageMag: 1.6
+  equipmentLevel: 2
+  eDamageMag: 1.1
   equipmentAffixList: []
   fullComboAttackTimes: 0
   projectileSO: {fileID: 0}

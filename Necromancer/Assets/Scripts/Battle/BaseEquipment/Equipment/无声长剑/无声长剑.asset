@@ -40,6 +40,7 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
   - attackTime: 0.5
     attackMag: 1
     attackStun: 10
@@ -51,6 +52,7 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
   - attackTime: 0.8
     attackMag: 1
     attackStun: 18
@@ -62,3 +64,4 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 2
     chargeThreshold: 0
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}

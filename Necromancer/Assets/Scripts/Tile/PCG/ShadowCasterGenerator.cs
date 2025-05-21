@@ -8,77 +8,70 @@ public class ShadowCasterGenerator : MonoBehaviour
 {
     public GameObject shadowCasterPrefab; // 包含 ShadowCaster2D 的预制体
 
-    private List<ShadowCasterData> shadowCasterList;
+    [SerializeField] private List<List<GameObject>> shadowCasterRoomList;
+    [SerializeField] private List<int> currentRoomList;
 
-    public Transform player;
-    public float activeRange = 30f;
 
-    private class ShadowCasterData
-    {
-        public Vector2 center;
-        public Vector2 size;
-        public GameObject instance; // 生成出的 GameObject，如果没有生成就是 null
-    }
+
     private void Awake()
     {
-        shadowCasterList = new List<ShadowCasterData>();
+        shadowCasterRoomList = new List<List<GameObject>>();
+        currentRoomList = new List<int>(); 
     }
+
+    private float updateInterval = 1f; // 每秒更新一次
+    private float updateTimer = 0f;
 
     private void FixedUpdate()
     {
-        Vector2 playerPos = player.position;
+        updateTimer += Time.fixedDeltaTime;
 
-        foreach (var data in shadowCasterList)
+        if (updateTimer >= updateInterval)
         {
-            float distance = Vector2.Distance(playerPos, data.center);
-            bool inRange = distance <= activeRange;
+            updateTimer = 0f;
 
-            if (inRange && data.instance == null)
+            List<int> roomList = LevelManager.Instance.GetAdjacentRooms();
+
+            // 启用新进入的房间
+            foreach (int room in roomList)
             {
-                // 不在池中 → 加入池
-                data.instance = GetFromPool(data.center, data.size);
+                if (!currentRoomList.Contains(room))
+                {
+                    EnableShadowInRoom(room-1);
+                    LevelManager.Instance.EnableLightInRoom(room-1);
+                }
             }
-            else if (!inRange && data.instance != null)
+
+            // 禁用不再相邻的房间
+            foreach (int room in currentRoomList)
             {
-                // 在池中 → 移出池
-                RemoveToPool(data.instance);
-                data.instance = null;
+                if (!roomList.Contains(room))
+                {
+                    DisableShadowInRoom(room-1);
+                    LevelManager.Instance.DisableLightInRoom(room - 1);
+                }
             }
+
+            // 更新当前房间列表
+            currentRoomList = new List<int>(roomList);
         }
-
-
     }
 
-    private GameObject GetFromPool(Vector2 center,Vector2 size)
+
+    private void EnableShadowInRoom(int roomIndex)
     {
-        GameObject obj = ObjectPoolManager.SpawnObject(shadowCasterPrefab, center, Quaternion.identity, ObjectPoolManager.PoolType.ShadowCasters);
-        obj.transform.position = center;
-
-        var poly = obj.GetComponent<PolygonCollider2D>();
-        if (poly != null)
+        foreach (var caster in shadowCasterRoomList[roomIndex])
         {
-            poly.pathCount = 1;
-            poly.SetPath(0, new Vector2[]
-            {
-            new Vector2(-size.x / 2f, -size.y / 2f),
-            new Vector2(-size.x / 2f, size.y / 2f),
-            new Vector2(size.x / 2f, size.y / 2f),
-            new Vector2(size.x / 2f, -size.y / 2f)
-            });
+            caster.SetActive(true);
         }
-
-        var shadowCaster = obj.AddComponent<ShadowCaster2D>();
-        shadowCaster.useRendererSilhouette = false;
-        shadowCaster.selfShadows = true;
-        
-
-        return obj;
-
     }
 
-    private void RemoveToPool(GameObject shadowCaster)
+    private void DisableShadowInRoom(int roomIndex)
     {
-        ObjectPoolManager.ReturnObjectToPool(shadowCaster, ObjectPoolManager.PoolType.ShadowCasters);
+        foreach (var caster in shadowCasterRoomList[roomIndex])
+        {
+            caster.SetActive(false);
+        }
     }
 
 
@@ -89,6 +82,8 @@ public class ShadowCasterGenerator : MonoBehaviour
         int height = bounds.size.y;
 
         bool[,] visited = new bool[width, height];
+        List<GameObject> shadowCasterData = new List<GameObject>();
+
 
         for (int y = 0; y < height; y++)
         {
@@ -101,33 +96,55 @@ public class ShadowCasterGenerator : MonoBehaviour
                 if (visited[x, y] || !tilemap.HasTile(tilePos))
                     continue;
 
-                // 从当前 tile 开始向右扩展横向的连续 tile
-                List<Vector3Int> rowRegion = new List<Vector3Int>();
-                int currentX = x;
-
-                while (currentX < width)
+                // 寻找可以合并的最大矩形（从当前位置向右下扩展）
+                int maxWidth = 0;
+                while (x + maxWidth < width && tilemap.HasTile(new Vector3Int(bounds.xMin + x + maxWidth, tileY, 0)) && !visited[x + maxWidth, y])
                 {
-                    Vector3Int checkPos = new Vector3Int(bounds.xMin + currentX, tileY, 0);
-                    if (tilemap.HasTile(checkPos) && !visited[currentX, y])
+                    maxWidth++;
+                }
+
+                int maxHeight = 1;
+                bool canExpand = true;
+                while (y + maxHeight < height && canExpand)
+                {
+                    for (int i = 0; i < maxWidth; i++)
                     {
-                        rowRegion.Add(checkPos);
-                        visited[currentX, y] = true;
-                        currentX++;
+                        if (!tilemap.HasTile(new Vector3Int(bounds.xMin + x + i, bounds.yMin + y + maxHeight, 0)) || visited[x + i, y + maxHeight])
+                        {
+                            canExpand = false;
+                            break;
+                        }
                     }
-                    else
+                    if (canExpand)
+                        maxHeight++;
+                }
+
+                // 标记区域已访问
+                for (int dy = 0; dy < maxHeight; dy++)
+                {
+                    for (int dx = 0; dx < maxWidth; dx++)
                     {
-                        break;
+                        visited[x + dx, y + dy] = true;
                     }
                 }
 
-                // 创建 Shadow Caster（横向一条）
-                if (rowRegion.Count > 0)
-                    CreateShadowCaster(rowRegion, offset);
+                // 构造 region 并生成 ShadowCaster
+                List<Vector3Int> region = new List<Vector3Int>();
+                for (int dy = 0; dy < maxHeight; dy++)
+                {
+                    for (int dx = 0; dx < maxWidth; dx++)
+                    {
+                        region.Add(new Vector3Int(bounds.xMin + x + dx, bounds.yMin + y + dy, 0));
+                    }
+                }
+
+                shadowCasterData.Add(CreateShadowCaster(region, offset));
             }
         }
+        shadowCasterRoomList.Add(shadowCasterData);
     }
 
-    private void CreateShadowCaster(List<Vector3Int> region, Vector2 offset)
+    private GameObject CreateShadowCaster(List<Vector3Int> region, Vector2 offset)
     {
         // 获取区域边界
         int minX = int.MaxValue, minY = int.MaxValue, maxX = int.MinValue, maxY = int.MinValue;
@@ -142,14 +159,9 @@ public class ShadowCasterGenerator : MonoBehaviour
         Vector2 center = new Vector2((minX + maxX + 1) / 2f, (minY + maxY + 1) / 2f);
         Vector2 size = new Vector2((maxX - minX + 1), (maxY - minY + 1));
 
-        shadowCasterList.Add(new ShadowCasterData
-        {
-            center = center + offset,
-            size = size,
-            instance = null
-        });
 
-        /*GameObject obj = Instantiate(shadowCasterPrefab, center + offset, Quaternion.identity);
+
+        GameObject obj = Instantiate(shadowCasterPrefab, center + offset, Quaternion.identity);
         obj.transform.SetParent(this.gameObject.transform);
 
         var poly = obj.GetComponent<PolygonCollider2D>();
@@ -167,7 +179,10 @@ public class ShadowCasterGenerator : MonoBehaviour
         // 添加 ShadowCaster2D
         var shadowCaster = obj.AddComponent<ShadowCaster2D>();
         shadowCaster.useRendererSilhouette = false;
-        shadowCaster.selfShadows = true;*/
+        shadowCaster.selfShadows = true;
+        obj.SetActive(false);
+        return obj;
+
     }
 
     

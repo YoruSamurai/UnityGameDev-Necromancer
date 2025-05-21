@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipmentSO: {fileID: 11400000, guid: 70eef9a7a6f326b46a511ef1fb382749, type: 2}
   player: {fileID: 0}
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   attackCooldown: 0
   attackCooldownTimer: 0
   equipmentName: "\u65A7\u5934"
@@ -77,9 +80,6 @@ MonoBehaviour:
   circleEffectPrefab: {fileID: 2789657824771503155, guid: dbe4619acbe8a8847ae4bc8522114b0e, type: 3}
   attackCheckBox: {fileID: 0}
   attackCheckCircle: {fileID: 0}
-  enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!58 &9217145697250207416
 CircleCollider2D:
   m_ObjectHideFlags: 0
