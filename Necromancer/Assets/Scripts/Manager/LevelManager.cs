@@ -83,9 +83,6 @@ public class LevelManager : MonoBehaviour
         Debug.Log("我加");
         foreach(var room in roomDatas)
         {
-            Debug.Log(level.Iid);
-            Debug.Log(room.levelData.Iid);
-            Debug.Log(6324);
             if (room.levelData == level)
             {
                 Debug.Log("我加加");
