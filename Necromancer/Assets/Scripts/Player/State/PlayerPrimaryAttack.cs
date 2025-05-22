@@ -26,17 +26,41 @@ public class PlayerPrimaryAttack : PlayerState
                     player.SetVelocity(3 * player.facingDir, rb.velocity.y);
                     stateTimer = .15f;
                     PlayerStats.Instance.canInterrupt = false;
+                    int combo = baseEquipment.currentCombo > 0 ? baseEquipment.currentCombo - 1 : currentWeapon.comboAnimations.Length - 1;
                     // 生成刀光效果
                     if (currentWeapon != null &&
                         currentWeapon.slashAnimations != null && currentWeapon.slashAnimations.Length > 0 &&
                         currentWeapon.slashOffsets != null && currentWeapon.slashOffsets.Length > 0)
                     {
-                        int combo = baseEquipment.currentCombo > 0 ? baseEquipment.currentCombo - 1 : currentWeapon.comboAnimations.Length - 1;
                         AnimationClip slashClip = currentWeapon.slashAnimations[combo];
-                        Vector2 offset = currentWeapon.slashOffsets[combo];
-                        Debug.Log(slashClip.name + "slashshh");
-                        player.InitialFxPrefab(slashClip, offset);
+                        if (slashClip != null)
+                        {
+                            Vector2 offset = currentWeapon.slashOffsets[combo];
+                            Debug.Log(slashClip.name + "slashshh");
+                            player.InitialFxPrefab(slashClip, offset);
+                        }
+                        else
+                        {
+                            Debug.LogWarning(currentWeapon.equipmentName + "没有攻击特效");
+                        }
                         
+                    }
+                    // 近战音效
+                    MeleeEquipment meleeEquipment = baseEquipment as MeleeEquipment;
+                    if(meleeEquipment != null)
+                    {
+                        if (meleeEquipment.meleeAttacks[combo].attackSfx != null)
+                        {
+                            SoundData soundData = meleeEquipment.meleeAttacks[combo].attackSfx.GetSoundData();
+                            SoundManager.Instance.CreateSound()
+                            .WithSoundData(soundData)
+                            .WithPosition(player.transform.position)
+                            .Play();
+                        }
+                        else
+                        {
+                            Debug.LogWarning(meleeEquipment.equipmentName + "没有对应的攻击音效诶");
+                        }
                     }
                     break;
                 }
@@ -86,6 +110,7 @@ public class PlayerPrimaryAttack : PlayerState
                 }
             case PlayerAnimationTriggerType.PlayerHitDetermineStart:
                 {
+                    Debug.Log("你要努力！");
                     baseEquipment.TriggerHitCheckStart();
                     break;
                 }

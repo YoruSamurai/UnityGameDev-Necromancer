@@ -7,8 +7,8 @@ public class StaffEquipment : BaseEquipment
 
     [Header("远程武器设置")]
     public int fullComboAttackTimes;//连击次数
-    [Header("投射预制体")]
-    public GameObject projectilePrefab;   // 弹丸预制体
+    [Header("投射预制体SO")]
+    public ProjectileSO projectileSO;   // 弹丸预制体
     public List<StaffAttackStruct> staffAttacks;
 
 
@@ -21,7 +21,7 @@ public class StaffEquipment : BaseEquipment
         {
             fullComboAttackTimes = staffEquipmentSO.fullComboAttackTimes;
             staffAttacks = staffEquipmentSO.staffAttacks;
-            projectilePrefab = staffEquipmentSO.projectilePrefab;
+            projectileSO = staffEquipmentSO.projectileSO;
         }
         else
         {

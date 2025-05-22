@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: "\u5747\u8861\u4E4B\u5203"
   m_EditorClassIdentifier: 
   equipmentName: "\u5747\u8861\u4E4B\u5203"
-  baseDmg: 5000
+  baseDmg: 100
   equipmentSprite: {fileID: -484885178, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
   equipmentType: 0
   equipmentTags: 
   baseCritChance: 25
   critMag: 2
-  equipmentDesc: "\u6211\u63D2\u6B7B\u4F60"
+  equipmentDesc: "\u8FDE\u7EED\u547D\u4E2D\u7684\u65F6\u5019\u4E0D\u65AD\u589E\u52A0\u4F24\u5BB3\uFF0C\u6BCF\u6B2110%\uFF0C\u6700\u591A100%"
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
   - {fileID: 7400000, guid: 2c29f3d254e8de84e80fa13c6e779ece, type: 2}
@@ -33,6 +33,8 @@ MonoBehaviour:
   - {x: 1, y: 0}
   - {x: 1, y: -1.29}
   - {x: 1, y: -0.5}
+  normalHitSfx: {fileID: 11400000, guid: 15cdfc131f329394f9cec64613ac85e0, type: 2}
+  critHitSfx: {fileID: 11400000, guid: 01b02ee1df1b5614f8fbbe48cab87849, type: 2}
   fullComboAttackTimes: 3
   meleeAttacks:
   - attackTime: 0.3
@@ -46,6 +48,7 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
   - attackTime: 0.3
     attackMag: 1
     attackStun: 10
@@ -57,6 +60,7 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
   - attackTime: 0.3
     attackMag: 1
     attackStun: 15
@@ -68,3 +72,4 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}

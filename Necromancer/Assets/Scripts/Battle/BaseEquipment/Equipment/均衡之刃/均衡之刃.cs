@@ -66,24 +66,9 @@ public class 均衡之刃 : MeleeEquipment
         }
         base.UseEquipment();
 
-        // 触发攻击特效（蓝色闪烁）
-        TriggerAttackEffect();
-
-        //这里就可以开始写攻击的各种逻辑了
-        Attack();
-
-        // 攻击后重置攻击冷却计时器 注意：
-        ResetCombo();
     }
 
 
-
-
-
-    private void Attack()
-    {
-        PlayerStats.Instance.OnAttack();
-    }
 
 
     public override void DoDamage(float _cMag, MonsterStats monsterStats)
@@ -100,7 +85,7 @@ public class 均衡之刃 : MeleeEquipment
             canCrit = true;
             Debug.Log("10次攻击必定暴击");
         }
-            
+        PlayHitSound(canCrit, monsterStats);
             
         int dmg = (int)(currentDmg * _cMag * (canCrit ? critMag : 1));
         Debug.Log($"暴击{canCrit},造成伤害{dmg}");

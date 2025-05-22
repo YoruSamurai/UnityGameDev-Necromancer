@@ -71,8 +71,8 @@ public class RoomGraphGenerator : MonoBehaviour
         public float levelHeight;
         public List<DoorInfo> doorInfos;
         public List<int> connectionRoom;
-
-
+        public List<LightPrefab> lightPrefabs;
+        public LDtkComponentLevel levelData;
 
     }
 
@@ -185,6 +185,7 @@ public class RoomGraphGenerator : MonoBehaviour
         foreach (var room in roomDatas)
         {
             LDtkComponentLevel ldtkInstance = Instantiate(room.room.levelData, room.startPosition, Quaternion.identity, mapParent);
+            room.levelData = ldtkInstance;
         }
         // 记录结束时间
         DateTime endTime = DateTime.Now;
@@ -578,6 +579,7 @@ public class RoomGraphGenerator : MonoBehaviour
         roomData.levelWidth = _level.levelWidth;
         // 手动深拷贝 doorInfos
         roomData.doorInfos = new List<DoorInfo>();
+        roomData.lightPrefabs = new List<LightPrefab>();
         foreach (var door in _level.doorInfos)
         {
             DoorInfo doorInfo = door;

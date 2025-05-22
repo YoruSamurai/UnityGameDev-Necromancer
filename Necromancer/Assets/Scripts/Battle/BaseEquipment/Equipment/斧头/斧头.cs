@@ -31,31 +31,15 @@ public class 斧头 : MeleeEquipment
 
     public override void UseEquipment()
     {
-        // 检查是否处于攻击CD中
         if (!GetCanUseEquipment())
         {
             Debug.Log("攻击还在冷却中！");
             return;
         }
         base.UseEquipment();
-
-        // 触发攻击特效（蓝色闪烁）
-        TriggerAttackEffect();
-
-        //这里就可以开始写攻击的各种逻辑了
-        Attack();
-
-        // 攻击后重置combo和冷却时间
-        ResetCombo();
     }
 
 
-
-
-    private void Attack()
-    {
-        PlayerStats.Instance.OnAttack();
-    }
 
     public override void DoDamage(float _cMag, MonsterStats monsterStats)
     {

@@ -19,7 +19,7 @@ MonoBehaviour:
   equipmentTags: 00000000
   baseCritChance: 15
   critMag: 4
-  equipmentDesc: "\u5927\u9E21\u5DF4\u55EF\u55EF\u55EF"
+  equipmentDesc: "\u653B\u51FB\u5BF9\u654C\u4EBA\u9020\u6210\u6D41\u8840"
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
   - {fileID: 7400000, guid: 6f6dfeb33717be64da641a9b4b08b3a7, type: 2}
@@ -46,6 +46,7 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
   - attackTime: 0.3
     attackMag: 1
     attackStun: 5
@@ -57,6 +58,7 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
   - attackTime: 0.3
     attackMag: 1
     attackStun: 10
@@ -68,3 +70,4 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}

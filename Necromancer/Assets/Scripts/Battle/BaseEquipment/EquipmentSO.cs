@@ -38,4 +38,8 @@ public class EquipmentSO : ScriptableObject
     public AnimationClip[] slashAnimations; // 刀光动画数组
     public Vector2[] slashOffsets;          // 每个刀光动画对应的生成位置偏移
 
+    [Header("武器命中/暴击音效")]
+    public SoundDataSO normalHitSfx;
+    public SoundDataSO critHitSfx;
+
 }

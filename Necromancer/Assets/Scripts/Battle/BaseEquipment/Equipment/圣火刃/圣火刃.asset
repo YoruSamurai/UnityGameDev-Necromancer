@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3d74c8111e9004090d9a52a8ac8378, type: 3}
+  m_Name: "\u5723\u706B\u5203"
+  m_EditorClassIdentifier: 
+  equipmentName: "\u5723\u706B\u5203"
+  baseDmg: 300
+  equipmentSprite: {fileID: 1548793952, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
+  equipmentType: 1
+  equipmentTags: 
+  baseCritChance: 25
+  critMag: 2
+  equipmentDesc: "\u84C4\u529B\u540E\u53EF\u4EE5\u5BF9\u654C\u4EBA\u9020\u6210\u71C3\u70E7\u4F24\u5BB3"
+  attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
+  comboAnimations:
+  - {fileID: 7400000, guid: 23cb9f33aa1adbb4ea7371ba1a93ca53, type: 2}
+  - {fileID: 7400000, guid: 79480bc794b0a5b4791577e2c3d495e7, type: 2}
+  - {fileID: 7400000, guid: 61271e2a5a35bb64b8db5717e2d9c3b9, type: 2}
+  slashAnimations: []
+  slashOffsets: []
+  fullComboAttackTimes: 3
+  meleeAttacks:
+  - attackTime: 0.7
+    attackMag: 1
+    attackStun: 15
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 3
+    attackWidth: 2
+    comboBreakTime: 3
+    knockbackForce: 1
+    chargeThreshold: 0.3
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
+  - attackTime: 0.7
+    attackMag: 1
+    attackStun: 15
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 3
+    attackWidth: 2
+    comboBreakTime: 3
+    knockbackForce: 1
+    chargeThreshold: 0.3
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
+  - attackTime: 0.9
+    attackMag: 1
+    attackStun: 15
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 3
+    attackWidth: 2
+    comboBreakTime: 3
+    knockbackForce: 1
+    chargeThreshold: 0.3
+    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}

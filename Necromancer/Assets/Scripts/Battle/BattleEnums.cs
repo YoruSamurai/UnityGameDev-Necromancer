@@ -157,6 +157,7 @@ public struct MeleeAttackStruct
     public float knockbackForce;
     //新增：重武器蓄力时间
     public float chargeThreshold;
+    public SoundDataSO attackSfx;
 }
 #endregion
 

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c445c628e2f4c547bf3d71b5c437b01, type: 3}
+  m_Name: "\u6559\u5802_1"
+  m_EditorClassIdentifier: 
+  allRooms:
+  - roomID: 1
+    roomType: 0
+    connectionRoom: 02000000
+  - roomID: 2
+    roomType: 1
+    connectionRoom: 03000000
+  - roomID: 3
+    roomType: 1
+    connectionRoom: 04000000
+  - roomID: 4
+    roomType: 1
+    connectionRoom: 0500000008000000
+  - roomID: 5
+    roomType: 1
+    connectionRoom: 06000000
+  - roomID: 6
+    roomType: 1
+    connectionRoom: 07000000
+  - roomID: 7
+    roomType: 1
+    connectionRoom: 
+  - roomID: 8
+    roomType: 1
+    connectionRoom: 09000000
+  - roomID: 9
+    roomType: 1
+    connectionRoom: 0a000000
+  - roomID: 10
+    roomType: 1
+    connectionRoom: 0b0000000d000000
+  - roomID: 11
+    roomType: 1
+    connectionRoom: 0c000000
+  - roomID: 12
+    roomType: 1
+    connectionRoom: 
+  - roomID: 13
+    roomType: 1
+    connectionRoom: 0e000000
+  - roomID: 14
+    roomType: 1
+    connectionRoom: 0f000000
+  - roomID: 15
+    roomType: 1
+    connectionRoom: 1000000013000000
+  - roomID: 16
+    roomType: 1
+    connectionRoom: 11000000
+  - roomID: 17
+    roomType: 1
+    connectionRoom: 12000000
+  - roomID: 18
+    roomType: 1
+    connectionRoom: 
+  - roomID: 19
+    roomType: 1
+    connectionRoom: 14000000
+  - roomID: 20
+    roomType: 1
+    connectionRoom: 15000000
+  - roomID: 21
+    roomType: 2
+    connectionRoom: 

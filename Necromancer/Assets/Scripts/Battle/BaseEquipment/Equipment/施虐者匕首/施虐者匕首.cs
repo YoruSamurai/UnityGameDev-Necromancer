@@ -8,8 +8,6 @@ public class 施虐者匕首 : MeleeEquipment
     protected override void Start()
     {
         base.Start();
-        Debug.Log("匕首，启动！");
-
     }
 
     protected override void Update()
@@ -41,23 +39,6 @@ public class 施虐者匕首 : MeleeEquipment
             return;
         }
         base.UseEquipment();
-
-        // 触发攻击特效（蓝色闪烁）
-        TriggerAttackEffect();
-
-        //这里就可以开始写攻击的各种逻辑了
-        Attack();
-
-        // 可以攻击的时候 重置combo和冷却时间
-        ResetCombo();
-    }
-
-
-
-
-    private void Attack()
-    {
-        PlayerStats.Instance.OnAttack();
     }
 
 

@@ -26,7 +26,7 @@ public class MeleeEquipment : BaseEquipment
 
     [SerializeField] public BoxCollider2D attackCheckBox;
     [SerializeField] public CircleCollider2D attackCheckCircle;
-    [SerializeField] private LayerMask enemyLayerMask;
+    
 
     protected override void Start()
     {
@@ -111,6 +111,10 @@ public class MeleeEquipment : BaseEquipment
                 isCharged = false;
                 currentWeaponIndex = PlayerStats.Instance.currentEquipmentIndex;
             }
+            TriggerAttackEffect();//可视化攻击范围 未启用
+            Attack();
+            // 攻击后重置combo和冷却时间
+            ResetCombo();
         }
     }
     public virtual void OnTriggerEnter2D(Collider2D collision)
@@ -136,7 +140,7 @@ public class MeleeEquipment : BaseEquipment
 
         // 选择当前攻击数据（这里参考你已有的 GetHitEnemy() 逻辑）
         MeleeAttackStruct currentAttack = meleeAttacks[currentCombo == 0 ? meleeAttacks.Count - 1 : currentCombo - 1];
-
+        Debug.Log("我要努力！");
         // 获取玩家面向方向
         bool isFacingRight = GetFacingDirection();
         Vector2 faceDirection = isFacingRight ? Vector2.right : Vector2.left;
@@ -283,6 +287,11 @@ public class MeleeEquipment : BaseEquipment
             effect.GetComponent<SpriteRenderer>().color = color;
             Destroy(effect, 0.2f);
         }*/
+    }
+
+    private void Attack()
+    {
+        PlayerStats.Instance.OnAttack();
     }
 
 

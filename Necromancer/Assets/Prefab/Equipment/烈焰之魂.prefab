@@ -46,6 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipmentSO: {fileID: 11400000, guid: 1f25e1865435d5148ba3f758640bd84e, type: 2}
   player: {fileID: 0}
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   attackCooldown: 0
   attackCooldownTimer: 0
   equipmentName: "\u70C8\u7130\u4E4B\u9B42"
@@ -64,5 +67,5 @@ MonoBehaviour:
   eDamageMag: 1.1
   equipmentAffixList: []
   fullComboAttackTimes: 0
-  projectilePrefab: {fileID: 0}
+  projectileSO: {fileID: 0}
   staffAttacks: []

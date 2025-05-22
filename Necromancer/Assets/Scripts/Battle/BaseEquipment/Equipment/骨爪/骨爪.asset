@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3d74c8111e9004090d9a52a8ac8378, type: 3}
+  m_Name: "\u9AA8\u722A"
+  m_EditorClassIdentifier: 
+  equipmentName: "\u9AA8\u722A"
+  baseDmg: 300
+  equipmentSprite: {fileID: -1432552935, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
+  equipmentType: 0
+  equipmentTags: 
+  baseCritChance: 25
+  critMag: 2
+  equipmentDesc: "\u4ECE\u540E\u65B9\u653B\u51FB\u654C\u4EBA\u5FC5\u5B9A\u6D41\u8840"
+  attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
+  comboAnimations:
+  - {fileID: 7400000, guid: f80e3345330a1cf4c8001dab35ef90ad, type: 2}
+  - {fileID: 7400000, guid: b7a9b96d404861c4094c3fcae26daa12, type: 2}
+  - {fileID: 7400000, guid: ffe1c528809d7be4fb76d61ad57e210d, type: 2}
+  - {fileID: 7400000, guid: 12910fca810937b40ac5fac6e2b63ff4, type: 2}
+  slashAnimations: []
+  slashOffsets: []
+  fullComboAttackTimes: 4
+  meleeAttacks:
+  - attackTime: 0.3
+    attackMag: 1
+    attackStun: 8
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 2
+    attackWidth: 2
+    comboBreakTime: 3
+    knockbackForce: 0.5
+    chargeThreshold: 0
+  - attackTime: 0.3
+    attackMag: 1
+    attackStun: 8
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 2
+    attackWidth: 2
+    comboBreakTime: 3
+    knockbackForce: 0.5
+    chargeThreshold: 0
+  - attackTime: 0.3
+    attackMag: 1
+    attackStun: 8
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 2
+    attackWidth: 2
+    comboBreakTime: 3
+    knockbackForce: 0.5
+    chargeThreshold: 0
+  - attackTime: 0.3
+    attackMag: 1
+    attackStun: 8
+    attackShape: 0
+    attackCenter: 1
+    attackRadius: 0
+    attackLength: 2
+    attackWidth: 2
+    comboBreakTime: 3
+    knockbackForce: 0.5
+    chargeThreshold: 0

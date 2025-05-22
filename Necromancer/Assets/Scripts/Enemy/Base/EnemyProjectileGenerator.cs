@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ProjectileMovingType
-{
-    Straight,
-    A,//没想好是什么 一开始一个莫名其妙的方向 然后转向玩家
-}
+
 
 public class EnemyProjectileGenerator : MonoBehaviour
 {
