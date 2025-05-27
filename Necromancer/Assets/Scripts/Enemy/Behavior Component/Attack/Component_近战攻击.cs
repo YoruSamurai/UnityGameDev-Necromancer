@@ -8,8 +8,13 @@ public class Component_近战攻击 : EnemyBehaviorComponent
     [SerializeField] private float _timeBetweenShots = 2f; // 攻击冷却时间
     [SerializeField] private float damageMultiplier;  // 攻击伤害倍率
 
+    [SerializeField] private int combo;
+    [SerializeField] private List<int> comboMove;
+
     public override void OnEnter()
     {
+        combo = 0;
+
         _timer = _timeBetweenShots - .01f;
         enemy.currentDamageMultiplier = damageMultiplier;
         float xdistance = playerTransform.position.x - enemy.transform.position.x;
@@ -21,13 +26,15 @@ public class Component_近战攻击 : EnemyBehaviorComponent
         {
             enemy.Flip();
         }
+
+        enemy.SetVelocity(0, 0);
     }
 
     public override void OnFixedUpdate()
     {
         base.OnFixedUpdate();
         // 保证敌人静止
-        enemy.SetVelocity(0, 0);
+        //enemy.SetVelocity(0, 0);
     }
 
     public override void OnUpdate()
@@ -64,10 +71,18 @@ public class Component_近战攻击 : EnemyBehaviorComponent
         if(triggerType == EnemyAnimationTriggerType.EnemyHitDetermineStart)
         {
             Debug.Log("开始伤害判定咯");
+
+            Debug.Log("向前移动");
+            if (comboMove.Count > combo)
+            {
+                enemy.AttackDash(comboMove[combo]);
+                combo++;
+            }
         }
         if(triggerType == EnemyAnimationTriggerType.EnemyHitDetermineEnd)
         {
             Debug.Log("结束伤害判定咯");
+            enemy.SetVelocity(0, 0);
         }
     }
 }

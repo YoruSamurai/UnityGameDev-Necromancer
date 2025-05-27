@@ -1,0 +1,714 @@
+fileFormatVersion: 2
+guid: 803718348f58c8b42940b21e2cdb9961
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_0"
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 377
+        width: 54
+        height: 88
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86d6e1a6ea87f147a6949ad647f9c60
+      internalID: -1101930995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_1"
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 377
+        width: 64
+        height: 87
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a9ce2f7cfb57d45bbda682965fa805
+      internalID: 565052171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_2"
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 377
+        width: 64
+        height: 82
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f061033603bda478d1fd1367315bd0
+      internalID: -719120894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_3"
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 377
+        width: 58
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09a5a07de92e5a4cae3d68cb255a74e
+      internalID: 462338073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_4"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 377
+        width: 53
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159a8376795fff140991fa52ed1f8063
+      internalID: -1413045452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_5"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 377
+        width: 50
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e2c06cb6335eb4fac5c6df8837db05
+      internalID: -658520077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_6"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 284
+        width: 48
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6770b3765b35b3546a0fab7add9647ac
+      internalID: -393451896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_7"
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 284
+        width: 47
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e851edeb9caa974e9b3db85ed602af1
+      internalID: 3692566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_8"
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 284
+        width: 47
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ce6b0ce9f4b3c4d9a2ae9b40742c54
+      internalID: 551258965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_9"
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 284
+        width: 48
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a234f53fcb8524b8bc6e5a52e208c3
+      internalID: -143351374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_10"
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 284
+        width: 50
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452de44a8a33d834bbdfbbbdc5294f86
+      internalID: 1772606791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_11"
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 284
+        width: 51
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b42b9991318eee64d8c48de0cfdefe7a
+      internalID: -385941807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_12"
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 191
+        width: 52
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ab4a10f482f7a4d987a23c88bd5a68
+      internalID: 1068251046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_13"
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 191
+        width: 54
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a2c99be792b3e4e9c25db7409fe5e6
+      internalID: -350667107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_14"
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 191
+        width: 55
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 008e4d6ac7f69644aa0135288d1a2d18
+      internalID: 303182454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_15"
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 191
+        width: 57
+        height: 77
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3ea6f9eb62f024288f25ecfa0ff372
+      internalID: 93983229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_16"
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 191
+        width: 58
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd8bc4f79e1e4c40a610cf31d79feec
+      internalID: 719266289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_17"
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 191
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a737169b388c14cb56b36c24779702
+      internalID: 607530994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_18"
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 98
+        width: 55
+        height: 82
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9f718c058208b4f9aad4a07396f4c0
+      internalID: 1993166693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_19"
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 98
+        width: 55
+        height: 84
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a162d5ed0059d1649bba76480f20d740
+      internalID: -1144189433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_20"
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 98
+        width: 54
+        height: 85
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9158b970480a6b409838d94cec2aac8
+      internalID: 8015978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_21"
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 98
+        width: 53
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471c9d9c2b1121c4eb4672f2543d0134
+      internalID: 1406138917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_22"
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 98
+        width: 53
+        height: 87
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b41ea9b350ac684abb2616b63baf62b
+      internalID: 2013502667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_23"
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 98
+        width: 52
+        height: 87
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03c07dd32f81004bbeedbf3ea486711
+      internalID: -615164469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_24"
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 5
+        width: 53
+        height: 88
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efba6cb38aac8864b9c8b82f9931c8f9
+      internalID: -2117202800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_25"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 5
+        width: 54
+        height: 88
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6dbe3abe3cff0747a0e41befc7fe713
+      internalID: -1323694698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: bdba40dc7f8f6a246b2345cbe959ee8e, type: 3}
+      name: _NormalMap
+    nameFileIdTable:
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_0": -1101930995
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_1": 565052171
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_10": 1772606791
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_11": -385941807
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_12": 1068251046
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_13": -350667107
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_14": 303182454
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_15": 93983229
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_16": 719266289
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_17": 607530994
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_18": 1993166693
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_19": -1144189433
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_2": -719120894
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_20": 8015978
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_21": 1406138917
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_22": 2013502667
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_23": -615164469
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_24": -2117202800
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_25": -1323694698
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_3": 462338073
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_4": -1413045452
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_5": -658520077
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_6": -393451896
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_7": 3692566
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_8": 551258965
+      "\u6328\u6253_export_Hips_Hips_Unreal Take_Base Layer_9": -143351374
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

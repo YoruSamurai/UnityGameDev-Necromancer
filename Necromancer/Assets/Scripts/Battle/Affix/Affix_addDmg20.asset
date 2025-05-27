@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Affix_addDmg20
   m_EditorClassIdentifier: 
   affixTag: 4
-  triggerCondition: 1
   needEquipmentTags: 
   contrastEquipmentTags: 
-  contrastAffixTags: 05000000
+  contrastAffixTags: 
   affixRarity: 0
   affixDesc: "\u653B\u51FB\u547D\u4E2D\u65F6\uFF0C+20%\u4F24\u5BB3"

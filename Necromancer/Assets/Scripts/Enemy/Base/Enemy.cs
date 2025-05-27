@@ -84,6 +84,26 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
+
+    #region 攻击突进
+
+    /// <summary>
+    /// 向当前朝向施加力
+    /// </summary>
+    public void AttackDash(float force)
+    {
+        Debug.Log(force + "foece");
+        Vector2 dir = facingRight ? Vector2.right : Vector2.left;
+        if (rb != null)
+        {
+            // 添加击退力
+            rb.AddForce(dir * force, ForceMode2D.Impulse);
+        }
+
+    }
+    #endregion
+
+
     [Header("Collision Info")]//碰撞参数
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance;

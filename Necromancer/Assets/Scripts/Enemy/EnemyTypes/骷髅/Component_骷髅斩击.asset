@@ -16,3 +16,5 @@ MonoBehaviour:
   componentDesc: 
   _timeBetweenShots: 2
   damageMultiplier: 3
+  combo: 0
+  comboMove: 060000000a0000000a000000

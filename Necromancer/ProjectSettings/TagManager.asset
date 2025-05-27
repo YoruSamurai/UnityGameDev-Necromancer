@@ -54,11 +54,11 @@ TagManager:
   - name: Tile
     uniqueID: 2017728985
     locked: 0
-  - name: Enemy
-    uniqueID: 854423697
-    locked: 0
   - name: Npc
     uniqueID: 3189684109
+    locked: 0
+  - name: Enemy
+    uniqueID: 854423697
     locked: 0
   - name: Player
     uniqueID: 892242275

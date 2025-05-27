@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 806404977698317745}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.51, y: -0.6, z: 0}
+  m_LocalPosition: {x: 0.51, y: 0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1293358696502950523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54, y: -0.42, z: 0}
+  m_LocalPosition: {x: 0.54, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -117,7 +117,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f15388b54d1549e45a809ec08d75032c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,7 +138,7 @@ SpriteRenderer:
   m_SortingLayerID: 854423697
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2099844205, guid: 7755093e80a63bb42b7029d648feec13, type: 3}
+  m_Sprite: {fileID: -1396456265, guid: 8696e2a4182718045b7434f11f93b4a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -159,7 +159,7 @@ Animator:
   m_GameObject: {fileID: 6643662513291469657}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eef6930b17a472340a3a738795c99b20, type: 2}
+  m_Controller: {fileID: 9100000, guid: 00c5598a69cd84340b6d5adab2ae0dea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -217,8 +217,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.03125, y: 1.125}
+    pivot: {x: 0.71, y: 0}
+    oldSize: {x: 2.09375, y: 2.71875}
     newSize: {x: 2.9375, y: 3.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -257,7 +257,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -47.7, y: 2.7, z: 0}
-  m_LocalScale: {x: 1.24, y: 1.24, z: 1.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 722186670078654470}
@@ -385,6 +385,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.013451423, y: 0.11687971}
-  m_Size: {x: 0.85262483, y: 1.4278704}
+  m_Offset: {x: -0.12534358, y: 1.3508966}
+  m_Size: {x: 1.2135537, y: 2.8112636}
   m_Direction: 0

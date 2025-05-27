@@ -80,13 +80,10 @@ public class LevelManager : MonoBehaviour
 
     public void AddLightPrefab(LightPrefab lightPrefab, LDtkComponentLevel level)
     {
-        Debug.Log("我加");
         foreach(var room in roomDatas)
         {
             if (room.levelData == level)
             {
-                Debug.Log("我加加");
-
                 room.lightPrefabs.Add(lightPrefab);
             }
         }

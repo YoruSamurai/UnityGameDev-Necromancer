@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   componentName: 
   componentDesc: 
-  MovementSpeed: 8
+  MovementSpeed: 3
   delayDuration: 2
   isShowedExclamation: 0
   exclamationPrefab: {fileID: 4991230142638127165, guid: 8dae48968f2f42b49bcce64168e172a7, type: 3}

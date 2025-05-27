@@ -50,7 +50,7 @@ public class Affix_addDmg20 : BaseAffix
     {
         base.InvokeOnPlayerHit(sender, e);
         OnPlayerHitEventArgs data = e as OnPlayerHitEventArgs;
-
+        abilityInvoker.MultiplyDamageMag(1.2f);
         if (baseEquipment == data.baseEquipment)
         {
             Debug.Log("我是 baseEquipment 的子物体！");

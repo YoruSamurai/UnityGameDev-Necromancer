@@ -33,11 +33,13 @@ MonoBehaviour:
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
+  normalHitSfx: {fileID: 0}
+  critHitSfx: {fileID: 0}
   fullComboAttackTimes: 3
   meleeAttacks:
   - attackTime: 0.3
     attackMag: 1
-    attackStun: 5
+    attackStun: 100
     attackShape: 0
     attackCenter: 1
     attackRadius: 0
@@ -49,7 +51,7 @@ MonoBehaviour:
     attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
   - attackTime: 0.3
     attackMag: 1
-    attackStun: 5
+    attackStun: 100
     attackShape: 0
     attackCenter: 1
     attackRadius: 0
@@ -61,7 +63,7 @@ MonoBehaviour:
     attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
   - attackTime: 0.3
     attackMag: 1
-    attackStun: 10
+    attackStun: 100
     attackShape: 0
     attackCenter: 1
     attackRadius: 0

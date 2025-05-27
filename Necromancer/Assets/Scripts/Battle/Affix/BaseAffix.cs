@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class BaseAffix : MonoBehaviour
 {
+
+    protected AbilityInvoker abilityInvoker;
+
     [SerializeField] public AffixSO affixSO;
 
     [Header("SO内容的实例化")]
@@ -37,7 +40,7 @@ public class BaseAffix : MonoBehaviour
         affixDesc = affixSO.affixDesc;
         baseEquipment = _baseEquipment;
         Debug.Log("装载了" + this.affixDesc);
-
+        abilityInvoker = PlayerStats.Instance.GetComponentInChildren<AbilityInvoker>();
     }
 
     public virtual void OnEquip()
