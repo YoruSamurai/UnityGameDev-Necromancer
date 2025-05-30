@@ -5,12 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Other/Localization")]
 public class LocalizedDialogueSO : ScriptableObject
 {
-    public Dictionary<string, LocalizedLine> localizedLines;
+    //public Dictionary<string, LocalizedLine> localizedLines;
+    public List<LocalizedLine> localizedLines;
 }
 
 [System.Serializable]
 public class LocalizedLine
 {
+    public string identifier;
     public string zh;
     public string zh_TW;
     public string en;

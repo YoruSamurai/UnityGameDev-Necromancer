@@ -68,7 +68,6 @@ public class Ability_猛攻 : BaseAbility
             // 停止旧协程
             StopCoroutine(abilityCoroutine);
             abilityCoroutine = null;
-            Debug.Log(abilityCoroutine + "Asdadasa");
         }
         abilityCoroutine = StartCoroutine(受伤后加攻击防御协程());
 

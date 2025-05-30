@@ -50,7 +50,7 @@ public class CSVToDialogueSO : EditorWindow
     private void GenerateLocaleSO()
     {
         List<string> lines = ReadCSV(csvLocaleFilePath);
-        Dictionary<string, LocalizedLine> _localizedLines = new();
+        List<LocalizedLine> _localizedLines = new();
         _localizedLines.Clear();
         for (int i = 1; i < lines.Count;i++)
         {
@@ -60,13 +60,15 @@ public class CSVToDialogueSO : EditorWindow
                 Debug.LogWarning("读完了");
                 break;
             }
-            _localizedLines[parts[1]] = new LocalizedLine
+            LocalizedLine line = new LocalizedLine
             {
+                identifier = parts[1],
                 zh = parts[2],
                 zh_TW = parts[3],
                 en = parts[4],
                 jp = parts[5],
             };
+            _localizedLines.Add(line);
         }
         LocalizedDialogueSO so = ScriptableObject.CreateInstance<LocalizedDialogueSO>();
         so.localizedLines = _localizedLines;
@@ -116,7 +118,6 @@ public class CSVToDialogueSO : EditorWindow
             {
                 System.Array.Resize(ref parts, 8);
             }
-
             if (!string.IsNullOrWhiteSpace(parts[0]))
             {
                 currentID = int.Parse(parts[0]);
@@ -183,16 +184,18 @@ public class CSVToDialogueSO : EditorWindow
         var parts = input.Split('\\');
         foreach (var part in parts)
         {
-            string parsed = part.Replace("地图-", "Map_").Replace("对话", "Nearby");
-            if (System.Enum.TryParse(parsed, true, out DialogueTriggerType result))
+            if (System.Enum.TryParse(part, true, out DialogueTriggerType result))
                 list.Add(result);
+            else
+            {
+                Debug.LogWarning("提供了错误的枚举类型" + part);
+            }
         }
         return list;
     }
 
     private DialogueType ParseDialogueType(string str)
     {
-        Debug.Log(str);
         return str switch
         {
             "D" => DialogueType.Dialogue,

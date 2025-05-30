@@ -24,15 +24,7 @@ public class ProjectileManager : MonoBehaviour
 
     public void GenerateProjectile(ProjectileSO _projectileSO,BaseEquipment _baseEquipment,bool facingRight ,Enemy _enemy,int combo)
     {
-
         GameObject obj =  ObjectPoolManager.SpawnObject(projectileGeneratorPrefab, transform.position, Quaternion.identity,ObjectPoolManager.PoolType.Projectiles);
-
-        /*GameObject obj = Instantiate(
-            projectileGeneratorPrefab,
-            transform.position,
-            Quaternion.identity,
-            transform
-            );*/
         Debug.Log(_projectileSO.ToString() + "_projectileSO");
         BaseProjectileGenerator generator = obj.GetComponent<BaseProjectileGenerator>();
         generator.Initialize(_projectileSO, _baseEquipment, facingRight, _enemy, combo);

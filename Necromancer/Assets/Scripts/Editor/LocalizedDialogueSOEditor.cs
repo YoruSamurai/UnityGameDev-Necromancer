@@ -27,14 +27,14 @@ public class LocalizedDialogueSOEditor : Editor
             foreach (var kvp in data.localizedLines)
             {
                 EditorGUILayout.BeginVertical("box");
-                EditorGUILayout.LabelField($" 标识符: {kvp.Key}", EditorStyles.boldLabel);
+                EditorGUILayout.LabelField($" 标识符: {kvp.identifier}", EditorStyles.boldLabel);
 
-                if (kvp.Value != null)
+                if (kvp.identifier != null)
                 {
-                    EditorGUILayout.LabelField("简体中文", kvp.Value.zh);
-                    EditorGUILayout.LabelField("繁體中文", kvp.Value.zh_TW);
-                    EditorGUILayout.LabelField("English", kvp.Value.en);
-                    EditorGUILayout.LabelField("日本語", kvp.Value.jp);
+                    EditorGUILayout.LabelField("简体中文", kvp.zh);
+                    EditorGUILayout.LabelField("繁體中文", kvp.zh_TW);
+                    EditorGUILayout.LabelField("English", kvp.en);
+                    EditorGUILayout.LabelField("日本語", kvp.jp);
                 }
                 else
                 {

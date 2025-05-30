@@ -71,8 +71,6 @@ public class Component_近战攻击 : EnemyBehaviorComponent
         if(triggerType == EnemyAnimationTriggerType.EnemyHitDetermineStart)
         {
             Debug.Log("开始伤害判定咯");
-
-            Debug.Log("向前移动");
             if (comboMove.Count > combo)
             {
                 enemy.AttackDash(comboMove[combo]);
