@@ -11,8 +11,8 @@ public class 吟游诗人 : MonoBehaviour, IDialogueSpeaker
     [SerializeField] private float triggerDistance = 8f;
 
     [SerializeField] private DialogueSO dialogueSO;
-    [SerializeField] private List<int> hasUsedDialogueInScene = new List<int>();
     [SerializeField] private int usedSingleInScene = -1;
+    [SerializeField] private int usedParagraphInScene = -1;
 
     [Header("背景音乐")]
     [SerializeField] private 背景音乐 bgMusic;
@@ -20,6 +20,10 @@ public class 吟游诗人 : MonoBehaviour, IDialogueSpeaker
     private SoundBuilder soundBuilder;
     private Transform playerTransform;
     private bool isPlayerNear;
+
+    private bool canTalk = false;
+    private bool isTalking = false;
+    [SerializeField] private GameObject triggerTalkPrefab;
 
     #region 对话控制器
 
@@ -43,6 +47,10 @@ public class 吟游诗人 : MonoBehaviour, IDialogueSpeaker
     {
         if (dialogueController != null)
         {
+            if (!dialogueController.isSingle)
+            {
+                isTalking = false;
+            }
             dialogueController.DestroyController();
         }
         DialogueController = null; // 清除当前对话控制器
@@ -68,15 +76,23 @@ public class 吟游诗人 : MonoBehaviour, IDialogueSpeaker
     private void Update()
     {
         if (playerTransform == null) return;
-
         float distance = Vector3.Distance(transform.position, playerTransform.position);
         bool shouldBePlaying = distance <= triggerDistance;
 
-        if (shouldBePlaying)
+        if (canTalk && !isTalking)
         {
-
+            DisplayTalkPrefab(true);
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                isTalking = true;
+                DisplayTalkPrefab(false);
+                FindProperDialogueWithType(DialogueTriggerType.Paragraph, DialogueTriggerType.Talk, DialogueTriggerType.M_Church);
+            }
         }
-
+        else
+        {
+            DisplayTalkPrefab(false);
+        }
 
         if (shouldBePlaying != isPlayerNear)
         {
@@ -84,8 +100,6 @@ public class 吟游诗人 : MonoBehaviour, IDialogueSpeaker
 
             if (isPlayerNear)
             {
-                /*string id = DialogueManager.Instance.GetTextById("smith_greeting_1_01");
-                DialogueManager.Instance.GenerateDialogueBubble(id, "smith_greeting_1_01", transform);*/
                 FindProperDialogueWithType(DialogueTriggerType.Single, DialogueTriggerType.Near);
                 soundBuilder.JustPlay();
                 bgMusic.StopBgMusic();
@@ -98,6 +112,29 @@ public class 吟游诗人 : MonoBehaviour, IDialogueSpeaker
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        canTalk = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        canTalk = false;
+    }
+
+    private void DisplayTalkPrefab(bool canDisplay)
+    {
+        if(canDisplay && !triggerTalkPrefab.activeSelf)
+            triggerTalkPrefab.gameObject.SetActive(true);
+        else if(!canDisplay && triggerTalkPrefab.activeSelf)
+        {
+            triggerTalkPrefab.gameObject.SetActive(false);
+
+        }
+
+    }
+
 
     private void FindProperDialogueWithType(params DialogueTriggerType[] triggerTypes)
     {
@@ -117,8 +154,7 @@ public class 吟游诗人 : MonoBehaviour, IDialogueSpeaker
                 {
                     Debug.Log(1232);
 
-                    if (!dialogue.triggerList.Contains(DialogueTriggerType.General) 
-                        && !hasUsedDialogueInScene.Contains(dialogue.dialogueID))
+                    if (!dialogue.triggerList.Contains(DialogueTriggerType.General) )
                     {
                         Debug.Log(1123);
 
@@ -151,6 +187,27 @@ public class 吟游诗人 : MonoBehaviour, IDialogueSpeaker
             }
             
         }
+
+        else
+        {
+            if (usedParagraphInScene == -1)
+            {
+                singleDialogue = properDialogues[UnityEngine.Random.Range(0, properDialogues.Count)];
+                usedParagraphInScene = singleDialogue.dialogueID;
+            }
+            else
+            {
+                foreach (var dialogue in properDialogues)
+                {
+                    if (dialogue.dialogueID == usedParagraphInScene)
+                    {
+                        singleDialogue = dialogue;
+                        break;
+                    }
+                }
+            }
+        }
+
         TryStartDialogue(singleDialogue);
     }
 

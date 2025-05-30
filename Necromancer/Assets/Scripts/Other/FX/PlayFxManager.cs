@@ -8,6 +8,8 @@ public class PlayFxManager : MonoBehaviour
 
     public ParticleSystem bloodLineParticle;
 
+    [SerializeField] private GameObject fxControllerPrefab;
+
     private void Awake()
     {
         // 确保实例唯一
@@ -19,6 +21,13 @@ public class PlayFxManager : MonoBehaviour
         {
             Destroy(gameObject); // 防止多个实例
         }
+    }
+
+    public void GenerateFX(AnimationClip clip, Transform spawner, bool facingRight, Vector2 offset)
+    {
+        GameObject obj = ObjectPoolManager.SpawnObject(fxControllerPrefab, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.FX);
+        FxController controller = obj.GetComponent<FxController>();
+        controller.Initialize(clip, spawner, facingRight, offset);
     }
 
     public void PlayBloodLine(Vector2 hitPoint, Vector2 attackerPosition)

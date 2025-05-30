@@ -11,6 +11,7 @@ public class ObjectPoolManager : MonoBehaviour
     private GameObject _emptyHolder;
 
     private static GameObject _projectileEmpty;
+    private static GameObject _fxEmpty;
     private static GameObject _shadowCasterEmpty;
 
     private static Dictionary<GameObject, ObjectPool<GameObject>> _objectPools;
@@ -19,6 +20,7 @@ public class ObjectPoolManager : MonoBehaviour
     public enum PoolType
     {
         Projectiles,
+        FX,
         GameObjects
     }
     public static PoolType PoolingType;
@@ -36,6 +38,9 @@ public class ObjectPoolManager : MonoBehaviour
         _emptyHolder = this.gameObject;
         _projectileEmpty = new GameObject("Projectiles");
         _projectileEmpty.transform.SetParent(_emptyHolder.transform, false);
+
+        _fxEmpty = new GameObject("FX");
+        _fxEmpty.transform.SetParent(_emptyHolder.transform, false);
 
         _shadowCasterEmpty = new GameObject("ShadowCaster");
         _shadowCasterEmpty.transform.SetParent(_emptyHolder.transform, false);
@@ -95,6 +100,8 @@ public class ObjectPoolManager : MonoBehaviour
         {
             case PoolType.Projectiles:
                 return _projectileEmpty;
+            case PoolType.FX:
+                return _fxEmpty;
             default:
                 return null;
         }

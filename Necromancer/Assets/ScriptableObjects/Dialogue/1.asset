@@ -37,17 +37,17 @@ MonoBehaviour:
       nextLineIndex: 1
       dialogueType: 0
       text: "\u4F60\u597D"
-    - localizationIdentifier: smith_talk_1_01
+    - localizationIdentifier: smith_talk_1_02
       lineIndex: 1
       nextLineIndex: 2
       dialogueType: 0
       text: "\u597D\u554A"
-    - localizationIdentifier: smith_talk_1_01
+    - localizationIdentifier: smith_talk_1_03
       lineIndex: 2
       nextLineIndex: 3
       dialogueType: 0
       text: "\u4E0D\u597D"
-    - localizationIdentifier: smith_talk_1_01
+    - localizationIdentifier: smith_talk_1_04
       lineIndex: 3
       nextLineIndex: -1
       dialogueType: 2

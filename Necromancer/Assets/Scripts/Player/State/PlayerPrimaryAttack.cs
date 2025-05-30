@@ -37,7 +37,8 @@ public class PlayerPrimaryAttack : PlayerState
                         {
                             Vector2 offset = currentWeapon.slashOffsets[combo];
                             Debug.Log(slashClip.name + "slashshh");
-                            player.InitialFxPrefab(slashClip, offset);
+                            //player.InitialFxPrefab(slashClip, offset);
+                            PlayFxManager.Instance.GenerateFX(slashClip,player.transform , player.GetFacingRight(), offset);
                         }
                         else
                         {

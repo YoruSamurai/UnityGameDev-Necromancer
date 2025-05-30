@@ -302,5 +302,6 @@ public enum EnemyAnimationTriggerType
     EnemyOnShoot,//敌人射箭
     EnemyDied,//敌人死亡
     EnemyOnSummon,
+    EnemyPreFX,
 }
 #endregion

@@ -9,8 +9,10 @@ public class DialogueController : MonoBehaviour
     private Transform speaker;
     private IDialogueSpeaker dialogueSpeaker;
     private int line = 0;
+    public bool isSingle;
+    private bool isLastLine;
 
-    private List<DialogueBubble> bubbles;
+    private DialogueBubble currentBubble;
 
     [SerializeField] private GameObject dialogueBubblePrefab;
 
@@ -21,52 +23,82 @@ public class DialogueController : MonoBehaviour
         dialogueSpeaker = _dialogueSpeaker;
         dialogueSpeaker.RemoveCurrentDialogue();
         dialogueSpeaker.SetCurrentDialogue(this);
-        bubbles = new List<DialogueBubble>(); // 初始化 bubbles 列表
+        currentBubble = null;
+        isSingle = dialogue.triggerList.Contains(DialogueTriggerType.Single)? true: false;
         StartDisplaying();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F) && !isSingle)
+        {
+            StartDisplaying();
+        }
     }
 
     private void StartDisplaying()
     {
-        if (dialogue.triggerList.Contains(DialogueTriggerType.Single))
+        if(currentBubble == null)
         {
             string id = DialogueManager.Instance.GetTextById(dialogue.dialogueLineList[line].localizationIdentifier);
-            bool isLastLine = dialogue.dialogueLineList.Count > line + 1 ? false : true ;
-            GenerateDialogueBubble(id, dialogue.dialogueLineList[0].localizationIdentifier, transform, isLastLine);
+            isLastLine = dialogue.dialogueLineList.Count > line + 1 ? false : true;
+            GenerateDialogueBubble(id, dialogue.dialogueLineList[line].localizationIdentifier, transform, isLastLine, isSingle);
+            line = line + 1;
+        }
+        else if (!isLastLine)
+        {
+            if (currentBubble.isTyping)
+            {
+                currentBubble.SkipTyping();
+            }
+            else
+            {
+                string id = DialogueManager.Instance.GetTextById(dialogue.dialogueLineList[line].localizationIdentifier);
+                isLastLine = dialogue.dialogueLineList.Count > line + 1 ? false : true;
+                GenerateDialogueBubble(id, dialogue.dialogueLineList[line].localizationIdentifier, transform, isLastLine,isSingle);
+                line = line + 1;
+            }
         }
         else
         {
-            
+            Debug.LogWarning("没有对话了");
+            if (currentBubble.isTyping)
+            {
+                currentBubble.SkipTyping();
+            }
+            else
+            {
+                dialogueSpeaker.RemoveCurrentDialogue();
+            }
         }
 
     }
 
-    public void RemoveBubble(DialogueBubble bubble)
+    public void RemoveBubble()
     {
-        if (bubbles.Contains(bubble))
-        {
-            bubbles.Remove(bubble); // 从列表中移除气泡
-        }
+        currentBubble = null;
     }
 
     private void ClearBubbles()
     {
-        for (int i = bubbles.Count - 1; i >= 0; i--)
+        if(currentBubble != null)
         {
-            bubbles[i].DestroySelf();
+            currentBubble.DestroySelf();
+        
+            currentBubble = null;
         }
-        bubbles.Clear();
     }
 
 
 
-    private void GenerateDialogueBubble(string dialogueText, string dialogueIdentifier, Transform speakerTransform
-        , bool isLastLine)
+    private void GenerateDialogueBubble(string dialogueText, string dialogueIdentifier, 
+        Transform speakerTransform, bool isLastLine,bool isSingle)
     {
         ClearBubbles();
         GameObject obj = Instantiate(dialogueBubblePrefab, transform.position, Quaternion.identity, speakerTransform);
         DialogueBubble bubble = obj.GetComponent<DialogueBubble>();
-        bubble.Initialized(dialogueText, dialogueIdentifier, speakerTransform ,this,isLastLine);
-        bubbles.Add(bubble); // 将当前气泡添加到列表中
+        bubble.Initialized(dialogueText, dialogueIdentifier, speakerTransform ,this,isLastLine,isSingle);
+        currentBubble = bubble;
 
     }
     /// <summary>

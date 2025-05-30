@@ -8,13 +8,17 @@ public class FxController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private AnimationClip clip;
 
+    private Transform spawner;
+
     // 存储播放的动画片段长度
     [SerializeField] private float animLength = 0f;
 
     // 初始化方法，由外部传入动画片段、偏移量等参数
-    public void Initialize(AnimationClip slashClip, Vector3 offset, bool facingRight)
+    public void Initialize(AnimationClip slashClip, Transform spawner ,bool facingRight,Vector3 offset)
     {
         // 将位置偏移叠加到当前位置上
+        transform.SetParent(spawner.transform);
+        transform.position = spawner.position;
         clip = slashClip;
         if (facingRight)
             transform.position += new Vector3(offset.x, offset.y);
@@ -56,6 +60,6 @@ public class FxController : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         // 销毁当前物体
-        Destroy(gameObject);
+        ObjectPoolManager.ReturnObjectToPool(gameObject, ObjectPoolManager.PoolType.FX);
     }
 }

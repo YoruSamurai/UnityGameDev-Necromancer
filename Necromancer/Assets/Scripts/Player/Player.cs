@@ -282,7 +282,7 @@ public class Player : MonoBehaviour
         FxController fxSlash = fxInstance.GetComponent<FxController>();
         if (fxSlash != null)
         {
-            fxSlash.Initialize(slashClip, offset,facingRight);
+            fxSlash.Initialize(slashClip, transform ,facingRight, offset);
         }
         else
         {
@@ -643,6 +643,12 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Flip
+
+    public bool GetFacingRight()
+    {
+        return facingRight;
+    }
+
     //翻转
     public virtual void Flip()
     {

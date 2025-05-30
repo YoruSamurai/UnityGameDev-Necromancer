@@ -10,6 +10,8 @@ public class Component_近战攻击 : EnemyBehaviorComponent
 
     [SerializeField] private int combo;
     [SerializeField] private List<int> comboMove;
+    [SerializeField] private AnimationClip fxClip;
+    [SerializeField] private List<Vector2> fxOffsetList;
 
     public override void OnEnter()
     {
@@ -67,6 +69,10 @@ public class Component_近战攻击 : EnemyBehaviorComponent
             // 设置攻击冷却
             enemy.currentAttackCooldown = enemy.attackCooldown;
             enemy.stateMachine.ChangeState(enemy.chaseState);
+        }
+        if(triggerType == EnemyAnimationTriggerType.EnemyPreFX)
+        {
+            PlayFxManager.Instance.GenerateFX(fxClip, enemy.transform, enemy.facingRight, fxOffsetList[combo]);
         }
         if(triggerType == EnemyAnimationTriggerType.EnemyHitDetermineStart)
         {

@@ -24,22 +24,22 @@ MonoBehaviour:
     en: See you next time
     jp: "\u307E\u305F\u3069\u3053\u304B\u3067\u3002"
   - identifier: smith_talk_1_01
-    zh: "\u4F60\u597D"
+    zh: Whatever weapon you need strengthened
     zh_TW: 1
     en: 5
     jp: 3
   - identifier: smith_talk_1_02
-    zh: "\u597D\u554A"
+    zh: just give it to me.
     zh_TW: 2
     en: 6
     jp: 7
   - identifier: smith_talk_1_03
-    zh: "\u4E0D\u597D"
+    zh: just give it to me.eeeeeeeee
     zh_TW: 3
     en: 8
     jp: 6
   - identifier: smith_talk_1_04
-    zh: "\u518D\u89C1"
+    zh: '"Whatever weapon ydadsdsdadou need strengthened'
     zh_TW: 4
     en: 7
     jp: 2

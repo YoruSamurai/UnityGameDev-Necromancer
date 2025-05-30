@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,14 +22,35 @@ public class DialogueBubble : MonoBehaviour
     private Transform speakerTransform;
     private DialogueController dialogueController;
 
+    private bool isSingle;
+
+    //打字机
+    public bool isTyping = true;
+    private int currentCharacterIndex = 0;
+    private float typingSpeed = 0.05f; // 每个字符之间的延迟
+
+    private IEnumerator TypeText()
+    {
+        while (isTyping && currentCharacterIndex < dialogueText.Length)
+        {
+            text.text += dialogueText[currentCharacterIndex]; // 添加下一个字符
+            currentCharacterIndex++; // 移动到下一个字符
+            yield return new WaitForSeconds(typingSpeed); // 等待一段时间
+        }
+
+        isTyping = false; // 完成打字机效果
+    }
+
+
     public void Initialized(string _dialogueText, string _dialogueIdentifier, Transform _speakerTransform,
-        DialogueController controller,bool _isLastLine)
+        DialogueController controller,bool _isLastLine,bool _isSingle)
     {
         dialogueText = _dialogueText;
         dialogueIdentifier = _dialogueIdentifier;
         speakerTransform = _speakerTransform;
         dialogueController = controller;
         isLastLine = _isLastLine;
+        isSingle = _isSingle;
         RandomPitchPosition();
         timer = destroyTimer;
         SetText(dialogueText);
@@ -36,10 +58,14 @@ public class DialogueBubble : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer < 0)
+        if (isSingle)
         {
-            DestroySelf();
+            timer -= Time.deltaTime;
+            if (timer < 0)
+            {
+                DestroySelf();
+            }
+
         }
     }
 
@@ -48,7 +74,7 @@ public class DialogueBubble : MonoBehaviour
         // 通知 DialogueController 移除此气泡
         if(dialogueController != null)
         {
-            dialogueController.RemoveBubble(this);
+            dialogueController.RemoveBubble();
         }
         Destroy(gameObject);
     }
@@ -72,7 +98,9 @@ public class DialogueBubble : MonoBehaviour
             }
 
             // 更新位置
-            transform.position = new Vector3(currentPosition.x + randomXOffset, currentPosition.y + 1.5f, currentPosition.z);
+            transform.position = isSingle ? 
+                new Vector3(currentPosition.x + randomXOffset, currentPosition.y + 1.5f, currentPosition.z)
+                : new Vector3(currentPosition.x + 1f, currentPosition.y + 1f, currentPosition.z);
         }
     }
 
@@ -119,7 +147,17 @@ public class DialogueBubble : MonoBehaviour
 
     public void SetText(string message)
     {
-        text.text = message;
-        UpdateBackgroundSize();
+        dialogueText = message; // 存储完整的对话文本
+        currentCharacterIndex = 0; // 重置字符索引
+        isTyping = true; // 设置为打字机模式
+        text.text = ""; // 清空文本
+        StartCoroutine(TypeText());
+    }
+
+    public void SkipTyping()
+    {
+        StopAllCoroutines();
+        text.text = dialogueText;
+        isTyping = false;
     }
 }
