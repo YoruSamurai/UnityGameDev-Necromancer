@@ -4,26 +4,17 @@ using System.Linq;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : SingletonManagerBase<DialogueManager>
 {
-    public static DialogueManager Instance;
 
     [SerializeField] private GameObject dialogueControllerPrefab;
     [SerializeField] private LocalizedDialogueSO localizedDialogueSO;
 
     private Dictionary<string, LocalizedLine> localizedLines;
 
-    private void Awake()
+    protected override void Awake()
     {
-        // 确保实例唯一
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject); // 防止多个实例
-        }
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
     private void Start()

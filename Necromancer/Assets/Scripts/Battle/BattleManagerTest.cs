@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BattleManagerTest : MonoBehaviour
+public class BattleManagerTest : SingletonManagerBase<BattleManagerTest>
 {
 
-    public static BattleManagerTest Instance { get; private set; }
 
     //在这里我们存储所有装备和词条
     //[SerializeField] public List<BaseAffix> affixList;
@@ -20,15 +19,9 @@ public class BattleManagerTest : MonoBehaviour
     [SerializeField] private GameObject pickablePrefab;
     [SerializeField] private Transform pickableParent;
 
-
-    
-
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this.gameObject);
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
 

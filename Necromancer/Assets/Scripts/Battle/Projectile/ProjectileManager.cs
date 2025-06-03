@@ -2,24 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileManager : MonoBehaviour
+public class ProjectileManager : SingletonManagerBase<ProjectileManager>
 {
-    public static ProjectileManager Instance;
 
     [SerializeField] private GameObject projectileGeneratorPrefab;
 
 
-    private void Awake()
+    protected override void Awake()
     {
-        // 确保实例唯一
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject); // 防止多个实例
-        }
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
     public void GenerateProjectile(ProjectileSO _projectileSO,BaseEquipment _baseEquipment,bool facingRight ,Enemy _enemy,int combo)

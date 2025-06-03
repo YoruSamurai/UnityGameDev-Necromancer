@@ -1,19 +1,16 @@
 using LDtkUnity;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Yoru;
-using static RoomGraphGenerator;
 
-public class LevelManager : MonoBehaviour
+
+public class LevelManager : SingletonManagerBase<LevelManager>
 {
-    public static LevelManager Instance;
 
     private bool isInBattleLevel = true;
 
-    private RoomGraphGenerator roomGraph;
+    [SerializeField] private RoomGraphGenerator roomGraph;
 
     public List<ActualRoomData> roomDatas;
 
@@ -32,34 +29,30 @@ public class LevelManager : MonoBehaviour
 
     public float levelTimer = 0f; //  加入计时器变量
 
-    private void Awake()
+    protected override void Awake()
     {
-        // 确保实例唯一
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject); // 防止多个实例
-        }
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
 
-    private void Start()
+
+
+    public void InitLevel(int sceneIndex)
     {
         roomGraph = FindObjectOfType<RoomGraphGenerator>();
 
         if (roomGraph == null)
         {
             Debug.LogError("找不到 RoomGraphGenerator 脚本！");
+            return;
         }
-        else
-        {
-            Debug.Log("成功获取 RoomGraphGenerator：" + roomGraph.name);
-            roomDatas = roomGraph.roomDatas;
-        }
+
+        Debug.Log("成功获取 RoomGraphGenerator：" + roomGraph.name);
+        roomDatas = roomGraph.roomDatas;
+
         EventManager.Instance.AddListener(EventName.OnEnemyDead, KillEnemy);
+
+
         InitialEnemy(levelMonsterListSO, 1);
     }
 
@@ -226,9 +219,13 @@ public class LevelManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        int roomIndex = GetCurrentRoomMessage(PlayerStats.Instance.player.GetCurrentPosition(), roomDatas);
-        if(roomIndex != -1)
-            playerCurrentRoom = roomDatas[roomIndex];
+        if(PlayerStats.Instance != null)
+        {
+            int roomIndex = GetCurrentRoomMessage(PlayerStats.Instance.player.GetCurrentPosition(), roomDatas);
+            if(roomIndex != -1)
+                playerCurrentRoom = roomDatas[roomIndex];
+
+        }
 
     }
 

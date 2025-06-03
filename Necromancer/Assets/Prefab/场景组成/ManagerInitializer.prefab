@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6617818665926116698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3576512018580213742}
+  - component: {fileID: 3489943976753071564}
+  m_Layer: 0
+  m_Name: ManagerInitializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3576512018580213742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6617818665926116698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3489943976753071564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6617818665926116698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f5a96803077564a9df78e998b6687a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileManagerPrefab: {fileID: 4280941519815446537, guid: fbc591cb848598441b6d16b6aa2dc290, type: 3}
+  saveManagerPrefab: {fileID: 5242730623275232998, guid: 62e8f5fecc8908b4aa194ba53f4823d6, type: 3}
+  soundManagerPrefab: {fileID: 340848787598511021, guid: 60683e8af649e7d44961efa64f1647f2, type: 3}
+  playFxManagerPrefab: {fileID: 5986561613832365755, guid: 5b36bb30ab22658408dc663cbdbc9a66, type: 3}
+  dialogueManagerPrefab: {fileID: 2954713237147682137, guid: 94040b02a5bb8ff40b7846b636d3dfad, type: 3}
+  inventoryManagerPrefab: {fileID: 4591464159140035068, guid: f97be62fa366b4449b425991752609bd, type: 3}
+  levelManagerPrefab: {fileID: 7691205672776067547, guid: fb1c7a65e6c7e754d9434536e84cd1e4, type: 3}
+  eventManagerPrefab: {fileID: 1816476527817615977, guid: 9152646122d3f364ba83b09f52a396f8, type: 3}
+  objectPoolManagerPrefab: {fileID: 8072343637129809410, guid: 66f6f0068c9ce3942a86ea3286fd9271, type: 3}
+  battleManagerTestPrefab: {fileID: 7498678161863239213, guid: 9294fbf9c94cc0f4b8cdeb139264f903, type: 3}

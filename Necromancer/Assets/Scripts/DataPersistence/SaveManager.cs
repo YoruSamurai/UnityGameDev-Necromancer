@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public class SaveManager : SingletonManagerBase<SaveManager>
 {
-    public static SaveManager Instance { get; private set; }
 
     [SerializeField] private IDataPersistence dataService = new JsonDataService();
 
@@ -15,16 +14,9 @@ public class SaveManager : MonoBehaviour
     private HashSet<ISaveableSettingData> saveableSettingData = new HashSet<ISaveableSettingData>();
 
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
     private void Start()

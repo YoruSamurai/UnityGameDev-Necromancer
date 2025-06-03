@@ -28,6 +28,22 @@ public enum TilePostProcessType
     Church
 }
 
+//房间数据 存储了：房间 房间起始点 房间长度和宽度
+[Serializable]
+public class ActualRoomData
+{
+    public int roomID;
+    public LdtkLevelSO room;
+    public Vector2 startPosition;
+    public GameRoomType gameRoomType;
+    public float levelWidth;
+    public float levelHeight;
+    public List<DoorInfo> doorInfos;
+    public List<int> connectionRoom;
+    public List<LightPrefab> lightPrefabs;
+    public LDtkComponentLevel levelData;
+
+}
 public class RoomGraphGenerator : MonoBehaviour
 {
     //父节点 放地图
@@ -59,22 +75,6 @@ public class RoomGraphGenerator : MonoBehaviour
     // 新增种子变量
     [SerializeField] private int seed = 12345;
 
-    //房间数据 存储了：房间 房间起始点 房间长度和宽度
-    [Serializable]
-    public class ActualRoomData
-    {
-        public int roomID;
-        public LdtkLevelSO room;
-        public Vector2 startPosition;
-        public GameRoomType gameRoomType;
-        public float levelWidth;
-        public float levelHeight;
-        public List<DoorInfo> doorInfos;
-        public List<int> connectionRoom;
-        public List<LightPrefab> lightPrefabs;
-        public LDtkComponentLevel levelData;
-
-    }
 
 
 

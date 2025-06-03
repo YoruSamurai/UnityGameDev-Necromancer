@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : SingletonManagerBase<InventoryManager>
 {
 
-    public static InventoryManager Instance;
 
     public List<IEquipableItem> allItems = new();
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance != null) Destroy(gameObject);
-        else Instance = this;
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
     /// <summary>

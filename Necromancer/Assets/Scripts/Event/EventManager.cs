@@ -31,19 +31,14 @@ public static class EventTriggerExt
 /// <summary>
 /// 事件管理器
 /// </summary>
-public class EventManager : MonoBehaviour
+public class EventManager : SingletonManagerBase<EventManager>
 {
-    public static EventManager Instance { get; private set; }
 
     private Dictionary<string, EventHandler> handlerDic = new Dictionary<string, EventHandler>();
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this.gameObject);
-
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
 

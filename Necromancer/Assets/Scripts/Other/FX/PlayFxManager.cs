@@ -2,26 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayFxManager : MonoBehaviour
+public class PlayFxManager : SingletonManagerBase<PlayFxManager>
 {
-    public static PlayFxManager Instance;
 
     public ParticleSystem bloodLineParticle;
 
     [SerializeField] private GameObject fxControllerPrefab;
 
-    private void Awake()
+    protected override void Awake()
     {
-        // 确保实例唯一
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject); // 防止多个实例
-        }
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
     public void GenerateFX(AnimationClip clip, Transform spawner, bool facingRight, Vector2 offset)

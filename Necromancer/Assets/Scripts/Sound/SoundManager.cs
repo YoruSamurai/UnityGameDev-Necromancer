@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : SingletonManagerBase<SoundManager>
 {
     IObjectPool<SoundEmitter> soundEmitterPool;
     readonly List<SoundEmitter> activeSoundEmitters = new();
     public readonly Dictionary<SoundData,int> counts = new();
-
-    public static SoundManager Instance { get; private set; }
 
     [SerializeField] SoundEmitter soundEmitterPrefab;
     [SerializeField] bool collectionCheck = true;
@@ -17,16 +15,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] int maxPoolSize = 100;
     [SerializeField] int maxSoundInstances = 30;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
 

@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class ObjectPoolManager : MonoBehaviour
+public class ObjectPoolManager : SingletonManagerBase<ObjectPoolManager>
 {
     
-    [SerializeField] private bool _addToDontDestroyOnLoad = false;
 
     private GameObject _emptyHolder;
 
@@ -25,12 +24,14 @@ public class ObjectPoolManager : MonoBehaviour
     }
     public static PoolType PoolingType;
 
-    private void Awake()
+    protected override void Awake()
     {
         _objectPools = new Dictionary<GameObject, ObjectPool<GameObject>>();
         _cloneToPrefabMap = new Dictionary<GameObject, GameObject>();
 
         SetupEmpties();
+
+        base.Awake();
     }
 
     private void SetupEmpties()
@@ -45,8 +46,6 @@ public class ObjectPoolManager : MonoBehaviour
         _shadowCasterEmpty = new GameObject("ShadowCaster");
         _shadowCasterEmpty.transform.SetParent(_emptyHolder.transform, false);
 
-        if (_addToDontDestroyOnLoad)
-            DontDestroyOnLoad(_projectileEmpty.transform.root);
 
     }
 
