@@ -7,8 +7,9 @@ public class ManagerInitializer : MonoBehaviour
 
     public static ManagerInitializer Instance { get; private set; }
 
-    [SerializeField] private ProjectileManager projectileManagerPrefab;
     [SerializeField] private SaveManager saveManagerPrefab;
+    [SerializeField] private GlobalSettingManager globalSettingManagerPrefab;
+    [SerializeField] private ProjectileManager projectileManagerPrefab;
     [SerializeField] private SoundManager soundManagerPrefab;
     [SerializeField] private PlayFxManager playFxManagerPrefab;
     [SerializeField] private DialogueManager dialogueManagerPrefab;
@@ -18,7 +19,8 @@ public class ManagerInitializer : MonoBehaviour
     [SerializeField] private ObjectPoolManager objectPoolManagerPrefab;
     [SerializeField] private BattleManagerTest battleManagerTestPrefab;
     [SerializeField] private SceneGlobalManager sceneGlobalManagerPrefab;
-    
+    [SerializeField] private ArchiveManager archiveManagerPrefab;
+
     private void Awake()
     {
         // 单例检查
@@ -39,8 +41,10 @@ public class ManagerInitializer : MonoBehaviour
         float start = Time.realtimeSinceStartup;
         if (ProjectileManager.Instance == null && projectileManagerPrefab != null)
         {
-            Instantiate(projectileManagerPrefab);
+            Instantiate(archiveManagerPrefab);
             Instantiate(saveManagerPrefab);
+            Instantiate(globalSettingManagerPrefab);
+            Instantiate(projectileManagerPrefab);
             Instantiate(soundManagerPrefab);
             Instantiate(playFxManagerPrefab);
             Instantiate(dialogueManagerPrefab);

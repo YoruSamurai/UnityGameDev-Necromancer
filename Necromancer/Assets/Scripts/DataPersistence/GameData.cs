@@ -61,10 +61,33 @@ public class PlayerData
 {
     public int currentHealth;
     public int maxHealth;
+    public float healthPercentage;
+    public int strLevel;
+    public float strPercentage;
+    public int agileLevel;
+    public float agilePercentage;
+    public int magicLevel;
+    public float magicPercentage;
     public int soul;
     public int gold;
     public SerializableVector2 position; // 使用 SerializableVector2 保存位置
     // 添加其他需要保存的玩家属性
+
+    public PlayerData()
+    {
+        currentHealth = 100;
+        maxHealth = 100;
+        healthPercentage = 100;
+        strLevel = 1;
+        strPercentage = 100;
+        agileLevel = 1;
+        agilePercentage = 100;
+        magicLevel = 1;
+        magicPercentage = 100;
+        soul = 100;
+        gold = 50000;
+        position = new SerializableVector2(new Vector2(10f,5f));
+    }
 }
 
 [System.Serializable]

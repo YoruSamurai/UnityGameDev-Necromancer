@@ -26,10 +26,10 @@ public class SaveManager : SingletonManagerBase<SaveManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-            SaveGameData();
-        if (Input.GetKeyDown(KeyCode.O))
-            LoadGameData();
+        /*if (Input.GetKeyDown(KeyCode.I))
+            SaveGameData();*/
+        /*if (Input.GetKeyDown(KeyCode.O))
+            LoadGameData();*/
     }
 
     public void RegisterGameData(ISaveableGameData saveable) => saveableGamedata.Add(saveable);
@@ -89,8 +89,7 @@ public class SaveManager : SingletonManagerBase<SaveManager>
         }
         catch
         {
-            Debug.Log("No save file found, creating new game");
-            NewGame();
+            Debug.Log("No save file found, missing something?");
         }
     }
 
@@ -113,12 +112,40 @@ public class SaveManager : SingletonManagerBase<SaveManager>
 
     public void NewGame()
     {
-        gameData = new GameData();
-        foreach (var saveable in saveableGamedata)
+        gameData = ArchiveManager.Instance.CreateNewGameData();
+        dataService.SaveData("/gameData.json", gameData, false);
+        Debug.Log("New Game Saved, Load bar scene...");
+        SceneGlobalManager.Instance.ChangeSceneToIndex(1);
+    }
+
+    public void LoadGame()
+    {
+        try
         {
-            saveable.LoadData(gameData); // 用空数据初始化
+            gameData = dataService.LoadData<GameData>("/gameData.json", false);
+            Debug.Log("Game Loaded,Load bar scene...");
+            SceneGlobalManager.Instance.ChangeSceneToIndex(1);
+
+        }
+        catch
+        {
+            Debug.Log("No save file found, missing something?");
+        }
+
+    }
+
+    public void TryLoadGameData(int index)
+    {
+        if(index > 0)
+        {
+            Debug.Log("尝试加载数据呢。");
+            foreach (var saveable in saveableGamedata)
+            {
+                saveable.LoadData(gameData); // 用空数据初始化
+            }
+
         }
     }
 
-    
+
 }

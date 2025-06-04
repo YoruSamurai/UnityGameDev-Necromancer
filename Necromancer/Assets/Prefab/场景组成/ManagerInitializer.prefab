@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f5a96803077564a9df78e998b6687a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileManagerPrefab: {fileID: 4280941519815446537, guid: fbc591cb848598441b6d16b6aa2dc290, type: 3}
   saveManagerPrefab: {fileID: 5242730623275232998, guid: 62e8f5fecc8908b4aa194ba53f4823d6, type: 3}
+  globalSettingManagerPrefab: {fileID: 1904530641903560971, guid: 45f87229a00170f4c8cd864bdd60d4fe, type: 3}
+  projectileManagerPrefab: {fileID: 4280941519815446537, guid: fbc591cb848598441b6d16b6aa2dc290, type: 3}
   soundManagerPrefab: {fileID: 340848787598511021, guid: 60683e8af649e7d44961efa64f1647f2, type: 3}
   playFxManagerPrefab: {fileID: 5986561613832365755, guid: 5b36bb30ab22658408dc663cbdbc9a66, type: 3}
   dialogueManagerPrefab: {fileID: 2954713237147682137, guid: 94040b02a5bb8ff40b7846b636d3dfad, type: 3}
@@ -54,3 +55,5 @@ MonoBehaviour:
   eventManagerPrefab: {fileID: 1816476527817615977, guid: 9152646122d3f364ba83b09f52a396f8, type: 3}
   objectPoolManagerPrefab: {fileID: 8072343637129809410, guid: 66f6f0068c9ce3942a86ea3286fd9271, type: 3}
   battleManagerTestPrefab: {fileID: 7498678161863239213, guid: 9294fbf9c94cc0f4b8cdeb139264f903, type: 3}
+  sceneGlobalManagerPrefab: {fileID: 2964823404559095603, guid: 201a533ec29a6a947b7e5125cb7dfff4, type: 3}
+  archiveManagerPrefab: {fileID: 6178007831050028503, guid: e8ad83d69035fec43aef96a1019ce9e4, type: 3}

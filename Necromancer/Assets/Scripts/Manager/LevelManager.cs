@@ -40,14 +40,15 @@ public class LevelManager : SingletonManagerBase<LevelManager>
     public void InitLevel(int sceneIndex)
     {
         roomGraph = FindObjectOfType<RoomGraphGenerator>();
-
         if (roomGraph == null)
         {
-            Debug.LogError("找不到 RoomGraphGenerator 脚本！");
+            Debug.LogWarning("找不到 RoomGraphGenerator 脚本！");
             return;
         }
 
         Debug.Log("成功获取 RoomGraphGenerator：" + roomGraph.name);
+        roomGraph.StopAllCoroutines();
+        roomGraph.StartCoroutine(roomGraph.GenerateLevelTest());
         roomDatas = roomGraph.roomDatas;
 
         EventManager.Instance.AddListener(EventName.OnEnemyDead, KillEnemy);

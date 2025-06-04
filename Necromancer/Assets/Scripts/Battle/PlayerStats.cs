@@ -77,6 +77,13 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
             maxHealth = this.maxHealth,
             soul = this.soul,
             gold = this.gold,
+            healthPercentage = this.healthPercentage,
+            strLevel = this.strLevel,
+            strPercentage = this.strPercentage,
+            agileLevel = this.agileLevel,
+            agilePercentage = this.agilePercentage,
+            magicLevel = this.magicLevel,
+            magicPercentage = this.magicPercentage,
             position = new SerializableVector2(transform.position) // 保存位置
             // 其他需要保存的字段
         };
@@ -90,6 +97,13 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
             maxHealth = data.playerData.maxHealth;
             soul = data.playerData.soul;
             gold = data.playerData.gold;
+            healthPercentage = data.playerData.healthPercentage;
+            strLevel = data.playerData.strLevel;
+            strPercentage = data.playerData.strPercentage;
+            agileLevel = data.playerData.agileLevel;
+            agilePercentage = data.playerData.agilePercentage;
+            magicLevel = data.playerData.magicLevel;
+            magicPercentage = data.playerData.magicPercentage;
             Vector2 loadedPosition = data.playerData.position.ToVector2(); // 加载位置
             transform.position = new Vector3(loadedPosition.x, loadedPosition.y, transform.position.z); // 保持 z 坐标不变
             // 其他字段加载
@@ -102,13 +116,15 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
             Instance = this;
         else
             Destroy(this.gameObject);
-        //EventManager.Instance.AddListener(EventName.PlayerAttack, Test);
+        SaveManager.Instance.RegisterGameData(this);
     }
 
     private void OnDestroy()
     {
-        //EventManager.Instance.RemoveListener(EventName.PlayerAttack, Test);
+        SaveManager.Instance.UnregisterGameData(this);
     }
+
+
 
     private void Test(object sender, EventArgs e)
     {
@@ -123,7 +139,9 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
 
     private void Start()
     {
-        SaveManager.Instance.RegisterGameData(this);
+        player = GetComponent<Player>();
+        playerDetection = GetComponent<PlayerDetection>();
+        abilityInvoker = GetComponentInChildren<AbilityInvoker>();
         currentHealth = 100;
         maxHealth = 100;
         healthPercentage = 100;
@@ -133,14 +151,11 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
         agilePercentage = 100;
         magicLevel = 1;
         magicPercentage = 100;
-        player = GetComponent<Player>();
-        playerDetection = GetComponent<PlayerDetection>();
         soul = 100;
         gold = 50000;
-
-        abilityInvoker = GetComponentInChildren<AbilityInvoker>();
-
         canInterrupt = true;
+
+
     }
 
     

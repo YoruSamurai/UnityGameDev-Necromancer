@@ -198,9 +198,11 @@ public class MenuController : MonoBehaviour
 
     public void NewGameDiaLogBtnYes()
     {
-        Debug.Log("本来要开始新游戏的 但是先回去吧");
-        newGamePanelDialog.SetActive(false);
-        mainMenuPanel.SetActive(true);
+        //准备新的存档 保存到
+        SaveManager.Instance.NewGame();
+        Debug.Log("开始新游戏!");
+/*        newGamePanelDialog.SetActive(false);
+        mainMenuPanel.SetActive(true);*/
     }
     public void NewGameDiaLogBtnNo()
     {
@@ -211,9 +213,11 @@ public class MenuController : MonoBehaviour
 
     public void LoadGameDiaLogBtnYes()
     {
-        Debug.Log("本来要载入游戏的 但是先回去吧");
-        loadGamePanelDialog.SetActive(false);
-        mainMenuPanel.SetActive(true);
+
+        Debug.Log("载入游戏!");
+        SaveManager.Instance.LoadGame();
+        /*loadGamePanelDialog.SetActive(false);
+        mainMenuPanel.SetActive(true);*/
     }
     public void LoadGameDiaLogBtnNo()
     {

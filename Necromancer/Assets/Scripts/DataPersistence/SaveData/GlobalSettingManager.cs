@@ -6,9 +6,8 @@ using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class GlobalSettingManager : MonoBehaviour,ISaveableSettingData
+public class GlobalSettingManager : SingletonManagerBase<GlobalSettingManager>, ISaveableSettingData
 {
-    public static GlobalSettingManager Instance { get; private set; }
 
     /// <summary>
     /// 语言设置
@@ -27,7 +26,7 @@ public class GlobalSettingManager : MonoBehaviour,ISaveableSettingData
     /// <summary>
     /// 音量相关设置
     /// </summary>
-    public float globalVolume { get; set; }
+    [SerializeField] public float globalVolume { get; set; }
     public float musicVolume { get; set; }
     public float environmentVolume { get; set; }
     public float soundFxVolume { get; set; }
@@ -78,13 +77,9 @@ public class GlobalSettingManager : MonoBehaviour,ISaveableSettingData
     }
 
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this.gameObject);
-
+        base.Awake(); // 必须保留：处理单例与DDOL
     }
 
     private void Start()
