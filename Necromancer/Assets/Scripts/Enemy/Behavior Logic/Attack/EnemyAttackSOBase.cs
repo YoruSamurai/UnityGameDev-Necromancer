@@ -24,7 +24,7 @@ public class EnemyAttackSOBase : ScriptableObject
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        Debug.Log("caonima" + player);
+        //Debug.Log("caonima" + player);
         // 克隆 _components 中的每个组件，生成独立实例
         _componentInstances = new List<EnemyBehaviorComponent>();
         foreach (var comp in _components)

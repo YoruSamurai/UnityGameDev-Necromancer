@@ -50,7 +50,7 @@ public class RoomGraphGenerator : MonoBehaviour
     [SerializeField] private Transform mapParent;
 
     //关卡的所有图块
-    [SerializeField] private LdtkLevelSoList levelList;
+    [SerializeField] public LdtkLevelSoList levelList;
 
     //关卡后处理类型
     [SerializeField] private TilePostProcessType postProcessType;
@@ -104,6 +104,36 @@ public class RoomGraphGenerator : MonoBehaviour
         }
     }
 
+    public IEnumerator LoadLevel(List<ActualRoomData> _roomDatas)
+    {
+        // 清理旧关卡
+        ClearExistingLevels();
+        // 记录开始时间
+        DateTime startTime = DateTime.Now;
+        roomDatas = _roomDatas;
+        // 清理旧房间
+        for (int i = mapParent.childCount - 1; i >= 0; i--)
+        {
+            DestroyImmediate(mapParent.GetChild(i).gameObject);
+            yield return null; // 最好不要一次性删完所有，给渲染线程一点缓冲
+        }
+
+        // 实例化新房间
+        foreach (var room in roomDatas)
+        {
+            LDtkComponentLevel ldtkInstance = Instantiate(room.room.levelData, room.startPosition, Quaternion.identity, mapParent);
+            room.levelData = ldtkInstance;
+            yield return null; // 每生成一个房间，让出一帧
+        }
+        // 记录结束时间
+        DateTime endTime = DateTime.Now;
+        TimeSpan duration = endTime - startTime;
+        Debug.Log($"读取地图 执行时间: {duration.TotalMilliseconds} 毫秒");
+
+
+        yield break;
+    }
+
     public IEnumerator GenerateLevelTest()
     {
         // 记录开始时间
@@ -131,6 +161,10 @@ public class RoomGraphGenerator : MonoBehaviour
                     yield return new WaitForSecondsRealtime(stepTime);
                 }
                 tryNum++;
+                if(tryNum % 50 == 0)
+                {
+                    yield return null;
+                }
                 if (currentNode == 0 && currentParentNode == 0)
                 {
                     Debug.Log("生成完成 欧耶！" + "经过了" + tryNum + "次");
@@ -179,6 +213,7 @@ public class RoomGraphGenerator : MonoBehaviour
         for (int i = mapParent.childCount - 1; i >= 0; i--)
         {
             DestroyImmediate(mapParent.GetChild(i).gameObject);
+            yield return null; // 最好不要一次性删完所有，给渲染线程一点缓冲
         }
 
         // 实例化新房间
@@ -186,20 +221,21 @@ public class RoomGraphGenerator : MonoBehaviour
         {
             LDtkComponentLevel ldtkInstance = Instantiate(room.room.levelData, room.startPosition, Quaternion.identity, mapParent);
             room.levelData = ldtkInstance;
+            yield return null; // 每生成一个房间，让出一帧
         }
         // 记录结束时间
         DateTime endTime = DateTime.Now;
         TimeSpan duration = endTime - startTime;
         Debug.Log($"GenerateLevelTest 执行时间: {duration.TotalMilliseconds} 毫秒");
 
-        StartCoroutine( PostProcessTile(TilePostProcessType.Church));
+        
         yield break;
     }
 
     [SerializeField] private TileBase blackTile;
     [SerializeField] private Tilemap blackTilemap;
 
-    private IEnumerator PostProcessTile(TilePostProcessType postProcessType)
+    public IEnumerator PostProcessTile(TilePostProcessType postProcessType)
     {
         // 记录开始时间
         DateTime startTime = DateTime.Now;
@@ -239,6 +275,7 @@ public class RoomGraphGenerator : MonoBehaviour
                                 maxY = Mathf.Max(maxY, tilePos.y);
                             }
                         }
+                        yield return null;
                     }
 
                     // 在整个地图范围内，填充未被占用的格子为黑色
@@ -252,6 +289,7 @@ public class RoomGraphGenerator : MonoBehaviour
                                 blackTilemap.SetTile(pos, blackTile);
                             }
                         }
+                        yield return null;
                     }
 
                     Debug.Log("黑色 tile 后处理完成");

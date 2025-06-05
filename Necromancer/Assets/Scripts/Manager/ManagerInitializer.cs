@@ -41,8 +41,8 @@ public class ManagerInitializer : MonoBehaviour
         float start = Time.realtimeSinceStartup;
         if (ProjectileManager.Instance == null && projectileManagerPrefab != null)
         {
-            Instantiate(archiveManagerPrefab);
             Instantiate(saveManagerPrefab);
+            Instantiate(archiveManagerPrefab);
             Instantiate(globalSettingManagerPrefab);
             Instantiate(projectileManagerPrefab);
             Instantiate(soundManagerPrefab);

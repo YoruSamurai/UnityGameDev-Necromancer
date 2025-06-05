@@ -102,7 +102,7 @@ public class SaveManager : SingletonManagerBase<SaveManager>
             {
                 saveable.LoadData(settingData);
             }
-            Debug.Log("Game Loaded");
+            Debug.Log("Game Setting Loaded");
         }
         catch
         {
@@ -115,7 +115,7 @@ public class SaveManager : SingletonManagerBase<SaveManager>
         gameData = ArchiveManager.Instance.CreateNewGameData();
         dataService.SaveData("/gameData.json", gameData, false);
         Debug.Log("New Game Saved, Load bar scene...");
-        SceneGlobalManager.Instance.ChangeSceneToIndex(1);
+        SceneGlobalManager.Instance.ChangeSceneToIndexAsync(1);
     }
 
     public void LoadGame()
@@ -123,8 +123,8 @@ public class SaveManager : SingletonManagerBase<SaveManager>
         try
         {
             gameData = dataService.LoadData<GameData>("/gameData.json", false);
-            Debug.Log("Game Loaded,Load bar scene...");
-            SceneGlobalManager.Instance.ChangeSceneToIndex(1);
+            Debug.Log("Game Loaded,Load scene...");
+            SceneGlobalManager.Instance.LoadSceneWithGameData(gameData);
 
         }
         catch
@@ -141,7 +141,7 @@ public class SaveManager : SingletonManagerBase<SaveManager>
             Debug.Log("尝试加载数据呢。");
             foreach (var saveable in saveableGamedata)
             {
-                saveable.LoadData(gameData); // 用空数据初始化
+                saveable.LoadData(gameData); 
             }
 
         }

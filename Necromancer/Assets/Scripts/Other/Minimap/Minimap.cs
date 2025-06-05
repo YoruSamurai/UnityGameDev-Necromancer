@@ -1,13 +1,8 @@
 using LDtkUnity;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
-using static Cinemachine.DocumentationSortingAttribute;
-using static RoomGraphGenerator;
 
 public class Minimap : MonoBehaviour
 {
@@ -32,7 +27,7 @@ public class Minimap : MonoBehaviour
     int minX = int.MaxValue, maxX = int.MinValue;
     int minY = int.MaxValue, maxY = int.MinValue;
 
-    private RoomGraphGenerator roomGraphGenerator;
+    [SerializeField] private RoomGraphGenerator roomGraphGenerator;
 
     public int mapOffset = 20;
 
@@ -50,6 +45,10 @@ public class Minimap : MonoBehaviour
     void Start()
     {
         player = playerTransform.GetComponent<Player>();
+    }
+
+    public void Initialize()
+    {
         InitialMinimap();
         InitialMapTile();
     }
@@ -256,6 +255,10 @@ public class Minimap : MonoBehaviour
 
     void Update()
     {
+        if (!LevelManager.Instance.levelIsLoaded)
+            return;
+
+
         Vector2Int playerTilePos = new Vector2Int(
             Mathf.RoundToInt(playerTransform.position.x * pixelPerUnit),
             Mathf.RoundToInt(playerTransform.position.y * pixelPerUnit)
@@ -297,6 +300,9 @@ public class Minimap : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!LevelManager.Instance.levelIsLoaded)
+            return;
+
         Vector2Int playerTilePos = new Vector2Int(
             Mathf.RoundToInt(playerTransform.position.x * pixelPerUnit),
             Mathf.RoundToInt(playerTransform.position.y * pixelPerUnit)

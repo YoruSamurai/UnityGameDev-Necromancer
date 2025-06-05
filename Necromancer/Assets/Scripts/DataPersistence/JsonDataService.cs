@@ -25,7 +25,7 @@ public class JsonDataService : IDataPersistence
             }
             using FileStream stream = File.Create(path);
             stream.Close();
-            File.WriteAllText(path, JsonConvert.SerializeObject(Data));
+            File.WriteAllText(path, JsonConvert.SerializeObject(Data,Formatting.Indented));
             return true;
         }
         catch (Exception e)

@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 // 新建ISaveable接口
 
@@ -21,6 +23,7 @@ public interface ISaveableSettingData
 public class GameData
 {
     public PlayerData playerData;
+    public SceneData sceneData;
     // 可以添加其他需要保存的数据类（如InventoryData、SettingsData等）
 }
 
@@ -55,6 +58,24 @@ public class LanguageSettingData
 {
     public LanguageEnum language;
 }
+
+/// <summary>
+/// 这个应该是全局信息 比如死了多少次 杀了多少人 游戏时长 解鎖信息 什么的
+/// </summary>
+public class GlobalData
+{
+
+}
+
+public class SceneData
+{
+    public string currentSceneName;
+    public string ldtkLevelListName;
+    public List<SerializableMonsterData> roomMonsters;
+    public List<SerializableRoomData> roomDatas;
+
+}
+
 
 [System.Serializable]
 public class PlayerData
@@ -106,4 +127,29 @@ public class SerializableVector2
     {
         return new Vector2(x, y);
     }
+}
+
+[Serializable]
+public class SerializableRoomData
+{
+    public int roomID;
+    public string roomName; // 从 LdtkLevelSO 改为名字或GUID
+    public SerializableVector2 startPosition;
+    public GameRoomType gameRoomType;
+    public float levelWidth;
+    public float levelHeight;
+    //public List<DoorInfo> doorInfos;
+    public List<int> connectionRoom;
+}
+
+[Serializable]
+public class SerializableMonsterData
+{
+    public int monsterIndex;
+    public string monster;
+    public int roomIndex;
+    public int roomSpawnPointIndex;
+    public bool isDead;
+    public float xPosition;
+    public float yPosition;
 }

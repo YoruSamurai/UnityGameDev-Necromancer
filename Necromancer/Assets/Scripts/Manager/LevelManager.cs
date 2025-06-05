@@ -1,16 +1,28 @@
 using LDtkUnity;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static LdtkTest;
 
 
 public class LevelManager : SingletonManagerBase<LevelManager>
 {
 
+    /// <summary>
+    /// 关卡是否已加载完成？
+    /// </summary>
+    public bool levelIsLoaded;
+
     private bool isInBattleLevel = true;
 
     [SerializeField] private RoomGraphGenerator roomGraph;
+
+    public LdtkLevelSoList GetLdtkLevelSoList()
+    {
+        return roomGraph.levelList;
+    }
 
     public List<ActualRoomData> roomDatas;
 
@@ -19,9 +31,9 @@ public class LevelManager : SingletonManagerBase<LevelManager>
 
     [SerializeField] private Transform monsterParentTransform;
 
-    [SerializeField] private LevelMonsterListSO levelMonsterListSO;
+    [SerializeField] public LevelMonsterListSO levelMonsterListSO;
 
-    [SerializeField] private List<LevelMonsterData> levelMonsterDatas;
+    [SerializeField] public List<LevelMonsterData> levelMonsterDatas;
 
     public ActualRoomData playerCurrentRoom;
 
@@ -35,27 +47,79 @@ public class LevelManager : SingletonManagerBase<LevelManager>
     }
 
 
-
-
     public void InitLevel(int sceneIndex)
     {
+        StartCoroutine(InitLevelCoroutine(sceneIndex));
+    }
+    public IEnumerator InitLevelCoroutine(int sceneIndex)
+    {
+        levelIsLoaded = false;
         roomGraph = FindObjectOfType<RoomGraphGenerator>();
         if (roomGraph == null)
         {
-            Debug.LogWarning("找不到 RoomGraphGenerator 脚本！");
-            return;
+            Debug.LogWarning("找不到 RoomGraphGenerator 脚本！可能是主菜单 也可能是Rest/Boss");
+            SceneGlobalManager.Instance.loadProgress = -1;
+            yield break;
         }
-
+        SceneGlobalManager.Instance.loadProgress = 1;
         Debug.Log("成功获取 RoomGraphGenerator：" + roomGraph.name);
         roomGraph.StopAllCoroutines();
-        roomGraph.StartCoroutine(roomGraph.GenerateLevelTest());
+        yield return StartCoroutine(roomGraph.GenerateLevelTest());
         roomDatas = roomGraph.roomDatas;
-
+        SceneGlobalManager.Instance.loadProgress = 2;
+        yield return StartCoroutine(roomGraph.PostProcessTile(TilePostProcessType.Church));
         EventManager.Instance.AddListener(EventName.OnEnemyDead, KillEnemy);
 
 
         InitialEnemy(levelMonsterListSO, 1);
+        SceneGlobalManager.Instance.loadProgress = 3;
+        Debug.Log("[LevelManager] InitLevelCoroutine 完成 -- 开始生成小地图 和阴影");
+        Minimap minimap = FindObjectOfType<Minimap>();
+        minimap.Initialize();
+
+        SceneGlobalManager.Instance.loadProgress = -1;
+        levelIsLoaded = true;
+
     }
+
+    public void InitLevel(int sceneIndex , GameData gameData)
+    {
+        StartCoroutine(InitLevelCoroutine(sceneIndex,gameData));
+    }
+
+    public IEnumerator InitLevelCoroutine(int sceneIndex , GameData gameData)
+    {
+        levelIsLoaded = false;
+        roomGraph = FindObjectOfType<RoomGraphGenerator>();
+        if (roomGraph == null)
+        {
+            Debug.LogWarning("找不到 RoomGraphGenerator 脚本！怎么会这样？");
+            SceneGlobalManager.Instance.loadProgress = -1;
+            yield break;
+        }
+
+        SceneGlobalManager.Instance.loadProgress = 11;
+        Debug.Log("成功获取 RoomGraphGenerator：" + roomGraph.name);
+        roomGraph.StopAllCoroutines();
+        yield return StartCoroutine(roomGraph.LoadLevel(roomDatas));
+        roomDatas = roomGraph.roomDatas;
+        SceneGlobalManager.Instance.loadProgress = 12;
+        yield return StartCoroutine(roomGraph.PostProcessTile(TilePostProcessType.Church));
+        EventManager.Instance.AddListener(EventName.OnEnemyDead, KillEnemy);
+
+
+        InitialEnemy(levelMonsterDatas, 1);
+        SceneGlobalManager.Instance.loadProgress = 3;
+        Debug.Log("[LevelManager] InitLevelCoroutine 完成 -- 开始生成小地图 和阴影");
+        Minimap minimap = FindObjectOfType<Minimap>();
+        minimap.Initialize();
+
+        SceneGlobalManager.Instance.loadProgress = -1;
+        levelIsLoaded = true;
+
+    }
+
+    
 
     public void EnableLightInRoom(int roomIndex)
     {
@@ -74,12 +138,28 @@ public class LevelManager : SingletonManagerBase<LevelManager>
 
     public void AddLightPrefab(LightPrefab lightPrefab, LDtkComponentLevel level)
     {
+        Debug.Log(lightPrefab);
         foreach(var room in roomDatas)
         {
             if (room.levelData == level)
             {
+                Debug.Log(8423);
                 room.lightPrefabs.Add(lightPrefab);
             }
+        }
+    }
+
+    private void InitialEnemy(List<LevelMonsterData> monsterDatas,int difficulty)
+    {
+        foreach(var monsterData in monsterDatas)
+        {
+            Vector3 startPos = new Vector3(monsterData.xPosition, monsterData.yPosition, 0);
+            GameObject monster = Instantiate(monsterData.monster);
+
+            // 去掉 (Clone)，设为原 prefab 的名字，或者你想要的格式
+            monster.name = monsterData.monster.name;
+            monsterData.monster = monster;
+            monster.transform.position = startPos;
         }
     }
 
@@ -174,12 +254,16 @@ public class LevelManager : SingletonManagerBase<LevelManager>
                         }
                     }
 
-                    GameObject monster = Instantiate(
+                    /*GameObject monster = Instantiate(
                         canGenerateMonsterList[UnityEngine.Random.Range(0,canGenerateMonsterList.Count)],
                         spawnPos,
                         Quaternion.identity,
-                        monsterParentTransform);
+                        monsterParentTransform);*/
+                    GameObject prefab = canGenerateMonsterList[UnityEngine.Random.Range(0, canGenerateMonsterList.Count)];
+                    GameObject monster = Instantiate(prefab, spawnPos, Quaternion.identity, monsterParentTransform);
 
+                    // 去掉 (Clone)，设为原 prefab 的名字，或者你想要的格式
+                    monster.name = prefab.name;
                     levelMonsterDatas.Add(new LevelMonsterData(enemyIndex, monster, roomData.roomID, i, false, 0, 0));
 
                     MonsterStats monsterStats = monster.GetComponent<MonsterStats>();
@@ -220,7 +304,11 @@ public class LevelManager : SingletonManagerBase<LevelManager>
 
     private void FixedUpdate()
     {
-        if(PlayerStats.Instance != null)
+        if (!levelIsLoaded)
+        {
+            return;
+        }
+        if (PlayerStats.Instance != null)
         {
             int roomIndex = GetCurrentRoomMessage(PlayerStats.Instance.player.GetCurrentPosition(), roomDatas);
             if(roomIndex != -1)
@@ -234,6 +322,10 @@ public class LevelManager : SingletonManagerBase<LevelManager>
 
     private void Update()
     {
+        if (!levelIsLoaded)
+        {
+            return;
+        }
         if (playerCurrentRoom != null)
         {
             if (CanCountTime())
@@ -327,13 +419,13 @@ public class LevelManager : SingletonManagerBase<LevelManager>
 [Serializable]
 public class LevelMonsterData
 {
-    int monsterIndex;
+    public int monsterIndex;
     public GameObject monster;
-    private int roomIndex;
-    int roomSpawnPointIndex;
-    private bool isDead;
-    private float xPosition;
-    private float yPosition;
+    public int roomIndex;
+    public int roomSpawnPointIndex;
+    public bool isDead;
+    public float xPosition;
+    public float yPosition;
     
     public LevelMonsterData(int monsterIndex, GameObject monster, int roomIndex, int roomSpawnPointIndex, bool isDead, float xPosition, float yPosition)
     {

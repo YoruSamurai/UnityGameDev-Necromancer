@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/Scenes/\u4E3B\u83DC\u5355/\u4E3B\u83DC\u5355.unity"
+    path: "Assets/Scenes/\u4E3B\u83DC\u5355/Main.unity"
     guid: 2c3c5b9a2b48d614488a83dd6ee1da77
   - enabled: 1
-    path: "Assets/Scenes/\u4EBA\u7269\u79FB\u52A8+\u6218\u6597\u7CFB\u7EDF.unity"
-    guid: dee7725647eb02e49bf5a895227e3e9b
+    path: Assets/Scenes/Rest_Bar.unity
+    guid: 28261302768449a4c8b10c7a109df1e4
+  - enabled: 1
+    path: Assets/Scenes/Battle_Church.unity
+    guid: 2a66cf7d94ff33e429ae72f78d124cf6
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 663ec7de6e703e341827074250e04ec7, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 57b205080f042484297f561b10814107, type: 2}
