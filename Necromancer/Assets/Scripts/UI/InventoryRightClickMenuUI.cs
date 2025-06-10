@@ -84,7 +84,7 @@ public class InventoryRightClickMenuUI : MonoBehaviour
                 if (item.GetEquipableItemName() == currentItem.GetEquipableItemName())
                 {
                     Debug.Log("交换这个");
-                    item.transform.SetParent(PlayerStats.Instance.secondaryWeaponParent);
+                    item.transform.SetParent(PlayerStats.Instance.subWeaponParent);
                     item.OnEquip();
                     PlayerStats.Instance.baseEquipment2 = item;
                 }
@@ -105,7 +105,7 @@ public class InventoryRightClickMenuUI : MonoBehaviour
                     Debug.Log("交换这个");
                     PlayerStats.Instance.baseEquipment2.OnUnequip();
                     PlayerStats.Instance.baseEquipment2.transform.SetParent(PlayerStats.Instance.inventoryEquipmentParent);
-                    item.transform.SetParent(PlayerStats.Instance.secondaryWeaponParent);
+                    item.transform.SetParent(PlayerStats.Instance.subWeaponParent);
                     item.OnEquip();
                     PlayerStats.Instance.baseEquipment2 = item;
                 }

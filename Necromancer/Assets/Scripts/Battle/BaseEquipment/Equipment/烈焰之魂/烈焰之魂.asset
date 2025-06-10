@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976b2c7da6afe244685ca26984ad687a, type: 3}
   m_Name: "\u70C8\u7130\u4E4B\u9B42"
   m_EditorClassIdentifier: 
+  equipmentID: 1101
   equipmentName: "\u70C8\u7130\u4E4B\u9B42"
   baseDmg: 300
   equipmentSprite: {fileID: 1217000521, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
@@ -27,6 +28,8 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 09e9f537aa3f2eb40989b9cb9d2e5d9e, type: 2}
   slashOffsets:
   - {x: 1, y: 0}
+  normalHitSfx: {fileID: 0}
+  critHitSfx: {fileID: 0}
   fullComboAttackTimes: 1
   projectileSO: {fileID: 11400000, guid: 63f53da9d76588b4292203234c4f7d40, type: 2}
   staffAttacks:

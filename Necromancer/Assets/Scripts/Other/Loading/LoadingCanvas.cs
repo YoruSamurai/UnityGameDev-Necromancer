@@ -12,6 +12,9 @@ public class LoadingCanvas : MonoBehaviour
     {
         switch (progress)
         {
+            case 100:
+                loadingProgress.text = "保存数据中";
+                break;
             case 10:
                 loadingProgress.text = "加载场景中";
                 break;

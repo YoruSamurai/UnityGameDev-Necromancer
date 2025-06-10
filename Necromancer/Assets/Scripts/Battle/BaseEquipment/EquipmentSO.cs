@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Battle/Equipment")]
 public class EquipmentSO : ScriptableObject
 {
+    [Header("装备ID")]
+    public int equipmentID;
+
     [Header("装备名称")]
     public string equipmentName;
 

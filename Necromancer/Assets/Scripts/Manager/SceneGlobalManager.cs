@@ -3,6 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum SaveAndLoadType
+{
+    LoadSceneWithGameData,
+    SLinGameNormalProcess,
+    DeadAndBackToBar,
+    SaveAndBackToMenu,
+    StartNewGame,
+    etc,
+}
+
 public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
 {
 
@@ -12,31 +22,53 @@ public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
     protected override void Awake()
     {
         base.Awake(); // 必须保留：处理单例与DDOL
-        ManualInitScene(SceneManager.GetActiveScene());
+        //调试用
+        Scene newScene = SceneManager.GetActiveScene();
+        if(newScene.buildIndex != 0)
+        {
+            ManualInitScene(SceneManager.GetActiveScene());
+
+        }
         loadingCanvas = GetComponentInChildren<LoadingCanvas>();
         loadingCanvas.gameObject.SetActive(false);
     }
 
 
 
-
-    public void ChangeSceneToIndexAsync(string name)
+    /// <summary>
+    /// 通过场景名异步切换场景
+    /// </summary>
+    /// <param name="name"></param>
+    public void ChangeSceneToIndexAsync(string name, SaveAndLoadType slType)
     {
-        StartCoroutine(LoadSceneAsync(true, -1, name));
+        StartCoroutine(LoadSceneAsync(true, -1, name, slType));
 
     }
 
-    public void ChangeSceneToIndexAsync(int index)
+    /// <summary>
+    /// 通过场景index切换
+    /// </summary>
+    /// <param name="index"></param>
+    public void ChangeSceneToIndexAsync(int index, SaveAndLoadType slType)
     {
-        StartCoroutine(LoadSceneAsync(false, index, null));
+        StartCoroutine(LoadSceneAsync(false, index, null, slType));
     }
 
-    public void LoadSceneWithGameData(GameData gameData)
+    /// <summary>
+    /// 读取游戏数据 进入场景时加载，在载入游戏的时候使用
+    /// </summary>
+    /// <param name="gameData"></param>
+    public void LoadSceneWithGameData(GameData gameData, SaveAndLoadType slType)
     {
-        StartCoroutine(LoadSceneAsync(gameData));
+        StartCoroutine(LoadSceneAsync(gameData,slType));
     }
 
-    IEnumerator LoadSceneAsync(GameData gameData)
+    /// <summary>
+    /// 加载场景实际函数（通过gameData）
+    /// </summary>
+    /// <param name="gameData"></param>
+    /// <returns></returns>
+    IEnumerator LoadSceneAsync(GameData gameData, SaveAndLoadType slType)
     {
         LevelManager.Instance.levelIsLoaded = false;
         loadProgress = 0;
@@ -99,12 +131,19 @@ public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
         Debug.Log("[LoadSceneAsync] 一切完成，进入场景");
     }
 
-
-    IEnumerator LoadSceneAsync(bool viaString, int index ,string sceneString)
+    /// <summary>
+    /// 加载场景实际函数（不通过gameData）
+    /// </summary>
+    /// <param name="viaString"></param>
+    /// <param name="index"></param>
+    /// <param name="sceneString"></param>
+    /// <returns></returns>
+    IEnumerator LoadSceneAsync(bool viaString, int index ,string sceneString, SaveAndLoadType slType)
     {
         LevelManager.Instance.levelIsLoaded = false;
-        loadProgress = 0;
+        loadProgress = 100;
         loadingCanvas.gameObject.SetActive(true);
+        yield return StartCoroutine(PreHandleLoadScene(slType));
         AsyncOperation asyncLoad = new AsyncOperation();
         if (viaString)
         {
@@ -142,6 +181,13 @@ public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
         // 确保下一帧场景完全初始化完成
         yield return null;
         Debug.Log("等待完成");
+
+
+
+        yield return StartCoroutine(PostHandleLoadScene(slType));
+        
+        
+        
         // 获取当前场景
         Scene newScene = SceneManager.GetActiveScene();
         ManualInitScene(newScene);
@@ -154,22 +200,45 @@ public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
             yield return new WaitForSecondsRealtime(.2f); // 加这句非常关键！！否则主线程会死锁
         }
 
-
         Time.timeScale = 1f;
         yield return new WaitForSecondsRealtime(.2f);
         loadingCanvas.gameObject.SetActive(false);
         Debug.Log("[LoadSceneAsync] 一切完成，进入场景");
     }
 
+    /// <summary>
+    /// 在加载前的预处理 保存
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator PreHandleLoadScene(SaveAndLoadType slType)
+    {
+        yield return StartCoroutine(SaveManager.Instance.SaveGameData(slType));
+    }
+
+    /// <summary>
+    /// 加载场景的后处理 大概率是载入数据
+    /// </summary>
+    /// <param name="slType"></param>
+    /// <returns></returns>
+    IEnumerator PostHandleLoadScene(SaveAndLoadType slType)
+    {
+        yield return StartCoroutine(SaveManager.Instance.LoadGameAsync(slType));
+    }
+
+    /// <summary>
+    /// 加载进场景 开始做初始化工作 
+    /// </summary>
+    /// <param name="scene"></param>
     private void ManualInitScene(Scene scene)
     {
         int index = scene.buildIndex;
         Debug.Log($"[SceneInitializer] Scene Loaded: {scene.name}");
-        
-        if(SaveManager.Instance != null)
+
+        if(InventoryManager.Instance != null)
         {
-            SaveManager.Instance.TryLoadGameData(index);
+            InventoryManager.Instance.InitInventory(index);
         }
+
         if (LevelManager.Instance != null)
         {
             LevelManager.Instance.InitLevel(index);
@@ -180,6 +249,11 @@ public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
         // if (scene.name == "BattleScene") {...}
     }
 
+    /// <summary>
+    /// 加载进场景 开始做初始化工作（通过gamedata）
+    /// </summary>
+    /// <param name="scene"></param>
+    /// <param name="gameData"></param>
     private void ManualInitScene(Scene scene,GameData gameData)
     {
         int index = scene.buildIndex;
@@ -187,9 +261,15 @@ public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
 
         if (SaveManager.Instance != null)
         {
-            SaveManager.Instance.TryLoadGameData(index);
+            SaveManager.Instance.TryLoadGameData(index,SaveAndLoadType.LoadSceneWithGameData);
         }
         Debug.Log("加载数据完成");
+
+        if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.InitInventory(index);
+        }
+
         if (LevelManager.Instance != null)
         {
             LevelManager.Instance.InitLevel(index , gameData);
@@ -201,11 +281,6 @@ public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
     }
 
 
-    private void LoadMainScene(Scene scene, LoadSceneMode mode)
-    {
-
-    }
-
     private void Update()
     {
         //回到主菜单 このときはまず保存します 但是要看是不是主菜单 是就不管了
@@ -213,12 +288,23 @@ public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
         {
             if(SceneManager.GetActiveScene().buildIndex != 0)
             {
-                SaveManager.Instance.SaveGameData();
-                ChangeSceneToIndexAsync(0);
+                ChangeSceneToIndexAsync(0,SaveAndLoadType.SaveAndBackToMenu);
             }
             else
             {
                 Debug.LogWarning("不要在主界面保存好吗");
+            }
+        }
+        //回到酒吧 このときはまず保存します 但是要看是不是主菜单 是就不管了
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+            {
+                ChangeSceneToIndexAsync(1, SaveAndLoadType.DeadAndBackToBar);
+            }
+            else
+            {
+                Debug.LogWarning("不要在主界面做这种事情好吗");
             }
         }
 
@@ -229,6 +315,11 @@ public class SceneGlobalManager : SingletonManagerBase<SceneGlobalManager>
     public string GetCurrentSceneName()
     {
         return SceneManager.GetActiveScene().name; 
+    }
+
+    public int GetCurrentSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
     }
 
 

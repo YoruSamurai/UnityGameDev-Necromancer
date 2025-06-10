@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2983a8eaa3b02d148beac7c923c9bb64, type: 3}
   m_Name: "\u5C0F\u6728\u76FE"
   m_EditorClassIdentifier: 
+  equipmentID: 1201
   equipmentName: "\u5C0F\u6728\u76FE"
   baseDmg: 0
   equipmentSprite: {fileID: -681768602, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
@@ -23,6 +24,10 @@ MonoBehaviour:
   attackAnimator: {fileID: 22100000, guid: a4052f8882e5ce44baaa9eb07d68a49b, type: 2}
   comboAnimations:
   - {fileID: 7400000, guid: 4ceadcba28defab49b5a640369222766, type: 2}
+  slashAnimations: []
+  slashOffsets: []
+  normalHitSfx: {fileID: 0}
+  critHitSfx: {fileID: 0}
   fullComboAttackTimes: 1
   shieldAttacks:
   - attackTime: 0.3

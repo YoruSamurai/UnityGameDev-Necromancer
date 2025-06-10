@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3d74c8111e9004090d9a52a8ac8378, type: 3}
   m_Name: "\u7075\u9B42\u4E4B\u9524"
   m_EditorClassIdentifier: 
+  equipmentID: 1004
   equipmentName: "\u7075\u9B42\u4E4B\u9524"
   baseDmg: 300
   equipmentSprite: {fileID: -569212648, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
@@ -26,6 +27,8 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 1f33002bfb89068439c924b59c6fb220, type: 2}
   slashAnimations: []
   slashOffsets: []
+  normalHitSfx: {fileID: 0}
+  critHitSfx: {fileID: 0}
   fullComboAttackTimes: 2
   meleeAttacks:
   - attackTime: 1
@@ -39,6 +42,7 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 2
     chargeThreshold: 0.5
+    attackSfx: {fileID: 0}
   - attackTime: 1
     attackMag: 1
     attackStun: 20
@@ -50,3 +54,4 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 2
     chargeThreshold: 0.5
+    attackSfx: {fileID: 0}

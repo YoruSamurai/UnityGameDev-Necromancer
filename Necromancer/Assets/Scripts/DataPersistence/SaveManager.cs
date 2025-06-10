@@ -38,21 +38,28 @@ public class SaveManager : SingletonManagerBase<SaveManager>
     public void RegisterSettingData(ISaveableSettingData saveable) => saveableSettingData.Add(saveable);
     public void UnregisterSettingData(ISaveableSettingData saveable) => saveableSettingData.Remove(saveable);
 
-    public void SaveGameData()
+
+    public IEnumerator SaveGameData(SaveAndLoadType slType)
     {
         if(saveableGamedata.Count == 0)
         {
             Debug.Log("还没有进入游戏 无法保存当前游戏数据");
-            return;
+            yield break;
         }
-
+        if(slType == SaveAndLoadType.StartNewGame)
+        {
+            Debug.LogWarning("现在是开始游戏 不用保存鹅");
+        }
+        float startTime = Time.realtimeSinceStartup;
         foreach (var saveable in saveableGamedata)
         {
-            saveable.SaveData(gameData);
+            saveable.SaveData(gameData,slType);
+            yield return null;  // 分帧执行
         }
 
         dataService.SaveData("/gameData.json", gameData, false);
-        Debug.Log("Game Saved");
+        float elapsedTime = Time.realtimeSinceStartup - startTime;
+        Debug.Log($"花费时间 {elapsedTime}s Data Saved to: {Application.persistentDataPath}/gameData.json");
     }
 
     public void SaveSettingData()
@@ -75,23 +82,6 @@ public class SaveManager : SingletonManagerBase<SaveManager>
 
     }
 
-    public void LoadGameData()
-    {
-        try
-        {
-            gameData = dataService.LoadData<GameData>("/gameData.json", false);
-
-            foreach (var saveable in saveableGamedata)
-            {
-                saveable.LoadData(gameData);
-            }
-            Debug.Log("Game Loaded");
-        }
-        catch
-        {
-            Debug.Log("No save file found, missing something?");
-        }
-    }
 
     public void LoadSettingData()
     {
@@ -110,12 +100,15 @@ public class SaveManager : SingletonManagerBase<SaveManager>
         }
     }
 
+    /// <summary>
+    /// 虽然创建了gamedata 但似乎并没有赋值给玩家？ 
+    /// </summary>
     public void NewGame()
     {
         gameData = ArchiveManager.Instance.CreateNewGameData();
         dataService.SaveData("/gameData.json", gameData, false);
         Debug.Log("New Game Saved, Load bar scene...");
-        SceneGlobalManager.Instance.ChangeSceneToIndexAsync(1);
+        SceneGlobalManager.Instance.ChangeSceneToIndexAsync(1, SaveAndLoadType.StartNewGame);
     }
 
     public void LoadGame()
@@ -124,7 +117,7 @@ public class SaveManager : SingletonManagerBase<SaveManager>
         {
             gameData = dataService.LoadData<GameData>("/gameData.json", false);
             Debug.Log("Game Loaded,Load scene...");
-            SceneGlobalManager.Instance.LoadSceneWithGameData(gameData);
+            SceneGlobalManager.Instance.LoadSceneWithGameData(gameData,SaveAndLoadType.LoadSceneWithGameData);
 
         }
         catch
@@ -134,14 +127,26 @@ public class SaveManager : SingletonManagerBase<SaveManager>
 
     }
 
-    public void TryLoadGameData(int index)
+    public IEnumerator LoadGameAsync(SaveAndLoadType slType)
+    {
+        gameData = dataService.LoadData<GameData>("/gameData.json", false);
+        yield return null;
+        foreach (var saveable in saveableGamedata)
+        {
+            saveable.LoadData(gameData,slType);
+        }
+        Debug.Log("Game Loaded");
+
+    }
+
+    public void TryLoadGameData(int index,SaveAndLoadType slType)
     {
         if(index > 0)
         {
             Debug.Log("尝试加载数据呢。");
             foreach (var saveable in saveableGamedata)
             {
-                saveable.LoadData(gameData); 
+                saveable.LoadData(gameData, slType); 
             }
 
         }

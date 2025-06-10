@@ -17,6 +17,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     [SerializeField] public float attackCooldownTimer;
 
     [Header("装备基础信息")]
+    [SerializeField] public int equipmentID;
     [SerializeField] public string equipmentName;
     [SerializeField] public int baseDmg;
     [SerializeField] public Sprite equipmentSprite;
@@ -53,7 +54,16 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
     public void Initialize()
     {
         SetupEquipmentBase();
-        SetUpEquipmentLevel();
+        SetUpEquipmentLevel(1);
+        gameObject.name = equipmentName;//实例化的时候需要记住他的名字啊啊啊
+        attackCooldownTimer = 0f;
+        player = PlayerStats.Instance.gameObject.GetComponent<Player>();
+    }
+
+    public void Initialize(int level)
+    {
+        SetupEquipmentBase();
+        SetUpEquipmentLevel(level);
         gameObject.name = equipmentName;//实例化的时候需要记住他的名字啊啊啊
         attackCooldownTimer = 0f;
         player = PlayerStats.Instance.gameObject.GetComponent<Player>();
@@ -78,11 +88,11 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         }
     }
 
-    private void SetUpEquipmentLevel()
+    private void SetUpEquipmentLevel(int level)
     {
         //在这里 可能可以去通过一个manager根据地图等级 进行一个随机值的获取 从而设定等级和基于等级的eDamageMag
         // 随机生成 1-5 级
-        equipmentLevel = UnityEngine.Random.Range(1, 6);
+        equipmentLevel = level;
 
         // 根据等级设置伤害倍率
         switch (equipmentLevel)
@@ -155,6 +165,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
 
     private void SetupEquipmentBase()
     {
+        equipmentID = equipmentSO.equipmentID;
         equipmentName = equipmentSO.equipmentName;
         baseDmg = equipmentSO.baseDmg;
         currentDmg = equipmentSO.baseDmg;
@@ -291,7 +302,7 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         }
         else if(index == 2)
         {
-            BaseEquipment instance = Instantiate(this, PlayerStats.Instance.secondaryWeaponParent);
+            BaseEquipment instance = Instantiate(this, PlayerStats.Instance.subWeaponParent);
             instance.gameObject.name = equipmentName;
             instance.OnEquip();
             PlayerStats.Instance.baseEquipment2 = instance;
@@ -382,6 +393,20 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         {
             affix.OnUnequip();
         }
+    }
+
+    public SerializableEquipableItemData GetSerializableEquipableItemData()
+    {
+        SerializableEquipableItemData data = new SerializableEquipableItemData();
+        data.itemID = equipmentID;
+        data.itemLevel = equipmentLevel;
+        data.slotPositionIndex = PlayerStats.Instance.GetEquipmentSlotPosition(this);
+        data.itemAffixs = new List<int>();
+        foreach (BaseAffix affix in equipmentAffixList)
+        {
+            data.itemAffixs.Add(affix.affixSO.affixID);
+        }
+        return data;
     }
 
 

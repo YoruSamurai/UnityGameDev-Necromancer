@@ -19,7 +19,7 @@ public class SceneChangePortal : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             Debug.Log("即将传送");
-            SceneGlobalManager.Instance.ChangeSceneToIndexAsync(tpSceneName);
+            SceneGlobalManager.Instance.ChangeSceneToIndexAsync(tpSceneName,SaveAndLoadType.SLinGameNormalProcess);
         }
     }
 

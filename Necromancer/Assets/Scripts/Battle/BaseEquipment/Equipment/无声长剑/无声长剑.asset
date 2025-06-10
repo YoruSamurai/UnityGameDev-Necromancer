@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3d74c8111e9004090d9a52a8ac8378, type: 3}
   m_Name: "\u65E0\u58F0\u957F\u5251"
   m_EditorClassIdentifier: 
+  equipmentID: 1008
   equipmentName: "\u65E0\u58F0\u957F\u5251"
   baseDmg: 300
   equipmentSprite: {fileID: -1215315446, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
@@ -27,6 +28,8 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 65af949ae791ce145b5f53d71d170a8d, type: 2}
   slashAnimations: []
   slashOffsets: []
+  normalHitSfx: {fileID: 0}
+  critHitSfx: {fileID: 0}
   fullComboAttackTimes: 3
   meleeAttacks:
   - attackTime: 0.5
@@ -40,7 +43,7 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
-    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
+    attackSfx: {fileID: 0}
   - attackTime: 0.5
     attackMag: 1
     attackStun: 10
@@ -52,7 +55,7 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 1
     chargeThreshold: 0
-    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
+    attackSfx: {fileID: 0}
   - attackTime: 0.8
     attackMag: 1
     attackStun: 18
@@ -64,4 +67,4 @@ MonoBehaviour:
     comboBreakTime: 3
     knockbackForce: 2
     chargeThreshold: 0
-    attackSfx: {fileID: 11400000, guid: 6dc8e6ce7fa053c42b425796db581401, type: 2}
+    attackSfx: {fileID: 0}

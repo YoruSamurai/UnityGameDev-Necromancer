@@ -17,7 +17,6 @@ public class BattleManagerTest : SingletonManagerBase<BattleManagerTest>
     [SerializeField] public List<SkillController> skillList;
 
     [SerializeField] private GameObject pickablePrefab;
-    [SerializeField] private Transform pickableParent;
 
     protected override void Awake()
     {
@@ -55,7 +54,7 @@ public class BattleManagerTest : SingletonManagerBase<BattleManagerTest>
         }
         if (PlayerStats.Instance.baseEquipment2 != null && PlayerStats.Instance.baseEquipment2.GetEquipableItemName() == sameEquipment.GetEquipableItemName())
         {
-            ClearEquipmentInTransform(PlayerStats.Instance.secondaryWeaponParent);
+            ClearEquipmentInTransform(PlayerStats.Instance.subWeaponParent);
             return 2;
         }
         return 3;
@@ -76,7 +75,8 @@ public class BattleManagerTest : SingletonManagerBase<BattleManagerTest>
     /// <param name="position"></param>
     public void DropItem(IPickableItem item, Vector2 position)
     {
-        GameObject obj = Instantiate(pickablePrefab,position, Quaternion.identity,pickableParent);
+        GameObject obj = Instantiate(pickablePrefab,position, Quaternion.identity,
+            LevelManager.Instance.storage.scatterEquipmentTransform);
         Pickable pickable = obj.GetComponent<Pickable>();
         if (item is MonoBehaviour itemBehaviour)
         {
@@ -154,8 +154,9 @@ public class BattleManagerTest : SingletonManagerBase<BattleManagerTest>
         Destroy(tempInstance.gameObject); // 只用于比对，不是真正用的物体
         if (haveSame) return null;
 
-
+        //这行好像不太需要鹅
         originalEquipment.Initialize();
+        
         ClearEquipmentInTransform(parentTransform);
 
         BaseEquipment newEquipment = Instantiate(originalEquipment, parentTransform);
@@ -167,6 +168,57 @@ public class BattleManagerTest : SingletonManagerBase<BattleManagerTest>
         newEquipment.equipmentAffixList.Add(affix);
 
         return newEquipment;
+    }
+
+    public void LoadBaseEquipment(SerializableEquipableItemData data)
+    {
+        BaseEquipment equipment = GetBaseEquipmentByID(data.itemID);
+        if (equipment == null) 
+        {
+            Debug.LogWarning("没有加载到对应的装备 你干了什么");
+        }
+        BaseEquipment newEquipment = Instantiate(equipment, PlayerStats.Instance.inventoryEquipmentParent);
+        newEquipment.Initialize(data.itemLevel);
+        foreach(int affixId in data.itemAffixs)
+        {
+            //根据情况添加词条
+            BaseAffix affix = GetAffixById(affixId);
+            if(affix != null)
+                newEquipment.equipmentAffixList.Add(affix);
+        }
+        InventoryManager.Instance.AddToInventory(newEquipment);
+        if(data.slotPositionIndex == SlotPositionIndex.mainSlot)
+        {
+            PlayerStats.Instance.baseEquipment1 = newEquipment;
+            newEquipment.transform.SetParent(PlayerStats.Instance.mainWeaponParent);
+        }
+        else if(data.slotPositionIndex == SlotPositionIndex.subSlot)
+        {
+            PlayerStats.Instance.baseEquipment2 = newEquipment;
+            newEquipment.transform.SetParent(PlayerStats.Instance.subWeaponParent);
+        }
+    }
+
+    private BaseAffix GetAffixById(int affixID)
+    {
+        foreach (BaseAffix affix in affixPrefabList.affixList)
+        {
+            if(affix.affixSO.affixID == affixID)
+            {
+                return affix;
+            }
+        }
+        Debug.LogWarning("没有加载到对应的词条 你干了什么");
+        return null;
+    }
+
+    public BaseEquipment GetBaseEquipmentByID(int id)
+    {
+        foreach(var equipment in equipmentPrefabList.equipmentList)
+        {
+            if(equipment.equipmentID == id) return equipment;
+        }
+        return null;
     }
 
     public BaseAffix GetEquipmentAffix(BaseEquipment _equipment)

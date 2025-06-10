@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static LdtkTest;
 
 
 public class LevelManager : SingletonManagerBase<LevelManager>
@@ -17,7 +16,16 @@ public class LevelManager : SingletonManagerBase<LevelManager>
 
     private bool isInBattleLevel = true;
 
+    #region RefScript
+    /// <summary>
+    /// 每个场景的唯一东西 在这里进行获取
+    /// </summary>
     [SerializeField] private RoomGraphGenerator roomGraph;
+    [SerializeField] public Storage storage;
+
+
+    #endregion
+
 
     public LdtkLevelSoList GetLdtkLevelSoList()
     {
@@ -51,10 +59,18 @@ public class LevelManager : SingletonManagerBase<LevelManager>
     {
         StartCoroutine(InitLevelCoroutine(sceneIndex));
     }
+
+
+    /// <summary>
+    /// 无gamedata初始关卡
+    /// </summary>
+    /// <param name="sceneIndex"></param>
+    /// <returns></returns>
     public IEnumerator InitLevelCoroutine(int sceneIndex)
     {
         levelIsLoaded = false;
         roomGraph = FindObjectOfType<RoomGraphGenerator>();
+        storage = FindObjectOfType<Storage>();
         if (roomGraph == null)
         {
             Debug.LogWarning("找不到 RoomGraphGenerator 脚本！可能是主菜单 也可能是Rest/Boss");
@@ -87,10 +103,17 @@ public class LevelManager : SingletonManagerBase<LevelManager>
         StartCoroutine(InitLevelCoroutine(sceneIndex,gameData));
     }
 
+    /// <summary>
+    /// 有gamedata初始关卡
+    /// </summary>
+    /// <param name="sceneIndex"></param>
+    /// <param name="gameData"></param>
+    /// <returns></returns>
     public IEnumerator InitLevelCoroutine(int sceneIndex , GameData gameData)
     {
         levelIsLoaded = false;
         roomGraph = FindObjectOfType<RoomGraphGenerator>();
+        storage = FindObjectOfType<Storage>();
         if (roomGraph == null)
         {
             Debug.LogWarning("找不到 RoomGraphGenerator 脚本！怎么会这样？");
@@ -154,7 +177,7 @@ public class LevelManager : SingletonManagerBase<LevelManager>
         foreach(var monsterData in monsterDatas)
         {
             Vector3 startPos = new Vector3(monsterData.xPosition, monsterData.yPosition, 0);
-            GameObject monster = Instantiate(monsterData.monster);
+            GameObject monster = Instantiate(monsterData.monster,storage.scatterMonsterTransform);
 
             // 去掉 (Clone)，设为原 prefab 的名字，或者你想要的格式
             monster.name = monsterData.monster.name;
@@ -253,14 +276,8 @@ public class LevelManager : SingletonManagerBase<LevelManager>
                             }
                         }
                     }
-
-                    /*GameObject monster = Instantiate(
-                        canGenerateMonsterList[UnityEngine.Random.Range(0,canGenerateMonsterList.Count)],
-                        spawnPos,
-                        Quaternion.identity,
-                        monsterParentTransform);*/
                     GameObject prefab = canGenerateMonsterList[UnityEngine.Random.Range(0, canGenerateMonsterList.Count)];
-                    GameObject monster = Instantiate(prefab, spawnPos, Quaternion.identity, monsterParentTransform);
+                    GameObject monster = Instantiate(prefab, spawnPos, Quaternion.identity, storage.scatterMonsterTransform);
 
                     // 去掉 (Clone)，设为原 prefab 的名字，或者你想要的格式
                     monster.name = prefab.name;

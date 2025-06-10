@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ddd6e67cc52504daa2739900c43e2a, type: 3}
   m_Name: Affix_addDmg40
   m_EditorClassIdentifier: 
+  affixID: 3002
+  affixName: 
   affixTag: 5
-  triggerCondition: 1
   needEquipmentTags: 
   contrastEquipmentTags: 
   contrastAffixTags: 04000000

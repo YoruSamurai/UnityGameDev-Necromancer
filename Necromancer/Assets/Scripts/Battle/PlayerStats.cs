@@ -53,7 +53,7 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
     public Transform inventoryEquipmentParent;
 
     public Transform mainWeaponParent; // 在Inspector中指定主武器父对象
-    public Transform secondaryWeaponParent; // 在Inspector中指定副武器父对象
+    public Transform subWeaponParent; // 在Inspector中指定副武器父对象
     public BaseEquipment baseEquipment1;
     public BaseEquipment baseEquipment2;
 
@@ -67,48 +67,7 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
     [SerializeField] public Player player;
     [SerializeField] public PlayerDetection playerDetection;
 
-    public string SaveID => "PlayerStats"; // 唯一标识符
-
-    public void SaveData(GameData data)
-    {
-        data.playerData = new PlayerData
-        {
-            currentHealth = this.currentHealth,
-            maxHealth = this.maxHealth,
-            soul = this.soul,
-            gold = this.gold,
-            healthPercentage = this.healthPercentage,
-            strLevel = this.strLevel,
-            strPercentage = this.strPercentage,
-            agileLevel = this.agileLevel,
-            agilePercentage = this.agilePercentage,
-            magicLevel = this.magicLevel,
-            magicPercentage = this.magicPercentage,
-            position = new SerializableVector2(transform.position) // 保存位置
-            // 其他需要保存的字段
-        };
-    }
-
-    public void LoadData(GameData data)
-    {
-        if (data.playerData != null)
-        {
-            currentHealth = data.playerData.currentHealth;
-            maxHealth = data.playerData.maxHealth;
-            soul = data.playerData.soul;
-            gold = data.playerData.gold;
-            healthPercentage = data.playerData.healthPercentage;
-            strLevel = data.playerData.strLevel;
-            strPercentage = data.playerData.strPercentage;
-            agileLevel = data.playerData.agileLevel;
-            agilePercentage = data.playerData.agilePercentage;
-            magicLevel = data.playerData.magicLevel;
-            magicPercentage = data.playerData.magicPercentage;
-            Vector2 loadedPosition = data.playerData.position.ToVector2(); // 加载位置
-            transform.position = new Vector3(loadedPosition.x, loadedPosition.y, transform.position.z); // 保持 z 坐标不变
-            // 其他字段加载
-        }
-    }
+    
 
     private void Awake()
     {
@@ -195,7 +154,7 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
                 baseEquipment1.OnEquip();
                 InventoryManager.Instance.AddToInventory(baseEquipment1);
             }
-            BaseEquipment equipment = BattleManagerTest.Instance.GetRandomWeapon(secondaryWeaponParent);
+            BaseEquipment equipment = BattleManagerTest.Instance.GetRandomWeapon(subWeaponParent);
             if (equipment != null)
             {
                 if (baseEquipment2 != null) { baseEquipment2.OnUnequip(); }
@@ -386,6 +345,111 @@ public class PlayerStats : MonoBehaviour, ISaveableGameData
 
 
     #endregion
+
+
+    #region SL
+
+    public string SaveID => "PlayerStats"; // 唯一标识符
+
+    public void SaveData(GameData data, SaveAndLoadType slType)
+    {
+        data.playerData = new PlayerData
+        {
+            currentHealth = this.currentHealth,
+            maxHealth = this.maxHealth,
+            soul = this.soul,
+            gold = this.gold,
+            healthPercentage = this.healthPercentage,
+            strLevel = this.strLevel,
+            strPercentage = this.strPercentage,
+            agileLevel = this.agileLevel,
+            agilePercentage = this.agilePercentage,
+            magicLevel = this.magicLevel,
+            magicPercentage = this.magicPercentage,
+            position = new SerializableVector2(transform.position), // 保存位置
+            serializableEquipmentData = InventoryManager.Instance.GetSerializableEquipmentData()
+            // 其他需要保存的字段
+        };
+    }
+
+    public void LoadData(GameData data, SaveAndLoadType slType)
+    {
+        if (data.playerData != null)
+        {
+            if (slType == SaveAndLoadType.SLinGameNormalProcess)
+            {
+                currentHealth = data.playerData.currentHealth;
+                maxHealth = data.playerData.maxHealth;
+                soul = data.playerData.soul;
+                gold = data.playerData.gold;
+                healthPercentage = data.playerData.healthPercentage;
+                strLevel = data.playerData.strLevel;
+                strPercentage = data.playerData.strPercentage;
+                agileLevel = data.playerData.agileLevel;
+                agilePercentage = data.playerData.agilePercentage;
+                magicLevel = data.playerData.magicLevel;
+                magicPercentage = data.playerData.magicPercentage;
+                Vector2 loadedPosition = new Vector2(10f, 5f); // 加载位置
+                transform.position = new Vector3(loadedPosition.x, loadedPosition.y, transform.position.z); // 保持 z 坐标不变
+                InventoryManager.Instance.SetSerializableEquipableItemData(data.playerData.serializableEquipmentData);
+                // 其他字段加载
+            }
+            else if(slType == SaveAndLoadType.DeadAndBackToBar)
+            {
+                data.playerData = new PlayerData();
+                currentHealth = data.playerData.currentHealth;
+                maxHealth = data.playerData.maxHealth;
+                soul = data.playerData.soul;
+                gold = data.playerData.gold;
+                healthPercentage = data.playerData.healthPercentage;
+                strLevel = data.playerData.strLevel;
+                strPercentage = data.playerData.strPercentage;
+                agileLevel = data.playerData.agileLevel;
+                agilePercentage = data.playerData.agilePercentage;
+                magicLevel = data.playerData.magicLevel;
+                magicPercentage = data.playerData.magicPercentage;
+                Vector2 loadedPosition = data.playerData.position.ToVector2(); // 加载位置
+                transform.position = new Vector3(loadedPosition.x, loadedPosition.y, transform.position.z); // 保持 z 坐标不变
+                InventoryManager.Instance.SetSerializableEquipableItemData(data.playerData.serializableEquipmentData);
+            }
+            else
+            {
+                currentHealth = data.playerData.currentHealth;
+                maxHealth = data.playerData.maxHealth;
+                soul = data.playerData.soul;
+                gold = data.playerData.gold;
+                healthPercentage = data.playerData.healthPercentage;
+                strLevel = data.playerData.strLevel;
+                strPercentage = data.playerData.strPercentage;
+                agileLevel = data.playerData.agileLevel;
+                agilePercentage = data.playerData.agilePercentage;
+                magicLevel = data.playerData.magicLevel;
+                magicPercentage = data.playerData.magicPercentage;
+                Vector2 loadedPosition = data.playerData.position.ToVector2(); // 加载位置
+                transform.position = new Vector3(loadedPosition.x, loadedPosition.y, transform.position.z); // 保持 z 坐标不变
+                InventoryManager.Instance.SetSerializableEquipableItemData(data.playerData.serializableEquipmentData);
+                // 其他字段加载
+            }
+        }
+    }
+
+
+    public SlotPositionIndex GetEquipmentSlotPosition(BaseEquipment baseEquipment)
+    {
+        if(baseEquipment1 != null && baseEquipment1.equipmentID == baseEquipment.equipmentID)
+        {
+            return SlotPositionIndex.mainSlot;
+        }
+        else if(baseEquipment2 != null && baseEquipment2.equipmentID == baseEquipment.equipmentID)
+        {
+            return SlotPositionIndex.subSlot;
+        }
+        return SlotPositionIndex.inventory;
+    }
+
+
+    #endregion
+
 
 
 }

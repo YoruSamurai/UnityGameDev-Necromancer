@@ -6,8 +6,8 @@ using UnityEngine;
 public interface ISaveableGameData
 {
     string SaveID { get; } // 每个可保存对象的唯一标识
-    void SaveData(GameData data); // 保存数据到GameData结构
-    void LoadData(GameData data); // 从GameData结构加载数据
+    void SaveData(GameData data, SaveAndLoadType slType); // 保存数据到GameData结构
+    void LoadData(GameData data, SaveAndLoadType slType); // 从GameData结构加载数据
 }
 
 public interface ISaveableSettingData
@@ -24,6 +24,7 @@ public class GameData
 {
     public PlayerData playerData;
     public SceneData sceneData;
+    public GlobalData globalData;
     // 可以添加其他需要保存的数据类（如InventoryData、SettingsData等）
 }
 
@@ -64,7 +65,14 @@ public class LanguageSettingData
 /// </summary>
 public class GlobalData
 {
+    public float playtime;
+    public int monsterKilled;
 
+    public GlobalData()
+    {
+        playtime = 0;
+        monsterKilled = 0;
+    }
 }
 
 public class SceneData
@@ -92,6 +100,7 @@ public class PlayerData
     public int soul;
     public int gold;
     public SerializableVector2 position; // 使用 SerializableVector2 保存位置
+    public List<SerializableEquipableItemData> serializableEquipmentData;
     // 添加其他需要保存的玩家属性
 
     public PlayerData()
@@ -108,6 +117,15 @@ public class PlayerData
         soul = 100;
         gold = 50000;
         position = new SerializableVector2(new Vector2(10f,5f));
+        serializableEquipmentData = new List<SerializableEquipableItemData>();
+        SerializableEquipableItemData data = new SerializableEquipableItemData
+        {
+            itemID = 1001,
+            itemLevel = 3,
+            slotPositionIndex = SlotPositionIndex.mainSlot,
+            itemAffixs = new List<int>()
+        };
+        serializableEquipmentData.Add(data);
     }
 }
 
@@ -128,6 +146,25 @@ public class SerializableVector2
         return new Vector2(x, y);
     }
 }
+
+
+[Serializable]
+public class SerializableEquipableItemData
+{
+    public int itemID;
+    public int itemLevel;
+    public SlotPositionIndex slotPositionIndex;
+    public List<int> itemAffixs;
+}
+
+public enum SlotPositionIndex
+{
+    mainSlot,
+    subSlot,
+    inventory,
+    other,
+}
+
 
 [Serializable]
 public class SerializableRoomData

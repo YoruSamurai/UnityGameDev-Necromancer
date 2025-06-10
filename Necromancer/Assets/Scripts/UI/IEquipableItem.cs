@@ -10,6 +10,8 @@ public interface IEquipableItem
     public string GetEquipableItemName();
     public InventoryMessage GetEquipableItemMessage();
 
+    public SerializableEquipableItemData GetSerializableEquipableItemData();
+
     public int GetEquipableItemLevel();
 
     public void OnEquip();

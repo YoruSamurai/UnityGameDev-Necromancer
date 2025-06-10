@@ -8,26 +8,63 @@ public class ArchiveManager : SingletonManagerBase<ArchiveManager>, ISaveableGam
 
     [SerializeField] private LdtkLevelSoList soList;
 
-    public string SaveID => "Archive"; // 唯一标识符
-    public void SaveData(GameData data)
+    private void Update()
     {
-        data.sceneData = new SceneData
+        if(SceneGlobalManager.Instance.GetCurrentSceneIndex() != 0 && Time.timeScale != 0f)
         {
-            currentSceneName = SceneGlobalManager.Instance.GetCurrentSceneName(),
-            ldtkLevelListName = LevelManager.Instance.GetLdtkLevelSoList().name,
-            roomDatas = ConvertToSerializableRoomDatas(LevelManager.Instance.roomDatas),
-            roomMonsters = ConvertToSerializableMonsterData(LevelManager.Instance.levelMonsterDatas),
-        };
+            playtime += Time.deltaTime;
+        }
     }
 
-    public void LoadData(GameData data)
+
+    /// <summary>
+    /// 这里就是全局数据保存点 如杀敌 游戏时间
+    /// </summary>
+    [SerializeField] private float playtime;
+    [SerializeField] private int monsterKilled;
+
+    public string SaveID => "Archive"; // 唯一标识符
+    public void SaveData(GameData data, SaveAndLoadType slType)
     {
+        if(slType == SaveAndLoadType.StartNewGame)
+        {
+            
+        }
+        else
+        {
+            data.sceneData = new SceneData
+            {
+                currentSceneName = SceneGlobalManager.Instance.GetCurrentSceneName(),
+                ldtkLevelListName = LevelManager.Instance.GetLdtkLevelSoList().name,
+                roomDatas = ConvertToSerializableRoomDatas(LevelManager.Instance.roomDatas),
+                roomMonsters = ConvertToSerializableMonsterData(LevelManager.Instance.levelMonsterDatas),
+            };
+            data.globalData = new GlobalData
+            {
+                playtime = playtime,
+                monsterKilled = monsterKilled,
+            };
+
+        }
+    }
+
+    public void LoadData(GameData data, SaveAndLoadType slType)
+    {
+        if(data.globalData != null)
+        {
+            playtime = data.globalData.playtime;
+            monsterKilled = data.globalData.monsterKilled;
+        }
+        
         if(data.sceneData == null)
         {
-            return;
+            Debug.LogWarning("好像没有场景数据捏");
         }
-        LevelManager.Instance.roomDatas = ConvertToActualRoomDatas(data.sceneData.roomDatas);
-        LevelManager.Instance.levelMonsterDatas = ConvertToActualMonsterDatas(data.sceneData.roomMonsters);
+        else
+        {
+            LevelManager.Instance.roomDatas = ConvertToActualRoomDatas(data.sceneData.roomDatas);
+            LevelManager.Instance.levelMonsterDatas = ConvertToActualMonsterDatas(data.sceneData.roomMonsters);
+        }
     }
 
     private GameObject GetMonsterByName(string name)
@@ -146,7 +183,7 @@ public class ArchiveManager : SingletonManagerBase<ArchiveManager>, ISaveableGam
     {
         GameData gameData = new GameData();
         gameData.playerData = new PlayerData();
-
+        gameData.globalData = new GlobalData();
         return gameData;
     }
 

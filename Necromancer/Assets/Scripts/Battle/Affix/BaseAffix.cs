@@ -6,7 +6,7 @@ using UnityEngine;
 public class BaseAffix : MonoBehaviour
 {
 
-    protected AbilityInvoker abilityInvoker;
+    public AbilityInvoker abilityInvoker;
 
     [SerializeField] public AffixSO affixSO;
 

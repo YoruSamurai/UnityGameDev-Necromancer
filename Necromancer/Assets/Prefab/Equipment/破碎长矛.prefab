@@ -53,6 +53,7 @@ MonoBehaviour:
     m_Bits: 64
   attackCooldown: 0
   attackCooldownTimer: 0
+  equipmentID: 1007
   equipmentName: "\u7834\u788E\u957F\u77DB"
   baseDmg: 300
   equipmentSprite: {fileID: 317283317, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}

@@ -53,6 +53,7 @@ MonoBehaviour:
     m_Bits: 64
   attackCooldown: 0
   attackCooldownTimer: 0
+  equipmentID: 1002
   equipmentName: "\u65BD\u8650\u8005\u5315\u9996"
   baseDmg: 50
   equipmentSprite: {fileID: -51520807, guid: 18269388c9ab2c245b9562a71b8dc8fd, type: 3}
@@ -65,8 +66,8 @@ MonoBehaviour:
   currentCombo: 0
   currentDmg: 50
   canCrit: 0
-  equipmentLevel: 3
-  eDamageMag: 1.25
+  equipmentLevel: 1
+  eDamageMag: 1
   equipmentAffixList: []
   fullComboAttackTimes: 0
   meleeAttacks: []

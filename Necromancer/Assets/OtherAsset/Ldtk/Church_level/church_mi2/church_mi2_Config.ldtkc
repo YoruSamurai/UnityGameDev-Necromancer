@@ -89,6 +89,12 @@
             }
         },
         {
+            "_key": "ChurchBack_12",
+            "_asset": {
+                "instanceID": 0
+            }
+        },
+        {
             "_key": "OneWayPlatform_1",
             "_asset": {
                 "fileID": 11400000,

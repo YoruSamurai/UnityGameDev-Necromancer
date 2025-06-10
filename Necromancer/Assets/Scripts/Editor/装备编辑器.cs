@@ -168,6 +168,7 @@ public class 装备编辑器 : EditorWindow
         if (equipment != null)
         {
             // 更新装备 SO 的属性
+            equipment.equipmentID = int.Parse(row[0]);
             equipment.equipmentName = row[1];
             equipment.baseDmg = int.Parse(row[2]);
             equipment.baseCritChance = int.Parse(row[5]);

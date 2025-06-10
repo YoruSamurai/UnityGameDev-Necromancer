@@ -18,12 +18,12 @@ public class SoundManager : SingletonManagerBase<SoundManager>
     protected override void Awake()
     {
         base.Awake(); // 必须保留：处理单例与DDOL
+        InitializePool();
     }
 
 
     private void Start()
     {
-         InitializePool();
     }
 
     public SoundBuilder CreateSound() => new SoundBuilder(this);

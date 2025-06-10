@@ -6,6 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Battle/Affix")]
 public class AffixSO : ScriptableObject
 {
+    [Header("词缀ID")]
+    public int affixID;
+
+    [Header("词缀名称")]
+    public string affixName;
+
     [Header("词缀标签")]
     public AffixTag affixTag;
 
