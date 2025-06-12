@@ -134,7 +134,17 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-    
+
+    #region 桌角处理（玩家撞到box角落）
+
+    /// <summary>
+    /// 法线方向
+    /// </summary>
+    public Vector2 cornerNormal; 
+
+
+    #endregion
+
 
     #region Components
     public Animator anim { get; private set; }
@@ -163,6 +173,7 @@ public class Player : MonoBehaviour
     public PlayerParryState parryState { get; private set; }
     public PlayerDefenseState defenseState { get; private set; }
     public PlayerCrouchingState crouchingState { get; private set; }
+    public PlayerLittleJumpState littleJumpState { get; private set; }
 
     #endregion
 
@@ -185,6 +196,7 @@ public class Player : MonoBehaviour
         parryState = new PlayerParryState(this, stateMachine,"Parry");
         defenseState = new PlayerDefenseState(this, stateMachine,"Defense");
         crouchingState = new PlayerCrouchingState(this, stateMachine, "Crouching");
+        littleJumpState = new PlayerLittleJumpState(this, stateMachine, "LittleJump");
         currentLadderPosition = 0;
     }
 
@@ -226,6 +238,40 @@ public class Player : MonoBehaviour
                 if (!IsAxisAligned(normal))
                 {
                     Debug.LogWarning(normal);
+                    // 判断法线是否主要指向“上方”，同时带有一定的左右偏向
+                    if (normal.y > 0.5f)
+                    {
+                        
+                        if (normal.x > 0.01f && facingRight)// 右上
+                        {
+                            Debug.LogWarning("滚下去（向右）");
+                            Vector2 targetPosition = transform.position + new Vector3(.2f,0f);
+                            transform.position = targetPosition;
+                            return;
+                        }
+                        else if (normal.x < -0.01f && !facingRight)
+                        {
+                            Debug.LogWarning("滚下去（向左）");
+                            Vector2 targetPosition = transform.position + new Vector3(-.2f, 0f);
+                            transform.position = targetPosition;
+                            return;
+                        }
+                        
+                    }
+                    if (normal.x > 0.01f && !facingRight && stateMachine.currentState != littleJumpState)
+                    {
+                        Debug.Log("爬上去 向左爬");
+                        cornerNormal = contact.normal;
+                        stateMachine.ChangeState(littleJumpState);
+
+                    }
+                    else if (normal.x < -0.01f && facingRight && stateMachine.currentState != littleJumpState)
+                    {
+                        Debug.Log("爬上去 向右爬");
+                        cornerNormal = contact.normal;
+                        stateMachine.ChangeState(littleJumpState);
+
+                    }
                 }
             }
             
