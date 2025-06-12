@@ -39,7 +39,12 @@ public class PlayerJumpState : PlayerAirState
         //天上动的比较慢
         if (xInput != 0)
         {
-            player.SetVelocity(player.moveSpeed * .8f * xInput, rb.velocity.y);
+            player.SetVelocity(player.moveSpeed * 1f * xInput, rb.velocity.y);
+        }
+        else
+        {
+            player.SetVelocity(0f, rb.velocity.y);
+
         }
     }
 }

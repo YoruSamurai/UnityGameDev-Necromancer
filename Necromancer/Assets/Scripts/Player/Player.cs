@@ -213,6 +213,37 @@ public class Player : MonoBehaviour
         stateMachine.currentState.FixedUpdate();
     }
 
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            foreach (var contact in collision.contacts)
+            {
+                // 接触点法线方向（代表被推动的方向）
+                Vector2 normal = contact.normal;
+                // 仅当 normal 不是严格的轴向才输出（非 x/y 轴方向）
+                if (!IsAxisAligned(normal))
+                {
+                    Debug.LogWarning(normal);
+                }
+            }
+            
+        }
+    }
+
+    private bool IsAxisAligned(Vector2 normal)
+    {
+        // 允许一个小的误差值（防止浮点数误差）
+        const float epsilon = 0.01f;
+
+        // 判断是否是接近 (±1,0) 或 (0,±1)
+        bool xAligned = Mathf.Abs(normal.x) > 1f - epsilon && Mathf.Abs(normal.y) < epsilon;
+        bool yAligned = Mathf.Abs(normal.y) > 1f - epsilon && Mathf.Abs(normal.x) < epsilon;
+
+        return xAligned || yAligned;
+    }
+
     public Vector2 GetCurrentPosition()
     {
         Vector2 playerPos = new Vector2();
