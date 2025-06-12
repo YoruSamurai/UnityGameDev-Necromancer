@@ -409,6 +409,11 @@ public class BaseEquipment : MonoBehaviour, IPickableItem,IEquipableItem
         return data;
     }
 
+    public EquipmentSO GetEquipmentSO()
+    {
+        return equipmentSO;
+    }
+
 
 
 

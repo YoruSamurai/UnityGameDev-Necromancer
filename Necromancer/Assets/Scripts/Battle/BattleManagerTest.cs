@@ -170,6 +170,33 @@ public class BattleManagerTest : SingletonManagerBase<BattleManagerTest>
         return newEquipment;
     }
 
+
+    /// <summary>
+    /// 通过武器ID 
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    public BaseEquipment GetWeaponByID(int id)
+    {
+        BaseEquipment equipment = null;
+        foreach(var item in equipmentPrefabList.equipmentList)
+        {
+            if(item.equipmentSO.equipmentID == id)
+            {
+                equipment = item; break;
+            }
+        }
+        if(equipment == null)
+        {
+            Debug.LogWarning("没有对应的武器诶");
+        }
+        return equipment;
+    }
+
+    /// <summary>
+    /// 通过装备数据去加载装备
+    /// </summary>
+    /// <param name="data"></param>
     public void LoadBaseEquipment(SerializableEquipableItemData data)
     {
         BaseEquipment equipment = GetBaseEquipmentByID(data.itemID);
@@ -339,5 +366,64 @@ public class BattleManagerTest : SingletonManagerBase<BattleManagerTest>
         }
         return null;
     }
+
+
+    
+    #region Playground 专属于playground的方法
+
+    public List<int> GetAffixsCanAddToEquipment(EquipmentSO equipmentSO)
+    {
+        List<int> result = new List<int>();
+
+        foreach (BaseAffix affix in affixPrefabList.affixList)
+        {
+            bool canAddAffix = true;
+            if (affix.needEquipmentTags.Count > 0 && canAddAffix)
+            {
+                //装备标签必须满足词缀的全部需求标签
+                foreach (EquipmentTag tag in affix.needEquipmentTags)
+                {
+                    if (!equipmentSO.equipmentTags.Contains(tag))
+                    {
+                        canAddAffix = false;
+                        break;
+                    }
+                }
+            }
+            if (affix.contrastEquipmentTags.Count > 0 && canAddAffix)
+            {
+                //装备标签必须满足词缀的全部需求标签
+                foreach (EquipmentTag tag in affix.contrastEquipmentTags)
+                {
+                    if (equipmentSO.equipmentTags.Contains(tag))
+                    {
+                        canAddAffix = false;
+                        break;
+                    }
+                }
+            }
+            if (canAddAffix)
+            {
+                result.Add(affix.affixSO.affixID);
+            }
+        }
+        return result;
+    }
+
+
+    public void Playground_GiveWeapon(BaseEquipment prefab, Vector2 pos)
+    {
+        // 实例化它（临时用 null parent，因为之后会销毁）
+        BaseEquipment instance = Instantiate(prefab);
+        instance.Initialize();
+        // 添加词缀
+        BaseAffix affix = GetEquipmentAffix(instance);
+        if (affix != null)
+            instance.equipmentAffixList.Add(affix);
+        DropItem(instance, pos);
+    }
+
+    #endregion
+
 
 }

@@ -34,6 +34,15 @@ public interface IEquipableItem
     /// </summary>
     public void EquipableItemRecast();
 
+
+
+    #region Playground
+
+    public EquipmentSO GetEquipmentSO();
+
+
+    #endregion
+
 }
 
 

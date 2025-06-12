@@ -1,0 +1,2782 @@
+fileFormatVersion: 2
+guid: 58f906c4af7673a4f98a0283ef78caba
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_0"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be33bc6df678b84681a860965d18b69
+      internalID: -22803772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_1"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccc5a4bfd95a5346806417a606784bd
+      internalID: -782334697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_2"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f623a83d395874cb241b52bfb4b586
+      internalID: 1706402401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_3"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295458f15833f6440bd84dc363a5003d
+      internalID: -758072767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_4"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c16be5f91897dd4aa1c3aa3ff78ec25
+      internalID: -2066092893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_5"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af59b5094534b3479924b49c984f8ee
+      internalID: -770799985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_6"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d379c9fa6ce1e08408980433e52f0893
+      internalID: -2096078743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_7"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc151212fcfef1345b1fb560e663e507
+      internalID: -617374753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_8"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90628bf78d3cb514795421052343efc4
+      internalID: 1022442996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_9"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3a6b72a59614b4a960e0406ec685ac
+      internalID: 685268776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_10"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 835
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23abfafc539b83f4aa36b70cec6864a5
+      internalID: 1018034315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_11"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ce76b7424fe7b44bfcd7fb6efbb854
+      internalID: -333110709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_12"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22db8af8e7c640a48aab68b681ba8917
+      internalID: 1626380212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_13"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f306d8646688e40947f339002b1757
+      internalID: -1210401868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_14"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6de7f597ffe2f47bbc8f001b242753
+      internalID: -679064119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_15"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95fd49e945895e54faf7bf2aad852744
+      internalID: -396033456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_16"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2391abff2489520449e76ac6613f02dc
+      internalID: -1311882598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_17"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0507c535107dc7a46be3dc5e7fb96116
+      internalID: -1588478824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_18"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018b616d1cb2d5843a4f3ef6a598b1af
+      internalID: -273876036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_19"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad17918958a80643bb787ad82316515
+      internalID: -878884358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_20"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dda8a0ffd3a7e04489e40d3fc769d22
+      internalID: 333084880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_21"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 752
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cab0eadb1a67e4082fd394e22d348d
+      internalID: -420963641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_22"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c20e5bbef93274da4ef9108a5237f9
+      internalID: 1510993668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_23"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d80cd16f82efc4f9d9435f86d3f73a
+      internalID: -624231977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_24"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdb88e22905c0245ad6307342ef9847
+      internalID: -687283443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_25"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab576d71add6ab439b9e4ed007fd49b
+      internalID: -1485919519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_26"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151b48675fa04e04ca71eba3eac96ef3
+      internalID: 1818424122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_27"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb387029b9945c47ae83b7778d2aab6
+      internalID: 242497528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_28"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a99787bd2675094e916d6018bffa10e
+      internalID: 1765420425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_29"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e127a0bfe05704c9f418b5871d271f
+      internalID: 1459479925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_30"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2d708bcc2772040a50a6359f2873a4
+      internalID: 2032105580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_31"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0178f31dfc187f8429d5dd0f1041c0c0
+      internalID: -541567220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_32"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 669
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0edb6e0584bf8ce438e98fdc502e0a32
+      internalID: 1621198986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_33"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568bad52925c9244b8f99e19cef4c4b7
+      internalID: 1100998251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_34"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e344063cda64a042ad71049e701e5f3
+      internalID: -2020926419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_35"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa1ce51bb1f19d48aff06bc82b6ab14
+      internalID: -122017267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_36"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4d82affca7c044d9bd5b343b850df0
+      internalID: 2029627438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_37"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0fc96a19b36114fa98c9d66eeaac4b
+      internalID: 1983666423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_38"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb96886eb0459647b055b1aa58e5cf8
+      internalID: -588342045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_39"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040a273184ce68f4199feb21aeaafbd5
+      internalID: 485280463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_40"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3413e77c65cfaea47b7d61f655c43eca
+      internalID: -2045018601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_41"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d21ee51b5159f84e9a1a51b9e0fbf3a
+      internalID: 925303098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_42"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3a88aab3bde4c4e9be323684e7d5ae
+      internalID: -1753456573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_43"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 586
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9089de652c719634e958a240572322dc
+      internalID: -1679798748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_44"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53d1702b8cdf8c448a14a2bd89fe9ea
+      internalID: 1299784333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_45"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08fa3e38dda0df41bc6709cda5509e6
+      internalID: -1586497814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_46"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9c8edead9d2b944827bf2830574322
+      internalID: -611284236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_47"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b54998ab3fb156341ab9e5679ae157b0
+      internalID: 277441168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_48"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bbc22fe3db20934ea8bf534cb747932
+      internalID: 1000762658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_49"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1791538510de8c9458ecc33658860952
+      internalID: 866466032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_50"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8905adf9298e5da4e96e077e4e4fdd49
+      internalID: -1246552728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_51"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3924a43fca28f764f9da72e085504269
+      internalID: -1603089704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_52"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65f3e5d3b1f24a49b7b1700d41227ff
+      internalID: -787944385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_53"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992fe4f4a63182d4f8b6f7072bec3276
+      internalID: 1019083982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_54"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 503
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab9b1b220a04ad46a6db6480084adfd
+      internalID: 934907431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_55"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d711b621712aed4a98a688c16621159
+      internalID: -1021543545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_56"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4551b21d2e3266e4dbebaf60116635c1
+      internalID: -322294746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_57"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e242244b58482ab4bb221dfbd7fc6b32
+      internalID: -1257652639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_58"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd64b4127741c64084b384fd78aea98
+      internalID: 1045818075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_59"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78becb12305e7d24b836d6326b6c4396
+      internalID: 784022625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_60"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f667e463f140064499e0af8d2c832b4
+      internalID: -1817302790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_61"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1755cc75ff956d4b9d56264e4033292
+      internalID: 2122266005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_62"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c069b7e7a71243746925dc0cdbe0aae8
+      internalID: 730579813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_63"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ba2d5523abcc2408ab4f00f4577423
+      internalID: 1380417660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_64"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586835dfc0ccb67489cb756392d40607
+      internalID: 375372180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_65"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 420
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d86aaf8a2f98664fb3ad53680d590c4
+      internalID: 352467097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_66"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434ee288df75d104892eb63d6f67db8d
+      internalID: -270848881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_67"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095cf34f9084d3d478e02906e3c40134
+      internalID: -430507612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_68"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678bc68c96232ac4f9d4bc7f90c2e6f0
+      internalID: -1603847635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_69"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9d3b2ada382d3419a7ea674a358cd0
+      internalID: 320953897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_70"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90fd710f2c5996479f22b1b86a196ce
+      internalID: 1867200733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_71"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda1f88605dac2a4287ee1ffdb915096
+      internalID: -1212831824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_72"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e3f1db372027f4ba05f39a94f07b04
+      internalID: -1538928300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_73"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ba4d45344f2f749989435ece0d0a4e
+      internalID: -624448016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_74"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a0c8cdd687ac04781a3df860741f2a
+      internalID: -1421243069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_75"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77411bf6a24d00643b2a92bf0d30085f
+      internalID: -69519786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_76"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 337
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf5661537d425a4d84795982dcfd1a0
+      internalID: 1309560061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_77"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987b0d890c09dff4c93b2a6d51b23be6
+      internalID: -559929636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_78"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426e6ed94a2e08848b7bb7c1c4b8ff88
+      internalID: -68668380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_79"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121c3c365ac74a34db1a4344a559e2c3
+      internalID: -172907637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_80"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f52fd9e102d9b48a42ca9eb575bbb9
+      internalID: -913076283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_81"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187412aa77dfc9f4e9d3ebb4d6a7e294
+      internalID: -54129967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_82"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7651a3bb42a0440839e8867afb59b6
+      internalID: 1284807092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_83"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fc6d8bdabe37d4e85957ddc532b9b7
+      internalID: 1176613907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_84"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd85d871dd32198479ddfb73a224f2bb
+      internalID: 351899399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_85"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a21655e9081b14d81db3fb74575568
+      internalID: -1044027504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_86"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4a0a58f12abde4faec73f0688bd37c
+      internalID: -1304565189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_87"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 254
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5593d537b548f014ca7e77560798d466
+      internalID: -103598170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_88"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f4bb4bfaba0ee4d848823955ccd4f8
+      internalID: -633571845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_89"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683fcbbff4e8b2e4ea2bbaf5662012d6
+      internalID: 1298855073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_90"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f0045aad447c0429831c51644cf394
+      internalID: 135553621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_91"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9adf64e57180dc4bae18d2e715fc719
+      internalID: -2051688356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_92"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0346457d3ee2c439440cf10a0fae9a
+      internalID: 1339612982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_93"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14509fd3298ca8844849721dd4896c13
+      internalID: -378098394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_94"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58300a830b778e04981ddbbb240c8d9b
+      internalID: -2089101594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_95"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9112a0b9ddff00643bcdc2e5c0f84d90
+      internalID: -731971709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_96"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b11a261971a1584ebc82b724177c06b
+      internalID: 726569354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_97"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3755f743a9cd31949b4eaf1f6087a002
+      internalID: -506193898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_98"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 171
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f67857270cc2648a9eb6e0925162cd
+      internalID: -571914644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_99"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f889f61d0beb668479ba557a1b469569
+      internalID: -587591823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_100"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14827c07ea4360345b1e5fa740c4e1ec
+      internalID: 613888398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_101"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa4445c5a0bb294cb03eccc6565553c
+      internalID: -78274051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_102"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31720c862b7da5942aba9b085f006039
+      internalID: 306596274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_103"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a7f45e2eb0966429aaeaa0ef981650
+      internalID: 2043674929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_104"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42109af52c5f2be4e8b115a7b3ac2949
+      internalID: 945215851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_105"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ea767967cb9e5409ef01ab689823f9
+      internalID: -925415021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_106"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23066115269beda44ae7f2772a55b546
+      internalID: -671289890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_107"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2822395feaf234da85443950b4117f
+      internalID: -1938935034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_108"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96b9c2e516b0d44599310b8dc0cabad
+      internalID: -400631369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_109"
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 88
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fb7369c7c72274ebbceeba348307f9
+      internalID: 718505369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_110"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c100b043081268498269eb0aaecf55e
+      internalID: -1847432394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_111"
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61963e52ebf532042b336c1d87099325
+      internalID: 257616146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_112"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e085f1a820a7894f9983e33ccf6365c
+      internalID: -1224527806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_113"
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d0428e17cbcda428109ed0bd89d712
+      internalID: -1151619221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_114"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267386f82c21b3445b55bbb30e8a4a95
+      internalID: -1981265687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_115"
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0db9670d91f174987b163e95bedf3f
+      internalID: 175959001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_116"
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3c3ef267af2464ca5c78f279529219
+      internalID: -648174066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_117"
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d397bbec85315024e8914c8cafa353cb
+      internalID: 1277923997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_118"
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ef0835133036841b9a1f91751f6e34
+      internalID: 768023279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_119"
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 5
+        width: 33
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cae0091ec9b9434081e96e1a234aece
+      internalID: 121132953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 2b381327691cdba448d51093b500940a, type: 3}
+      name: _NormalMap
+    nameFileIdTable:
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_0": -22803772
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_1": -782334697
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_10": 1018034315
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_100": 613888398
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_101": -78274051
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_102": 306596274
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_103": 2043674929
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_104": 945215851
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_105": -925415021
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_106": -671289890
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_107": -1938935034
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_108": -400631369
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_109": 718505369
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_11": -333110709
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_110": -1847432394
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_111": 257616146
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_112": -1224527806
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_113": -1151619221
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_114": -1981265687
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_115": 175959001
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_116": -648174066
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_117": 1277923997
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_118": 768023279
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_119": 121132953
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_12": 1626380212
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_13": -1210401868
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_14": -679064119
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_15": -396033456
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_16": -1311882598
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_17": -1588478824
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_18": -273876036
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_19": -878884358
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_2": 1706402401
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_20": 333084880
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_21": -420963641
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_22": 1510993668
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_23": -624231977
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_24": -687283443
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_25": -1485919519
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_26": 1818424122
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_27": 242497528
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_28": 1765420425
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_29": 1459479925
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_3": -758072767
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_30": 2032105580
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_31": -541567220
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_32": 1621198986
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_33": 1100998251
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_34": -2020926419
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_35": -122017267
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_36": 2029627438
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_37": 1983666423
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_38": -588342045
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_39": 485280463
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_4": -2066092893
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_40": -2045018601
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_41": 925303098
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_42": -1753456573
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_43": -1679798748
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_44": 1299784333
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_45": -1586497814
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_46": -611284236
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_47": 277441168
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_48": 1000762658
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_49": 866466032
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_5": -770799985
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_50": -1246552728
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_51": -1603089704
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_52": -787944385
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_53": 1019083982
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_54": 934907431
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_55": -1021543545
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_56": -322294746
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_57": -1257652639
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_58": 1045818075
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_59": 784022625
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_6": -2096078743
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_60": -1817302790
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_61": 2122266005
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_62": 730579813
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_63": 1380417660
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_64": 375372180
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_65": 352467097
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_66": -270848881
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_67": -430507612
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_68": -1603847635
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_69": 320953897
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_7": -617374753
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_70": 1867200733
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_71": -1212831824
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_72": -1538928300
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_73": -624448016
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_74": -1421243069
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_75": -69519786
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_76": 1309560061
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_77": -559929636
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_78": -68668380
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_79": -172907637
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_8": 1022442996
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_80": -913076283
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_81": -54129967
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_82": 1284807092
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_83": 1176613907
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_84": 351899399
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_85": -1044027504
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_86": -1304565189
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_87": -103598170
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_88": -633571845
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_89": 1298855073
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_9": 685268776
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_90": 135553621
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_91": -2051688356
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_92": 1339612982
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_93": -378098394
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_94": -2089101594
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_95": -731971709
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_96": 726569354
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_97": -506193898
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_98": -571914644
+      "\u7ACB\u6B63\u7AD9\u684C\u4E0D\u8BF4\u8BDD_export_Unreal Take_99": -587591823
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
