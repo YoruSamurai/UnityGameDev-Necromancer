@@ -128,10 +128,14 @@ public class LDTK处理工具 : EditorWindow
             if (layer.name == "Ground")
             {
                 groundMap = layer.GetComponentInChildren<Tilemap>();
+                CompositeCollider2D collider = layer.GetComponentInChildren<CompositeCollider2D>();
+                collider.geometryType = CompositeCollider2D.GeometryType.Polygons;
             }
             if (layer.name == "OneWayPlatform")
             {
                 oneWayMap = layer.GetComponentInChildren<Tilemap>();
+                CompositeCollider2D collider = layer.GetComponentInChildren<CompositeCollider2D>();
+                collider.geometryType = CompositeCollider2D.GeometryType.Polygons;
             }
         }
         List<MonsterSpawnPoint> spawnPoints = new List<MonsterSpawnPoint>();

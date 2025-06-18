@@ -16,17 +16,10 @@ public class PlayerLedgeUpState : PlayerState
         {
             player.SetJumpCounter(0);
             stateMachine.ChangeState(player.idleState);
+            
         }
         if(triggerType == PlayerAnimationTriggerType.PlayerLedgeUp)
         {
-            // 获取当前玩家位置
-            Vector2 startPosition = player.transform.position;
-            Vector2 targetPosition = new Vector2(
-                startPosition.x + player.facingDir * 1f,
-                startPosition.y + 1.8f
-            );
-
-            player.transform.position = targetPosition;
             player.AnimationTrigger(PlayerAnimationTriggerType.PlayerAnimationEndTrigger);
             /*// 使用DoTween平滑移动
             player.transform.DOMove(targetPosition, 0.08f) // 0.5秒完成位移
@@ -45,8 +38,28 @@ public class PlayerLedgeUpState : PlayerState
         base.Enter();
         player.rb.isKinematic = true;
         AdjustLedgePosition();
+
+        // 获取当前玩家位置
+        Vector2 startPosition = player.transform.position;
+        Vector2 targetPosition = new Vector2(
+            startPosition.x + player.facingDir * 1f,
+            startPosition.y + 1.8f
+        );
+
+        player.transform.DOMove(targetPosition, 0.25f) // 0.25秒完成位移
+                .SetEase(Ease.OutQuad) // 设置缓动效果，OutQuad是先快后慢
+                .OnComplete(() =>
+                {
+                    // 移动结束后的回调，可以处理后续状态
+                    //player.AnimationTrigger(PlayerAnimationTriggerType.PlayerAnimationEndTrigger);
+                });
+
+
     }
 
+    /// <summary>
+    /// 有bug！！！
+    /// </summary>
     private void AdjustLedgePosition()
     {
         Vector2 newPosition = player.transform.position;

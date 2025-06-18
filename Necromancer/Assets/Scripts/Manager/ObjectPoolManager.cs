@@ -12,6 +12,7 @@ public class ObjectPoolManager : SingletonManagerBase<ObjectPoolManager>
     private static GameObject _projectileEmpty;
     private static GameObject _fxEmpty;
     private static GameObject _shadowCasterEmpty;
+    private static GameObject _zoneEmpty;
 
     private static Dictionary<GameObject, ObjectPool<GameObject>> _objectPools;
     private static Dictionary<GameObject, GameObject> _cloneToPrefabMap;
@@ -20,7 +21,8 @@ public class ObjectPoolManager : SingletonManagerBase<ObjectPoolManager>
     {
         Projectiles,
         FX,
-        GameObjects
+        GameObjects,
+        Zone
     }
     public static PoolType PoolingType;
 
@@ -45,6 +47,9 @@ public class ObjectPoolManager : SingletonManagerBase<ObjectPoolManager>
 
         _shadowCasterEmpty = new GameObject("ShadowCaster");
         _shadowCasterEmpty.transform.SetParent(_emptyHolder.transform, false);
+
+        _zoneEmpty = new GameObject("Zone");
+        _zoneEmpty.transform.SetParent(_emptyHolder.transform, false);
 
 
     }
@@ -101,6 +106,8 @@ public class ObjectPoolManager : SingletonManagerBase<ObjectPoolManager>
                 return _projectileEmpty;
             case PoolType.FX:
                 return _fxEmpty;
+            case PoolType.Zone:
+                return _zoneEmpty;
             default:
                 return null;
         }

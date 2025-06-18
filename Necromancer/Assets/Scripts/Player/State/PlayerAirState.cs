@@ -28,6 +28,9 @@ public class PlayerAirState : PlayerState
         }*/
     }
 
+    /// <summary>
+    /// 有bug！ 侧向爬上的时候找不到地面~
+    /// </summary>
     public override void Update()
     {
         base.Update();

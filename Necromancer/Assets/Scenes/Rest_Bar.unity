@@ -7216,6 +7216,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   ignoredPlatforms: []
+  cornerNormal: {x: 0, y: 0}
 --- !u!50 &379420939
 Rigidbody2D:
   serializedVersion: 4
@@ -7319,7 +7320,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -1.0708245}
-  m_Size: {x: 1.0813408, y: 2.196777}
+  m_Size: {x: 0.73, y: 2.196777}
   m_Direction: 0
 --- !u!114 &379420943
 MonoBehaviour:
@@ -26804,8 +26805,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.6617, y: 2.6043499, z: 0}
-    m_Extent: {x: 5.6466, y: 6.6222496, z: 0}
+    m_Center: {x: 1.661, y: 2.60445, z: 0}
+    m_Extent: {x: 5.6473, y: 6.62245, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

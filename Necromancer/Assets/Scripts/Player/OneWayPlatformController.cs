@@ -136,6 +136,56 @@ public class OneWayPlatformController : MonoBehaviour
                     {
                         Debug.Log("12313该位置没有 Tile");
                     }
+
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(0, -1f));
+                    Debug.Log("cellpos" + cellPos);
+                    tile = tilemap.GetTile(cellPos);
+
+                    if (tile != null)
+                    {
+                        centerX = hitPoint.x;
+                        Debug.Log($"7射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+                        player.stateMachine.ChangeState(player.oneWayState);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("12313该位置没有 Tile");
+                    }
+
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(1, -1f));
+                    Debug.Log("cellpos" + cellPos);
+                    tile = tilemap.GetTile(cellPos);
+
+                    if (tile != null)
+                    {
+                        centerX = hitPoint.x + 1f;
+                        Debug.Log($"8射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+
+                        player.stateMachine.ChangeState(player.oneWayState);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("6该位置没有 Tile");
+                    }
+
+                    cellPos = tilemap.WorldToCell(hitPoint + new Vector2(-1, -1f));
+                    Debug.Log("cellpos" + cellPos);
+                    tile = tilemap.GetTile(cellPos);
+
+                    if (tile != null)
+                    {
+                        centerX = hitPoint.x - 1f;
+                        Debug.Log($"9射中 Tile: {tile.name}，坐标: {cellPos} Centerx {centerX}");
+
+                        player.stateMachine.ChangeState(player.oneWayState);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("12313该位置没有 Tile");
+                    }
                 }
                 else
                 {

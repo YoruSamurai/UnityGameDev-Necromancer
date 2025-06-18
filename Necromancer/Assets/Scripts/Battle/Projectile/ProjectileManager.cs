@@ -7,6 +7,8 @@ public class ProjectileManager : SingletonManagerBase<ProjectileManager>
 
     [SerializeField] private GameObject projectileGeneratorPrefab;
 
+    [SerializeField] private GameObject zoneGeneratorPrefab;
+
 
     protected override void Awake()
     {
@@ -20,4 +22,14 @@ public class ProjectileManager : SingletonManagerBase<ProjectileManager>
         BaseProjectileGenerator generator = obj.GetComponent<BaseProjectileGenerator>();
         generator.Initialize(_projectileSO, _baseEquipment, facingRight, _enemy, combo);
     }
+
+    public void GenerateZone(List<Vector2Int> zonePosList, float stayTime, float generateInterval,
+        float determineInterval, bool determineOnlyOnce, BaseEquipment _baseEquipment)
+    {
+        GameObject obj = ObjectPoolManager.SpawnObject(zoneGeneratorPrefab, transform.position, Quaternion.identity, ObjectPoolManager.PoolType.Zone);
+        BaseZoneGenerator generator = obj.GetComponent<BaseZoneGenerator>();
+        generator.Initialize(zonePosList, stayTime, generateInterval, determineInterval, determineOnlyOnce, _baseEquipment);
+    }
+
+
 }

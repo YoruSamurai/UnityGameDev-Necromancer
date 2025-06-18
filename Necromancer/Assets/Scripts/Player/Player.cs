@@ -226,58 +226,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            foreach (var contact in collision.contacts)
-            {
-                // 接触点法线方向（代表被推动的方向）
-                Vector2 normal = contact.normal;
-                // 仅当 normal 不是严格的轴向才输出（非 x/y 轴方向）
-                if (!IsAxisAligned(normal))
-                {
-                    Debug.LogWarning(normal);
-                    // 判断法线是否主要指向“上方”，同时带有一定的左右偏向
-                    if (normal.y > 0.5f)
-                    {
-                        
-                        if (normal.x > 0.01f && facingRight)// 右上
-                        {
-                            Debug.LogWarning("滚下去（向右）");
-                            Vector2 targetPosition = transform.position + new Vector3(.2f,0f);
-                            transform.position = targetPosition;
-                            return;
-                        }
-                        else if (normal.x < -0.01f && !facingRight)
-                        {
-                            Debug.LogWarning("滚下去（向左）");
-                            Vector2 targetPosition = transform.position + new Vector3(-.2f, 0f);
-                            transform.position = targetPosition;
-                            return;
-                        }
-                        
-                    }
-                    if (normal.x > 0.01f && !facingRight && stateMachine.currentState != littleJumpState)
-                    {
-                        Debug.Log("爬上去 向左爬");
-                        cornerNormal = contact.normal;
-                        stateMachine.ChangeState(littleJumpState);
-
-                    }
-                    else if (normal.x < -0.01f && facingRight && stateMachine.currentState != littleJumpState)
-                    {
-                        Debug.Log("爬上去 向右爬");
-                        cornerNormal = contact.normal;
-                        stateMachine.ChangeState(littleJumpState);
-
-                    }
-                }
-            }
-            
-        }
-    }
-
+    
     private bool IsAxisAligned(Vector2 normal)
     {
         // 允许一个小的误差值（防止浮点数误差）
@@ -524,6 +473,10 @@ public class Player : MonoBehaviour
         {
             return;
         }
+        if (IsInState(oneWayState))
+        {
+            return;
+        }
         //按下shift 设置timer为设置好的cd 并获取冲刺方向 进入冲刺状态
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashUsageTimer < 0)
         {
@@ -744,6 +697,214 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+
+    /*private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            ContactPoint2D contactPoint = collision.contacts[0];
+            foreach (var contact in collision.contacts)
+            {
+                if (contact.normal.y < contactPoint.normal.y)
+                    contactPoint = contact;
+            }
+            foreach (var contact in collision.contacts)
+            {
+                // 接触点法线方向（代表被推动的方向）
+                Vector2 normal = contact.normal;
+                Vector2 point = contact.point; //  获取碰撞点
+                // 仅当 normal 不是严格的轴向才输出（非 x/y 轴方向）
+                if (!IsAxisAligned(normal))
+                {
+                Debug.LogWarning(normal);   
+                    // 判断法线是否主要指向“上方”，同时带有一定的左右偏向
+                    if (normal.y > 0.5f)
+                    {
+                        
+                        if (normal.x > 0.01f && facingRight)// 右上
+                        {
+                            Debug.LogWarning("滚下去（向右）");
+                            Vector2 targetPosition = transform.position + new Vector3(.2f,0f);
+                            transform.position = targetPosition;
+                            return;
+                        }
+                        else if (normal.x < -0.01f && !facingRight)
+                        {
+                            Debug.LogWarning("滚下去（向左）");
+                            Vector2 targetPosition = transform.position + new Vector3(-.2f, 0f);
+                            transform.position = targetPosition;
+                            return;
+                        }
+                        
+                    }
+                    if (normal.y > 0 && normal.x > 0.01f && !facingRight && stateMachine.currentState != littleJumpState)
+                    {
+                        Debug.LogWarning("爬上去 向左爬" + normal);
+                        cornerNormal = contact.normal;
+                        stateMachine.ChangeState(littleJumpState);
+
+                    }
+                    else if (normal.y > 0 && normal.x < -0.01f && facingRight && stateMachine.currentState != littleJumpState)
+                    {
+                        Debug.LogWarning("爬上去 向右爬" + normal + "碰撞点" + point);
+                        cornerNormal = contact.normal;
+                        stateMachine.ChangeState(littleJumpState);
+
+                    }
+                }
+            }
+            
+        }
+    }*/
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            Debug.LogWarning(collision.contacts.Length);
+            foreach (var contactData in collision.contacts)
+            {
+                if(!IsAxisAligned(contactData.normal))
+                Debug.LogWarning(contactData.normal);
+            }
+            ContactPoint2D contact = collision.contacts[0];
+            foreach (var contactData in collision.contacts)
+            {
+                if (contactData.normal.y < contact.normal.y)
+                    contact = contactData;
+            }
+
+            // 接触点法线方向（代表被推动的方向）
+            Vector2 normal = contact.normal;
+            Vector2 point = contact.point; //  获取碰撞点
+                                           // 仅当 normal 不是严格的轴向才输出（非 x/y 轴方向）
+            if (!IsAxisAligned(normal))
+            {
+                Debug.LogWarning(normal);
+                // 判断法线是否主要指向“上方”，同时带有一定的左右偏向
+                if (normal.y > 0.5f)
+                {
+
+                    if (normal.x > 0f && facingRight)// 右上
+                    {
+                        Debug.LogWarning("滚下去（向右）");
+                        Vector2 targetPosition = transform.position + new Vector3(.2f, 0f);
+                        transform.position = targetPosition;
+                        return;
+                    }
+                    else if (normal.x < -0f && !facingRight)
+                    {
+                        Debug.LogWarning("滚下去（向左）");
+                        Vector2 targetPosition = transform.position + new Vector3(-.2f, 0f);
+                        transform.position = targetPosition;
+                        return;
+                    }
+
+                }
+                if (normal.y > 0 && normal.x > 0f && !facingRight && stateMachine.currentState != littleJumpState)
+                {
+                    if(!(transform.position.y > point.y + 1f))
+                    {
+                        Debug.Log("滚出去 左");
+                        return;
+                    }
+                    Debug.LogWarning("爬上去 向左爬" + normal + "碰撞点" + point + "玩家位置" + transform.position);
+                    cornerNormal = contact.normal;
+                    stateMachine.ChangeState(littleJumpState);
+
+                }
+                else if (normal.y > 0 && normal.x < -0f && facingRight && stateMachine.currentState != littleJumpState)
+                {
+                    if (!(transform.position.y > point.y + 1f))
+                    {
+                        Debug.Log("滚出去 右");
+                        return;
+                    }
+                    Debug.LogWarning("爬上去 向右爬" + normal + "碰撞点" + point + "玩家位置" + transform.position);
+                    cornerNormal = contact.normal;
+                    stateMachine.ChangeState(littleJumpState);
+
+                }
+            }
+
+
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            /*Debug.LogWarning(collision.contacts.Length);
+            foreach (var contactData in collision.contacts)
+            {
+                if (!IsAxisAligned(contactData.normal))
+                    Debug.LogWarning(contactData.point);
+                    Debug.LogWarning(contactData.normal);
+            }*/
+            ContactPoint2D contact = collision.contacts[0];
+            foreach (var contactData in collision.contacts)
+            {
+                if (contactData.normal.y < contact.normal.y)
+                    contact = contactData;
+            }
+
+            // 接触点法线方向（代表被推动的方向）
+            Vector2 normal = contact.normal;
+            Vector2 point = contact.point; //  获取碰撞点
+                                           // 仅当 normal 不是严格的轴向才输出（非 x/y 轴方向）
+            if (!IsAxisAligned(normal))
+            {
+                //Debug.LogWarning(normal);
+                // 判断法线是否主要指向“上方”，同时带有一定的左右偏向
+                if (normal.y > 0.5f)
+                {
+
+                    if (normal.x > 0f && facingRight)// 右上
+                    {
+                        Debug.LogWarning("滚下去（向右）");
+                        Vector2 targetPosition = transform.position + new Vector3(.2f, 0f);
+                        transform.position = targetPosition;
+                        return;
+                    }
+                    else if (normal.x < -0f && !facingRight)
+                    {
+                        Debug.LogWarning("滚下去（向左）");
+                        Vector2 targetPosition = transform.position + new Vector3(-.2f, 0f);
+                        transform.position = targetPosition;
+                        return;
+                    }
+
+                }
+                if (normal.y > 0 && normal.x > 0f && !facingRight && stateMachine.currentState != littleJumpState)
+                {
+                    if (!(transform.position.y > point.y + 1f))
+                    {
+                        Debug.Log("滚出去 左");
+                        return;
+                    }
+                    Debug.LogWarning("爬上去 向左爬" + normal + "碰撞点" + point + "玩家位置" + transform.position);
+                    cornerNormal = contact.normal;
+                    stateMachine.ChangeState(littleJumpState);
+
+                }
+                else if (normal.y > 0 && normal.x < -0f && facingRight && stateMachine.currentState != littleJumpState)
+                {
+                    if (!(transform.position.y > point.y + 1f))
+                    {
+                        Debug.Log("滚出去 右");
+                        return;
+                    }
+                    Debug.LogWarning("爬上去 向右爬" + normal + "碰撞点" + point + "玩家位置" + transform.position);
+                    cornerNormal = contact.normal;
+                    stateMachine.ChangeState(littleJumpState);
+
+                }
+            }
+
+
+        }
+    }
 
 }
 

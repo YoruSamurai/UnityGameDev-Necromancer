@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileGeneratorPrefab: {fileID: 7679229544336494704, guid: cf48fd11b437bae479c053ed30438bcb, type: 3}
+  zoneGeneratorPrefab: {fileID: 3992199269575867997, guid: 0d1e540c09e3fe649a71f40020d0ec7c, type: 3}
