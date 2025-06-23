@@ -197,7 +197,7 @@ public class Player : MonoBehaviour
         defenseState = new PlayerDefenseState(this, stateMachine,"Defense");
         crouchingState = new PlayerCrouchingState(this, stateMachine, "Crouching");
         littleJumpState = new PlayerLittleJumpState(this, stateMachine, "LittleJump");
-        currentLadderPosition = 0;
+        currentLadderPosition = 2;
     }
 
     protected void Start()
@@ -283,7 +283,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             isOnLadder = false;
-            currentLadderPosition = 0;
+            currentLadderPosition = 2;
             currentLadder.ClearLadder();
             //isClimbing = false;
             // 如果玩家正处于攀爬状态，则退出
@@ -442,7 +442,7 @@ public class Player : MonoBehaviour
         {
             if(Input.GetAxisRaw("Vertical") > 0)//上爬
             {
-                if(currentLadderPosition != 1)//判断能不能上爬
+                if(currentLadderPosition != 1 && currentLadderPosition != 2)//判断能不能上爬
                 {
                     isClimbing = true;
                     stateMachine.ChangeState(climbState);
@@ -451,7 +451,7 @@ public class Player : MonoBehaviour
             else//往下爬
             {
                 dropTimer = .05f;
-                if (!IsGroundDetected() && currentLadderPosition != -1)//判断能不能下爬
+                if (!IsGroundDetected() && currentLadderPosition != -1 && currentLadderPosition != 2)//判断能不能下爬
                 {
                     isClimbing = true;
                     stateMachine.ChangeState(climbState);

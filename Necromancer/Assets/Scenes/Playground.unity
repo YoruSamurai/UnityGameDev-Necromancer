@@ -26469,7 +26469,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 180706976}
   m_HandleRect: {fileID: 180706975}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -57390,19 +57390,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1559141449933184040, guid: 81a43bdf341eb5b4786a61d1c12155e5, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: -0.8087934
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1559141449933184040, guid: 81a43bdf341eb5b4786a61d1c12155e5, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: -0.8090909
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1559141449933184040, guid: 81a43bdf341eb5b4786a61d1c12155e5, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 2.6175869
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1559141449933184040, guid: 81a43bdf341eb5b4786a61d1c12155e5, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 2.618182
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4698641385116434806, guid: 81a43bdf341eb5b4786a61d1c12155e5, type: 3}
       propertyPath: m_LocalPosition.x

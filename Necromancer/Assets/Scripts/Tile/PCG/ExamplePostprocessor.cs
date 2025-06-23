@@ -132,6 +132,16 @@ namespace LDtkUnity
 
 
                 }
+                if (layer.name == "Ground")
+                {
+                    CompositeCollider2D collider = layer.GetComponentInChildren<CompositeCollider2D>();
+                    collider.geometryType = CompositeCollider2D.GeometryType.Polygons;
+                }
+                if (layer.name == "OneWayPlatform")
+                {
+                    CompositeCollider2D collider = layer.GetComponentInChildren<CompositeCollider2D>();
+                    collider.geometryType = CompositeCollider2D.GeometryType.Polygons;
+                }
             }
 
         }

@@ -27,7 +27,7 @@ public class PlayerFallState : PlayerAirState
         //下落过程中 玩家脸上有墙 进入滑墙状态 
         if (player.IsWallBodyDetected())
         {
-            stateMachine.ChangeState(player.wallSlideState);
+            //stateMachine.ChangeState(player.wallSlideState);
         }
 
         //玩家到地上了 重置跳跃计数器 并回到静止状态
